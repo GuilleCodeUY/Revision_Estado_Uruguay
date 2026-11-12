@@ -625,6 +625,7 @@
     ficha.add(new Option("Empleo · población y territorio", "empleo-territorio"));
     ficha.add(new Option("Parlamento · gasto y actividad", "parlamento-2025"));
     ficha.add(new Option("Montevideo · Intendencia y Junta", "montevideo-2025"));
+    ficha.add(new Option("Solaria · acuerdo con UTE", "solaria-2026"));
     datos.incisos.forEach(row => ficha.add(new Option(row.id + " · " + row.name, "inciso-" + row.id)));
     revision.observaciones.forEach(row => ficha.add(new Option("Tribunal · " + row.resolucion + " · " + row.organismo, row.id)));
     empleo.organismos.forEach(row => ficha.add(new Option("Dotación · " + row.organismo, "dotacion-" + row.id)));

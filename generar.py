@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SITE = "https://verdadmilanesa.uy"
+STATIC_PAGES = ("solaria.html",)
 CORRECTION_STATES = {"recibida", "en_revision", "aceptada", "rechazada"}
 FIELDS = (
     "id",
@@ -244,9 +245,12 @@ def main():
         if template.count("<!-- DATOS_2025 -->") != 1:
             raise ValueError(f"La plantilla {template_name} debe tener un marcador de datos.")
         (public / page).write_text(template.replace("<!-- DATOS_2025 -->", payload), encoding="utf-8")
+    # Páginas de casos que no dependen de los datos de 2025: se copian tal cual.
+    for page in STATIC_PAGES:
+        (public / page).write_text((ROOT / "web" / page).read_text(encoding="utf-8"), encoding="utf-8")
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html"))
+                   for page in ("", "informe.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
