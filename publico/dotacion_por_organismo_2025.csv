@@ -1,0 +1,85 @@
+﻿id;inciso;organismo;grupo;personas;vinculos;fp;nfp;politico_p;confianza_q;administrativo_c;credito_miles_uyu;ejecutado_miles_uyu;remuneraciones_miles_uyu;retribuciones_miles_uyu;cargas_miles_uyu;beneficios_miles_uyu;total_cuadro_4_miles_uyu;escalafon_A;escalafon_B;escalafon_C;escalafon_D;escalafon_E;escalafon_F;escalafon_G;escalafon_H;escalafon_J;escalafon_K;escalafon_L;escalafon_M;escalafon_N;escalafon_P;escalafon_Q;escalafon_R;escalafon_S;escalafon_otros
+01;01;Poder Legislativo;Poder Legislativo;1157;1157;1074;83;135;12;354;11509365;7565680;5255934;4164918;906210;184806;5255934;92;24;354;162;22;134;0;0;1;0;0;0;0;135;12;72;0;66
+02;02;Presidencia de la República;Poder Ejecutivo;1983;2001;1531;470;4;30;261;7508234;5954313;3188164;2553382;618976;15806;3188164;310;88;261;195;45;65;0;0;329;0;0;0;0;4;30;0;0;204
+03;03;Ministerio de Defensa Nacional;Poder Ejecutivo;29163;29301;28510;791;2;10;233;36907243;33489255;26799110;21929992;4427447;441671;26799110;309;73;233;182;175;45;0;0;0;27287;0;0;0;2;10;0;0;194
+04;04;Ministerio del Interior;Poder Ejecutivo;35284;35821;33656;2165;20;13;75;55942088;51625563;41651561;34076980;7263723;310858;41651561;180;45;75;0;2;0;0;0;0;0;32057;0;0;20;13;0;1181;83
+05;05;Min. de Economía y Finanzas;Poder Ejecutivo;3622;3629;3469;160;2;13;775;11361300;9004638;7354545;5939743;1381099;33703;7354545;1190;151;775;603;26;24;0;0;0;0;0;0;0;2;13;61;0;624
+06;06;Min. de Relaciones Exteriores;Poder Ejecutivo;518;522;518;4;2;1;84;5501527;5127443;2864325;2429638;222327;212360;2864325;42;13;84;22;6;3;0;0;0;0;0;345;0;2;1;0;0;0
+07;07;Min. de Ganadería, Agric. y Pesca;Poder Ejecutivo;1599;1603;1528;75;2;12;196;6478636;5217479;3073850;2445193;610150;18508;3073850;718;180;196;305;28;23;0;0;0;0;0;0;0;2;12;61;0;3
+08;08;Min. de Industria, Energía y Minería;Poder Ejecutivo;361;364;357;7;2;10;74;1696502;1199480;840467;667523;168827;4116;840467;214;35;74;8;10;0;0;0;0;0;0;0;0;2;10;0;0;4
+09;09;Min. de Turismo;Poder Ejecutivo;152;152;138;14;2;2;50;811633;699906;283213;223889;57615;1710;283213;40;25;50;11;8;0;0;0;0;0;0;0;0;2;2;0;0;0
+10;10;Min. de Transporte y Obras Públicas;Poder Ejecutivo;2174;2175;2157;18;2;11;405;41078148;38319952;2071604;1635859;403732;32013;2071604;316;142;405;210;1036;34;0;0;0;0;0;0;0;2;11;0;0;1
+11;11;Min. de Educación y Cultura;Poder Ejecutivo;2461;2507;1268;1239;2;24;364;7360510;5709478;3309823;2635194;658793;15836;3309823;247;40;364;430;36;31;0;0;36;0;0;0;14;2;24;27;0;17
+12;12;Min. de Salud Pública;Poder Ejecutivo;729;733;697;36;2;27;181;8805739;8496684;1327758;1057984;262216;7558;1327758;351;55;181;49;18;10;0;0;0;0;0;0;0;2;27;0;0;4
+13;13;Min. de Trabajo y Seguridad Social;Poder Ejecutivo;585;588;569;19;2;8;211;1867789;1324446;1138749;907713;224579;6457;1138749;181;110;211;26;19;8;0;0;0;0;0;0;0;2;8;0;0;4
+14;14;Min. de Vivienda, Ord. Terr. y M. A.;Poder Ejecutivo;446;446;289;157;2;5;64;15356170;15173639;467884;370894;93571;3420;467884;156;30;64;22;7;1;0;0;2;0;0;0;0;2;5;0;0;0
+15;15;Min. de Desarrollo Social;Poder Ejecutivo;2071;2073;1676;397;2;11;249;31492705;30141243;2727420;2167906;542606;16908;2727420;957;246;249;40;37;78;0;0;0;0;0;0;0;2;11;0;0;56
+16;16;Poder Judicial;Organismos del art. 220;4867;4874;4874;0;0;7;2986;11000888;10622350;9710297;7843348;1815585;51364;9710297;780;73;2986;127;0;0;0;0;0;0;0;0;509;0;7;0;0;392
+17;17;Tribunal de Cuentas;Organismos del art. 220;355;356;346;10;7;0;94;1098979;1041957;968186;780732;184536;2918;968186;199;7;94;8;2;13;0;0;0;0;0;0;0;7;0;15;0;1
+18;18;Corte Electoral;Organismos del art. 220;1029;1038;1038;0;104;4;747;2063894;1957672;1598931;1271694;316129;11108;1598931;8;46;747;0;18;111;0;0;0;0;0;0;0;104;4;0;0;0
+19;19;Tribunal de lo Contencioso Adm.;Organismos del art. 220;96;97;82;15;0;2;32;336914;286403;264010;212539;50551;921;264010;19;0;32;0;8;14;0;0;0;0;0;0;7;0;2;0;0;0
+25;25;Adm. Nal. de Educación Pública;Organismos del art. 220;67248;97079;95598;1481;9;12;3760;117575578;114123102;99710170;73559697;25531832;618640;99710170;812;34;3760;504;257;8068;0;82053;0;0;0;0;0;9;12;89;0;0
+26;26;Universidad de la República;Organismos del art. 220;18554;19795;18912;883;41;12;1691;28991598;28663125;23356660;18784432;4273910;116162;23174504;887;328;1691;1201;898;1286;12069;0;3;0;0;0;0;41;12;496;0;0
+27;27;Inst. del Niño y Ad. del Uruguay;Organismos del art. 220;5054;5128;4574;554;3;0;467;24276120;24109097;7180917;5678974;1452058;49885;7180917;620;113;467;3028;195;8;0;0;138;0;0;0;0;3;0;0;0;2
+28;28;Banco de Previsión Social;Organismos del art. 221;3628;3630;3183;447;7;1;1779;;;;;;;;812;247;1779;251;45;5;0;0;0;0;0;0;0;7;1;0;0;36
+29;29;Adm. Servicios de Salud del Estado;Organismos del art. 220;28704;30612;30610;2;4;0;802;72481865;71579149;36580001;28962427;7327394;290179;36580001;10042;918;802;10949;1330;2300;0;0;0;0;0;0;0;4;0;4;0;4261
+31;31;Universidad Tecnológica;Organismos del art. 220;852;920;812;108;3;3;79;1850736;1838807;1322420;1029180;289265;3975;1322420;87;28;79;32;0;0;0;0;580;0;0;0;0;3;3;0;0;0
+32;32;Instituto Uruguayo de Meteorología;Organismos del art. 220;189;190;148;42;2;2;16;424496;411175;317400;253624;62548;1228;317400;6;50;16;68;0;4;0;0;0;0;0;0;0;2;2;0;0;0
+33;33;Fiscalía General de la Nación;Organismos del art. 220;741;741;736;5;0;1;247;2183019;2166461;1853315;1503825;340466;9023;1853315;100;5;247;16;0;8;0;0;0;0;0;0;359;0;1;0;0;0
+34;34;Junta de Transparencia y Ética Pública;Organismos del art. 220;16;16;16;0;3;0;8;71475;47450;36153;28417;7595;141;36153;3;0;8;0;0;1;0;0;1;0;0;0;0;3;0;0;0;0
+35;35;Inst. Nal. de Inclusión Social Adolescente;Organismos del art. 220;1581;1583;1553;30;3;0;199;3120398;3099536;2549991;2022106;511164;16721;2549991;143;35;199;94;985;8;0;0;21;0;0;0;0;3;0;1;0;64
+36;36;Ministerio de Ambiente;Poder Ejecutivo;542;542;320;222;2;5;38;1270771;1074488;648418;517583;127880;2955;648418;185;46;38;31;5;6;0;0;0;0;0;0;0;2;5;1;0;1
+50;50;Banco Central del Uruguay;Organismos del art. 221;595;596;579;17;3;0;86;;;;;;;;454;0;86;0;0;36;0;0;0;0;0;0;0;3;0;0;0;0
+51;51;Banco de la República Oriental del Uruguay;Organismos del art. 221;3620;3620;3390;230;5;0;2894;;;;;;;;357;0;2894;0;0;134;0;0;0;0;0;0;0;5;0;0;0;0
+52;52;Banco Hipotecario del Uruguay;Organismos del art. 221;304;304;277;27;3;0;213;;;;;;;;43;14;213;1;0;3;0;0;0;0;0;0;0;3;0;0;0;0
+53;53;Banco de Seguros del Estado;Organismos del art. 221;2776;2777;1900;877;2;0;977;;;;;;;;418;0;977;354;52;53;0;0;0;0;0;0;0;2;0;0;0;44
+60;60;Adm. Nal. de Comb. Alc. y Portland;Organismos del art. 221;2114;2114;2074;40;4;1;436;;;;;;;;245;377;436;23;901;87;0;0;0;0;0;0;0;4;1;0;0;0
+61;61;Adm. Nal. de Usinas y Tr. Eléctricas;Organismos del art. 221;6313;6313;6168;145;5;0;355;;;;;;;;1110;2847;355;198;1506;147;0;0;0;0;0;0;0;5;0;0;0;0
+62;62;Adm. de Ferrocarriles del Estado;Organismos del art. 221;206;206;198;8;6;0;20;;;;;;;;9;3;20;0;156;3;0;0;0;0;0;0;0;6;0;0;0;1
+64;64;Administración Nacional de Puertos;Organismos del art. 221;897;898;888;10;2;5;238;;;;;;;;101;0;238;2;50;0;0;0;0;0;0;0;0;2;5;0;0;490
+65;65;Adm. Nal. de Telecomunicaciones;Organismos del art. 221;4688;4689;4633;56;3;0;1695;;;;;;;;1003;273;1695;1515;0;144;0;0;0;0;0;0;0;3;0;0;0;0
+66;66;Adm. de las Obras Sanit. del Estado;Organismos del art. 221;3694;3695;3437;258;3;13;758;;;;;;;;360;97;758;292;1897;16;0;0;0;0;0;0;0;3;13;0;0;1
+67;67;Adm. Nacional de Correos;Organismos del art. 221;1480;1484;1434;50;3;0;54;;;;;;;;43;23;54;46;79;2;0;0;0;0;0;0;0;3;0;0;0;1184
+68;68;Agencia Nacional de Vivienda;Organismos del art. 221;431;433;401;32;3;4;172;;;;;;;;103;17;172;12;0;6;0;0;0;0;0;0;0;3;4;0;0;84
+69;69;Unidad Reguladora de Servicios de Energía y Agua;Organismos del art. 221;66;67;58;9;0;0;11;;;;;;;;41;2;11;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4
+70;70;Instituto Nacional de Colonización;Organismos del art. 221;264;267;236;31;5;2;71;;;;;;;;81;0;71;33;0;6;0;0;0;0;0;0;0;5;2;0;0;38
+71;71;Unidad Reguladora de Servicios de Comunicaciones;Organismos del art. 221;84;85;78;7;0;0;21;;;;;;;;28;7;21;18;0;0;0;0;0;0;0;0;0;0;0;0;0;4
+80-intendencia;80;Intendencia de Artigas;Gobiernos departamentales;1651;1652;1644;8;5;9;448;;;;;;;;68;0;448;151;764;199;0;0;0;0;0;0;0;5;9;0;0;0
+80-junta;80;Junta Departamental de Artigas;Gobiernos departamentales;54;54;54;0;31;0;15;;;;;;;;1;0;15;0;1;5;0;0;0;0;0;0;0;31;0;0;0;1
+81-intendencia;81;Intendencia de Canelones;Gobiernos departamentales;4426;4442;4417;25;34;55;1290;;;;;;;;598;0;1290;479;639;1064;0;0;204;0;0;0;0;34;55;0;0;54
+81-junta;81;Junta Departamental de Canelones;Gobiernos departamentales;109;109;102;7;31;1;44;;;;;;;;0;5;44;16;0;5;0;0;0;0;0;0;0;31;1;0;0;0
+82-intendencia;82;Intendencia de Cerro Largo;Gobiernos departamentales;1711;1716;1716;0;17;69;494;;;;;;;;30;43;494;0;223;840;0;0;0;0;0;0;0;17;69;0;0;0
+82-junta;82;Junta Departamental de Cerro Largo;Gobiernos departamentales;54;54;54;0;31;0;12;;;;;;;;2;0;12;0;2;7;0;0;0;0;0;0;0;31;0;0;0;0
+83-intendencia;83;Intendencia de Colonia;Gobiernos departamentales;1536;1544;1510;34;15;25;298;;;;;;;;13;0;298;74;659;174;0;0;147;0;0;0;0;15;25;0;0;105
+83-junta;83;Junta Departamental de Colonia;Gobiernos departamentales;44;44;44;0;31;1;6;;;;;;;;1;0;6;2;0;3;0;0;0;0;0;0;0;31;1;0;0;0
+84-intendencia;84;Intendencia de Durazno;Gobiernos departamentales;1395;1399;1399;0;3;17;409;;;;;;;;51;83;409;216;24;596;0;0;0;0;0;0;0;3;17;0;0;0
+84-junta;84;Junta Departamental de Durazno;Gobiernos departamentales;101;101;101;0;30;0;11;;;;;;;;2;0;11;0;0;6;0;0;0;0;0;0;0;30;0;0;0;52
+85-intendencia;85;Intendencia de Flores;Gobiernos departamentales;678;683;571;112;2;28;143;;;;;;;;0;0;143;10;319;45;0;0;10;0;0;0;0;2;28;0;0;14
+85-junta;85;Junta Departamental de Flores;Gobiernos departamentales;48;48;48;0;31;0;8;;;;;;;;1;2;8;0;0;6;0;0;0;0;0;0;0;31;0;0;0;0
+86-intendencia;86;Intendencia de Florida;Gobiernos departamentales;1042;1045;984;61;5;24;243;;;;;;;;28;28;243;0;484;64;0;0;62;0;0;0;0;5;24;46;0;0
+86-junta;86;Junta Departamental de Florida;Gobiernos departamentales;64;64;56;8;31;3;3;;;;;;;;4;0;3;8;0;7;0;0;0;0;0;0;0;31;3;0;0;0
+87-intendencia;87;Intendencia de Lavalleja;Gobiernos departamentales;1617;1621;1602;19;8;24;137;;;;;;;;24;2;137;24;372;897;0;0;58;0;0;0;0;8;24;0;0;56
+87-junta;87;Junta Departamental de Lavalleja;Gobiernos departamentales;50;50;48;2;31;0;11;;;;;;;;3;0;11;0;1;2;0;0;0;0;0;0;0;31;0;0;0;0
+88-intendencia;88;Intendencia de Maldonado;Gobiernos departamentales;3325;3331;3229;102;10;116;720;;;;;;;;184;0;720;896;1026;120;0;0;157;0;0;0;0;10;116;0;0;0
+88-junta;88;Junta Departamental de Maldonado;Gobiernos departamentales;109;109;109;0;31;21;23;;;;;;;;2;7;23;8;6;11;0;0;0;0;0;0;0;31;21;0;0;0
+89-intendencia;89;Intendencia de Paysandú;Gobiernos departamentales;1432;1432;1343;89;10;5;330;;;;;;;;43;10;330;100;389;375;0;0;81;0;0;0;0;10;5;0;0;0
+89-junta;89;Junta Departamental de Paysandú;Gobiernos departamentales;55;55;49;6;31;6;7;;;;;;;;1;0;7;1;0;3;0;0;0;0;0;0;0;31;6;0;0;0
+90-intendencia;90;Intendencia de Río Negro;Gobiernos departamentales;1714;1746;1534;212;5;3;307;;;;;;;;0;133;307;67;970;0;0;0;23;0;0;0;0;5;3;0;0;26
+90-junta;90;Junta Departamental de Río Negro;Gobiernos departamentales;51;51;51;0;31;0;15;;;;;;;;2;0;15;0;0;3;0;0;0;0;0;0;0;31;0;0;0;0
+91-intendencia;91;Intendencia de Rivera;Gobiernos departamentales;1075;1075;1050;25;5;6;363;;;;;;;;42;37;363;40;442;97;0;0;14;0;0;0;0;5;6;0;0;4
+91-junta;91;Junta Departamental de Rivera;Gobiernos departamentales;60;60;60;0;31;1;17;;;;;;;;3;0;17;0;1;5;0;0;0;0;0;0;0;31;1;0;0;2
+92-intendencia;92;Intendencia de Rocha;Gobiernos departamentales;1387;1387;1365;22;6;20;342;;;;;;;;33;24;342;12;740;1;0;0;43;0;0;0;0;6;20;0;0;144
+92-junta;92;Junta Departamental de Rocha;Gobiernos departamentales;41;41;41;0;31;0;8;;;;;;;;2;0;8;0;0;0;0;0;0;0;0;0;0;31;0;0;0;0
+93-intendencia;93;Intendencia de Salto;Gobiernos departamentales;1597;1598;1548;50;8;6;398;;;;;;;;56;0;398;192;776;95;0;0;17;0;0;0;0;8;6;0;0;0
+93-junta;93;Junta Departamental de Salto;Gobiernos departamentales;89;89;89;0;31;33;8;;;;;;;;0;0;8;3;0;7;0;0;0;0;0;0;0;31;33;0;0;7
+94-intendencia;94;Intendencia de San José;Gobiernos departamentales;1020;1026;962;64;5;15;213;;;;;;;;46;0;213;37;0;506;0;0;32;0;0;0;0;5;15;0;0;108
+94-junta;94;Junta Departamental de San José;Gobiernos departamentales;47;47;47;0;31;1;5;;;;;;;;2;1;5;4;2;1;0;0;0;0;0;0;0;31;1;0;0;0
+95-intendencia;95;Intendencia de Soriano;Gobiernos departamentales;1711;1739;1739;0;7;67;268;;;;;;;;52;0;268;1243;0;72;0;0;27;0;0;0;0;7;67;0;0;3
+95-junta;95;Junta Departamental de Soriano;Gobiernos departamentales;46;46;46;0;31;1;1;;;;;;;;1;0;1;5;2;5;0;0;0;0;0;0;0;31;1;0;0;0
+96-intendencia;96;Intendencia de Tacuarembó;Gobiernos departamentales;1693;1693;1666;27;6;10;275;;;;;;;;86;32;275;54;767;422;0;0;5;0;0;0;0;6;10;0;0;9
+96-junta;96;Junta Departamental de Tacuarembó;Gobiernos departamentales;68;68;68;0;31;6;11;;;;;;;;1;0;11;4;0;15;0;0;0;0;0;0;0;31;6;0;0;0
+97-intendencia;97;Intendencia de Treinta y Tres;Gobiernos departamentales;1303;1304;1273;31;7;3;319;;;;;;;;15;0;319;197;394;338;0;0;0;0;0;0;0;7;3;0;0;0
+97-junta;97;Junta Departamental de Treinta y Tres;Gobiernos departamentales;45;46;46;0;31;4;6;;;;;;;;1;0;6;2;1;1;0;0;0;0;0;0;0;31;4;0;0;0
+98-intendencia;98;Intendencia de Montevideo;Gobiernos departamentales;9239;9260;8262;998;10;35;1266;;;;;;;;2500;0;1266;84;3133;0;0;0;525;0;0;0;0;10;35;0;0;709
+98-junta;98;Junta Departamental de Montevideo;Gobiernos departamentales;194;194;155;39;31;5;52;;;;;;;;17;3;52;12;3;29;0;0;0;0;0;0;0;31;5;0;0;3
+congreso-intendentes;;Congreso de Intendentes;Gobiernos departamentales;25;25;25;0;0;10;15;;;;;;;;0;0;15;0;0;0;0;0;0;0;0;0;0;0;10;0;0;0

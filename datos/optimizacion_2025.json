@@ -1,0 +1,216 @@
+{
+  "escenarios": ["Bajo", "Intermedio", "Alto"],
+  "rubros": [
+    {
+      "id": "telefonia",
+      "nombre": "Telefonía del Presupuesto Nacional",
+      "base_uyu": 1432715000,
+      "cobertura_pct": 25,
+      "reducciones_pct": [4, 8, 12],
+      "pagina": 21,
+      "medida": "Inventariar líneas y planes, cerrar los inactivos y comparar precios para perfiles equivalentes.",
+      "control": "Gasto por línea activa y disponibilidad del servicio."
+    },
+    {
+      "id": "electricidad",
+      "nombre": "Electricidad del Presupuesto Nacional",
+      "base_uyu": 2891694000,
+      "cobertura_pct": 40,
+      "reducciones_pct": [3, 5, 7],
+      "pagina": 21,
+      "medida": "Revisar potencia contratada, consumos fuera de horario y eficiencia por inmueble.",
+      "control": "kWh por metro cuadrado y mes, ajustado por uso y clima."
+    },
+    {
+      "id": "vigilancia-inisa",
+      "nombre": "Vigilancia de INISA",
+      "base_uyu": 175614000,
+      "cobertura_pct": 100,
+      "reducciones_pct": [2, 5, 8],
+      "pagina": 283,
+      "medida": "Comparar tarifas por hora, verificar horarios efectivamente prestados y programar compras antes de los vencimientos.",
+      "control": "Costo por hora validada, turnos cubiertos e incidentes."
+    },
+    {
+      "id": "limpieza-inisa",
+      "nombre": "Limpieza de INISA",
+      "base_uyu": 75294000,
+      "cobertura_pct": 50,
+      "reducciones_pct": [2, 4, 6],
+      "pagina": 283,
+      "medida": "Comparar costo por superficie y frecuencia para centros equivalentes.",
+      "control": "Costo por metro cuadrado, frecuencia e inspecciones de calidad."
+    }
+  ],
+  "observaciones": [
+    {
+      "id": "tcr-1774-025",
+      "resolucion": "1774/025",
+      "fecha": "2025-07-23",
+      "expediente": "2025-17-1-0002651",
+      "inciso": "29",
+      "organismo": "ASSE",
+      "concepto": "Conserjería en la RAP Metropolitana sur-este, hasta 153.913 horas anuales.",
+      "monto_involucrado_uyu": 74794030.61,
+      "base_monto": "Proyecto de adjudicación anual, impuestos incluidos.",
+      "motivo": "La comisión no fundamentó por qué rechazó las referencias de una oferente.",
+      "normas": "Art. 66 inciso 2 del TOCAF.",
+      "estado": "Observado. Actuaciones devueltas.",
+      "perjuicio_acreditado_uyu": null,
+      "url": "https://www.impo.com.uy/bases/resoluciones-contrataciones-convenios-tcr-nd/1774-2025"
+    },
+    {
+      "id": "tcr-708-025",
+      "resolucion": "708/025",
+      "fecha": "2025-03-26",
+      "expediente": "2025-17-1-0000919",
+      "inciso": "29",
+      "organismo": "ASSE",
+      "concepto": "Vigilancia del Centro Hospitalario Pereira Rossell.",
+      "monto_involucrado_uyu": 34411964.16,
+      "base_monto": "Monto original de adjudicación, impuestos incluidos y sujeto a ajustes.",
+      "motivo": "El Tribunal observó que la garantía de mantenimiento de oferta no se depositó antes de la apertura.",
+      "normas": "Arts. 8.2 y 14 del pliego.",
+      "estado": "Gasto reiterado por ASSE y observación mantenida por el Tribunal.",
+      "perjuicio_acreditado_uyu": null,
+      "url": "https://www.impo.com.uy/bases/resoluciones-contrataciones-convenios-tcr-nd/708-2025"
+    },
+    {
+      "id": "tcr-2561-025",
+      "resolucion": "2561/025",
+      "fecha": "2025-10-08",
+      "expediente": "2025-17-1-0003831",
+      "inciso": "61",
+      "organismo": "UTE",
+      "concepto": "Adquisición de transformadores y autotransformadores.",
+      "monto_involucrado_uyu": 105715971.90,
+      "base_monto": "Equivalente en pesos informado para la negociación, incluidos recargos y previsiones.",
+      "motivo": "El Tribunal constató que se comprometió gasto sin crédito presupuestal disponible.",
+      "normas": "Art. 15 del TOCAF.",
+      "estado": "Observado. Actuaciones devueltas.",
+      "perjuicio_acreditado_uyu": null,
+      "url": "https://www.impo.com.uy/bases/resoluciones-contrataciones-convenios-tcr-nd/2561-2025"
+    }
+  ],
+  "costos_politicos_identificados": [
+    {
+      "id": "conduccion-jutep-cese",
+      "inciso": "34",
+      "organismo": "JUTEP",
+      "concepto": "Subsidios por cese de cargos políticos y de particular confianza",
+      "tipo": "Cese",
+      "monto_uyu": 2779207,
+      "base_registro": "Obligado",
+      "criterio": "Gasto obligado. Concepto posterior al cese.",
+      "url": "https://www.gub.uy/junta-transparencia-etica-publica/sites/junta-transparencia-etica-publica/files/2026-03/Ejecuci%C3%B3n_presupuestal_2025.pdf"
+    },
+    {
+      "id": "conduccion-ute-directorio",
+      "inciso": "61",
+      "organismo": "UTE",
+      "concepto": "Sueldo básico del directorio",
+      "tipo": "Directorio",
+      "monto_uyu": 8288646,
+      "base_registro": "Ejecución presupuestal",
+      "criterio": "Ejecución del objeto 011001, pág. 18.",
+      "url": "https://www.ute.com.uy/sites/default/files/docs/TOMO%20EJECUCION%202025%20VF05.03.26%20COMPRIMIDO.pdf#page=18"
+    },
+    {
+      "id": "conduccion-ute-confianza",
+      "inciso": "61",
+      "organismo": "UTE",
+      "concepto": "Compensación de personal de confianza",
+      "tipo": "Confianza",
+      "monto_uyu": 21794719,
+      "base_registro": "Ejecución presupuestal",
+      "criterio": "Ejecución del objeto 042088. Incluye la compensación del rubro, pág. 18.",
+      "url": "https://www.ute.com.uy/sites/default/files/docs/TOMO%20EJECUCION%202025%20VF05.03.26%20COMPRIMIDO.pdf#page=18"
+    },
+    {
+      "id": "conduccion-bps-personal-clave",
+      "inciso": "28",
+      "organismo": "BPS",
+      "concepto": "Remuneraciones y prestaciones del personal clave",
+      "tipo": "Personal clave mixto",
+      "monto_uyu": 170478600,
+      "base_registro": "Estados financieros",
+      "criterio": "Incluye directorio, secretarías, direcciones técnicas y gerencias. Estados financieros consolidados, nota 41.4.",
+      "url": "https://www.bps.gub.uy/bps/file/24103/1/estados-financieros-2025.pdf"
+    },
+    {
+      "id": "conduccion-ancap-directorio",
+      "inciso": "60",
+      "organismo": "ANCAP",
+      "concepto": "Remuneraciones y otras prestaciones del directorio",
+      "tipo": "Directorio",
+      "monto_uyu": 12750709,
+      "base_registro": "Estados financieros",
+      "criterio": "Estados financieros individuales, nota 27.1.",
+      "url": "https://www.ancap.com.uy/innovaportal/file/21096/1/ancap---informe-individual-31.12.2025-ptg.pdf"
+    },
+    {
+      "id": "conduccion-ancap-gerencia",
+      "inciso": "60",
+      "organismo": "ANCAP",
+      "concepto": "Remuneraciones y otras prestaciones de la gerencia general",
+      "tipo": "Gerencia",
+      "monto_uyu": 7963009,
+      "base_registro": "Estados financieros",
+      "criterio": "Gerencia general informada aparte del directorio, nota 27.1.",
+      "url": "https://www.ancap.com.uy/innovaportal/file/21096/1/ancap---informe-individual-31.12.2025-ptg.pdf"
+    },
+    {
+      "id": "conduccion-ursea-directorio",
+      "inciso": "69",
+      "organismo": "URSEA",
+      "concepto": "Sueldo básico del directorio",
+      "tipo": "Directorio",
+      "monto_uyu": 7729571,
+      "base_registro": "Ejecución presupuestal",
+      "criterio": "Objeto 011001.",
+      "url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/2026-04/Estado%20de%20Ejecuci%C3%B3n%20Presupuestal.pdf"
+    },
+    {
+      "id": "conduccion-ursea-adscriptos",
+      "inciso": "69",
+      "organismo": "URSEA",
+      "concepto": "Compensación de adscriptos al directorio",
+      "tipo": "Adscripción",
+      "monto_uyu": 13677027,
+      "base_registro": "Ejecución presupuestal",
+      "criterio": "Objeto 042088. Importe de la compensación.",
+      "url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/2026-04/Estado%20de%20Ejecuci%C3%B3n%20Presupuestal.pdf"
+    },
+    {
+      "id": "conduccion-ursea-cese",
+      "inciso": "69",
+      "organismo": "URSEA",
+      "concepto": "Subsidios por cese de cargos políticos y de particular confianza",
+      "tipo": "Cese",
+      "monto_uyu": 5256287,
+      "base_registro": "Ejecución presupuestal",
+      "criterio": "Objeto 575001.",
+      "url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/2026-04/Estado%20de%20Ejecuci%C3%B3n%20Presupuestal.pdf"
+    },
+    {
+      "id": "conduccion-accesa-directorio",
+      "inciso": null,
+      "organismo": "ACCESA",
+      "concepto": "Remuneración del directorio a cargo de la filial",
+      "tipo": "Directorio",
+      "monto_uyu": 0,
+      "base_registro": "Estados financieros",
+      "criterio": "La nota de remuneración del personal clave se refiere al cargo contable de esta sociedad.",
+      "url": "https://www.antel.com.uy/documents/37544/11074771/Estados-Financieros-ACCESA-SA-31-12-2025.pdf/a1d8e684-446d-7e6d-680c-5938c28f87ae?t=1774622561330"
+    }
+  ],
+  "caso_bps": {
+    "id": "productividad-bps-atencion",
+    "corte": "febrero de 2026",
+    "reconocimientos": 2656,
+    "jubilaciones": 1450,
+    "minutos_antes": 50,
+    "minutos_despues": 15,
+    "url": "https://www.bps.gub.uy/24099/aumenta-el-acceso-a-las-jubilaciones-y-se-acorta-el-tiempo-de-los-tramites-en-el-bps.html"
+  }
+}

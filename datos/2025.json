@@ -1,0 +1,199 @@
+{
+  "ejercicio": 2025,
+  "consultado": "2026-11-12",
+  "revision": 4,
+  "poblacion": 3485931,
+  "totales": {
+    "credito_miles_uyu": 1028742295,
+    "ejecutado_miles_uyu": 997951745,
+    "remuneraciones_miles_uyu": 288451278
+  },
+  "fuentes": {
+    "rendicion": {
+      "nombre": "CGN · Rendición de Cuentas 2025, Tomo I",
+      "url": "https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf",
+      "referencia": "Cuadros 27 y 28, págs. 59–60. INISA, págs. 282–284."
+    },
+    "planificacion": {
+      "nombre": "OPP · Rendición 2025, Tomo II, organismos del art. 220",
+      "url": "https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20II%20%E2%80%93%20Planificaci%C3%B3n%20y%20evaluaci%C3%B3n%20%E2%80%93%20Org.%20del%20Art.%20220.pdf",
+      "referencia": "Inciso 35, págs. 329 y 334–336."
+    },
+    "ine": {
+      "nombre": "INE · Población proyectada 2025",
+      "url": "https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/22-proyecciones-estimaciones",
+      "referencia": "Cuadro 2.2.1, población al 30 de junio."
+    },
+    "onsc": {
+      "nombre": "ONSC · Vínculos Laborales 2025",
+      "url": "https://www.gub.uy/oficina-nacional-servicio-civil/comunicacion/publicaciones/vinculos-laborales-estado-altas-bajas-2025",
+      "referencia": "Informe y cuadros de vínculos por organismo."
+    },
+    "datos": {
+      "nombre": "CGN · Archivos de ejecución 2025",
+      "url": "https://presupuestonacional.gub.uy/datos_abiertos_rendicion_2025",
+      "referencia": "bal_gastos.csv y metadatos del ejercicio."
+    },
+    "tcr": {
+      "nombre": "Tribunal de Cuentas · Resolución 2557/025",
+      "url": "https://www.impo.com.uy/bases/resoluciones-contrataciones-convenios-tcr-nd/2557-2025",
+      "referencia": "Exp. 2025-17-1-0000990, considerandos 1 y 2 y parte resolutiva."
+    },
+    "art88": {
+      "nombre": "Constitución · Art. 88",
+      "url": "https://www.impo.com.uy/bases/constitucion/1967-1967/88",
+      "referencia": "Integración de la Cámara de Representantes."
+    },
+    "art94": {
+      "nombre": "Constitución · Art. 94",
+      "url": "https://www.impo.com.uy/bases/constitucion/1967-1967/94",
+      "referencia": "Integración del Senado y función de la Vicepresidencia."
+    },
+    "art211": {
+      "nombre": "Constitución · Art. 211",
+      "url": "https://www.impo.com.uy/bases/constitucion/1967-1967/211",
+      "referencia": "Cometidos del Tribunal de Cuentas."
+    },
+    "decreto": {
+      "nombre": "Decreto 14/019 · Art. 1",
+      "url": "https://www.impo.com.uy/bases/decretos/14-2019/1",
+      "referencia": "Integración del Directorio de INISA."
+    }
+  },
+  "cargos": [
+    {
+      "id": "diputados",
+      "nombre": "Representantes nacionales",
+      "clase": "Electivo",
+      "puestos_previstos": 99,
+      "ocupados_al_cierre": null,
+      "costo_ejecutado_uyu": null,
+      "fuente": "art88"
+    },
+    {
+      "id": "senadores",
+      "nombre": "Senadores electos",
+      "clase": "Electivo",
+      "puestos_previstos": 30,
+      "ocupados_al_cierre": null,
+      "costo_ejecutado_uyu": null,
+      "fuente": "art94"
+    },
+    {
+      "id": "vicepresidencia",
+      "nombre": "Vicepresidencia de la República",
+      "clase": "Electivo",
+      "puestos_previstos": 1,
+      "ocupados_al_cierre": null,
+      "costo_ejecutado_uyu": null,
+      "fuente": "art94"
+    },
+    {
+      "id": "inisa-directorio",
+      "nombre": "Directorio de INISA",
+      "clase": "Designación",
+      "puestos_previstos": 3,
+      "ocupados_al_cierre": null,
+      "costo_ejecutado_uyu": null,
+      "fuente": "decreto"
+    }
+  ],
+  "observacion": {
+    "id": "tcr-2557-025",
+    "resolucion": "2557/025",
+    "fecha": "2025-10-08",
+    "expediente": "2025-17-1-0000990",
+    "inciso": "35",
+    "organismo": "INISA",
+    "concepto": "Factura por vigilancia policial en Colonia Berro durante agosto de 2025.",
+    "motivo": "El Tribunal indicó que faltaba un procedimiento vigente que habilitara el gasto y que la ejecución ya había empezado al intervenir.",
+    "normas": "Art. 33 del TOCAF y art. 211 literal B de la Constitución.",
+    "monto_observado_uyu": 3462265,
+    "estado": "Observado. Actuaciones devueltas.",
+    "seguimiento": "Pendiente de verificar en actuaciones posteriores.",
+    "perjuicio_acreditado_uyu": null,
+    "fuente": "tcr"
+  },
+  "indicadores": [
+    {
+      "id": "inisa-actividad",
+      "nombre": "Actividad socioeducativa diaria",
+      "valor": 2.2,
+      "meta": 2.5,
+      "unidad": "h",
+      "preferencia": "mayor",
+      "pagina": 334
+    },
+    {
+      "id": "inisa-educacion",
+      "nombre": "Adolescentes privados de libertad en educación formal",
+      "valor": 78.1,
+      "meta": 55,
+      "unidad": "%",
+      "preferencia": "mayor",
+      "pagina": 334
+    },
+    {
+      "id": "inisa-laboral",
+      "nombre": "Participación en propuestas laborales",
+      "valor": 6.8,
+      "meta": 10,
+      "unidad": "%",
+      "preferencia": "mayor",
+      "pagina": 334
+    },
+    {
+      "id": "inisa-comunitaria",
+      "nombre": "Cumplimiento de penas de base comunitaria",
+      "valor": 79.5,
+      "meta": 70,
+      "unidad": "%",
+      "preferencia": "mayor",
+      "pagina": 335
+    },
+    {
+      "id": "inisa-encierro",
+      "nombre": "Horas diurnas de encierro",
+      "valor": 3.26,
+      "meta": 3,
+      "unidad": "h",
+      "preferencia": "menor",
+      "pagina": 336
+    }
+  ],
+  "incisos": [
+    {"id":"01","name":"Poder Legislativo","credito_miles_uyu":11509365,"ejecutado_miles_uyu":7565680,"remuneraciones_miles_uyu":5255934,"grupo":"Poder Legislativo"},
+    {"id":"02","name":"Presidencia","credito_miles_uyu":7508234,"ejecutado_miles_uyu":5954313,"remuneraciones_miles_uyu":3188164,"grupo":"Administración Central"},
+    {"id":"03","name":"Defensa","credito_miles_uyu":36907243,"ejecutado_miles_uyu":33489255,"remuneraciones_miles_uyu":26799110,"grupo":"Administración Central"},
+    {"id":"04","name":"Interior","credito_miles_uyu":55942088,"ejecutado_miles_uyu":51625563,"remuneraciones_miles_uyu":41651561,"grupo":"Administración Central"},
+    {"id":"05","name":"MEF","credito_miles_uyu":11361300,"ejecutado_miles_uyu":9004638,"remuneraciones_miles_uyu":7354545,"grupo":"Administración Central"},
+    {"id":"06","name":"MRREE","credito_miles_uyu":5501527,"ejecutado_miles_uyu":5127443,"remuneraciones_miles_uyu":2864325,"grupo":"Administración Central"},
+    {"id":"07","name":"MGAP","credito_miles_uyu":6478636,"ejecutado_miles_uyu":5217479,"remuneraciones_miles_uyu":3073850,"grupo":"Administración Central"},
+    {"id":"08","name":"MIEM","credito_miles_uyu":1696502,"ejecutado_miles_uyu":1199480,"remuneraciones_miles_uyu":840467,"grupo":"Administración Central"},
+    {"id":"09","name":"Turismo","credito_miles_uyu":811633,"ejecutado_miles_uyu":699906,"remuneraciones_miles_uyu":283213,"grupo":"Administración Central"},
+    {"id":"10","name":"MTOP","credito_miles_uyu":41078148,"ejecutado_miles_uyu":38319952,"remuneraciones_miles_uyu":2071604,"grupo":"Administración Central"},
+    {"id":"11","name":"MEC","credito_miles_uyu":7360510,"ejecutado_miles_uyu":5709478,"remuneraciones_miles_uyu":3309823,"grupo":"Administración Central"},
+    {"id":"12","name":"MSP","credito_miles_uyu":8805739,"ejecutado_miles_uyu":8496684,"remuneraciones_miles_uyu":1327758,"grupo":"Administración Central"},
+    {"id":"13","name":"MTSS","credito_miles_uyu":1867789,"ejecutado_miles_uyu":1324446,"remuneraciones_miles_uyu":1138749,"grupo":"Administración Central"},
+    {"id":"14","name":"MVOT","credito_miles_uyu":15356170,"ejecutado_miles_uyu":15173639,"remuneraciones_miles_uyu":467884,"grupo":"Administración Central"},
+    {"id":"15","name":"MIDES","credito_miles_uyu":31492705,"ejecutado_miles_uyu":30141243,"remuneraciones_miles_uyu":2727420,"grupo":"Administración Central"},
+    {"id":"16","name":"Poder Judicial","credito_miles_uyu":11000888,"ejecutado_miles_uyu":10622350,"remuneraciones_miles_uyu":9710297,"grupo":"Organismos del art. 220"},
+    {"id":"17","name":"T.Cuentas","credito_miles_uyu":1098979,"ejecutado_miles_uyu":1041957,"remuneraciones_miles_uyu":968186,"grupo":"Organismos del art. 220"},
+    {"id":"18","name":"Corte Electoral","credito_miles_uyu":2063894,"ejecutado_miles_uyu":1957672,"remuneraciones_miles_uyu":1598931,"grupo":"Organismos del art. 220"},
+    {"id":"19","name":"TCA","credito_miles_uyu":336914,"ejecutado_miles_uyu":286403,"remuneraciones_miles_uyu":264010,"grupo":"Organismos del art. 220"},
+    {"id":"20","name":"Intereses","credito_miles_uyu":94598128,"ejecutado_miles_uyu":94598128,"remuneraciones_miles_uyu":null,"grupo":"Otros créditos"},
+    {"id":"21","name":"Subsidios y Subvenciones","credito_miles_uyu":16348321,"ejecutado_miles_uyu":16300311,"remuneraciones_miles_uyu":null,"grupo":"Otros créditos"},
+    {"id":"22","name":"Transf. Seguridad Social","credito_miles_uyu":214616346,"ejecutado_miles_uyu":214616304,"remuneraciones_miles_uyu":null,"grupo":"Otros créditos"},
+    {"id":"24","name":"Diversos Créditos","credito_miles_uyu":192755179,"ejecutado_miles_uyu":192367030,"remuneraciones_miles_uyu":0,"grupo":"Otros créditos"},
+    {"id":"25","name":"ANEP","credito_miles_uyu":117575578,"ejecutado_miles_uyu":114123102,"remuneraciones_miles_uyu":99710170,"grupo":"Organismos del art. 220"},
+    {"id":"26","name":"UDELAR","credito_miles_uyu":28991598,"ejecutado_miles_uyu":28663125,"remuneraciones_miles_uyu":23356660,"grupo":"Organismos del art. 220"},
+    {"id":"27","name":"INAU","credito_miles_uyu":24276120,"ejecutado_miles_uyu":24109097,"remuneraciones_miles_uyu":7180917,"grupo":"Organismos del art. 220"},
+    {"id":"29","name":"ASSE","credito_miles_uyu":72481865,"ejecutado_miles_uyu":71579149,"remuneraciones_miles_uyu":36580001,"grupo":"Organismos del art. 220"},
+    {"id":"31","name":"UTEC","credito_miles_uyu":1850736,"ejecutado_miles_uyu":1838807,"remuneraciones_miles_uyu":1322420,"grupo":"Organismos del art. 220"},
+    {"id":"32","name":"INUMET","credito_miles_uyu":424496,"ejecutado_miles_uyu":411175,"remuneraciones_miles_uyu":317400,"grupo":"Organismos del art. 220"},
+    {"id":"33","name":"Fiscalía Gral. Nación","credito_miles_uyu":2183019,"ejecutado_miles_uyu":2166461,"remuneraciones_miles_uyu":1853315,"grupo":"Organismos del art. 220"},
+    {"id":"34","name":"JUTEP","credito_miles_uyu":71475,"ejecutado_miles_uyu":47450,"remuneraciones_miles_uyu":36153,"grupo":"Organismos del art. 220"},
+    {"id":"35","name":"INISA","credito_miles_uyu":3120398,"ejecutado_miles_uyu":3099536,"remuneraciones_miles_uyu":2549991,"grupo":"Organismos del art. 220"},
+    {"id":"36","name":"Ambiente","credito_miles_uyu":1270771,"ejecutado_miles_uyu":1074488,"remuneraciones_miles_uyu":648418,"grupo":"Administración Central"}
+  ]
+}

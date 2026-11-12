@@ -1,0 +1,74 @@
+{
+  "ingresos": [
+    {"id":"impuestos","concepto":"Impuestos, excluidas las tasas","monto_miles_uyu":723043083,"nivel":"componente","cuadro":25},
+    {"id":"directos","concepto":"Impuestos directos","monto_miles_uyu":287908089,"nivel":"detalle_impuestos","cuadro":24},
+    {"id":"indirectos","concepto":"Impuestos indirectos","monto_miles_uyu":435134994,"nivel":"detalle_impuestos","cuadro":24},
+    {"id":"ventas","concepto":"Ventas, cifra de negocios o valor agregado","monto_miles_uyu":345411101,"nivel":"detalle_indirectos","cuadro":24},
+    {"id":"renta","concepto":"Renta y utilidades","monto_miles_uyu":227069859,"nivel":"detalle_directos","cuadro":24},
+    {"id":"tasas","concepto":"Tasas","monto_miles_uyu":17745775,"nivel":"componente","cuadro":24},
+    {"id":"tributarios","concepto":"Ingresos tributarios, incluidos impuestos y tasas","monto_miles_uyu":740788858,"nivel":"subtotal","cuadro":24},
+    {"id":"no-tributarios","concepto":"Ingresos no tributarios","monto_miles_uyu":65981149,"nivel":"componente","cuadro":24},
+    {"id":"transferencias","concepto":"Transferencias","monto_miles_uyu":39728451,"nivel":"componente","cuadro":24},
+    {"id":"figurativas","concepto":"Contribuciones figurativas","monto_miles_uyu":50787,"nivel":"componente","cuadro":24},
+    {"id":"otros","concepto":"Otros recursos","monto_miles_uyu":958329,"nivel":"componente","cuadro":24},
+    {"id":"total","concepto":"Total de recursos del Presupuesto Nacional","monto_miles_uyu":847507574,"nivel":"total","cuadro":25}
+  ],
+  "area_terrestre_km2": 175016,
+  "departamentos": [
+    {"departamento":"Artigas","poblacion":77377,"area_km2":11928},
+    {"departamento":"Canelones","poblacion":617746,"area_km2":4536},
+    {"departamento":"Cerro Largo","poblacion":90500,"area_km2":13648},
+    {"departamento":"Colonia","poblacion":136002,"area_km2":6106},
+    {"departamento":"Durazno","poblacion":62005,"area_km2":11643},
+    {"departamento":"Flores","poblacion":25988,"area_km2":5144},
+    {"departamento":"Florida","poblacion":70042,"area_km2":10417},
+    {"departamento":"Lavalleja","poblacion":58407,"area_km2":10016},
+    {"departamento":"Maldonado","poblacion":216808,"area_km2":4793},
+    {"departamento":"Montevideo","poblacion":1279954,"area_km2":530},
+    {"departamento":"Paysandú","poblacion":121634,"area_km2":13922},
+    {"departamento":"Río Negro","poblacion":57058,"area_km2":9282},
+    {"departamento":"Rivera","poblacion":109160,"area_km2":9370},
+    {"departamento":"Rocha","poblacion":81014,"area_km2":10551},
+    {"departamento":"Salto","poblacion":136231,"area_km2":14163},
+    {"departamento":"San José","poblacion":120302,"area_km2":4992},
+    {"departamento":"Soriano","poblacion":82988,"area_km2":9008},
+    {"departamento":"Tacuarembó","poblacion":95815,"area_km2":15438},
+    {"departamento":"Treinta y Tres","poblacion":46901,"area_km2":9529}
+  ],
+  "empleo_internacional": [
+    {"pais":"Uruguay","porcentaje":15.7},
+    {"pais":"Costa Rica","porcentaje":12.3},
+    {"pais":"Promedio regional","porcentaje":11.6},
+    {"pais":"Paraguay","porcentaje":10.5},
+    {"pais":"Chile","porcentaje":9.3}
+  ],
+  "escuelas_rurales": {"centros":994,"matricula_primaria_comun":11671},
+  "presion_tributaria_2024": {"uruguay_pct_pib":27.3,"regional_pct_pib":21.7,"ocde_pct_pib":34.1},
+  "fuentes": {
+    "poblacion_departamental": {
+      "nombre":"INE · Población proyectada por departamento",
+      "url":"https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/22-proyecciones-estimaciones-2",
+      "referencia":"Cuadro 2.2.4, proyección al 30 de junio de 2025."
+    },
+    "area_departamental": {
+      "nombre":"INE y SGM · Superficie terrestre",
+      "url":"https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/11-datos-geograficos/114",
+      "referencia":"Cuadro 1.1.4, superficie por departamento."
+    },
+    "empleo_internacional": {
+      "nombre":"OCDE y OIT · Empleo público en la región",
+      "url":"https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/03/government-at-a-glance-latin-america-and-the-caribbean-2024_0d6281fd/4abdba16-en.pdf",
+      "referencia":"Figura 12.1, empleo público como porcentaje del empleo total, 2022."
+    },
+    "presion_tributaria": {
+      "nombre":"OCDE y organismos asociados · Recaudación tributaria comparada",
+      "url":"https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/revenue-statistics-in-latin-america-and-the-caribbean-2026-country-notes_968b866c/uruguay_831129ff/e1438b88-en.pdf",
+      "referencia":"Nota de Uruguay, recaudación como porcentaje del PIB en 2024."
+    },
+    "primaria_rural": {
+      "nombre":"ANEP · Monitor de Educación Inicial y Primaria",
+      "url":"https://www.anep.edu.uy/monitorRepo/Documentos2025/PresEstSitua.pdf",
+      "referencia":"Tablas 1.5 y 1.6, centros y matrícula de primaria común, 2025."
+    }
+  }
+}

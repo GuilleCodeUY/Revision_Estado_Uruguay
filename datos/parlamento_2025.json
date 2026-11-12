@@ -1,0 +1,97 @@
+{
+  "bancas": {"senadores_electos":30,"vicepresidencia":1,"diputados":99},
+  "programas": [
+    {"programa":"221","unidad":"001","concepto":"Vicepresidencia y senadores","remuneraciones_uyu":211626589,"funcionamiento_uyu":35536039,"inversion_uyu":0},
+    {"programa":"222","unidad":"001","concepto":"Secretaría, prosecretaría y funcionarios del Senado","remuneraciones_uyu":1063894512,"funcionamiento_uyu":0,"inversion_uyu":0},
+    {"programa":"223","unidad":"001","concepto":"Funcionamiento e inversiones del Senado","remuneraciones_uyu":0,"funcionamiento_uyu":289871214,"inversion_uyu":9385162},
+    {"programa":"224","unidad":"002","concepto":"Legisladores de la Cámara de Representantes","remuneraciones_uyu":677202346,"funcionamiento_uyu":157298339,"inversion_uyu":0},
+    {"programa":"225","unidad":"002","concepto":"Sueldos y gastos de la Cámara de Representantes","remuneraciones_uyu":1407548279,"funcionamiento_uyu":739237209,"inversion_uyu":17487242},
+    {"programa":"226","unidad":"003","concepto":"Sueldos y gastos de la Comisión Administrativa","remuneraciones_uyu":1688284430,"funcionamiento_uyu":486068632,"inversion_uyu":479510200},
+    {"programa":"227","unidad":"003","concepto":"Comisionado Parlamentario","remuneraciones_uyu":10647212,"funcionamiento_uyu":2429147,"inversion_uyu":0},
+    {"programa":"228","unidad":"003","concepto":"Institución Nacional de Derechos Humanos y Defensoría del Pueblo","remuneraciones_uyu":196731023,"funcionamiento_uyu":27674766,"inversion_uyu":65247421}
+  ],
+  "actividad_diputados": [
+    {"mes":"2025-02","ordinarias":2,"extraordinarias":0,"solemnes_especiales":0,"proyectos_aprobados":2,"comisiones_permanentes":1,"comisiones_especiales":1,"comisiones_preinvestigadoras":0,"asuntos_informados":1,"llamados_a_sala":0},
+    {"mes":"2025-03","ordinarias":4,"extraordinarias":0,"solemnes_especiales":0,"proyectos_aprobados":3,"comisiones_permanentes":19,"comisiones_especiales":0,"comisiones_preinvestigadoras":2,"asuntos_informados":3,"llamados_a_sala":0},
+    {"mes":"2025-04","ordinarias":4,"extraordinarias":2,"solemnes_especiales":0,"proyectos_aprobados":4,"comisiones_permanentes":27,"comisiones_especiales":8,"comisiones_preinvestigadoras":0,"asuntos_informados":5,"llamados_a_sala":0},
+    {"mes":"2025-05","ordinarias":2,"extraordinarias":2,"solemnes_especiales":0,"proyectos_aprobados":3,"comisiones_permanentes":10,"comisiones_especiales":12,"comisiones_preinvestigadoras":0,"asuntos_informados":2,"llamados_a_sala":0},
+    {"mes":"2025-06","ordinarias":4,"extraordinarias":0,"solemnes_especiales":2,"proyectos_aprobados":8,"comisiones_permanentes":31,"comisiones_especiales":16,"comisiones_preinvestigadoras":0,"asuntos_informados":5,"llamados_a_sala":0},
+    {"mes":"2025-07","ordinarias":5,"extraordinarias":1,"solemnes_especiales":0,"proyectos_aprobados":8,"comisiones_permanentes":39,"comisiones_especiales":17,"comisiones_preinvestigadoras":0,"asuntos_informados":16,"llamados_a_sala":0},
+    {"mes":"2025-08","ordinarias":3,"extraordinarias":2,"solemnes_especiales":0,"proyectos_aprobados":8,"comisiones_permanentes":24,"comisiones_especiales":14,"comisiones_preinvestigadoras":2,"asuntos_informados":7,"llamados_a_sala":1},
+    {"mes":"2025-09","ordinarias":2,"extraordinarias":1,"solemnes_especiales":0,"proyectos_aprobados":5,"comisiones_permanentes":37,"comisiones_especiales":10,"comisiones_preinvestigadoras":0,"asuntos_informados":3,"llamados_a_sala":0},
+    {"mes":"2025-10","ordinarias":1,"extraordinarias":1,"solemnes_especiales":7,"proyectos_aprobados":12,"comisiones_permanentes":8,"comisiones_especiales":1,"comisiones_preinvestigadoras":0,"asuntos_informados":1,"llamados_a_sala":0},
+    {"mes":"2025-11","ordinarias":5,"extraordinarias":2,"solemnes_especiales":1,"proyectos_aprobados":16,"comisiones_permanentes":33,"comisiones_especiales":30,"comisiones_preinvestigadoras":0,"asuntos_informados":13,"llamados_a_sala":2},
+    {"mes":"2025-12","ordinarias":2,"extraordinarias":3,"solemnes_especiales":1,"proyectos_aprobados":20,"comisiones_permanentes":23,"comisiones_especiales":11,"comisiones_preinvestigadoras":0,"asuntos_informados":11,"llamados_a_sala":0}
+  ],
+  "partida_secretarias_senado": {
+    "monto_uyu":147255660,
+    "alcance":"Partidas para secretarios de legisladores y de sectores parlamentarios.",
+    "verificacion":"Importe atribuido al balance del Senado por Ámbito. Pendiente de cotejar con el estado original y con la nómina."
+  },
+  "pases_en_comision": {
+    "corte":"principios de setiembre de 2025",
+    "senado_vigentes":136,
+    "senado_en_tramite":36,
+    "diputados_vigentes":292,
+    "diputados_en_tramite":125
+  },
+  "cohorte_cepp": {
+    "periodo":"15 de febrero de 2025 a agosto de 2026",
+    "parlamento_presentados":644,
+    "parlamento_aprobados":16,
+    "ejecutivo_presentados":214,
+    "ejecutivo_aprobados":79
+  },
+  "montevideo": {
+    "deficit_operativo_reportado_millones_uyu":593,
+    "ediles":31,
+    "asesores_octubre_2026":176,
+    "partida_mensual_edil_aprox_uyu":262000,
+    "tcr": {
+      "resolucion":"741/025",
+      "expediente":"2023-17-1-0005336",
+      "monto_uyu":22100544,
+      "concepto":"Ampliación de la inspección de colectores y conexiones de saneamiento.",
+      "estado":"La Intendencia reiteró el gasto. El Tribunal mantuvo la observación por falta de crédito disponible al comprometerlo y dio cuenta a la Junta."
+    }
+  },
+  "pedidos_acceso": {
+    "nota":"Pedidos presentados en el SAIP al amparo de la Ley 18.381. El plazo legal es de 20 días hábiles, prorrogable por otros 20.",
+    "pedidos": [
+      {"id":11483,"unidad":"Cámara de Senadores","fecha_envio":"2026-11-12","vencimiento":"2026-12-10","estado":"esperando","fecha_respuesta":null},
+      {"id":11484,"unidad":"Cámara de Representantes","fecha_envio":"2026-11-12","vencimiento":"2026-12-10","estado":"esperando","fecha_respuesta":null},
+      {"id":11485,"unidad":"Comisión Administrativa del Poder Legislativo","fecha_envio":"2026-11-12","vencimiento":"2026-12-10","estado":"esperando","fecha_respuesta":null}
+    ],
+    "temas": [
+      {"tema":"Equipos por banca","pedidos":[11483,11484],"items":["Secretarios y asesores por banca y sector parlamentario","Costo anual del equipo por banca","Pases en comisión por despacho y organismo de origen"],"hoy":"Hoy solo hay el recuento de prensa de pases en comisión."},
+      {"tema":"Misiones oficiales","pedidos":[11483,11484],"items":["Pasajes, viáticos y seguros por misión","Destino y legislador","Viáticos devueltos"],"hoy":null},
+      {"tema":"Telefonía","pedidos":[11483,11484],"items":["Gasto fijo y móvil total","Gasto por despacho"],"hoy":null},
+      {"tema":"Sueldos","pedidos":[11483,11484],"items":["Escala de remuneraciones 2025 de legisladores y funcionarios por categoría"],"hoy":null},
+      {"tema":"Contratos del Palacio","pedidos":[11485],"items":["Cafetería y restaurante: empresa, canon, plazo y subsidios","Limpieza, vigilancia, telefonía y mantenimiento"],"hoy":null},
+      {"tema":"Comisión Administrativa por dentro","pedidos":[11485],"items":["Programa 226 desglosado por objeto del gasto","Funcionarios por escalafón y pases en comisión"],"hoy":"El programa 226 hoy figura solo como total."}
+    ],
+    "gasto_por_banca": []
+  },
+  "fuentes": {
+    "gasto_legislativo": {
+      "nombre":"CGN · Rendición 2025, Tomo III",
+      "url":"https://www.gub.uy/ministerio-economia-finanzas/sites/ministerio-economia-finanzas/files/documentos/publicaciones/Tomo%20III%20%E2%80%93%20Gastos%20corrientes%20e%20Inversiones.pdf",
+      "referencia":"Págs. 639 a 641, ejecución de los programas 221 a 228 en pesos."
+    },
+    "bancas_diputados": {"nombre":"Constitución · Diputados","url":"https://www.impo.com.uy/bases/constitucion/1967-1967/88","referencia":"99 representantes. Regla para modificar su número."},
+    "bancas_senado": {"nombre":"Constitución · Senado","url":"https://www.impo.com.uy/bases/constitucion/1967-1967/94","referencia":"30 senadores electos e integración de la Vicepresidencia."},
+    "actividad_diputados": {"nombre":"Cámara de Representantes · Balance legislativo","url":"https://documentos.diputados.gub.uy/docs/DAbalanceLegislativo.json","referencia":"Registros de 2025 de la 50.ª Legislatura, agrupados por mes y detalle."},
+    "proyectos_parlamento": {"nombre":"Parlamento · Catálogo de proyectos ingresados","url":"https://catalogodatos.gub.uy/es/dataset/parlamento-del-uruguay-proyectos-entrados-al-parlamento/resource/18455c3e-7caa-4aa4-86f4-487def68c398","referencia":"Recurso de la 50.ª Legislatura para el cotejo de proyectos por origen."},
+    "actividad_cepp": {"nombre":"CEPP · Resultados difundidos por Radio Sarandí","url":"https://www.sarandi690.com.uy/noticias/0i1hBgbRpQYToTzseWGH","referencia":"Corte de la 50.ª Legislatura hasta agosto de 2026."},
+    "secretarias_senado": {"nombre":"Ámbito · Partidas de secretarios del Senado","url":"https://www.ambito.com/uruguay/el-senado-gasto-el-96-todo-el-presupuesto-del-2025-sueldos-y-remuneraciones-politicas-n6301210","referencia":"Referencia secundaria. Pendiente de cotejo con el balance original."},
+    "pases_legislativos": {"nombre":"La Mañana · Pases en comisión","url":"https://www.xn--lamaana-7za.uy/actualidad/pases-en-comision-llegan-a-428-en-el-poder-legislativo-y-hay-161-en-tramite/","referencia":"Recuento publicado el 1 de octubre de 2025 sobre el corte de comienzos de setiembre."},
+    "asistencia_camaras": {"nombre":"Constitución · Inasistencias","url":"https://www.impo.com.uy/bases/constitucion/1967-1967/117","referencia":"Descuentos por faltas injustificadas de acuerdo con el reglamento de cada cámara."},
+    "control_gasto": {"nombre":"Constitución · Tribunal de Cuentas","url":"https://www.impo.com.uy/bases/constitucion/1967-1967/211","referencia":"Control financiero y observaciones de legalidad."},
+    "balance_montevideo": {"nombre":"Intendencia de Montevideo · Balance 2025","url":"https://montevideo.gub.uy/transparencia/presupuesto-quinquenal-y-ejecucion-presupuestal/balance-2025","referencia":"Documentación del ejercicio."},
+    "resultado_montevideo": {"nombre":"Intendencia de Montevideo · Resultado operativo 2025","url":"https://montevideo.gub.uy/noticias/un-ano-de-gestion-para-un-montevideo-mas-nuestro","referencia":"Déficit operativo comunicado por la Intendencia."},
+    "asesores_junta": {"nombre":"El Observador · Asesores de la Junta de Montevideo","url":"https://www.elobservador.com.uy/nacional/uno-uno-los-176-asesores-los-ediles-montevideo-hay-padres-hermanos-e-hijos-parejas-n6061387","referencia":"Relevamiento de octubre de 2026 basado en acceso a información pública."},
+    "tcr_montevideo": {"nombre":"Tribunal de Cuentas · Resolución 741/025","url":"https://www.impo.com.uy/bases/resoluciones-contrataciones-convenios-tcr-nd/741-2025","referencia":"Saneamiento de Montevideo. Reiterada y mantenida."},
+    "ley_acceso": {"nombre":"IMPO · Ley 18.381","url":"https://www.impo.com.uy/bases/leyes/18381-2008","referencia":"Derecho de acceso a la información pública y plazos de respuesta."},
+    "saip": {"nombre":"SAIP · Solicitudes de acceso","url":"https://solicitudes.gub.uy/","referencia":"Sistema donde se presentaron los pedidos y se publican las respuestas."}
+  }
+}

@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revisión del Estado y Gasto Público · Uruguay</title>
+  <style>
+    :root{--bg:#f7f6f2;--paper:#fff;--ink:#142a39;--muted:#4a6070;--line:#d8e1e4;--blue:#174c72;--teal:#266b60;--soft:#e9f1f2}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.55 Inter,system-ui,sans-serif}
+    a{color:var(--blue);text-underline-offset:.18em}button,input,select,textarea{font:inherit}button,a{touch-action:manipulation}
+    :focus-visible{outline:3px solid #267fbc;outline-offset:3px}
+    .wrap{width:min(1120px,calc(100% - 2rem));margin:auto}
+    .portada{background:#102432;color:#fff;padding:0 0 1.65rem}
+    .cabecera{display:flex;justify-content:space-between;align-items:center;gap:.55rem 1rem;flex-wrap:wrap;padding:.8rem 0;border-bottom:1px solid #53626a;font-size:.88rem}
+    .cabecera strong{font-weight:700}.cabecera span{color:#e4edee}
+    .portada h1{max-width:22ch;margin:clamp(1rem,3vw,2.1rem) 0 1.15rem;font-size:clamp(2.1rem,6vw,4.7rem);font-weight:850;letter-spacing:-.06em;line-height:1}
+    .titulares{display:grid;grid-template-columns:1.06fr 1fr;gap:.75rem;margin:0}
+    .titular{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:clamp(.9rem,2.25vw,1.55rem);background:#f6f1e7;color:#102432;border-radius:.25rem}
+    .titular-ahorro{background:#ffd752}.titular h2{font-size:clamp(1rem,2.4vw,1.32rem);line-height:1.2;letter-spacing:-.02em;margin:0}
+    .titular .importe{margin:.33rem 0 .42rem;font-size:clamp(2.08rem,5vw,4.25rem);font-weight:850;line-height:1;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+    .importe span:first-child{white-space:nowrap}.importe span:last-child{display:block;margin:.35rem 0 .1rem;font-size:clamp(.98rem,2vw,1.25rem);line-height:1.3;letter-spacing:0;font-weight:750}
+    .titular p{margin:.2rem 0 .85rem;max-width:52ch;font-size:.93rem;line-height:1.4}
+    .titular a{display:inline-flex;align-items:center;gap:.45rem;margin-top:auto;min-height:2.25rem;color:inherit;font-weight:750;text-decoration-thickness:.08em}
+    .titular a:hover,.dato-rapido:hover .dato-etiqueta{text-decoration:underline;text-underline-offset:.2em}
+    .datos-rapidos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem 1rem;margin-top:1.15rem}
+    .dato-rapido{display:flex;flex-direction:column;gap:.12rem;justify-content:center;border-top:1px solid #53626a;padding:.6rem 0 0;color:#fff;text-decoration:none}
+    .dato-valor{font-size:clamp(1.03rem,2.3vw,1.37rem);line-height:1.25;font-weight:800;font-variant-numeric:tabular-nums}
+    .dato-etiqueta{font-size:.82rem;line-height:1.3;color:#e4edee}
+    .portada :focus-visible{outline-color:#f5f8fa}.titular :focus-visible{outline-color:#102432}
+    .indice{background:var(--paper);border-bottom:1px solid var(--line)}
+    .indice nav{display:flex;gap:.05rem 1rem;flex-wrap:wrap;padding:.45rem 0}
+    .indice a{display:inline-flex;align-items:center;min-height:2.25rem;font-size:.9rem;font-weight:650}
+    main{padding:1.5rem 0 3rem}main section{margin:0 0 2.6rem;scroll-margin-top:1rem}h2{font-size:clamp(1.6rem,4vw,2.1rem);letter-spacing:-.03em;margin:0 0 .35rem}h3{margin:.35rem 0 .45rem}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem;margin:0}
+    .card,.panel{background:var(--paper);border:1px solid var(--line);border-radius:.7rem;padding:1rem 1.15rem}
+    dt{font-size:.93rem;color:var(--muted)}dd{margin:0;font-variant-numeric:tabular-nums}
+    .card dd{font-size:clamp(1.35rem,3vw,2.3rem);font-weight:750;letter-spacing:-.04em;overflow-wrap:anywhere}
+    .section-head,.filters{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:.75rem;margin-bottom:.8rem}
+    .filters{justify-content:start}.filters input{width:min(100%,22rem)}.muted{color:var(--muted);font-size:.92rem}
+    label{display:block;font-weight:650}input:not([type=file]),select,textarea{display:block;border:1px solid #8fa6b0;border-radius:.4rem;padding:.45rem .6rem;background:#fff;color:var(--ink);max-width:100%;min-height:2.6rem}
+    textarea{width:100%;resize:vertical}button,.button{display:inline-block;border:1px solid var(--blue);border-radius:.4rem;background:#fff;color:var(--blue);padding:.42rem .72rem;cursor:pointer;text-decoration:none}
+    .primary{background:var(--blue);color:#fff}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:.6rem;background:#fff}
+    table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}caption{text-align:left;padding:.65rem .85rem;color:var(--muted)}
+    th,td{padding:.55rem .78rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}thead{background:var(--soft);line-height:1.25}tbody tr:last-child>*{border-bottom:0}
+    tbody tr:nth-child(even){background:#f9fbfb}.number{text-align:right}.nowrap{white-space:nowrap}.good{color:var(--teal);font-weight:700}.gap{color:#813619;font-weight:700}
+    td.number{white-space:nowrap}
+    .tabla-empleo{min-inline-size:62rem;table-layout:fixed}
+    .tabla-empleo col:nth-child(1){width:24%}
+    .tabla-empleo col:nth-child(2),.tabla-empleo col:nth-child(3),.tabla-empleo col:nth-child(9){width:7%}
+    .tabla-empleo col:nth-child(4){width:11%}
+    .tabla-empleo col:nth-child(5){width:8%}
+    .tabla-empleo col:nth-child(6){width:6%}
+    .tabla-empleo col:nth-child(7),.tabla-empleo col:nth-child(8){width:15%}
+    .tabla-empleo th,.tabla-empleo td{padding:.55rem .5rem;font-size:.92rem}
+    .tabla-empleo tbody th{overflow-wrap:anywhere}
+    .tabla-empleo td:last-child{padding-inline:.3rem}
+    .tabla-empleo td:last-child button{padding:.32rem .35rem;max-inline-size:100%;overflow-wrap:anywhere}
+    .ayuda-tabla-empleo{display:none;margin:.45rem 0}
+    .pedidos{margin-top:1.4rem;border-left:4px solid var(--blue);padding-left:1rem}
+    .pedido h4,.tema h4{margin:0 0 .2rem;font-size:1rem}.pedido .numero{font-weight:800;font-size:1.1rem}.pedido p{margin:.2rem 0 .45rem}
+    .estado{display:inline-block;font-size:.78rem;font-weight:700;line-height:1.3;padding:.12rem .55rem;border-radius:1rem;border:1px solid #e7c75a;background:#fff4d1;color:#5c4500}
+    .estado-respondido{border-color:#9fcfc2;background:#e3f2ee;color:var(--teal)}.estado-sin_respuesta{border-color:#e3a58c;background:#fbe9e2;color:#813619}
+    .temas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;margin:.9rem 0}
+    .tema{background:var(--paper);border:1px solid var(--line);border-radius:.7rem;padding:.9rem 1.15rem}
+    .tema h4{display:flex;justify-content:space-between;align-items:start;gap:.5rem;flex-wrap:wrap}.tema ul{margin:.3rem 0;padding-left:1.1rem;font-size:.93rem}
+    td.pendiente{color:#7a6420;font-style:italic}
+    @media(max-width:64rem){
+      .ayuda-tabla-empleo{display:block}
+      .tabla-empleo-contenedor{max-block-size:65vh}
+      .tabla-empleo{border-collapse:separate;border-spacing:0}
+      .tabla-empleo thead th{position:sticky;top:0;z-index:2;background:var(--soft)}
+      .tabla-empleo tbody th{position:sticky;left:0;z-index:1;background:#fff}
+      .tabla-empleo tbody tr:nth-child(even) th{background:#f9fbfb}
+      .tabla-empleo thead th:first-child{left:0;z-index:3}
+      .tabla-empleo th:first-child{box-shadow:1px 0 var(--line)}
+    }
+    .sources{display:flex;flex-wrap:wrap;gap:.3rem 1rem}.actions{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.65rem}
+    .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:.9rem 0 1.15rem}
+    .panel p{margin:.45rem 0}.panel dt{margin-top:.35rem}.panel dd{font-weight:720}.panel a{overflow-wrap:anywhere}
+    form{max-width:52rem}form label{margin:.65rem 0 .2rem}form input:not([type=file]),form select{width:100%}
+    [hidden]{display:none!important}footer{border-top:1px solid var(--line);padding:1rem 0 1.6rem;color:var(--muted)}
+    @media(max-width:680px){
+      .cards,.split,.titulares,.datos-rapidos,.temas{grid-template-columns:1fr}.pedidos{padding-left:.75rem}.filters label{width:100%}.filters input{width:100%}
+      .table-wrap:not(.tabla-empleo-contenedor) td.number{white-space:normal}
+      .tabla-empleo col:nth-child(1){width:14%}
+      .tabla-empleo col:nth-child(2),.tabla-empleo col:nth-child(3),.tabla-empleo col:nth-child(9){width:8%}
+      .tabla-empleo col:nth-child(4){width:13%}
+      .tabla-empleo col:nth-child(5){width:10%}
+      .tabla-empleo col:nth-child(6){width:7%}
+      .tabla-empleo col:nth-child(7),.tabla-empleo col:nth-child(8){width:16%}
+      .portada{padding-bottom:1.1rem}.portada h1{margin-bottom:.85rem}.titular p{margin-bottom:.35rem}
+      .datos-rapidos{gap:0;margin-top:.85rem}
+      .dato-rapido{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:.5rem;min-height:2.8rem;padding:.35rem 0}
+      .indice nav{gap:.05rem .85rem}
+    }
+  </style>
+</head>
+<body>
+  <header class="portada">
+    <div class="wrap">
+      <div class="cabecera"><strong>Revisión del Estado y Gasto Público</strong><span>Uruguay · 2025</span></div>
+      <h1>¿Cuánto nos cuesta el Estado?</h1>
+      <div class="titulares">
+        <article class="titular" aria-labelledby="titulo-gasto-portada">
+          <h2 id="titulo-gasto-portada">Lo que se gastó</h2>
+          <p class="importe"><span id="portada-gasto"></span><span>millones de pesos</span></p>
+          <p>Ejecutados por el Presupuesto Nacional. Equivalen a <strong id="portada-habitante"></strong> por habitante.</p>
+          <a href="#gasto">Ver en qué se gastó <span aria-hidden="true">↓</span></a>
+        </article>
+        <article class="titular titular-ahorro" aria-labelledby="titulo-ahorro-portada">
+          <h2 id="titulo-ahorro-portada">Lo que se podría ahorrar</h2>
+          <p class="importe"><span id="portada-ahorro"></span><span>millones de pesos al año</span></p>
+          <p>Estimación bruta en telefonía, electricidad, vigilancia y limpieza, antes de los costos de implementación.</p>
+          <a href="#ahorro">Ver cómo se calculó <span aria-hidden="true">↓</span></a>
+        </article>
+      </div>
+      <div class="datos-rapidos">
+        <a class="dato-rapido" href="#ingresos"><span class="dato-valor" id="portada-impuestos"></span><span class="dato-etiqueta">Recaudación por impuestos</span></a>
+        <a class="dato-rapido" href="#empleo"><span class="dato-valor" id="portada-empleo"></span><span class="dato-etiqueta">Personas con vínculo laboral estatal</span></a>
+        <a class="dato-rapido" href="#parlamento"><span class="dato-valor" id="portada-parlamento"></span><span class="dato-etiqueta">Gasto del Poder Legislativo</span></a>
+      </div>
+    </div>
+  </header>
+  <div class="indice">
+    <nav class="wrap" aria-label="Desglose y fuentes">
+      <a href="#gasto">Gasto</a><a href="#ahorro">Ahorro</a><a href="#ingresos">Impuestos</a><a href="#empleo">Empleo y cargos</a><a href="#territorio">Territorio</a><a href="#parlamento">Parlamento</a><a href="#montevideo">Montevideo</a><a href="#inisa">Caso INISA</a><a href="#control">Tribunal</a><a href="#balance">Escenarios</a><a href="#aportes">Aportes</a><a href="#metodo">Método</a>
+    </nav>
+  </div>
+  <main class="wrap">
+    <section aria-labelledby="gasto">
+      <h2 id="gasto">Presupuesto Nacional</h2>
+      <p class="muted">Cobertura de la Rendición de Cuentas. La consolidación con intendencias, empresas públicas y seguridad social está pendiente.</p>
+      <dl id="totales" class="cards"></dl>
+      <p id="fuentes-gasto" class="sources muted"></p>
+      <p id="fiscal" class="muted"></p>
+      <div class="section-head">
+        <h3>Ejecución por inciso y rubro</h3>
+        <a class="button" href="ejecucion_2025.csv" download>Descargar CSV</a>
+      </div>
+      <div class="filters">
+        <label for="buscar">Buscar inciso<input id="buscar" type="search" placeholder="INISA, ASSE, 04…"></label>
+        <label for="grupo">Grupo<select id="grupo"><option value="">Todos</option></select></label>
+        <label for="orden">Orden<select id="orden"><option value="gasto">Mayor gasto</option><option value="remuneraciones">Mayores remuneraciones</option><option value="inciso">Código de inciso</option></select></label>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de ejecución">
+        <table>
+          <caption id="conteo" aria-live="polite"></caption>
+          <thead><tr><th scope="col">Inciso</th><th scope="col">Organismo o rubro</th><th scope="col" class="number">Crédito</th><th scope="col" class="number">Ejecutado</th><th scope="col" class="number">Remuneraciones</th><th scope="col" class="number">Ejecución</th><th scope="col">Aportes</th></tr></thead>
+          <tbody id="filas"></tbody>
+        </table>
+      </div>
+      <p class="muted">Remuneraciones incluye retribuciones, cargas legales y beneficios sociales según la CGN. El guion identifica rubros sin fila en el cuadro de remuneraciones.</p>
+    </section>
+    <section aria-labelledby="ingresos">
+      <div class="section-head">
+        <h2 id="ingresos">Impuestos y otros ingresos</h2>
+        <a class="button" href="ingresos_presupuestales_2025.csv" download>Descargar ingresos</a>
+      </div>
+      <dl id="totales-ingresos" class="cards"></dl>
+      <p class="muted">Recursos del Presupuesto Nacional en 2025. Los aportes jubilatorios y los tributos departamentales requieren sus propios cuadros para una consolidación de todo el Estado.</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de ingresos">
+        <table>
+          <caption>Ingresos y principales componentes. Los detalles ya integran su subtotal.</caption>
+          <thead><tr><th scope="col">Concepto</th><th scope="col">Nivel</th><th scope="col" class="number">Importe en pesos</th><th scope="col" class="number">Parte de los recursos</th><th scope="col">Fuente</th></tr></thead>
+          <tbody id="filas-ingresos"></tbody>
+        </table>
+      </div>
+      <p id="fuente-presion"></p>
+    </section>
+    <section aria-labelledby="empleo">
+      <h2 id="empleo">Empleo público y cargos políticos</h2>
+      <p>Servicio Civil distingue personas únicas en todo el Estado y vínculos laborales al 31 de diciembre. Una persona puede aparecer en varios organismos.</p>
+      <dl id="totales-empleo" class="cards"></dl>
+      <p id="fuente-empleo" class="sources muted"></p>
+      <div class="section-head">
+        <h3>Dotación y costo por organismo</h3>
+        <a class="button" href="dotacion_por_organismo_2025.csv" download>Descargar dotación</a>
+      </div>
+      <div class="filters">
+        <label for="buscar-empleo">Buscar organismo<input id="buscar-empleo" type="search" placeholder="ANEP, Montevideo, 35…"></label>
+        <label for="grupo-empleo">Grupo<select id="grupo-empleo"><option value="">Todos</option></select></label>
+      </div>
+      <p class="ayuda-tabla-empleo muted" id="ayuda-tabla-empleo">Desplazá la tabla hacia los lados para ver todas las columnas.</p>
+      <div class="table-wrap tabla-empleo-contenedor" tabindex="0" role="region" aria-label="Tabla de dotación" aria-describedby="ayuda-tabla-empleo">
+        <table class="tabla-empleo">
+          <caption id="conteo-empleo" aria-live="polite"></caption>
+          <colgroup><col><col><col><col><col><col><col><col><col></colgroup>
+          <thead><tr><th scope="col">Organismo</th><th scope="col" class="number">Personas</th><th scope="col" class="number">Vínculos</th><th scope="col" class="number">Con calidad de funcionario</th><th scope="col" class="number">C administrativo</th><th scope="col" class="number">P y Q</th><th scope="col" class="number">Gasto CGN</th><th scope="col" class="number">Remuneraciones CGN</th><th scope="col">Aportes</th></tr></thead>
+          <tbody id="filas-empleo"></tbody>
+        </table>
+      </div>
+      <p class="muted">El cruce CGN cubre el Presupuesto Nacional. Un guion marca el gasto fuera de esa cobertura. Los conteos de personas por organismo se superponen. P y Q son los escalafones político y de particular confianza.</p>
+      <p class="sources">
+        <a href="empleo_unidades_2025.csv" download>Unidades ejecutoras</a>
+        <a href="empleo_territorios_2025.csv" download>Lugar de trabajo</a>
+        <a href="empleo_municipios_2025.csv" download>Dependencias municipales</a>
+        <a href="empleo_entidades_relacionadas_2025.csv" download>Entidades relacionadas</a>
+      </p>
+      <p id="politicos-resumen"></p>
+      <p class="sources">
+        <a href="balances_institucionales_2025.csv" download>Balances institucionales</a>
+      </p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de cargos políticos">
+        <table>
+          <caption>Primer relevamiento de plazas previstas por norma</caption>
+          <thead><tr><th scope="col">Cargo</th><th scope="col">Tipo</th><th scope="col" class="number">Plazas</th><th scope="col">Costo ejecutado</th><th scope="col">Fuente</th></tr></thead>
+          <tbody id="cargos"></tbody>
+        </table>
+      </div>
+      <p class="muted">Pendiente el cotejo de ocupación efectiva, períodos y costo por cargo.</p>
+      <div class="section-head">
+        <h3>Costos de conducción identificados</h3>
+        <a class="button" href="costos_de_conduccion_identificados_2025.csv" download>Descargar costos</a>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Costos de conducción identificados">
+        <table>
+          <caption>Registros parciales de 2025. Montos en pesos uruguayos.</caption>
+          <thead><tr><th scope="col">Organismo</th><th scope="col">Concepto</th><th scope="col" class="number">Importe</th><th scope="col">Criterio</th><th scope="col">Fuente</th><th scope="col">Aportes</th></tr></thead>
+          <tbody id="costos-conduccion"></tbody>
+        </table>
+      </div>
+    </section>
+    <section aria-labelledby="territorio">
+      <div class="section-head">
+        <h2 id="territorio">Empleo, población y territorio</h2>
+        <a class="button" href="empleo_y_poblacion_departamental_2025.csv" download>Descargar cruce departamental</a>
+      </div>
+      <p id="resumen-territorial"></p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Cruce departamental de empleo y población">
+        <table>
+          <caption>Vínculos por lugar de trabajo y población residente, 2025</caption>
+          <thead><tr><th scope="col">Departamento</th><th scope="col" class="number">Habitantes</th><th scope="col" class="number">Superficie terrestre (km²)</th><th scope="col" class="number">Habitantes por km²</th><th scope="col" class="number">Vínculos</th><th scope="col" class="number">Vínculos por mil habitantes</th></tr></thead>
+          <tbody id="filas-territoriales"></tbody>
+        </table>
+      </div>
+      <p id="fuentes-territoriales" class="sources"></p>
+      <article class="panel">
+        <h3>Qué comparaciones ayudan a estimar la dotación</h3>
+        <p id="empleo-comparado"></p>
+        <p id="cobertura-rural"></p>
+        <p>En escuelas, policlínicas y guardias, la cobertura depende de distancias, horarios y demanda. En compras, liquidaciones y trámites internos se puede comparar volumen, costo y tiempo de resolución por oficina para identificar tareas que se puedan compartir.</p>
+        <p id="fuentes-cobertura" class="sources"></p>
+      </article>
+    </section>
+    <section aria-labelledby="parlamento">
+      <h2 id="parlamento">Parlamento · Gasto, personal y actividad</h2>
+      <dl class="cards" id="cifras-parlamento"></dl>
+      <p id="bancas-parlamento"></p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Gasto y vínculos por unidad parlamentaria">
+        <table>
+          <caption>Vínculos al cierre de 2025 y gasto ejecutado en el año</caption>
+          <thead><tr><th scope="col">Unidad</th><th scope="col" class="number">Vínculos</th><th scope="col" class="number">Gasto ejecutado</th></tr></thead>
+          <tbody id="unidades-parlamento"></tbody>
+        </table>
+      </div>
+      <p id="partidas-parlamento"></p>
+      <p id="pases-parlamento"></p>
+      <p class="muted">El total de Servicio Civil incluye varias funciones. Para contar los equipos de cada despacho hay que cruzar contratos, secretarías de bancada y pases en comisión por persona y mes.</p>
+      <p id="fuentes-parlamento" class="sources"></p>
+      <p><a href="gasto_parlamento_2025.csv" download>Descargar gasto por programa</a></p>
+      <div class="pedidos" aria-labelledby="pedidos-parlamento">
+        <h3 id="pedidos-parlamento">Lo que pedimos y todavía no se sabe</h3>
+        <p class="muted">El presupuesto muestra totales por programa, pero no cuánto gasta cada banca. Lo pedimos por la Ley 18.381 de acceso a la información pública. Cuando lleguen las respuestas, los datos se cargan acá.</p>
+        <div class="cards" id="pedidos-estado"></div>
+        <p class="muted" id="pedidos-nota"></p>
+        <h3 id="gasto-banca">Gasto por banca</h3>
+        <div class="table-wrap" tabindex="0" role="region" aria-labelledby="gasto-banca">
+          <table>
+            <caption id="gasto-banca-fuente"></caption>
+            <thead><tr><th scope="col">Banca o despacho</th><th scope="col">Cámara</th><th scope="col" class="number">Secretaría</th><th scope="col" class="number">Prensa</th><th scope="col" class="number">Celular</th><th scope="col" class="number">Combustible</th><th scope="col" class="number">Total</th></tr></thead>
+            <tbody id="gasto-banca-filas"></tbody>
+          </table>
+        </div>
+        <div class="temas" id="pedidos-temas"></div>
+        <p id="fuentes-pedidos" class="sources"></p>
+        <p><a href="pedidos_acceso_parlamento.csv" download>Descargar seguimiento de pedidos</a></p>
+      </div>
+      <article class="panel" aria-labelledby="actividad-legislativa">
+        <h3 id="actividad-legislativa">Actividad y control</h3>
+        <p id="actividad-parlamento"></p>
+        <p id="origen-proyectos"></p>
+        <p>Para evaluar el trabajo se pueden publicar asistencias y descuentos, avance de cada proyecto, informes de comisión y respuestas a los pedidos de informes. El Tribunal de Cuentas controla el gasto. Cada cámara aplica su reglamento y los descuentos por faltas injustificadas.</p>
+        <p id="fuentes-actividad" class="sources"></p>
+        <p><a href="actividad_diputados_2025.csv" download>Descargar actividad mensual de Diputados</a></p>
+      </article>
+    </section>
+    <section aria-labelledby="montevideo">
+      <h2 id="montevideo">Montevideo · Intendencia y Junta Departamental</h2>
+      <dl class="cards" id="cifras-montevideo"></dl>
+      <p id="asesores-montevideo"></p>
+      <p id="control-montevideo"></p>
+      <p id="fuentes-montevideo" class="sources"></p>
+    </section>
+    <section aria-labelledby="inisa">
+      <h2 id="inisa">INISA · Caso piloto</h2>
+      <p>El inciso 35 permite seguir la ejecución, las metas institucionales y un expediente observado por el Tribunal de Cuentas.</p>
+      <div class="split">
+        <article class="panel" aria-labelledby="inisa-gasto"><h3 id="inisa-gasto">Gasto del organismo</h3><dl id="inisa-cifras"></dl><p id="fuente-inisa" class="sources muted"></p></article>
+        <article class="panel" aria-labelledby="tribunal"><h3 id="tribunal">Observación del Tribunal</h3><div id="caso"></div></article>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de metas y resultados de INISA">
+        <table>
+          <caption>Metas y resultados informados por el organismo</caption>
+          <thead><tr><th scope="col">Indicador</th><th scope="col" class="number">Meta</th><th scope="col" class="number">Valor</th><th scope="col">Resultado</th><th scope="col">Fuente</th></tr></thead>
+          <tbody id="indicadores"></tbody>
+        </table>
+      </div>
+      <p class="muted">Para evaluar productividad y dotación faltan horas trabajadas, volumen atendido durante el año y costos por modalidad de servicio.</p>
+    </section>
+    <section aria-labelledby="control">
+      <div class="section-head">
+        <h2 id="control">Observaciones del Tribunal de Cuentas</h2>
+        <a class="button" href="tribunal_muestra_2025.csv" download>Descargar muestra</a>
+      </div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Muestra de observaciones del Tribunal">
+        <table>
+          <caption>Cuatro expedientes de 2025. Los montos tienen bases de cálculo distintas.</caption>
+          <thead><tr><th scope="col">Resolución</th><th scope="col">Organismo</th><th scope="col">Concepto y motivo</th><th scope="col" class="number">Monto involucrado</th><th scope="col">Estado documentado</th></tr></thead>
+          <tbody id="casos-tcr"></tbody>
+        </table>
+      </div>
+      <p class="muted">Los importes de esta tabla quedan fuera de los escenarios de ahorro. El seguimiento de cada expediente requiere consultar actuaciones posteriores.</p>
+    </section>
+    <section aria-labelledby="ahorro">
+      <h2 id="ahorro">Dónde se podría ahorrar</h2>
+      <p>Escenarios anuales en cuatro rubros de gasto ejecutado. El importe bruto surge de multiplicar el gasto de 2025 por la proporción que se supone revisable y por la reducción supuesta.</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Escenarios de ahorro bruto anual">
+        <table>
+          <caption>Supuestos de la auditoría. Montos en pesos uruguayos.</caption>
+          <thead><tr><th scope="col">Rubro</th><th scope="col" class="number">Base 2025</th><th scope="col" class="number">Cobertura supuesta</th><th scope="col" class="number">Bajo</th><th scope="col" class="number">Intermedio</th><th scope="col" class="number">Alto</th></tr></thead>
+          <tbody id="escenarios"></tbody>
+        </table>
+      </div>
+      <p class="muted">Para confirmar el ahorro fiscal, hacen falta consumos, contratos elegibles, un piloto con calidad de servicio medida y el costo de implementarlo.</p>
+      <article class="panel" aria-labelledby="titulo-bps">
+        <h3 id="titulo-bps">BPS · Tiempo de atención en dos trámites</h3>
+        <p id="bps-atencion"></p>
+        <p class="muted">El cálculo aplica la diferencia de tiempo a los trámites informados. Para dimensionar un equipo hacen falta la carga mensual, las tareas posteriores, las horas productivas y la cobertura. El efecto sobre la nómina queda por verificar.</p>
+        <p id="bps-fuente" class="sources"></p>
+        <div class="actions">
+          <button class="button" type="button" id="simular-bps">Simular con estos tiempos</button>
+          <button class="button" type="button" id="corregir-bps">Aportar una corrección</button>
+        </div>
+      </article>
+      <details class="panel" id="simulador-dotacion">
+        <summary>Calcular dotación por proceso</summary>
+        <p id="supuestos-dotacion">Ejemplo editable de un trámite. Sustituí los supuestos por datos de la oficina para usar el cálculo.</p>
+        <form id="calculo-dotacion">
+          <label for="volumen">Trámites al año</label><input id="volumen" type="number" min="0" max="1000000000" value="120000" required>
+          <label for="min-actual">Minutos efectivos por trámite hoy</label><input id="min-actual" type="number" min="0" max="10000" step="any" value="12" required>
+          <label for="min-propuesto">Minutos efectivos por trámite con el cambio</label><input id="min-propuesto" type="number" min="0" max="10000" step="any" value="9" required>
+          <label for="horas-utiles">Horas productivas por puesto al año</label><input id="horas-utiles" type="number" min="1" max="8760" step="any" value="1550" required>
+          <label for="minimo">Puestos mínimos por turnos, cobertura o norma</label><input id="minimo" type="number" min="0" max="1000000" value="0" required>
+          <div class="actions"><button class="primary" type="submit">Calcular</button></div>
+          <p id="resultado-dotacion" role="status" aria-live="polite"></p>
+        </form>
+      </details>
+    </section>
+    <section aria-labelledby="balance">
+      <h2 id="balance">Cuánto quedarían costando los cuatro rubros</h2>
+      <p id="gasto-rubros-modelado"></p>
+      <p>El rango corresponde al ahorro bruto anual hipotético de cuatro rubros. Para estimar el ahorro neto se deben verificar precios y consumos comparables, conservar la calidad del servicio y descontar los costos de implementación y operación adicional.</p>
+      <p>La plantilla necesaria y el desperdicio total del Estado quedan pendientes de cuantificar. El cruce territorial orienta qué servicios comparar. El cálculo de dotación se hace con horas, demanda y cobertura por servicio.</p>
+      <p><a href="../Analisis_2025.md">Leer el resumen y las propuestas</a></p>
+    </section>
+    <section aria-labelledby="aportes">
+      <h2 id="aportes" tabindex="-1">Opiniones y correcciones</h2>
+      <p>En este piloto, el aporte se descarga como archivo local con la ficha, el texto y la evidencia que adjuntes.</p>
+      <form id="aporte" class="panel">
+        <label for="ficha">Ficha</label><select id="ficha" required></select>
+        <label for="tipo">Tipo de aporte</label><select id="tipo"><option value="opinion">Opinión</option><option value="correccion">Propuesta de corrección</option></select>
+        <label for="mensaje">Tu aporte</label><textarea id="mensaje" rows="4" maxlength="2500" required></textarea>
+        <div id="evidencia" hidden>
+          <label for="enlace">Enlace a la fuente</label><input id="enlace" type="url" placeholder="https://…">
+          <label for="archivo">Adjuntar evidencia</label><input id="archivo" type="file" accept=".pdf,.csv,.txt,.png,.jpg,.jpeg,.xlsx">
+          <p class="muted">Para una corrección, agregá un enlace o un archivo de hasta 4 MB.</p>
+        </div>
+        <div class="actions"><button id="descargar" class="primary" type="submit">Descargar aporte</button></div>
+        <p id="estado" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section aria-labelledby="metodo">
+      <h2 id="metodo">Cómo se hizo el corte</h2>
+      <p>La tabla usa la columna de ejecución total del cuadro 27 y las remuneraciones del cuadro 28. Se conserva la redistribución del inciso 24 que publica la CGN. Los totales oficiales pueden diferir de la suma de filas por redondeo.</p>
+      <p>El gasto por habitante se calcula como gasto ejecutado del Presupuesto Nacional dividido por la población proyectada por el INE al 30 de junio. Es un promedio contable.</p>
+      <p>El monto observado por el Tribunal y el perjuicio económico requieren pruebas diferentes. Una corrección aceptada en la versión pública conservará la versión previa y el respaldo del cambio.</p>
+      <ul id="fuentes"></ul>
+    </section>
+  </main>
+  <footer><div class="wrap">Revisión del Estado y Gasto Público · Corte local del ejercicio 2025</div></footer>
+  <script id="datos" type="application/json"><!-- DATOS_2025 --></script>
+  <script>
+    "use strict";
+    const datos = JSON.parse(document.getElementById("datos").textContent);
+    const el = id => document.getElementById(id);
+    const format = new Intl.NumberFormat("es-UY", { maximumFractionDigits: 2 });
+    const number = value => value === null ? "—" : format.format(value);
+    const pesos = value => "$ " + number(value);
+    const money = miles => miles === null ? "—" : pesos(miles * 1000);
+    const percent = value => number(value) + " %";
+    const millions = value => number(Math.round(value / 1_000_000));
+    const lookup = value => value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+    function node(tag, text, className) {
+      const element = document.createElement(tag);
+      if (text !== undefined) element.textContent = text;
+      if (className) element.className = className;
+      return element;
+    }
+    function source(id, label, page) {
+      const item = datos.fuentes[id];
+      const link = node("a", label || item.nombre);
+      link.href = page ? item.url + "#page=" + page : item.url;
+      return link;
+    }
+    function addRow(body, values) {
+      const row = node("tr");
+      values.forEach((value, index) => {
+        const cell = node(index === 0 ? "th" : "td");
+        if (index === 0) cell.scope = "row";
+        if (value instanceof HTMLElement) cell.append(value);
+        else cell.textContent = value;
+        row.append(cell);
+      });
+      body.append(row);
+      return row;
+    }
+    function card(title, value) {
+      const box = node("div", undefined, "card");
+      box.append(node("dt", title), node("dd", value));
+      return box;
+    }
+    const spentPerPerson = Math.round(datos.totales.ejecutado_miles_uyu * 1000 / datos.poblacion);
+    el("portada-gasto").textContent = "$ " + millions(datos.totales.ejecutado_miles_uyu * 1000);
+    el("portada-habitante").textContent = pesos(spentPerPerson);
+    el("totales").append(
+      card("Gasto ejecutado", money(datos.totales.ejecutado_miles_uyu)),
+      card("Remuneraciones", money(datos.totales.remuneraciones_miles_uyu)),
+      card("Gasto por habitante", pesos(spentPerPerson))
+    );
+    el("fuentes-gasto").append(source("rendicion", "Cuadro de gasto · CGN", 59), source("rendicion", "Cuadro de remuneraciones · CGN", 60), source("ine"));
+    const fiscal = datos.estructura_gasto.fiscal_gc_bps;
+    el("fiscal").append("En el perímetro Gobierno Central–BPS, los egresos primarios equivalieron al " +
+      percent(fiscal.egresos_primarios_pct_pib) + " del PIB y los intereses al " + percent(fiscal.intereses_pct_pib) + ". ",
+      source("fiscal", "Cierre fiscal del MEF", 43));
+    const empleo = datos.empleo;
+    const review = datos.ingresos_y_territorio;
+    el("portada-impuestos").textContent = "$ " + millions(review.impuestos_miles_uyu * 1000) + " millones";
+    el("portada-empleo").textContent = number(empleo.totales.personas);
+    el("totales-ingresos").append(
+      card("Recursos del Presupuesto Nacional", money(review.recursos_miles_uyu)),
+      card("Impuestos, excluidas tasas", money(review.impuestos_miles_uyu)),
+      card("Impuestos por cada $ 100 de recursos", pesos(review.ingresos.find(row => row.id === "impuestos").porcentaje_recursos))
+    );
+    const levels = {
+      componente: "Componente", subtotal: "Subtotal", total: "Total",
+      detalle_impuestos: "Detalle de impuestos", detalle_indirectos: "Detalle de indirectos", detalle_directos: "Detalle de directos"
+    };
+    for (const item of review.ingresos) {
+      const link = node("a", "Cuadro " + item.cuadro);
+      link.href = item.fuente;
+      const row = addRow(el("filas-ingresos"), [item.concepto, levels[item.nivel], money(item.monto_miles_uyu),
+        percent(item.porcentaje_recursos), link]);
+      row.cells[2].className = "number";
+      row.cells[3].className = "number";
+    }
+    const taxPressure = review.presion_tributaria_2024;
+    el("fuente-presion").append("En la comparación de 2024 que incluye contribuciones a la seguridad social, Uruguay recaudó " +
+      percent(taxPressure.uruguay_pct_pib) + " del PIB frente a " + percent(taxPressure.regional_pct_pib) +
+      " en América Latina y el Caribe y " + percent(taxPressure.ocde_pct_pib) + " en la OCDE. ",
+      source("presion_tributaria", "Comparación internacional"));
+    const capital = review.departamentos.find(row => row.departamento === "Montevideo");
+    const residentShare = 100 * capital.poblacion / datos.poblacion;
+    const workShare = 100 * capital.vinculos / empleo.totales.vinculos;
+    el("resumen-territorial").textContent = "Uruguay registra " + number(review.personas_por_mil_hab) +
+      " personas con vínculo estatal por mil habitantes. Montevideo concentra " + percent(Number(workShare.toFixed(1))) +
+      " de los vínculos y " + percent(Number(residentShare.toFixed(1))) + " de los habitantes. El cruce usa el lugar de trabajo. " +
+      number(review.vinculos_fuera_del_cruce) + " vínculos corresponden al exterior, itinerantes o sin clasificación.";
+    for (const item of review.departamentos) {
+      const row = addRow(el("filas-territoriales"), [item.departamento, number(item.poblacion),
+        number(item.area_km2), number(item.habitantes_por_km2), number(item.vinculos), number(item.vinculos_por_mil_hab)]);
+      Array.from(row.cells).slice(1).forEach(cell => cell.className = "number");
+    }
+    el("fuentes-territoriales").append(source("poblacion_departamental"), source("area_departamental"),
+      source("onsc_pdf", "ONSC · Lugar de trabajo"));
+    el("empleo-comparado").textContent = "Empleo público como porcentaje del empleo total en 2022. " +
+      review.empleo_internacional.map(item => item.pais + " " + percent(item.porcentaje)).join(" · ") +
+      ". La comparación orienta qué funciones estudiar. La dotación necesaria depende del alcance de los servicios.";
+    el("cobertura-rural").textContent = "En 2025 ANEP informó " + number(review.escuelas_rurales.centros) +
+      " escuelas rurales y " + number(review.escuelas_rurales.matricula_primaria_comun) +
+      " alumnos de primaria común en esas escuelas. Para evaluar la red hay que medir acceso y tiempos de traslado por localidad.";
+    el("fuentes-cobertura").append(source("empleo_internacional"), source("primaria_rural", "ANEP · Escuelas rurales", 53));
+    const parliament = datos.parlamento;
+    el("portada-parlamento").textContent = "$ " + millions(parliament.total_uyu) + " millones";
+    const legislativeEmployment = empleo.organismos.find(row => row.id === "01");
+    el("cifras-parlamento").append(
+      card("Bancas e integración del Senado", number(parliament.bancas_total)),
+      card("Vínculos laborales · ONSC", number(legislativeEmployment.vinculos)),
+      card("Gasto ejecutado del Poder Legislativo", pesos(parliament.total_uyu))
+    );
+    el("bancas-parlamento").textContent = number(parliament.bancas.senadores_electos) +
+      " senadores electos, la Vicepresidencia y " + number(parliament.bancas.diputados) +
+      " diputados. Equivale a un integrante por cada " + number(parliament.habitantes_por_banca) +
+      " habitantes. El costo de todo el inciso fue de " + pesos(parliament.costo_por_habitante_uyu) +
+      " por habitante en 2025.";
+    for (const unit of parliament.unidades) {
+      const row = addRow(el("unidades-parlamento"), [unit.organismo, number(unit.vinculos), pesos(unit.ejecutado_uyu)]);
+      row.cells[1].className = "number";
+      row.cells[2].className = "number";
+    }
+    const senateStaff = parliament.programas.find(row => row.programa === "222");
+    const congressAdministration = parliament.programas.find(row => row.programa === "226");
+    el("partidas-parlamento").textContent = "La CGN registra " + pesos(senateStaff.total_uyu) +
+      " en remuneraciones de Secretaría, Prosecretaría y funcionarios del Senado, y " +
+      pesos(congressAdministration.total_uyu) + " en sueldos y gastos de la Comisión Administrativa. Ámbito informó " +
+      pesos(parliament.partida_secretarias_senado.monto_uyu) +
+      " en partidas para secretarios de senadores y sectores. El último importe queda pendiente de cotejo con el balance original.";
+    const passes = parliament.pases_en_comision;
+    el("pases-parlamento").textContent = "A comienzos de setiembre de 2025, La Mañana reportó " +
+      number(passes.diputados_vigentes) + " pases en Diputados y " + number(passes.senado_vigentes) +
+      " en el Senado, con " + number(passes.diputados_en_tramite + passes.senado_en_tramite) +
+      " solicitudes todavía en trámite. El sueldo de los funcionarios en comisión sigue a cargo del organismo de origen.";
+    el("fuentes-parlamento").append(source("gasto_legislativo", "CGN · Gasto por programa", 640),
+      source("bancas_senado"), source("bancas_diputados"), source("onsc_pdf", "ONSC · Vínculos por unidad", 122),
+      source("secretarias_senado"), source("pases_legislativos"));
+    const requests = parliament.pedidos_acceso;
+    const requestStates = {esperando: "Esperando respuesta", prorroga: "Prórroga de 20 días hábiles",
+      respondido: "Respondido", parcial: "Respuesta parcial", sin_respuesta: "Sin respuesta · reclamo a la UAIP"};
+    const shortDate = iso => iso.split("-").reverse().join("/");
+    for (const request of requests.pedidos) {
+      const box = node("div", undefined, "card pedido");
+      const dates = "Enviado " + shortDate(request.fecha_envio) + " · Vence " + shortDate(request.vencimiento) +
+        (request.fecha_respuesta ? " · Respondido " + shortDate(request.fecha_respuesta) : "");
+      box.append(node("h4", request.unidad), node("div", "Pedido n.º " + request.id, "numero"),
+        node("p", dates, "muted"), node("span", requestStates[request.estado], "estado estado-" + request.estado));
+      el("pedidos-estado").append(box);
+    }
+    el("pedidos-nota").textContent = requests.nota;
+    const seatSources = requests.pedidos.filter(row => row.unidad.startsWith("Cámara")).map(row => row.id);
+    el("gasto-banca-fuente").textContent = "Partidas por banca y concepto, 2025 · Fuente: pedidos " + seatSources.join(" y ");
+    if (requests.gasto_por_banca.length) {
+      for (const seat of requests.gasto_por_banca) {
+        const row = addRow(el("gasto-banca-filas"), [seat.banca, seat.camara, pesos(seat.secretaria_uyu), pesos(seat.prensa_uyu),
+          pesos(seat.celular_uyu), pesos(seat.combustible_uyu), pesos(seat.total_uyu)]);
+        for (let index = 2; index < 7; index++) row.cells[index].className = "number";
+      }
+    } else {
+      const row = addRow(el("gasto-banca-filas"), ["Pendiente de respuesta", "—", "pendiente", "pendiente", "pendiente", "pendiente", "pendiente"]);
+      for (let index = 2; index < 7; index++) row.cells[index].className = "number pendiente";
+    }
+    for (const topic of requests.temas) {
+      const box = node("article", undefined, "tema");
+      const title = node("h4", topic.tema);
+      title.append(node("span", topic.pedidos.join(" · "), "estado"));
+      const list = node("ul");
+      topic.items.forEach(item => list.append(node("li", item)));
+      box.append(title, list);
+      if (topic.hoy) box.append(node("p", topic.hoy, "muted"));
+      el("pedidos-temas").append(box);
+    }
+    el("fuentes-pedidos").append(source("ley_acceso"), source("saip"));
+    const activity = parliament.actividad_diputados_total;
+    el("actividad-parlamento").textContent = "El balance de Diputados registra, para la 50.ª Legislatura en 2025, " +
+      number(activity.sesiones_plenario) + " sesiones plenarias, " + number(activity.proyectos_aprobados) +
+      " aprobaciones en esa cámara, " + number(activity.registros_comisiones) + " registros de comisiones y " +
+      number(activity.llamados_a_sala) + " llamados a sala.";
+    const projects = parliament.cohorte_cepp;
+    el("origen-proyectos").textContent = "En el corte del CEPP del " + projects.periodo + ", los legisladores presentaron " +
+      number(projects.parlamento_presentados) + " proyectos y " + number(projects.parlamento_aprobados) +
+      " completaron el trámite parlamentario. Del Ejecutivo ingresaron " + number(projects.ejecutivo_presentados) +
+      " y se aprobaron " + number(projects.ejecutivo_aprobados) + ". El corte abarca parte de 2026.";
+    el("fuentes-actividad").append(source("actividad_diputados"), source("proyectos_parlamento"), source("actividad_cepp"),
+      source("asistencia_camaras"), source("control_gasto"));
+    const city = parliament.montevideo;
+    const [municipalStaff, boardStaff] = parliament.empleo_montevideo;
+    el("cifras-montevideo").append(
+      card("Personas en la Intendencia · 2025", number(municipalStaff.personas)),
+      card("Vínculos en la Junta · 2025", number(boardStaff.vinculos)),
+      card("Déficit operativo comunicado · 2025", money(city.deficit_operativo_reportado_millones_uyu * 1000))
+    );
+    el("asesores-montevideo").textContent = "En octubre de 2026, El Observador contó " +
+      number(city.asesores_octubre_2026) + " asesores para " + number(city.ediles) +
+      " ediles, entre secretarios y pases en comisión. Informó una partida de unos " +
+      pesos(city.partida_mensual_edil_aprox_uyu) + " mensuales por edil para secretarios. Falta cotejar su ejecución anual.";
+    el("control-montevideo").textContent = "Resolución " + city.tcr.resolucion + ". " + city.tcr.concepto + " " +
+      pesos(city.tcr.monto_uyu) + " de ampliación, impuestos incluidos. " + city.tcr.estado;
+    el("fuentes-montevideo").append(source("onsc"), source("balance_montevideo"), source("resultado_montevideo"),
+      source("asesores_junta"), source("tcr_montevideo"));
+    el("totales-empleo").append(
+      card("Personas con vínculo laboral", number(empleo.totales.personas)),
+      card("Vínculos laborales", number(empleo.totales.vinculos)),
+      card("Vínculos con calidad de funcionario", number(empleo.totales.fp))
+    );
+    el("fuente-empleo").append(source("onsc"), source("onsc_pdf", "Personas por organismo · Tabla 7", 33),
+      source("onsc_pdf", "Escalafones · Cuadro 6", 145), source("escalafones"));
+    const totalPolitical = empleo.organismos.reduce((total, row) => total + row.politico_p, 0);
+    const totalTrust = empleo.organismos.reduce((total, row) => total + row.confianza_q, 0);
+    el("politicos-resumen").textContent = number(totalPolitical) + " vínculos políticos (P) y " +
+      number(totalTrust) + " de particular confianza (Q). El costo ejecutado total de P y Q queda pendiente de conciliar con las liquidaciones.";
+    for (const id of Object.keys(datos.fuentes)) {
+      const item = node("li");
+      item.append(source(id), " · " + datos.fuentes[id].referencia);
+      el("fuentes").append(item);
+    }
+    for (const grupo of new Set(datos.incisos.map(row => row.grupo))) {
+      el("grupo").add(new Option(grupo, grupo));
+    }
+    const ficha = el("ficha");
+    const observacion = datos.observacion;
+    const revision = datos.optimizacion;
+    const bps = revision.caso_bps;
+    const [low, , high] = revision.ahorro_bruto_uyu;
+    el("portada-ahorro").textContent = "$ " + millions(low) + " a " + millions(high);
+    const [costWithLowSavings, , costWithHighSavings] = revision.gasto_modelado_rubros_uyu;
+    el("gasto-rubros-modelado").textContent = "Los cuatro rubros partieron de " + pesos(revision.base_rubros_uyu) +
+      ". Con las reducciones planteadas, quedarían entre " + pesos(costWithHighSavings) + " y " +
+      pesos(costWithLowSavings) + " de gasto anual en esos rubros, antes de los costos de implementar los cambios.";
+    ficha.add(new Option("Presupuesto Nacional · resumen", "presupuesto-nacional"));
+    ficha.add(new Option("Presupuesto Nacional · ingresos", "ingresos-presupuestales"));
+    ficha.add(new Option("Empleo · población y territorio", "empleo-territorio"));
+    ficha.add(new Option("Parlamento · gasto y actividad", "parlamento-2025"));
+    ficha.add(new Option("Montevideo · Intendencia y Junta", "montevideo-2025"));
+    datos.incisos.forEach(row => ficha.add(new Option(row.id + " · " + row.name, "inciso-" + row.id)));
+    revision.observaciones.forEach(row => ficha.add(new Option("Tribunal · " + row.resolucion + " · " + row.organismo, row.id)));
+    empleo.organismos.forEach(row => ficha.add(new Option("Dotación · " + row.organismo, "dotacion-" + row.id)));
+    datos.indicadores.forEach(row => ficha.add(new Option("INISA · " + row.nombre, row.id)));
+    datos.cargos.forEach(row => ficha.add(new Option(row.nombre, row.id)));
+    revision.costos_politicos_identificados.forEach(row => {
+      ficha.add(new Option("Conducción · " + row.organismo + " · " + row.concepto, row.id));
+    });
+    ficha.add(new Option("BPS · Tiempo de atención", bps.id));
+
+    function openAporte(id, type) {
+      ficha.value = id;
+      el("tipo").value = type;
+      syncEvidence();
+      el("aportes").focus();
+      el("aportes").scrollIntoView({ block: "start" });
+    }
+    function action(label, id, type) {
+      const button = node("button", label);
+      button.type = "button";
+      button.addEventListener("click", () => openAporte(id, type));
+      return button;
+    }
+    function renderRows() {
+      const query = lookup(el("buscar").value.trim());
+      const group = el("grupo").value;
+      const order = el("orden").value;
+      const compare = {
+        inciso: (a, b) => a.id.localeCompare(b.id),
+        gasto: (a, b) => b.ejecutado_miles_uyu - a.ejecutado_miles_uyu,
+        remuneraciones: (a, b) => (b.remuneraciones_miles_uyu ?? -1) - (a.remuneraciones_miles_uyu ?? -1)
+      }[order];
+      const rows = datos.incisos.filter(row => (!group || row.grupo === group) &&
+        lookup(row.id + " " + row.name + " " + row.grupo).includes(query)).sort(compare);
+      const body = el("filas");
+      body.replaceChildren();
+      for (const item of rows) {
+        const actionButton = action("Aportar", "inciso-" + item.id, "correccion");
+        actionButton.setAttribute("aria-label", "Aportar sobre " + item.name);
+        const row = addRow(body, [item.id, item.name, money(item.credito_miles_uyu),
+          money(item.ejecutado_miles_uyu), money(item.remuneraciones_miles_uyu),
+          percent(item.ejecutado_miles_uyu / item.credito_miles_uyu * 100), actionButton]);
+        Array.from(row.cells).slice(2, 6).forEach(cell => cell.className = "number");
+      }
+      el("conteo").textContent = rows.length + " de " + datos.incisos.length + " filas · Pesos uruguayos corrientes";
+    }
+    el("buscar").addEventListener("input", renderRows);
+    el("grupo").addEventListener("change", renderRows);
+    el("orden").addEventListener("change", renderRows);
+    renderRows();
+
+    for (const grupo of new Set(empleo.organismos.map(row => row.grupo))) {
+      el("grupo-empleo").add(new Option(grupo, grupo));
+    }
+    function renderEmployment() {
+      const query = lookup(el("buscar-empleo").value.trim());
+      const group = el("grupo-empleo").value;
+      const rows = empleo.organismos.filter(row => (!group || row.grupo === group) &&
+        lookup((row.inciso ?? "") + " " + row.organismo).includes(query)).sort((a, b) => b.personas - a.personas);
+      const body = el("filas-empleo");
+      body.replaceChildren();
+      for (const item of rows) {
+        const label = item.inciso ? item.inciso + " · " + item.organismo : item.organismo;
+        const button = action("Aportar", "dotacion-" + item.id, "correccion");
+        button.setAttribute("aria-label", "Aportar sobre la dotación de " + item.organismo);
+        const row = addRow(body, [label, number(item.personas), number(item.vinculos), number(item.fp),
+          number(item.administrativo_c), number(item.politico_p) + " / " + number(item.confianza_q),
+          money(item.ejecutado_miles_uyu), money(item.remuneraciones_miles_uyu), button]);
+        Array.from(row.cells).slice(1, 8).forEach(cell => cell.className = "number");
+      }
+      el("conteo-empleo").textContent = rows.length + " de " + empleo.organismos.length + " organismos y dependencias";
+    }
+    el("buscar-empleo").addEventListener("input", renderEmployment);
+    el("grupo-empleo").addEventListener("change", renderEmployment);
+    renderEmployment();
+
+    for (const item of datos.cargos) {
+      addRow(el("cargos"), [item.nombre, item.clase, number(item.puestos_previstos),
+        item.costo_ejecutado_uyu === null ? "Pendiente" : pesos(item.costo_ejecutado_uyu), source(item.fuente)]);
+    }
+    for (const item of revision.costos_politicos_identificados) {
+      const link = node("a", "Ver documento");
+      link.href = item.url;
+      const row = addRow(el("costos-conduccion"), [item.organismo, item.concepto, pesos(item.monto_uyu),
+        item.base_registro + " · " + item.criterio, link, action("Aportar", item.id, "correccion")]);
+      row.cells[2].className = "number";
+    }
+    const inisa = datos.incisos.find(row => row.id === observacion.inciso);
+    for (const [label, value] of [["Crédito", inisa.credito_miles_uyu], ["Ejecutado", inisa.ejecutado_miles_uyu],
+      ["Remuneraciones", inisa.remuneraciones_miles_uyu]]) {
+      el("inisa-cifras").append(node("dt", label), node("dd", money(value)));
+    }
+    el("fuente-inisa").append(source("rendicion", "CGN · Detalle de INISA", 282), source("planificacion", "OPP · Ejecución de INISA", 329));
+    const buttons = node("div", undefined, "actions");
+    buttons.append(action("Opinar", observacion.id, "opinion"), action("Proponer corrección", observacion.id, "correccion"));
+    el("caso").append(node("p", pesos(observacion.monto_observado_uyu) + " observados · " + observacion.resolucion),
+      node("p", observacion.concepto + " " + observacion.motivo),
+      node("p", observacion.estado + " " + observacion.seguimiento),
+      source("tcr", "Leer resolución y expediente"), buttons);
+    for (const item of datos.indicadores) {
+      const met = item.preferencia === "mayor" ? item.valor >= item.meta : item.valor <= item.meta;
+      const row = addRow(el("indicadores"), [item.nombre, number(item.meta) + " " + item.unidad,
+        number(item.valor) + " " + item.unidad, met ? "Cumple" : "Por debajo de la meta",
+        source("planificacion", "Pág. " + item.pagina, item.pagina)]);
+      row.cells[3].className = met ? "good" : "gap";
+      if (!met && item.preferencia === "menor") row.cells[3].textContent = "Por encima del máximo";
+    }
+    for (const item of revision.observaciones) {
+      const link = node("a", item.resolucion);
+      link.href = item.url;
+      addRow(el("casos-tcr"), [link, item.organismo, item.concepto + " " + item.motivo,
+        pesos(item.monto_involucrado_uyu), item.estado]);
+    }
+    for (const item of revision.rubros) {
+      const amount = node("a", pesos(item.base_uyu));
+      amount.href = source("rendicion", null, item.pagina).href;
+      const row = addRow(el("escenarios"), [item.nombre, amount, percent(item.cobertura_pct),
+        ...item.ahorro_bruto_uyu.map((value, index) => pesos(value) + " · " + percent(item.reducciones_pct[index]))]);
+      Array.from(row.cells).slice(1).forEach(cell => cell.className = "number");
+    }
+    const gross = addRow(el("escenarios"), ["Ahorro bruto anual", "—", "—", ...revision.ahorro_bruto_uyu.map(pesos)]);
+    Array.from(gross.cells).slice(1).forEach(cell => cell.className = "number");
+    el("bps-atencion").textContent = "El BPS informó que el tiempo de atención pasó de " +
+      number(bps.minutos_antes) + " a " + number(bps.minutos_despues) + " minutos. Hasta " + bps.corte +
+      " registró " + number(bps.reconocimientos) + " reconocimientos de años trabajados y " +
+      number(bps.jubilaciones) + " jubilaciones comunes con el nuevo sistema. Para esos " + number(bps.tramites) +
+      " trámites, la diferencia equivale a " + number(bps.horas_estimadas) + " horas y " +
+      number(bps.minutos_estimados_restantes) + " minutos de atención estimados.";
+    const bpsLink = node("a", "Publicación oficial del BPS");
+    bpsLink.href = bps.url;
+    el("bps-fuente").append(bpsLink);
+    el("corregir-bps").addEventListener("click", () => openAporte(bps.id, "correccion"));
+    el("simular-bps").addEventListener("click", () => {
+      el("volumen").valueAsNumber = 12000;
+      el("min-actual").valueAsNumber = bps.minutos_antes;
+      el("min-propuesto").valueAsNumber = bps.minutos_despues;
+      el("horas-utiles").valueAsNumber = 1550;
+      el("minimo").valueAsNumber = 0;
+      el("supuestos-dotacion").textContent = "Valores iniciales de la simulación de atención: 12.000 trámites al año, 1.550 horas productivas por puesto y ningún mínimo de cobertura. Podés editarlos.";
+      el("simulador-dotacion").open = true;
+      calculateStaff();
+      el("volumen").focus();
+    });
+    function calculateStaff() {
+      const volume = el("volumen").valueAsNumber;
+      const before = el("min-actual").valueAsNumber;
+      const after = el("min-propuesto").valueAsNumber;
+      const productiveHours = el("horas-utiles").valueAsNumber;
+      const minimum = el("minimo").valueAsNumber;
+      const posts = minutes => Math.max(minimum, Math.ceil(volume * minutes / 60 / productiveHours));
+      el("resultado-dotacion").textContent = "Dotación equivalente estimada de " + number(posts(before)) +
+        " puestos con el proceso actual y " + number(posts(after)) + " con el proceso propuesto.";
+    }
+    el("calculo-dotacion").addEventListener("submit", event => {
+      event.preventDefault();
+      calculateStaff();
+    });
+
+    function syncEvidence() {
+      const correction = el("tipo").value === "correccion";
+      el("evidencia").hidden = !correction;
+      el("enlace").disabled = !correction;
+      el("archivo").disabled = !correction;
+      el("estado").textContent = "";
+    }
+    el("tipo").addEventListener("change", syncEvidence);
+    syncEvidence();
+    function readFile(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve({ nombre: file.name, tipo: file.type, base64: reader.result.split(",", 2)[1] });
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+    el("aporte").addEventListener("submit", async event => {
+      event.preventDefault();
+      const status = el("estado");
+      const correction = el("tipo").value === "correccion";
+      const file = correction ? el("archivo").files[0] : null;
+      const url = correction ? el("enlace").value.trim() : "";
+      const message = el("mensaje").value.trim();
+      if (!message || (correction && !file && !url) || (url && !/^https?:\/\//i.test(url))) {
+        status.textContent = "Escribí tu aporte y, para una corrección, agregá un enlace web o un archivo.";
+        return;
+      }
+      if (file && file.size > 4 * 1024 * 1024) {
+        status.textContent = "El archivo supera el límite de 4 MB.";
+        return;
+      }
+      const payload = { ficha: ficha.value, ejercicio: datos.ejercicio, version_datos: datos.consultado, revision_datos: datos.revision,
+        tipo: el("tipo").value, texto: message, enlace: url || null, adjunto: null };
+      const button = el("descargar");
+      button.disabled = true;
+      try {
+        if (file) payload.adjunto = await readFile(file);
+        const objectUrl = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" }));
+        const link = node("a");
+        link.href = objectUrl;
+        link.download = "aporte-" + payload.ficha + ".json";
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+        status.textContent = "Aporte preparado para descarga.";
+      } catch {
+        status.textContent = "No se pudo preparar el archivo. Volvé a intentar.";
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

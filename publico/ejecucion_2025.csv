@@ -1,0 +1,34 @@
+﻿id;name;credito_miles_uyu;ejecutado_miles_uyu;remuneraciones_miles_uyu;grupo
+01;Poder Legislativo;11509365;7565680;5255934;Poder Legislativo
+02;Presidencia;7508234;5954313;3188164;Administración Central
+03;Defensa;36907243;33489255;26799110;Administración Central
+04;Interior;55942088;51625563;41651561;Administración Central
+05;MEF;11361300;9004638;7354545;Administración Central
+06;MRREE;5501527;5127443;2864325;Administración Central
+07;MGAP;6478636;5217479;3073850;Administración Central
+08;MIEM;1696502;1199480;840467;Administración Central
+09;Turismo;811633;699906;283213;Administración Central
+10;MTOP;41078148;38319952;2071604;Administración Central
+11;MEC;7360510;5709478;3309823;Administración Central
+12;MSP;8805739;8496684;1327758;Administración Central
+13;MTSS;1867789;1324446;1138749;Administración Central
+14;MVOT;15356170;15173639;467884;Administración Central
+15;MIDES;31492705;30141243;2727420;Administración Central
+16;Poder Judicial;11000888;10622350;9710297;Organismos del art. 220
+17;T.Cuentas;1098979;1041957;968186;Organismos del art. 220
+18;Corte Electoral;2063894;1957672;1598931;Organismos del art. 220
+19;TCA;336914;286403;264010;Organismos del art. 220
+20;Intereses;94598128;94598128;;Otros créditos
+21;Subsidios y Subvenciones;16348321;16300311;;Otros créditos
+22;Transf. Seguridad Social;214616346;214616304;;Otros créditos
+24;Diversos Créditos;192755179;192367030;0;Otros créditos
+25;ANEP;117575578;114123102;99710170;Organismos del art. 220
+26;UDELAR;28991598;28663125;23356660;Organismos del art. 220
+27;INAU;24276120;24109097;7180917;Organismos del art. 220
+29;ASSE;72481865;71579149;36580001;Organismos del art. 220
+31;UTEC;1850736;1838807;1322420;Organismos del art. 220
+32;INUMET;424496;411175;317400;Organismos del art. 220
+33;Fiscalía Gral. Nación;2183019;2166461;1853315;Organismos del art. 220
+34;JUTEP;71475;47450;36153;Organismos del art. 220
+35;INISA;3120398;3099536;2549991;Organismos del art. 220
+36;Ambiente;1270771;1074488;648418;Administración Central

@@ -1,0 +1,13 @@
+﻿id;concepto;monto_miles_uyu;nivel;cuadro;porcentaje_recursos;fuente
+impuestos;Impuestos, excluidas las tasas;723043083;componente;25;85.31;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=57
+directos;Impuestos directos;287908089;detalle_impuestos;24;33.97;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+indirectos;Impuestos indirectos;435134994;detalle_impuestos;24;51.34;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+ventas;Ventas, cifra de negocios o valor agregado;345411101;detalle_indirectos;24;40.76;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+renta;Renta y utilidades;227069859;detalle_directos;24;26.79;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+tasas;Tasas;17745775;componente;24;2.09;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+tributarios;Ingresos tributarios, incluidos impuestos y tasas;740788858;subtotal;24;87.41;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+no-tributarios;Ingresos no tributarios;65981149;componente;24;7.79;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+transferencias;Transferencias;39728451;componente;24;4.69;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+figurativas;Contribuciones figurativas;50787;componente;24;0.01;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+otros;Otros recursos;958329;componente;24;0.11;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56
+total;Total de recursos del Presupuesto Nacional;847507574;total;25;100.0;https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=57
