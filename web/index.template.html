@@ -3,7 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Revisión del Estado y Gasto Público · Uruguay</title>
+  <title>Informe 2025 · La verdad de la milanesa</title>
+  <meta name="description" content="Informe completo del gasto del Estado uruguayo en 2025: Presupuesto Nacional, empleo público, Parlamento e intendencias, con datos oficiales y fuentes.">
+  <link rel="canonical" href="https://verdadmilanesa.uy/informe.html">
+  <meta property="og:title" content="Informe 2025 · La verdad de la milanesa">
+  <meta property="og:description" content="El gasto del Estado uruguayo con datos oficiales y fuentes verificables.">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     :root{--bg:#f7f6f2;--paper:#fff;--ink:#142a39;--muted:#4a6070;--line:#d8e1e4;--blue:#174c72;--teal:#266b60;--soft:#e9f1f2}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.55 Inter,system-ui,sans-serif}
@@ -98,7 +104,7 @@
 <body>
   <header class="portada">
     <div class="wrap">
-      <div class="cabecera"><strong>Revisión del Estado y Gasto Público</strong><span>Uruguay · 2025</span></div>
+      <div class="cabecera"><a href="./" style="color:#fff;text-decoration:none"><strong>← La verdad de la <span style="color:#ffd23f">milanesa</span></strong></a><span>Informe completo · Uruguay · 2025</span></div>
       <h1>¿Cuánto nos cuesta el Estado?</h1>
       <div class="titulares">
         <article class="titular" aria-labelledby="titulo-gasto-portada">
@@ -387,7 +393,7 @@
       <ul id="fuentes"></ul>
     </section>
   </main>
-  <footer><div class="wrap">Revisión del Estado y Gasto Público · Corte local del ejercicio 2025</div></footer>
+  <footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Informe del ejercicio 2025</div></footer>
   <script id="datos" type="application/json"><!-- DATOS_2025 --></script>
   <script>
     "use strict";
@@ -635,6 +641,10 @@
       syncEvidence();
       el("aportes").focus();
       el("aportes").scrollIntoView({ block: "start" });
+    }
+    const pedido = new URLSearchParams(location.search);
+    if (pedido.has("aporte") && [...ficha.options].some(option => option.value === pedido.get("aporte"))) {
+      addEventListener("load", () => openAporte(pedido.get("aporte"), pedido.get("tipo") === "correccion" ? "correccion" : "opinion"));
     }
     function action(label, id, type) {
       const button = node("button", label);

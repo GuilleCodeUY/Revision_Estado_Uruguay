@@ -4,6 +4,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
+SITE = "https://verdadmilanesa.uy"
+CORRECTION_STATES = {"recibida", "en_revision", "aceptada", "rechazada"}
 FIELDS = (
     "id",
     "name",
@@ -187,6 +189,11 @@ def main():
     data["optimizacion"] = build_optimization(data)
     data["ingresos_y_territorio"] = build_income_and_territory(data)
     data["parlamento"] = build_parliament(data)
+    corrections = load_data("correcciones.json")["correcciones"]
+    for row in corrections:
+        if row.get("estado") not in CORRECTION_STATES or not row.get("fecha") or not row.get("dato"):
+            raise ValueError("Cada corrección necesita fecha, dato objetado y un estado válido.")
+    data["correcciones"] = sorted(corrections, key=lambda row: row["fecha"], reverse=True)
     data["fuentes"]["onsc_pdf"] = {
         "nombre": "ONSC · Informe original en PDF",
         "url": "https://www.gub.uy/oficina-nacional-servicio-civil/sites/oficina-nacional-servicio-civil/files/documentos/publicaciones/Informe_Vinculos_2025.pdf",
@@ -230,12 +237,20 @@ def main():
                                       "normas", "estado", "perjuicio_acreditado_uyu", "url")}
         for row in data["optimizacion"]["observaciones"]
     ])
-    template = (ROOT / "web" / "index.template.html").read_text(encoding="utf-8")
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-    if template.count("<!-- DATOS_2025 -->") != 1:
-        raise ValueError("La plantilla debe tener un marcador de datos.")
-    (public / "index.html").write_text(template.replace("<!-- DATOS_2025 -->", payload), encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados el HTML y los CSV.")
+    # La portada va en index.html y el informe completo en informe.html.
+    for template_name, page in (("portada.template.html", "index.html"), ("index.template.html", "informe.html")):
+        template = (ROOT / "web" / template_name).read_text(encoding="utf-8")
+        if template.count("<!-- DATOS_2025 -->") != 1:
+            raise ValueError(f"La plantilla {template_name} debe tener un marcador de datos.")
+        (public / page).write_text(template.replace("<!-- DATOS_2025 -->", payload), encoding="utf-8")
+    (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
+    urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
+                   for page in ("", "informe.html"))
+    (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+                                        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                        f"{urls}</urlset>\n", encoding="utf-8")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe y los CSV.")
 
 
 if __name__ == "__main__":

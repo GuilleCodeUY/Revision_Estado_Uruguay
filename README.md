@@ -1,12 +1,15 @@
-# Revisión del Estado y Gasto Público · Uruguay
+# La verdad de la milanesa · verdadmilanesa.uy
 
-Auditoría ciudadana de la estructura, el gasto y los servicios del Estado uruguayo. Ejercicio 2025, con dotación al 31 de diciembre de 2025 y fuentes consultadas al 12 de noviembre de 2026.
+Análisis independiente del gasto del Estado uruguayo con información pública. Los números no tienen partido. Ejercicio 2025, con dotación al 31 de diciembre de 2025 y fuentes consultadas al 12 de noviembre de 2026.
 
 ## Abrir el proyecto
 
-Descomprimí el archivo y abrí `publico/index.html` en el navegador. La página y sus filtros funcionan localmente. `Analisis_2025.md` reúne los hallazgos, escenarios y propuestas.
+Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan localmente. `Analisis_2025.md` reúne los hallazgos, escenarios y propuestas.
 
-La portada muestra primero el gasto ejecutado del Presupuesto Nacional y el rango de ahorro bruto anual estimado en cuatro rubros. Los importes de portada están redondeados a millones de pesos. Los enlaces llevan a las cifras exactas, los supuestos y las fuentes.
+- `publico/index.html` es la portada: el costo del Palacio Legislativo, tres datos de impacto con su fuente y un botón para objetarlos, los casos y la fe de erratas pública.
+- `publico/informe.html` es el informe completo: Presupuesto Nacional, ingresos, empleo, Parlamento, Montevideo, Tribunal de Cuentas, escenarios de ahorro y aportes. Los importes de portada están redondeados a millones de pesos y los enlaces llevan a las cifras exactas.
+- `datos/correcciones.json` es el registro de objeciones que se muestra en la fe de erratas. Cada entrada lleva `fecha`, `dato`, `estado` (`recibida`, `en_revision`, `aceptada` o `rechazada`) y `resultado`.
+- `og.png` es la imagen que aparece al compartir el enlace. `robots.txt` y `sitemap.xml` sirven para que Google indexe el sitio.
 
 | Archivo en `publico/` | Contenido |
 |---|---|

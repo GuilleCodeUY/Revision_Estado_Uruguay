@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La verdad de la milanesa · Los números del Estado uruguayo</title>
+  <meta name="description" content="Análisis independiente del gasto del Estado uruguayo con información pública. Cada dato con su fuente, gobierne quien gobierne.">
+  <link rel="canonical" href="https://verdadmilanesa.uy/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="La verdad de la milanesa">
+  <meta property="og:title" content="¿Cuánto nos cuesta el Palacio Legislativo?">
+  <meta property="og:description" content="Los números no tienen partido. Análisis del gasto público con datos oficiales y fuentes verificables.">
+  <meta property="og:url" content="https://verdadmilanesa.uy/">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#121212">
+  <style>
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header{background:var(--dark);color:#fff}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 2.6rem}
+    .kicker{display:inline-block;background:var(--red);color:#fff;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.2rem,7vw,5rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
+    .big{font-size:clamp(3rem,11vw,7.5rem);font-weight:900;letter-spacing:-.06em;line-height:.9;color:var(--yellow);font-variant-numeric:tabular-nums}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.4rem);max-width:40ch;margin:.7rem 0 1.2rem;color:#ddd}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;font-weight:800;text-decoration:none;border:2px solid var(--yellow);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--yellow);color:#111}.btn.o{background:transparent;color:var(--yellow)}
+    .lema{background:var(--yellow);color:#111;font-weight:900;text-align:center;font-size:clamp(1.05rem,2.6vw,1.5rem);padding:.75rem 1rem;letter-spacing:-.02em;margin:0}
+    main{padding:2rem 0 3rem}main section{margin-bottom:2.8rem;scroll-margin-top:1rem}
+    h2{font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.04em;margin:0 0 1rem;font-weight:900}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .golpe{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1.1rem;display:flex;flex-direction:column;gap:.4rem;box-shadow:5px 5px 0 var(--ink)}
+    .golpe .n{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+    .golpe .n.r{color:var(--red)}.golpe .t{font-weight:800;font-size:1.05rem;line-height:1.25}.golpe .c{font-size:.86rem;color:var(--muted);margin:0}
+    .acciones{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto;padding-top:.5rem;border-top:1px dashed var(--line)}
+    .acciones a{font-size:.8rem;font-weight:700;text-decoration:none;padding:.35rem .55rem;border-radius:.3rem;background:#f2eee2}
+    .acciones a:hover{text-decoration:underline}.acciones a.obj{background:#fde6e7;color:#9b1c25}
+    .casos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .caso{border-radius:.5rem;padding:1.2rem;color:#fff;min-height:12rem;display:flex;flex-direction:column;justify-content:space-between;gap:1rem;text-decoration:none}
+    a.caso:hover h3{text-decoration:underline}
+    .caso h3{margin:.3rem 0;font-size:1.4rem;letter-spacing:-.03em;line-height:1.1}.caso p{margin:0;font-size:.92rem;opacity:.92}
+    .caso .estado{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;background:rgba(255,255,255,.18);padding:.2rem .5rem;border-radius:.2rem;align-self:flex-start}
+    .c1{background:#1d3557}.c2{background:#2a6f4e}.c3{background:#6b2737}
+    .fe{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1.2rem}
+    .fe p:first-child{margin-top:0}.tabla{overflow:auto}
+    .fe table{width:100%;border-collapse:collapse;font-size:.9rem}.fe th,.fe td{text-align:left;padding:.5rem;border-bottom:1px solid var(--line);vertical-align:top}
+    .st{font-size:.74rem;font-weight:800;padding:.15rem .45rem;border-radius:1rem;white-space:nowrap}
+    .recibida,.en_revision{background:#fff4d1;color:#6b5000}.aceptada{background:#e3f2ee;color:#1f6650}.rechazada{background:#eee;color:#444}
+    .vacio{color:var(--muted);font-style:italic}
+    .criterios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .criterios div{border-top:4px solid var(--ink);padding-top:.6rem}.criterios h3{margin:0 0 .3rem;font-size:1.05rem}.criterios p{margin:0;font-size:.92rem;color:var(--muted)}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    footer{background:var(--dark);color:#bbb;font-size:.85rem;padding:1.2rem 0}footer a{color:#ddd}
+    @media(max-width:760px){.golpes,.casos,.criterios{grid-template-columns:1fr}.fe table{font-size:.82rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap top">
+      <a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a>
+      <nav aria-label="Secciones"><a href="#casos">Casos</a><a href="#correcciones">Correcciones</a><a href="#como">Cómo trabajamos</a><a href="informe.html">Informe completo</a></nav>
+    </div>
+    <div class="wrap hero">
+      <span class="kicker">Parlamento · 2025</span>
+      <h1>¿Cuánto nos cuesta el Palacio Legislativo?</h1>
+      <div class="big" id="total"></div>
+      <p class="sub" id="sub"></p>
+      <div class="btns"><a class="btn y" href="informe.html#parlamento">Ver de dónde sale ↓</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
+    </div>
+  </header>
+  <p class="lema">Los números no tienen partido. La realidad es una sola.</p>
+  <main class="wrap">
+    <section aria-labelledby="golpe">
+      <h2 id="golpe">A golpe de vista</h2>
+      <div class="golpes" id="golpes"></div>
+    </section>
+    <section aria-labelledby="casos">
+      <h2 id="casos">Casos</h2>
+      <div class="casos">
+        <a class="caso c1" href="informe.html#parlamento"><span class="estado" id="estado-parlamento">Publicado</span><div><h3>El costo del Parlamento</h3><p>Bancas, secretarios, pases en comisión, misiones y telefonía.</p></div></a>
+        <article class="caso c2"><span class="estado">En preparación</span><div><h3>Las 19 intendencias</h3><p>Cuánto gasta cada una por habitante, en qué y con cuánta gente.</p></div></article>
+        <article class="caso c3"><span class="estado">Próximamente</span><div><h3>El contrato de Solaria</h3><p>Qué dice el contrato y qué muestran los documentos oficiales.</p></div></article>
+      </div>
+    </section>
+    <section aria-labelledby="correcciones">
+      <h2 id="correcciones">Fe de erratas pública</h2>
+      <div class="fe">
+        <p>Si tenés pruebas de que un dato está mal, mandalas con el botón <strong>⚑ Objetar este dato</strong>. Revisamos cada objeción y el resultado queda acá, a la vista. <strong>Nada se borra en silencio.</strong></p>
+        <div class="tabla" tabindex="0" role="region" aria-label="Registro de correcciones">
+          <table><thead><tr><th scope="col">Fecha</th><th scope="col">Dato objetado</th><th scope="col">Estado</th><th scope="col">Resultado</th></tr></thead>
+          <tbody id="erratas"></tbody></table>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="como">
+      <h2 id="como">Cómo trabajamos</h2>
+      <div class="criterios">
+        <div><h3>Solo información pública</h3><p>Rendiciones de cuentas, datos abiertos, resoluciones oficiales y pedidos de acceso a la información (Ley 18.381).</p></div>
+        <div><h3>El dato separado del análisis</h3><p>Primero lo que dice el documento, con su enlace. Después la cuenta, con los supuestos a la vista.</p></div>
+        <div><h3>La misma vara para todos</h3><p>Gobierne quien gobierne. Si nos equivocamos, se corrige en público y queda registrado.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="informe.html#metodo">Método y fuentes</a></div></footer>
+  <script id="datos" type="application/json"><!-- DATOS_2025 --></script>
+  <script>
+    "use strict";
+    const datos = JSON.parse(document.getElementById("datos").textContent);
+    const el = id => document.getElementById(id);
+    const format = new Intl.NumberFormat("es-UY", { maximumFractionDigits: 1 });
+    const number = value => format.format(value);
+    const millions = value => number(Math.round(value / 1_000_000));
+    const millionsOne = value => number(Math.round(value / 100_000) / 10);
+    const shortDate = iso => iso.split("-").reverse().join("/");
+    function node(tag, text, className) {
+      const element = document.createElement(tag);
+      if (text !== undefined) element.textContent = text;
+      if (className) element.className = className;
+      return element;
+    }
+    function link(text, href, className) {
+      const anchor = node("a", text, className);
+      anchor.href = href;
+      return anchor;
+    }
+    const parliament = datos.parlamento;
+    const total = parliament.total_uyu;
+    el("total").textContent = "$ " + millions(total) + " millones";
+    const sub = el("sub");
+    sub.append("Eso gastó el Poder Legislativo en " + datos.ejercicio + ". ",
+      node("strong", "$ " + millionsOne(total / 365) + " millones por día."),
+      " $ " + number(parliament.costo_por_habitante_uyu) + " por cada uruguayo.");
+
+    const objection = ficha => "informe.html?aporte=" + encodeURIComponent(ficha) + "&tipo=correccion#aportes";
+    const perSeat = total / parliament.bancas_total;
+    const projects = parliament.cohorte_cepp;
+    const passes = parliament.pases_en_comision;
+    const facts = [
+      { n: "$ " + millions(perSeat) + " millones", t: "por banca, por año",
+        c: "Todo el gasto del Poder Legislativo dividido entre sus " + parliament.bancas_total + " bancas (" +
+          parliament.bancas.senadores_electos + " senadores, Vicepresidencia y " + parliament.bancas.diputados +
+          " diputados). Unos $ " + millionsOne(perSeat / 12) + " millones por mes.",
+        fuente: ["CGN · Tomo III", datos.fuentes.gasto_legislativo.url + "#page=640"] },
+      { n: number(projects.parlamento_aprobados) + " de " + number(projects.parlamento_presentados), r: true,
+        t: "proyectos de legisladores aprobados",
+        c: "Período " + projects.periodo + ". Del Poder Ejecutivo: " + number(projects.ejecutivo_aprobados) +
+          " aprobados de " + number(projects.ejecutivo_presentados) + ".",
+        fuente: ["CEPP", datos.fuentes.actividad_cepp.url] },
+      { n: number(passes.diputados_vigentes + passes.senado_vigentes), t: "funcionarios en pase en comisión",
+        c: number(passes.diputados_vigentes) + " en Diputados y " + number(passes.senado_vigentes) + " en el Senado, a " +
+          passes.corte + ". Cobran del organismo de origen. Y " +
+          number(passes.diputados_en_tramite + passes.senado_en_tramite) + " más en trámite.",
+        fuente: ["La Mañana", datos.fuentes.pases_legislativos.url] }
+    ];
+    for (const fact of facts) {
+      const box = node("article", undefined, "golpe");
+      const actions = node("div", undefined, "acciones");
+      const sourceLink = link("Fuente: " + fact.fuente[0], fact.fuente[1]);
+      sourceLink.rel = "noopener";
+      actions.append(sourceLink, link("⚑ Objetar este dato", objection("parlamento-2025"), "obj"));
+      box.append(node("div", fact.n, fact.r ? "n r" : "n"), node("div", fact.t, "t"), node("p", fact.c, "c"), actions);
+      el("golpes").append(box);
+    }
+
+    const waiting = parliament.pedidos_acceso.pedidos.filter(row => row.estado === "esperando" || row.estado === "prorroga").length;
+    el("estado-parlamento").textContent = waiting ? "Publicado · esperando " + waiting + " pedidos de acceso" : "Publicado";
+
+    const states = { recibida: "Recibida", en_revision: "En revisión", aceptada: "Aceptada", rechazada: "Rechazada" };
+    const fixes = datos.correcciones;
+    if (!fixes.length) {
+      const row = node("tr");
+      const cell = node("td", "Todavía no hay objeciones registradas. La primera puede ser la tuya.", "vacio");
+      cell.colSpan = 4;
+      row.append(cell);
+      el("erratas").append(row);
+    }
+    for (const fix of fixes) {
+      const row = node("tr");
+      const state = node("td");
+      state.append(node("span", states[fix.estado], "st " + fix.estado));
+      row.append(node("td", shortDate(fix.fecha)), node("td", fix.dato), state, node("td", fix.resultado || "—"));
+      el("erratas").append(row);
+    }
+
+    el("compartir").addEventListener("click", async () => {
+      const share = { title: document.title, text: "¿Cuánto nos cuesta el Palacio Legislativo? $ " + millions(total) + " millones en " + datos.ejercicio + ".", url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(share); return; }
+        await navigator.clipboard.writeText(share.text + " " + share.url);
+        const toast = node("div", "Enlace copiado", "toast");
+        toast.setAttribute("role", "status");
+        document.body.append(toast);
+        setTimeout(() => toast.remove(), 2200);
+      } catch (error) { /* el usuario canceló */ }
+    });
+  </script>
+</body>
+</html>
