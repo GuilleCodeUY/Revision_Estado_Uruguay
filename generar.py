@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SITE = "https://verdadmilanesa.uy"
 STATIC_PAGES = ("solaria.html",)
+COPY_FILES = ("404.html", "favicon.svg")
 CORRECTION_STATES = {"recibida", "en_revision", "aceptada", "rechazada"}
 FIELDS = (
     "id",
@@ -191,6 +192,85 @@ def slug(text):
     import unicodedata
     plain = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
     return "-".join(plain.lower().split())
+
+
+def es_num(value, decimals=1):
+    """Formatea como Intl.NumberFormat("es-UY"): punto de miles, coma decimal, sin ceros sobrantes."""
+    from decimal import Decimal, ROUND_HALF_UP
+    q = Decimal(str(value)).quantize(Decimal(1).scaleb(-decimals), rounding=ROUND_HALF_UP)
+    entero, _, dec = f"{q:f}".partition(".")
+    signo = "-" if entero.startswith("-") else ""
+    entero = entero.lstrip("-")
+    grupos = []
+    while entero:
+        grupos.insert(0, entero[-3:])
+        entero = entero[:-3]
+    dec = dec.rstrip("0")
+    return signo + ".".join(grupos) + ("," + dec if dec else "")
+
+
+def build_portada(public, data):
+    """Genera index.html con las cifras ya escritas en el HTML (sin depender de JavaScript)."""
+    from decimal import Decimal, ROUND_HALF_UP
+    from html import escape
+    half = lambda v: int(Decimal(str(v)).quantize(Decimal(1), rounding=ROUND_HALF_UP))
+    millions = lambda v: es_num(half(v / 1_000_000))
+    millions_one = lambda v: es_num(half(v / 100_000) / 10)
+    parliament = data["parlamento"]
+    total = parliament["total_uyu"]
+    per_seat = total / parliament["bancas_total"]
+    projects = parliament["cohorte_cepp"]
+    passes = parliament["pases_en_comision"]
+    fuentes = data["fuentes"]
+    objection = "informe.html?aporte=parlamento-2025&amp;tipo=correccion#aportes"
+    facts = [
+        ("$ " + millions(per_seat) + " millones", False, "por banca, por año",
+         f"Todo el gasto del Poder Legislativo dividido entre sus {parliament['bancas_total']} bancas "
+         f"({parliament['bancas']['senadores_electos']} senadores, Vicepresidencia y {parliament['bancas']['diputados']} diputados). "
+         f"Unos $ {millions_one(per_seat / 12)} millones por mes.",
+         "CGN · Tomo III", fuentes["gasto_legislativo"]["url"] + "#page=640"),
+        (f"{es_num(projects['parlamento_aprobados'])} de {es_num(projects['parlamento_presentados'])}", True,
+         "proyectos de legisladores aprobados",
+         f"Período {projects['periodo']}. Del Poder Ejecutivo: {es_num(projects['ejecutivo_aprobados'])} "
+         f"aprobados de {es_num(projects['ejecutivo_presentados'])}.",
+         "CEPP", fuentes["actividad_cepp"]["url"]),
+        (es_num(passes["diputados_vigentes"] + passes["senado_vigentes"]), False, "funcionarios en pase en comisión",
+         f"{es_num(passes['diputados_vigentes'])} en Diputados y {es_num(passes['senado_vigentes'])} en el Senado, a "
+         f"{passes['corte']}. Cobran del organismo de origen. Y "
+         f"{es_num(passes['diputados_en_tramite'] + passes['senado_en_tramite'])} más en trámite.",
+         "La Mañana", fuentes["pases_legislativos"]["url"]),
+    ]
+    golpes = "".join(
+        f'<article class="golpe"><div class="{"n r" if red else "n"}">{escape(n)}</div><div class="t">{escape(t)}</div>'
+        f'<p class="c">{escape(c)}</p><div class="acciones"><a href="{escape(url)}" rel="noopener">Fuente: {escape(src)}</a>'
+        f'<a class="obj" href="{objection}">⚑ Objetar este dato</a></div></article>'
+        for n, red, t, c, src, url in facts)
+    waiting = sum(1 for row in parliament["pedidos_acceso"]["pedidos"] if row["estado"] in ("esperando", "prorroga"))
+    states = {"recibida": "Recibida", "en_revision": "En revisión", "aceptada": "Aceptada", "rechazada": "Rechazada"}
+    if data["correcciones"]:
+        erratas = "".join(
+            f'<tr><td>{"/".join(reversed(fix["fecha"].split("-")))}</td><td>{escape(fix["dato"])}</td>'
+            f'<td><span class="st {fix["estado"]}">{states[fix["estado"]]}</span></td><td>{escape(fix.get("resultado") or "—")}</td></tr>'
+            for fix in data["correcciones"])
+    else:
+        erratas = '<tr><td class="vacio" colspan="4">Todavía no hay objeciones registradas. La primera puede ser la tuya.</td></tr>'
+    values = {
+        "TOTAL": f"$ {millions(total)} millones",
+        "SUB": f"Eso gastó el Poder Legislativo en {data['ejercicio']}. <strong>$ {millions_one(total / 365)} millones por día.</strong> "
+               f"$ {es_num(parliament['costo_por_habitante_uyu'])} por cada uruguayo.",
+        "GOLPES": golpes,
+        "ESTADO_PARLAMENTO": f"Publicado · esperando {waiting} pedidos de acceso" if waiting else "Publicado",
+        "ERRATAS": erratas,
+        "COMPARTIR": f"¿Cuánto nos cuesta el Palacio Legislativo? $ {millions(total)} millones en {data['ejercicio']}.",
+    }
+    page = (ROOT / "web" / "portada.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        if page.count("{{" + key + "}}") != 1:
+            raise ValueError(f"La portada debe tener un solo marcador {key}.")
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin reemplazar en la portada.")
+    (public / "index.html").write_text(page, encoding="utf-8")
 
 
 def build_intendencias(public):
@@ -484,17 +564,19 @@ def main():
         for row in data["optimizacion"]["observaciones"]
     ])
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-    # La portada va en index.html y el informe completo en informe.html.
-    for template_name, page in (("portada.template.html", "index.html"), ("index.template.html", "informe.html")):
-        template = (ROOT / "web" / template_name).read_text(encoding="utf-8")
-        if template.count("<!-- DATOS_2025 -->") != 1:
-            raise ValueError(f"La plantilla {template_name} debe tener un marcador de datos.")
-        (public / page).write_text(template.replace("<!-- DATOS_2025 -->", payload), encoding="utf-8")
-    # Páginas de casos que no dependen de los datos de 2025: se copian tal cual.
+    # La portada se arma con las cifras ya escritas; el informe completo sigue usando los datos embebidos.
+    build_portada(public, data)
+    template = (ROOT / "web" / "index.template.html").read_text(encoding="utf-8")
+    if template.count("<!-- DATOS_2025 -->") != 1:
+        raise ValueError("La plantilla index.template.html debe tener un marcador de datos.")
+    (public / "informe.html").write_text(template.replace("<!-- DATOS_2025 -->", payload), encoding="utf-8")
+    # Páginas que no dependen de los datos de 2025: se copian tal cual.
     for page in STATIC_PAGES:
         (public / page).write_text((ROOT / "web" / page).read_text(encoding="utf-8"), encoding="utf-8")
     build_intendencias(public)
     build_puerto(public)
+    for name in COPY_FILES:
+        (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
                    for page in ("", "informe.html", "intendencias.html", "puerto.html", *STATIC_PAGES))
