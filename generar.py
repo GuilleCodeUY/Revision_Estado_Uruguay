@@ -399,6 +399,7 @@ def build_puerto(public):
     obras = "".join(
         f'<div class="obra"><h3>{escape(o["nombre"])}</h3><div class="m">{escape(o["monto"])}</div><p>{escape(o["texto"])}</p>'
         f'<div class="acc">{tag(o["tipo"], o["url"])}'
+        + (f' {tag(o["tipo2"], o["url2"])}' if o.get("url2") else "")
         + (f' <span class="tag t-pend">{escape(o["pendiente"])}</span>' if o["pendiente"] else "") + "</div></div>"
         for o in data["obras"])
     fuentes = "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>'

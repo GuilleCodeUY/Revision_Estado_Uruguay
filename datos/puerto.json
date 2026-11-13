@@ -182,9 +182,31 @@
    "tipo": "prensa"
   }
  ],
- "concesiones_nota": "En discusión: Neltume propuso una terminal de US$ 900 M, que está en análisis técnico en la ANP, y MSC dijo tener “seria intención” de operar una segunda terminal.",
- "concesiones_url": "https://www.elobservador.com.uy/economia-y-empresas/terminal-contenedores-la-parte-del-contrato-que-blinda-katoen-natie-las-presiones-modificarla-y-lo-que-espera-el-gobierno-n6061885",
+ "concesiones_nota": "En febrero de 2026 el Tribunal de lo Contencioso Administrativo (TCA) rechazó la demanda de Montecon y confirmó el decreto de TCP, incluida la extensión del plazo, pero anuló la cláusula que impedía otra terminal de contenedores salvo que TCP trabajara dos años seguidos al 85 % de su capacidad (sentencia 719/2025). Desde entonces, Neltume propuso una terminal de US$ 900 M, que está en análisis técnico en la ANP, y MSC dijo tener “seria intención” de operar una segunda terminal.",
+ "concesiones_url": "https://www.subrayado.com.uy/tribunal-lo-contencioso-administrativo-desestimo-recurso-montecon-y-consolida-operacion-tcp-n999228",
  "paros": [
+  {
+   "fecha": "Julio de 2017",
+   "texto": "El sindicato marítimo SUNTMA anuncia medidas para exigir tripulación uruguaya en las barcazas con carga paraguaya. La naviera Hapag-Lloyd avisa que, desde el 17 de julio, la carga con destino a Paraguay se trasborda en Buenos Aires en lugar de Montevideo.",
+   "fuentes": [
+    [
+     "Aduana News, citando a El Observador",
+     "https://aduananews.com/uruguay-quitan-al-puerto-transitos-paraguayos-y-optan-por-argentina-2/",
+     "prensa"
+    ]
+   ]
+  },
+  {
+   "fecha": "Abril de 2021",
+   "texto": "Paro parcial de 12 a 19 horas convocado por SUPRA contra la extensión del contrato con Katoen Natie, que el sindicato califica de “secreta y encubierta”.",
+   "fuentes": [
+    [
+     "PIT-CNT",
+     "https://www.pitcnt.uy/novedades/paro-general-parcial-de-trabajadores-portuarios",
+     "gremial"
+    ]
+   ]
+  },
   {
    "fecha": "Mayo de 2022",
    "texto": "Montecon despide a 150 trabajadores. SUPRA, el sindicato portuario, lo atribuye al acuerdo con Katoen Natie y para 24 horas. Amenaza con un paro de 72 horas si no hay propuesta.",
@@ -197,6 +219,28 @@
     [
      "Subrayado",
      "https://www.subrayado.com.uy/reunion-clave-sindicato-montecon-y-mieres-medio-paro-depositos-24-horas-n866286",
+     "prensa"
+    ]
+   ]
+  },
+  {
+   "fecha": "Mayo de 2023",
+   "texto": "El sindicato de Montecon, con SUPRA, paraliza por tiempo indeterminado. No entran camiones y se para la carga y descarga de contenedores. Reclaman por unos 150 trabajadores enviados al seguro de paro tras la extensión de TCP: TCP se comprometió a tomar 110 y había reincorporado a 77.",
+   "fuentes": [
+    [
+     "El Observador",
+     "https://www.elobservador.com.uy/nota/trabajadores-de-montecon-paralizan-actividades-por-tiempo-indeterminado--2023519182028",
+     "prensa"
+    ]
+   ]
+  },
+  {
+   "fecha": "Agosto de 2024",
+   "texto": "Paro de SUPRA de 24 horas por el despido de un trabajador, que el sindicato considera injustificado. Su dirigente reconoce que el puerto queda “inactivo” ese día.",
+   "fuentes": [
+    [
+     "El Observador",
+     "https://www.elobservador.com.uy/nacional/sindicato-portuario-operativa-del-puerto-montevideo-24-horas-despido-un-trabajador-n5955267",
      "prensa"
     ]
    ]
@@ -366,10 +410,12 @@
   {
    "nombre": "Viaducto de la rambla portuaria",
    "monto": "US$ 156 M",
-   "texto": "1.800 metros. Las obras empezaron en junio de 2019 y se inauguró en diciembre de 2022. Lo pagaron la ANP y Fonplata.",
+   "texto": "1.800 metros. En 2020 se informaba un costo de unos US$ 112 M y que terminaría en 2021; costó US$ 156 M (+39 %) y se inauguró en diciembre de 2022. Lo pagaron la ANP y Fonplata.",
    "url": "https://www.gub.uy/presidencia/comunicacion/noticias/gobierno-inauguro-obra-vial-rambla-portuaria-inversion-156-millones-dolares",
    "tipo": "oficial",
-   "pendiente": "monto original: pendiente"
+   "pendiente": "monto del contrato original: no publicado",
+   "url2": "https://www.revistaconstruccion.uy/vialidad/conexion-al-futuro-lo-que-viene-en-montevideo/",
+   "tipo2": "prensa"
   },
   {
    "nombre": "Dragado 2025-2029",
@@ -496,12 +542,47 @@
    "Facultad de Derecho: monitor de costos portuarios",
    "https://www.fder.edu.uy/pmcp",
    "oficial"
+  ],
+  [
+   "Revista Construcción: viaducto (2020)",
+   "https://www.revistaconstruccion.uy/vialidad/conexion-al-futuro-lo-que-viene-en-montevideo/",
+   "prensa"
+  ],
+  [
+   "Subrayado: fallo del TCA (febrero 2026)",
+   "https://www.subrayado.com.uy/tribunal-lo-contencioso-administrativo-desestimo-recurso-montecon-y-consolida-operacion-tcp-n999228",
+   "prensa"
+  ],
+  [
+   "Ámbito: fallo del TCA, sentencia 719/2025",
+   "https://www.ambito.com/uruguay/reves-montecon-el-tribunal-lo-contencioso-administrativo-desestimo-el-recurso-contra-katoen-natie-n6242188",
+   "prensa"
+  ],
+  [
+   "Aduana News: Hapag-Lloyd y el SUNTMA (2017)",
+   "https://aduananews.com/uruguay-quitan-al-puerto-transitos-paraguayos-y-optan-por-argentina-2/",
+   "prensa"
+  ],
+  [
+   "PIT-CNT: paro portuario de abril de 2021",
+   "https://www.pitcnt.uy/novedades/paro-general-parcial-de-trabajadores-portuarios",
+   "gremial"
+  ],
+  [
+   "El Observador: paralización de Montecon (2023)",
+   "https://www.elobservador.com.uy/nota/trabajadores-de-montecon-paralizan-actividades-por-tiempo-indeterminado--2023519182028",
+   "prensa"
+  ],
+  [
+   "El Observador: paro de agosto de 2024",
+   "https://www.elobservador.com.uy/nacional/sindicato-portuario-operativa-del-puerto-montevideo-24-horas-despido-un-trabajador-n5955267",
+   "prensa"
   ]
  ],
  "pendientes": [
-  "Monto original previsto del viaducto (resolución de 2017).",
-  "Fallo del TCA de 2026 sobre el contrato ANP-TCP.",
-  "Registro de paros 2015-2024.",
+  "Monto del contrato original del viaducto (no está publicado).",
+  "Texto completo de las sentencias 719/2025 y 708/2025 del TCA.",
+  "Un registro oficial de paros: no existe; la lista se arma nota por nota.",
   "Balances 2017 y 2018 (escaneados) y motivo de la salvedad del Tribunal de Cuentas en 2024."
  ]
 }

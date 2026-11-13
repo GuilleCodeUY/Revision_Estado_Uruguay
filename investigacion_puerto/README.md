@@ -16,4 +16,4 @@ Cómo se usa:
 | Comparación con otros puertos | `05_comparacion.md` | verificado |
 | Obras de infraestructura | `06_obras.md` | verificado |
 | Ganancias y pérdidas para el país | `07_ganancias_perdidas.md` | verificado |
-| Huecos pendientes (segunda vuelta) | `08_huecos.md` | sin respuesta |
+| Huecos pendientes (segunda vuelta) | `08_huecos.md` | verificado |
