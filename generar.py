@@ -181,6 +181,104 @@ def validate(data):
         raise ValueError("La observación piloto debe estar vinculada al inciso de INISA.")
 
 
+PEDIDO_ESTADOS = {"por_enviar": "Por enviar", "esperando": "Esperando", "prorroga": "Prórroga",
+                  "respondido": "Respondido", "incompleto": "Respuesta incompleta", "vencido": "Vencido sin respuesta"}
+ETIQUETAS = {"tcr": "Tribunal de Cuentas", "finanzas": "Finanzas", "promesa": "Promesa pendiente",
+             "vigilar": "Promesa a vigilar", "auditoria": "Auditoría", "pedido": "Pedido de auditoría"}
+
+
+def slug(text):
+    import unicodedata
+    plain = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    return "-".join(plain.lower().split())
+
+
+def build_intendencias(public):
+    """Genera intendencias.html y sus CSV desde datos/intendencias_2022.json."""
+    from html import escape
+    data = load_data("intendencias_2022.json")
+    deps = data["departamentos"]
+    if len(deps) != 19 or len({d["departamento"] for d in deps}) != 19:
+        raise ValueError("Tienen que estar los 19 departamentos, sin repetir.")
+    for d in deps:
+        for h in d["hallazgos"]:
+            if h["tipo"] not in ETIQUETAS or not h.get("url") or not h.get("fuente"):
+                raise ValueError(f"Hallazgo sin tipo válido o sin fuente en {d['departamento']}.")
+    totals = data["totales_2022"]
+    for key, field in (("gasto_ejecutado_miles_uyu", "gasto_ejecutado_2022_miles_uyu"),
+                       ("remuneraciones_miles_uyu", "remuneraciones_2022_miles_uyu"),
+                       ("ingresos_nacionales_miles_uyu", "ingresos_nacionales_2022_miles_uyu")):
+        if sum(d[field] for d in deps) != totals[key]:
+            raise ValueError(f"El total {key} no coincide con la suma de los 19 departamentos.")
+
+    num = lambda n: f"{n:,.0f}".replace(",", ".")
+    mill = lambda miles: num(round(miles / 1000))
+    pct = lambda x: f"{x:.1f}".replace(".", ",")
+    rows = []
+    for d in sorted(deps, key=lambda x: -x["gasto_por_habitante_uyu"]):
+        dif = d["diferencia_ingreso_gasto_2022_miles_uyu"]
+        rows.append(
+            f'<tr><td><a href="#{slug(d["departamento"])}">{escape(d["departamento"])}</a></td>'
+            f'<td class="n">{mill(d["gasto_ejecutado_2022_miles_uyu"])}</td>'
+            f'<td class="n"><b>{num(d["gasto_por_habitante_uyu"])}</b></td>'
+            f'<td class="n"><span class="bar" style="--w:{d["pct_remuneraciones"]}%"></span>{pct(d["pct_remuneraciones"])} %</td>'
+            f'<td class="n">{pct(d["pct_ingreso_nacional"])} %</td>'
+            f'<td class="n{" neg" if dif < 0 else ""}">{"+" if dif > 0 else ""}{mill(dif)}</td></tr>')
+    cards = []
+    for d in deps:
+        sid = slug(d["departamento"])
+        items = "".join(
+            f'<li class="h {h["tipo"]}"><span class="tag">{ETIQUETAS[h["tipo"]]}</span><p>{escape(h["texto"])}</p>'
+            f'<small><a href="{escape(h["url"])}" target="_blank" rel="noopener">{escape(h["fuente"])}</a> · {escape(h["solidez"])}</small></li>'
+            for h in d["hallazgos"]) or '<li class="h vacio"><p>Sin hallazgos verificados todavía. Si tenés un documento oficial, aportalo.</p></li>'
+        cards.append(
+            f'<article class="ficha" id="{sid}"><header><h3>{escape(d["departamento"])}</h3>'
+            f'<span class="est {"ok" if d["hallazgos"] else "rel"}">{d["estado"]}</span></header>'
+            f'<div class="mini"><div><b>$ {mill(d["gasto_ejecutado_2022_miles_uyu"])} M</b><span>gasto 2022</span></div>'
+            f'<div><b>{pct(d["pct_remuneraciones"])} %</b><span>en sueldos</span></div>'
+            f'<div><b>{pct(d["pct_ingreso_nacional"])} %</b><span>plata nacional</span></div></div><ul>{items}</ul>'
+            f'<div class="acciones"><a class="obj" href="informe.html?aporte=intendencia-{sid}&amp;tipo=correccion#aportes">⚑ Objetar un dato</a>'
+            f'<a href="informe.html?aporte=intendencia-{sid}&amp;tipo=opinion#aportes">Aportar información</a></div></article>')
+    pedidos = data["pedidos_acceso"]
+    pedido_rows = "".join(
+        f'<tr><td>{escape(p["intendencia"])}</td><td>{p["id"] or "—"}</td><td>{p["fecha_envio"] or "—"}</td>'
+        f'<td>{p["vencimiento"] or "—"}</td><td><span class="estado-pedido">{PEDIDO_ESTADOS[p["estado"]]}</span></td></tr>'
+        for p in pedidos["pedidos"])
+    top = sorted(deps, key=lambda x: -x["pct_ingreso_nacional"])[:2]
+    notas = [
+        "Montos en pesos corrientes de cada año.",
+        "“Por habitante” divide el gasto 2022 por la población proyectada a 2025 (INE): es una aproximación.",
+        "“Diferencia” compara lo recaudado con lo ejecutado en el año. No es el déficit acumulado oficial.",
+        "Los municipios entran en el gasto de la intendencia solo donde la rendición los abre como programa.",
+        "Las denuncias de partidos se muestran marcadas como tales hasta verificarlas con documentos oficiales.",
+    ]
+    values = {
+        "ANIO": "2022", "TOTAL_M": mill(totals["gasto_ejecutado_miles_uyu"]),
+        "PCT_REM": str(round(100 * totals["remuneraciones_miles_uyu"] / totals["gasto_ejecutado_miles_uyu"])),
+        "PCT_INV": str(round(100 * totals["inversiones_miles_uyu"] / totals["gasto_ejecutado_miles_uyu"])),
+        "PCT_NAC": pct(100 * totals["ingresos_nacionales_miles_uyu"] / totals["ingresos_miles_uyu"]),
+        "TOP_NAC": f'{top[0]["departamento"]} y {top[1]["departamento"]}',
+        "TOP_NAC_PCT": str(int(min(t["pct_ingreso_nacional"] for t in top))),
+        "RANKING": "".join(rows), "FICHAS": "".join(cards),
+        "PEDIDOS": pedido_rows, "PEDIDOS_NOTA": escape(pedidos["nota"]),
+        "NOTAS": "".join(f"<li>{n}</li>" for n in notas),
+        "FUENTE_URL": data["fuentes"]["opp"]["url"], "FUENTE_NOMBRE": escape(data["fuentes"]["opp"]["nombre"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "intendencias.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en intendencias.template.html.")
+    (public / "intendencias.html").write_text(page, encoding="utf-8")
+    write_csv(public, "intendencias_2022.csv",
+              [{k: v for k, v in d.items() if k not in ("hallazgos",)} for d in deps])
+    write_csv(public, "intendencias_hallazgos.csv",
+              [{"departamento": d["departamento"], **h} for d in deps for h in d["hallazgos"]])
+    write_csv(public, "pedidos_acceso_intendencias.csv", pedidos["pedidos"])
+    return data["consultado"]
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -248,13 +346,14 @@ def main():
     # Páginas de casos que no dependen de los datos de 2025: se copian tal cual.
     for page in STATIC_PAGES:
         (public / page).write_text((ROOT / "web" / page).read_text(encoding="utf-8"), encoding="utf-8")
+    build_intendencias(public)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", *STATIC_PAGES))
+                   for page in ("", "informe.html", "intendencias.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias y los CSV.")
 
 
 if __name__ == "__main__":

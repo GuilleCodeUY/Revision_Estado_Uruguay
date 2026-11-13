@@ -7,6 +7,7 @@ Análisis independiente del gasto del Estado uruguayo con información pública.
 Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan localmente. `Analisis_2025.md` reúne los hallazgos, escenarios y propuestas.
 
 - `publico/index.html` es la portada: el costo del Palacio Legislativo, tres datos de impacto con su fuente y un botón para objetarlos, los casos y la fe de erratas pública.
+- `publico/intendencias.html` es el caso de las 19 intendencias: gasto 2022 de OPP, ranking por habitante, fichas por departamento con lo observado por el Tribunal de Cuentas y las promesas, y el seguimiento de los pedidos de acceso. Se genera desde `datos/intendencias_2022.json`. El texto del pedido está en `pedidos/pedido_ley_18381_intendencias.md`.
 - `publico/informe.html` es el informe completo: Presupuesto Nacional, ingresos, empleo, Parlamento, Montevideo, Tribunal de Cuentas, escenarios de ahorro y aportes. Los importes de portada están redondeados a millones de pesos y los enlaces llevan a las cifras exactas.
 - `datos/correcciones.json` es el registro de objeciones que se muestra en la fe de erratas. Cada entrada lleva `fecha`, `dato`, `estado` (`recibida`, `en_revision`, `aceptada` o `rechazada`) y `resultado`.
 - `og.png` es la imagen que aparece al compartir el enlace. `robots.txt` y `sitemap.xml` sirven para que Google indexe el sitio.
@@ -26,6 +27,9 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 | `empleo_entidades_relacionadas_2025.csv` | 70 personas públicas no estatales y entidades de participación estatal mayoritaria. |
 | `balances_institucionales_2025.csv` | Cifras de personal y egresos de BPS, UTE, URSEA y URSEC con su criterio contable. |
 | `costos_de_conduccion_identificados_2025.csv` | Diez registros de JUTEP, UTE, BPS, ANCAP, URSEA y ACCESA, con su base y su fuente. |
+| `intendencias_2022.csv` | Gasto, sueldos, inversiones, ingresos propios y nacionales de las 19 intendencias en 2022 (OPP). |
+| `intendencias_hallazgos.csv` | Hallazgos por departamento con tipo, fuente y solidez. |
+| `pedidos_acceso_intendencias.csv` | Seguimiento de los 19 pedidos de acceso (Ley 18.381). |
 | `tribunal_muestra_2025.csv` | Cuatro expedientes con motivo, importe y estado documentado. |
 
 Los CSV usan punto y coma y codificación UTF-8 con BOM. Los montos con sufijo `_miles_uyu` se expresan en miles de pesos uruguayos. Los que llevan `_uyu` están en pesos. Un campo vacío indica que el dato queda fuera de la cobertura de la fuente o está pendiente de validar.

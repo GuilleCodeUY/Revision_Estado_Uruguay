@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto nos cuestan las 19 intendencias? · La verdad de la milanesa</title>
+  <meta name="description" content="Gasto, sueldos y plata nacional de las 19 intendencias, lo que observó el Tribunal de Cuentas y las promesas pendientes. Cada dato con su fuente.">
+  <link rel="canonical" href="https://verdadmilanesa.uy/intendencias.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="La verdad de la milanesa">
+  <meta property="og:title" content="Las 19 intendencias gastaron $ {{TOTAL_M}} millones en un año">
+  <meta property="og:description" content="De cada $ 100, ${{PCT_REM}} se fueron en sueldos. Lo que dijo el Tribunal de Cuentas y lo que se prometió, departamento por departamento.">
+  <meta property="og:url" content="https://verdadmilanesa.uy/intendencias.html">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0c2d3f">
+  <style>
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb;--hero:#0c2d3f;--acc:#3ddc97}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header.site{background:var(--hero);color:#fff}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 2.8rem}
+    .kicker{display:inline-block;background:var(--acc);color:var(--hero);font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.2rem,7vw,4.6rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:17ch}
+    .big{font-size:clamp(3rem,11vw,7rem);font-weight:900;letter-spacing:-.06em;line-height:.9;color:var(--acc);font-variant-numeric:tabular-nums}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:46ch;color:#d7e6ee;margin:.9rem 0 1.2rem}.hero p.sub strong{color:#fff}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:var(--hero)}.btn.o{background:transparent;color:var(--acc)}
+    .lema{background:var(--acc);color:var(--hero);font-weight:900;text-align:center;font-size:clamp(1.05rem,2.6vw,1.45rem);padding:.75rem 1rem;margin:0}
+    main{padding:2rem 0 3rem}main section{margin-bottom:2.8rem;scroll-margin-top:1rem}
+    h2{font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}.lead{color:var(--muted);margin:0 0 1.2rem;max-width:70ch}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .golpe{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1.1rem;box-shadow:5px 5px 0 var(--hero);display:flex;flex-direction:column;gap:.35rem}
+    .golpe .n{font-size:clamp(2rem,5vw,2.9rem);font-weight:900;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}.golpe .n.r{color:var(--red)}
+    .golpe .t{font-weight:800;line-height:1.25}.golpe .c{font-size:.84rem;color:var(--muted);margin:0}
+    .acciones{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto;padding-top:.5rem;border-top:1px dashed var(--line)}
+    .acciones a{font-size:.78rem;font-weight:700;text-decoration:none;padding:.3rem .5rem;border-radius:.3rem;background:#f2eee2}
+    .acciones a:hover{text-decoration:underline}.acciones a.obj{background:#fde6e7;color:#9b1c25}
+    .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left}
+    th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}td.neg{color:var(--red);font-weight:700}
+    .bar{display:inline-block;height:.55rem;width:calc(var(--w) * .9);max-width:55px;background:var(--acc);margin-right:.4rem;border-radius:2px;vertical-align:middle}
+    .fichas{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem}
+    .ficha{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.6rem;scroll-margin-top:1rem}
+    .ficha header{display:flex;justify-content:space-between;align-items:center;gap:.5rem}.ficha h3{margin:0;font-size:1.35rem;letter-spacing:-.03em}
+    .est{font-size:.7rem;font-weight:800;text-transform:uppercase;padding:.2rem .45rem;border-radius:.2rem}.est.ok{background:#ffe1e1;color:#a11}.est.rel{background:#eef2f4;color:#556}
+    .mini{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;text-align:center}.mini div{background:#f3f7f8;border-radius:.3rem;padding:.4rem .2rem}.mini b{display:block;font-size:1.05rem}.mini span{font-size:.7rem;color:var(--muted)}
+    .ficha ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}.h p{margin:.2rem 0;font-size:.88rem;line-height:1.35}.h small{font-size:.72rem;color:var(--muted)}
+    .tag{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:.12rem .4rem;border-radius:.2rem;background:#eef2f4}
+    .h.tcr .tag{background:var(--hero);color:#fff}.h.promesa .tag{background:var(--red);color:#fff}.h.vigilar .tag{background:var(--yellow)}.h.finanzas .tag{background:var(--acc);color:var(--hero)}
+    .h.vacio p{color:var(--muted);font-style:italic}
+    .aviso{background:#fff;border-left:6px solid var(--yellow);padding:1rem 1.2rem;font-size:.92rem}.aviso ul{margin:.4rem 0 0;padding-left:1.2rem}
+    .estado-pedido{font-size:.72rem;font-weight:800;text-transform:uppercase;padding:.15rem .4rem;border-radius:.2rem;background:#eef2f4}
+    footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    @media(max-width:760px){.golpes{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap top">
+      <a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a>
+      <nav aria-label="Secciones"><a href="#ranking">Ranking</a><a href="#departamentos">Departamento por departamento</a><a href="#pedidos">Pedidos de acceso</a><a href="#leer">Cómo leer</a></nav>
+    </div>
+    <div class="wrap hero">
+      <span class="kicker">Las 19 intendencias · primera ronda</span>
+      <h1>¿Cuánto nos cuestan las 19 intendencias?</h1>
+      <div class="big">$ {{TOTAL_M}} millones</div>
+      <p class="sub">Es lo que gastaron en un solo año ({{ANIO}}, el último que OPP publica en datos abiertos). De cada $ 100, <strong>${{PCT_REM}} se fueron en sueldos</strong> y apenas ${{PCT_INV}} en obras.</p>
+      <div class="btns"><a class="btn y" href="#ranking">Ver mi departamento ↓</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
+    </div>
+  </header>
+  <p class="lema">Los números no tienen partido. Las 19, gobierne quien gobierne.</p>
+  <main class="wrap">
+    <section aria-labelledby="t-golpes">
+      <h2 id="t-golpes">Tres datos para empezar</h2>
+      <div class="golpes">
+        <article class="golpe"><div class="n r">$ 3.640 M</div><div class="t">Déficit de la Intendencia de Montevideo en 2024</div><p class="c">$ 1.141 M son un ajuste pedido por el Tribunal de Cuentas. El resultado de gestión del año fue de $ 2.360 M en rojo.</p><div class="acciones"><a href="https://www.elobservador.com.uy/nacional/el-ahogamiento-financiero-lacalle-pou-la-im-que-acusaba-cosse-solo-explica-un-26-su-deficit-afirma-la-gestion-bergara-n6015731" target="_blank" rel="noopener">Fuente: El Observador</a><a class="obj" href="informe.html?aporte=intendencia-montevideo&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><div class="n r">$ 157,6 M</div><div class="t">En horas extras pagó Artigas en 2023</div><p class="c">Casi el doble que en 2021 ($ 83,8 M). El Tribunal de Cuentas concluyó que la falta de control creó un ambiente propicio para cobros irregulares.</p><div class="acciones"><a href="https://www.montevideo.com.uy/Noticias/Mas-de-US-1-millon-y-53-funcionarios-los-pagos-irregulares-de-horas-extras-en-Artigas-uc896240" target="_blank" rel="noopener">Fuente: Montevideo Portal</a><a class="obj" href="informe.html?aporte=intendencia-artigas&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><div class="n">{{PCT_NAC}} %</div><div class="t">De la plata de las intendencias vino del gobierno nacional</div><p class="c">En {{TOP_NAC}} pasa del {{TOP_NAC_PCT}} %. Datos de OPP, {{ANIO}}.</p><div class="acciones"><a href="#leer">Fuente: OPP</a><a class="obj" href="informe.html?aporte=intendencias-2022&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+      </div>
+    </section>
+    <section aria-labelledby="ranking">
+      <h2 id="ranking">El ranking: cuánto gasta cada una por habitante</h2>
+      <p class="lead">Gasto ejecutado {{ANIO}} en millones de pesos. “Diferencia” compara lo que entró con lo que se gastó ese año: en rojo, gastó más de lo que recaudó. Tocá un departamento para ver su ficha.</p>
+      <div class="tabla"><table><thead><tr><th scope="col">Departamento</th><th scope="col">Gasto {{ANIO}} ($ M)</th><th scope="col">Por habitante ($)</th><th scope="col">En sueldos</th><th scope="col">Plata nacional</th><th scope="col">Diferencia ($ M)</th></tr></thead>
+      <tbody>{{RANKING}}</tbody></table></div>
+      <p class="lead" style="margin-top:.6rem"><a href="intendencias_2022.csv">Descargar la tabla (CSV)</a> · <a href="intendencias_hallazgos.csv">Descargar los hallazgos (CSV)</a></p>
+    </section>
+    <section aria-labelledby="departamentos">
+      <h2 id="departamentos">Departamento por departamento</h2>
+      <p class="lead">Lo que dijo el Tribunal de Cuentas, lo que se prometió y no está, y lo que hay que vigilar. Cada punto lleva su fuente y qué tan sólida es. Los que dicen “en relevamiento” todavía no tienen un hallazgo verificado: si tenés un documento oficial, aportalo.</p>
+      <div class="fichas">{{FICHAS}}</div>
+    </section>
+    <section aria-labelledby="pedidos">
+      <h2 id="pedidos">Lo que pedimos y nos tienen que contestar</h2>
+      <p class="lead">{{PEDIDOS_NOTA}}</p>
+      <div class="tabla"><table><thead><tr><th scope="col">Intendencia</th><th scope="col">N.º</th><th scope="col">Enviado</th><th scope="col">Vence</th><th scope="col">Estado</th></tr></thead><tbody>{{PEDIDOS}}</tbody></table></div>
+    </section>
+    <section class="aviso" aria-labelledby="leer">
+      <h2 id="leer" style="font-size:1.3rem">Cómo leer esto</h2>
+      <ul>{{NOTAS}}</ul>
+      <p style="margin:.6rem 0 0">Fuente principal: <a href="{{FUENTE_URL}}" target="_blank" rel="noopener">{{FUENTE_NOMBRE}}</a>, consultada el {{CONSULTADO}}.</p>
+    </section>
+  </main>
+  <footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="./">Portada</a> · <a href="informe.html#metodo">Método y fuentes</a></div></footer>
+  <script>
+    "use strict";
+    document.getElementById("compartir").addEventListener("click", async () => {
+      const share = { title: document.title, text: "Las 19 intendencias gastaron $ {{TOTAL_M}} millones en un año. De cada $ 100, ${{PCT_REM}} se fueron en sueldos.", url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(share); return; }
+        await navigator.clipboard.writeText(share.text + " " + share.url);
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = "Enlace copiado";
+        toast.setAttribute("role", "status");
+        document.body.append(toast);
+        setTimeout(() => toast.remove(), 2200);
+      } catch (error) { /* el usuario canceló */ }
+    });
+  </script>
+</body>
+</html>
