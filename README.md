@@ -8,6 +8,7 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 
 - `publico/index.html` es la portada: el costo del Palacio Legislativo, tres datos de impacto con su fuente y un botón para objetarlos, los casos y la fe de erratas pública.
 - `publico/intendencias.html` es el caso de las 19 intendencias: gasto 2022 de OPP, ranking por habitante, fichas por departamento con lo observado por el Tribunal de Cuentas y las promesas, y el seguimiento de los pedidos de acceso. Se genera desde `datos/intendencias_2022.json`. El texto del pedido está en `pedidos/pedido_ley_18381_intendencias.md`.
+- `publico/puerto.html` es el caso del puerto de Montevideo: serie de la ANP 2015-2025, concesiones, paros, comparación con seis puertos de la región y obras. Se genera desde `datos/puerto.json`. La investigación y su verificación están en `investigacion_puerto/`.
 - `publico/informe.html` es el informe completo: Presupuesto Nacional, ingresos, empleo, Parlamento, Montevideo, Tribunal de Cuentas, escenarios de ahorro y aportes. Los importes de portada están redondeados a millones de pesos y los enlaces llevan a las cifras exactas.
 - `datos/correcciones.json` es el registro de objeciones que se muestra en la fe de erratas. Cada entrada lleva `fecha`, `dato`, `estado` (`recibida`, `en_revision`, `aceptada` o `rechazada`) y `resultado`.
 - `og.png` es la imagen que aparece al compartir el enlace. `robots.txt` y `sitemap.xml` sirven para que Google indexe el sitio.
@@ -31,6 +32,9 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 | `intendencias_hallazgos.csv` | Hallazgos por departamento con tipo, fuente y solidez. |
 | `intendencias_transparencia_intai.csv` | Índice de transparencia de la UAIP (INTAI) 2024, 2023 y 2022 de las 19 intendencias. Un 0 es que no respondió. |
 | `intendencias_denuncias_uaip.csv` | Resoluciones de la UAIP desde 2025 en que le dio la razón a un denunciante contra una intendencia, con enlace. |
+| `puerto_anp_2015_2025.csv` | Ingresos, resultado, inversiones, transferencias a Rentas Generales y funcionarios de la ANP, 2015-2025 (estados financieros). |
+| `puerto_comparacion.csv` | Contenedores 2024 (CEPAL) y puesto de eficiencia 2024 y 2025 (Banco Mundial) de siete puertos. |
+| `puerto_fuentes.csv` | Fuentes del caso del puerto, con tipo (oficial, prensa, gremial, partido). |
 | `pedidos_acceso_intendencias.csv` | Seguimiento de los 19 pedidos de acceso (Ley 18.381). |
 | `tribunal_muestra_2025.csv` | Cuatro expedientes con motivo, importe y estado documentado. |
 

@@ -1,0 +1,507 @@
+{
+ "consultado": "2026-11-13",
+ "anp": {
+  "nota": "Millones de pesos corrientes. Estados financieros auditados de la ANP.",
+  "serie": [
+   {
+    "anio": 2015,
+    "ingresos": 4532.7,
+    "resultado": 1735.3,
+    "inversiones": 293.3,
+    "rentas_generales": 268.2,
+    "funcionarios": 945,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2020-08/balance_2016_0.pdf"
+   },
+   {
+    "anio": 2016,
+    "ingresos": 4679.8,
+    "resultado": 1508.1,
+    "inversiones": 884.1,
+    "rentas_generales": 293.1,
+    "funcionarios": 951,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2020-08/balance_2016_0.pdf"
+   },
+   {
+    "anio": 2017,
+    "ingresos": null,
+    "resultado": null,
+    "inversiones": null,
+    "rentas_generales": null,
+    "funcionarios": 921,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2021-04/ANP%202020%20-%20ESTADOS%20FINANCIEROS.pdf"
+   },
+   {
+    "anio": 2018,
+    "ingresos": null,
+    "resultado": 1380.4,
+    "inversiones": null,
+    "rentas_generales": null,
+    "funcionarios": 983,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2021-04/ANP%202020%20-%20ESTADOS%20FINANCIEROS.pdf"
+   },
+   {
+    "anio": 2019,
+    "ingresos": 5463.3,
+    "resultado": 1445.1,
+    "inversiones": 2298.9,
+    "rentas_generales": 365.5,
+    "funcionarios": 984,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2021-04/ANP%202020%20-%20ESTADOS%20FINANCIEROS.pdf"
+   },
+   {
+    "anio": 2020,
+    "ingresos": 6238.6,
+    "resultado": 2171.6,
+    "inversiones": 3086.0,
+    "rentas_generales": 401.8,
+    "funcionarios": 948,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2021-04/ANP%202020%20-%20ESTADOS%20FINANCIEROS.pdf"
+   },
+   {
+    "anio": 2021,
+    "ingresos": 7337.7,
+    "resultado": 3409.8,
+    "inversiones": 3857.5,
+    "rentas_generales": 432.1,
+    "funcionarios": 953,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2023-05/Estados%20Financieros%20%20ANP%2031.12.22.pdf"
+   },
+   {
+    "anio": 2022,
+    "ingresos": 7381.8,
+    "resultado": 4101.3,
+    "inversiones": 3348.1,
+    "rentas_generales": 468.0,
+    "funcionarios": 917,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2023-05/Estados%20Financieros%20%20ANP%2031.12.22.pdf"
+   },
+   {
+    "anio": 2023,
+    "ingresos": null,
+    "resultado": 1938.4,
+    "inversiones": null,
+    "rentas_generales": null,
+    "funcionarios": 901,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-04/Estados%20Financieros%20ANP%20al%2031%20de%20diciembre%202025.pdf"
+   },
+   {
+    "anio": 2024,
+    "ingresos": 8110.4,
+    "resultado": 1689.9,
+    "inversiones": 1630.0,
+    "rentas_generales": 569.6,
+    "funcionarios": 925,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-04/Estados%20Financieros%20ANP%20al%2031%20de%20diciembre%202025.pdf"
+   },
+   {
+    "anio": 2025,
+    "ingresos": 8706.5,
+    "resultado": 2233.1,
+    "inversiones": 2069.8,
+    "rentas_generales": 600.0,
+    "funcionarios": 891,
+    "fuente": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-04/Estados%20Financieros%20ANP%20al%2031%20de%20diciembre%202025.pdf"
+   }
+  ]
+ },
+ "golpes": [
+  {
+   "valor": "$ 2.233 M",
+   "texto": "ganó la ANP en 2025 (unos US$ 57 M)",
+   "fuente": "Estados financieros ANP 2025",
+   "url": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-04/Estados%20Financieros%20ANP%20al%2031%20de%20diciembre%202025.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "$ 600 M",
+   "texto": "le pasó al Estado (Rentas Generales) en 2025",
+   "fuente": "Estados financieros ANP 2025, nota 22.e",
+   "url": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-04/Estados%20Financieros%20ANP%20al%2031%20de%20diciembre%202025.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "1.117.164",
+   "texto": "contenedores (TEU) en 2024: puesto 22 en América Latina",
+   "fuente": "CEPAL, Boletín FAL 414",
+   "url": "https://repositorio.cepal.org/server/api/core/bitstreams/78bf876d-9187-403a-a3d6-58adaba60f15/content",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "311.º",
+   "texto": "en eficiencia mundial en 2025; en 2024 había sido 289.º",
+   "fuente": "Banco Mundial y S&P, CPPI 2025 (anexo)",
+   "url": "https://www.elestrechodigital.com/en/port-efficiency/montevideo",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "2081",
+   "texto": "vence la concesión de la terminal de contenedores (TCP)",
+   "fuente": "Estados financieros ANP 2025, nota 20",
+   "url": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-04/Estados%20Financieros%20ANP%20al%2031%20de%20diciembre%202025.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "44 días",
+   "texto": "con paros o interrupciones en 2026, hasta setiembre",
+   "fuente": "Cámaras empresariales, vía Ámbito",
+   "url": "https://www.ambito.com/uruguay/las-camaras-empresariales-exigen-una-solucion-urgente-el-puerto-montevideo-44-dias-paros-lo-que-va-del-ano-n6324990",
+   "tipo": "gremial"
+  }
+ ],
+ "concesiones": [
+  {
+   "operador": "TCP (Katoen Natie)",
+   "actividad": "Terminal de contenedores",
+   "hasta": "2081",
+   "dato": "Se comprometió a invertir unos US$ 455 M. La ANP le cobró US$ 6,18 M en 2025.",
+   "url": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-04/Estados%20Financieros%20ANP%20al%2031%20de%20diciembre%202025.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "operador": "Montecon (60 % Neltume, 40 % ATCO)",
+   "actividad": "Operador multipropósito",
+   "hasta": "Permiso",
+   "dato": "Sus dueños reclaman en arbitrajes US$ 240 M (ATCO) y US$ 600 M (Neltume), iniciados en 2024.",
+   "url": "https://www.elobservador.com.uy/economia-y-empresas/gobierno-rechaza-extender-prorroga-del-arbitraje-iniciado-accionistas-montecon-y-tambien-su-proyecto-nueva-terminal-el-puerto-n6043021",
+   "tipo": "prensa"
+  },
+  {
+   "operador": "Tebetur (UPM)",
+   "actividad": "Terminal de celulosa",
+   "hasta": "2069",
+   "dato": "Opera desde octubre de 2022.",
+   "url": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2023-03/MEMORIA%20ANUAL%202022.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "operador": "Dique flotante (Capurro)",
+   "actividad": "Reparación naval",
+   "hasta": "—",
+   "dato": "Concesión firmada en julio de 2026, de unos US$ 20 M. Se espera que funcione a fines de 2027.",
+   "url": "https://www.ambito.com/uruguay/el-conflicto-tcp-obligo-desviar-buques-y-las-navieras-omitieron-la-escala-montevideo-n6299539",
+   "tipo": "prensa"
+  }
+ ],
+ "concesiones_nota": "En discusión: Neltume propuso una terminal de US$ 900 M, que está en análisis técnico en la ANP, y MSC dijo tener “seria intención” de operar una segunda terminal.",
+ "concesiones_url": "https://www.elobservador.com.uy/economia-y-empresas/terminal-contenedores-la-parte-del-contrato-que-blinda-katoen-natie-las-presiones-modificarla-y-lo-que-espera-el-gobierno-n6061885",
+ "paros": [
+  {
+   "fecha": "Mayo de 2022",
+   "texto": "Montecon despide a 150 trabajadores. SUPRA, el sindicato portuario, lo atribuye al acuerdo con Katoen Natie y para 24 horas. Amenaza con un paro de 72 horas si no hay propuesta.",
+   "fuentes": [
+    [
+     "UTMIDES",
+     "https://www.utmides.org.uy/web/2022/05/04/cronica-de-un-perjuicio-anunciado-150-despidos-en-el-puerto/",
+     "gremial"
+    ],
+    [
+     "Subrayado",
+     "https://www.subrayado.com.uy/reunion-clave-sindicato-montecon-y-mieres-medio-paro-depositos-24-horas-n866286",
+     "prensa"
+    ]
+   ]
+  },
+  {
+   "fecha": "Octubre de 2025",
+   "texto": "11 días con interrupciones. La Unión de Exportadores habla de US$ 60 M en mercadería detenida (no perdida) y de 40 % menos contenedores. La intergremial de transporte de carga estima US$ 400.000 a 500.000 por día. SUPRA levanta las medidas al vencer el plazo de negociación.",
+   "fuentes": [
+    [
+     "InfoNegocios (UEU)",
+     "https://infonegocios.biz/plus/asi-golpeo-al-comercio-exterior-el-conflicto-en-el-puerto-de-montevideo-y-que-plantea-la-union-de-exportadores-para-revertir-los-danos",
+     "gremial"
+    ],
+    [
+     "Ámbito",
+     "https://www.ambito.com/uruguay/transportistas-evaluan-una-denuncia-internacional-perdidas-millonarias-el-puerto-montevideo-n6204010",
+     "prensa"
+    ]
+   ]
+  },
+  {
+   "fecha": "Junio y julio de 2026",
+   "texto": "El sindicato reclama 25 jornales por mes; la empresa da 15. Algunos buques dejan de hacer escala en Montevideo. El presidente de la ANP: “Nosotros no podemos cuantificar cuánto eso perjudica”.",
+   "fuentes": [
+    [
+     "Ámbito",
+     "https://www.ambito.com/uruguay/el-conflicto-tcp-obligo-desviar-buques-y-las-navieras-omitieron-la-escala-montevideo-n6299539",
+     "prensa"
+    ]
+   ]
+  },
+  {
+   "fecha": "Setiembre de 2026",
+   "texto": "Las cámaras cuentan 44 días con interrupciones en 2026, contra 35 en todo 2025. En 15 de los últimos 16 meses hubo alguna medida.",
+   "fuentes": [
+    [
+     "Ámbito (cámaras)",
+     "https://www.ambito.com/uruguay/las-camaras-empresariales-exigen-una-solucion-urgente-el-puerto-montevideo-44-dias-paros-lo-que-va-del-ano-n6324990",
+     "gremial"
+    ]
+   ]
+  }
+ ],
+ "comparacion": {
+  "teu_2024": [
+   [
+    "Santos",
+    5484829
+   ],
+   [
+    "San Antonio",
+    1814488
+   ],
+   [
+    "Paranaguá",
+    1312782
+   ],
+   [
+    "Buenos Aires",
+    1220005
+   ],
+   [
+    "Montevideo",
+    1117164
+   ],
+   [
+    "Valparaíso",
+    636573
+   ],
+   [
+    "Río Grande",
+    585993
+   ]
+  ],
+  "teu_url": "https://repositorio.cepal.org/server/api/core/bitstreams/78bf876d-9187-403a-a3d6-58adaba60f15/content",
+  "cppi_2025": [
+   [
+    "Valparaíso",
+    80
+   ],
+   [
+    "Río Grande",
+    277
+   ],
+   [
+    "Montevideo",
+    311
+   ],
+   [
+    "San Antonio",
+    335
+   ],
+   [
+    "Santos",
+    358
+   ],
+   [
+    "Paranaguá",
+    373
+   ],
+   [
+    "Buenos Aires",
+    389
+   ]
+  ],
+  "cppi_2024": [
+   [
+    "Valparaíso",
+    160
+   ],
+   [
+    "Buenos Aires",
+    164
+   ],
+   [
+    "San Antonio",
+    236
+   ],
+   [
+    "Montevideo",
+    289
+   ],
+   [
+    "Río Grande",
+    372
+   ],
+   [
+    "Paranaguá",
+    388
+   ],
+   [
+    "Santos",
+    392
+   ]
+  ],
+  "cppi_2025_url": "https://www.elestrechodigital.com/en/port-efficiency/montevideo",
+  "cppi_2024_url": "https://www.bloomberglinea.com/negocios/los-puertos-mas-eficientes-del-mundo-dos-de-latinoamerica-estan-en-el-top-30/",
+  "montevideo_cppi": [
+   [
+    "2021",
+    265,
+    370
+   ],
+   [
+    "2022",
+    304,
+    348
+   ],
+   [
+    "2023",
+    384,
+    405
+   ],
+   [
+    "2024",
+    289,
+    403
+   ],
+   [
+    "2025",
+    311,
+    null
+   ]
+  ]
+ },
+ "obras": [
+  {
+   "nombre": "Viaducto de la rambla portuaria",
+   "monto": "US$ 156 M",
+   "texto": "1.800 metros. Las obras empezaron en junio de 2019 y se inauguró en diciembre de 2022. Lo pagaron la ANP y Fonplata.",
+   "url": "https://www.gub.uy/presidencia/comunicacion/noticias/gobierno-inauguro-obra-vial-rambla-portuaria-inversion-156-millones-dolares",
+   "tipo": "oficial",
+   "pendiente": "monto original: pendiente"
+  },
+  {
+   "nombre": "Dragado 2025-2029",
+   "monto": "US$ 114,9 M",
+   "texto": "81 % más que el plan anterior y 43 % de todo lo que la ANP prevé invertir. La meta de 14 metros en todo el canal sigue sin cumplirse; hoy está en 13.",
+   "url": "https://www.anp.com.uy/es/inicio/comunicacion/noticias/anp-planifica-proximas-campanas-de-dragado-con-sdc-de-brasil-y-chec-dredging-co-ltd-de-china",
+   "tipo": "oficial",
+   "pendiente": ""
+  },
+  {
+   "nombre": "Ampliación de TCP",
+   "monto": "US$ 455 M",
+   "texto": "Segundo muelle de unos 700 metros, a 14 de profundidad. Es un compromiso del contrato de 2021.",
+   "url": "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2021-04/ANP%202020%20-%20ESTADOS%20FINANCIEROS.pdf",
+   "tipo": "oficial",
+   "pendiente": "avance real: pendiente"
+  },
+  {
+   "nombre": "Dique flotante",
+   "monto": "US$ 20 M",
+   "texto": "Firmado en julio de 2026, con hasta 36 meses de obra.",
+   "url": "https://www.ambito.com/uruguay/el-conflicto-tcp-obligo-desviar-buques-y-las-navieras-omitieron-la-escala-montevideo-n6299539",
+   "tipo": "prensa",
+   "pendiente": ""
+  }
+ ],
+ "fuentes": [
+  [
+   "ANP: estados financieros 2016",
+   "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2020-08/balance_2016_0.pdf",
+   "oficial"
+  ],
+  [
+   "ANP: estados financieros 2020",
+   "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2021-04/ANP%202020%20-%20ESTADOS%20FINANCIEROS.pdf",
+   "oficial"
+  ],
+  [
+   "ANP: estados financieros 2022",
+   "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2023-05/Estados%20Financieros%20%20ANP%2031.12.22.pdf",
+   "oficial"
+  ],
+  [
+   "ANP: estados financieros 2025",
+   "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-04/Estados%20Financieros%20ANP%20al%2031%20de%20diciembre%202025.pdf",
+   "oficial"
+  ],
+  [
+   "Tribunal de Cuentas: dictamen sobre el balance 2024",
+   "https://www.anp.com.uy/sites/default/files/archivos/parrafo-colapsable/2026-06/DICTAMEN%20TCR-%20EEFF%202024.pdf",
+   "oficial"
+  ],
+  [
+   "INE: Anuario 2024, empresas públicas (MEF-CGN)",
+   "https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2024-volumen-n-101/61-sector-publico/6111",
+   "oficial"
+  ],
+  [
+   "CEPAL: Boletín FAL 414",
+   "https://repositorio.cepal.org/server/api/core/bitstreams/78bf876d-9187-403a-a3d6-58adaba60f15/content",
+   "oficial"
+  ],
+  [
+   "Banco Mundial y S&P: CPPI 2025, anexo (vía El Estrecho Digital)",
+   "https://www.elestrechodigital.com/en/port-efficiency/montevideo",
+   "oficial"
+  ],
+  [
+   "Banco Mundial y S&P: CPPI 2024 (vía Bloomberg Línea)",
+   "https://www.bloomberglinea.com/negocios/los-puertos-mas-eficientes-del-mundo-dos-de-latinoamerica-estan-en-el-top-30/",
+   "oficial"
+  ],
+  [
+   "Presidencia: inauguración del viaducto",
+   "https://www.gub.uy/presidencia/comunicacion/noticias/gobierno-inauguro-obra-vial-rambla-portuaria-inversion-156-millones-dolares",
+   "oficial"
+  ],
+  [
+   "ANP: campañas de dragado 2025-2029",
+   "https://www.anp.com.uy/es/inicio/comunicacion/noticias/anp-planifica-proximas-campanas-de-dragado-con-sdc-de-brasil-y-chec-dredging-co-ltd-de-china",
+   "oficial"
+  ],
+  [
+   "El Observador: arbitrajes de Montecon",
+   "https://www.elobservador.com.uy/economia-y-empresas/gobierno-rechaza-extender-prorroga-del-arbitraje-iniciado-accionistas-montecon-y-tambien-su-proyecto-nueva-terminal-el-puerto-n6043021",
+   "prensa"
+  ],
+  [
+   "El Observador: contrato de TCP",
+   "https://www.elobservador.com.uy/economia-y-empresas/terminal-contenedores-la-parte-del-contrato-que-blinda-katoen-natie-las-presiones-modificarla-y-lo-que-espera-el-gobierno-n6061885",
+   "prensa"
+  ],
+  [
+   "Ámbito: conflicto en TCP (julio 2026)",
+   "https://www.ambito.com/uruguay/el-conflicto-tcp-obligo-desviar-buques-y-las-navieras-omitieron-la-escala-montevideo-n6299539",
+   "prensa"
+  ],
+  [
+   "Ámbito: transportistas y pérdidas (octubre 2025)",
+   "https://www.ambito.com/uruguay/transportistas-evaluan-una-denuncia-internacional-perdidas-millonarias-el-puerto-montevideo-n6204010",
+   "prensa"
+  ],
+  [
+   "Ámbito: cámaras empresariales (setiembre 2026)",
+   "https://www.ambito.com/uruguay/las-camaras-empresariales-exigen-una-solucion-urgente-el-puerto-montevideo-44-dias-paros-lo-que-va-del-ano-n6324990",
+   "gremial"
+  ],
+  [
+   "InfoNegocios: Unión de Exportadores",
+   "https://infonegocios.biz/plus/asi-golpeo-al-comercio-exterior-el-conflicto-en-el-puerto-de-montevideo-y-que-plantea-la-union-de-exportadores-para-revertir-los-danos",
+   "gremial"
+  ],
+  [
+   "UTMIDES: despidos de 2022",
+   "https://www.utmides.org.uy/web/2022/05/04/cronica-de-un-perjuicio-anunciado-150-despidos-en-el-puerto/",
+   "gremial"
+  ],
+  [
+   "Subrayado: paro de mayo de 2022",
+   "https://www.subrayado.com.uy/reunion-clave-sindicato-montecon-y-mieres-medio-paro-depositos-24-horas-n866286",
+   "prensa"
+  ],
+  [
+   "Facultad de Derecho: monitor de costos portuarios",
+   "https://www.fder.edu.uy/pmcp",
+   "oficial"
+  ]
+ ],
+ "pendientes": [
+  "Monto original previsto del viaducto (resolución de 2017).",
+  "Fallo del TCA de 2026 sobre el contrato ANP-TCP.",
+  "Registro de paros 2015-2024.",
+  "Balances 2017 y 2018 (escaneados) y motivo de la salvedad del Tribunal de Cuentas en 2024."
+ ]
+}

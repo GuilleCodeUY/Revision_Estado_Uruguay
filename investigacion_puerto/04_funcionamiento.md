@@ -73,11 +73,12 @@ Verificado el 13/11/2026 contra las memorias de la ANP, la página de tarifas y 
 
 **Corregido:**
 - **TEU 2024:** el 1.049.741 de Ámbito era **un conteo parcial, al 10/12/2024** ("en lo que va del año"). No contradice a la CEPAL, que da 1.117.164 TEU para el año completo. Además, el desglose de Ámbito suma 1.046.129, no 1.049.741. **Usar el dato de la CEPAL para el año completo.**
-- **Ranking del Banco Mundial (CPPI):**
-  - 2023: el oficial es el **puesto 384 de 405**, confirmado por MercoPress con el informe del Banco Mundial.
-  - 2022: el oficial es el **puesto 248**. El "304" de Ámbito es un error de esa nota.
-  - 2021: puesto 265 de 370, según Ámbito.
-  - **2024: puesto 289**, según la quinta edición oficial (Banco Mundial y S&P), vía Bloomberg Línea del 13/10/2025.
-  - La serie de El Estrecho Digital (puesto 311 "2025", 346 en 2023 y puntajes propios) es **cálculo propio de un medio español, no del Banco Mundial**. Para otros puertos da puestos muy distintos de los oficiales. **Descartarla.**
+- **Ranking del Banco Mundial (CPPI)** (revisado de nuevo el 13/11/2026; reemplaza lo anotado antes acá):
+  - Edición 2021: puesto 265 de 370 (Ámbito; El Observador).
+  - Edición 2022: **puesto 304 de 348**. Lo confirman El Observador y DF SUD. El "304 de 248" de Ámbito es un error de tipeo por 348. **Mi corrección anterior a 248 estaba mal**: 248 es un puesto que El Estrecho deriva para 2021, no un dato oficial.
+  - Edición 2023: puesto 384 de 405 (Banco Mundial vía El Observador, Ámbito y pescare.com.ar).
+  - Edición 2024 (publicada en setiembre de 2025): puesto 289 (Bloomberg Línea; Ámbito y El Cronista lo destacan como uno de los 10 puertos que más mejoraron).
+  - **Edición 2025 (publicada en 2026): puesto 311.** Sale del anexo oficial que reproduce El Estrecho Digital, marcado como "publicado". Ese medio coincide con fuentes independientes para otros puertos (Valparaíso 80 en Analdex y DF; San Antonio 335 en DF). **Su dato 2025 es válido.**
+  - Lo que sí se descarta de El Estrecho son los puestos de años anteriores, que el propio medio aclara que deriva él (2020: 280; 2021: 248; 2022: 285; 2023: 346; 2024: 267).
 
 **Lo que falta:** la serie de TEU 2015-2020 (está en los boletines mensuales de la ANP), el tiempo de espera de los buques y los movimientos por hora de grúa. Este último está en el anexo del CPPI, que publica el tiempo en puerto por escala.

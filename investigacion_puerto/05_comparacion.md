@@ -70,20 +70,20 @@ Verificado el 13/11/2026.
 
 **Corregido:**
 - **Puesto de Montevideo en 2022 en el ranking de la CEPAL:** el cuadro 3 solo trae 2019, 2023 y 2024, así que el 20.º de 2022 **no se pudo verificar** ahí. Sí está el 24.º de 2019.
-- **Ranking del Banco Mundial 2025 de los siete puertos:** **descartar** las cifras de El Estrecho Digital, que no son oficiales. Usar la quinta edición oficial del CPPI (año 2024), según Bloomberg Línea del 13/10/2025:
+- **Ranking del Banco Mundial de los siete puertos** (revisado de nuevo el 13/11/2026): **el dato de 2025 de El Estrecho Digital es válido.** Es el puesto publicado en el anexo oficial de la edición 2025 del CPPI y coincide con fuentes independientes (Valparaíso 80 en Analdex y DF; San Antonio 335 en DF). Se descartan solo los puestos de años anteriores, que deriva el medio.
 
-| Puerto | Puesto mundial 2024 |
-|---|---|
-| Valparaíso | 160 |
-| Buenos Aires | 164 |
-| San Antonio | 236 |
-| Montevideo | 289 |
-| Río Grande | 372 |
-| Paranaguá | 388 |
-| Santos | 392 |
+| Puerto | Puesto 2025 (más reciente) | Puesto 2024 |
+|---|---|---|
+| Valparaíso | 80 | 160 |
+| Río Grande | 277 | 372 |
+| Montevideo | 311 | 289 |
+| San Antonio | 335 | 236 |
+| Santos | 358 | 392 |
+| Paranaguá | 373 | 388 |
+| Buenos Aires | 389 | 164 |
 
-  Antes de publicar, conviene confirmar cada puesto contra el anexo del informe del Banco Mundial.
+  La edición 2025 mide "más de 400 puertos"; la 2024 midió 403. Fuentes del 2024: Bloomberg Línea, 13/10/2025.
 
 **Lo que falta:** tarifas comparables de los otros seis puertos, y tiempo en puerto y productividad de grúa. Ambos están en el anexo del CPPI, que da horas en puerto por escala para cada puerto.
 
-**Lectura honesta para la página:** en volumen, Montevideo está en el pelotón de Buenos Aires y Paranaguá. En eficiencia del Banco Mundial 2024 queda detrás de los puertos chilenos y de Buenos Aires, pero delante de Santos, Paranaguá y Río Grande.
+**Lectura honesta para la página:** en volumen, Montevideo está en el pelotón de Buenos Aires y Paranaguá. En eficiencia, el ranking se mueve mucho de un año a otro. En 2025 Montevideo quedó 311.º, detrás de Valparaíso y Río Grande y delante de San Antonio, Santos, Paranaguá y Buenos Aires. En 2024 había sido 289.º. Conviene mostrar los dos años, no uno solo.

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El puerto de Montevideo en números · La verdad de la milanesa</title>
+  <meta name="description" content="Cuánto gana la ANP, quién opera cada terminal, los paros, la comparación con los puertos vecinos y las obras. Cada dato con su fuente y su tipo.">
+  <link rel="canonical" href="https://verdadmilanesa.uy/puerto.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="La verdad de la milanesa">
+  <meta property="og:title" content="El puerto de Montevideo en números">
+  <meta property="og:description" content="La ANP ganó $ 2.233 millones en 2025. En eficiencia mundial quedó 311.º. Paros, concesiones y obras, con fuente.">
+  <meta property="og:url" content="https://verdadmilanesa.uy/puerto.html">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b2236">
+  <style>
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb;--hero:#0b2236;--hero2:#123552;--acc:#ff7a1a;--green:#2e9e6a}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header.site{background:var(--hero);color:#fff;box-shadow:inset 0 -8px 0 var(--acc)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 3rem}
+    .kicker{display:inline-block;background:var(--acc);color:var(--hero);font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.2rem,7vw,4.4rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:56ch;color:#d7e3ee;margin:.9rem 0 1.2rem}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:var(--hero)}.btn.o{background:transparent;color:var(--acc)}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:2rem}
+    .golpe{background:var(--hero2);border-left:6px solid var(--acc);padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+    .golpe b{font-size:clamp(1.7rem,4vw,2.2rem);font-weight:900;line-height:1.05;letter-spacing:-.03em}
+    .golpe span{font-size:.92rem;color:#d7e3ee}
+    .golpe .acc{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.45rem}
+    .golpe .acc a{font-size:.72rem;font-weight:700;text-decoration:none;color:#cfe0ee;background:rgba(255,255,255,.08);padding:.2rem .45rem;border-radius:.25rem}
+    .golpe .acc a:hover{text-decoration:underline}
+    main{padding:2rem 0 3rem}main section{margin-bottom:3rem;scroll-margin-top:1rem}
+    h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}.lead{color:var(--muted);margin:0 0 1.2rem;max-width:72ch}
+    .num{color:var(--acc);font-weight:900;font-size:.85rem;letter-spacing:.1em}
+    .tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.12rem .42rem;border-radius:.2rem;vertical-align:middle;text-decoration:none}
+    .t-oficial{background:#dff1e7;color:#1d6b46}.t-prensa{background:#e6eef7;color:#1e4b7a}.t-gremial{background:#fde6d4;color:#9a4300}.t-partido{background:#f6dede;color:#9b1c25}.t-pend{background:var(--yellow);color:#111}
+    .chart{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1rem .5rem;overflow-x:auto}
+    .chart svg{display:block;min-width:620px;width:100%;height:auto}
+    .legend{display:flex;gap:1.2rem;font-size:.85rem;margin:.2rem 0 .8rem;flex-wrap:wrap}.legend i{display:inline-block;width:12px;height:12px;margin-right:.35rem;vertical-align:-1px}
+    .nota{font-size:.84rem;color:var(--muted);margin-top:.7rem;max-width:80ch}
+    .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+    .barras h3{font-size:1rem;margin:0 0 .6rem}
+    .fila{display:grid;grid-template-columns:105px 1fr 92px;align-items:center;gap:.5rem;font-size:.88rem;margin:.32rem 0}
+    .fila .b{height:18px;background:#c9d6e2;border-radius:2px}.fila.mvd .b{background:var(--acc)}.fila.mvd{font-weight:800}
+    .fila .v{text-align:right;font-variant-numeric:tabular-nums}
+    .timeline{border-left:3px solid var(--hero);margin-left:.4rem;padding-left:1.2rem}
+    .hito{position:relative;margin:0 0 1.5rem}
+    .hito:before{content:"";position:absolute;left:-1.72rem;top:.35rem;width:13px;height:13px;border-radius:50%;background:var(--acc);border:2px solid var(--paper)}
+    .hito .f{font-weight:800;color:var(--hero2)}.hito p{margin:.2rem 0 .35rem;max-width:75ch}
+    .obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .obra{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+    .obra h3{margin:0;font-size:1.05rem}.obra .m{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}.obra p{font-size:.9rem;margin:0}
+    .obra .acc{margin-top:auto;display:flex;gap:.35rem;flex-wrap:wrap;padding-top:.4rem}
+    .alerta{background:var(--hero);color:#fff;padding:1.6rem;border-left:8px solid var(--red);border-radius:.5rem}
+    .alerta h2{color:#fff}.alerta p,.alerta li{color:#d7e3ee;max-width:76ch}
+    .fuentes{columns:2 320px;padding-left:1.1rem}.fuentes li{font-size:.88rem;margin:.3rem 0;break-inside:avoid}
+    .pend{background:#fff;border-left:6px solid var(--yellow);padding:1rem 1.2rem;font-size:.92rem}.pend ul{margin:.4rem 0 0;padding-left:1.2rem}
+    a.obj{font-size:.72rem;font-weight:700;text-decoration:none;padding:.2rem .45rem;border-radius:.25rem;background:#fde6e7;color:#9b1c25}
+    .golpe a.obj{background:rgba(230,57,70,.25);color:#ffd9dc}
+    footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    @media(max-width:760px){.golpes{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap top">
+      <a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a>
+      <nav aria-label="Secciones"><a href="#anp">La ANP</a><a href="#concesiones">Concesiones</a><a href="#paros">Paros</a><a href="#comparacion">Comparación</a><a href="#obras">Obras</a><a href="#fuentes">Fuentes</a></nav>
+    </div>
+    <div class="wrap hero">
+      <span class="kicker">Caso 4 · Puerto de Montevideo</span>
+      <h1>El puerto de Montevideo, en números</h1>
+      <p class="sub">Cuánto gana la Administración Nacional de Puertos (ANP), quién opera cada terminal, cuánto se para, cómo estamos frente a los vecinos y qué pasó con las obras. Cada número tiene su fuente y su tipo: oficial, prensa, gremial o partidaria.</p>
+      <div class="btns"><a class="btn y" href="#anp">Ver los números ↓</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
+      <div class="golpes">{{GOLPES}}</div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="anp">
+      <div class="num">01</div>
+      <h2>La ANP gana plata. ¿Cuánta y adónde va?</h2>
+      <p class="lead">Resultado del año, inversiones y lo que le pasa al Estado (Rentas Generales), en millones de pesos corrientes, según los estados financieros auditados. Los años que faltan están en balances escaneados que todavía no se pudieron leer.</p>
+      <div class="legend"><span><i style="background:#123552"></i>Resultado del año</span><span><i style="background:#ff7a1a"></i>Inversiones</span><span><i style="background:#2e9e6a"></i>A Rentas Generales</span><span><i style="background:#ccc"></i>Sin dato publicado</span></div>
+      <div class="chart">{{GRAFICO}}</div>
+      <p class="nota">Pesos corrientes, sin ajustar por inflación. En 2023 los estados financieros de la ANP dan un resultado de $ 1.938 millones y el MEF, que usa otra base contable, $ 69 millones. Acá se muestra la cifra auditada. Las inversiones de 2023 la ANP solo las publicó en dólares: US$ 52,2 millones.</p>
+      <div class="tabla" style="margin-top:1.2rem" tabindex="0" role="region" aria-label="Serie de la ANP 2015-2025"><table>
+        <thead><tr><th>Año</th><th class="n">Ingresos operativos</th><th class="n">Resultado</th><th class="n">Inversiones</th><th class="n">A Rentas Generales</th><th class="n">Funcionarios</th><th>Fuente</th></tr></thead>
+        <tbody>{{TABLA_ANP}}</tbody>
+      </table></div>
+      <p class="nota">Millones de pesos corrientes. El Tribunal de Cuentas aprobó el balance 2024 con salvedades. En 2022 y en 2025 la auditora Deloitte no pudo ver los balances auditados de TCP, en la que la ANP tiene acciones. <a class="obj" href="informe.html?aporte=puerto-2026&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></p>
+    </section>
+
+    <section id="concesiones">
+      <div class="num">02</div>
+      <h2>Quién opera qué, y hasta cuándo</h2>
+      <p class="lead">El puerto es público, pero buena parte de la operación está en manos de empresas privadas con concesiones o permisos.</p>
+      <div class="tabla" tabindex="0" role="region" aria-label="Concesiones"><table>
+        <thead><tr><th>Operador</th><th>Qué hace</th><th>Hasta</th><th>Dato clave</th><th>Fuente</th></tr></thead>
+        <tbody>{{CONCESIONES}}</tbody>
+      </table></div>
+      <p class="nota">{{CONC_NOTA}} <a class="tag t-prensa" href="{{CONC_URL}}" target="_blank" rel="noopener">prensa</a></p>
+    </section>
+
+    <section id="paros">
+      <div class="num">03</div>
+      <h2>Paros: qué pasó y quién pone los números</h2>
+      <p class="lead">Las cifras de impacto vienen de las gremiales empresariales, y ninguna publica cómo las calculó. Al lado de cada una va quién la dio, y también lo que reclamaba el sindicato.</p>
+      <div class="timeline">{{PAROS}}</div>
+    </section>
+
+    <section id="comparacion">
+      <div class="num">04</div>
+      <h2>¿Cómo estamos frente a los vecinos?</h2>
+      <p class="lead">Tamaño (contenedores movidos) y eficiencia (ranking mundial del Banco Mundial, que mide cuánto tiempo pasan los buques en el puerto; un puesto más bajo es mejor).</p>
+      <div class="grid2">
+        <div class="barras"><h3>Contenedores en 2024 (TEU)</h3>{{TEU}}<p class="nota">CEPAL, Boletín FAL 414 <a class="tag t-oficial" href="{{TEU_URL}}" target="_blank" rel="noopener">oficial</a></p></div>
+        <div class="barras"><h3>Puesto mundial en eficiencia, 2025</h3>{{CPPI25}}<p class="nota">Banco Mundial y S&amp;P, CPPI 2025 (anexo) <a class="tag t-oficial" href="{{CPPI25_URL}}" target="_blank" rel="noopener">oficial</a></p></div>
+      </div>
+      <h3 style="margin:1.6rem 0 .5rem">El puesto de Montevideo, año por año</h3>
+      <div class="tabla" tabindex="0" role="region" aria-label="Montevideo en el CPPI"><table>
+        <thead><tr><th>Edición</th><th class="n">Puesto</th><th class="n">Puertos medidos</th></tr></thead>
+        <tbody>{{MVD_CPPI}}</tbody>
+      </table></div>
+      <p class="nota">El ranking cambia mucho de un año a otro. En 2024 Montevideo fue uno de los diez puertos que más mejoraron, y en 2025 volvió a bajar. En 2024 el orden de los siete fue otro: Valparaíso 160, Buenos Aires 164, San Antonio 236, Montevideo 289, Río Grande 372, Paranaguá 388 y Santos 392 (<a href="{{CPPI24_URL}}" target="_blank" rel="noopener">Bloomberg Línea</a>).</p>
+    </section>
+
+    <section id="obras">
+      <div class="num">05</div>
+      <h2>Las obras: cuánto costaron y cómo van</h2>
+      <p class="lead">La pregunta de fondo es cuánto se prometió contra cuánto se gastó. Donde todavía no está el monto original, se marca como pendiente.</p>
+      <div class="obras">{{OBRAS}}</div>
+    </section>
+
+    <section id="nadie">
+      <div class="alerta">
+        <h2>Lo que nadie calculó</h2>
+        <p>No hay ningún cálculo oficial ni académico de cuánto pierde o gana el país con los conflictos del puerto. La Facultad de Derecho tiene en marcha un monitor de costos portuarios (2025-2027), pero todavía no publicó resultados.</p>
+        <ul>
+          <li>Las cifras de pérdidas que circulan son de gremiales empresariales y ninguna publica su método.</li>
+          <li>La ANP dice que no puede cuantificar el perjuicio.</li>
+          <li>Lo que sí está documentado es lo que la ANP gana, lo que le pasa al Estado y lo que cobra a cada concesionario.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pendiente">
+      <div class="pend"><strong>Lo que todavía estamos buscando</strong><ul>{{PENDIENTES}}</ul></div>
+    </section>
+
+    <section id="fuentes">
+      <h2>De dónde sale cada número</h2>
+      <p class="lead">Consultado el {{CONSULTADO}}. Los datos se pueden descargar en <a href="puerto_anp_2015_2025.csv">CSV de la ANP</a>, <a href="puerto_comparacion.csv">CSV de la comparación</a> y <a href="puerto_fuentes.csv">CSV de fuentes</a>.</p>
+      <ul class="fuentes">{{FUENTES}}</ul>
+    </section>
+  </main>
+  <footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="./">Portada</a> · <a href="informe.html#metodo">Método y fuentes</a></div></footer>
+  <script>
+    "use strict";
+    document.getElementById("compartir").addEventListener("click", async () => {
+      const share = { title: document.title, text: "La ANP ganó $ 2.233 millones en 2025, pero el puerto de Montevideo quedó 311.º en eficiencia mundial. Los números, con fuente.", url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(share); return; }
+        await navigator.clipboard.writeText(share.text + " " + share.url);
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = "Enlace copiado";
+        toast.setAttribute("role", "status");
+        document.body.append(toast);
+        setTimeout(() => toast.remove(), 2200);
+      } catch (error) { /* el usuario canceló */ }
+    });
+  </script>
+</body>
+</html>

@@ -320,6 +320,111 @@ def build_intendencias(public):
     return data["consultado"]
 
 
+def build_puerto(public):
+    """Genera puerto.html y sus CSV desde datos/puerto.json."""
+    from html import escape
+    data = load_data("puerto.json")
+    serie = data["anp"]["serie"]
+    anios = [r["anio"] for r in serie]
+    if anios != list(range(2015, 2026)):
+        raise ValueError("La serie de la ANP tiene que ir de 2015 a 2025, un año por fila.")
+    tipos = {"oficial", "prensa", "gremial", "partido"}
+    for item in data["golpes"] + data["concesiones"] + data["obras"]:
+        if item["tipo"] not in tipos or not item["url"].startswith("https://"):
+            raise ValueError("Cada dato del puerto necesita un tipo válido y una URL https.")
+    for nombre, url, tipo in data["fuentes"]:
+        if tipo not in tipos or not url.startswith("https://"):
+            raise ValueError(f"Fuente mal cargada: {nombre}")
+    comp = data["comparacion"]
+    for key in ("teu_2024", "cppi_2025", "cppi_2024"):
+        if len(comp[key]) != 7 or "Montevideo" not in [p for p, _ in comp[key]]:
+            raise ValueError(f"{key} tiene que traer los siete puertos, Montevideo incluido.")
+
+    def tag(tipo, url=None):
+        if url:
+            return f'<a class="tag t-{tipo}" href="{escape(url)}" target="_blank" rel="noopener">{tipo}</a>'
+        return f'<span class="tag t-{tipo}">{tipo}</span>'
+
+    def millones(v):
+        return "—" if v is None else f"{v:,.0f}".replace(",", ".")
+
+    obj = '<a class="obj" href="informe.html?aporte=puerto-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
+    golpes = "".join(
+        f'<div class="golpe"><b>{escape(g["valor"])}</b><span>{escape(g["texto"])}</span>'
+        f'<div class="acc"><a href="{escape(g["url"])}" target="_blank" rel="noopener">{escape(g["fuente"])} · {g["tipo"]}</a>{obj}</div></div>'
+        for g in data["golpes"])
+
+    # Gráfico de barras agrupadas: resultado, inversiones y Rentas Generales.
+    W, H, L, R, T, B, top = 900, 340, 60, 10, 14, 34, 4500
+    cw = (W - L - R) / len(serie)
+    bw = cw / 4.2
+    y = lambda v: T + (H - T - B) * (1 - v / top)
+    svg = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Resultado, inversiones y transferencias de la ANP 2015-2025, en millones de pesos">']
+    for g in range(0, top + 1, 1000):
+        svg.append(f'<line x1="{L}" x2="{W-R}" y1="{y(g):.1f}" y2="{y(g):.1f}" stroke="#e3dccb"/>'
+                   f'<text x="{L-8}" y="{y(g)+4:.1f}" font-size="11" text-anchor="end" fill="#5a5a5a">{millones(g)}</text>')
+    for i, r in enumerate(serie):
+        x0 = L + i * cw + cw * .14
+        for j, (k, color) in enumerate((("resultado", "#123552"), ("inversiones", "#ff7a1a"), ("rentas_generales", "#2e9e6a"))):
+            x = x0 + j * bw
+            v = r[k]
+            if v is None:
+                svg.append(f'<rect x="{x:.1f}" y="{y(0)-3:.1f}" width="{bw-2:.1f}" height="3" fill="#ccc"/>')
+            else:
+                svg.append(f'<rect x="{x:.1f}" y="{y(v):.1f}" width="{bw-2:.1f}" height="{y(0)-y(v):.1f}" fill="{color}">'
+                           f'<title>{r["anio"]} · $ {millones(v)} M</title></rect>')
+        svg.append(f'<text x="{L+i*cw+cw/2:.1f}" y="{H-12}" font-size="12" text-anchor="middle">{r["anio"]}</text>')
+    svg.append("</svg>")
+
+    tabla = "".join(
+        f'<tr><td>{r["anio"]}</td><td class="n">{millones(r["ingresos"])}</td><td class="n">{millones(r["resultado"])}</td>'
+        f'<td class="n">{millones(r["inversiones"])}</td><td class="n">{millones(r["rentas_generales"])}</td>'
+        f'<td class="n">{r["funcionarios"]}</td><td>{tag("oficial", r["fuente"])}</td></tr>' for r in serie)
+    conc = "".join(
+        f'<tr><td><b>{escape(c["operador"])}</b></td><td>{escape(c["actividad"])}</td><td>{escape(c["hasta"])}</td>'
+        f'<td>{escape(c["dato"])}</td><td>{tag(c["tipo"], c["url"])}</td></tr>' for c in data["concesiones"])
+    paros = "".join(
+        f'<div class="hito"><div class="f">{escape(p["fecha"])}</div><p>{escape(p["texto"])}</p>'
+        + " ".join(f'{tag(t, u)} <small>{escape(n)}</small>' for n, u, t in p["fuentes"]) + "</div>"
+        for p in data["paros"])
+
+    def barras(rows, maximo):
+        return "".join(
+            f'<div class="fila{" mvd" if n == "Montevideo" else ""}"><span>{escape(n)}</span>'
+            f'<div class="b" style="width:{v / maximo * 100:.1f}%"></div><span class="v">{millones(v)}</span></div>'
+            for n, v in rows)
+
+    mvd = "".join(f'<tr><td>{a}</td><td class="n">{p}</td><td class="n">{t or "más de 400"}</td></tr>'
+                  for a, p, t in comp["montevideo_cppi"])
+    obras = "".join(
+        f'<div class="obra"><h3>{escape(o["nombre"])}</h3><div class="m">{escape(o["monto"])}</div><p>{escape(o["texto"])}</p>'
+        f'<div class="acc">{tag(o["tipo"], o["url"])}'
+        + (f' <span class="tag t-pend">{escape(o["pendiente"])}</span>' if o["pendiente"] else "") + "</div></div>"
+        for o in data["obras"])
+    fuentes = "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>'
+                      for n, u, t in data["fuentes"])
+    values = {
+        "GOLPES": golpes, "GRAFICO": "".join(svg), "TABLA_ANP": tabla, "CONCESIONES": conc,
+        "CONC_NOTA": escape(data["concesiones_nota"]), "CONC_URL": escape(data["concesiones_url"]), "PAROS": paros,
+        "TEU": barras(comp["teu_2024"], max(v for _, v in comp["teu_2024"])), "TEU_URL": escape(comp["teu_url"]),
+        "CPPI25": barras(comp["cppi_2025"], 403), "CPPI25_URL": escape(comp["cppi_2025_url"]),
+        "CPPI24_URL": escape(comp["cppi_2024_url"]), "MVD_CPPI": mvd, "OBRAS": obras, "FUENTES": fuentes,
+        "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "puerto.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en puerto.template.html.")
+    (public / "puerto.html").write_text(page, encoding="utf-8")
+    write_csv(public, "puerto_anp_2015_2025.csv", serie)
+    write_csv(public, "puerto_comparacion.csv", [
+        {"puerto": n, "teu_2024": dict(comp["teu_2024"])[n], "cppi_2025_puesto": dict(comp["cppi_2025"])[n],
+         "cppi_2024_puesto": dict(comp["cppi_2024"])[n]} for n, _ in comp["teu_2024"]])
+    write_csv(public, "puerto_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -388,13 +493,14 @@ def main():
     for page in STATIC_PAGES:
         (public / page).write_text((ROOT / "web" / page).read_text(encoding="utf-8"), encoding="utf-8")
     build_intendencias(public)
+    build_puerto(public)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", "intendencias.html", *STATIC_PAGES))
+                   for page in ("", "informe.html", "intendencias.html", "puerto.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto y los CSV.")
 
 
 if __name__ == "__main__":
