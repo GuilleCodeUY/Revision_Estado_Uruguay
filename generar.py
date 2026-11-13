@@ -194,6 +194,55 @@ def slug(text):
     return "-".join(plain.lower().split())
 
 
+# Barra de navegación común: la misma en todas las páginas, fija arriba.
+BARRA_CSS = """
+    .vm-barra{position:sticky;top:0;z-index:50;background:#121212;color:#fff;border-bottom:1px solid #2a2a2a;font-family:Inter,system-ui,sans-serif}
+    .vm-barra .vm-wrap{width:min(1100px,calc(100% - 2rem));margin:auto;display:flex;align-items:center;gap:1.2rem;min-height:3.5rem}
+    .vm-logo{font-weight:900;font-size:1.15rem;letter-spacing:-.03em;text-decoration:none;white-space:nowrap;color:#fff}.vm-logo span{color:#ffd23f}
+    .vm-menu{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}.vm-menu::-webkit-scrollbar{display:none}
+    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.88rem;font-weight:700;padding:.55rem .7rem;border-radius:.3rem;min-height:2.75rem;display:inline-flex;align-items:center;gap:.4rem;opacity:.85}
+    .vm-menu a:hover{opacity:1;background:#222}.vm-menu a[aria-current]{opacity:1;background:#2a2a2a}
+    .vm-dot{width:.55rem;height:.55rem;border-radius:50%;display:inline-block}
+    html{scroll-padding-top:4rem}
+    header .top .logo,header .cabecera>a{display:none}header .top{justify-content:flex-start}
+    @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
+"""
+BARRA_LINKS = (
+    ("index.html", "./", "Inicio", None),
+    ("informe.html#parlamento", "informe.html#parlamento", "Parlamento", "#ffd23f"),
+    ("intendencias.html", "intendencias.html", "Intendencias", "#3ddc97"),
+    ("solaria.html", "solaria.html", "Solaria", "#ff8fa0"),
+    ("puerto.html", "puerto.html", "Puerto", "#ff7a1a"),
+    ("informe.html", "informe.html", "Informe 2025", None),
+    ("correcciones", "./#correcciones", "Correcciones", None),
+)
+
+
+def poner_barra(public, page):
+    """Agrega la barra común a una página ya generada."""
+    links = []
+    for key, href, text, color in BARRA_LINKS:
+        current = ' aria-current="page"' if key == page else ""
+        dot = f'<i class="vm-dot" style="background:{color}"></i>' if color else ""
+        links.append(f'<a href="{href}"{current}>{dot}{text}</a>')
+    html = (f'<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a>'
+            f'<nav class="vm-menu" aria-label="Casos">{"".join(links)}</nav></div></header>'
+            '<script>(function(){var a=document.querySelector(".vm-menu [aria-current]");'
+            'if(a){var m=a.parentNode;m.scrollLeft=a.offsetLeft-(m.clientWidth-a.offsetWidth)/2;}})();</script>')
+    path = public / page
+    text = path.read_text(encoding="utf-8")
+    if "vm-barra" in text:
+        return
+    if text.count("</style>") < 1 or text.count("<body>") != 1:
+        raise ValueError(f"No se pudo agregar la barra a {page}.")
+    text = text.replace("</style>", BARRA_CSS + "  </style>", 1)
+    if "<!-- BARRA -->" in text:
+        text = text.replace("<!-- BARRA -->", html, 1)
+    else:
+        text = text.replace("<body>", "<body>\n  " + html, 1)
+    path.write_text(text, encoding="utf-8")
+
+
 def es_num(value, decimals=1):
     """Formatea como Intl.NumberFormat("es-UY"): punto de miles, coma decimal, sin ceros sobrantes."""
     from decimal import Decimal, ROUND_HALF_UP
@@ -228,44 +277,50 @@ def build_portada(public, data):
          f"Todo el gasto del Poder Legislativo dividido entre sus {parliament['bancas_total']} bancas "
          f"({parliament['bancas']['senadores_electos']} senadores, Vicepresidencia y {parliament['bancas']['diputados']} diputados). "
          f"Unos $ {millions_one(per_seat / 12)} millones por mes.",
-         "CGN · Tomo III", fuentes["gasto_legislativo"]["url"] + "#page=640"),
+         "CGN · Tomo III", fuentes["gasto_legislativo"]["url"] + "#page=640", "oficial"),
         (f"{es_num(projects['parlamento_aprobados'])} de {es_num(projects['parlamento_presentados'])}", True,
          "proyectos de legisladores aprobados",
          f"Período {projects['periodo']}. Del Poder Ejecutivo: {es_num(projects['ejecutivo_aprobados'])} "
          f"aprobados de {es_num(projects['ejecutivo_presentados'])}.",
-         "CEPP", fuentes["actividad_cepp"]["url"]),
+         "CEPP", fuentes["actividad_cepp"]["url"], "vía prensa"),
         (es_num(passes["diputados_vigentes"] + passes["senado_vigentes"]), False, "funcionarios en pase en comisión",
          f"{es_num(passes['diputados_vigentes'])} en Diputados y {es_num(passes['senado_vigentes'])} en el Senado, a "
          f"{passes['corte']}. Cobran del organismo de origen. Y "
          f"{es_num(passes['diputados_en_tramite'] + passes['senado_en_tramite'])} más en trámite.",
-         "La Mañana", fuentes["pases_legislativos"]["url"]),
+         "La Mañana", fuentes["pases_legislativos"]["url"], "prensa"),
     ]
     golpes = "".join(
         f'<article class="golpe"><div class="{"n r" if red else "n"}">{escape(n)}</div><div class="t">{escape(t)}</div>'
-        f'<p class="c">{escape(c)}</p><div class="acciones"><a href="{escape(url)}" rel="noopener">Fuente: {escape(src)}</a>'
-        f'<a class="obj" href="{objection}">⚑ Objetar este dato</a></div></article>'
-        for n, red, t, c, src, url in facts)
+        f'<p class="c">{escape(c)}</p><div class="acciones"><a href="{escape(url)}" rel="noopener">Fuente: {escape(src)}<span class="tipo">{tipo}</span></a>'
+        f'<a class="obj" href="{objection}">⚑ Objetar</a></div></article>'
+        for n, red, t, c, src, url, tipo in facts)
     waiting = sum(1 for row in parliament["pedidos_acceso"]["pedidos"] if row["estado"] in ("esperando", "prorroga"))
     states = {"recibida": "Recibida", "en_revision": "En revisión", "aceptada": "Aceptada", "rechazada": "Rechazada"}
     if data["correcciones"]:
-        erratas = "".join(
+        erratas = '<div class="tabla"><table><thead><tr><th scope="col">Fecha</th><th scope="col">Dato objetado</th><th scope="col">Estado</th><th scope="col">Resultado</th></tr></thead><tbody>' + "".join(
             f'<tr><td>{"/".join(reversed(fix["fecha"].split("-")))}</td><td>{escape(fix["dato"])}</td>'
             f'<td><span class="st {fix["estado"]}">{states[fix["estado"]]}</span></td><td>{escape(fix.get("resultado") or "—")}</td></tr>'
-            for fix in data["correcciones"])
+            for fix in data["correcciones"]) + "</tbody></table></div>"
     else:
-        erratas = '<tr><td class="vacio" colspan="4">Todavía no hay objeciones registradas. La primera puede ser la tuya.</td></tr>'
+        erratas = ""
+    n_fix = len(data["correcciones"])
+    pending = sum(1 for fix in data["correcciones"] if fix["estado"] in ("recibida", "en_revision"))
+    import datetime
     values = {
-        "TOTAL": f"$ {millions(total)} millones",
-        "SUB": f"Eso gastó el Poder Legislativo en {data['ejercicio']}. <strong>$ {millions_one(total / 365)} millones por día.</strong> "
-               f"$ {es_num(parliament['costo_por_habitante_uyu'])} por cada uruguayo.",
+        "PARL_TOTAL": f"$ {millions(total)} millones",
+        "PARL_DIA": f"$ {millions_one(total / 365)} millones",
+        "EJERCICIO": str(data["ejercicio"]),
         "GOLPES": golpes,
-        "ESTADO_PARLAMENTO": f"Publicado · esperando {waiting} pedidos de acceso" if waiting else "Publicado",
-        "ERRATAS": erratas,
-        "COMPARTIR": f"¿Cuánto nos cuesta el Palacio Legislativo? $ {millions(total)} millones en {data['ejercicio']}.",
+        "ESTADO_PARLAMENTO": f"Esperando {waiting} pedidos" if waiting else "Publicado",
+        "ERRATAS_N": "1 objeción" if n_fix == 1 else f"{n_fix} objeciones",
+        "ERRATAS_TABLA": erratas,
+        "CASOS_N": "4",
+        "PENDIENTES_N": str(pending),
+        "ACTUALIZADO": datetime.date.today().strftime("%d/%m/%Y"),
     }
     page = (ROOT / "web" / "portada.template.html").read_text(encoding="utf-8")
     for key, value in values.items():
-        if page.count("{{" + key + "}}") != 1:
+        if page.count("{{" + key + "}}") < 1:
             raise ValueError(f"La portada debe tener un solo marcador {key}.")
         page = page.replace("{{" + key + "}}", value)
     if "{{" in page:
@@ -577,6 +632,8 @@ def main():
     build_puerto(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html"):
+        poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
                    for page in ("", "informe.html", "intendencias.html", "puerto.html", *STATIC_PAGES))

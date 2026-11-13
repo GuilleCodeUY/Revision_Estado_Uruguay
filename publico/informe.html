@@ -100,9 +100,21 @@
       .dato-rapido{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:.5rem;min-height:2.8rem;padding:.35rem 0}
       .indice nav{gap:.05rem .85rem}
     }
+  
+    .vm-barra{position:sticky;top:0;z-index:50;background:#121212;color:#fff;border-bottom:1px solid #2a2a2a;font-family:Inter,system-ui,sans-serif}
+    .vm-barra .vm-wrap{width:min(1100px,calc(100% - 2rem));margin:auto;display:flex;align-items:center;gap:1.2rem;min-height:3.5rem}
+    .vm-logo{font-weight:900;font-size:1.15rem;letter-spacing:-.03em;text-decoration:none;white-space:nowrap;color:#fff}.vm-logo span{color:#ffd23f}
+    .vm-menu{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}.vm-menu::-webkit-scrollbar{display:none}
+    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.88rem;font-weight:700;padding:.55rem .7rem;border-radius:.3rem;min-height:2.75rem;display:inline-flex;align-items:center;gap:.4rem;opacity:.85}
+    .vm-menu a:hover{opacity:1;background:#222}.vm-menu a[aria-current]{opacity:1;background:#2a2a2a}
+    .vm-dot{width:.55rem;height:.55rem;border-radius:50%;display:inline-block}
+    html{scroll-padding-top:4rem}
+    header .top .logo,header .cabecera>a{display:none}header .top{justify-content:flex-start}
+    @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
   </style>
 </head>
 <body>
+  <header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a><nav class="vm-menu" aria-label="Casos"><a href="./">Inicio</a><a href="informe.html#parlamento"><i class="vm-dot" style="background:#ffd23f"></i>Parlamento</a><a href="intendencias.html"><i class="vm-dot" style="background:#3ddc97"></i>Intendencias</a><a href="solaria.html"><i class="vm-dot" style="background:#ff8fa0"></i>Solaria</a><a href="puerto.html"><i class="vm-dot" style="background:#ff7a1a"></i>Puerto</a><a href="informe.html" aria-current="page">Informe 2025</a><a href="./#correcciones">Correcciones</a></nav></div></header><script>(function(){var a=document.querySelector(".vm-menu [aria-current]");if(a){var m=a.parentNode;m.scrollLeft=a.offsetLeft-(m.clientWidth-a.offsetWidth)/2;}})();</script>
   <header class="portada">
     <div class="wrap">
       <div class="cabecera"><a href="./" style="color:#fff;text-decoration:none"><strong>← La verdad de la <span style="color:#ffd23f">milanesa</span></strong></a><span>Informe completo · Uruguay · 2025</span></div>

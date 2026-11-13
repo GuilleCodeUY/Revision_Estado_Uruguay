@@ -66,9 +66,21 @@
     footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
     .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
     @media(max-width:760px){.golpes{grid-template-columns:1fr}}
+  
+    .vm-barra{position:sticky;top:0;z-index:50;background:#121212;color:#fff;border-bottom:1px solid #2a2a2a;font-family:Inter,system-ui,sans-serif}
+    .vm-barra .vm-wrap{width:min(1100px,calc(100% - 2rem));margin:auto;display:flex;align-items:center;gap:1.2rem;min-height:3.5rem}
+    .vm-logo{font-weight:900;font-size:1.15rem;letter-spacing:-.03em;text-decoration:none;white-space:nowrap;color:#fff}.vm-logo span{color:#ffd23f}
+    .vm-menu{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}.vm-menu::-webkit-scrollbar{display:none}
+    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.88rem;font-weight:700;padding:.55rem .7rem;border-radius:.3rem;min-height:2.75rem;display:inline-flex;align-items:center;gap:.4rem;opacity:.85}
+    .vm-menu a:hover{opacity:1;background:#222}.vm-menu a[aria-current]{opacity:1;background:#2a2a2a}
+    .vm-dot{width:.55rem;height:.55rem;border-radius:50%;display:inline-block}
+    html{scroll-padding-top:4rem}
+    header .top .logo,header .cabecera>a{display:none}header .top{justify-content:flex-start}
+    @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
   </style>
 </head>
 <body>
+  <header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a><nav class="vm-menu" aria-label="Casos"><a href="./">Inicio</a><a href="informe.html#parlamento"><i class="vm-dot" style="background:#ffd23f"></i>Parlamento</a><a href="intendencias.html" aria-current="page"><i class="vm-dot" style="background:#3ddc97"></i>Intendencias</a><a href="solaria.html"><i class="vm-dot" style="background:#ff8fa0"></i>Solaria</a><a href="puerto.html"><i class="vm-dot" style="background:#ff7a1a"></i>Puerto</a><a href="informe.html">Informe 2025</a><a href="./#correcciones">Correcciones</a></nav></div></header><script>(function(){var a=document.querySelector(".vm-menu [aria-current]");if(a){var m=a.parentNode;m.scrollLeft=a.offsetLeft-(m.clientWidth-a.offsetWidth)/2;}})();</script>
   <header class="site">
     <div class="wrap top">
       <a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a>

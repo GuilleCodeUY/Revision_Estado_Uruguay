@@ -9,7 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_UY">
   <meta property="og:site_name" content="La verdad de la milanesa">
-  <meta property="og:title" content="¿Cuánto nos cuesta el Palacio Legislativo?">
+  <meta property="og:title" content="Lo que gasta el Estado, con la fuente al lado">
   <meta property="og:description" content="Los números no tienen partido. Análisis del gasto público con datos oficiales y fuentes verificables.">
   <meta property="og:url" content="https://verdadmilanesa.uy/">
   <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
@@ -19,92 +19,133 @@
   <meta name="theme-color" content="#121212">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <style>
-    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb}
-    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#c1121f;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb}
+    *{box-sizing:border-box}html{scroll-padding-top:4rem}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
     a{color:inherit}:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
     .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
-    header{background:var(--dark);color:#fff}
-    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
-    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
-    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
-    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
-    .top nav a:hover{opacity:1;text-decoration:underline}
-    .hero{padding:2.2rem 0 2.6rem}
-    .kicker{display:inline-block;background:#c1121f;color:#fff;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
-    .hero h1{font-size:clamp(2.2rem,7vw,5rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
-    .big{font-size:clamp(3rem,11vw,7.5rem);font-weight:900;letter-spacing:-.06em;line-height:.9;color:var(--yellow);font-variant-numeric:tabular-nums}
-    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.4rem);max-width:40ch;margin:.7rem 0 1.2rem;color:#ddd}
-    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
-    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;font-weight:800;text-decoration:none;border:2px solid var(--yellow);cursor:pointer;font:inherit;font-weight:800}
-    .btn.y{background:var(--yellow);color:#111}.btn.o{background:transparent;color:var(--yellow)}
-    .lema{background:var(--yellow);color:#111;font-weight:900;text-align:center;font-size:clamp(1.05rem,2.6vw,1.5rem);padding:.75rem 1rem;letter-spacing:-.02em;margin:0}
-    main{padding:2rem 0 3rem}main section{margin-bottom:2.8rem;scroll-margin-top:1rem}
-    h2{font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.04em;margin:0 0 1rem;font-weight:900}
+
+    .hero{background:var(--dark);color:#fff;padding:2.6rem 0 2.8rem}
+    .hero h1{font-size:clamp(2.3rem,6.5vw,4.6rem);line-height:.95;letter-spacing:-.05em;margin:0 0 .9rem;font-weight:900;max-width:15ch}
+    .hero h1 em{font-style:normal;color:var(--yellow)}
+    .hero p{font-size:clamp(1.05rem,2.2vw,1.3rem);color:#ddd;max-width:46ch;margin:0}
+    .meta{display:flex;gap:.5rem 1.2rem;flex-wrap:wrap;margin-top:1.3rem;font-size:.88rem;color:#bbb}
+    .meta b{color:#fff}
+    .lema{background:var(--yellow);color:#111;font-weight:900;text-align:center;font-size:clamp(1.05rem,2.6vw,1.45rem);padding:.75rem 1rem;letter-spacing:-.02em;margin:0}
+
+    main{padding:2.4rem 0 3rem}main section{margin-bottom:3rem}
+    h2{font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:-.04em;margin:0 0 1rem;font-weight:900}
+    .lead{color:var(--muted);margin:-.4rem 0 1.2rem;max-width:60ch}
+
+    /* Los cuatro casos, 2 × 2, cada uno con su cifra */
+    .casos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
+    .caso{--acc:var(--yellow);position:relative;border-radius:.6rem;padding:1.4rem 1.4rem 1.3rem;color:#fff;text-decoration:none;display:flex;flex-direction:column;gap:.55rem;min-height:17rem;box-shadow:inset 0 -7px 0 var(--acc);transition:transform .12s}
+    .caso:hover{transform:translateY(-3px)}.caso:hover h3{text-decoration:underline}
+    .caso .top{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+    .caso .tema{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--acc)}
+    .caso .estado{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:rgba(255,255,255,.14);padding:.2rem .5rem;border-radius:.2rem;white-space:nowrap}
+    .caso .n{font-size:clamp(2.3rem,5vw,3.4rem);font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--acc);font-variant-numeric:tabular-nums;margin-top:.4rem}
+    .caso .que{font-weight:700;font-size:1rem;margin-top:-.2rem}
+    .caso h3{margin:auto 0 0;font-size:1.35rem;letter-spacing:-.03em;line-height:1.15}
+    .caso p{margin:0;font-size:.92rem;opacity:.88}
+    .caso .ir{font-weight:800;font-size:.9rem;color:var(--acc)}
+    .c1{background:#1d3557;--acc:#ffd23f}.c2{background:#0c2d3f;--acc:#3ddc97}.c3{background:#4a1424;--acc:#ff8fa0}.c4{background:#0b2236;--acc:#ff7a1a}
+
+    /* Datos destacados del caso Parlamento */
     .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
     .golpe{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1.1rem;display:flex;flex-direction:column;gap:.4rem;box-shadow:5px 5px 0 var(--ink)}
-    .golpe .n{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
-    .golpe .n.r{color:var(--red)}.golpe .t{font-weight:800;font-size:1.05rem;line-height:1.25}.golpe .c{font-size:.86rem;color:var(--muted);margin:0}
-    .acciones{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto;padding-top:.5rem;border-top:1px dashed var(--line)}
-    .acciones a{font-size:.8rem;font-weight:700;text-decoration:none;padding:.35rem .55rem;border-radius:.3rem;background:#f2eee2}
-    .acciones a:hover{text-decoration:underline}.acciones a.obj{background:#fde6e7;color:#9b1c25}
-    .casos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-    .caso{border-radius:.5rem;padding:1.2rem;color:#fff;min-height:12rem;display:flex;flex-direction:column;justify-content:space-between;gap:1rem;text-decoration:none}
-    a.caso:hover h3{text-decoration:underline}
-    .caso h3{margin:.3rem 0;font-size:1.4rem;letter-spacing:-.03em;line-height:1.1}.caso p{margin:0;font-size:.92rem;opacity:.92}
-    .caso .estado{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;background:rgba(255,255,255,.18);padding:.2rem .5rem;border-radius:.2rem;align-self:flex-start}
-    .c1{background:#1d3557}.c2{background:#0c2d3f;box-shadow:inset 0 -6px 0 #3ddc97}.c3{background:#4a1424}.c4{background:#0b2236;box-shadow:inset 0 -6px 0 #ff7a1a}
-    .fe{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1.2rem}
-    .fe p:first-child{margin-top:0}.tabla{overflow:auto}
-    .fe table{width:100%;border-collapse:collapse;font-size:.9rem}.fe th,.fe td{text-align:left;padding:.5rem;border-bottom:1px solid var(--line);vertical-align:top}
-    .st{font-size:.74rem;font-weight:800;padding:.15rem .45rem;border-radius:1rem;white-space:nowrap}
-    .recibida,.en_revision{background:#fff4d1;color:#6b5000}.aceptada{background:#e3f2ee;color:#1f6650}.rechazada{background:#eee;color:#444}
-    .vacio{color:var(--muted);font-style:italic}
+    .golpe .n{font-size:clamp(2rem,5vw,2.8rem);font-weight:900;letter-spacing:-.05em;line-height:1}.golpe .n.r{color:var(--red)}
+    .golpe .t{font-weight:800;font-size:1.02rem;line-height:1.25}.golpe .c{font-size:.88rem;color:var(--muted);margin:0}
+    .acciones{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto;padding-top:.6rem;border-top:1px dashed var(--line)}
+    .acciones a{font-size:.82rem;font-weight:700;text-decoration:none;padding:.6rem .7rem;min-height:2.75rem;display:inline-flex;align-items:center;border-radius:.3rem;background:#f2eee2}
+    .acciones a .tipo{font-size:.68rem;font-weight:800;text-transform:uppercase;margin-left:.35rem;padding:.05rem .3rem;border-radius:.2rem;background:#fff;color:var(--muted)}
+    .acciones a.obj{background:#fde6e7;color:#9b1c25}
+
+    /* Fe de erratas compacta mientras esté vacía */
+    .fe{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1rem 1.2rem}
+    .fe p{margin:0;max-width:62ch}.fe .cont{font-weight:900;font-size:1.6rem;letter-spacing:-.04em}
+    .fe .tabla{flex-basis:100%;overflow:auto}.fe table{width:100%;border-collapse:collapse;font-size:.9rem}.fe th,.fe td{text-align:left;padding:.5rem;border-bottom:1px solid var(--line);vertical-align:top}
+    .st{font-size:.74rem;font-weight:800;padding:.15rem .45rem;border-radius:1rem;white-space:nowrap}.recibida,.en_revision{background:#fff4d1;color:#6b5000}.aceptada{background:#e3f2ee;color:#1f6650}.rechazada{background:#eee;color:#444}
+    .btn-obj{background:#fde6e7;color:#9b1c25;font-weight:800;padding:.7rem 1rem;border-radius:.3rem;text-decoration:none;min-height:2.75rem;display:inline-flex;align-items:center}
     .criterios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
     .criterios div{border-top:4px solid var(--ink);padding-top:.6rem}.criterios h3{margin:0 0 .3rem;font-size:1.05rem}.criterios p{margin:0;font-size:.92rem;color:var(--muted)}
-    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
-    footer{background:var(--dark);color:#bbb;font-size:.85rem;padding:1.2rem 0}footer a{color:#ddd}
-    @media(max-width:760px){.golpes,.casos,.criterios{grid-template-columns:1fr}.fe table{font-size:.82rem}}
+
+    footer{background:var(--dark);color:#bbb;font-size:.9rem;padding:2rem 0}
+    footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem}
+    footer h4{color:#fff;margin:0 0 .4rem;font-size:.95rem}footer a{color:#ddd}footer p{margin:0 0 .3rem}
+
+    @media(max-width:760px){
+      .hero{padding:1.6rem 0 1.8rem}
+      .casos,.golpes,.criterios,footer .cols{grid-template-columns:1fr}
+      .caso{min-height:0}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap top">
-      <a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a>
-      <nav aria-label="Secciones"><a href="#casos">Casos</a><a href="#correcciones">Correcciones</a><a href="#como">Cómo trabajamos</a><a href="informe.html">Informe completo</a></nav>
+<!-- BARRA -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Lo que gasta el Estado, <em>con la fuente al lado.</em></h1>
+      <p>Cuatro casos investigados con información pública. Cada número enlaza al documento del que sale, y cualquiera puede objetarlo.</p>
+      <div class="meta"><span><b>{{CASOS_N}}</b> casos publicados</span><span><b>{{PENDIENTES_N}}</b> correcciones pendientes</span><span>Actualizado el <b>{{ACTUALIZADO}}</b></span></div>
     </div>
-    <div class="wrap hero">
-      <span class="kicker">Parlamento · 2025</span>
-      <h1>¿Cuánto nos cuesta el Palacio Legislativo?</h1>
-      <div class="big">{{TOTAL}}</div>
-      <p class="sub">{{SUB}}</p>
-      <div class="btns"><a class="btn y" href="informe.html#parlamento">Ver de dónde sale ↓</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
-    </div>
-  </header>
+  </section>
   <p class="lema">Los números no tienen partido. La realidad es una sola.</p>
+
   <main class="wrap">
-    <section aria-labelledby="golpe">
-      <h2 id="golpe">A golpe de vista</h2>
-      <div class="golpes">{{GOLPES}}</div>
-    </section>
     <section aria-labelledby="casos">
-      <h2 id="casos">Casos</h2>
+      <h2 id="casos">Los casos</h2>
       <div class="casos">
-        <a class="caso c1" href="informe.html#parlamento"><span class="estado">{{ESTADO_PARLAMENTO}}</span><div><h3>El costo del Parlamento</h3><p>Bancas, secretarios, pases en comisión, misiones y telefonía.</p></div></a>
-        <a class="caso c2" href="intendencias.html"><span class="estado">Publicado · primera ronda</span><div><h3>Las 19 intendencias</h3><p>$ 87.693 millones en un año: cuánto gasta cada una por habitante, qué observó el Tribunal de Cuentas y qué se prometió.</p></div></a>
-        <a class="caso c3" href="solaria.html"><span class="estado">Publicado · contrato definitivo en mayo de 2027</span><div><h3>El acuerdo con Solaria</h3><p>US$ 5.700 millones anunciados, cero clientes con nombre y obras de UTE sin costo publicado.</p></div></a>
-        <a class="caso c4" href="puerto.html"><span class="estado">Publicado · primera ronda</span><div><h3>El puerto de Montevideo</h3><p>La ANP ganó $ 2.233 millones en 2025, pero el puerto quedó 311.º en eficiencia mundial. Concesiones, paros y obras.</p></div></a>
+        <a class="caso c1" href="informe.html#parlamento">
+          <div class="top"><span class="tema">Parlamento · {{EJERCICIO}}</span><span class="estado">{{ESTADO_PARLAMENTO}}</span></div>
+          <div class="n">{{PARL_TOTAL}}</div>
+          <div class="que">gastó el Poder Legislativo en {{EJERCICIO}}</div>
+          <h3>¿Cuánto nos cuesta el Palacio Legislativo?</h3>
+          <p>{{PARL_DIA}} por día. Bancas, secretarios, pases en comisión, misiones y telefonía.</p>
+          <span class="ir">Ver el caso →</span>
+        </a>
+        <a class="caso c2" href="intendencias.html">
+          <div class="top"><span class="tema">Intendencias · 2022</span><span class="estado">Primera ronda</span></div>
+          <div class="n">$ 87.693 millones</div>
+          <div class="que">gastaron las 19 intendencias en un año</div>
+          <h3>¿Cuánto nos cuestan las 19 intendencias?</h3>
+          <p>Gasto por habitante, lo que observó el Tribunal de Cuentas y lo que se prometió.</p>
+          <span class="ir">Ver el caso →</span>
+        </a>
+        <a class="caso c3" href="solaria.html">
+          <div class="top"><span class="tema">UTE · Solaria</span><span class="estado">Contrato en mayo 2027</span></div>
+          <div class="n">US$ 5.700 millones</div>
+          <div class="que">anunciados para centros de datos</div>
+          <h3>El acuerdo con Solaria</h3>
+          <p>Cero clientes con nombre y obras de UTE sin costo publicado.</p>
+          <span class="ir">Ver el caso →</span>
+        </a>
+        <a class="caso c4" href="puerto.html">
+          <div class="top"><span class="tema">Puerto · 2025</span><span class="estado">Primera ronda</span></div>
+          <div class="n">$ 2.233 millones</div>
+          <div class="que">ganó la ANP en 2025</div>
+          <h3>El puerto de Montevideo, en números</h3>
+          <p>Pero quedó 311.º en eficiencia mundial. Concesiones, paros y obras.</p>
+          <span class="ir">Ver el caso →</span>
+        </a>
       </div>
     </section>
+
+    <section aria-labelledby="golpe">
+      <h2 id="golpe">A golpe de vista</h2>
+      <p class="lead">Tres datos del caso Parlamento. Cada fuente dice si es un documento oficial o una nota de prensa.</p>
+      <div class="golpes">{{GOLPES}}</div>
+    </section>
+
     <section aria-labelledby="correcciones">
       <h2 id="correcciones">Fe de erratas pública</h2>
       <div class="fe">
-        <p>Si tenés pruebas de que un dato está mal, mandalas con el botón <strong>⚑ Objetar este dato</strong>. Revisamos cada objeción y el resultado queda acá, a la vista. <strong>Nada se borra en silencio.</strong></p>
-        <div class="tabla" tabindex="0" role="region" aria-label="Registro de correcciones">
-          <table><thead><tr><th scope="col">Fecha</th><th scope="col">Dato objetado</th><th scope="col">Estado</th><th scope="col">Resultado</th></tr></thead>
-          <tbody>{{ERRATAS}}</tbody></table>
-        </div>
+        <p><span class="cont">{{ERRATAS_N}}</span><br>Si un dato está mal, objetalo con pruebas. El resultado queda acá a la vista: <strong>nada se borra en silencio.</strong></p>
+        <a class="btn-obj" href="informe.html?tipo=correccion#aportes">⚑ Objetar un dato</a>
+        {{ERRATAS_TABLA}}
       </div>
     </section>
+
     <section aria-labelledby="como">
       <h2 id="como">Cómo trabajamos</h2>
       <div class="criterios">
@@ -114,22 +155,13 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="informe.html#metodo">Método y fuentes</a></div></footer>
-  <script>
-    "use strict";
-    document.getElementById("compartir").addEventListener("click", async () => {
-      const share = { title: document.title, text: "{{COMPARTIR}}", url: location.href };
-      try {
-        if (navigator.share) { await navigator.share(share); return; }
-        await navigator.clipboard.writeText(share.text + " " + share.url);
-        const toast = document.createElement("div");
-        toast.className = "toast";
-        toast.textContent = "Enlace copiado";
-        toast.setAttribute("role", "status");
-        document.body.append(toast);
-        setTimeout(() => toast.remove(), 2200);
-      } catch (error) { /* el usuario canceló */ }
-    });
-  </script>
+
+  <footer>
+    <div class="wrap cols">
+      <div><h4>La verdad de la milanesa</h4><p>Análisis independiente del gasto del Estado uruguayo con información pública.</p><p>Hecho por un ciudadano de Montevideo.</p></div>
+      <div><h4>Contacto</h4><p><a href="mailto:contacto@verdadmilanesa.uy">contacto@verdadmilanesa.uy</a></p><p><a href="informe.html?tipo=correccion#aportes">Objetar un dato</a></p></div>
+      <div><h4>El sitio</h4><p><a href="informe.html">Informe completo 2025</a></p><p><a href="informe.html#metodo">Método y fuentes</a></p></div>
+    </div>
+  </footer>
 </body>
 </html>
