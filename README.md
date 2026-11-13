@@ -29,6 +29,8 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 | `costos_de_conduccion_identificados_2025.csv` | Diez registros de JUTEP, UTE, BPS, ANCAP, URSEA y ACCESA, con su base y su fuente. |
 | `intendencias_2022.csv` | Gasto, sueldos, inversiones, ingresos propios y nacionales de las 19 intendencias en 2022 (OPP). |
 | `intendencias_hallazgos.csv` | Hallazgos por departamento con tipo, fuente y solidez. |
+| `intendencias_transparencia_intai.csv` | Índice de transparencia de la UAIP (INTAI) 2024, 2023 y 2022 de las 19 intendencias. Un 0 es que no respondió. |
+| `intendencias_denuncias_uaip.csv` | Resoluciones de la UAIP desde 2025 en que le dio la razón a un denunciante contra una intendencia, con enlace. |
 | `pedidos_acceso_intendencias.csv` | Seguimiento de los 19 pedidos de acceso (Ley 18.381). |
 | `tribunal_muestra_2025.csv` | Cuatro expedientes con motivo, importe y estado documentado. |
 

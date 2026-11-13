@@ -49,7 +49,7 @@
     .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
     table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left}
     th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
-    td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}td.neg{color:var(--red);font-weight:700}
+    td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}td.neg{color:var(--red);font-weight:700}.cero{color:var(--red)}td.res{font-size:.75rem;line-height:1.6}td.res a{margin-right:.35rem}.transp{margin:0;font-size:.8rem;background:#f3f7f8;border-radius:.3rem;padding:.35rem .5rem}
     .bar{display:inline-block;height:.55rem;width:calc(var(--w) * .9);max-width:55px;background:var(--acc);margin-right:.4rem;border-radius:2px;vertical-align:middle}
     .fichas{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem}
     .ficha{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.6rem;scroll-margin-top:1rem}
@@ -71,7 +71,7 @@
   <header class="site">
     <div class="wrap top">
       <a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a>
-      <nav aria-label="Secciones"><a href="#ranking">Ranking</a><a href="#departamentos">Departamento por departamento</a><a href="#pedidos">Pedidos de acceso</a><a href="#leer">Cómo leer</a></nav>
+      <nav aria-label="Secciones"><a href="#ranking">Ranking</a><a href="#departamentos">Departamento por departamento</a><a href="#transparencia">¿Quién esconde?</a><a href="#leer">Cómo leer</a></nav>
     </div>
     <div class="wrap hero">
       <span class="kicker">Las 19 intendencias · primera ronda</span>
@@ -103,10 +103,16 @@
       <p class="lead">Lo que dijo el Tribunal de Cuentas, lo que se prometió y no está, y lo que hay que vigilar. Cada punto lleva su fuente y qué tan sólida es. Los que dicen “en relevamiento” todavía no tienen un hallazgo verificado: si tenés un documento oficial, aportalo.</p>
       <div class="fichas">{{FICHAS}}</div>
     </section>
-    <section aria-labelledby="pedidos">
-      <h2 id="pedidos">Lo que pedimos y nos tienen que contestar</h2>
-      <p class="lead">{{PEDIDOS_NOTA}}</p>
-      <div class="tabla"><table><thead><tr><th scope="col">Intendencia</th><th scope="col">N.º</th><th scope="col">Enviado</th><th scope="col">Vence</th><th scope="col">Estado</th></tr></thead><tbody>{{PEDIDOS}}</tbody></table></div>
+    <section aria-labelledby="transparencia">
+      <h2 id="transparencia">¿Quién esconde los números?</h2>
+      <p class="lead">La ley obliga a cada intendencia a publicar su información y a contestar los pedidos en 20 días hábiles. La Unidad de Acceso a la Información Pública (UAIP) las mide todos los años. Esto es lo que dicen sus propios registros.</p>
+      <div class="golpes">
+        <article class="golpe"><div class="n r">{{N_NO_RESP}} de 19</div><div class="t">intendencias ni siquiera contestaron el índice de transparencia 2024</div><p class="c">{{NO_RESP}}. Sacaron 0. Tres años seguidos en cero: {{NUNCA}}.</p><div class="acciones"><a href="{{INTAI_URL}}" target="_blank" rel="noopener">Fuente: UAIP · INTAI</a><a class="obj" href="informe.html?aporte=intendencias-2022&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><div class="n r">{{N_DENUNCIAS}}</div><div class="t">veces la UAIP le dio la razón a un vecino contra una intendencia desde 2025</div><p class="c">En {{N_SILENCIO}} de esos casos la intendencia directamente no contestó a tiempo (“silencio positivo”).</p><div class="acciones"><a href="{{UAIP_URL}}" target="_blank" rel="noopener">Fuente: UAIP · resoluciones</a><a class="obj" href="informe.html?aporte=intendencias-2022&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><div class="n">0</div><div class="t">respuestas de intendencias publicadas en el catálogo oficial de pedidos</div><p class="c">{{CATALOGO}}</p><div class="acciones"><a href="https://solicitudes.gub.uy" target="_blank" rel="noopener">Fuente: solicitudes.gub.uy</a></div></article>
+      </div>
+      <div class="tabla" style="margin-top:1.2rem"><table><thead><tr><th scope="col">Intendencia</th><th scope="col">Índice 2024 (0 a 1)</th><th scope="col">Puesto entre 251</th><th scope="col">2023 / 2022</th><th scope="col">Denuncias perdidas</th><th scope="col">De ellas, sin contestar</th><th scope="col">Resoluciones</th></tr></thead><tbody>{{TRANSP_ROWS}}</tbody></table></div>
+      <p class="lead" style="margin-top:.6rem">Ojo al comparar: Montevideo recibe muchos más pedidos que cualquier otra, así que acumula más denuncias, y aun así es la que mejor puntúa en el índice. “Denuncias perdidas” cuenta solo las resoluciones en que la UAIP le dio la razón al denunciante. {{UAIP_REF}} <a href="intendencias_transparencia_intai.csv">CSV del índice</a> · <a href="intendencias_denuncias_uaip.csv">CSV de las resoluciones</a></p>
     </section>
     <section class="aviso" aria-labelledby="leer">
       <h2 id="leer" style="font-size:1.3rem">Cómo leer esto</h2>

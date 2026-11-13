@@ -227,6 +227,13 @@ def build_intendencias(public):
     cards = []
     for d in deps:
         sid = slug(d["departamento"])
+        t = data["transparencia"]["intai"]["intendencias"]
+        t = next(x for x in t if x["departamento"] == d["departamento"])
+        nden = sum(1 for r in data["transparencia"]["uaip"]["resoluciones"] if r["departamento"] == d["departamento"])
+        transp_line = (f'<p class="transp">Transparencia 2024: '
+                       + (f'<b>{t["puntaje_2024"]:.2f}</b> de 1 (puesto {t["posicion_2024"]})'.replace(".", ",", 1)
+                          if t["respondio_2024"] else '<b class="cero">no respondió el índice</b>')
+                       + f' · Denuncias que le dio la razón la UAIP desde 2025: <b>{nden}</b></p>')
         items = "".join(
             f'<li class="h {h["tipo"]}"><span class="tag">{ETIQUETAS[h["tipo"]]}</span><p>{escape(h["texto"])}</p>'
             f'<small><a href="{escape(h["url"])}" target="_blank" rel="noopener">{escape(h["fuente"])}</a> · {escape(h["solidez"])}</small></li>'
@@ -236,10 +243,36 @@ def build_intendencias(public):
             f'<span class="est {"ok" if d["hallazgos"] else "rel"}">{d["estado"]}</span></header>'
             f'<div class="mini"><div><b>$ {mill(d["gasto_ejecutado_2022_miles_uyu"])} M</b><span>gasto 2022</span></div>'
             f'<div><b>{pct(d["pct_remuneraciones"])} %</b><span>en sueldos</span></div>'
-            f'<div><b>{pct(d["pct_ingreso_nacional"])} %</b><span>plata nacional</span></div></div><ul>{items}</ul>'
+            f'<div><b>{pct(d["pct_ingreso_nacional"])} %</b><span>plata nacional</span></div></div>{transp_line}<ul>{items}</ul>'
             f'<div class="acciones"><a class="obj" href="informe.html?aporte=intendencia-{sid}&amp;tipo=correccion#aportes">⚑ Objetar un dato</a>'
             f'<a href="informe.html?aporte=intendencia-{sid}&amp;tipo=opinion#aportes">Aportar información</a></div></article>')
     pedidos = data["pedidos_acceso"]
+    # Transparencia: índice de la UAIP y denuncias resueltas contra cada intendencia.
+    transp = data["transparencia"]
+    intai = {t["departamento"]: t for t in transp["intai"]["intendencias"]}
+    if set(intai) != {d["departamento"] for d in deps}:
+        raise ValueError("El INTAI tiene que traer las 19 intendencias con el mismo nombre que los departamentos.")
+    denuncias = {}
+    for r in transp["uaip"]["resoluciones"]:
+        denuncias.setdefault(r["departamento"], []).append(r)
+    p3 = lambda x: f"{x:.2f}".replace(".", ",")
+    transp_rows = []
+    for t in sorted(intai.values(), key=lambda x: (-x["puntaje_2024"], x["departamento"])):
+        dep = t["departamento"]
+        res = denuncias.get(dep, [])
+        sil = sum(1 for r in res if r["tipo"] == "silencio positivo")
+        estado = (f'<b>{p3(t["puntaje_2024"])}</b>' if t["respondio_2024"]
+                  else '<b class="cero">0 · no respondió</b>')
+        hist = " / ".join(p3(v) for v in (t["puntaje_2023"], t["puntaje_2022"]))
+        links = " ".join(f'<a href="{escape(r["url"])}" target="_blank" rel="noopener" title="{escape(r["tipo"])} · {r["fecha"]}">{r["numero"]}</a>' for r in res)
+        transp_rows.append(
+            f'<tr><td><a href="#{slug(dep)}">{escape(dep)}</a></td><td class="n">{estado}</td>'
+            f'<td class="n">{t["posicion_2024"]}.º</td><td class="n">{hist}</td>'
+            f'<td class="n{" neg" if res else ""}">{len(res)}</td><td class="n">{sil}</td>'
+            f'<td class="res">{links or "—"}</td></tr>')
+    no_resp = [t["departamento"] for t in intai.values() if not t["respondio_2024"]]
+    nunca = [t["departamento"] for t in intai.values()
+             if t["puntaje_2024"] == 0 and t["puntaje_2023"] == 0 and t["puntaje_2022"] == 0]
     pedido_rows = "".join(
         f'<tr><td>{escape(p["intendencia"])}</td><td>{p["id"] or "—"}</td><td>{p["fecha_envio"] or "—"}</td>'
         f'<td>{p["vencimiento"] or "—"}</td><td><span class="estado-pedido">{PEDIDO_ESTADOS[p["estado"]]}</span></td></tr>'
@@ -261,6 +294,12 @@ def build_intendencias(public):
         "TOP_NAC_PCT": str(int(min(t["pct_ingreso_nacional"] for t in top))),
         "RANKING": "".join(rows), "FICHAS": "".join(cards),
         "PEDIDOS": pedido_rows, "PEDIDOS_NOTA": escape(pedidos["nota"]),
+        "TRANSP_ROWS": "".join(transp_rows), "N_NO_RESP": str(len(no_resp)),
+        "NO_RESP": escape(", ".join(sorted(no_resp))), "NUNCA": escape(", ".join(sorted(nunca))),
+        "N_DENUNCIAS": str(len(transp["uaip"]["resoluciones"])),
+        "N_SILENCIO": str(sum(1 for r in transp["uaip"]["resoluciones"] if r["tipo"] == "silencio positivo")),
+        "INTAI_URL": escape(transp["intai"]["fuente"]["url"]), "UAIP_URL": escape(transp["uaip"]["fuente"]["url"]),
+        "UAIP_REF": escape(transp["uaip"]["fuente"]["referencia"]), "CATALOGO": escape(transp["catalogo_saip"]),
         "NOTAS": "".join(f"<li>{n}</li>" for n in notas),
         "FUENTE_URL": data["fuentes"]["opp"]["url"], "FUENTE_NOMBRE": escape(data["fuentes"]["opp"]["nombre"]),
         "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
@@ -276,6 +315,8 @@ def build_intendencias(public):
     write_csv(public, "intendencias_hallazgos.csv",
               [{"departamento": d["departamento"], **h} for d in deps for h in d["hallazgos"]])
     write_csv(public, "pedidos_acceso_intendencias.csv", pedidos["pedidos"])
+    write_csv(public, "intendencias_transparencia_intai.csv", transp["intai"]["intendencias"])
+    write_csv(public, "intendencias_denuncias_uaip.csv", transp["uaip"]["resoluciones"])
     return data["consultado"]
 
 

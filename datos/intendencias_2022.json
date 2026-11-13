@@ -734,5 +734,504 @@
     "fecha_respuesta": null
    }
   ]
+ },
+ "transparencia": {
+  "intai": {
+   "fuente": {
+    "nombre": "UAIP · Índice Nacional de Transparencia y Acceso a la Información (INTAI), 4.ª edición, 2024",
+    "url": "https://visualizador.gobiernoabierto.gub.uy/visualizador/api/repos/%3Apublic%3Aorganismos%3Auaip%3Aintai%3AR02_intai.wcdf/generatedContent",
+    "referencia": "Tabla de resultados por organismo. Puntaje de 0 a 1 (institucional 0,25, transparencia activa 0,35, pasiva 0,40). Un organismo que no responde la autoevaluación recibe 0. 251 organismos evaluados en 2024."
+   },
+   "intendencias": [
+    {
+     "departamento": "Montevideo",
+     "institucional_2024": 0.25,
+     "activa_2024": 0.35,
+     "pasiva_2024": 0.371,
+     "puntaje_2024": 0.971,
+     "posicion_2024": 6,
+     "puntaje_2023": 0.981,
+     "posicion_2023": 4,
+     "puntaje_2022": 0.957,
+     "posicion_2022": 9,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Canelones",
+     "institucional_2024": 0.183,
+     "activa_2024": 0.35,
+     "pasiva_2024": 0.396,
+     "puntaje_2024": 0.929,
+     "posicion_2024": 26,
+     "puntaje_2023": 0.929,
+     "posicion_2023": 22,
+     "puntaje_2022": 0.913,
+     "posicion_2022": 15,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Florida",
+     "institucional_2024": 0.185,
+     "activa_2024": 0.322,
+     "pasiva_2024": 0.362,
+     "puntaje_2024": 0.869,
+     "posicion_2024": 56,
+     "puntaje_2023": 0.942,
+     "posicion_2023": 18,
+     "puntaje_2022": 0.907,
+     "posicion_2022": 17,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Maldonado",
+     "institucional_2024": 0.11,
+     "activa_2024": 0.273,
+     "pasiva_2024": 0.4,
+     "puntaje_2024": 0.783,
+     "posicion_2024": 100,
+     "puntaje_2023": 0.783,
+     "posicion_2023": 94,
+     "puntaje_2022": 0.783,
+     "posicion_2022": 53,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "San José",
+     "institucional_2024": 0.152,
+     "activa_2024": 0.329,
+     "pasiva_2024": 0.196,
+     "puntaje_2024": 0.677,
+     "posicion_2024": 134,
+     "puntaje_2023": 0.636,
+     "posicion_2023": 136,
+     "puntaje_2022": 0.164,
+     "posicion_2022": 143,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Rivera",
+     "institucional_2024": 0.133,
+     "activa_2024": 0.252,
+     "pasiva_2024": 0.21,
+     "puntaje_2024": 0.595,
+     "posicion_2024": 152,
+     "puntaje_2023": 0.507,
+     "posicion_2023": 155,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Colonia",
+     "institucional_2024": 0.125,
+     "activa_2024": 0.305,
+     "pasiva_2024": 0.113,
+     "puntaje_2024": 0.542,
+     "posicion_2024": 159,
+     "puntaje_2023": 0.663,
+     "posicion_2023": 125,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Lavalleja",
+     "institucional_2024": 0.15,
+     "activa_2024": 0.238,
+     "pasiva_2024": 0.06,
+     "puntaje_2024": 0.448,
+     "posicion_2024": 172,
+     "puntaje_2023": 0.419,
+     "posicion_2023": 169,
+     "puntaje_2022": 0.47,
+     "posicion_2022": 114,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Tacuarembó",
+     "institucional_2024": 0.137,
+     "activa_2024": 0.168,
+     "pasiva_2024": 0.06,
+     "puntaje_2024": 0.365,
+     "posicion_2024": 178,
+     "puntaje_2023": 0.381,
+     "posicion_2023": 174,
+     "puntaje_2022": 0.462,
+     "posicion_2022": 116,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Rocha",
+     "institucional_2024": 0.044,
+     "activa_2024": 0.189,
+     "pasiva_2024": 0.06,
+     "puntaje_2024": 0.293,
+     "posicion_2024": 182,
+     "puntaje_2023": 0.0,
+     "posicion_2023": 181,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Artigas",
+     "institucional_2024": 0.094,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.094,
+     "posicion_2024": 184,
+     "puntaje_2023": 0.0,
+     "posicion_2023": 181,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": true
+    },
+    {
+     "departamento": "Cerro Largo",
+     "institucional_2024": 0.0,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.0,
+     "posicion_2024": 185,
+     "puntaje_2023": 0.0,
+     "posicion_2023": 181,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": false
+    },
+    {
+     "departamento": "Durazno",
+     "institucional_2024": 0.0,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.0,
+     "posicion_2024": 185,
+     "puntaje_2023": 0.652,
+     "posicion_2023": 132,
+     "puntaje_2022": 0.719,
+     "posicion_2022": 69,
+     "respondio_2024": false
+    },
+    {
+     "departamento": "Flores",
+     "institucional_2024": 0.0,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.0,
+     "posicion_2024": 185,
+     "puntaje_2023": 0.0,
+     "posicion_2023": 181,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": false
+    },
+    {
+     "departamento": "Paysandú",
+     "institucional_2024": 0.0,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.0,
+     "posicion_2024": 185,
+     "puntaje_2023": 0.688,
+     "posicion_2023": 119,
+     "puntaje_2022": 0.413,
+     "posicion_2022": 121,
+     "respondio_2024": false
+    },
+    {
+     "departamento": "Río Negro",
+     "institucional_2024": 0.0,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.0,
+     "posicion_2024": 185,
+     "puntaje_2023": 0.0,
+     "posicion_2023": 181,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": false
+    },
+    {
+     "departamento": "Salto",
+     "institucional_2024": 0.0,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.0,
+     "posicion_2024": 185,
+     "puntaje_2023": 0.718,
+     "posicion_2023": 112,
+     "puntaje_2022": 0.653,
+     "posicion_2022": 80,
+     "respondio_2024": false
+    },
+    {
+     "departamento": "Soriano",
+     "institucional_2024": 0.0,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.0,
+     "posicion_2024": 185,
+     "puntaje_2023": 0.0,
+     "posicion_2023": 181,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": false
+    },
+    {
+     "departamento": "Treinta y Tres",
+     "institucional_2024": 0.0,
+     "activa_2024": 0.0,
+     "pasiva_2024": 0.0,
+     "puntaje_2024": 0.0,
+     "posicion_2024": 185,
+     "puntaje_2023": 0.0,
+     "posicion_2023": 181,
+     "puntaje_2022": 0.0,
+     "posicion_2022": 149,
+     "respondio_2024": false
+    }
+   ]
+  },
+  "uaip": {
+   "fuente": {
+    "nombre": "UAIP · Resoluciones del Consejo Ejecutivo sobre denuncias",
+    "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa",
+    "referencia": "Resoluciones del 1/1/2025 al 7/10/2026 en las que la Unidad dio la razón al denunciante: silencio positivo (no contestó en plazo), entrega fuera de plazo o parcial, negación injustificada, contravención a la ley u orden de entregar. No se cuentan archivos, reservas ni casos sin contravención."
+   },
+   "resoluciones": [
+    {
+     "fecha": "2026-10-07",
+     "numero": "334/026",
+     "tipo": "entrega fuera de plazo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-334026-sobre-entrega-fuera-plazo"
+    },
+    {
+     "fecha": "2026-10-07",
+     "numero": "329/026",
+     "tipo": "entrega parcial",
+     "departamento": "Salto",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-329026-sobre-entrega-parcial-informacion"
+    },
+    {
+     "fecha": "2026-08-26",
+     "numero": "309/026",
+     "tipo": "negación injustificada",
+     "departamento": "Rocha",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-309026-sobre-negacion-injustificada"
+    },
+    {
+     "fecha": "2026-08-26",
+     "numero": "307/026",
+     "tipo": "entrega fuera de plazo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-307026-sobre-entrega-fuera-plazo"
+    },
+    {
+     "fecha": "2026-07-31",
+     "numero": "293/026",
+     "tipo": "silencio positivo",
+     "departamento": "Colonia",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-293026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-07-29",
+     "numero": "273/026",
+     "tipo": "orden de entregar",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-273026-sobre-entrega-informacion"
+    },
+    {
+     "fecha": "2026-07-29",
+     "numero": "272/026",
+     "tipo": "silencio positivo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-272026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-07-08",
+     "numero": "254/026",
+     "tipo": "silencio positivo",
+     "departamento": "Río Negro",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-254026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-07-01",
+     "numero": "242/026",
+     "tipo": "orden de entregar",
+     "departamento": "Lavalleja",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-242026-sobre-entrega-informacion"
+    },
+    {
+     "fecha": "2026-06-24",
+     "numero": "238/026",
+     "tipo": "silencio positivo",
+     "departamento": "Durazno",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-238026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-06-24",
+     "numero": "230/026",
+     "tipo": "silencio positivo",
+     "departamento": "Río Negro",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-230026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-06-10",
+     "numero": "217/026",
+     "tipo": "silencio positivo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-217026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-06-10",
+     "numero": "216/026",
+     "tipo": "silencio positivo",
+     "departamento": "Lavalleja",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-216026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-06-03",
+     "numero": "199/026",
+     "tipo": "silencio positivo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-199026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-04-16",
+     "numero": "123/026",
+     "tipo": "silencio positivo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-123026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-04-16",
+     "numero": "120/026",
+     "tipo": "silencio positivo",
+     "departamento": "Florida",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-120026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2026-01-28",
+     "numero": "19/026",
+     "tipo": "silencio positivo",
+     "departamento": "Cerro Largo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-19026-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-12-11",
+     "numero": "229/025",
+     "tipo": "orden de entregar",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-229025-sobre-entrega-informacion"
+    },
+    {
+     "fecha": "2025-12-11",
+     "numero": "223/025",
+     "tipo": "silencio positivo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-223025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-12-11",
+     "numero": "217/025",
+     "tipo": "orden de entregar",
+     "departamento": "Río Negro",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-217025-sobre-entrega-informacion"
+    },
+    {
+     "fecha": "2025-12-11",
+     "numero": "214/025",
+     "tipo": "silencio positivo",
+     "departamento": "Rocha",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-214025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-11-12",
+     "numero": "186/025",
+     "tipo": "silencio positivo",
+     "departamento": "Soriano",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-186025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-10-22",
+     "numero": "163/025",
+     "tipo": "silencio positivo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-163025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-10-08",
+     "numero": "158/025",
+     "tipo": "silencio positivo",
+     "departamento": "Soriano",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-158025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-10-08",
+     "numero": "155/025",
+     "tipo": "silencio positivo",
+     "departamento": "Treinta y Tres",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-155025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-10-01",
+     "numero": "152/025",
+     "tipo": "orden de entregar",
+     "departamento": "Canelones",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-152025-sobre-entrega-informacion-0"
+    },
+    {
+     "fecha": "2025-08-21",
+     "numero": "107/025",
+     "tipo": "silencio positivo",
+     "departamento": "Treinta y Tres",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-107025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-07-16",
+     "numero": "90/025",
+     "tipo": "contravención a la ley",
+     "departamento": "Maldonado",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-90025-sobre-contravencion-ley"
+    },
+    {
+     "fecha": "2025-06-04",
+     "numero": "82/025",
+     "tipo": "silencio positivo",
+     "departamento": "Montevideo",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-82025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-02-26",
+     "numero": "44/025",
+     "tipo": "silencio positivo",
+     "departamento": "Río Negro",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-44025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-02-26",
+     "numero": "43/025",
+     "tipo": "silencio positivo",
+     "departamento": "Rocha",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-43025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-02-26",
+     "numero": "42/025",
+     "tipo": "silencio positivo",
+     "departamento": "Flores",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-42025-sobre-silencio-positivo"
+    },
+    {
+     "fecha": "2025-01-22",
+     "numero": "2/025",
+     "tipo": "silencio positivo",
+     "departamento": "Río Negro",
+     "url": "https://www.gub.uy/unidad-acceso-informacion-publica/institucional/normativa/resolucion-n-2025-sobre-silencio-positivo"
+    }
+   ]
+  },
+  "catalogo_saip": "El catálogo público de solicitudes.gub.uy solo publica respuestas desde el 2/10/2026 y al 13/11/2026 no tenía ninguna de las 19 intendencias."
  }
 }
