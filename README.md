@@ -9,6 +9,7 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 - `publico/index.html` es la portada: el costo del Palacio Legislativo, tres datos de impacto con su fuente y un botón para objetarlos, los casos y la fe de erratas pública.
 - `publico/intendencias.html` es el caso de las 19 intendencias: gasto 2022 de OPP, ranking por habitante, fichas por departamento con lo observado por el Tribunal de Cuentas y las promesas, y el seguimiento de los pedidos de acceso. Se genera desde `datos/intendencias_2022.json`. El texto del pedido está en `pedidos/pedido_ley_18381_intendencias.md`.
 - `publico/puerto.html` es el caso del puerto de Montevideo: serie de la ANP 2015-2025, concesiones, paros, comparación con seis puertos de la región y obras. Se genera desde `datos/puerto.json`. La investigación y su verificación están en `investigacion_puerto/`.
+- `publico/ute.html` es el caso de UTE: serie 2015-2025 de resultados, inversiones y pagos a Rentas Generales, el fondo de estabilización, la tarifa 2026 con facturas tipo, costos, pérdidas de energía, escenarios de cuánto podría costar y lo cuestionado (Gas Sayago, energía no usada). Se genera desde `datos/ute.json`. La investigación y su verificación están en `investigacion_ute/`.
 - `publico/informe.html` es el informe completo: Presupuesto Nacional, ingresos, empleo, Parlamento, Montevideo, Tribunal de Cuentas, escenarios de ahorro y aportes. Los importes de portada están redondeados a millones de pesos y los enlaces llevan a las cifras exactas.
 - `datos/correcciones.json` es el registro de objeciones que se muestra en la fe de erratas. Cada entrada lleva `fecha`, `dato`, `estado` (`recibida`, `en_revision`, `aceptada` o `rechazada`) y `resultado`.
 - `og.png` es la imagen que aparece al compartir el enlace. `robots.txt` y `sitemap.xml` sirven para que Google indexe el sitio.
@@ -35,6 +36,8 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 | `puerto_anp_2015_2025.csv` | Ingresos, resultado, inversiones, transferencias a Rentas Generales y funcionarios de la ANP, 2015-2025 (estados financieros). |
 | `puerto_comparacion.csv` | Contenedores 2024 (CEPAL) y puesto de eficiencia 2024 y 2025 (Banco Mundial) de siete puertos. |
 | `puerto_fuentes.csv` | Fuentes del caso del puerto, con tipo (oficial, prensa, gremial, partido). |
+| `ute_2015_2025.csv` | Ingresos, resultado, inversiones, pagos a Rentas Generales y funcionarios de UTE, 2015-2025 (estados financieros). |
+| `ute_fuentes.csv` | Fuentes del caso UTE, con tipo (oficial, prensa). |
 | `pedidos_acceso_intendencias.csv` | Seguimiento de los 19 pedidos de acceso (Ley 18.381). |
 | `tribunal_muestra_2025.csv` | Cuatro expedientes con motivo, importe y estado documentado. |
 

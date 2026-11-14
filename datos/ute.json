@@ -1,0 +1,620 @@
+{
+ "consultado": "2026-11-14",
+ "serie": [
+  {
+   "anio": 2015,
+   "ingresos": 40342.5,
+   "resultado": 5921.3,
+   "inversiones": 8609.5,
+   "rentas_generales": 2008.1,
+   "funcionarios": 6619,
+   "cotejado": false,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE_311215.pdf"
+  },
+  {
+   "anio": 2016,
+   "ingresos": 47487.9,
+   "resultado": 12242.5,
+   "inversiones": 13918.0,
+   "rentas_generales": 6785.9,
+   "funcionarios": 6402,
+   "cotejado": false,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20Estados%20financieros%202016_0.pdf"
+  },
+  {
+   "anio": 2017,
+   "ingresos": 51262.6,
+   "resultado": 14436.8,
+   "inversiones": 7565.3,
+   "rentas_generales": 10898.5,
+   "funcionarios": 6667,
+   "cotejado": false,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20e%20Informe%20de%20Auditor%C3%ADa%20al%2031%2012%2017_compresi%C3%B3n1.pdf"
+  },
+  {
+   "anio": 2018,
+   "ingresos": 51536.3,
+   "resultado": 11405.0,
+   "inversiones": 6058.5,
+   "rentas_generales": 10473.6,
+   "funcionarios": 6615,
+   "cotejado": false,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%2031-12-2018%20Estado%20Contables%20Anuales%20separados%20y%20consolidados.%20Balance%20al%2031%20diciembre%202018_1.pdf"
+  },
+  {
+   "anio": 2019,
+   "ingresos": 51590.2,
+   "resultado": 6357.3,
+   "inversiones": 6796.0,
+   "rentas_generales": 6258.5,
+   "funcionarios": 6541,
+   "cotejado": false,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031%2012%2019%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf"
+  },
+  {
+   "anio": 2020,
+   "ingresos": 58409.9,
+   "resultado": 3370.1,
+   "inversiones": 7495.8,
+   "rentas_generales": 5581.6,
+   "funcionarios": 6183,
+   "cotejado": true,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031.12.20%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf"
+  },
+  {
+   "anio": 2021,
+   "ingresos": 82228.3,
+   "resultado": 17691.9,
+   "inversiones": 9532.6,
+   "rentas_generales": 3004.9,
+   "funcionarios": 6046,
+   "cotejado": true,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/EEFF%20al%2031.12.21%20e%20Informe%20de%20Auditor%C3%ADa%20UTE.pdf"
+  },
+  {
+   "anio": 2022,
+   "ingresos": 70081.7,
+   "resultado": 7487.3,
+   "inversiones": 10627.3,
+   "rentas_generales": 5000.0,
+   "funcionarios": 6178,
+   "cotejado": false,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20informe%20de%20Auditor%C3%ADa%20Consolidado%20y%20Separado%20al%2031122022_BV.pdf"
+  },
+  {
+   "anio": 2023,
+   "ingresos": 69042.1,
+   "resultado": 5047.7,
+   "inversiones": 12030.0,
+   "rentas_generales": 3603.3,
+   "funcionarios": 6176,
+   "cotejado": false,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20-%20Estados%20financieros%20al%2031.12.23%20e%20Informe%20de%20Auditor%C3%ADa-ptg_0.pdf"
+  },
+  {
+   "anio": 2024,
+   "ingresos": 77175.2,
+   "resultado": 12666.4,
+   "inversiones": 13816.6,
+   "rentas_generales": 7536.6,
+   "funcionarios": 6237,
+   "cotejado": true,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20-%20Estados%20financieros%20al%2031.12.24%20e%20Informe%20de%20Auditor%C3%ADa-ptg.pdf"
+  },
+  {
+   "anio": 2025,
+   "ingresos": 79136.1,
+   "resultado": 14026.5,
+   "inversiones": 12401.7,
+   "rentas_generales": 6207.6,
+   "funcionarios": 6168,
+   "cotejado": true,
+   "fuente": "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf"
+  }
+ ],
+ "golpes": [
+  {
+   "valor": "$ 14.026 M",
+   "texto": "ganó UTE en 2025 (unos US$ 341 M)",
+   "fuente": "Estados financieros UTE 2025",
+   "url": "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "$ 7.208 M",
+   "texto": "de esa ganancia van al Estado (Rentas Generales); $ 1.000 M quedaron a pagar",
+   "fuente": "Estados financieros UTE 2025, nota 5.16",
+   "url": "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "$ 3.586",
+   "texto": "paga un hogar por 300 kWh en 2026, con IVA (tarifa simple, 3,7 kW)",
+   "fuente": "Cálculo sobre el pliego 2026",
+   "url": "https://www.ute.com.uy/sites/default/files/docs/Pliego%20Tarifario%20Enero%202026.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "16,4 %",
+   "texto": "de la energía se perdió antes de facturarse en 2024",
+   "fuente": "Memoria anual UTE 2024, pág. 44",
+   "url": "https://portal.ute.com.uy/sites/default/files/memorias/Memoria%20anual%202024.pdf",
+   "tipo": "oficial"
+  },
+  {
+   "valor": "US$ 142 M",
+   "texto": "pagó UTE a privados por energía que no usó, entre 2014 y 2019",
+   "fuente": "El Observador, con datos de UTE",
+   "url": "https://www.elobservador.com.uy/nota/ute-pago-us-142-millones-en-seis-anos-a-privados-por-energia-que-no-utilizo-202081218130",
+   "tipo": "prensa"
+  },
+  {
+   "valor": "US$ 213 M",
+   "texto": "costó la regasificadora que nunca funcionó (Gas Sayago), según la auditoría",
+   "fuente": "Montevideo Portal, auditoría de PwC",
+   "url": "https://www.montevideo.com.uy/Noticias/Directorio-de-UTE-envia-a-Fiscalia-los-resultados-de-la-auditoria-sobre-Gas-Sayago-uc788830",
+   "tipo": "prensa"
+  }
+ ],
+ "fondo": [
+  {
+   "fecha": "2015",
+   "texto": "El Fondo de Estabilización Energética, creado para amortiguar los años de sequía, tiene $ 8.980 millones.",
+   "fuentes": [
+    [
+     "Estados financieros 2016",
+     "https://www.ute.com.uy/sites/default/files/docs/UTE%20Estados%20financieros%202016_0.pdf",
+     "oficial"
+    ]
+   ]
+  },
+  {
+   "fecha": "2018",
+   "texto": "$ 6.176 millones del fondo (US$ 194 millones) pasan a Rentas Generales por la Ley 19.620. Al cierre quedan $ 3.525 millones.",
+   "fuentes": [
+    [
+     "Estados financieros 2019",
+     "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031%2012%2019%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf",
+     "oficial"
+    ]
+   ]
+  },
+  {
+   "fecha": "2020",
+   "texto": "Año seco. UTE usa $ 2.623 millones del fondo.",
+   "fuentes": [
+    [
+     "Estados financieros 2020",
+     "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031.12.20%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf",
+     "oficial"
+    ]
+   ]
+  },
+  {
+   "fecha": "2021",
+   "texto": "UTE usa otros $ 2.468 millones. El fondo queda con $ 23 millones.",
+   "fuentes": [
+    [
+     "Estados financieros 2022",
+     "https://www.ute.com.uy/sites/default/files/docs/UTE%20informe%20de%20Auditor%C3%ADa%20Consolidado%20y%20Separado%20al%2031122022_BV.pdf",
+     "oficial"
+    ]
+   ]
+  },
+  {
+   "fecha": "2023",
+   "texto": "La peor sequía en décadas llega con el fondo casi vacío. La compra de energía sube a $ 21.357 millones y el resultado baja a $ 5.048 millones.",
+   "fuentes": [
+    [
+     "Estados financieros 2023",
+     "https://www.ute.com.uy/sites/default/files/docs/UTE%20-%20Estados%20financieros%20al%2031.12.23%20e%20Informe%20de%20Auditor%C3%ADa-ptg_0.pdf",
+     "oficial"
+    ]
+   ]
+  },
+  {
+   "fecha": "2025",
+   "texto": "El fondo tiene $ 19 millones. No hubo aportes ni usos en el año.",
+   "fuentes": [
+    [
+     "Estados financieros 2025, nota 5.8",
+     "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf",
+     "oficial"
+    ]
+   ]
+  }
+ ],
+ "pliego": [
+  [
+   "1 a 100 kWh",
+   "6,744 $/kWh"
+  ],
+  [
+   "101 a 600 kWh",
+   "8,452 $/kWh"
+  ],
+  [
+   "601 kWh en adelante",
+   "10,539 $/kWh"
+  ],
+  [
+   "Potencia contratada",
+   "83,2 $/kW por mes"
+  ],
+  [
+   "Cargo fijo",
+   "324,9 $ por mes"
+  ]
+ ],
+ "pliego_url": "https://www.ute.com.uy/sites/default/files/docs/Pliego%20Tarifario%20Enero%202026.pdf",
+ "facturas": [
+  {
+   "nombre": "200 kWh por mes",
+   "monto": "$ 2.554",
+   "texto": "Energía $ 1.520, potencia $ 308, cargo fijo $ 325 e IVA $ 402."
+  },
+  {
+   "nombre": "300 kWh por mes",
+   "monto": "$ 3.586",
+   "texto": "Energía $ 2.365, potencia $ 308, cargo fijo $ 325 e IVA $ 588."
+  },
+  {
+   "nombre": "400 kWh por mes",
+   "monto": "$ 4.617",
+   "texto": "Energía $ 3.210, potencia $ 308, cargo fijo $ 325 e IVA $ 774."
+  }
+ ],
+ "ajustes": [
+  [
+   2021,
+   "5,0 %",
+   "7,96 %",
+   "https://www.impo.com.uy/bases/decretos/366-2020"
+  ],
+  [
+   2022,
+   "3,5 %",
+   "8,29 %",
+   "https://www.impo.com.uy/bases/decretos/462-2021"
+  ],
+  [
+   2023,
+   "3,5 %",
+   "5,11 %",
+   "https://www.impo.com.uy/bases/decretos/436-2022"
+  ],
+  [
+   2024,
+   "3,5 %",
+   "5,49 %",
+   "https://www.impo.com.uy/bases/decretos/446-2023"
+  ],
+  [
+   2025,
+   "3,0 %",
+   "3,65 %",
+   "https://www.impo.com.uy/bases/decretos/365-2024"
+  ],
+  [
+   2026,
+   "4,0 %",
+   "—",
+   "https://www.impo.com.uy/bases/decretos/339-2025"
+  ]
+ ],
+ "ipc_url": "https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/91-precios/911-indice-precios",
+ "gastos_2025": [
+  [
+   "Compra de energía",
+   22492.3
+  ],
+  [
+   "Personal",
+   15528.0
+  ],
+  [
+   "Combustibles",
+   1607.8
+  ],
+  [
+   "Subsidios y transferencias",
+   1171.5
+  ],
+  [
+   "Incobrables",
+   1117.4
+  ],
+  [
+   "Resto: amortizaciones, servicios y otros",
+   18994.3
+  ]
+ ],
+ "precios_compra": [
+  [
+   "Salto Grande",
+   6
+  ],
+  [
+   "Eólica privada",
+   78
+  ],
+  [
+   "Biomasa",
+   84
+  ],
+  [
+   "Solar privada",
+   111
+  ]
+ ],
+ "ucu_url": "https://www.ucu.edu.uy/Institucionales/MONITOR-MENSUAL-DEL-SECTOR-ELECTRICO-uc1481/4994/Monitor-Setiembre-2024.pdf",
+ "perdidas": [
+  [
+   2016,
+   "17,9 %",
+   "—"
+  ],
+  [
+   2017,
+   "17,4 %",
+   "—"
+  ],
+  [
+   2018,
+   "17,7 %",
+   "—"
+  ],
+  [
+   2019,
+   "18,1 %",
+   "—"
+  ],
+  [
+   2021,
+   "17,3 %",
+   "—"
+  ],
+  [
+   2022,
+   "16,28 %",
+   "—"
+  ],
+  [
+   2023,
+   "14,9 %",
+   "17,2 %"
+  ],
+  [
+   2024,
+   "13,94 %",
+   "16,44 %"
+  ]
+ ],
+ "perdidas_url": "https://portal.ute.com.uy/sites/default/files/memorias/Memoria%20anual%202024.pdf",
+ "escenarios": [
+  {
+   "nombre": "Hoy",
+   "monto": "$ 7,05 por kWh",
+   "texto": "Lo que UTE facturó en promedio al mercado interno en 2025, sin IVA: $ 74.214 millones por 10.527 GWh.",
+   "tipo": "oficial",
+   "url": "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf",
+   "pendiente": ""
+  },
+  {
+   "nombre": "Si UTE no girara a Rentas Generales",
+   "monto": "cerca de 10 % menos",
+   "texto": "Los $ 7.208 millones del giro de 2025 son el 9,7 % de lo facturado. Todo lo demás queda igual.",
+   "tipo": "oficial",
+   "url": "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf",
+   "pendiente": "cálculo propio"
+  },
+  {
+   "nombre": "Si además UTE no ganara nada",
+   "monto": "cerca de 19 % menos",
+   "texto": "La ganancia de 2025 es el 18,9 % de lo facturado. Sin ganancia, no queda margen propio para invertir más ni para un año seco.",
+   "tipo": "oficial",
+   "url": "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf",
+   "pendiente": "cálculo propio"
+  },
+  {
+   "nombre": "El IVA",
+   "monto": "22 % aparte",
+   "texto": "Se paga sobre la energía y la potencia; el cargo fijo está exonerado. Es cerca del 16 % del total de la factura. Lo decide la ley, no UTE.",
+   "tipo": "oficial",
+   "url": "https://www.ute.com.uy/sites/default/files/docs/Pliego%20Tarifario%20Enero%202026.pdf",
+   "pendiente": ""
+  }
+ ],
+ "cuestionado": [
+  {
+   "nombre": "Gas Sayago, la regasificadora",
+   "monto": "US$ 213 M",
+   "texto": "Auditoría de PwC presentada por UTE en 2021: US$ 113 M los pusieron UTE y ANCAP y US$ 100 M salieron de una garantía cobrada al contratista. En 2023 UTE actualizó el total a US$ 256 M (US$ 156 M sin la garantía). El entonces ministro de Industria sostuvo que la pérdida para el Estado es menor a 213 por ese cobro. El fiscal pidió archivar la denuncia penal.",
+   "tipo": "prensa",
+   "url": "https://www.montevideo.com.uy/Noticias/Directorio-de-UTE-envia-a-Fiscalia-los-resultados-de-la-auditoria-sobre-Gas-Sayago-uc788830",
+   "url2": "https://www.montevideo.com.uy/Noticias/Gas-Sayago-Gobierno-actualizo-perdidas-y-las-estimo-en-US-156-millones-hasta-el-momento-uc858949",
+   "tipo2": "prensa",
+   "pendiente": ""
+  },
+  {
+   "nombre": "Energía pagada y no usada",
+   "monto": "US$ 142,2 M",
+   "texto": "Entre 2014 y 2019 UTE pagó a generadores privados por 2.058 GWh que les pidió no producir, porque no había demanda ni a quién exportar. En 2019 fueron US$ 23,3 M. El dato lo dio UTE ante un pedido de acceso a la información.",
+   "tipo": "prensa",
+   "url": "https://www.elobservador.com.uy/nota/ute-pago-us-142-millones-en-seis-anos-a-privados-por-energia-que-no-utilizo-202081218130",
+   "pendiente": "serie 2020-2025: no publicada"
+  },
+  {
+   "nombre": "Observaciones del Tribunal de Cuentas",
+   "monto": "Sin salvedades",
+   "texto": "El Tribunal aprobó los balances de 2022, pero anotó nueve incumplimientos: no publicar los estados en la Auditoría Interna, horas extras sin motivo, licencias acumuladas, pagos a becarios por encima del tope y otros.",
+   "tipo": "oficial",
+   "url": "https://impo.com.uy/bases/resoluciones-auditorias-tcr-nd/3089-2023",
+   "pendiente": "dictámenes 2024 y 2025: no encontrados"
+  }
+ ],
+ "pendientes": [
+  "Comparación con otros países: las fuentes disponibles mezclan métodos y fechas. Estamos cotejando el comparativo regional de UTE (solo Brasil y Chile) antes de publicarlo.",
+  "Energía pagada y no usada entre 2020 y 2025: no hay serie oficial.",
+  "Precio de cada contrato con generadores privados: UTE no lo publica; el dato disponible es el promedio del monitor de la Universidad Católica.",
+  "Segunda lectura de los balances 2015 a 2019, 2022 y 2023. Las cifras de 2020, 2021, 2024 y 2025 ya están cotejadas contra el documento.",
+  "Dictámenes del Tribunal de Cuentas sobre los balances 2024 y 2025."
+ ],
+ "fuentes": [
+  [
+   "UTE: estados financieros 2015",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE_311215.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2016",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE%20Estados%20financieros%202016_0.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2017",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20e%20Informe%20de%20Auditor%C3%ADa%20al%2031%2012%2017_compresi%C3%B3n1.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2018",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%2031-12-2018%20Estado%20Contables%20Anuales%20separados%20y%20consolidados.%20Balance%20al%2031%20diciembre%202018_1.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2019",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031%2012%2019%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2020",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031.12.20%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2021",
+   "https://www.ute.com.uy/sites/default/files/docs/EEFF%20al%2031.12.21%20e%20Informe%20de%20Auditor%C3%ADa%20UTE.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2022",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE%20informe%20de%20Auditor%C3%ADa%20Consolidado%20y%20Separado%20al%2031122022_BV.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2023",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE%20-%20Estados%20financieros%20al%2031.12.23%20e%20Informe%20de%20Auditor%C3%ADa-ptg_0.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2024",
+   "https://www.ute.com.uy/sites/default/files/docs/UTE%20-%20Estados%20financieros%20al%2031.12.24%20e%20Informe%20de%20Auditor%C3%ADa-ptg.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: estados financieros 2025",
+   "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf",
+   "oficial"
+  ],
+  [
+   "UTE en Cifras 2025",
+   "https://www.ute.com.uy/sites/default/files/generico/UTE%20en%20CIFRAS%202025.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: pliego tarifario enero 2026",
+   "https://www.ute.com.uy/sites/default/files/docs/Pliego%20Tarifario%20Enero%202026.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: Memoria anual 2024",
+   "https://portal.ute.com.uy/sites/default/files/memorias/Memoria%20anual%202024.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: Memoria anual 2023",
+   "https://portal.ute.com.uy/sites/default/files/memorias/Memoria%20anual%202023.pdf",
+   "oficial"
+  ],
+  [
+   "UTE: comparativo regional de tarifas, enero 2026",
+   "https://portal.ute.com.uy/sites/default/files/docs/Comparativo%20Regional%20de%20Tarifas%20-Enero.pdf",
+   "oficial"
+  ],
+  [
+   "URSEA: informe de ajuste tarifario 2024 (INF-00407-2023)",
+   "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/publicaciones/INF-00407-2023.pdf",
+   "oficial"
+  ],
+  [
+   "Tribunal de Cuentas: Res. 3089/023, balance 2022 de UTE",
+   "https://impo.com.uy/bases/resoluciones-auditorias-tcr-nd/3089-2023",
+   "oficial"
+  ],
+  [
+   "INE: Índice de Precios del Consumo",
+   "https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/91-precios/911-indice-precios",
+   "oficial"
+  ],
+  [
+   "Decreto de tarifas de UTE 2021",
+   "https://www.impo.com.uy/bases/decretos/366-2020",
+   "oficial"
+  ],
+  [
+   "Decreto de tarifas de UTE 2022",
+   "https://www.impo.com.uy/bases/decretos/462-2021",
+   "oficial"
+  ],
+  [
+   "Decreto de tarifas de UTE 2023",
+   "https://www.impo.com.uy/bases/decretos/436-2022",
+   "oficial"
+  ],
+  [
+   "Decreto de tarifas de UTE 2024",
+   "https://www.impo.com.uy/bases/decretos/446-2023",
+   "oficial"
+  ],
+  [
+   "Decreto de tarifas de UTE 2025",
+   "https://www.impo.com.uy/bases/decretos/365-2024",
+   "oficial"
+  ],
+  [
+   "Decreto de tarifas de UTE 2026",
+   "https://www.impo.com.uy/bases/decretos/339-2025",
+   "oficial"
+  ],
+  [
+   "El Observador: pagos por energía no utilizada (2020)",
+   "https://www.elobservador.com.uy/nota/ute-pago-us-142-millones-en-seis-anos-a-privados-por-energia-que-no-utilizo-202081218130",
+   "prensa"
+  ],
+  [
+   "Universidad Católica: monitor del sector eléctrico, setiembre 2024",
+   "https://www.ucu.edu.uy/Institucionales/MONITOR-MENSUAL-DEL-SECTOR-ELECTRICO-uc1481/4994/Monitor-Setiembre-2024.pdf",
+   "oficial"
+  ],
+  [
+   "Montevideo Portal: auditoría sobre Gas Sayago (2021)",
+   "https://www.montevideo.com.uy/Noticias/Directorio-de-UTE-envia-a-Fiscalia-los-resultados-de-la-auditoria-sobre-Gas-Sayago-uc788830",
+   "prensa"
+  ],
+  [
+   "Montevideo Portal: Gas Sayago, pérdidas actualizadas (2023)",
+   "https://www.montevideo.com.uy/Noticias/Gas-Sayago-Gobierno-actualizo-perdidas-y-las-estimo-en-US-156-millones-hasta-el-momento-uc858949",
+   "prensa"
+  ],
+  [
+   "El Observador: Paganini en el Senado por Gas Sayago (2021)",
+   "https://www.elobservador.com.uy/nota/paganini-fue-al-parlamento-por-gas-sayago-y-dejo-preguntas-al-fa-por-costo-del-fracaso--2021623231417",
+   "prensa"
+  ],
+  [
+   "Montevideo Portal: el fiscal pidió archivar la denuncia",
+   "https://www.montevideo.com.uy/Noticias/Fiscal-Pacheco-pidio-el-archivo-de-la-denuncia-por-Gas-Sayago-uc854826",
+   "prensa"
+  ]
+ ]
+}

@@ -213,6 +213,7 @@ BARRA_LINKS = (
     ("intendencias.html", "intendencias.html", "Intendencias", "#3ddc97"),
     ("solaria.html", "solaria.html", "Solaria", "#ff8fa0"),
     ("puerto.html", "puerto.html", "Puerto", "#ff7a1a"),
+    ("ute.html", "ute.html", "UTE", "#5ce1e6"),
     ("informe.html", "informe.html", "Informe 2025", None),
     ("correcciones", "./#correcciones", "Correcciones", None),
 )
@@ -314,7 +315,7 @@ def build_portada(public, data):
         "ESTADO_PARLAMENTO": f"Esperando {waiting} pedidos" if waiting else "Publicado",
         "ERRATAS_N": "1 objeción" if n_fix == 1 else f"{n_fix} objeciones",
         "ERRATAS_TABLA": erratas,
-        "CASOS_N": "4",
+        "CASOS_N": "5",
         "PENDIENTES_N": str(pending),
         "ACTUALIZADO": datetime.date.today().strftime("%d/%m/%Y"),
     }
@@ -561,6 +562,107 @@ def build_puerto(public):
     write_csv(public, "puerto_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+def build_ute(public):
+    """Genera ute.html y sus CSV desde datos/ute.json."""
+    from html import escape
+    data = load_data("ute.json")
+    serie = data["serie"]
+    if [r["anio"] for r in serie] != list(range(2015, 2026)):
+        raise ValueError("La serie de UTE tiene que ir de 2015 a 2025, un año por fila.")
+    tipos = {"oficial", "prensa"}
+    for item in data["golpes"] + data["escenarios"] + data["cuestionado"]:
+        if item["tipo"] not in tipos or not item["url"].startswith("https://"):
+            raise ValueError("Cada dato de UTE necesita un tipo válido y una URL https.")
+    for nombre, url, tipo in data["fuentes"]:
+        if tipo not in tipos or not url.startswith("https://"):
+            raise ValueError(f"Fuente mal cargada: {nombre}")
+    if abs(sum(v for _, v in data["gastos_2025"]) - 60911.3) > 0.1:
+        raise ValueError("Los costos de 2025 de UTE tienen que sumar $ 60.911,3 millones.")
+
+    def tag(tipo, url=None):
+        if url:
+            return f'<a class="tag t-{tipo}" href="{escape(url)}" target="_blank" rel="noopener">{tipo}</a>'
+        return f'<span class="tag t-{tipo}">{tipo}</span>'
+
+    def millones(v):
+        return f"{v:,.0f}".replace(",", ".")
+
+    obj = '<a class="obj" href="informe.html?aporte=ute-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
+    golpes = "".join(
+        f'<div class="golpe"><b>{escape(g["valor"])}</b><span>{escape(g["texto"])}</span>'
+        f'<div class="acc"><a href="{escape(g["url"])}" target="_blank" rel="noopener">{escape(g["fuente"])} · {g["tipo"]}</a>{obj}</div></div>'
+        for g in data["golpes"])
+
+    # Gráfico de barras agrupadas: resultado, inversiones y pago a Rentas Generales.
+    W, H, L, R, T, B, top = 900, 340, 60, 10, 14, 34, 18000
+    cw = (W - L - R) / len(serie)
+    bw = cw / 4.2
+    y = lambda v: T + (H - T - B) * (1 - v / top)
+    svg = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Resultado, inversiones y pagos a Rentas Generales de UTE 2015-2025, en millones de pesos">']
+    for g in range(0, top + 1, 3000):
+        svg.append(f'<line x1="{L}" x2="{W-R}" y1="{y(g):.1f}" y2="{y(g):.1f}" stroke="#e3dccb"/>'
+                   f'<text x="{L-8}" y="{y(g)+4:.1f}" font-size="11" text-anchor="end" fill="#5a5a5a">{millones(g)}</text>')
+    for i, r in enumerate(serie):
+        x0 = L + i * cw + cw * .14
+        for j, (k, color) in enumerate((("resultado", "#35275e"), ("inversiones", "#0f8a99"), ("rentas_generales", "#2e9e6a"))):
+            x, v = x0 + j * bw, r[k]
+            svg.append(f'<rect x="{x:.1f}" y="{y(v):.1f}" width="{bw-2:.1f}" height="{y(0)-y(v):.1f}" fill="{color}">'
+                       f'<title>{r["anio"]} · $ {millones(v)} M</title></rect>')
+        svg.append(f'<text x="{L+i*cw+cw/2:.1f}" y="{H-12}" font-size="12" text-anchor="middle">{r["anio"]}</text>')
+    svg.append("</svg>")
+
+    tabla = "".join(
+        f'<tr><td>{r["anio"]}{" ✓" if r["cotejado"] else ""}</td><td class="n">{millones(r["ingresos"])}</td><td class="n">{millones(r["resultado"])}</td>'
+        f'<td class="n">{millones(r["inversiones"])}</td><td class="n">{millones(r["rentas_generales"])}</td>'
+        f'<td class="n">{es_num(r["funcionarios"], 0)}</td><td>{tag("oficial", r["fuente"])}</td></tr>' for r in serie)
+    fondo = "".join(
+        f'<div class="hito"><div class="f">{escape(p["fecha"])}</div><p>{escape(p["texto"])}</p>'
+        + " ".join(f'{tag(t, u)} <small>{escape(n)}</small>' for n, u, t in p["fuentes"]) + "</div>"
+        for p in data["fondo"])
+
+    def barras(rows, destacado):
+        maximo = max(v for _, v in rows)
+        return "".join(
+            f'<div class="fila{" mvd" if n == destacado else ""}"><span>{escape(n)}</span>'
+            f'<div class="b" style="width:{v / maximo * 100:.1f}%"></div><span class="v">{millones(v)}</span></div>'
+            for n, v in rows)
+
+    def tarjetas(rows):
+        return "".join(
+            f'<div class="obra"><h3>{escape(o["nombre"])}</h3><div class="m">{escape(o["monto"])}</div><p>{escape(o["texto"])}</p>'
+            + (f'<div class="acc">{tag(o["tipo"], o["url"])}'
+               + (f' {tag(o["tipo2"], o["url2"])}' if o.get("url2") else "")
+               + (f' <span class="tag t-pend">{escape(o["pendiente"])}</span>' if o.get("pendiente") else "") + "</div>" if o.get("url") else "")
+            + "</div>" for o in rows)
+
+    values = {
+        "GOLPES": golpes, "GRAFICO": "".join(svg), "TABLA": tabla, "FONDO": fondo, "OBJ": obj,
+        "RG_TOTAL": millones(sum(r["rentas_generales"] for r in serie)),
+        "PLIEGO": "".join(f'<tr><td>{escape(c)}</td><td class="n">{escape(p)}</td></tr>' for c, p in data["pliego"]),
+        "PLIEGO_URL": escape(data["pliego_url"]),
+        "AJUSTES": "".join(f'<tr><td>{a}</td><td class="n">{escape(u)}</td><td class="n">{escape(i)}</td><td>{tag("oficial", d)}</td></tr>'
+                           for a, u, i, d in data["ajustes"]),
+        "IPC_URL": escape(data["ipc_url"]), "FACTURAS": tarjetas(data["facturas"]),
+        "GASTOS": barras(data["gastos_2025"], "Compra de energía"), "PRECIOS": barras(data["precios_compra"], "Salto Grande"),
+        "EEFF25_URL": escape(serie[-1]["fuente"]), "UCU_URL": escape(data["ucu_url"]),
+        "PERDIDAS": "".join(f'<tr><td>{a}</td><td class="n">{escape(d)}</td><td class="n">{escape(t)}</td></tr>' for a, d, t in data["perdidas"]),
+        "PERDIDAS_URL": escape(data["perdidas_url"]),
+        "ESCENARIOS": tarjetas(data["escenarios"]), "CUESTIONADO": tarjetas(data["cuestionado"]),
+        "URSEA_URL": escape(next(u for n, u, _ in data["fuentes"] if n.startswith("URSEA"))),
+        "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "ute.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en ute.template.html.")
+    (public / "ute.html").write_text(page, encoding="utf-8")
+    write_csv(public, "ute_2015_2025.csv", serie)
+    write_csv(public, "ute_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -630,17 +732,18 @@ def main():
         (public / page).write_text((ROOT / "web" / page).read_text(encoding="utf-8"), encoding="utf-8")
     build_intendencias(public)
     build_puerto(public)
+    build_ute(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", "intendencias.html", "puerto.html", *STATIC_PAGES))
+                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE y los CSV.")
 
 
 if __name__ == "__main__":

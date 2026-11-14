@@ -38,7 +38,7 @@
     h2{font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:-.04em;margin:0 0 1rem;font-weight:900}
     .lead{color:var(--muted);margin:-.4rem 0 1.2rem;max-width:60ch}
 
-    /* Los cuatro casos, 2 × 2, cada uno con su cifra */
+    /* Los casos, de a dos; el quinto ocupa el ancho completo */
     .casos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
     .caso{--acc:var(--yellow);position:relative;border-radius:.6rem;padding:1.4rem 1.4rem 1.3rem;color:#fff;text-decoration:none;display:flex;flex-direction:column;gap:.55rem;min-height:17rem;box-shadow:inset 0 -7px 0 var(--acc);transition:transform .12s}
     .caso:hover{transform:translateY(-3px)}.caso:hover h3{text-decoration:underline}
@@ -50,7 +50,7 @@
     .caso h3{margin:auto 0 0;font-size:1.35rem;letter-spacing:-.03em;line-height:1.15}
     .caso p{margin:0;font-size:.92rem;opacity:.88}
     .caso .ir{font-weight:800;font-size:.9rem;color:var(--acc)}
-    .c1{background:#1d3557;--acc:#ffd23f}.c2{background:#0c2d3f;--acc:#3ddc97}.c3{background:#4a1424;--acc:#ff8fa0}.c4{background:#0b2236;--acc:#ff7a1a}
+    .c1{background:#1d3557;--acc:#ffd23f}.c2{background:#0c2d3f;--acc:#3ddc97}.c3{background:#4a1424;--acc:#ff8fa0}.c4{background:#0b2236;--acc:#ff7a1a}.c5{background:#231942;--acc:#5ce1e6;grid-column:1/-1;min-height:13rem}
 
     /* Datos destacados del caso Parlamento */
     .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
@@ -94,12 +94,12 @@
   </style>
 </head>
 <body>
-<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a><nav class="vm-menu" aria-label="Casos"><a href="./" aria-current="page">Inicio</a><a href="informe.html#parlamento"><i class="vm-dot" style="background:#ffd23f"></i>Parlamento</a><a href="intendencias.html"><i class="vm-dot" style="background:#3ddc97"></i>Intendencias</a><a href="solaria.html"><i class="vm-dot" style="background:#ff8fa0"></i>Solaria</a><a href="puerto.html"><i class="vm-dot" style="background:#ff7a1a"></i>Puerto</a><a href="informe.html">Informe 2025</a><a href="./#correcciones">Correcciones</a></nav></div></header><script>(function(){var a=document.querySelector(".vm-menu [aria-current]");if(a){var m=a.parentNode;m.scrollLeft=a.offsetLeft-(m.clientWidth-a.offsetWidth)/2;}})();</script>
+<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a><nav class="vm-menu" aria-label="Casos"><a href="./" aria-current="page">Inicio</a><a href="informe.html#parlamento"><i class="vm-dot" style="background:#ffd23f"></i>Parlamento</a><a href="intendencias.html"><i class="vm-dot" style="background:#3ddc97"></i>Intendencias</a><a href="solaria.html"><i class="vm-dot" style="background:#ff8fa0"></i>Solaria</a><a href="puerto.html"><i class="vm-dot" style="background:#ff7a1a"></i>Puerto</a><a href="ute.html"><i class="vm-dot" style="background:#5ce1e6"></i>UTE</a><a href="informe.html">Informe 2025</a><a href="./#correcciones">Correcciones</a></nav></div></header><script>(function(){var a=document.querySelector(".vm-menu [aria-current]");if(a){var m=a.parentNode;m.scrollLeft=a.offsetLeft-(m.clientWidth-a.offsetWidth)/2;}})();</script>
   <section class="hero">
     <div class="wrap">
       <h1>Lo que gasta el Estado.</h1>
-      <p>Cuatro casos investigados con información pública. Cada número enlaza al documento del que sale, y cualquiera puede objetarlo.</p>
-      <div class="meta"><span><b>4</b> casos publicados</span><span><b>0</b> correcciones pendientes</span><span>Actualizado el <b>13/11/2026</b></span></div>
+      <p>Cinco casos investigados con información pública. Cada número enlaza al documento del que sale, y cualquiera puede objetarlo.</p>
+      <div class="meta"><span><b>5</b> casos publicados</span><span><b>0</b> correcciones pendientes</span><span>Actualizado el <b>14/11/2026</b></span></div>
     </div>
   </section>
   <p class="lema">Los números no tienen partido. La realidad es una sola.</p>
@@ -138,6 +138,14 @@
           <div class="que">ganó la ANP en 2025</div>
           <h3>El puerto de Montevideo, en números</h3>
           <p>Pero quedó 311.º en eficiencia mundial. Concesiones, paros y obras.</p>
+          <span class="ir">Ver el caso →</span>
+        </a>
+        <a class="caso c5" href="ute.html">
+          <div class="top"><span class="tema">UTE · 2025</span><span class="estado">Primera ronda</span></div>
+          <div class="n">$ 14.026 millones</div>
+          <div class="que">ganó UTE en 2025</div>
+          <h3>UTE, en números</h3>
+          <p>$ 7.208 millones fueron al Estado. Qué pagás en la factura y cuánto podría costar la luz.</p>
           <span class="ir">Ver el caso →</span>
         </a>
       </div>
