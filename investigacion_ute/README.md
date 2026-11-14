@@ -17,3 +17,4 @@ Cómo se usa:
 | Comparación con otros países | `05_comparacion.md` | rehacer (segunda vuelta) |
 | Cuánto debería costar | `06_cuanto_deberia_costar.md` | verificado, con advertencia |
 | Exportación, sequía e inversiones cuestionadas | `07_otros.md` | verificado, con correcciones |
+| Huecos pendientes (segunda vuelta) | `08_huecos.md` | verificado, falta cotejar la sección C |
