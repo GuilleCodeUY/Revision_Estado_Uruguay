@@ -612,7 +612,7 @@ def build_ute(public):
     svg.append("</svg>")
 
     tabla = "".join(
-        f'<tr><td>{r["anio"]}{" ✓" if r["cotejado"] else ""}</td><td class="n">{millones(r["ingresos"])}</td><td class="n">{millones(r["resultado"])}</td>'
+        f'<tr><td>{r["anio"]}</td><td class="n">{millones(r["ingresos"])}</td><td class="n">{millones(r["resultado"])}</td>'
         f'<td class="n">{millones(r["inversiones"])}</td><td class="n">{millones(r["rentas_generales"])}</td>'
         f'<td class="n">{es_num(r["funcionarios"], 0)}</td><td>{tag("oficial", r["fuente"])}</td></tr>' for r in serie)
     fondo = "".join(
@@ -635,6 +635,18 @@ def build_ute(public):
                + (f' <span class="tag t-pend">{escape(o["pendiente"])}</span>' if o.get("pendiente") else "") + "</div>" if o.get("url") else "")
             + "</div>" for o in rows)
 
+    region = []
+    for c in data["comparacion"]["cuentas"]:
+        if not 1 <= c["puesto"] <= c["de"]:
+            raise ValueError(f"Puesto de UTE fuera de rango en {c['cuenta']}.")
+        simple = (f'<br><small>Con tarifa {"residencial" if c["cuenta"].startswith("R") else "general"} simple: '
+                  f'{c["ute_simple"]} (puesto {c["puesto_simple"]} de {c["de"]})</small>') if c.get("ute_simple") else ""
+        region.append(
+            f'<tr><td><b>{escape(c["nombre"])}</b> <small>({c["cuenta"]})</small></td><td>{escape(c["consumo"])}</td>'
+            f'<td class="n"><b>{c["ute"]}</b><br><small>{escape(c["ute_tarifa"])}</small></td>'
+            f'<td class="n"><b>{c["puesto"]} de {c["de"]}</b>{simple}</td>'
+            f'<td class="n">{escape(c["mas_barata"])}</td><td class="n">{escape(c["mas_cara"])}</td></tr>')
+    region = "".join(region)
     values = {
         "GOLPES": golpes, "GRAFICO": "".join(svg), "TABLA": tabla, "FONDO": fondo, "OBJ": obj,
         "RG_TOTAL": millones(sum(r["rentas_generales"] for r in serie)),
@@ -650,6 +662,7 @@ def build_ute(public):
         "ESCENARIOS": tarjetas(data["escenarios"]), "CUESTIONADO": tarjetas(data["cuestionado"]),
         "URSEA_URL": escape(next(u for n, u, _ in data["fuentes"] if n.startswith("URSEA"))),
         "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "REGION": region, "REGION_URL": escape(data["comparacion"]["url"]), "PPA": escape(data["comparacion"]["ppa"]),
         "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
         "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
     }

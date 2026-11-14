@@ -14,7 +14,9 @@ Cómo se usa:
 | Plata que UTE le deja al Estado | `02_aportes_al_estado.md` | verificado, con correcciones |
 | Estructura de costos | `03_costos.md` | verificado, con correcciones |
 | Lo que pagamos | `04_tarifas.md` | verificado |
-| Comparación con otros países | `05_comparacion.md` | rehacer (segunda vuelta) |
+| Comparación con otros países | `05_comparacion.md` | verificado (tercera vuelta) |
 | Cuánto debería costar | `06_cuanto_deberia_costar.md` | verificado, con advertencia |
 | Exportación, sequía e inversiones cuestionadas | `07_otros.md` | verificado, con correcciones |
-| Huecos pendientes (segunda vuelta) | `08_huecos.md` | verificado, falta cotejar la sección C |
+| Huecos pendientes (segunda vuelta) | `08_huecos.md` | verificado |
+
+Tercera vuelta (14/11/2026): los once balances 2015-2025 cotejados contra el documento, comparativo regional leído en el PDF, IPC 2021-2025 del INE y dictamen del Tribunal de Cuentas sobre 2023. Todo publicado en `publico/ute.html`.

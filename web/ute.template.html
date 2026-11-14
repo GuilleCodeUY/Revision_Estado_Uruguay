@@ -84,7 +84,7 @@
   <header class="site">
     <div class="wrap top">
       <a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a>
-      <nav aria-label="Secciones"><a href="#resultados">Resultados</a><a href="#estado">Al Estado</a><a href="#tarifa">Tu factura</a><a href="#costos">Costos</a><a href="#deberia">Cuánto debería costar</a><a href="#cuestionado">Cuestionado</a><a href="#fuentes">Fuentes</a></nav>
+      <nav aria-label="Secciones"><a href="#resultados">Resultados</a><a href="#estado">Al Estado</a><a href="#tarifa">Tu factura</a><a href="#region">Región</a><a href="#costos">Costos</a><a href="#deberia">Cuánto debería costar</a><a href="#cuestionado">Cuestionado</a><a href="#fuentes">Fuentes</a></nav>
     </div>
     <div class="wrap hero">
       <span class="kicker">Caso 5 · UTE</span>
@@ -106,7 +106,7 @@
         <thead><tr><th>Año</th><th class="n">Ingresos</th><th class="n">Resultado</th><th class="n">Inversiones</th><th class="n">Pagado a Rentas Generales</th><th class="n">Funcionarios</th><th>Fuente</th></tr></thead>
         <tbody>{{TABLA}}</tbody>
       </table></div>
-      <p class="nota">Millones de pesos corrientes. Los ingresos incluyen las ventas al exterior. Las inversiones son los pagos del año por obras y equipos. Los años con ✓ ya fueron cotejados dos veces contra el balance; el resto tiene una sola lectura. El Tribunal de Cuentas aprobó los balances de 2022 sin salvedades. {{OBJ}}</p>
+      <p class="nota">Millones de pesos corrientes. Los ingresos incluyen las ventas al exterior. Las inversiones son los pagos del año por obras y equipos. Las cifras de los once años fueron cotejadas contra los balances. El Tribunal de Cuentas aprobó sin salvedades los de 2022 y 2023. {{OBJ}}</p>
     </section>
 
     <section id="estado">
@@ -137,8 +137,20 @@
       <p class="nota">Cálculo propio sobre el pliego, para un hogar con 3,7 kW contratados. El IVA (22 %) se aplica a la energía y a la potencia; el cargo fijo está exonerado. {{OBJ}}</p>
     </section>
 
-    <section id="costos">
+    <section id="region">
       <div class="num">04</div>
+      <h2>¿Cara o barata frente a la región?</h2>
+      <p class="lead">El comparativo que publica UTE pone su tarifa al lado de siete distribuidoras de Brasil y Chile (diez pliegos), para ocho clientes tipo. Precios de enero de 2026, en dólares por MWh, con impuestos.</p>
+      <div class="tabla" tabindex="0" role="region" aria-label="Comparación regional de tarifas"><table>
+        <thead><tr><th>Cliente tipo</th><th>Consumo por mes</th><th class="n">UTE</th><th class="n">Puesto de UTE</th><th class="n">La más barata</th><th class="n">La más cara</th></tr></thead>
+        <tbody>{{REGION}}</tbody>
+      </table></div>
+      <p class="nota">Puesto 1 = la más barata de las 11. Cada fila usa la tarifa de UTE que figura en el comparativo; donde UTE muestra también la tarifa residencial simple o la general simple, va debajo. {{PPA}} <a class="tag t-oficial" href="{{REGION_URL}}" target="_blank" rel="noopener">oficial</a></p>
+      <p class="nota">Es un documento de UTE: la empresa elige con quién compararse y qué clientes tipo usar. No incluye Argentina ni Paraguay, que tienen tarifas más bajas por subsidios o por energía de represas binacionales ya pagadas. {{OBJ}}</p>
+    </section>
+
+    <section id="costos">
+      <div class="num">05</div>
       <h2>En qué gasta UTE</h2>
       <p class="lead">En 2025 UTE tuvo costos por $ 60.911 millones. Más de un tercio es energía que le compra a otros.</p>
       <div class="grid2">
@@ -154,7 +166,7 @@
     </section>
 
     <section id="deberia">
-      <div class="num">05</div>
+      <div class="num">06</div>
       <h2>¿Cuánto debería costar la luz?</h2>
       <p class="lead">No hay una cifra oficial. Lo que sí se puede hacer es mostrar cuánto de lo que pagás no es costo del servicio, con los números de 2025.</p>
       <div class="obras">{{ESCENARIOS}}</div>
@@ -162,7 +174,7 @@
     </section>
 
     <section id="cuestionado">
-      <div class="num">06</div>
+      <div class="num">07</div>
       <h2>Lo cuestionado</h2>
       <p class="lead">Tres temas que aparecen cada vez que se discute la tarifa, con lo que está documentado de cada uno.</p>
       <div class="obras">{{CUESTIONADO}}</div>

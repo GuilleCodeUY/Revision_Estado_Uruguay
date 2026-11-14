@@ -8,7 +8,7 @@
    "inversiones": 8609.5,
    "rentas_generales": 2008.1,
    "funcionarios": 6619,
-   "cotejado": false,
+   "cotejado": true,
    "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE_311215.pdf"
   },
   {
@@ -18,7 +18,7 @@
    "inversiones": 13918.0,
    "rentas_generales": 6785.9,
    "funcionarios": 6402,
-   "cotejado": false,
+   "cotejado": true,
    "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20Estados%20financieros%202016_0.pdf"
   },
   {
@@ -28,7 +28,7 @@
    "inversiones": 7565.3,
    "rentas_generales": 10898.5,
    "funcionarios": 6667,
-   "cotejado": false,
+   "cotejado": true,
    "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20e%20Informe%20de%20Auditor%C3%ADa%20al%2031%2012%2017_compresi%C3%B3n1.pdf"
   },
   {
@@ -38,7 +38,7 @@
    "inversiones": 6058.5,
    "rentas_generales": 10473.6,
    "funcionarios": 6615,
-   "cotejado": false,
+   "cotejado": true,
    "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%2031-12-2018%20Estado%20Contables%20Anuales%20separados%20y%20consolidados.%20Balance%20al%2031%20diciembre%202018_1.pdf"
   },
   {
@@ -48,7 +48,7 @@
    "inversiones": 6796.0,
    "rentas_generales": 6258.5,
    "funcionarios": 6541,
-   "cotejado": false,
+   "cotejado": true,
    "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031%2012%2019%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf"
   },
   {
@@ -78,7 +78,7 @@
    "inversiones": 10627.3,
    "rentas_generales": 5000.0,
    "funcionarios": 6178,
-   "cotejado": false,
+   "cotejado": true,
    "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20informe%20de%20Auditor%C3%ADa%20Consolidado%20y%20Separado%20al%2031122022_BV.pdf"
   },
   {
@@ -88,7 +88,7 @@
    "inversiones": 12030.0,
    "rentas_generales": 3603.3,
    "funcionarios": 6176,
-   "cotejado": false,
+   "cotejado": true,
    "fuente": "https://www.ute.com.uy/sites/default/files/docs/UTE%20-%20Estados%20financieros%20al%2031.12.23%20e%20Informe%20de%20Auditor%C3%ADa-ptg_0.pdf"
   },
   {
@@ -447,17 +447,18 @@
   {
    "nombre": "Observaciones del Tribunal de Cuentas",
    "monto": "Sin salvedades",
-   "texto": "El Tribunal aprobó los balances de 2022, pero anotó nueve incumplimientos: no publicar los estados en la Auditoría Interna, horas extras sin motivo, licencias acumuladas, pagos a becarios por encima del tope y otros.",
+   "texto": "El Tribunal aprobó sin salvedades los balances de 2022 y 2023, pero anotó incumplimientos legales: no publicar los estados en la Auditoría Interna de la Nación, horas extras sin carácter excepcional y jornadas de más de 10 horas, pagos a becarios por encima del tope, licencias acumuladas, no cumplir el cupo de 1 % para personas trans y no enviar sumarios por irregularidades con fondos públicos. En 2023 también señaló obras terminadas y en uso que no se habían pasado al activo.",
    "tipo": "oficial",
    "url": "https://impo.com.uy/bases/resoluciones-auditorias-tcr-nd/3089-2023",
-   "pendiente": "dictámenes 2024 y 2025: no encontrados"
+   "pendiente": "dictámenes 2024 y 2025: no publicados todavía",
+   "url2": "https://impo.com.uy/bases/resoluciones-auditorias-tcr-nd/3154-2024",
+   "tipo2": "oficial"
   }
  ],
  "pendientes": [
-  "Comparación con otros países: las fuentes disponibles mezclan métodos y fechas. Estamos cotejando el comparativo regional de UTE (solo Brasil y Chile) antes de publicarlo.",
+  "Comparación con Argentina y Paraguay: el comparativo de UTE no los incluye y las otras fuentes son notas de prensa con métodos distintos.",
   "Energía pagada y no usada entre 2020 y 2025: no hay serie oficial.",
   "Precio de cada contrato con generadores privados: UTE no lo publica; el dato disponible es el promedio del monitor de la Universidad Católica.",
-  "Segunda lectura de los balances 2015 a 2019, 2022 y 2023. Las cifras de 2020, 2021, 2024 y 2025 ya están cotejadas contra el documento.",
   "Dictámenes del Tribunal de Cuentas sobre los balances 2024 y 2025."
  ],
  "fuentes": [
@@ -552,8 +553,28 @@
    "oficial"
   ],
   [
-   "INE: Índice de Precios del Consumo",
+   "Tribunal de Cuentas: Res. 3154/024, balance 2023 de UTE",
+   "https://impo.com.uy/bases/resoluciones-auditorias-tcr-nd/3154-2024",
+   "oficial"
+  ],
+  [
+   "UTE en Cifras 2017 y 2022 (funcionarios)",
+   "https://www.ute.com.uy/sites/default/files/generico/UTE_EN_CIFRAS_2022_Triptico%20Imprenta.pdf",
+   "oficial"
+  ],
+  [
+   "INE: Anuario Estadístico 2025, IPC 2022-2024",
    "https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/91-precios/911-indice-precios",
+   "oficial"
+  ],
+  [
+   "INE: IPC diciembre 2021",
+   "https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/indice-precios-del-consumo-ipc-diciembre-2021",
+   "oficial"
+  ],
+  [
+   "INE: IPC diciembre 2025",
+   "https://www5.ine.gub.uy/documents/Estad%C3%ADsticasecon%C3%B3micas/HTML/IPC/2025/IPC_subyacente%20Diciembre%202025.html",
    "oficial"
   ],
   [
@@ -616,5 +637,108 @@
    "https://www.montevideo.com.uy/Noticias/Fiscal-Pacheco-pidio-el-archivo-de-la-denuncia-por-Gas-Sayago-uc854826",
    "prensa"
   ]
- ]
+ ],
+ "comparacion": {
+  "cuentas": [
+   {
+    "cuenta": "R1",
+    "nombre": "Hogar chico",
+    "consumo": "170 kWh, 3,7 kW",
+    "ute": 233,
+    "ute_tarifa": "consumo básico",
+    "puesto": 4,
+    "de": 11,
+    "mas_barata": "RGE 182",
+    "mas_cara": "CHILQUINTA B 334",
+    "ute_simple": 344,
+    "puesto_simple": 11
+   },
+   {
+    "cuenta": "R2",
+    "nombre": "Hogar medio",
+    "consumo": "240 kWh, 3,7 kW",
+    "ute": 278,
+    "ute_tarifa": "triple horario",
+    "puesto": 9,
+    "de": 11,
+    "mas_barata": "COPEL 193",
+    "mas_cara": "CHILQUINTA B 332",
+    "ute_simple": 322,
+    "puesto_simple": 9
+   },
+   {
+    "cuenta": "R3",
+    "nombre": "Hogar grande",
+    "consumo": "400 kWh, 3,7 kW",
+    "ute": 233,
+    "ute_tarifa": "triple horario",
+    "puesto": 5,
+    "de": 11,
+    "mas_barata": "COPEL 188",
+    "mas_cara": "CHILQUINTA B 330"
+   },
+   {
+    "cuenta": "NR1",
+    "nombre": "Comercio chico",
+    "consumo": "2.000 kWh, 7,4 kW",
+    "ute": 144,
+    "ute_tarifa": "horario estacional",
+    "puesto": 2,
+    "de": 11,
+    "mas_barata": "COPEL 121",
+    "mas_cara": "CHILQUINTA B 275",
+    "ute_simple": 168,
+    "puesto_simple": 5
+   },
+   {
+    "cuenta": "NR2",
+    "nombre": "Comercio mediano",
+    "consumo": "20.000 kWh, 40 kW",
+    "ute": 128,
+    "ute_tarifa": "horario estacional",
+    "puesto": 2,
+    "de": 11,
+    "mas_barata": "COPEL 121",
+    "mas_cara": "CHILQUINTA B 257",
+    "ute_simple": 171,
+    "puesto_simple": 6
+   },
+   {
+    "cuenta": "NR3",
+    "nombre": "Empresa en baja tensión",
+    "consumo": "50.000 kWh, 100 kW",
+    "ute": 195,
+    "ute_tarifa": "medianos consumidores 1",
+    "puesto": 7,
+    "de": 11,
+    "mas_barata": "COPEL 121",
+    "mas_cara": "CHILQUINTA B 257"
+   },
+   {
+    "cuenta": "NR4",
+    "nombre": "Industria mediana",
+    "consumo": "100.000 kWh, 170 kW, 15 kV",
+    "ute": 146,
+    "ute_tarifa": "medianos consumidores 2",
+    "puesto": 7,
+    "de": 11,
+    "mas_barata": "COPEL 91",
+    "mas_cara": "CHILQUINTA B 207"
+   },
+   {
+    "cuenta": "NR5",
+    "nombre": "Industria grande",
+    "consumo": "500.000 kWh, 750 kW, 30 kV",
+    "ute": 117,
+    "ute_tarifa": "grandes consumidores 3",
+    "puesto": 5,
+    "de": 11,
+    "mas_barata": "COPEL 90",
+    "mas_cara": "CHILQUINTA B 205"
+   }
+  ],
+  "url": "https://portal.ute.com.uy/sites/default/files/docs/Comparativo%20Regional%20de%20Tarifas%20-Enero.pdf",
+  "ppa": "Medido en poder de compra (cuánto rinde un dólar en cada país), UTE queda la más barata en las tres cuentas residenciales: 320, 382 y 320 dólares PPA por MWh, contra 381 a 630 en Brasil y Chile. Con la tarifa simple, en R1 y R2 queda en 473 y 442, en la mitad de la tabla."
+ },
+ "serie_nota": "ok"
 }
