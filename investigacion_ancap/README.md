@@ -11,4 +11,4 @@ Mismo método que UTE y el puerto: DeepSeek (vía Hermes) investiga cada archivo
 | 05_sin_costos_extra.md | ¿Cuánto saldría el combustible sin los costos extra? | verificado |
 | 06_alur_portland.md | ALUR, cemento portland y otras empresas del grupo | verificado |
 | 07_otros.md | Otros temas: refinería, obras e inversiones cuestionadas | verificado |
-| 08_huecos.md | Segunda vuelta: impuestos, brecha PPI, comparación, ALUR/pórtland, obras | pendiente |
+| 08_huecos.md | Segunda vuelta: impuestos, brecha PPI, comparación, ALUR/pórtland, obras | verificado |
