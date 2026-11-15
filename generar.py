@@ -772,7 +772,17 @@ def build_ancap(public):
         f'<tr><td>{r["anio"]}</td><td class="n">{entero(r["ingresos"])}</td><td class="n"><b>{entero(r["impuestos_dgi"])}</b></td>'
         f'<td class="n">{r["ganancias_giradas"]}</td><td class="n">{escape(r["contribucion_fiscal"])}</td></tr>' for r in data["estado"])
 
+    def dif(ref, real):
+        v = real - ref
+        return f'<td class="n" style="color:{"#c9302c" if v > 0 else "#2e9e6a"}">{"+" if v > 0 else "−"} {pesos(abs(v))}</td>'
+
+    brecha = "".join(
+        f'<tr><td>{r["mes"]}</td><td class="n">{pesos(r["nafta_ref"])}</td><td class="n">{pesos(r["nafta_real"])}</td>{dif(r["nafta_ref"], r["nafta_real"])}'
+        f'<td class="n">{pesos(r["gasoil_ref"])}</td><td class="n">{pesos(r["gasoil_real"])}</td>{dif(r["gasoil_ref"], r["gasoil_real"])}'
+        f'<td>{tag("oficial", r["fuente"])}</td></tr>' for r in data["brecha_2026"])
+
     values = {
+        "BRECHA": brecha,
         "GOLPES": golpes, "LITROS": "".join(litros), "ESCENARIOS": escenarios, "OBJ": obj,
         "TC": f"{data['tipo_cambio']:.3f}".replace(".", ","),
         "NAFTA_REGION": barras(data["nafta_region"]), "GASOIL_REGION": barras(data["gasoil_region"]),

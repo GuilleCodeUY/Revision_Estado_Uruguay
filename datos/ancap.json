@@ -397,6 +397,16 @@
    "oficial"
   ],
   [
+   "ANCAP · Precios del primer semestre 2026 contra la paridad",
+   "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf",
+   "oficial"
+  ],
+  [
+   "URSEA · Precios de venta al público de referencia, octubre 2026",
+   "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-3",
+   "oficial"
+  ],
+  [
    "MIEM · Metodología de fijación de precios (Decretos 130/025 y 312/025)",
    "https://www.gub.uy/ministerio-industria-energia-mineria/politicas-y-gestion/nueva-metodologia-fijacion-precios-combustibles-liquidos",
    "oficial"
@@ -508,8 +518,74 @@
   ]
  ],
  "pendientes": [
-  "Resultado del pórtland y de ALUR año por año, 2015-2025 (memorias de ANCAP o pedido de acceso a la información).",
-  "Cuánto le cuesta a ANCAP vender el gasoil por debajo de la referencia desde abril de 2026."
+  "Resultado del pórtland y de ALUR año por año, 2015-2025, con el nombre de cada empresa.",
+  "Precio de referencia contra precio real de julio, agosto y setiembre de 2026, y el costo total en dólares para ANCAP."
  ],
- "tipo_cambio": 40.186
+ "tipo_cambio": 40.186,
+ "brecha_2026": [
+  {
+   "mes": "Enero",
+   "nafta_ref": 76.59,
+   "nafta_real": 77.79,
+   "gasoil_ref": 47.43,
+   "gasoil_real": 48.9,
+   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+  },
+  {
+   "mes": "Febrero",
+   "nafta_ref": 76.47,
+   "nafta_real": 77.79,
+   "gasoil_ref": 47.32,
+   "gasoil_real": 48.9,
+   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+  },
+  {
+   "mes": "Marzo",
+   "nafta_ref": 75.68,
+   "nafta_real": 76.88,
+   "gasoil_ref": 45.85,
+   "gasoil_real": 47.32,
+   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+  },
+  {
+   "mes": "Abril",
+   "nafta_ref": 85.82,
+   "nafta_real": 82.27,
+   "gasoil_ref": 66.45,
+   "gasoil_real": 50.63,
+   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+  },
+  {
+   "mes": "Mayo",
+   "nafta_ref": 90.2,
+   "nafta_real": 88.03,
+   "gasoil_ref": 72.26,
+   "gasoil_real": 57.72,
+   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+  },
+  {
+   "mes": "Junio",
+   "nafta_ref": 92.15,
+   "nafta_real": 93.36,
+   "gasoil_ref": 69.14,
+   "gasoil_real": 61.76,
+   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+  },
+  {
+   "mes": "Octubre",
+   "nafta_ref": 93.56,
+   "nafta_real": 90.45,
+   "gasoil_ref": 80.54,
+   "gasoil_real": 62.79,
+   "fuente": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-3"
+  },
+  {
+   "mes": "Noviembre",
+   "nafta_ref": 93.48,
+   "nafta_real": 90.45,
+   "gasoil_ref": 82.47,
+   "gasoil_real": 62.79,
+   "fuente": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-4"
+  }
+ ]
 }
