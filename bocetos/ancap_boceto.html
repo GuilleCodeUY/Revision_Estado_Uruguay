@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boceto · ANCAP, en números</title>
+<style>
+:root{--ink:#111;--paper:#fffdf6;--line:#e3dccb;--muted:#5a5a5a;--hero:#0e2a2b;--hero2:#16403f;--acc:#ff4b2b;--amber:#ffb627;--yellow:#ffd23f;--red:#e63946;--green:#2e9e6a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+.boceto{background:var(--yellow);color:#111;text-align:center;font-weight:700;font-size:.85rem;padding:.45rem 1rem}
+header.hero{background:var(--hero);color:#fff;padding:3rem 1.25rem 2.5rem;box-shadow:inset 0 -8px 0 var(--acc)}
+.wrap{max-width:1040px;margin:0 auto}
+.kicker{color:var(--acc);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.05;margin:.4rem 0 1rem;font-weight:900}
+.lead{max-width:690px;color:#d3e6e3;font-size:1.08rem}
+.golpes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.9rem;margin-top:2rem}
+.golpe{background:var(--hero2);border-left:6px solid var(--acc);padding:1rem 1rem .9rem}
+.golpe.big{border-left-color:var(--amber)}
+.golpe b{display:block;font-size:1.75rem;font-weight:900;line-height:1.1}
+.golpe span{font-size:.9rem;color:#d3e6e3}
+.golpe small{display:block;margin-top:.45rem;font-size:.72rem;color:#9cc3bf}
+nav.indice{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+nav.indice .wrap{display:flex;gap:1.1rem;overflow-x:auto;padding:.7rem 1.25rem;font-size:.9rem;white-space:nowrap}
+nav.indice a{color:var(--ink);text-decoration:none;font-weight:600}
+nav.indice a:hover{color:var(--acc)}
+section{padding:2.6rem 1.25rem;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);margin:.2rem 0 .4rem;font-weight:900}
+h3{margin:0 0 .5rem}
+.sub{color:var(--muted);max-width:740px;margin:0 0 1.4rem}
+.tag{display:inline-block;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.12rem .45rem;border-radius:3px;vertical-align:middle}
+.t-oficial{background:#dff1e7;color:#1d6b46}.t-prensa{background:#e6eef7;color:#1e4b7a}.t-terceros{background:#efe4f7;color:#5b2a86}.t-parte{background:#f6dede;color:#9b1c25}.t-propio{background:#fff1cf;color:#7a5200}.t-pend{background:var(--yellow);color:#111}
+.chart{background:#fff;border:1px solid var(--line);padding:1rem 1rem .5rem;overflow-x:auto}
+.chart svg{display:block;min-width:640px;width:100%;height:auto}
+.legend{display:flex;gap:1.2rem;font-size:.85rem;margin:.2rem 0 .8rem;flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:.35rem;vertical-align:-1px}
+.nota{font-size:.82rem;color:var(--muted);margin-top:.7rem}
+table{width:100%;border-collapse:collapse;font-size:.92rem;background:#fff}
+th,td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f4efe2;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tabla{overflow-x:auto;border:1px solid var(--line)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+/* litro apilado */
+.litro{margin:1rem 0 1.6rem}
+.litro .tit{display:flex;justify-content:space-between;font-weight:800;margin-bottom:.35rem}
+.pila{display:flex;height:54px;border:1px solid #333;overflow:hidden}
+.pila div{display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+.ref{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;margin-top:.5rem}
+.ref i{display:inline-block;width:11px;height:11px;margin-right:.3rem;vertical-align:-1px}
+/* barras comparativas */
+.fila{display:grid;grid-template-columns:110px 1fr 70px;align-items:center;gap:.5rem;font-size:.88rem;margin:.32rem 0}
+.fila .b{height:18px;background:#b9cfcc}
+.fila.uy .b{background:var(--acc)}
+.fila.uy{font-weight:800}
+.fila .v{text-align:right;font-variant-numeric:tabular-nums}
+/* escenarios */
+.escen{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.esc{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);padding:1rem}
+.esc.hoy{border-top-color:var(--acc)}
+.esc .m{font-size:1.9rem;font-weight:900;line-height:1.1}
+.esc .usd{font-weight:700;color:var(--hero2)}
+.esc p{font-size:.9rem;margin:.4rem 0}
+.timeline{border-left:3px solid var(--hero);margin-left:.4rem;padding-left:1.2rem}
+.hito{position:relative;margin:0 0 1.3rem}
+.hito:before{content:"";position:absolute;left:-1.72rem;top:.35rem;width:13px;height:13px;border-radius:50%;background:var(--acc);border:2px solid var(--paper)}
+.hito.menos:before{background:var(--green)}
+.hito .f{font-weight:800;color:var(--hero2)}
+.hito p{margin:.2rem 0}
+.obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.obra{background:#fff;border:1px solid var(--line);border-top:5px solid var(--hero);padding:1rem}
+.obra h3{margin:0 0 .3rem;font-size:1.02rem}
+.obra .m{font-size:1.5rem;font-weight:900}
+.obra p{font-size:.9rem;margin:.35rem 0}
+.alerta{background:var(--hero);color:#fff;padding:1.6rem;border-left:8px solid var(--amber)}
+.alerta h2{color:#fff}
+.alerta p,.alerta li{color:#d3e6e3;max-width:780px}
+.fuentes li{font-size:.88rem;margin:.3rem 0}
+a{color:var(--hero2)}
+footer{padding:2rem 1.25rem;font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="boceto">BOCETO para aprobar · datos verificados al 15/11/2026 · todavía no está en el sitio</div>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="kicker">La verdad de la milanesa · Caso 6</div>
+  <h1>ANCAP, en números</h1>
+  <p class="lead">Por qué la nafta uruguaya es la más cara de América Latina, cuánto de cada litro es impuesto, cuánto gana o pierde ANCAP y qué negocios le restan. Cada número tiene su fuente y su tipo: oficial, prensa, estudio de terceros, fuente de parte o cálculo propio.</p>
+  <div class="golpes">
+   <div class="golpe big"><b>48 %</b><span>del precio de la nafta Súper es impuesto (IMESI + CO2)</span><small>URSEA, informe PPI feb. 2026 · cálculo propio</small></div>
+   <div class="golpe"><b>US$ 2,26</b><span>el litro de nafta: la más cara de América Latina (oct. 2026)</span><small>GlobalPetrolPrices · terceros</small></div>
+   <div class="golpe big"><b>US$ 1,05</b><span>costaría ese litro sin IMESI ni impuesto al CO2</span><small>URSEA, feb. 2026 · cálculo propio</small></div>
+   <div class="golpe"><b>US$ 1.143 M</b><span>pagó ANCAP en impuestos en 2025; en ganancias giró solo US$ 2 M</span><small>UCU, Monitor de Coyuntura n.º 256 · terceros</small></div>
+   <div class="golpe"><b>US$ 810 M</b><span>perdió el negocio del pórtland desde el año 2000</span><small>Presidencia de ANCAP, 2025 · oficial</small></div>
+   <div class="golpe"><b>US$ 622 M</b><span>pusimos todos para capitalizar ANCAP en 2016</span><small>Ley 19.368 · oficial</small></div>
+  </div>
+ </div>
+</header>
+
+<nav class="indice"><div class="wrap">
+ <a href="#litro">Qué pagás en un litro</a><a href="#sin">Sin impuestos</a><a href="#region">La región</a><a href="#resultados">Gana o pierde</a><a href="#estado">Lo que se lleva el Estado</a><a href="#paridad">Precio vs. importar</a><a href="#pierde">Lo que pierde</a><a href="#fuentes">Fuentes</a>
+</div></nav>
+
+<section id="litro"><div class="wrap">
+ <div class="kicker">01</div>
+ <h2>¿Qué pagás en un litro?</h2>
+ <p class="sub">El regulador (URSEA) calcula cada mes cuánto costaría traer el combustible importado y ponerlo en las plantas de ANCAP, y cuánto se suma de impuestos. Con eso y el precio en el surtidor se arma el litro por partes. Datos de febrero de 2026.</p>
+ <div class="litro" id="l-nafta"></div>
+ <div class="litro" id="l-gasoil"></div>
+ <p class="nota"><b>La nafta no lleva IVA:</b> lleva IMESI y el impuesto al CO2, que son montos fijos por litro. <b>El gasoil no lleva IMESI:</b> lleva IVA (las empresas lo descuentan; los hogares no) y $ 3 por litro para el fideicomiso del boleto. "Distribución" es lo que queda entre el precio ex planta y el del surtidor: fletes, distribuidoras y estaciones. Fuente: URSEA, informe PPI INF-00122-2026 <span class="tag t-oficial">oficial</span>; precios al público ene.-feb. 2026 <span class="tag t-oficial">oficial</span>; armado del litro <span class="tag t-propio">cálculo propio</span>.</p>
+</div></section>
+
+<section id="sin"><div class="wrap">
+ <div class="kicker">02</div>
+ <h2>¿Cuánto saldría sin los costos extra?</h2>
+ <p class="sub">Escenarios con los números de febrero de 2026. No son una tarifa oficial: muestran el peso de cada decisión del Estado en el precio. Tipo de cambio aproximado: $ 38,4 por dólar.</p>
+ <div class="escen">
+  <div class="esc hoy"><h3>Nafta Súper hoy (feb. 2026)</h3><div class="m">$ 77,79</div><div class="usd">≈ US$ 2,02</div><p>Precio máximo en el surtidor aprobado por el Poder Ejecutivo.</p><span class="tag t-oficial">oficial</span></div>
+  <div class="esc"><h3>Sin IMESI ni impuesto al CO2</h3><div class="m">$ 40,43</div><div class="usd">≈ US$ 1,05</div><p>Se restan $ 37,36 de impuestos y tasas. Más barata que en Brasil o Argentina <em>con</em> sus impuestos.</p><span class="tag t-propio">cálculo propio</span></div>
+  <div class="esc"><h3>Además sin biocombustible ni subsidio al supergás</h3><div class="m">$ 35,64</div><div class="usd">≈ US$ 0,93</div><p>Se restan $ 3,59 de la mezcla obligatoria con etanol de ALUR y $ 1,20 que la nafta paga para abaratar la garrafa.</p><span class="tag t-propio">cálculo propio</span></div>
+  <div class="esc"><h3>Gasoil sin IVA ni boleto</h3><div class="m">$ 37,00</div><div class="usd">≈ US$ 0,96</div><p>Hoy: $ 48,90. Se restan $ 8,82 de IVA, $ 3,00 del fideicomiso del transporte y $ 0,08 de tasas.</p><span class="tag t-propio">cálculo propio</span></div>
+ </div>
+ <p class="nota"><b>Lectura:</b> lo que hace cara a la nafta uruguaya es, sobre todo, el impuesto: casi la mitad del litro. La refinería, ALUR y el subsidio al supergás suman unos pesos. Los impuestos los fija la ley, no ANCAP. <span class="tag t-pend">pendiente</span> Repetir el cálculo con el informe PPI de noviembre 2026 (precio actual: $ 90,45).</p>
+</div></section>
+
+<section id="region"><div class="wrap">
+ <div class="kicker">03</div>
+ <h2>Contra la región</h2>
+ <p class="sub">Precio de la nafta en dólares por litro, con impuestos, en la misma fecha y con la misma fuente.</p>
+ <div class="grid2">
+  <div><h3>Nafta, 5 de octubre de 2026 (US$/litro)</h3><div id="b1"></div><p class="nota">GlobalPetrolPrices, vía dolarhoy.com <span class="tag t-terceros">terceros</span>. Venezuela: US$ 0,035, subsidiada.</p></div>
+  <div><h3>Gasoil, marzo de 2026 (US$/litro)</h3><div id="b2"></div><p class="nota">SEG Ingeniería, vía Ámbito <span class="tag t-terceros">terceros</span>. En gasoil Uruguay está en el pelotón: en abril de 2026 era 29 % más barato que en Entre Ríos y 16 % más barato que en Livramento (CEPP).</p></div>
+ </div>
+ <p class="nota"><b>Lectura:</b> el problema es la nafta. Uruguay está primero en América Latina y alrededor del puesto 14 a 16 del mundo, a la altura de Grecia o Irlanda. <span class="tag t-pend">pendiente</span> Tabla propia de gasoil con la misma fecha que la nafta.</p>
+</div></section>
+
+<section id="resultados"><div class="wrap">
+ <div class="kicker">04</div>
+ <h2>¿ANCAP gana o pierde?</h2>
+ <p class="sub">Resultado neto de cada año, en millones de dólares, según ANCAP. Tuvo cuatro años seguidos de pérdidas grandes (2012-2015), una capitalización y después años buenos y malos según el petróleo y las paradas de la refinería.</p>
+ <div class="chart"><svg id="g1" viewBox="0 0 900 360" role="img" aria-label="Resultado neto de ANCAP 2012-2025"></svg></div>
+ <p class="nota">2016: capitalización de US$ 622 M por Ley 19.368 (se le perdonó deuda con el Ministerio de Economía). 2024: la refinería estuvo 297 días sin producción completa, con un perjuicio estimado de US$ 115 M. Fuentes: presentaciones de resultados de ANCAP y Presidencia <span class="tag t-oficial">oficial</span>; serie 2012-2020 vía Montevideo Portal <span class="tag t-prensa">prensa</span>.</p>
+</div></section>
+
+<section id="estado"><div class="wrap">
+ <div class="kicker">05</div>
+ <h2>Lo que se lleva el Estado</h2>
+ <p class="sub">A diferencia de UTE, ANCAP casi no le gira ganancias a Rentas Generales. El Estado se lleva su parte por otro lado: los impuestos que van dentro del precio de cada litro.</p>
+ <div class="tabla"><table>
+  <thead><tr><th>Año</th><th class="n">Ingresos</th><th class="n">Impuestos pagados (DGI)</th><th class="n">Ganancias giradas</th><th class="n">Contribución fiscal / ingresos</th></tr></thead>
+  <tbody id="t1"></tbody>
+ </table></div>
+ <p class="nota">Millones de dólares, base caja. Fuente: Universidad Católica, Monitor de Coyuntura n.º 256 (24/02/2026) <span class="tag t-terceros">terceros</span>. La "contribución fiscal" suma impuestos y resultado; para UTE el mismo cálculo da 20-25 %.</p>
+</div></section>
+
+<section id="paridad"><div class="wrap">
+ <div class="kicker">06</div>
+ <h2>¿Pagamos más o menos que importando?</h2>
+ <p class="sub">El precio al público puede quedar por encima o por debajo de lo que costaría importar (la "paridad"). Depende de lo que decide cada gobierno, no del color.</p>
+ <div class="timeline">
+  <div class="hito"><div class="f">2016</div><p>Sobrecosto de US$ 415 M frente a importar; el gasoil, 33 % por encima.</p><span class="tag t-terceros">terceros</span> <span class="tag t-pend">autor: pendiente</span></div>
+  <div class="hito menos"><div class="f">2022</div><p>Según ANCAP, la gente pagó unos US$ 240 M <b>menos</b> que importando.</p><span class="tag t-parte">ANCAP, fuente de parte</span></div>
+  <div class="hito menos"><div class="f">2023</div><p>ANCAP resignó US$ 67 M vendiendo por debajo del precio de mercado.</p><span class="tag t-parte">ANCAP, fuente de parte</span></div>
+  <div class="hito"><div class="f">Marzo-diciembre 2025</div><p>Con la nueva metodología, US$ 88 M por encima de la paridad en nafta y gasoil.</p><span class="tag t-terceros">CEPP</span></div>
+  <div class="hito"><div class="f">Mayo 2025-abril 2026</div><p>US$ 81 M netos por encima de la paridad. En abril de 2026, por la suba del petróleo, se vendió $ 2,05 por litro por debajo.</p><span class="tag t-terceros">CEPP</span></div>
+ </div>
+ <p class="nota">Aparte: el supergás se vende por debajo de su costo. Ese subsidio lo paga en parte la nafta y el gasoil ($ 1,20 por litro en 2026): unos US$ 37 M en el último año según el CEPP <span class="tag t-terceros">terceros</span>.</p>
+</div></section>
+
+<section id="pierde"><div class="wrap">
+ <div class="kicker">07</div>
+ <h2>Lo que pierde (o costó de más)</h2>
+ <p class="sub">Negocios y obras que restan. Donde hay dos versiones, van las dos.</p>
+ <div class="obras">
+  <div class="obra"><h3>Pórtland (cemento)</h3><div class="m">US$ 810 M</div><p>Pérdidas desde el año 2000, entre operación e inversiones que no se recuperaron. US$ 24,5 M en 2024 y US$ 31 M en 2025. Compite con privados y pierde todos los años.</p><p><span class="tag t-oficial">oficial</span></p></div>
+  <div class="obra"><h3>ALUR (biocombustibles)</h3><div class="m">$ 3,59 / litro</div><p>Es lo que la mezcla obligatoria con etanol le suma a cada litro de nafta (feb. 2026). La planta de Paysandú costó US$ 147 M. En 2019 se estimó un sobrecosto de US$ 72 M en un año.</p><p><span class="tag t-oficial">oficial</span> <span class="tag t-prensa">prensa</span></p></div>
+  <div class="obra"><h3>Parada de la refinería 2023-2024</h3><div class="m">US$ 115 M</div><p>297 días sin producción completa (agosto 2023 a junio 2024), casi el triple de lo previsto, con medidas sindicales e imprevistos. ANCAP cerró 2024 con −US$ 118 M.</p><p><span class="tag t-oficial">oficial</span></p></div>
+  <div class="obra"><h3>Planta desulfurizadora</h3><div class="m">US$ 350 M</div><p>Costo informado al inaugurarla (2013). La oposición sostuvo que se proyectó en US$ 90 M y llegó a US$ 415-421 M.</p><p><span class="tag t-oficial">oficial</span> <span class="tag t-parte">oposición, fuente de parte</span></p></div>
+  <div class="obra"><h3>Regasificadora (Gas Sayago)</h3><div class="m">US$ 213 M</div><p>Pérdida según la auditoría de PwC; UTE y ANCAP pusieron US$ 113 M. Detalle en el caso UTE.</p><p><span class="tag t-oficial">oficial</span></p></div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="alerta">
+  <h2>Lo que hay que mirar</h2>
+  <ul>
+   <li>Casi la mitad de la nafta es impuesto. Eso lo decide el Parlamento y el Poder Ejecutivo, no la refinería.</li>
+   <li>ANCAP, además, carga con negocios que pierden (pórtland) y con una mezcla obligatoria que encarece el litro (ALUR).</li>
+   <li>Si el precio queda por encima o por debajo de la paridad cambió con cada gobierno: 2016 y 2025 por encima, 2022 y 2023 por debajo.</li>
+  </ul>
+ </div>
+</div></section>
+
+<section id="fuentes"><div class="wrap">
+ <div class="kicker">Fuentes</div>
+ <h2>De dónde sale cada número</h2>
+ <ul class="fuentes">
+  <li>URSEA: informe de Precio de Paridad de Importación INF-00122-2026 y precios de venta de referencia <span class="tag t-oficial">oficial</span></li>
+  <li>ANCAP: presentaciones de resultados 2015 y 2024, Memoria 2022; Presidencia: resultados 2023 y 2025 <span class="tag t-oficial">oficial</span></li>
+  <li>IMPO: Ley 19.368 (capitalización); MIEM: Decretos 130/025, 312/025 y 134/026 <span class="tag t-oficial">oficial</span></li>
+  <li>Universidad Católica: Monitor de Coyuntura n.º 256 <span class="tag t-terceros">terceros</span>. CEPP: informes de combustibles 2025 y abril 2026 <span class="tag t-terceros">terceros</span>. GlobalPetrolPrices y SEG Ingeniería <span class="tag t-terceros">terceros</span></li>
+  <li>Montevideo Portal, El Observador, Ámbito, dolarhoy.com, Bichos de Campo <span class="tag t-prensa">prensa</span></li>
+  <li>Informes de la comisión investigadora del Senado (2016), columna del senador Mieres (2015) <span class="tag t-parte">fuente de parte</span></li>
+ </ul>
+ <p class="nota">En la versión final, cada fuente va con su enlace y su fecha, y los datos se pueden descargar en CSV como en los otros casos.</p>
+</div></section>
+
+<footer><div class="wrap">La verdad de la milanesa · sin colores políticos, solo números con fuente.</div></footer>
+
+<script>
+// litro apilado
+function litro(id,titulo,total,partes){
+ const el=document.getElementById(id);
+ const seg=partes.map(([n,v,c])=>`<div style="width:${(v/total*100).toFixed(2)}%;background:${c}" title="${n}: $ ${v.toFixed(2).replace('.',',')}">${v/total>.07?('$ '+v.toFixed(2).replace('.',',')):''}</div>`).join('');
+ const ref=partes.map(([n,v,c])=>`<span><i style="background:${c}"></i>${n}: $ ${v.toFixed(2).replace('.',',')} (${(v/total*100).toFixed(0)} %)</span>`).join('');
+ el.innerHTML=`<div class="tit"><span>${titulo}</span><span>$ ${total.toFixed(2).replace('.',',')}</span></div><div class="pila">${seg}</div><div class="ref">${ref}</div>`;
+}
+const C={prod:'#16403f',log:'#3f7d78',bio:'#7fb069',imp:'#ff4b2b',imp2:'#c9302c',fac:'#ffb627',dist:'#8a8a8a',iva:'#ff4b2b',fid:'#c9302c'};
+litro('l-nafta','Nafta Súper 95',77.79,[
+ ['Combustible importado (CIF)',20.43,C.prod],['Internación y logística',2.18,C.log],['Mezcla con etanol (ALUR)',3.59,C.bio],
+ ['IMESI',22.92,C.imp],['Impuesto al CO2',14.36,C.imp2],['Subsidio al supergás',1.20,C.fac],['Tasas',0.08,'#444'],['Distribución y estaciones',13.03,C.dist]]);
+litro('l-gasoil','Gasoil 50S',48.90,[
+ ['Combustible importado (CIF)',23.77,C.prod],['Internación y logística',2.10,C.log],
+ ['IVA',8.82,C.iva],['Fideicomiso del boleto',3.00,C.fid],['Subsidio al supergás',1.20,C.fac],['Tasas',0.08,'#444'],['Distribución y estaciones',9.93,C.dist]]);
+// barras región
+function barras(id,data,max){document.getElementById(id).innerHTML=data.map(([n,v])=>`<div class="fila ${n==='Uruguay'?'uy':''}"><span>${n}</span><div class="b" style="width:${(v/max*100).toFixed(1)}%"></div><span class="v">${v.toFixed(2).replace('.',',')}</span></div>`).join('')}
+barras('b1',[['Uruguay',2.256],['Chile',1.525],['Argentina',1.422],['Colombia',1.313],['Paraguay',1.281],['Brasil',1.262]],2.4);
+barras('b2',[['México',1.477],['Bolivia',1.420],['Uruguay',1.233]],2.4);
+// resultados
+const R=[[2012,-14.6],[2013,-169],[2014,-323],[2015,-198],[2016,15],[2017,39],[2018,88],[2019,39],[2020,-12],[2021,88],[2022,163],[2023,85],[2024,-118],[2025,72.5]];
+(function(){
+ const s=document.getElementById('g1'),W=900,H=360,L=50,Rr=10,T=16,B=34,mx=200,mn=-350;
+ const cw=(W-L-Rr)/R.length,bw=cw*.62,y=v=>T+(H-T-B)*(mx-v)/(mx-mn);
+ let h='';
+ for(let g=-300;g<=200;g+=100){h+=`<line x1="${L}" x2="${W-Rr}" y1="${y(g)}" y2="${y(g)}" stroke="${g===0?'#111':'#e3dccb'}"/><text x="${L-8}" y="${y(g)+4}" font-size="11" text-anchor="end" fill="#5a5a5a">${g}</text>`}
+ R.forEach(([a,v],i)=>{const x=L+i*cw+(cw-bw)/2,top=v>=0?y(v):y(0),hh=Math.abs(y(v)-y(0));
+  h+=`<rect x="${x}" y="${top}" width="${bw}" height="${hh}" fill="${v>=0?'#2e9e6a':'#ff4b2b'}"><title>${a}: US$ ${v} M</title></rect>`;
+  h+=`<text x="${x+bw/2}" y="${v>=0?top-5:top+hh+13}" font-size="11" font-weight="700" text-anchor="middle">${String(v).replace('.',',')}</text>`;
+  h+=`<text x="${x+bw/2}" y="${H-12}" font-size="12" text-anchor="middle">${a}</text>`});
+ const xc=L+4*cw+cw/2;h+=`<text x="${xc}" y="${y(160)}" font-size="11" text-anchor="middle" fill="#16403f" font-weight="800">Capitalización</text><text x="${xc}" y="${y(160)+13}" font-size="11" text-anchor="middle" fill="#16403f" font-weight="800">US$ 622 M</text>`;
+ s.innerHTML=h;
+})();
+// tabla estado
+const E=[[2021,2806,871,0,'29 %'],[2022,3807,1126,1,'30 %'],[2023,3627,1226,0,'33 %'],[2024,3412,1131,4,'30 %'],[2025,3340,1143,2,'35 %']];
+document.getElementById('t1').innerHTML=E.map(r=>`<tr><td>${r[0]}</td><td class="n">${r[1].toLocaleString('es-UY')}</td><td class="n"><b>${r[2].toLocaleString('es-UY')}</b></td><td class="n">${r[3]}</td><td class="n">${r[4]}</td></tr>`).join('');
+</script>
+</body>
+</html>

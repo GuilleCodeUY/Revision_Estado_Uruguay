@@ -214,6 +214,7 @@ BARRA_LINKS = (
     ("solaria.html", "solaria.html", "Solaria", "#ff8fa0"),
     ("puerto.html", "puerto.html", "Puerto", "#ff7a1a"),
     ("ute.html", "ute.html", "UTE", "#5ce1e6"),
+    ("ancap.html", "ancap.html", "ANCAP", "#ff4b2b"),
     ("informe.html", "informe.html", "Informe 2025", None),
     ("correcciones", "./#correcciones", "Correcciones", None),
 )
@@ -315,7 +316,7 @@ def build_portada(public, data):
         "ESTADO_PARLAMENTO": f"Esperando {waiting} pedidos" if waiting else "Publicado",
         "ERRATAS_N": "1 objeción" if n_fix == 1 else f"{n_fix} objeciones",
         "ERRATAS_TABLA": erratas,
-        "CASOS_N": "5",
+        "CASOS_N": "6",
         "PENDIENTES_N": str(pending),
         "ACTUALIZADO": datetime.date.today().strftime("%d/%m/%Y"),
     }
@@ -676,6 +677,120 @@ def build_ute(public):
     write_csv(public, "ute_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+def build_ancap(public):
+    """Genera ancap.html y sus CSV desde datos/ancap.json."""
+    from html import escape
+    data = load_data("ancap.json")
+    tipos = {"oficial", "prensa", "terceros", "parte", "propio"}
+    for item in data["golpes"] + data["escenarios"]:
+        if item["tipo"] not in tipos or (item["tipo"] != "propio" and not item.get("url", "").startswith("https://")):
+            raise ValueError("Cada dato de ANCAP necesita un tipo válido y, salvo los cálculos propios, una URL https.")
+    for nombre, url, tipo in data["fuentes"]:
+        if tipo not in tipos or not url.startswith("https://"):
+            raise ValueError(f"Fuente mal cargada: {nombre}")
+    for litro in data["litros"]:
+        if abs(sum(v for _, v, _ in litro["partes"]) - litro["precio"]) > 0.011:
+            raise ValueError(f"Las partes del litro de {litro['nombre']} no suman su precio.")
+    if [r["anio"] for r in data["resultados"]] != list(range(2012, 2026)):
+        raise ValueError("Los resultados de ANCAP tienen que ir de 2012 a 2025, un año por fila.")
+    fuentes = {n: u for n, u, _ in data["fuentes"]}
+
+    def tag(tipo, url=None, texto=None):
+        texto = texto or {"propio": "cálculo propio"}.get(tipo, tipo)
+        if url:
+            return f'<a class="tag t-{tipo}" href="{escape(url)}" target="_blank" rel="noopener">{escape(texto)}</a>'
+        return f'<span class="tag t-{tipo}">{escape(texto)}</span>'
+
+    def pesos(v):
+        return f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+    def entero(v):
+        return f"{v:,.0f}".replace(",", ".")
+
+    obj = '<a class="obj" href="informe.html?aporte=ancap-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
+    golpes = "".join(
+        f'<div class="golpe{" big" if g["valor"] in ("48 %", "US$ 1,05") else ""}"><b>{escape(g["valor"])}</b><span>{escape(g["texto"])}</span>'
+        f'<div class="acc"><a href="{escape(g["url"])}" target="_blank" rel="noopener">{escape(g["fuente"])} · {g["tipo"]}</a>{obj}</div></div>'
+        for g in data["golpes"])
+
+    colores = {"prod": "#16403f", "log": "#3f7d78", "bio": "#5f9e4f", "imp": "#ff4b2b", "imp2": "#c9302c",
+               "fac": "#ffb627", "tasa": "#444", "dist": "#8a8a8a"}
+    litros = []
+    for litro in data["litros"]:
+        total = litro["precio"]
+        seg = "".join(
+            f'<div style="width:{v / total * 100:.2f}%;background:{colores[c]}" title="{escape(n)}: $ {pesos(v)}">'
+            f'{"$ " + pesos(v) if v / total > .07 else ""}</div>' for n, v, c in litro["partes"])
+        ref = "".join(f'<span><i style="background:{colores[c]}"></i>{escape(n)}: $ {pesos(v)} ({v / total * 100:.0f} %)</span>'
+                      for n, v, c in litro["partes"])
+        litros.append(f'<div class="litro"><div class="tit"><span>{escape(litro["nombre"])}</span><span>$ {pesos(total)}</span></div>'
+                      f'<div class="pila" role="img" aria-label="Composición del precio de {escape(litro["nombre"])}">{seg}</div><div class="ref">{ref}</div></div>')
+
+    escenarios = "".join(
+        f'<div class="obra esc{" hoy" if e.get("hoy") else ""}"><h3>{escape(e["nombre"])}</h3><div class="m">{escape(e["monto"])}</div>'
+        f'<div class="usd">{escape(e["usd"])}</div><p>{escape(e["texto"])}</p><div class="acc">{tag(e["tipo"], e.get("url"))}</div></div>'
+        for e in data["escenarios"])
+
+    def barras(rows, maximo=2.4):
+        return "".join(
+            f'<div class="fila{" mvd" if n == "Uruguay" else ""}"><span>{escape(n)}</span>'
+            f'<div class="b" style="width:{v / maximo * 100:.1f}%"></div><span class="v">{pesos(v)}</span></div>' for n, v in rows)
+
+    # Gráfico de barras: resultado neto por año, en millones de dólares.
+    serie = data["resultados"]
+    W, H, L, R, T, B, mx, mn = 900, 360, 50, 10, 16, 34, 200, -350
+    cw = (W - L - R) / len(serie)
+    bw = cw * .62
+    y = lambda v: T + (H - T - B) * (mx - v) / (mx - mn)
+    svg = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Resultado neto de ANCAP 2012-2025, en millones de dólares">']
+    for g in range(-300, 201, 100):
+        svg.append(f'<line x1="{L}" x2="{W-R}" y1="{y(g):.1f}" y2="{y(g):.1f}" stroke="{"#111" if g == 0 else "#e3dccb"}"/>'
+                   f'<text x="{L-8}" y="{y(g)+4:.1f}" font-size="11" text-anchor="end" fill="#5a5a5a">{g}</text>')
+    for i, r in enumerate(serie):
+        v = r["usd_millones"]
+        x = L + i * cw + (cw - bw) / 2
+        top, alto = (y(v), y(0) - y(v)) if v >= 0 else (y(0), y(v) - y(0))
+        etiqueta = f"{v:g}".replace(".", ",")
+        svg.append(f'<rect x="{x:.1f}" y="{top:.1f}" width="{bw:.1f}" height="{alto:.1f}" fill="{"#2e9e6a" if v >= 0 else "#ff4b2b"}">'
+                   f'<title>{r["anio"]}: US$ {etiqueta} M</title></rect>'
+                   f'<text x="{x + bw / 2:.1f}" y="{top - 5 if v >= 0 else top + alto + 13:.1f}" font-size="11" font-weight="700" text-anchor="middle">{etiqueta}</text>'
+                   f'<text x="{x + bw / 2:.1f}" y="{H-12}" font-size="12" text-anchor="middle">{r["anio"]}</text>')
+    xc = L + 4 * cw + cw / 2
+    svg.append(f'<text x="{xc:.1f}" y="{y(165):.1f}" font-size="11" text-anchor="middle" fill="#16403f" font-weight="800">Capitalización</text>'
+               f'<text x="{xc:.1f}" y="{y(165) + 13:.1f}" font-size="11" text-anchor="middle" fill="#16403f" font-weight="800">US$ 622 M</text></svg>')
+
+    estado = "".join(
+        f'<tr><td>{r["anio"]}</td><td class="n">{entero(r["ingresos"])}</td><td class="n"><b>{entero(r["impuestos_dgi"])}</b></td>'
+        f'<td class="n">{r["ganancias_giradas"]}</td><td class="n">{escape(r["contribucion_fiscal"])}</td></tr>' for r in data["estado"])
+
+    values = {
+        "GOLPES": golpes, "LITROS": "".join(litros), "ESCENARIOS": escenarios, "OBJ": obj,
+        "TC": pesos(data["tipo_cambio_feb_2026"])[:-1],
+        "NAFTA_REGION": barras(data["nafta_region"]), "GASOIL_REGION": barras(data["gasoil_region"]),
+        "GRAFICO": "".join(svg), "ESTADO": estado,
+        "URSEA_URL": escape(next(u for n, u in fuentes.items() if n.startswith("URSEA"))),
+        "DECRETO_URL": escape(next(u for n, u in fuentes.items() if n.startswith("MIEM · Decreto"))),
+        "UCU_URL": escape(next(u for n, u in fuentes.items() if n.startswith("UCU"))),
+        "CEPP_URL": escape(next(u for n, u in fuentes.items() if n.startswith("CEPP"))),
+        "GPP_URL": escape(next(u for n, u in fuentes.items() if n.startswith("dolarhoy"))),
+        "SEG_URL": escape(next(u for n, u in fuentes.items() if n.startswith("Ámbito"))),
+        "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "ancap.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en ancap.template.html.")
+    (public / "ancap.html").write_text(page, encoding="utf-8")
+    write_csv(public, "ancap_resultados_2012_2025.csv", serie)
+    write_csv(public, "ancap_estado_2021_2025.csv", data["estado"])
+    write_csv(public, "ancap_litro_2026.csv", [{"combustible": l["nombre"], "componente": n, "pesos_por_litro": v,
+                                               "precio_total": l["precio"]} for l in data["litros"] for n, v, _ in l["partes"]])
+    write_csv(public, "ancap_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -746,17 +861,18 @@ def main():
     build_intendencias(public)
     build_puerto(public)
     build_ute(public)
+    build_ancap(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", *STATIC_PAGES))
+                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP y los CSV.")
 
 
 if __name__ == "__main__":
