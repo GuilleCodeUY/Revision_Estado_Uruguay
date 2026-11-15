@@ -1,83 +1,515 @@
 {
-  "consultado": "2026-11-15",
-  "tipo_cambio_feb_2026": 38.4,
-  "golpes": [
-    {"valor": "48 %", "texto": "del precio de la nafta Súper es impuesto (IMESI y CO2)", "fuente": "URSEA, PPI feb. 2026 · cálculo propio", "tipo": "oficial", "url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/publicaciones/Informe%20PPI_0.pdf"},
-    {"valor": "US$ 2,26", "texto": "el litro de nafta: la más cara de América Latina (octubre de 2026)", "fuente": "GlobalPetrolPrices, vía dolarhoy.com", "tipo": "prensa", "url": "https://dolarhoy.com/economia/la-nafta-sube-23-en-dolares-en-argentina-durante-2026-y-se-ubica-en-el-medio-de-america-latina-2026101393217"},
-    {"valor": "US$ 1,05", "texto": "costaría ese litro sin IMESI ni impuesto al CO2 (febrero de 2026)", "fuente": "URSEA, PPI feb. 2026 · cálculo propio", "tipo": "oficial", "url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/publicaciones/Informe%20PPI_0.pdf"},
-    {"valor": "US$ 1.143 M", "texto": "pagó ANCAP en impuestos en 2025; de ganancias le giró al Estado US$ 2 M", "fuente": "UCU, Monitor de Coyuntura n.º 256", "tipo": "terceros", "url": "https://www.ucu.edu.uy/Institucionales/MONITOR-DE-COYUNTURA-uc1457/7145/Monitor-Coyuntura--feb26-256.pdf"},
-    {"valor": "US$ 810 M", "texto": "perdió el negocio del pórtland desde el año 2000", "fuente": "Presidencia de ANCAP, vía El Observador", "tipo": "prensa", "url": "https://www.elobservador.com.uy/economia-y-empresas/tras-anos-perdidas-portland-oddone-espera-propuesta-definir-el-futuro-ese-negocio-ancap-n6003405/amp"},
-    {"valor": "US$ 622 M", "texto": "pusimos todos para capitalizar ANCAP en 2016", "fuente": "Ley 19.368", "tipo": "oficial", "url": "https://impo.com.uy/bases/leyes/19368-2016"}
+ "consultado": "2026-11-15",
+ "golpes": [
+  {
+   "valor": "42 %",
+   "texto": "del precio de la nafta Súper que pagás hoy es impuesto (IMESI y CO2)",
+   "fuente": "URSEA, referencia de noviembre 2026 · cálculo propio",
+   "tipo": "oficial",
+   "url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-4",
+   "destacado": true
+  },
+  {
+   "valor": "US$ 2,24",
+   "texto": "el litro de nafta: la más cara de América Latina y la 17.ª más cara de 170 países",
+   "fuente": "GlobalPetrolPrices, 09/11/2026",
+   "tipo": "terceros",
+   "url": "https://www.globalpetrolprices.com/gasoline_prices/"
+  },
+  {
+   "valor": "US$ 1,31",
+   "texto": "costaría ese litro sin IMESI ni impuesto al CO2",
+   "fuente": "URSEA y Poder Ejecutivo, nov. 2026 · cálculo propio",
+   "tipo": "oficial",
+   "url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/publicaciones/informe%20PPI%20setiembre%20octubre%202026.pdf",
+   "destacado": true
+  },
+  {
+   "valor": "US$ 1.143 M",
+   "texto": "pagó ANCAP en impuestos en 2025; de ganancias le giró al Estado US$ 2 M",
+   "fuente": "UCU, Monitor de Coyuntura n.º 256",
+   "tipo": "terceros",
+   "url": "https://www.ucu.edu.uy/Institucionales/MONITOR-DE-COYUNTURA-uc1457/7145/Monitor-Coyuntura--feb26-256.pdf"
+  },
+  {
+   "valor": "US$ 810 M",
+   "texto": "perdió el negocio del pórtland desde el año 2000",
+   "fuente": "Presidencia de ANCAP, vía El Observador",
+   "tipo": "prensa",
+   "url": "https://www.elobservador.com.uy/economia-y-empresas/tras-anos-perdidas-portland-oddone-espera-propuesta-definir-el-futuro-ese-negocio-ancap-n6003405/amp"
+  },
+  {
+   "valor": "US$ 622 M",
+   "texto": "pusimos todos para capitalizar ANCAP en 2016",
+   "fuente": "Ley 19.368",
+   "tipo": "oficial",
+   "url": "https://impo.com.uy/bases/leyes/19368-2016"
+  }
+ ],
+ "litros": [
+  {
+   "nombre": "Nafta Súper 95 · referencia de URSEA para noviembre",
+   "precio": 93.48,
+   "real": 90.45,
+   "partes": [
+    [
+     "Combustible importado (CIF)",
+     36.37,
+     "prod"
+    ],
+    [
+     "Internación y logística",
+     2.58,
+     "log"
+    ],
+    [
+     "Mezcla con etanol (ALUR)",
+     2.46,
+     "bio"
+    ],
+    [
+     "IMESI",
+     22.92,
+     "imp"
+    ],
+    [
+     "Impuesto al CO2",
+     14.36,
+     "imp2"
+    ],
+    [
+     "Subsidio al supergás",
+     1.2,
+     "fac"
+    ],
+    [
+     "Tasas",
+     0.35,
+     "tasa"
+    ],
+    [
+     "Distribución y estaciones",
+     13.24,
+     "dist"
+    ]
+   ]
+  },
+  {
+   "nombre": "Gasoil 50S · referencia de URSEA para noviembre",
+   "precio": 82.47,
+   "real": 62.79,
+   "partes": [
+    [
+     "Combustible importado (CIF)",
+     50.34,
+     "prod"
+    ],
+    [
+     "Internación y logística",
+     2.69,
+     "log"
+    ],
+    [
+     "IVA",
+     14.89,
+     "imp"
+    ],
+    [
+     "Fideicomiso del boleto",
+     3.0,
+     "imp2"
+    ],
+    [
+     "Subsidio al supergás",
+     1.2,
+     "fac"
+    ],
+    [
+     "Tasas",
+     0.18,
+     "tasa"
+    ],
+    [
+     "Distribución y estaciones",
+     10.17,
+     "dist"
+    ]
+   ]
+  }
+ ],
+ "escenarios": [
+  {
+   "nombre": "Nafta Súper hoy (noviembre 2026)",
+   "monto": "$ 90,45",
+   "usd": "≈ US$ 2,25",
+   "texto": "Precio máximo en el surtidor aprobado por el Poder Ejecutivo. Es $ 3,03 menos que la referencia de URSEA; la diferencia la pone ANCAP.",
+   "tipo": "oficial",
+   "url": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/noticias/Decreto%20Decreto%20del%20Poder%20Ejecutivo%20S-N-026.pdf",
+   "hoy": true
+  },
+  {
+   "nombre": "Sin IMESI ni impuesto al CO2",
+   "monto": "$ 52,83",
+   "usd": "≈ US$ 1,31",
+   "texto": "Se restan $ 37,62 de impuestos y tasas. Quedaría por debajo de Chile o Perú, que no tienen subsidio.",
+   "tipo": "propio"
+  },
+  {
+   "nombre": "Además sin etanol ni subsidio al supergás",
+   "monto": "$ 49,17",
+   "usd": "≈ US$ 1,22",
+   "texto": "Se restan $ 2,46 de la mezcla obligatoria con etanol de ALUR y $ 1,20 que la nafta paga para abaratar la garrafa.",
+   "tipo": "propio"
+  },
+  {
+   "nombre": "Gasoil hoy, y sin IVA ni boleto",
+   "monto": "$ 62,79 → $ 48,29",
+   "usd": "≈ US$ 1,56 → US$ 1,20",
+   "texto": "El gasoil hoy está subsidiado: la referencia de URSEA es $ 82,47 y se vende $ 19,68 más barato. Sin IVA ($ 11,32), boleto ($ 3,00) ni tasas quedaría en $ 48,29.",
+   "tipo": "propio"
+  }
+ ],
+ "nafta_region": [
+  [
+   "Uruguay",
+   2.236
   ],
-  "litros": [
-    {"nombre": "Nafta Súper 95", "precio": 77.79, "partes": [
-      ["Combustible importado (CIF)", 20.43, "prod"], ["Internación y logística", 2.18, "log"], ["Mezcla con etanol (ALUR)", 3.59, "bio"],
-      ["IMESI", 22.92, "imp"], ["Impuesto al CO2", 14.36, "imp2"], ["Subsidio al supergás", 1.20, "fac"], ["Tasas", 0.08, "tasa"], ["Distribución y estaciones", 13.03, "dist"]]},
-    {"nombre": "Gasoil 50S", "precio": 48.90, "partes": [
-      ["Combustible importado (CIF)", 23.77, "prod"], ["Internación y logística", 2.10, "log"],
-      ["IVA", 8.82, "imp"], ["Fideicomiso del boleto", 3.00, "imp2"], ["Subsidio al supergás", 1.20, "fac"], ["Tasas", 0.08, "tasa"], ["Distribución y estaciones", 9.93, "dist"]]}
+  [
+   "Perú",
+   1.698
   ],
-  "escenarios": [
-    {"nombre": "Nafta Súper hoy (feb. 2026)", "monto": "$ 77,79", "usd": "≈ US$ 2,02", "texto": "Precio máximo en el surtidor aprobado por el Poder Ejecutivo para enero y febrero de 2026.", "tipo": "oficial", "url": "https://medios.presidencia.gub.uy/legal/2026/decretos/02/miem_134.pdf", "hoy": true},
-    {"nombre": "Sin IMESI ni impuesto al CO2", "monto": "$ 40,43", "usd": "≈ US$ 1,05", "texto": "Se restan $ 37,36 de impuestos y tasas. Más barata que en Brasil o Argentina con sus impuestos.", "tipo": "propio"},
-    {"nombre": "Además sin etanol ni subsidio al supergás", "monto": "$ 35,64", "usd": "≈ US$ 0,93", "texto": "Se restan $ 3,59 de la mezcla obligatoria con etanol de ALUR y $ 1,20 que la nafta paga para abaratar la garrafa.", "tipo": "propio"},
-    {"nombre": "Gasoil sin IVA ni boleto", "monto": "$ 37,00", "usd": "≈ US$ 0,96", "texto": "Hoy: $ 48,90. Se restan $ 8,82 de IVA, $ 3,00 del fideicomiso del transporte y $ 0,08 de tasas.", "tipo": "propio"}
+  [
+   "Chile",
+   1.562
   ],
-  "nafta_region": [["Uruguay", 2.256], ["Chile", 1.525], ["Argentina", 1.422], ["Colombia", 1.313], ["Paraguay", 1.281], ["Brasil", 1.262]],
-  "gasoil_region": [["México", 1.477], ["Bolivia", 1.420], ["Uruguay", 1.233]],
-  "resultados": [
-    {"anio": 2012, "usd_millones": -14.6, "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"},
-    {"anio": 2013, "usd_millones": -169, "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"},
-    {"anio": 2014, "usd_millones": -323, "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"},
-    {"anio": 2015, "usd_millones": -198, "fuente": "https://www.ancap.com.uy/2246/6/presentacion.html"},
-    {"anio": 2016, "usd_millones": 15, "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"},
-    {"anio": 2017, "usd_millones": 39, "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"},
-    {"anio": 2018, "usd_millones": 88, "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"},
-    {"anio": 2019, "usd_millones": 39, "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"},
-    {"anio": 2020, "usd_millones": -12, "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"},
-    {"anio": 2021, "usd_millones": 88, "fuente": "https://www.xn--lamaana-7za.uy/economia/director-de-ancap-daniel-lamela-me-causo-perplejidad-el-planteo-de-orsi-sobre-la-situacion-de-la-petrolera"},
-    {"anio": 2022, "usd_millones": 163, "fuente": "https://www.xn--lamaana-7za.uy/economia/director-de-ancap-daniel-lamela-me-causo-perplejidad-el-planteo-de-orsi-sobre-la-situacion-de-la-petrolera"},
-    {"anio": 2023, "usd_millones": 85, "fuente": "https://www.gub.uy/presidencia/comunicacion/noticias/grupo-ancap-registro-ganancias-85000000-dolares-2023"},
-    {"anio": 2024, "usd_millones": -118, "fuente": "https://exploracionyproduccion.ancap.com.uy/20669/1/resultados-ancap-ejercicio-2024.html"},
-    {"anio": 2025, "usd_millones": 72.5, "fuente": "https://www.gub.uy/presidencia/comunicacion/noticias/ancap-combustibles-petroleo-ganancias-2025"}
+  [
+   "México",
+   1.523
   ],
-  "estado": [
-    {"anio": 2021, "ingresos": 2806, "impuestos_dgi": 871, "ganancias_giradas": 0, "contribucion_fiscal": "29 %"},
-    {"anio": 2022, "ingresos": 3807, "impuestos_dgi": 1126, "ganancias_giradas": 1, "contribucion_fiscal": "30 %"},
-    {"anio": 2023, "ingresos": 3627, "impuestos_dgi": 1226, "ganancias_giradas": 0, "contribucion_fiscal": "33 %"},
-    {"anio": 2024, "ingresos": 3412, "impuestos_dgi": 1131, "ganancias_giradas": 4, "contribucion_fiscal": "30 %"},
-    {"anio": 2025, "ingresos": 3340, "impuestos_dgi": 1143, "ganancias_giradas": 2, "contribucion_fiscal": "35 %"}
+  [
+   "Argentina",
+   1.429
   ],
-  "fuentes": [
-    ["URSEA · Informe PPI INF-00122-2026 (26/01 al 25/02/2026)", "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/publicaciones/Informe%20PPI_0.pdf", "oficial"],
-    ["MIEM · Decreto 134/026, precios de marzo 2026", "https://medios.presidencia.gub.uy/legal/2026/decretos/02/miem_134.pdf", "oficial"],
-    ["MIEM · Metodología de fijación de precios (Decretos 130/025 y 312/025)", "https://www.gub.uy/ministerio-industria-energia-mineria/politicas-y-gestion/nueva-metodologia-fijacion-precios-combustibles-liquidos", "oficial"],
-    ["IMPO · Ley 19.368, capitalización de ANCAP", "https://impo.com.uy/bases/leyes/19368-2016", "oficial"],
-    ["ANCAP · Presentación de resultados 2015", "https://www.ancap.com.uy/2246/6/presentacion.html", "oficial"],
-    ["ANCAP · Resultados del ejercicio 2024", "https://exploracionyproduccion.ancap.com.uy/20669/1/resultados-ancap-ejercicio-2024.html", "oficial"],
-    ["ANCAP · Memoria anual 2022", "https://www.ancap.com.uy/17118/6/memoria-anual-2022.html", "oficial"],
-    ["Presidencia · ANCAP ganó US$ 72,5 M en 2025", "https://www.gub.uy/presidencia/comunicacion/noticias/ancap-combustibles-petroleo-ganancias-2025", "oficial"],
-    ["Presidencia · Grupo ANCAP ganó US$ 85 M en 2023", "https://www.gub.uy/presidencia/comunicacion/noticias/grupo-ancap-registro-ganancias-85000000-dolares-2023", "oficial"],
-    ["Presidencia · Inauguración de la planta desulfurizadora (26/08/2013)", "https://www.gub.uy/presidencia/comunicacion/noticias/presidentes-uruguay-argentina-inauguran-obras-planta-desulfurizadora-ancap", "oficial"],
-    ["UCU · Monitor de Coyuntura n.º 256 (24/02/2026)", "https://www.ucu.edu.uy/Institucionales/MONITOR-DE-COYUNTURA-uc1457/7145/Monitor-Coyuntura--feb26-256.pdf", "terceros"],
-    ["CEPP · Combustibles II (abril 2026)", "https://todoelcampo.com.uy/wp-content/uploads/2026/05/Combustibles-II-Version-Abril26-1.pdf", "terceros"],
-    ["El precio de los combustibles en Uruguay (junio 2017)", "https://www.enperspectiva.net/wp-content/uploads/2017/06/2017-06-El-precio-de-los-combustibles-en-Uruguay.pdf", "terceros"],
-    ["Montevideo Portal · CEPP: US$ 88 M de sobreprecio en 2025", "https://www.montevideo.com.uy/Noticias/Hubo-US-88-millones-de-sobreprecio-en-combustibles-de-marzo-a-diciembre-segun-consultora-uc949825", "prensa"],
-    ["Montevideo Portal · Evolución de la ganancia de ANCAP (15/07/2021)", "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269", "prensa"],
-    ["Montevideo Portal · Parada de la refinería, primer semestre 2024", "https://www.montevideo.com.uy/Noticias/Debido-a-parada-de-refineria-Ancap-tuvo-perdidas-por-US-79-millones-en-primer-semestre-uc899019", "prensa"],
-    ["Montevideo Portal · Auditoría de Gas Sayago", "https://www.montevideo.com.uy/Noticias/Directorio-de-UTE-envia-a-Fiscalia-los-resultados-de-la-auditoria-sobre-Gas-Sayago-uc788830", "prensa"],
-    ["La Mañana · Resultados de ANCAP 2010-2024", "https://www.xn--lamaana-7za.uy/economia/director-de-ancap-daniel-lamela-me-causo-perplejidad-el-planteo-de-orsi-sobre-la-situacion-de-la-petrolera", "prensa"],
-    ["dolarhoy.com · Nafta en América Latina, GlobalPetrolPrices al 05/10/2026", "https://dolarhoy.com/economia/la-nafta-sube-23-en-dolares-en-argentina-durante-2026-y-se-ubica-en-el-medio-de-america-latina-2026101393217", "prensa"],
-    ["Ámbito · Ranking de SEG Ingeniería, marzo 2026", "https://www.ambito.com/uruguay/mantiene-la-nafta-mas-cara-latinoamerica-medio-la-incertidumbre-global-el-petroleo-n6254248", "prensa"],
-    ["El Observador · Pérdidas del pórtland", "https://www.elobservador.com.uy/economia-y-empresas/tras-anos-perdidas-portland-oddone-espera-propuesta-definir-el-futuro-ese-negocio-ancap-n6003405/amp", "prensa"],
-    ["El Observador · Temas de la comisión investigadora (planta de ALUR en Paysandú)", "https://www.elobservador.com.uy/nota/los-temas-bajo-la-lupa-en-la-comision-investigadora-de-ancap-201512140260/amp", "prensa"],
-    ["Bichos de Campo · Comité de expertos sobre biocombustibles", "https://bichosdecampo.com/?p=54042", "prensa"],
-    ["Pablo Mieres, columna en Montevideo Portal (2015)", "https://www.montevideo.com.uy/Columnistas/Ancap-cuando-se-pasa-el-limite-de-la-legalidad-uc361930", "parte"]
+  [
+   "Colombia",
+   1.279
   ],
-  "pendientes": [
-    "Rehacer el desglose del litro con el informe de URSEA de noviembre de 2026 (hoy la Súper está en $ 90,45).",
-    "Autor del estudio que calcula US$ 415 millones de sobrecosto en 2016.",
-    "Comparación de nafta y gasoil en la misma fecha y con la misma fuente.",
-    "Resultado del pórtland y de ALUR año por año, 2015-2025."
+  [
+   "Brasil",
+   1.247
+  ],
+  [
+   "Paraguay",
+   1.214
+  ],
+  [
+   "EE. UU.",
+   1.142
+  ],
+  [
+   "Bolivia",
+   0.587
+  ],
+  [
+   "Promedio mundial",
+   1.56
   ]
+ ],
+ "gasoil_region": [
+  [
+   "Perú",
+   1.936
+  ],
+  [
+   "Promedio mundial",
+   1.66
+  ],
+  [
+   "EE. UU.",
+   1.619
+  ],
+  [
+   "Argentina",
+   1.594
+  ],
+  [
+   "Uruguay",
+   1.552
+  ],
+  [
+   "Bolivia",
+   1.515
+  ],
+  [
+   "Chile",
+   1.513
+  ],
+  [
+   "Paraguay",
+   1.505
+  ],
+  [
+   "México",
+   1.441
+  ],
+  [
+   "Brasil",
+   1.353
+  ],
+  [
+   "Colombia",
+   0.911
+  ]
+ ],
+ "resultados": [
+  {
+   "anio": 2012,
+   "usd_millones": -14.6,
+   "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"
+  },
+  {
+   "anio": 2013,
+   "usd_millones": -169,
+   "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"
+  },
+  {
+   "anio": 2014,
+   "usd_millones": -323,
+   "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"
+  },
+  {
+   "anio": 2015,
+   "usd_millones": -198,
+   "fuente": "https://www.ancap.com.uy/2246/6/presentacion.html"
+  },
+  {
+   "anio": 2016,
+   "usd_millones": 15,
+   "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"
+  },
+  {
+   "anio": 2017,
+   "usd_millones": 39,
+   "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"
+  },
+  {
+   "anio": 2018,
+   "usd_millones": 88,
+   "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"
+  },
+  {
+   "anio": 2019,
+   "usd_millones": 39,
+   "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"
+  },
+  {
+   "anio": 2020,
+   "usd_millones": -12,
+   "fuente": "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269"
+  },
+  {
+   "anio": 2021,
+   "usd_millones": 88,
+   "fuente": "https://www.xn--lamaana-7za.uy/economia/director-de-ancap-daniel-lamela-me-causo-perplejidad-el-planteo-de-orsi-sobre-la-situacion-de-la-petrolera"
+  },
+  {
+   "anio": 2022,
+   "usd_millones": 163,
+   "fuente": "https://www.xn--lamaana-7za.uy/economia/director-de-ancap-daniel-lamela-me-causo-perplejidad-el-planteo-de-orsi-sobre-la-situacion-de-la-petrolera"
+  },
+  {
+   "anio": 2023,
+   "usd_millones": 85,
+   "fuente": "https://www.gub.uy/presidencia/comunicacion/noticias/grupo-ancap-registro-ganancias-85000000-dolares-2023"
+  },
+  {
+   "anio": 2024,
+   "usd_millones": -118,
+   "fuente": "https://exploracionyproduccion.ancap.com.uy/20669/1/resultados-ancap-ejercicio-2024.html"
+  },
+  {
+   "anio": 2025,
+   "usd_millones": 72.5,
+   "fuente": "https://www.gub.uy/presidencia/comunicacion/noticias/ancap-combustibles-petroleo-ganancias-2025"
+  }
+ ],
+ "estado": [
+  {
+   "anio": 2021,
+   "ingresos": 2806,
+   "impuestos_dgi": 871,
+   "ganancias_giradas": 0,
+   "contribucion_fiscal": "29 %"
+  },
+  {
+   "anio": 2022,
+   "ingresos": 3807,
+   "impuestos_dgi": 1126,
+   "ganancias_giradas": 1,
+   "contribucion_fiscal": "30 %"
+  },
+  {
+   "anio": 2023,
+   "ingresos": 3627,
+   "impuestos_dgi": 1226,
+   "ganancias_giradas": 0,
+   "contribucion_fiscal": "33 %"
+  },
+  {
+   "anio": 2024,
+   "ingresos": 3412,
+   "impuestos_dgi": 1131,
+   "ganancias_giradas": 4,
+   "contribucion_fiscal": "30 %"
+  },
+  {
+   "anio": 2025,
+   "ingresos": 3340,
+   "impuestos_dgi": 1143,
+   "ganancias_giradas": 2,
+   "contribucion_fiscal": "35 %"
+  }
+ ],
+ "fuentes": [
+  [
+   "URSEA · Informe PPI INF-00655-2026 (26/09 al 25/10/2026)",
+   "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/publicaciones/informe%20PPI%20setiembre%20octubre%202026.pdf",
+   "oficial"
+  ],
+  [
+   "URSEA · Precios de venta al público de referencia, noviembre 2026",
+   "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-4",
+   "oficial"
+  ],
+  [
+   "Poder Ejecutivo · Decreto de precios vigente (Súper $ 90,45, gasoil $ 62,79)",
+   "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/noticias/Decreto%20Decreto%20del%20Poder%20Ejecutivo%20S-N-026.pdf",
+   "oficial"
+  ],
+  [
+   "URSEA · Informe PPI INF-00122-2026 (26/01 al 25/02/2026)",
+   "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/sites/unidad-reguladora-servicios-energia-agua/files/documentos/publicaciones/Informe%20PPI_0.pdf",
+   "oficial"
+  ],
+  [
+   "Presidencia · Ajuste de combustibles de mayo 2026 y suba internacional",
+   "https://medios.presidencia.gub.uy/tav_portal/2026/noticias/AP_184/combustibles_mayo.pdf",
+   "oficial"
+  ],
+  [
+   "MIEM · Metodología de fijación de precios (Decretos 130/025 y 312/025)",
+   "https://www.gub.uy/ministerio-industria-energia-mineria/politicas-y-gestion/nueva-metodologia-fijacion-precios-combustibles-liquidos",
+   "oficial"
+  ],
+  [
+   "IMPO · Ley 19.368, capitalización de ANCAP",
+   "https://impo.com.uy/bases/leyes/19368-2016",
+   "oficial"
+  ],
+  [
+   "ANCAP · Presentación de resultados 2015",
+   "https://www.ancap.com.uy/2246/6/presentacion.html",
+   "oficial"
+  ],
+  [
+   "ANCAP · Resultados del ejercicio 2024",
+   "https://exploracionyproduccion.ancap.com.uy/20669/1/resultados-ancap-ejercicio-2024.html",
+   "oficial"
+  ],
+  [
+   "ANCAP · Memoria anual 2022",
+   "https://www.ancap.com.uy/17118/6/memoria-anual-2022.html",
+   "oficial"
+  ],
+  [
+   "Presidencia · ANCAP ganó US$ 72,5 M en 2025",
+   "https://www.gub.uy/presidencia/comunicacion/noticias/ancap-combustibles-petroleo-ganancias-2025",
+   "oficial"
+  ],
+  [
+   "Presidencia · Grupo ANCAP ganó US$ 85 M en 2023",
+   "https://www.gub.uy/presidencia/comunicacion/noticias/grupo-ancap-registro-ganancias-85000000-dolares-2023",
+   "oficial"
+  ],
+  [
+   "Presidencia · Inauguración de la planta desulfurizadora (26/08/2013)",
+   "https://www.gub.uy/presidencia/comunicacion/noticias/presidentes-uruguay-argentina-inauguran-obras-planta-desulfurizadora-ancap",
+   "oficial"
+  ],
+  [
+   "UCU · Monitor de Coyuntura n.º 256 (24/02/2026)",
+   "https://www.ucu.edu.uy/Institucionales/MONITOR-DE-COYUNTURA-uc1457/7145/Monitor-Coyuntura--feb26-256.pdf",
+   "terceros"
+  ],
+  [
+   "CEPP · Combustibles II (abril 2026)",
+   "https://todoelcampo.com.uy/wp-content/uploads/2026/05/Combustibles-II-Version-Abril26-1.pdf",
+   "terceros"
+  ],
+  [
+   "CPA Ferrere · El precio de los combustibles en Uruguay (junio 2017)",
+   "https://www.enperspectiva.net/wp-content/uploads/2017/06/2017-06-El-precio-de-los-combustibles-en-Uruguay.pdf",
+   "terceros"
+  ],
+  [
+   "Montevideo Portal · CEPP: US$ 88 M de sobreprecio en 2025",
+   "https://www.montevideo.com.uy/Noticias/Hubo-US-88-millones-de-sobreprecio-en-combustibles-de-marzo-a-diciembre-segun-consultora-uc949825",
+   "prensa"
+  ],
+  [
+   "Montevideo Portal · Evolución de la ganancia de ANCAP (15/07/2021)",
+   "https://www.montevideo.com.uy/Noticias/Ancap-como-evoluciono-la-ganancia-la-deuda-y-el-patrimonio-en-los-ultimos-anos-uc792269",
+   "prensa"
+  ],
+  [
+   "Montevideo Portal · Parada de la refinería, primer semestre 2024",
+   "https://www.montevideo.com.uy/Noticias/Debido-a-parada-de-refineria-Ancap-tuvo-perdidas-por-US-79-millones-en-primer-semestre-uc899019",
+   "prensa"
+  ],
+  [
+   "Montevideo Portal · Auditoría de Gas Sayago",
+   "https://www.montevideo.com.uy/Noticias/Directorio-de-UTE-envia-a-Fiscalia-los-resultados-de-la-auditoria-sobre-Gas-Sayago-uc788830",
+   "prensa"
+  ],
+  [
+   "La Mañana · Resultados de ANCAP 2010-2024",
+   "https://www.xn--lamaana-7za.uy/economia/director-de-ancap-daniel-lamela-me-causo-perplejidad-el-planteo-de-orsi-sobre-la-situacion-de-la-petrolera",
+   "prensa"
+  ],
+  [
+   "El Observador · Pérdidas del pórtland",
+   "https://www.elobservador.com.uy/economia-y-empresas/tras-anos-perdidas-portland-oddone-espera-propuesta-definir-el-futuro-ese-negocio-ancap-n6003405/amp",
+   "prensa"
+  ],
+  [
+   "El Observador · Temas de la comisión investigadora (planta de ALUR en Paysandú)",
+   "https://www.elobservador.com.uy/nota/los-temas-bajo-la-lupa-en-la-comision-investigadora-de-ancap-201512140260/amp",
+   "prensa"
+  ],
+  [
+   "Bichos de Campo · Comité de expertos sobre biocombustibles",
+   "https://bichosdecampo.com/?p=54042",
+   "prensa"
+  ],
+  [
+   "Pablo Mieres, columna en Montevideo Portal (2015)",
+   "https://www.montevideo.com.uy/Columnistas/Ancap-cuando-se-pasa-el-limite-de-la-legalidad-uc361930",
+   "parte"
+  ],
+  [
+   "GlobalPetrolPrices · Nafta en el mundo, 09/11/2026",
+   "https://www.globalpetrolprices.com/gasoline_prices/",
+   "terceros"
+  ],
+  [
+   "GlobalPetrolPrices · Gasoil en el mundo, 09/11/2026",
+   "https://www.globalpetrolprices.com/diesel_prices/",
+   "terceros"
+  ]
+ ],
+ "pendientes": [
+  "Resultado del pórtland y de ALUR año por año, 2015-2025 (memorias de ANCAP o pedido de acceso a la información).",
+  "Cuánto le cuesta a ANCAP vender el gasoil por debajo de la referencia desde abril de 2026."
+ ],
+ "tipo_cambio": 40.186
 }

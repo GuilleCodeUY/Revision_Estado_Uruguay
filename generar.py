@@ -709,12 +709,18 @@ def build_ancap(public):
 
     obj = '<a class="obj" href="informe.html?aporte=ancap-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
     golpes = "".join(
-        f'<div class="golpe{" big" if g["valor"] in ("48 %", "US$ 1,05") else ""}"><b>{escape(g["valor"])}</b><span>{escape(g["texto"])}</span>'
+        f'<div class="golpe{" big" if g.get("destacado") else ""}"><b>{escape(g["valor"])}</b><span>{escape(g["texto"])}</span>'
         f'<div class="acc"><a href="{escape(g["url"])}" target="_blank" rel="noopener">{escape(g["fuente"])} · {g["tipo"]}</a>{obj}</div></div>'
         for g in data["golpes"])
 
     colores = {"prod": "#16403f", "log": "#3f7d78", "bio": "#5f9e4f", "imp": "#ff4b2b", "imp2": "#c9302c",
                "fac": "#ffb627", "tasa": "#444", "dist": "#8a8a8a"}
+    def impuestos(litro):
+        # Impuestos que quedan en el precio real: IMESI, CO2 y tasas son fijos; el IVA se recalcula sobre el precio real.
+        fijos = sum(v for n, v, _ in litro["partes"] if n in ("IMESI", "Impuesto al CO2", "Tasas", "Fideicomiso del boleto"))
+        iva = litro["real"] * 22 / 122 if any(n == "IVA" for n, _, _ in litro["partes"]) else 0
+        return fijos + iva
+
     litros = []
     for litro in data["litros"]:
         total = litro["precio"]
@@ -723,17 +729,20 @@ def build_ancap(public):
             f'{"$ " + pesos(v) if v / total > .07 else ""}</div>' for n, v, c in litro["partes"])
         ref = "".join(f'<span><i style="background:{colores[c]}"></i>{escape(n)}: $ {pesos(v)} ({v / total * 100:.0f} %)</span>'
                       for n, v, c in litro["partes"])
+        real = litro["real"]
         litros.append(f'<div class="litro"><div class="tit"><span>{escape(litro["nombre"])}</span><span>$ {pesos(total)}</span></div>'
-                      f'<div class="pila" role="img" aria-label="Composición del precio de {escape(litro["nombre"])}">{seg}</div><div class="ref">{ref}</div></div>')
+                      f'<div class="pila" role="img" aria-label="Composición del precio de {escape(litro["nombre"])}">{seg}</div><div class="ref">{ref}</div>'
+                      f'<p class="real">Precio real en el surtidor: <b>$ {pesos(real)}</b>, $ {pesos(total - real)} menos que la referencia. '
+                      f'La diferencia la pone ANCAP. Los impuestos son el {impuestos(litro) / real * 100:.0f} % de lo que pagás.</p></div>')
 
     escenarios = "".join(
         f'<div class="obra esc{" hoy" if e.get("hoy") else ""}"><h3>{escape(e["nombre"])}</h3><div class="m">{escape(e["monto"])}</div>'
         f'<div class="usd">{escape(e["usd"])}</div><p>{escape(e["texto"])}</p><div class="acc">{tag(e["tipo"], e.get("url"))}</div></div>'
         for e in data["escenarios"])
 
-    def barras(rows, maximo=2.4):
+    def barras(rows, maximo=2.4):  # noqa: E306
         return "".join(
-            f'<div class="fila{" mvd" if n == "Uruguay" else ""}"><span>{escape(n)}</span>'
+            f'<div class="fila{" mvd" if n == "Uruguay" else " prom" if n.startswith("Promedio") else ""}"><span>{escape(n)}</span>'
             f'<div class="b" style="width:{v / maximo * 100:.1f}%"></div><span class="v">{pesos(v)}</span></div>' for n, v in rows)
 
     # Gráfico de barras: resultado neto por año, en millones de dólares.
@@ -765,15 +774,16 @@ def build_ancap(public):
 
     values = {
         "GOLPES": golpes, "LITROS": "".join(litros), "ESCENARIOS": escenarios, "OBJ": obj,
-        "TC": pesos(data["tipo_cambio_feb_2026"])[:-1],
+        "TC": f"{data['tipo_cambio']:.3f}".replace(".", ","),
         "NAFTA_REGION": barras(data["nafta_region"]), "GASOIL_REGION": barras(data["gasoil_region"]),
         "GRAFICO": "".join(svg), "ESTADO": estado,
         "URSEA_URL": escape(next(u for n, u in fuentes.items() if n.startswith("URSEA"))),
-        "DECRETO_URL": escape(next(u for n, u in fuentes.items() if n.startswith("MIEM · Decreto"))),
+        "DECRETO_URL": escape(next(u for n, u in fuentes.items() if n.startswith("Poder Ejecutivo · Decreto"))),
         "UCU_URL": escape(next(u for n, u in fuentes.items() if n.startswith("UCU"))),
         "CEPP_URL": escape(next(u for n, u in fuentes.items() if n.startswith("CEPP"))),
-        "GPP_URL": escape(next(u for n, u in fuentes.items() if n.startswith("dolarhoy"))),
-        "SEG_URL": escape(next(u for n, u in fuentes.items() if n.startswith("Ámbito"))),
+        "GPPG_URL": escape(next(u for n, u in fuentes.items() if n.startswith("GlobalPetrolPrices · Nafta"))),
+        "GPPD_URL": escape(next(u for n, u in fuentes.items() if n.startswith("GlobalPetrolPrices · Gasoil"))),
+        "PVP_URL": escape(next(u for n, u in fuentes.items() if n.startswith("URSEA · Precios"))),
         "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
         "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
         "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),

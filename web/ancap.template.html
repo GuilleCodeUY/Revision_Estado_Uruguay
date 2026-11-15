@@ -11,7 +11,7 @@
   <meta property="og:locale" content="es_UY">
   <meta property="og:site_name" content="La verdad de la milanesa">
   <meta property="og:title" content="ANCAP en números">
-  <meta property="og:description" content="Casi la mitad del precio de la nafta es impuesto. Sin IMESI ni CO2 el litro costaría cerca de US$ 1,05. Los números de ANCAP, con fuente.">
+  <meta property="og:description" content="La nafta uruguaya es la más cara de América Latina y 4 de cada 10 pesos son impuesto. Sin IMESI ni CO2 el litro costaría cerca de US$ 1,31. Los números de ANCAP, con fuente.">
   <meta property="og:url" content="https://verdadmilanesa.uy/ancap.html">
   <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
   <meta property="og:image:width" content="1200">
@@ -86,6 +86,7 @@
     .ref{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.84rem;margin-top:.5rem}.ref i{display:inline-block;width:11px;height:11px;margin-right:.3rem;vertical-align:-1px;border-radius:2px}
     .esc .usd{font-weight:800;color:var(--hero2)}.obra.hoy{border-top-color:var(--acc)}
     .hito.menos:before{background:var(--green)}
+    .litro .real{font-size:.9rem;margin:.5rem 0 0}.fila.prom{font-style:italic;color:var(--muted)}.fila.prom .b{background:#e3dccb}
   </style>
 </head>
 <body>
@@ -106,28 +107,28 @@
     <section id="litro">
       <div class="num">01</div>
       <h2>¿Qué pagás en un litro?</h2>
-      <p class="lead">El regulador (URSEA) calcula cada mes cuánto costaría traer el combustible importado y ponerlo en las plantas de ANCAP, y cuánto se le suma de impuestos. Con eso y el precio del surtidor se arma el litro por partes. Datos de enero y febrero de 2026.</p>
+      <p class="lead">El regulador (URSEA) calcula cada mes cuánto costaría traer el combustible importado, cuánto se lleva la distribución y cuánto se suma de impuestos. Así queda el precio "de referencia" para noviembre de 2026. Después el gobierno fija el precio real, que puede quedar por debajo. Desde fines de febrero de 2026 el petróleo subió fuerte en todo el mundo, y por eso el combustible importado pesa más que antes.</p>
       {{LITROS}}
-      <p class="nota"><b>La nafta no lleva IVA:</b> lleva IMESI y el impuesto al CO2, que son montos fijos por litro. <b>El gasoil no lleva IMESI:</b> lleva IVA (las empresas lo descuentan; los hogares no) y $ 3 por litro para el fideicomiso del boleto. "Distribución y estaciones" es la diferencia entre el precio de planta y el del surtidor: fletes, distribuidoras y estaciones. <a class="tag t-oficial" href="{{URSEA_URL}}" target="_blank" rel="noopener">oficial</a> URSEA, informe PPI INF-00122-2026 · <a class="tag t-oficial" href="{{DECRETO_URL}}" target="_blank" rel="noopener">oficial</a> precios al público · <span class="tag t-propio">cálculo propio</span> armado del litro. {{OBJ}}</p>
+      <p class="nota"><b>La nafta no lleva IVA:</b> lleva IMESI y el impuesto al CO2, que son montos fijos por litro. <b>El gasoil no lleva IMESI:</b> lleva IVA (las empresas lo descuentan; los hogares no) y $ 3 por litro para el fideicomiso del boleto. "Distribución y estaciones" son los márgenes fijados de fletes, distribuidoras y estaciones. En febrero de 2026, antes de la suba del petróleo, los impuestos eran el 48 % del precio de la nafta. <a class="tag t-oficial" href="{{URSEA_URL}}" target="_blank" rel="noopener">oficial</a> URSEA, informe PPI INF-00655-2026 · <a class="tag t-oficial" href="{{PVP_URL}}" target="_blank" rel="noopener">oficial</a> precios de referencia · <a class="tag t-oficial" href="{{DECRETO_URL}}" target="_blank" rel="noopener">oficial</a> precios reales · <span class="tag t-propio">cálculo propio</span> porcentajes. {{OBJ}}</p>
     </section>
 
     <section id="sin">
       <div class="num">02</div>
       <h2>¿Cuánto saldría sin los costos extra?</h2>
-      <p class="lead">Escenarios con los números de febrero de 2026. No son una tarifa oficial: muestran cuánto pesa cada decisión del Estado en el precio. Tipo de cambio aproximado: $ {{TC}} por dólar.</p>
+      <p class="lead">Escenarios sobre el precio real de noviembre de 2026. No son una tarifa oficial: muestran cuánto pesa cada decisión del Estado en el precio. Tipo de cambio del informe de URSEA: $ {{TC}} por dólar.</p>
       <div class="obras">{{ESCENARIOS}}</div>
-      <p class="nota"><b>Lectura:</b> lo que hace cara a la nafta uruguaya es, sobre todo, el impuesto: casi la mitad del litro. La mezcla con etanol y el subsidio al supergás suman unos pesos. Los impuestos los fijan la ley y el Poder Ejecutivo, no ANCAP. {{OBJ}}</p>
+      <p class="nota"><b>Lectura:</b> lo que hace cara a la nafta uruguaya es, sobre todo, el impuesto: cuatro de cada diez pesos del litro. La mezcla con etanol y el subsidio al supergás suman unos pesos. Los impuestos los fijan la ley y el Poder Ejecutivo, no ANCAP. {{OBJ}}</p>
     </section>
 
     <section id="region">
       <div class="num">03</div>
       <h2>Contra la región</h2>
-      <p class="lead">Precio en dólares por litro, con los impuestos de cada país.</p>
+      <p class="lead">Precio en dólares por litro, con los impuestos de cada país, el mismo día y con la misma fuente: GlobalPetrolPrices al 9 de noviembre de 2026.</p>
       <div class="grid2">
-        <div class="barras"><h3>Nafta, 5 de octubre de 2026</h3>{{NAFTA_REGION}}<p class="nota">GlobalPetrolPrices, vía dolarhoy.com <a class="tag t-prensa" href="{{GPP_URL}}" target="_blank" rel="noopener">prensa</a>. Venezuela: US$ 0,035, subsidiada.</p></div>
-        <div class="barras"><h3>Gasoil, marzo de 2026: los tres más caros</h3>{{GASOIL_REGION}}<p class="nota">SEG Ingeniería, vía Ámbito <a class="tag t-prensa" href="{{SEG_URL}}" target="_blank" rel="noopener">prensa</a>. En abril de 2026 el gasoil uruguayo era 29 % más barato que en Entre Ríos y 16 % más barato que en Livramento, según el CEPP <a class="tag t-terceros" href="{{CEPP_URL}}" target="_blank" rel="noopener">terceros</a>.</p></div>
+        <div class="barras"><h3>Nafta</h3>{{NAFTA_REGION}}<p class="nota"><a class="tag t-terceros" href="{{GPPG_URL}}" target="_blank" rel="noopener">terceros</a> Bolivia y Venezuela subsidian el combustible.</p></div>
+        <div class="barras"><h3>Gasoil</h3>{{GASOIL_REGION}}<p class="nota"><a class="tag t-terceros" href="{{GPPD_URL}}" target="_blank" rel="noopener">terceros</a> El gasoil uruguayo hoy se vende por debajo de su referencia (ver arriba).</p></div>
       </div>
-      <p class="nota"><b>Lectura:</b> el problema es la nafta. Uruguay está primero en América Latina y alrededor del puesto 14 a 16 del mundo, a la altura de Grecia o Irlanda. En gasoil está en la mitad de la tabla. {{OBJ}}</p>
+      <p class="nota"><b>Lectura:</b> el problema es la nafta. Uruguay está primero en América Latina, 43 % por encima del promedio mundial y en el puesto 17 de 170 países. En gasoil está cerca del promedio de la región y por debajo del mundial, en parte porque hoy se vende con subsidio. {{OBJ}}</p>
     </section>
 
     <section id="resultados">
@@ -154,11 +155,12 @@
       <h2>¿Pagamos más o menos que importando?</h2>
       <p class="lead">El precio al público puede quedar por encima o por debajo de lo que costaría importar el combustible (la "paridad"). Eso lo decide cada gobierno, no la refinería.</p>
       <div class="timeline">
-        <div class="hito"><div class="f">2016</div><p>Sobrecosto de US$ 415 M frente a importar; el gasoil quedó 33 % por encima.</p><a class="tag t-terceros" href="https://www.enperspectiva.net/wp-content/uploads/2017/06/2017-06-El-precio-de-los-combustibles-en-Uruguay.pdf" target="_blank" rel="noopener">terceros</a> <span class="tag t-pend">autor: pendiente</span></div>
+        <div class="hito"><div class="f">2016</div><p>Sobrecosto de US$ 415 M frente a importar; el gasoil quedó 33 % por encima. Estudio de la consultora CPA Ferrere.</p><a class="tag t-terceros" href="https://www.enperspectiva.net/wp-content/uploads/2017/06/2017-06-El-precio-de-los-combustibles-en-Uruguay.pdf" target="_blank" rel="noopener">CPA Ferrere</a></div>
         <div class="hito menos"><div class="f">2022</div><p>Según ANCAP, la gente pagó unos US$ 240 M <b>menos</b> que importando.</p><a class="tag t-parte" href="https://www.ancap.com.uy/17118/6/memoria-anual-2022.html" target="_blank" rel="noopener">ANCAP, fuente de parte</a></div>
         <div class="hito menos"><div class="f">2023</div><p>ANCAP resignó US$ 67 M vendiendo por debajo del precio de mercado.</p><a class="tag t-parte" href="https://www.gub.uy/presidencia/comunicacion/noticias/grupo-ancap-registro-ganancias-85000000-dolares-2023" target="_blank" rel="noopener">ANCAP, fuente de parte</a></div>
         <div class="hito"><div class="f">Marzo a diciembre de 2025</div><p>Con la nueva metodología de precios, US$ 88 M por encima de la paridad en nafta y gasoil.</p><a class="tag t-terceros" href="https://www.montevideo.com.uy/Noticias/Hubo-US-88-millones-de-sobreprecio-en-combustibles-de-marzo-a-diciembre-segun-consultora-uc949825" target="_blank" rel="noopener">CEPP</a></div>
         <div class="hito"><div class="f">Mayo de 2025 a abril de 2026</div><p>US$ 81 M netos por encima de la paridad. En abril de 2026, con la suba del petróleo, se vendió $ 2,05 por litro por debajo.</p><a class="tag t-terceros" href="{{CEPP_URL}}" target="_blank" rel="noopener">CEPP</a></div>
+        <div class="hito menos"><div class="f">Noviembre de 2026</div><p>Por debajo: la nafta $ 3,03 por litro y el gasoil $ 19,68 por litro menos que la referencia de URSEA. La diferencia la pone ANCAP.</p><a class="tag t-oficial" href="{{PVP_URL}}" target="_blank" rel="noopener">oficial</a> <span class="tag t-propio">cálculo propio</span></div>
       </div>
       <p class="nota">Aparte, el supergás se vende por debajo de su costo. Ese subsidio lo pagan en parte la nafta y el gasoil ($ 1,20 por litro en 2026): unos US$ 37 M en el último año, según el CEPP. {{OBJ}}</p>
     </section>
@@ -169,7 +171,7 @@
       <p class="lead">Negocios y obras que restan. Donde hay dos versiones, van las dos.</p>
       <div class="obras">
         <div class="obra"><h3>Pórtland (cemento)</h3><div class="m">US$ 810 M</div><p>Pérdidas desde el año 2000, entre la operación y las inversiones que no se recuperaron. US$ 24,5 M en 2024 y US$ 31 M en 2025. Compite con privados y pierde todos los años.</p><div class="acc"><a class="tag t-prensa" href="https://www.elobservador.com.uy/economia-y-empresas/tras-anos-perdidas-portland-oddone-espera-propuesta-definir-el-futuro-ese-negocio-ancap-n6003405/amp" target="_blank" rel="noopener">prensa</a> <a class="tag t-oficial" href="https://www.gub.uy/presidencia/comunicacion/noticias/ancap-combustibles-petroleo-ganancias-2025" target="_blank" rel="noopener">oficial</a></div></div>
-        <div class="obra"><h3>ALUR (biocombustibles)</h3><div class="m">$ 3,59 por litro</div><p>Es lo que la mezcla obligatoria con etanol le suma a cada litro de nafta (febrero de 2026). La planta de Paysandú costó US$ 147 M. En 2019 un comité de expertos estimó el sobrecosto de los biocombustibles en US$ 72 M en un año.</p><div class="acc"><a class="tag t-oficial" href="{{URSEA_URL}}" target="_blank" rel="noopener">oficial</a> <a class="tag t-prensa" href="https://bichosdecampo.com/?p=54042" target="_blank" rel="noopener">prensa</a></div></div>
+        <div class="obra"><h3>ALUR (biocombustibles)</h3><div class="m">$ 2,46 por litro</div><p>Es lo que la mezcla obligatoria con etanol le suma a cada litro de nafta (octubre de 2026; en febrero eran $ 3,59). La planta de Paysandú costó US$ 147 M. En 2019 un comité de expertos estimó el sobrecosto de los biocombustibles en US$ 72 M en un año.</p><div class="acc"><a class="tag t-oficial" href="{{URSEA_URL}}" target="_blank" rel="noopener">oficial</a> <a class="tag t-prensa" href="https://bichosdecampo.com/?p=54042" target="_blank" rel="noopener">prensa</a></div></div>
         <div class="obra"><h3>Parada de la refinería 2023-2024</h3><div class="m">US$ 115 M</div><p>297 días sin producción completa, de agosto de 2023 a junio de 2024: casi el triple de lo previsto, por medidas sindicales e imprevistos. ANCAP cerró 2024 con una pérdida de US$ 118 M.</p><div class="acc"><a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Debido-a-parada-de-refineria-Ancap-tuvo-perdidas-por-US-79-millones-en-primer-semestre-uc899019" target="_blank" rel="noopener">prensa</a></div></div>
         <div class="obra"><h3>Planta desulfurizadora</h3><div class="m">US$ 350 M</div><p>Inversión informada al inaugurarla, en 2013. La oposición sostuvo que se había proyectado en US$ 90 M y que llegó a US$ 415 M.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/presidencia/comunicacion/noticias/presidentes-uruguay-argentina-inauguran-obras-planta-desulfurizadora-ancap" target="_blank" rel="noopener">oficial</a> <a class="tag t-parte" href="https://www.montevideo.com.uy/Columnistas/Ancap-cuando-se-pasa-el-limite-de-la-legalidad-uc361930" target="_blank" rel="noopener">oposición, fuente de parte</a></div></div>
         <div class="obra"><h3>Regasificadora (Gas Sayago)</h3><div class="m">US$ 213 M</div><p>Pérdida según la auditoría de PwC; UTE y ANCAP pusieron US$ 113 M. El detalle está en el <a href="ute.html#cuestionado">caso UTE</a>.</p><div class="acc"><a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Directorio-de-UTE-envia-a-Fiscalia-los-resultados-de-la-auditoria-sobre-Gas-Sayago-uc788830" target="_blank" rel="noopener">prensa</a></div></div>
@@ -180,9 +182,9 @@
       <div class="alerta">
         <h2>Lo que hay que mirar</h2>
         <ul>
-          <li>Casi la mitad de la nafta es impuesto. Eso lo deciden el Parlamento y el Poder Ejecutivo, no la refinería.</li>
+          <li>Cuatro de cada diez pesos de la nafta son impuesto; antes de la suba del petróleo eran casi la mitad. Eso lo deciden el Parlamento y el Poder Ejecutivo, no la refinería.</li>
           <li>ANCAP, además, carga con un negocio que pierde todos los años (el pórtland) y con una mezcla obligatoria que encarece el litro (el etanol de ALUR).</li>
-          <li>Si el precio queda por encima o por debajo de lo que costaría importar cambió con cada gobierno: por encima en 2016 y 2025, por debajo en 2022 y 2023.</li>
+          <li>Si el precio queda por encima o por debajo de lo que costaría importar cambió con cada gobierno y con el petróleo: por encima en 2016 y 2025, por debajo en 2022, 2023 y desde abril de 2026.</li>
         </ul>
       </div>
     </section>
@@ -201,7 +203,7 @@
   <script>
     "use strict";
     document.getElementById("compartir").addEventListener("click", async () => {
-      const share = { title: document.title, text: "Casi la mitad del precio de la nafta es impuesto. Sin IMESI ni CO2 el litro costaría cerca de US$ 1,05. Los números de ANCAP, con fuente.", url: location.href };
+      const share = { title: document.title, text: "La nafta uruguaya es la más cara de América Latina y 4 de cada 10 pesos son impuesto. Sin IMESI ni CO2 el litro costaría cerca de US$ 1,31. Los números de ANCAP, con fuente.", url: location.href };
       try {
         if (navigator.share) { await navigator.share(share); return; }
         await navigator.clipboard.writeText(share.text + " " + share.url);
