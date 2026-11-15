@@ -773,7 +773,9 @@ def build_ancap(public):
         f'<td class="n">{r["ganancias_giradas"]}</td><td class="n">{escape(r["contribucion_fiscal"])}</td></tr>' for r in data["estado"])
 
     def dif(ref, real):
-        v = real - ref
+        v = round(real - ref, 2)
+        if v == 0:
+            return '<td class="n" style="color:#5a5a5a">0,00</td>'
         return f'<td class="n" style="color:{"#c9302c" if v > 0 else "#2e9e6a"}">{"+" if v > 0 else "−"} {pesos(abs(v))}</td>'
 
     brecha = "".join(

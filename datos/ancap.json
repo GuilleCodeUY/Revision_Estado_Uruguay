@@ -397,14 +397,39 @@
    "oficial"
   ],
   [
-   "ANCAP · Precios del primer semestre 2026 contra la paridad",
-   "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf",
+   "URSEA · Precios de referencia de agosto, setiembre y octubre de 2026",
+   "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-1",
    "oficial"
   ],
   [
-   "URSEA · Precios de venta al público de referencia, octubre 2026",
-   "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-3",
+   "MIEM y MEF · Comunicados de precios de mayo, junio y julio de 2026",
+   "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/poder-ejecutivo-resolvio-disminuir-precios-maximos-venta-publico-principales",
    "oficial"
+  ],
+  [
+   "Medios Públicos · Ajuste de precios de abril de 2026",
+   "https://mediospublicos.uy/wp-content/uploads/2026/03/Ajuste-del-precio-de-los-combustibles-03-27.pdf",
+   "oficial"
+  ],
+  [
+   "MEF · Resolución 342/026, línea de crédito de ANCAP por hasta US$ 100 M",
+   "https://medios.presidencia.gub.uy/legal/2026/resoluciones/04/mef_342.pdf",
+   "oficial"
+  ],
+  [
+   "Subrayado · ANCAP resignó US$ 80 M en tres meses (28/07/2026)",
+   "https://www.subrayado.com.uy/ancap-a117",
+   "prensa"
+  ],
+  [
+   "Ámbito · El informe del CED y la respuesta de ANCAP (05/08/2026)",
+   "https://www.ambito.com/uruguay/la-oposicion-acuso-al-gobierno-quedarse-us-90-millones-extras-la-suba-combustibles-el-pasado-n6307541",
+   "prensa"
+  ],
+  [
+   "El Observador · Precios vigentes y referencia para noviembre (28/10/2026)",
+   "https://www.elobservador.com.uy/nafta-y-gasoil-los-datos-clave-los-combustibles-cara-la-fijacion-tarifas-noviembre-n6061887",
+   "prensa"
   ],
   [
    "MIEM · Metodología de fijación de precios (Decretos 130/025 y 312/025)",
@@ -519,57 +544,81 @@
  ],
  "pendientes": [
   "Resultado del pórtland y de ALUR año por año, 2015-2025, con el nombre de cada empresa.",
-  "Precio de referencia contra precio real de julio, agosto y setiembre de 2026, y el costo total en dólares para ANCAP."
+  "Cuánto resignó ANCAP desde julio de 2026: la única cifra pública es la de abril a junio."
  ],
  "tipo_cambio": 40.186,
  "brecha_2026": [
   {
    "mes": "Enero",
-   "nafta_ref": 76.59,
+   "nafta_ref": 77.79,
    "nafta_real": 77.79,
-   "gasoil_ref": 47.43,
+   "gasoil_ref": 48.9,
    "gasoil_real": 48.9,
-   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+   "fuente": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/publicaciones/precios-venta-publico-referencia-para-gasolinas-gasoil-50-s-pmit-0"
   },
   {
    "mes": "Febrero",
-   "nafta_ref": 76.47,
+   "nafta_ref": 77.79,
    "nafta_real": 77.79,
-   "gasoil_ref": 47.32,
+   "gasoil_ref": 48.9,
    "gasoil_real": 48.9,
-   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+   "fuente": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/publicaciones/precios-venta-publico-referencia-para-gasolinas-gasoil-50-s-pmit-0"
   },
   {
    "mes": "Marzo",
-   "nafta_ref": 75.68,
+   "nafta_ref": 76.88,
    "nafta_real": 76.88,
-   "gasoil_ref": 45.85,
+   "gasoil_ref": 47.32,
    "gasoil_real": 47.32,
-   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+   "fuente": "https://medios.presidencia.gub.uy/legal/2026/decretos/02/miem_134.pdf"
   },
   {
    "mes": "Abril",
-   "nafta_ref": 85.82,
+   "nafta_ref": 87.03,
    "nafta_real": 82.27,
-   "gasoil_ref": 66.45,
+   "gasoil_ref": 67.92,
    "gasoil_real": 50.63,
-   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+   "fuente": "https://mediospublicos.uy/wp-content/uploads/2026/03/Ajuste-del-precio-de-los-combustibles-03-27.pdf"
   },
   {
    "mes": "Mayo",
-   "nafta_ref": 90.2,
+   "nafta_ref": 91.4,
    "nafta_real": 88.03,
-   "gasoil_ref": 72.26,
+   "gasoil_ref": 73.73,
    "gasoil_real": 57.72,
-   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+   "fuente": "https://medios.presidencia.gub.uy/tav_portal/2026/noticias/AP_184/combustibles_mayo.pdf"
   },
   {
    "mes": "Junio",
-   "nafta_ref": 92.15,
+   "nafta_ref": 93.36,
    "nafta_real": 93.36,
-   "gasoil_ref": 69.14,
+   "gasoil_ref": 70.61,
    "gasoil_real": 61.76,
-   "fuente": "https://www.ancap.com.uy/innovaportal/file/21199/1/graficos_precios_ancap.pdf"
+   "fuente": "https://www.gub.uy/ministerio-economia-finanzas/comunicacion/noticias/gobierno-continua-estrategia-precios-combustibles-ante-alza-del-petroleo"
+  },
+  {
+   "mes": "Julio",
+   "nafta_ref": 87.64,
+   "nafta_real": 88.67,
+   "gasoil_ref": 62.81,
+   "gasoil_real": 58.68,
+   "fuente": "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/poder-ejecutivo-resolvio-disminuir-precios-maximos-venta-publico-principales"
+  },
+  {
+   "mes": "Agosto",
+   "nafta_ref": 88.93,
+   "nafta_real": 88.67,
+   "gasoil_ref": 66.19,
+   "gasoil_real": 58.68,
+   "fuente": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-1"
+  },
+  {
+   "mes": "Setiembre",
+   "nafta_ref": 89.54,
+   "nafta_real": 88.67,
+   "gasoil_ref": 73.18,
+   "gasoil_real": 58.68,
+   "fuente": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-2"
   },
   {
    "mes": "Octubre",
