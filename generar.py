@@ -197,14 +197,14 @@ def slug(text):
 # Barra de navegación común: la misma en todas las páginas, fija arriba.
 BARRA_CSS = """
     .vm-barra{position:sticky;top:0;z-index:50;background:#121212;color:#fff;border-bottom:1px solid #2a2a2a;font-family:Inter,system-ui,sans-serif}
-    .vm-barra .vm-wrap{width:min(1100px,calc(100% - 2rem));margin:auto;display:flex;align-items:center;gap:1.2rem;min-height:3.5rem}
+    .vm-barra .vm-wrap{width:min(1240px,calc(100% - 2rem));margin:auto;display:flex;align-items:center;gap:1.2rem;min-height:3.5rem}
     .vm-logo{font-weight:900;font-size:1.15rem;letter-spacing:-.03em;text-decoration:none;white-space:nowrap;color:#fff}.vm-logo span{color:#ffd23f}
     .vm-menu{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}.vm-menu::-webkit-scrollbar{display:none}
-    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.95rem;font-weight:800;padding:.45rem .9rem;border-radius:999px;min-height:2.6rem;box-sizing:border-box;display:inline-flex;align-items:center;white-space:nowrap;border:2px solid var(--c);background:var(--cs)}
+    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.86rem;font-weight:800;padding:.4rem .7rem;border-radius:999px;min-height:2.4rem;box-sizing:border-box;display:inline-flex;align-items:center;white-space:nowrap;border:2px solid var(--c);background:var(--cs)}
     .vm-menu a:hover{background:var(--ch)}.vm-menu a[aria-current]{background:var(--c);color:#111}
-    .vm-menu a.vm-sec{border:0;background:none;color:#bbb;font-weight:700;font-size:.85rem;padding:.45rem .5rem}
+    .vm-menu a.vm-sec{border:0;background:none;color:#bbb;font-weight:700;font-size:.8rem;padding:.4rem .35rem}
     .vm-menu a.vm-sec:hover{color:#fff;background:none}.vm-menu a.vm-sec[aria-current]{color:#fff;background:#2a2a2a;border-radius:.3rem}
-    .vm-menu{align-items:center;gap:.4rem;padding:.35rem 0}
+    .vm-menu{align-items:center;gap:.3rem;padding:.35rem 0}
     html{scroll-padding-top:4rem}
     header .top .logo,header .cabecera>a{display:none}header .top{justify-content:flex-start}
     @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
@@ -216,6 +216,7 @@ BARRA_LINKS = (
     ("puerto.html", "puerto.html", "Puerto", "#ff7a1a"),
     ("ute.html", "ute.html", "UTE", "#5ce1e6"),
     ("ancap.html", "ancap.html", "ANCAP", "#ff4b2b"),
+    ("transporte.html", "transporte.html", "Transporte", "#a3e635"),
     ("informe.html", "informe.html", "Informe 2025", None),
     ("correcciones", "./#correcciones", "Correcciones", None),
 )
@@ -321,7 +322,7 @@ def build_portada(public, data):
         "ESTADO_PARLAMENTO": f"Esperando {waiting} pedidos" if waiting else "Publicado",
         "ERRATAS_N": "1 objeción" if n_fix == 1 else f"{n_fix} objeciones",
         "ERRATAS_TABLA": erratas,
-        "CASOS_N": "6",
+        "CASOS_N": "7",
         "PENDIENTES_N": str(pending),
         "ACTUALIZADO": datetime.date.today().strftime("%d/%m/%Y"),
     }
@@ -818,6 +819,28 @@ def build_ancap(public):
     write_csv(public, "ancap_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+def build_transporte(public):
+    """Genera transporte.html y sus CSV desde datos/transporte.json."""
+    from html import escape
+    data = load_data("transporte.json")
+    names = {"oficial": "oficial", "prensa": "prensa", "parte": "fuente de parte", "terceros": "terceros", "propio": "cálculo propio"}
+    tag = lambda t: f'<span class="tag t-{t}">{names[t]}</span>'
+    values = {
+        "OBJ": '<a class="obj" href="informe.html?aporte=transporte-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "transporte.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en transporte.template.html.")
+    (public / "transporte.html").write_text(page, encoding="utf-8")
+    write_csv(public, "transporte_comparacion.csv", data["comparacion"])
+    write_csv(public, "transporte_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -889,17 +912,18 @@ def main():
     build_puerto(public)
     build_ute(public)
     build_ancap(public)
+    build_transporte(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", *STATIC_PAGES))
+                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte y los CSV.")
 
 
 if __name__ == "__main__":

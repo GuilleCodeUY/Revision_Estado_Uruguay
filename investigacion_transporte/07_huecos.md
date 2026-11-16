@@ -59,13 +59,13 @@ Consultado: 16/11/2026
 |---|---|---|---|---|---|---|---|
 | Tren Tram: costo | US$ 500 millones | 2023 | MTOP / Presidencia, resolución de junio 2023 | https://mediospublicos.uy/mtop-aprobo-proyecto-para-servicio-de-tranvia-que-une-plaza-independencia-con-el-pinar/ | s/p | 09/06/2023 | OFICIAL |
 | Tren Tram: costo según Expansión | 464 millones de euros | 2023 | Expansión | https://www.expansion.com/valencia/2023/06/12/6486e9ea468aebc93e8b45f4.html | s/p | 12/06/2023 | PRENSA |
-| Tren Tram: recorrido | Plaza Independencia-El Pinar (km 32,500) | 2023 | MTOP / Presidencia | https://mediospublicos.uy/mtop-aprobo-proyecto-para-servicio-de-tranvia-que-une-plaza-independencia-con-el-pinar/ | s/p | 09/06/2023 | OFICIAL |
+| Tren Tram: recorrido | Plaza Independencia-El Pinar (km 32,500 según MTOP; 35 km según El Observador) | 2023 | MTOP / Presidencia y El Observador | https://mediospublicos.uy/mtop-aprobo-proyecto-para-servicio-de-tranvia-que-une-plaza-independencia-con-el-pinar/ | s/p | 09/06/2023 | OFICIAL |
 | Tren Tram: estaciones | 25 estaciones | 2023 | El Observador | https://www.elobservador.com.uy/nota/proyecto-de-tren-tranvia-cuantos-seran-y-que-cantidad-de-pasajeros-transportaran-por-dia--2023111519530 | s/p | 15/11/2023 | PRENSA |
 | Tren Tram: pasajeros previstos | 80.000 pasajeros por día | 2023 | El Observador | https://www.elobservador.com.uy/nota/proyecto-de-tren-tranvia-cuantos-seran-y-que-cantidad-de-pasajeros-transportaran-por-dia--2023111519530 | s/p | 15/11/2023 | PRENSA |
 | Tren Tram: material rodante | 20 trenes tranvía | 2023 | El Observador | https://www.elobservador.com.uy/nota/proyecto-de-tren-tranvia-cuantos-seran-y-que-cantidad-de-pasajeros-transportaran-por-dia--2023111519530 | s/p | 15/11/2023 | PRENSA |
 | Tren Tram: estado | Iniciativa privada aceptada en junio de 2023; prefactibilidad prevista para fin de 2023; no fue la opción elegida en 2026 | 2023-2026 | MTOP / El Observador | https://www.elobservador.com.uy/nota/proyecto-de-tren-tranvia-cuantos-seran-y-que-cantidad-de-pasajeros-transportaran-por-dia--2023111519530 | s/p | 15/11/2023 | PRENSA |
-| Propuesta de la Unión Ferroviaria: tramo | 20 km de vía existente, Parque del Plata-Empalme Olmos | 2023 | El Observador | https://www.elobservador.com.uy/nota/tranvia-de-la-costa-plantean-propuesta-alternativa-para-conectar-montevideo-con-canelones-202362220290 | s/p | 23/06/2023 | PRENSA |
-| Propuesta de la Unión Ferroviaria: costo | Más de la mitad menos que el Tren Tram; sin cifra exacta | 2023 | El Observador | https://www.elobservador.com.uy/nota/tranvia-de-la-costa-plantean-propuesta-alternativa-para-conectar-montevideo-con-canelones-202362220290 | s/p | 23/06/2023 | PRENSA |
+| Propuesta de la Unión Ferroviaria: tramo y costo | 36 km de vía existente; ≈US$ 184 millones (estimación del sindicato) | 2023 | El Observador | https://www.elobservador.com.uy/nota/tranvia-de-la-costa-plantean-propuesta-alternativa-para-conectar-montevideo-con-canelones-202362220290 | s/p | 23/06/2023 | PRENSA |
+
 | Propuesta de Cinve (2024) y estudio FADU: números | NO ENCONTRADO | 2024 | — | — | — | — | — |
 | Conversión BRT a tranvía en el mismo corredor: análisis y costos | NO ENCONTRADO | 2026 | — | — | — | — | — |
 
@@ -206,6 +206,7 @@ Verificado: 16/11/2026. Estado: **verificado, con correcciones**.
 **D. Sistema actual**: repite la primera vuelta; nada nuevo. La serie 2015-2021 y los subsidios por año siguen sin aparecer.
 
 **E. Críticas**: lo de la Sociedad de Arquitectos coincide con su documento (2 de 5 corredores, encuesta de 2016, costo-beneficio del túnel sin aclarar). Es fuente de parte y no trae cifras de costo.
+
 
 
 

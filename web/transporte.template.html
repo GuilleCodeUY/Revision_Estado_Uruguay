@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La reforma del transporte, en números · La verdad de la milanesa</title>
+  <meta name="description" content="BRT, tranvía o metro: cuánto cuesta cada opción para Montevideo, cuánto consume, qué dice la demanda real y qué se discute de la reforma del transporte. Cada dato con su fuente.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://verdadmilanesa.uy/transporte.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="La verdad de la milanesa">
+  <meta property="og:title" content="La reforma del transporte, en números">
+  <meta property="og:description" content="El BRT de Montevideo cuesta US$ 575 millones; el tranvía, US$ 1.544 millones. El tramo más cargado lleva 4.300 pasajeros por hora. Los números de la reforma del transporte, con fuente.">
+  <meta property="og:url" content="https://verdadmilanesa.uy/transporte.html">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#14213d">
+  <style>
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb;--hero:#14213d;--hero2:#1f3260;--acc:#a3e635;--acc2:#4d7c0f;--amber:#ffb627;--green:#2e9e6a}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header.site{background:var(--hero);color:#fff;box-shadow:inset 0 -8px 0 var(--acc)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 3rem}
+    .kicker{display:inline-block;background:var(--acc);color:#111;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.2rem,7vw,4.4rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:56ch;color:#d7e3ee;margin:.9rem 0 1.2rem}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:#111}.btn.o{background:transparent;color:var(--acc)}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:2rem}
+    .golpe{background:var(--hero2);border-left:6px solid var(--acc);padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+    .golpe b{font-size:clamp(1.7rem,4vw,2.2rem);font-weight:900;line-height:1.05;letter-spacing:-.03em}
+    .golpe span{font-size:.92rem;color:#d7e3ee}
+    .golpe .acc{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.45rem}
+    .golpe .acc a{font-size:.72rem;font-weight:700;text-decoration:none;color:#cfe0ee;background:rgba(255,255,255,.08);padding:.2rem .45rem;border-radius:.25rem}
+    .golpe .acc a:hover{text-decoration:underline}
+    main{padding:2rem 0 3rem}main section{margin-bottom:3rem;scroll-margin-top:1rem}
+    h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}.lead{color:var(--muted);margin:0 0 1.2rem;max-width:72ch}
+    .num{color:var(--acc2);font-weight:900;font-size:.85rem;letter-spacing:.1em}
+    .tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.12rem .42rem;border-radius:.2rem;vertical-align:middle;text-decoration:none}
+    .t-oficial{background:#dff1e7;color:#1d6b46}.t-prensa{background:#e6eef7;color:#1e4b7a}.t-gremial{background:#fde6d4;color:#9a4300}.t-partido{background:#f6dede;color:#9b1c25}.t-pend{background:var(--yellow);color:#111}.t-terceros{background:#efe4f7;color:#5b2a86}.t-parte{background:#f6dede;color:#9b1c25}.t-propio{background:#fff1cf;color:#7a5200}
+    .chart{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1rem .5rem;overflow-x:auto}
+    .chart svg{display:block;min-width:620px;width:100%;height:auto}
+    .legend{display:flex;gap:1.2rem;font-size:.85rem;margin:.2rem 0 .8rem;flex-wrap:wrap}.legend i{display:inline-block;width:12px;height:12px;margin-right:.35rem;vertical-align:-1px}
+    .nota{font-size:.84rem;color:var(--muted);margin-top:.7rem;max-width:80ch}
+    .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+    .barras h3{font-size:1rem;margin:0 0 .6rem}
+    .fila{display:grid;grid-template-columns:150px 1fr 92px;align-items:center;gap:.5rem;font-size:.88rem;margin:.32rem 0}
+    .fila .b{height:18px;background:#c9d6e2;border-radius:2px}.fila.mvd .b{background:var(--acc2)}.fila.mvd{font-weight:800}
+    .fila .v{text-align:right;font-variant-numeric:tabular-nums}
+    .timeline{border-left:3px solid var(--hero);margin-left:.4rem;padding-left:1.2rem}
+    .hito{position:relative;margin:0 0 1.5rem}
+    .hito:before{content:"";position:absolute;left:-1.72rem;top:.35rem;width:13px;height:13px;border-radius:50%;background:var(--acc2);border:2px solid var(--paper)}
+    .hito .f{font-weight:800;color:var(--hero2)}.hito p{margin:.2rem 0 .35rem;max-width:75ch}
+    .obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .obra{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+    .obra h3{margin:0;font-size:1.05rem}.obra .m{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}.obra p{font-size:.9rem;margin:0}
+    .obra .acc{margin-top:auto;display:flex;gap:.35rem;flex-wrap:wrap;padding-top:.4rem}
+    .alerta{background:var(--hero);color:#fff;padding:1.6rem;border-left:8px solid var(--red);border-radius:.5rem}
+    .alerta h2{color:#fff}.alerta p,.alerta li{color:#d7e3ee;max-width:76ch}
+    .fuentes{columns:2 320px;padding-left:1.1rem}.fuentes li{font-size:.88rem;margin:.3rem 0;break-inside:avoid}
+    .pend{background:#fff;border-left:6px solid var(--yellow);padding:1rem 1.2rem;font-size:.92rem}.pend ul{margin:.4rem 0 0;padding-left:1.2rem}
+    a.obj{font-size:.72rem;font-weight:700;text-decoration:none;padding:.2rem .45rem;border-radius:.25rem;background:#fde6e7;color:#9b1c25}
+    .golpe a.obj{background:rgba(230,57,70,.25);color:#ffd9dc}
+    footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    @media(max-width:760px){.golpes{grid-template-columns:1fr}}
+      .golpe.big{border-left-color:var(--amber)}
+    .hero p.sub{color:#d3e6e3}.golpe span{color:#d3e6e3}
+    .litro{margin:1rem 0 1.8rem}.litro .tit{display:flex;justify-content:space-between;font-weight:800;margin-bottom:.35rem;font-size:1.05rem}
+    .pila{display:flex;height:56px;border:2px solid var(--hero);border-radius:.4rem;overflow:hidden}
+    .pila div{display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+    .ref{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.84rem;margin-top:.5rem}.ref i{display:inline-block;width:11px;height:11px;margin-right:.3rem;vertical-align:-1px;border-radius:2px}
+    .esc .usd{font-weight:800;color:var(--hero2)}.obra.hoy{border-top-color:var(--acc)}
+    .hito.menos:before{background:var(--green)}
+    .litro .real{font-size:.9rem;margin:.5rem 0 0}.fila.prom{font-style:italic;color:var(--muted)}.fila.prom .b{background:#e3dccb}
+  .bars{display:flex;flex-direction:column;gap:.55rem;background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem}
+.b{display:grid;grid-template-columns:7.5rem 1fr 6.5rem;align-items:center;gap:.6rem;font-size:.92rem}.bn{font-weight:700}.bt{background:#eee8d8;height:1.3rem;border-radius:.2rem;overflow:hidden}.bt i{display:block;height:100%}.bv{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}.bu{font-size:.78rem;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.cmp h3{font-size:1rem;margin:0 0 .5rem}
+.line{position:relative}.line .mark{position:absolute;top:0;bottom:0;border-left:3px dashed var(--red)}
+@media(max-width:600px){.golpes{grid-template-columns:1fr}.b{grid-template-columns:5.5rem 1fr 5.5rem;font-size:.85rem}}</style>
+</head>
+<body>
+<header class="site"><div class="wrap top"><a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a><nav aria-label="Secciones"><a href="#proyecto">El proyecto</a><a href="#opciones">BRT, tranvía o metro</a><a href="#demanda">Demanda</a><a href="#energia">Energía</a><a href="#hoy">Hoy</a><a href="#otras">Otras propuestas</a><a href="#discute">Lo que se discute</a><a href="#fuentes">Fuentes</a></nav></div><div class="wrap hero">
+<span class="kicker">Caso 7 · Transporte</span>
+<h1>La reforma del transporte, en números</h1>
+<p class="sub">El gobierno eligió ómnibus rápidos eléctricos (BRT) en lugar de tranvía o metro. Cuánto cuesta cada opción, cuánto consume y qué dice la demanda real.</p>
+<div class="btns"><a class="btn y" href="#opciones">BRT, tranvía o metro</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
+<div class="golpes">
+<div class="golpe"><b>US$ 575 M</b><span>cuesta el BRT de la primera etapa. El tranvía, US$ 1.544 M: 2,7 veces más.</span><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="golpe"><b>4.300</b><span>pasajeros por hora en el tramo más cargado. Un metro se justifica desde unos 20.000.</span><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="golpe"><b>La mitad</b><span>de pasajeros que en los años 90: de unos 400 a unos 200 millones de viajes por año.</span><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a></div></div>
+</div></div></header>
+<main class="wrap">
+<section id="proyecto"><div class="num">01</div><h2>¿Qué se va a hacer?</h2>
+<p class="lead">Dos corredores de ómnibus eléctricos con carril exclusivo que entran a la ciudad por 8 de Octubre y por Avenida Italia, hasta Tres Cruces y el Centro.</p>
+<div class="obras">
+<div class="obra"><h3>Recorrido</h3><div class="m">≈ 50 km</div><p>Ruta 8, Camino Maldonado y 8 de Octubre; Giannattasio y Avenida Italia; 18 de Julio. Unos 300.000 usuarios por día.</p><div class="acc"><a class="tag t-prensa" href="https://www.xn--lamaana-7za.uy/actualidad/frecuencias-de-2-a-4-minutos-y-carriles-exclusivos-asi-sera-la-primera-fase-de-la-reforma-del-transporte/" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>Flota</h3><div class="m">100 ómnibus</div><p>Articulados y biarticulados eléctricos. El costo de la flota no está en un documento oficial publicado.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Frecuencia prometida</h3><div class="m">2 a 4 min</div><p>Todo el día, no solo en hora pico. Velocidad objetivo: unos 25 km/h; hoy el ómnibus anda a 16 km/h.</p><div class="acc"><a class="tag t-prensa" href="https://www.xn--lamaana-7za.uy/actualidad/frecuencias-de-2-a-4-minutos-y-carriles-exclusivos-asi-sera-la-primera-fase-de-la-reforma-del-transporte/" target="_blank" rel="noopener">prensa</a> <a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Cuándo</h3><div class="m">Fines de 2029</div><p>Licitaciones desde el primer semestre de 2027 y obras hasta setiembre u octubre de 2029, según el MTOP.</p><div class="acc"><a class="tag t-prensa" href="https://www.xn--lamaana-7za.uy/actualidad/frecuencias-de-2-a-4-minutos-y-carriles-exclusivos-asi-sera-la-primera-fase-de-la-reforma-del-transporte/" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>Quién lo paga</h3><div class="m">Préstamos</div><p>El BID tiene en preparación un préstamo de US$ 150 M. El MTOP habla de un respaldo de US$ 500 M del BID y US$ 300 M de CAF.</p><div class="acc"><a class="tag t-oficial" href="https://www.iadb.org/en/project/UR-L1220" target="_blank" rel="noopener">oficial</a> <a class="tag t-prensa" href="https://www.xn--lamaana-7za.uy/actualidad/frecuencias-de-2-a-4-minutos-y-carriles-exclusivos-asi-sera-la-primera-fase-de-la-reforma-del-transporte/" target="_blank" rel="noopener">prensa</a></div></div>
+</div></section>
+
+<section id="opciones"><div class="num">02</div><h2>BRT, tranvía o metro</h2>
+<p class="lead">El estudio del MTOP dice que los tres sistemas pueden con la demanda; la diferencia es el precio. La agencia metropolitana (ASTM) eligió el BRT para esta primera etapa.</p>
+<div class="cmp"><div><h3>La obra</h3><div class="bars"><div class="b"><span class="bn">BRT</span><span class="bt"><i style="width:33.8%;background:var(--hero)"></i></span><span class="bv">US$ 575 M</span></div><div class="b"><span class="bn">Tranvía</span><span class="bt"><i style="width:90.8%;background:var(--hero)"></i></span><span class="bv">US$ 1.544 M</span></div><div class="bu">Inversión inicial para los corredores de Montevideo, millones de dólares</div></div></div><div><h3>Mantenerlo andando</h3><div class="bars"><div class="b"><span class="bn">BRT</span><span class="bt"><i style="width:53.8%;background:var(--hero)"></i></span><span class="bv">US$ 43 M</span></div><div class="b"><span class="bn">Tranvía</span><span class="bt"><i style="width:85.0%;background:var(--hero)"></i></span><span class="bv">US$ 68 M</span></div><div class="bu">Operación y mantenimiento por año, millones de dólares</div></div></div></div>
+<div style="margin-top:1.2rem"><div class="bars"><div class="b"><span class="bn">BRT</span><span class="bt"><i style="width:45.3%;background:var(--hero)"></i></span><span class="bv">US$ 1.043 M</span></div><div class="b"><span class="bn">Tranvía</span><span class="bt"><i style="width:91.1%;background:var(--hero)"></i></span><span class="bv">US$ 2.096 M</span></div><div class="bu">Costo total en 30 años (obra + operación, a valor de hoy), millones de dólares</div></div></div>
+<p class="nota">Informe Técnico N.º 1 de la ASTM, setiembre de 2026, págs. 30 a 32 <a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a>. El costo a 30 años usa una tasa de descuento de 7,5 %. {{OBJ}}</p>
+<div class="tabla" style="margin-top:1.2rem"><table><thead><tr><th>Sistema</th><th class="n">Costo por km, América Latina</th><th class="n">Costo por km, promedio mundial</th><th class="n">Capacidad (pasajeros por hora y sentido)</th></tr></thead><tbody>
+<tr><td>BRT</td><td class="n">US$ 15,4 M</td><td class="n">US$ 17,3 M</td><td class="n">hasta 11.200</td></tr>
+<tr><td>Tranvía</td><td class="n">US$ 38,9 M</td><td class="n">US$ 51,3 M</td><td class="n">7.395</td></tr>
+<tr><td>Metro ligero</td><td class="n">US$ 282,5 M</td><td class="n">US$ 243,3 M</td><td class="n">15.300</td></tr></tbody></table></div>
+<p class="nota">Promedios de proyectos de referencia, no cotizaciones para Montevideo. MTOP, Entregable 1, págs. 126-127, y Resumen ejecutivo <a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6356/download" target="_blank" rel="noopener">oficial</a> <a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/sites/ministerio-transporte-obras-publicas/files/documentos/publicaciones/RESUMEN_EJECUTIVO_0.pdf" target="_blank" rel="noopener">oficial</a> {{OBJ}}</p>
+</section>
+
+<section id="demanda"><div class="num">03</div><h2>¿Hace falta tanta capacidad?</h2>
+<p class="lead">El tramo más cargado de Montevideo lleva 4.300 pasajeros por hora y sentido. Avenida Italia, menos de 2.500. Cualquiera de los tres sistemas sobra; el metro recién se justifica cerca de los 20.000.</p>
+<div class="bars"><div class="b"><span class="bn">Pico 8 de Octubre</span><span class="bt"><i style="width:20.5%;background:var(--acc2)"></i></span><span class="bv">4.300</span></div><div class="b"><span class="bn">Tranvía</span><span class="bt"><i style="width:35.2%;background:var(--hero)"></i></span><span class="bv">7.395</span></div><div class="b"><span class="bn">BRT</span><span class="bt"><i style="width:53.3%;background:var(--hero)"></i></span><span class="bv">11.200</span></div><div class="b"><span class="bn">Metro ligero</span><span class="bt"><i style="width:72.9%;background:var(--hero)"></i></span><span class="bv">15.300</span></div><div class="b"><span class="bn">Umbral metro</span><span class="bt"><i style="width:95.2%;background:var(--hero)"></i></span><span class="bv">20.000</span></div><div class="bu">Pasajeros por hora y sentido. En verde, la demanda real del corredor más cargado</div></div>
+<p class="nota">ASTM, Informe Técnico N.º 1, págs. 4, 9 y 21 <a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a> {{OBJ}}</p></section>
+
+<section id="energia"><div class="num">04</div><h2>¿Cuánta energía gasta?</h2>
+<p class="lead">Los dos son eléctricos. El tranvía pesa más y gasta el doble. Como casi toda la electricidad de Uruguay es renovable, las emisiones de cualquiera de los dos son muy bajas.</p>
+<div class="cmp"><div><h3>Consumo</h3><div class="bars"><div class="b"><span class="bn">BRT</span><span class="bt"><i style="width:42.9%;background:var(--hero)"></i></span><span class="bv">12 GWh</span></div><div class="b"><span class="bn">Tranvía</span><span class="bt"><i style="width:89.3%;background:var(--hero)"></i></span><span class="bv">25 GWh</span></div><div class="bu">Energía por año</div></div></div><div><h3>Emisiones</h3><div class="bars"><div class="b"><span class="bn">BRT</span><span class="bt"><i style="width:41.2%;background:var(--hero)"></i></span><span class="bv">132 t</span></div><div class="b"><span class="bn">Tranvía</span><span class="bt"><i style="width:88.4%;background:var(--hero)"></i></span><span class="bv">283 t</span></div><div class="bu">CO2 por año (la red de UTE es casi toda renovable)</div></div></div></div>
+<p class="nota">Gasto en energía por año: BRT menos de US$ 1 M; tranvía US$ 3,3 M. Las baterías del BRT duran unos 7,5 años. ASTM, págs. 26, 27 y 32 <a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a> {{OBJ}}</p></section>
+
+<section id="hoy"><div class="num">05</div><h2>El sistema de hoy</h2>
+<p class="lead">Cada vez se usa menos. En 2025 se vendieron 211 millones de viajes: 3,2 % menos que en 2024 y 17,2 % menos que en 2019.</p>
+<div class="bars"><div class="b"><span class="bn">Años 90</span><span class="bt"><i style="width:93.0%;background:var(--hero)"></i></span><span class="bv">≈ 400 M</span></div><div class="b"><span class="bn">2019</span><span class="bt"><i style="width:59.3%;background:var(--hero)"></i></span><span class="bv">≈ 255 M</span></div><div class="b"><span class="bn">2025</span><span class="bt"><i style="width:49.1%;background:var(--hero)"></i></span><span class="bv">211 M</span></div><div class="bu">Viajes por año en el transporte de Montevideo</div></div>
+<p class="nota">Intendencia de Montevideo <a class="tag t-oficial" href="https://www.montevideo.gub.uy/venta-de-viajes-en-el-sistema-de-transporte-colectivo-urbano" target="_blank" rel="noopener">oficial</a> y ASTM <a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download" target="_blank" rel="noopener">oficial</a>. 2019 calculado a partir del -17,2 % <a class="tag t-propio" href="https://www.montevideo.gub.uy/venta-de-viajes-en-el-sistema-de-transporte-colectivo-urbano" target="_blank" rel="noopener">cálculo propio</a>. Boleto 2025: $ 49 con tarjeta STM y $ 60 en efectivo. De cada $ 100 que cobran las empresas, $ 62 vienen del boleto y el resto de subsidios (Intendencia, fideicomiso del gasoil y gobierno nacional), según un prospecto en el BCU (2024). {{OBJ}}</p></section>
+
+<section id="otras"><div class="num">06</div><h2>Las otras propuestas</h2>
+<div class="obras">
+<div class="obra"><h3>Tren Tram (privados, 2023)</h3><div class="m">US$ 500 M</div><p>35 km de Plaza Independencia a El Pinar, 25 estaciones, 80.000 pasajeros por día. Iniciativa privada aceptada en 2023; no fue la elegida.</p><div class="acc"><a class="tag t-prensa" href="https://www.elobservador.com.uy/nota/proyecto-de-tren-tranvia-cuantos-seran-y-que-cantidad-de-pasajeros-transportaran-por-dia--2023111519530" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>Tren por vías existentes</h3><div class="m">≈ US$ 184 M</div><p>Propuesta del sindicato ferroviario: 36 km reusando la línea a Canelones. Estimación del propio sindicato.</p><div class="acc"><a class="tag t-parte" href="https://www.elobservador.com.uy/nota/tranvia-de-la-costa-plantean-propuesta-alternativa-para-conectar-montevideo-con-canelones-202362220290" target="_blank" rel="noopener">fuente de parte</a></div></div>
+</div></section>
+
+<section id="discute"><div class="num">07</div><h2>Lo que se discute</h2>
+<div class="obras">
+<div class="obra"><h3>El túnel de 18 de Julio</h3><div class="m">US$ 209 a 255 M</div><p>Estudio del BID (2025) para los tramos bajo nivel, en cuatro escenarios según cuánto se soterre. Sin IVA y con ±15 % de margen. No da el costo del túnel solo.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-transporte-obras-publicas/book/6270/download" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Sociedad de Arquitectos</h3><div class="m">2 de 5</div><p>Critica que la reforma cubra 2 de los 5 corredores, deje fuera a San José y se base en una encuesta de viajes de 2016.</p><div class="acc"><a class="tag t-parte" href="https://www.sau.org.uy/wp-content/uploads/La-reestructura-del-transporte-metropolitano.docx.pdf" target="_blank" rel="noopener">fuente de parte</a></div></div>
+<div class="obra"><h3>Antecedente: corredor Garzón</h3><div class="m">US$ 37,5 M</div><p>6,5 km inaugurados en 2012, con unos 30.000 pasajeros por día previstos.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/presidencia/comunicacion/noticias/presidente-mujica-acompano-inauguracion-del-corredor-avenida-garzon" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Antecedente: Ferrocarril Central</h3><div class="m">+US$ 1.200 M</div><p>La obra pública más cara del país. La cifra es de prensa; falta el costo final oficial.</p><div class="acc"><a class="tag t-prensa" href="https://www.xn--lamaana-7za.uy/actualidad/el-ferrocarril-central-cumple-dos-anos-con-el-desafio-de-rentabilizar-la-obra-mas-cara-del-pais/" target="_blank" rel="noopener">prensa</a></div></div>
+</div></section>
+
+<section id="nadie"><div class="alerta"><h2>Lo que hay que mirar</h2><ul>
+<li>Con la demanda actual, el BRT cubre de sobra y cuesta la mitad en 30 años. La pregunta no es la tecnología, es si vuelven los pasajeros.</li>
+<li>Los costos de la obra son estimaciones de estudio, con márgenes de ±15 %. El Ferrocarril Central muestra lo que pasa cuando se va de presupuesto.</li>
+<li>El precio de los 100 ómnibus todavía no está en ningún documento oficial.</li></ul></div></section>
+
+<section id="pendiente"><div class="pend"><strong>Lo que todavía estamos buscando</strong><ul>
+{{PENDIENTES}}</ul></div></section>
+
+<section id="fuentes"><h2>De dónde sale cada número</h2>
+<p class="lead">Consultado el {{CONSULTADO}}. Los datos se pueden descargar en <a href="transporte_comparacion.csv">CSV de la comparación BRT, tranvía y metro</a> y <a href="transporte_fuentes.csv">CSV de fuentes</a>. La investigación completa y su verificación están en el repositorio del sitio.</p>
+<ul class="fuentes">{{FUENTES}}</ul></section>
+  </main>
+  <footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="./">Portada</a> · <a href="informe.html#metodo">Método y fuentes</a></div></footer>
+  <script>
+    "use strict";
+    document.getElementById("compartir").addEventListener("click", async () => {
+      const share = { title: document.title, text: "El BRT de Montevideo cuesta US$ 575 millones; el tranvía, US$ 1.544 millones. Los números de la reforma del transporte, con fuente.", url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(share); return; }
+        await navigator.clipboard.writeText(share.text + " " + share.url);
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = "Enlace copiado";
+        toast.setAttribute("role", "status");
+        document.body.append(toast);
+        setTimeout(() => toast.remove(), 2200);
+      } catch (error) { /* el usuario canceló */ }
+    });
+  </script>
+</body>
+</html>

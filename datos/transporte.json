@@ -1,0 +1,106 @@
+{
+ "consultado": "2026-11-16",
+ "pendientes": [
+  "Costo oficial de la flota de 100 ómnibus y del túnel de 18 de Julio por separado.",
+  "Pasajeros 2015-2021 y subsidios al transporte año por año.",
+  "Costo final oficial del Ferrocarril Central.",
+  "Resultados reales (costo final y pasajeros) de sistemas parecidos en otras ciudades."
+ ],
+ "comparacion": [
+  {
+   "sistema": "BRT",
+   "capex_km_latam_musd": 15.4,
+   "capex_km_global_musd": 17.3,
+   "capacidad_phs": 11200,
+   "inversion_montevideo_musd": 575,
+   "operacion_anual_musd": 43,
+   "costo_30_anios_musd": 1043,
+   "energia_gwh_anio": 12,
+   "co2_t_anio": 132
+  },
+  {
+   "sistema": "Tranvía (LRT)",
+   "capex_km_latam_musd": 38.9,
+   "capex_km_global_musd": 51.3,
+   "capacidad_phs": 7395,
+   "inversion_montevideo_musd": 1544,
+   "operacion_anual_musd": 68,
+   "costo_30_anios_musd": 2096,
+   "energia_gwh_anio": 25,
+   "co2_t_anio": 283
+  },
+  {
+   "sistema": "Metro ligero",
+   "capex_km_latam_musd": 282.5,
+   "capex_km_global_musd": 243.3,
+   "capacidad_phs": 15300,
+   "inversion_montevideo_musd": null,
+   "operacion_anual_musd": null,
+   "costo_30_anios_musd": null,
+   "energia_gwh_anio": null,
+   "co2_t_anio": null
+  }
+ ],
+ "fuentes": [
+  [
+   "ASTM · Informe Técnico N.º 1, fundamentos para la elección del modo (setiembre 2026)",
+   "https://www.gub.uy/ministerio-transporte-obras-publicas/book/6724/download",
+   "oficial"
+  ],
+  [
+   "MTOP · Análisis comparativo de alternativas modales, Entregable 1",
+   "https://www.gub.uy/ministerio-transporte-obras-publicas/book/6356/download",
+   "oficial"
+  ],
+  [
+   "MTOP · Resumen ejecutivo del comparativo de alternativas",
+   "https://www.gub.uy/ministerio-transporte-obras-publicas/sites/ministerio-transporte-obras-publicas/files/documentos/publicaciones/RESUMEN_EJECUTIVO_0.pdf",
+   "oficial"
+  ],
+  [
+   "BID · Obras bajo nivel del BRT, UR-T1279, resumen ejecutivo (julio 2025)",
+   "https://www.gub.uy/ministerio-transporte-obras-publicas/book/6270/download",
+   "oficial"
+  ],
+  [
+   "BID · Proyecto UR-L1220",
+   "https://www.iadb.org/en/project/UR-L1220",
+   "oficial"
+  ],
+  [
+   "Intendencia de Montevideo · Venta de viajes en el transporte urbano",
+   "https://www.montevideo.gub.uy/venta-de-viajes-en-el-sistema-de-transporte-colectivo-urbano",
+   "oficial"
+  ],
+  [
+   "Presidencia · Inauguración del corredor Garzón (2012)",
+   "https://www.gub.uy/presidencia/comunicacion/noticias/presidente-mujica-acompano-inauguracion-del-corredor-avenida-garzon",
+   "oficial"
+  ],
+  [
+   "La Mañana · Así será la primera fase de la reforma (13/11/2026)",
+   "https://www.xn--lamaana-7za.uy/actualidad/frecuencias-de-2-a-4-minutos-y-carriles-exclusivos-asi-sera-la-primera-fase-de-la-reforma-del-transporte/",
+   "prensa"
+  ],
+  [
+   "La Mañana · El Ferrocarril Central cumple dos años (11/08/2026)",
+   "https://www.xn--lamaana-7za.uy/actualidad/el-ferrocarril-central-cumple-dos-anos-con-el-desafio-de-rentabilizar-la-obra-mas-cara-del-pais/",
+   "prensa"
+  ],
+  [
+   "El Observador · Proyecto de tren tranvía (15/11/2023)",
+   "https://www.elobservador.com.uy/nota/proyecto-de-tren-tranvia-cuantos-seran-y-que-cantidad-de-pasajeros-transportaran-por-dia--2023111519530",
+   "prensa"
+  ],
+  [
+   "El Observador · Propuesta de la Unión Ferroviaria (23/06/2023)",
+   "https://www.elobservador.com.uy/nota/tranvia-de-la-costa-plantean-propuesta-alternativa-para-conectar-montevideo-con-canelones-202362220290",
+   "parte"
+  ],
+  [
+   "Sociedad de Arquitectos del Uruguay · La reestructura del transporte metropolitano (2026)",
+   "https://www.sau.org.uy/wp-content/uploads/La-reestructura-del-transporte-metropolitano.docx.pdf",
+   "parte"
+  ]
+ ]
+}
