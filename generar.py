@@ -219,6 +219,7 @@ BARRA_LINKS = (
     ("transporte.html", "transporte.html", "Transporte", "#a3e635"),
     ("informe.html", "informe.html", "Informe 2025", None),
     ("correcciones", "./#correcciones", "Correcciones", None),
+    ("contacto", "mailto:contacto@verdadmilanesa.uy", "Contacto", None),
 )
 
 
