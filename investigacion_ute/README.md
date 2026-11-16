@@ -18,5 +18,6 @@ Cómo se usa:
 | Cuánto debería costar | `06_cuanto_deberia_costar.md` | verificado, con advertencia |
 | Exportación, sequía e inversiones cuestionadas | `07_otros.md` | verificado, con correcciones |
 | Huecos pendientes (segunda vuelta) | `08_huecos.md` | verificado |
+| Cierre: pérdidas de energía 2020 | `09_cierre.md` | verificado |
 
 Tercera vuelta (14/11/2026): los once balances 2015-2025 cotejados contra el documento, comparativo regional leído en el PDF, IPC 2021-2025 del INE y dictamen del Tribunal de Cuentas sobre 2023. Todo publicado en `publico/ute.html`.

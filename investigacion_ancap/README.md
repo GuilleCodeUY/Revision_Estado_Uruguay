@@ -12,3 +12,5 @@ Mismo método que UTE y el puerto: DeepSeek (vía Hermes) investiga cada archivo
 | 06_alur_portland.md | ALUR, cemento portland y otras empresas del grupo | verificado |
 | 07_otros.md | Otros temas: refinería, obras e inversiones cuestionadas | verificado |
 | 08_huecos.md | Segunda vuelta: impuestos, brecha PPI, comparación, ALUR/pórtland, obras | verificado |
+| 09_auditoria.md | Auditoría: pórtland/ALUR y precios abril-noviembre 2026 | verificado |
+| 10_cierre.md | Cierre: pórtland y ALUR 2015-2025 desde los estados auditados; referencia de diciembre 2026 | A verificada; B pendiente (diciembre) |
