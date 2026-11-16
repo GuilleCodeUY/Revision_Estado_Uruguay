@@ -200,15 +200,16 @@ BARRA_CSS = """
     .vm-barra .vm-wrap{width:min(1100px,calc(100% - 2rem));margin:auto;display:flex;align-items:center;gap:1.2rem;min-height:3.5rem}
     .vm-logo{font-weight:900;font-size:1.15rem;letter-spacing:-.03em;text-decoration:none;white-space:nowrap;color:#fff}.vm-logo span{color:#ffd23f}
     .vm-menu{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}.vm-menu::-webkit-scrollbar{display:none}
-    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.88rem;font-weight:700;padding:.55rem .7rem;border-radius:.3rem;min-height:2.75rem;display:inline-flex;align-items:center;gap:.4rem;opacity:.85}
-    .vm-menu a:hover{opacity:1;background:#222}.vm-menu a[aria-current]{opacity:1;background:#2a2a2a}
-    .vm-dot{width:.55rem;height:.55rem;border-radius:50%;display:inline-block}
+    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.95rem;font-weight:800;padding:.45rem .9rem;border-radius:999px;min-height:2.6rem;box-sizing:border-box;display:inline-flex;align-items:center;white-space:nowrap;border:2px solid var(--c);background:var(--cs)}
+    .vm-menu a:hover{background:var(--ch)}.vm-menu a[aria-current]{background:var(--c);color:#111}
+    .vm-menu a.vm-sec{border:0;background:none;color:#bbb;font-weight:700;font-size:.85rem;padding:.45rem .5rem}
+    .vm-menu a.vm-sec:hover{color:#fff;background:none}.vm-menu a.vm-sec[aria-current]{color:#fff;background:#2a2a2a;border-radius:.3rem}
+    .vm-menu{align-items:center;gap:.4rem;padding:.35rem 0}
     html{scroll-padding-top:4rem}
     header .top .logo,header .cabecera>a{display:none}header .top{justify-content:flex-start}
     @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
 """
 BARRA_LINKS = (
-    ("index.html", "./", "Inicio", None),
     ("informe.html#parlamento", "informe.html#parlamento", "Parlamento", "#ffd23f"),
     ("intendencias.html", "intendencias.html", "Intendencias", "#3ddc97"),
     ("solaria.html", "solaria.html", "Solaria", "#ff8fa0"),
@@ -225,8 +226,12 @@ def poner_barra(public, page):
     links = []
     for key, href, text, color in BARRA_LINKS:
         current = ' aria-current="page"' if key == page else ""
-        dot = f'<i class="vm-dot" style="background:{color}"></i>' if color else ""
-        links.append(f'<a href="{href}"{current}>{dot}{text}</a>')
+        if color:
+            r, g, b = (int(color[i:i + 2], 16) for i in (1, 3, 5))
+            estilo = f' style="--c:{color};--cs:rgba({r},{g},{b},.16);--ch:rgba({r},{g},{b},.32)"'
+            links.append(f'<a href="{href}"{current}{estilo}>{text}</a>')
+        else:
+            links.append(f'<a class="vm-sec" href="{href}"{current}>{text}</a>')
     html = (f'<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a>'
             f'<nav class="vm-menu" aria-label="Casos">{"".join(links)}</nav></div></header>'
             '<script>(function(){var a=document.querySelector(".vm-menu [aria-current]");'
