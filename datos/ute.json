@@ -180,23 +180,39 @@
    ]
   },
   {
-   "fecha": "2020",
-   "texto": "Año seco. UTE usa $ 2.623 millones del fondo.",
+   "fecha": "2019",
+   "texto": "Sin usos en el año. Al cierre, el fondo tiene $ 4.158 millones.",
    "fuentes": [
     [
-     "Estados financieros 2020",
+     "Estados financieros 2019, pág. 42",
+     "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031%2012%2019%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf",
+     "oficial"
+    ]
+   ]
+  },
+  {
+   "fecha": "2020",
+   "texto": "Año seco. UTE cobra $ 2.623 millones del fondo y le aporta $ 260 millones. Al cierre quedan $ 2.154 millones, de los que $ 418 millones ya estaban comprometidos con UTE.",
+   "fuentes": [
+    [
+     "Estados financieros 2020, pág. 43",
      "https://www.ute.com.uy/sites/default/files/docs/UTE%20EEFF%20AL%2031.12.20%20E%20INFORME%20DE%20AUDITOR%C3%8DA.pdf",
+     "oficial"
+    ],
+    [
+     "Estados financieros 2021, pág. 41",
+     "https://www.ute.com.uy/sites/default/files/docs/EEFF%20al%2031.12.21%20e%20Informe%20de%20Auditor%C3%ADa%20UTE.pdf",
      "oficial"
     ]
    ]
   },
   {
    "fecha": "2021",
-   "texto": "UTE usa otros $ 2.468 millones. El fondo queda con $ 23 millones.",
+   "texto": "UTE cobra otros $ 2.468 millones. El fondo queda con $ 23 millones.",
    "fuentes": [
     [
-     "Estados financieros 2022",
-     "https://www.ute.com.uy/sites/default/files/docs/UTE%20informe%20de%20Auditor%C3%ADa%20Consolidado%20y%20Separado%20al%2031122022_BV.pdf",
+     "Estados financieros 2021, pág. 41",
+     "https://www.ute.com.uy/sites/default/files/docs/EEFF%20al%2031.12.21%20e%20Informe%20de%20Auditor%C3%ADa%20UTE.pdf",
      "oficial"
     ]
    ]

@@ -165,7 +165,7 @@
    "nombre": "Gasoil hoy, y sin IVA ni boleto",
    "monto": "$ 62,79 → $ 48,29",
    "usd": "≈ US$ 1,56 → US$ 1,20",
-   "texto": "El gasoil hoy está subsidiado: la referencia de URSEA es $ 82,47 y se vende $ 19,68 más barato. Sin IVA ($ 11,32), boleto ($ 3,00) ni tasas quedaría en $ 48,29.",
+   "texto": "El gasoil hoy está subsidiado: la referencia de URSEA es $ 82,47 y se vende $ 19,68 más barato. Sin IVA ni boleto ($ 3,00) ni tasas quedaría en $ 48,29. El IVA que se resta es el del precio real ($ 11,32), no el de la referencia ($ 14,89), porque se parte de lo que se paga hoy.",
    "tipo": "propio"
   }
  ],
@@ -618,7 +618,8 @@
    "nafta_real": 88.67,
    "gasoil_ref": 73.18,
    "gasoil_real": 58.68,
-   "fuente": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-2"
+   "fuente": "https://www.gub.uy/unidad-reguladora-servicios-energia-agua/comunicacion/noticias/informe-ppi-pvp-referencia-2",
+   "fuente_real": "https://www.elobservador.com.uy/nafta-y-gasoil-los-datos-clave-los-combustibles-cara-la-fijacion-tarifas-noviembre-n6061887"
   },
   {
    "mes": "Octubre",

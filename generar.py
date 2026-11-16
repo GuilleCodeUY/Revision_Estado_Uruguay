@@ -781,7 +781,7 @@ def build_ancap(public):
     brecha = "".join(
         f'<tr><td>{r["mes"]}</td><td class="n">{pesos(r["nafta_ref"])}</td><td class="n">{pesos(r["nafta_real"])}</td>{dif(r["nafta_ref"], r["nafta_real"])}'
         f'<td class="n">{pesos(r["gasoil_ref"])}</td><td class="n">{pesos(r["gasoil_real"])}</td>{dif(r["gasoil_ref"], r["gasoil_real"])}'
-        f'<td>{tag("oficial", r["fuente"])}</td></tr>' for r in data["brecha_2026"])
+        f'<td>{tag("oficial", r["fuente"])}{(" " + tag("prensa", r["fuente_real"])) if r.get("fuente_real") else ""}</td></tr>' for r in data["brecha_2026"])
 
     values = {
         "BRECHA": brecha,
