@@ -16,4 +16,4 @@ Cómo se usa:
 | Energía: cuánto consume cada sistema | `04_energia.md` | verificado; completado por Claude |
 | El sistema de hoy: pasajeros, subsidios y boleto | `05_sistema_actual.md` | verificado parcialmente |
 | Lo que se discute: críticas, riesgos y antecedentes | `06_criticas_y_riesgos.md` | flojo; va a segunda vuelta |
-| Segunda vuelta: flota, túnel, propuestas, resultados, subsidios, críticas | `07_huecos.md` | pendiente |
+| Segunda vuelta: flota, túnel, propuestas, resultados, subsidios, críticas | `07_huecos.md` | verificado, con correcciones |
