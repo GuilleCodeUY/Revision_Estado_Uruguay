@@ -227,6 +227,7 @@ ESPECIALES = (
     ("movilidad.html", "Informe especial 1", "Auto eléctrico: ¿sí o no?", "#a78bfa"),
     ("transporte.html", "Informe especial 2", "La reforma del transporte", "#a3e635"),
     ("justicia.html", "Informe especial 3", "Justicia penal y seguridad", "#60a5fa"),
+    ("estado.html", "Informe especial 4", "Un Estado que rinde", "#2dd4bf"),
 )
 ESPECIALES_CSS = """
     .vm-esp{flex:none}
@@ -243,7 +244,14 @@ ESPECIALES_JS = ('<script>document.querySelectorAll(".vm-esp").forEach(function(
                  'var w=p.offsetWidth,l=Math.min(Math.max(8,s.right-w),innerWidth-w-8);p.style.left=l+"px";p.style.right="auto";}'
                  'd.addEventListener("toggle",function(){if(d.open)pos();});addEventListener("resize",function(){if(d.open)pos();});'
                  'document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});'
-                 'document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false;});});</script>')
+                 'document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false;});'
+                 # Con mouse: se abre al pasar por encima y se cierra al salir (con una pausa corta
+                 # para poder bajar hasta el panel). En celulares sigue funcionando con toque.
+                 'if(matchMedia("(hover:hover) and (pointer:fine)").matches){var t;'
+                 'd.addEventListener("mouseenter",function(){clearTimeout(t);d.open=true;});'
+                 'd.addEventListener("mouseleave",function(){clearTimeout(t);t=setTimeout(function(){d.open=false;},300);});'
+                 'd.querySelector("summary").addEventListener("click",function(e){if(e.detail>0){e.preventDefault();d.open=true;}});}'
+                 '});</script>')
 
 
 def poner_barra(public, page):
@@ -921,6 +929,29 @@ def build_justicia(public):
     write_csv(public, "justicia_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+
+def build_estado(public):
+    """Genera estado.html (Informe especial 4) y sus CSV desde datos/estado.json."""
+    from html import escape
+    data = load_data("estado.json")
+    names = {"oficial": ("oficial", "oficial"), "prensa": ("prensa", "prensa"), "internacional": ("terceros", "internacional"), "propio": ("propio", "sitio")}
+    tag = lambda t: f'<span class="tag t-{names[t][0]}">{names[t][1]}</span>'
+    values = {
+        "OBJ": '<a class="obj" href="informe.html?aporte=estado-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "estado.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en estado.template.html.")
+    (public / "estado.html").write_text(page, encoding="utf-8")
+    write_csv(public, "estado_escenarios.csv", data["escenarios"])
+    write_csv(public, "estado_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -995,17 +1026,18 @@ def main():
     build_transporte(public)
     build_movilidad(public)
     build_justicia(public)
+    build_estado(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", *STATIC_PAGES))
+                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica y justicia y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica, justicia y Estado optimizado y los CSV.")
 
 
 if __name__ == "__main__":
