@@ -13,6 +13,7 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 - `publico/ancap.html` es el caso de ANCAP: qué pagás en un litro de nafta y de gasoil (desglose de URSEA), cuánto saldría sin impuestos, la comparación con la región, el resultado de ANCAP 2012-2025, los impuestos que paga contra las ganancias que gira, el precio contra la paridad de importación y lo que pierde (pórtland, ALUR, parada de la refinería, desulfurizadora, Gas Sayago). Se genera desde `datos/ancap.json`. La investigación y su verificación están en `investigacion_ancap/`.
 - `publico/movilidad.html` es el Informe especial 1, movilidad eléctrica: qué subsidia el Estado al auto eléctrico, qué le cobra al de nafta, cuánto recauda y deja de cobrar, el costo de uso, los gastos fijos y las emisiones. Se genera desde `datos/movilidad.json`.
 - `publico/transporte.html` es el Informe especial 2, la reforma del transporte metropolitano: qué se va a hacer (BRT eléctrico en 8 de Octubre y Av. Italia), cuánto cuesta frente a tranvía y metro, cuánta capacidad y energía requiere, el sistema actual, las otras propuestas y lo que se discute. Se genera desde `datos/transporte.json`. La investigación y su verificación están en `investigacion_transporte/`.
+- `publico/justicia.html` es el Informe especial 3, justicia penal y seguridad: delitos 2025-2026 (AECA), tiempos de Fiscalía, cárceles y censo penitenciario, reincidencia, drogas y calle, comparación internacional y lo que dice la ley. Se genera desde `datos/justicia.json`. El borrador original (ChatGPT) y su verificación están en `investigacion_justicia/`.
 - `publico/informe.html` es el informe completo: Presupuesto Nacional, ingresos, empleo, Parlamento, Montevideo, Tribunal de Cuentas, escenarios de ahorro y aportes. Los importes de portada están redondeados a millones de pesos y los enlaces llevan a las cifras exactas.
 - `datos/correcciones.json` es el registro de objeciones que se muestra en la fe de erratas. Cada entrada lleva `fecha`, `dato`, `estado` (`recibida`, `en_revision`, `aceptada` o `rechazada`) y `resultado`.
 - `og.png` es la imagen que aparece al compartir el enlace. `robots.txt` y `sitemap.xml` sirven para que Google indexe el sitio.
@@ -50,6 +51,9 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 | `movilidad_costos.csv` | Costo de energía, patente, seguro y CO2 por año, nafta contra eléctrico (fuente y cálculo propio). |
 | `movilidad_estado.csv` | Lo que el Estado recauda por combustibles y autos, lo que deja de cobrar por los eléctricos y lo que recupera desde 2027. |
 | `movilidad_fuentes.csv` | Fuentes del informe de movilidad eléctrica, con tipo (oficial, prensa, gremial, terceros, cálculo propio). |
+| `justicia_indicadores.csv` | Delitos de enero a setiembre 2025 y 2026 (AECA). |
+| `justicia_carceles.csv` | Datos de justicia, cárceles y reincidencia con su fuente. |
+| `justicia_fuentes.csv` | Las 68 fuentes del informe de justicia, con tipo (oficial, prensa, internacional). |
 | `pedidos_acceso_intendencias.csv` | Seguimiento de los 19 pedidos de acceso (Ley 18.381). |
 | `tribunal_muestra_2025.csv` | Cuatro expedientes con motivo, importe y estado documentado. |
 

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Justicia penal y seguridad, en números · La verdad de la milanesa</title>
+  <meta name="description" content="Informe especial: delitos, tiempos de la justicia, cárceles, reincidencia, drogas y comparación con otros países. Cada dato con su fuente.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://verdadmilanesa.uy/justicia.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="La verdad de la milanesa">
+  <meta property="og:title" content="Justicia penal y seguridad, en números">
+  <meta property="og:description" content="Los homicidios subieron 13,5 % en 2026, las cárceles están al 120 % y dos de cada tres presos vuelven a entrar en tres años. Los números, con fuente.">
+  <meta property="og:url" content="https://verdadmilanesa.uy/justicia.html">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f1d33">
+  <style>
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb;--hero:#0f1d33;--hero2:#1b2f50;--acc:#60a5fa;--acc2:#1d4ed8;--amber:#ffb627;--green:#2e9e6a}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header.site{background:var(--hero);color:#fff;box-shadow:inset 0 -8px 0 var(--acc)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 3rem}
+    .kicker{display:inline-block;background:var(--acc);color:#111;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.2rem,7vw,4.4rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:56ch;color:#d7e3ee;margin:.9rem 0 1.2rem}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:#111}.btn.o{background:transparent;color:var(--acc)}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:2rem}
+    .golpe{background:var(--hero2);border-left:6px solid var(--acc);padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+    .golpe b{font-size:clamp(1.7rem,4vw,2.2rem);font-weight:900;line-height:1.05;letter-spacing:-.03em}
+    .golpe span{font-size:.92rem;color:#d7e3ee}
+    .golpe .acc{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.45rem}
+    .golpe .acc a{font-size:.72rem;font-weight:700;text-decoration:none;color:#cfe0ee;background:rgba(255,255,255,.08);padding:.2rem .45rem;border-radius:.25rem}
+    .golpe .acc a:hover{text-decoration:underline}
+    main{padding:2rem 0 3rem}main section{margin-bottom:3rem;scroll-margin-top:1rem}
+    h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}.lead{color:var(--muted);margin:0 0 1.2rem;max-width:72ch}
+    .num{color:var(--acc2);font-weight:900;font-size:.85rem;letter-spacing:.1em}
+    .tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.12rem .42rem;border-radius:.2rem;vertical-align:middle;text-decoration:none}
+    .t-oficial{background:#dff1e7;color:#1d6b46}.t-prensa{background:#e6eef7;color:#1e4b7a}.t-gremial{background:#fde6d4;color:#9a4300}.t-partido{background:#f6dede;color:#9b1c25}.t-pend{background:var(--yellow);color:#111}.t-terceros{background:#efe4f7;color:#5b2a86}.t-parte{background:#f6dede;color:#9b1c25}.t-propio{background:#fff1cf;color:#7a5200}
+    .chart{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1rem .5rem;overflow-x:auto}
+    .chart svg{display:block;min-width:620px;width:100%;height:auto}
+    .legend{display:flex;gap:1.2rem;font-size:.85rem;margin:.2rem 0 .8rem;flex-wrap:wrap}.legend i{display:inline-block;width:12px;height:12px;margin-right:.35rem;vertical-align:-1px}
+    .nota{font-size:.84rem;color:var(--muted);margin-top:.7rem;max-width:80ch}
+    .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+    .barras h3{font-size:1rem;margin:0 0 .6rem}
+    .fila{display:grid;grid-template-columns:150px 1fr 92px;align-items:center;gap:.5rem;font-size:.88rem;margin:.32rem 0}
+    .fila .b{height:18px;background:#c9d6e2;border-radius:2px}.fila.mvd .b{background:var(--acc2)}.fila.mvd{font-weight:800}
+    .fila .v{text-align:right;font-variant-numeric:tabular-nums}
+    .timeline{border-left:3px solid var(--hero);margin-left:.4rem;padding-left:1.2rem}
+    .hito{position:relative;margin:0 0 1.5rem}
+    .hito:before{content:"";position:absolute;left:-1.72rem;top:.35rem;width:13px;height:13px;border-radius:50%;background:var(--acc2);border:2px solid var(--paper)}
+    .hito .f{font-weight:800;color:var(--hero2)}.hito p{margin:.2rem 0 .35rem;max-width:75ch}
+    .obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .obra{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+    .obra h3{margin:0;font-size:1.05rem}.obra .m{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}.obra p{font-size:.9rem;margin:0}
+    .obra .acc{margin-top:auto;display:flex;gap:.35rem;flex-wrap:wrap;padding-top:.4rem}
+    .alerta{background:var(--hero);color:#fff;padding:1.6rem;border-left:8px solid var(--red);border-radius:.5rem}
+    .alerta h2{color:#fff}.alerta p,.alerta li{color:#d7e3ee;max-width:76ch}
+    .fuentes{columns:2 320px;padding-left:1.1rem}.fuentes li{font-size:.88rem;margin:.3rem 0;break-inside:avoid}
+    .pend{background:#fff;border-left:6px solid var(--yellow);padding:1rem 1.2rem;font-size:.92rem}.pend ul{margin:.4rem 0 0;padding-left:1.2rem}
+    a.obj{font-size:.72rem;font-weight:700;text-decoration:none;padding:.2rem .45rem;border-radius:.25rem;background:#fde6e7;color:#9b1c25}
+    .golpe a.obj{background:rgba(230,57,70,.25);color:#ffd9dc}
+    footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    @media(max-width:760px){.golpes{grid-template-columns:1fr}}
+      .golpe.big{border-left-color:var(--amber)}
+    .hero p.sub{color:#d6e2f3}.golpe span{color:#d6e2f3}
+    .litro{margin:1rem 0 1.8rem}.litro .tit{display:flex;justify-content:space-between;font-weight:800;margin-bottom:.35rem;font-size:1.05rem}
+    .pila{display:flex;height:56px;border:2px solid var(--hero);border-radius:.4rem;overflow:hidden}
+    .pila div{display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+    .ref{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.84rem;margin-top:.5rem}.ref i{display:inline-block;width:11px;height:11px;margin-right:.3rem;vertical-align:-1px;border-radius:2px}
+    .esc .usd{font-weight:800;color:var(--hero2)}.obra.hoy{border-top-color:var(--acc)}
+    .hito.menos:before{background:var(--green)}
+    .litro .real{font-size:.9rem;margin:.5rem 0 0}.fila.prom{font-style:italic;color:var(--muted)}.fila.prom .b{background:#e3dccb}
+  .bars{display:flex;flex-direction:column;gap:.55rem;background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem}
+.b{display:grid;grid-template-columns:7.5rem 1fr 6.5rem;align-items:center;gap:.6rem;font-size:.92rem}.bn{font-weight:700}.bt{background:#eee8d8;height:1.3rem;border-radius:.2rem;overflow:hidden}.bt i{display:block;height:100%}.bv{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}.bu{font-size:.78rem;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.cmp h3{font-size:1rem;margin:0 0 .5rem}
+.line{position:relative}.line .mark{position:absolute;top:0;bottom:0;border-left:3px dashed var(--red)}
+@media(max-width:600px){.golpes{grid-template-columns:1fr}.b{grid-template-columns:5.5rem 1fr 5.5rem;font-size:.85rem}}
+a.obj{white-space:nowrap}
+.dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.lista{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1.2rem}.lista h3{margin:0 0 .4rem}.lista ul{margin:0;padding-left:1.1rem}.lista li{margin:.3rem 0;font-size:.93rem}
+.lista.si{border-color:var(--green)}.lista.no{border-color:var(--red)}
+.obra.entra{border-top-color:var(--green)}.obra.sale{border-top-color:var(--red)}.obra.vuelve{border-top-color:var(--acc)}
+.portada{background:#121212;padding:1.5rem;border-radius:.6rem}
+.caso{position:relative;border-radius:.6rem;padding:1.4rem;color:#fff;text-decoration:none;display:flex;flex-direction:column;gap:.55rem;min-height:15rem;box-shadow:inset 0 -7px 0 var(--acc);background:var(--hero);max-width:540px}
+.caso .top2{display:flex;justify-content:space-between;align-items:center}.caso .tema{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--acc)}
+.caso .estado{font-size:.72rem;font-weight:800;text-transform:uppercase;background:rgba(255,255,255,.14);padding:.2rem .5rem;border-radius:.2rem}
+.caso .n{font-size:3rem;font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--acc)}.caso h3{margin:auto 0 0;font-size:1.35rem}.caso p{margin:0;font-size:.92rem;opacity:.88}.caso .ir{font-weight:800;color:var(--acc)}
+</style></head><body>
+<!-- BARRA -->
+<header class="site"><div class="wrap top"><a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a><nav aria-label="Secciones"><a href="#delitos">Delitos</a><a href="#proceso">Del delito a la condena</a><a href="#carceles">Cárceles</a><a href="#egreso">Después de la cárcel</a><a href="#calle">Drogas y calle</a><a href="#afuera">Otros países</a><a href="#ley">Qué dice la ley</a><a href="#medir">Qué medir</a><a href="#fuentes">Fuentes</a></nav></div><div class="wrap hero">
+<span class="kicker">Informe especial 3 · Justicia</span>
+<h1>Justicia penal y seguridad, en números</h1>
+<p class="sub">Cuántos delitos hay, cuánto tarda la justicia, cómo están las cárceles y cuántos vuelven a delinquir. Y qué se puede comparar con otros países.</p>
+<div class="btns"><a class="btn y" href="#carceles">Las cárceles</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
+<div class="golpes">
+<div class="golpe"><b>+13,5 %</b><span>homicidios de enero a setiembre de 2026: 312 contra 275 en 2025.</span><div class="acc"><a class="tag t-oficial" href="https://enperspectiva.uy/wp-content/uploads/2026/10/2026-09-AECA-Reporte-mensual-indicadores-delictivos-Ene-Sept-2026-e-Informe-trimestral-2-1.pdf" target="_blank" rel="noopener">oficial</a> {{OBJ}}</div></div>
+<div class="golpe"><b>≈ 120 %</b><span>ocupación de las cárceles: unas 16.569 personas para 13.789 plazas en 2025.</span><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/institucion-nacional-derechos-humanos-uruguay/sites/institucion-nacional-derechos-humanos-uruguay/files/2026-04/INFORME%20ANUAL%202025_INDDHH.pdf" target="_blank" rel="noopener">oficial</a> {{OBJ}}</div></div>
+<div class="golpe"><b>44 %</b><span>de los que salieron de la cárcel en 2019 volvió a entrar en un año. A los tres años, el 66 %.</span><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-interior/comunicacion/publicaciones/reincidencia-penitenciaria" target="_blank" rel="noopener">oficial</a> {{OBJ}}</div></div>
+</div></div></header>
+<main class="wrap">
+
+<section id="delitos"><div class="num">01</div><h2>Qué subió y qué bajó</h2>
+<p class="lead">Suben los homicidios y las estafas; bajan apenas las rapiñas, los hurtos y la violencia doméstica. Hurtos y rapiñas se cuentan por denuncias.</p>
+<div class="tabla"><table><thead><tr><th>Todo el país, enero a setiembre</th><th class="n">2025</th><th class="n">2026</th><th class="n">Variación</th></tr></thead><tbody><tr><td>Homicidios</td><td class="n">275</td><td class="n">312</td><td class="n"><b>+13,5 %</b></td></tr><tr><td>Rapiñas denunciadas</td><td class="n">11.816</td><td class="n">11.409</td><td class="n"><b>−3,4 %</b></td></tr><tr><td>Hurtos denunciados</td><td class="n">77.750</td><td class="n">77.505</td><td class="n"><b>−0,3 %</b></td></tr><tr><td>Estafas y fraudes informáticos</td><td class="n">20.005</td><td class="n">20.610</td><td class="n"><b>+3,0 %</b></td></tr><tr><td>Violencia doméstica y asociados</td><td class="n">31.871</td><td class="n">31.187</td><td class="n"><b>−2,1 %</b></td></tr></tbody></table></div>
+<p class="nota">Ministerio del Interior, AECA, corte preliminar a setiembre de 2026 <a class="tag t-oficial" href="https://enperspectiva.uy/wp-content/uploads/2026/10/2026-09-AECA-Reporte-mensual-indicadores-delictivos-Ene-Sept-2026-e-Informe-trimestral-2-1.pdf" target="_blank" rel="noopener">oficial</a> {{OBJ}}</p>
+<div class="bars" style="margin-top:1.2rem"><div class="b"><span class="bn">2015</span><span class="bt"><i style="width:69.8%;background:var(--hero)"></i></span><span class="bv">293</span></div><div class="b"><span class="bn">2018</span><span class="bt"><i style="width:100%;background:var(--red)"></i></span><span class="bv">420</span></div><div class="b"><span class="bn">2024</span><span class="bt"><i style="width:91.2%;background:var(--hero)"></i></span><span class="bv">383</span></div><div class="b"><span class="bn">2025</span><span class="bt"><i style="width:88.3%;background:var(--hero)"></i></span><span class="bv">371</span></div><div class="bu">Homicidios por año. En 2026, de enero a setiembre ya van 312 (280 en igual período de 2024)</div></div>
+<p class="nota">Anuario AECA 2025, tablas 1.1 y 2.1 <a class="tag t-oficial" href="https://www.gub.uy/ministerio-interior/sites/ministerio-interior/files/documentos/publicaciones/Aeca%20Anuario%20FC.pdf" target="_blank" rel="noopener">oficial</a>. El balance preliminar de 2025 decía 369; el anuario corrige a 371. {{OBJ}}</p></section>
+
+<section id="proceso"><div class="num">02</div><h2>Del delito a la condena</h2>
+<p class="lead">La Policía investiga, la Fiscalía acusa, el Poder Judicial juzga y el INR administra la cárcel. Las penas del homicidio ya son altas; la pregunta es cuántos casos se resuelven y en cuánto tiempo.</p>
+<div class="obras">
+<div class="obra"><h3>Pena del homicidio</h3><div class="m">4 a 30 años</div><p>4 a 18 el simple, 10 a 24 el especialmente agravado y 15 a 30 el muy especialmente agravado.</p><div class="acc"><a class="tag t-oficial" href="https://www.impo.com.uy/bases/codigo-penal/9155-1933/310" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Juicio oral</h3><div class="m">245 días</div><p>Mediana desde la formalización hasta la resolución. Uno de cada cuatro tarda más de 539 días. El abreviado, la vía más usada, se resuelve en la misma audiencia.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/fiscalia-general-nacion/datos-y-estadisticas/estadisticas/informe-anual-sobre-desempeno-fiscalia-general-nacion-marco-del" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Homicidios aclarados</h3><div class="m">230 de 369</div><p>Cuenta policial de 2025. No es lo mismo que una condena firme y puede cambiar con las investigaciones.</p><div class="acc"><a class="tag t-oficial" href="https://medios.presidencia.gub.uy/legal/2026/proyectos/02/presidencia_347_MEMORIAS%202025%20-%20Tomo%20II.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+</div><p class="nota">{{OBJ}}</p></section>
+
+<section id="carceles"><div class="num">03</div><h2>Las cárceles</h2>
+<p class="lead">Hay más presos que plazas. El Estado tiene que asegurar cama, comida, agua, higiene y salud, y la ley pide que la pena sirva para reeducar.</p>
+<div class="obras">
+<div class="obra"><h3>Presos hoy</h3><div class="m">16.769</div><p>A fines de setiembre de 2026, con datos oficiales difundidos por El País.</p><div class="acc"><a class="tag t-prensa" href="https://www.elpais.com.uy/informacion/policiales/carceles-sumaron-146-hospitalizaciones-por-incidentes-y-autolesiones-en-nueve-meses-un-31-5-mas-que-en-2025" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>Por habitante</h3><div class="m">480</div><p>Presos cada 100.000 habitantes, cerca del doble que en 2003.</p><div class="acc"><a class="tag t-prensa" href="https://mediospublicos.uy/uruguay-alcanza-los-480-presos-por-cada-100-000-habitantes/" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>Costo por preso</h3><div class="m">$ 508.000</div><p>Gasto global por persona en 2023, estimado por el Comisionado Parlamentario con ejecución agregada.</p><div class="acc"><a class="tag t-oficial" href="https://enperspectiva.uy/wp-content/uploads/2024/10/Informe_2023_Adelanto_web.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Consumo previo</h3><div class="m">52,6 %</div><p>De los censados describió como problemático su consumo antes de entrar.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-interior/sites/ministerio-interior/files/documentos/publicaciones/1.Informe_IICensoNacionalPPL_20261015.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+</div>
+<div class="bars" style="margin-top:1.2rem"><div class="b"><span class="bn">Estudió</span><span class="bt"><i style="width:41.6%;background:var(--hero)"></i></span><span class="bv">41,6 %</span></div><div class="b"><span class="bn">Trabaja</span><span class="bt"><i style="width:37.9%;background:var(--hero)"></i></span><span class="bv">37,9 %</span></div><div class="b"><span class="bn">Le pagan</span><span class="bt"><i style="width:13.6%;background:var(--red)"></i></span><span class="bv">13,6 %</span></div><div class="bu">Personas presas que estudiaron en el último año, que hacen tareas laborales y, de esas, a cuántas les pagan. II Censo penitenciario (2025, publicado en 2026)</div></div>
+<p class="nota">Casi la mitad de los que no estudian (47,1 %) o no trabajan (45,5 %) dice que lo pidió y no había lugar. El censo entrevistó a 13.182 personas, cerca del 80 % <a class="tag t-oficial" href="https://www.gub.uy/ministerio-interior/sites/ministerio-interior/files/documentos/publicaciones/1.Informe_IICensoNacionalPPL_20261015.pdf" target="_blank" rel="noopener">oficial</a>. En noviembre de 2026 diputados del Frente Amplio presentaron un proyecto para regular y pagar el trabajo de los presos <a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Diputados-del-FA-presentaron-proyecto-para-regular-y-remunerar-el-trabajo-de-los-presos-uc981886" target="_blank" rel="noopener">prensa</a> {{OBJ}}</p></section>
+
+<section id="egreso"><div class="num">04</div><h2>Después de la cárcel</h2>
+<p class="lead">De las 5.661 personas que salieron en 2019, dos de cada tres volvieron a entrar por un nuevo delito en tres años.</p>
+<div class="bars"><div class="b"><span class="bn">En 1 año</span><span class="bt"><i style="width:44.1%;background:var(--red)"></i></span><span class="bv">44,1 %</span></div><div class="b"><span class="bn">En 3 años</span><span class="bt"><i style="width:65.6%;background:var(--red)"></i></span><span class="bv">65,6 %</span></div><div class="bu">Reingreso a la cárcel por un nuevo delito, cohorte de egresados de 2019</div></div>
+<p class="nota">Ministerio del Interior, informe de reincidencia penitenciaria <a class="tag t-oficial" href="https://www.gub.uy/ministerio-interior/comunicacion/publicaciones/reincidencia-penitenciaria" target="_blank" rel="noopener">oficial</a>. Falta una cohorte más reciente y por programa para saber qué funciona. {{OBJ}}</p></section>
+
+<section id="calle"><div class="num">05</div><h2>Drogas, alcohol y calle</h2>
+<p class="lead">Más de la mitad de los homicidios de 2025 ocurrió en un contexto de conflictos entre grupos criminales, drogas o ajustes de cuentas. Eso describe el contexto; no dice cuántos consumidores delinquen.</p>
+<div class="obras">
+<div class="obra"><h3>Homicidios en contexto criminal</h3><div class="m">213 de 371</div><p>57 % de los homicidios de 2025, en una categoría amplia de AECA.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-interior/sites/ministerio-interior/files/documentos/publicaciones/Aeca%20Anuario%20FC.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Personas en calle</h3><div class="m">2.756</div><p>En Montevideo, en una noche de 2023: 1.375 a la intemperie. El 34,9 % mencionó consumo problemático como motivo.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/ministerio-desarrollo-social/sites/ministerio-desarrollo-social/files/documentos/publicaciones/Relevamiento%20de%20personas%20en%20situaci%C3%B3n%20de%20calle%20en%20Montevideo%202023.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Alojados en el frío</h3><div class="m">4.409</div><p>Máximo de personas alojadas en todo el país, el 7 de agosto de 2026.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/sistema-nacional-emergencias/comunicacion/publicaciones/informe-cierre-alerta-roja-frio-extremo-para-personas-situacion-calle" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Alcohol</h3><div class="m">28,4 %</div><p>De quienes tomaron en el último año mostró signos de uso problemático. Cocaína: 1,6 % de la población de 15 a 65 años.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/junta-nacional-drogas/sites/junta-nacional-drogas/files/2025-10/JND%20-%20VIII%20-%20ENCUESTA-Digital.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+</div><p class="nota">{{OBJ}}</p></section>
+
+<section id="afuera"><div class="num">06</div><h2>Otros países</h2>
+<p class="lead">Registros con años y definiciones distintos: sirven para describir, no para aislar qué política funcionó.</p>
+<div class="tabla"><table><thead><tr><th>País</th><th>Homicidios</th><th>Pena de muerte y armas</th></tr></thead><tbody>
+<tr><td>Uruguay</td><td>10,3 por 100.000 (2025) <a class="tag t-oficial" href="https://www.gub.uy/ministerio-interior/sites/ministerio-interior/files/documentos/publicaciones/Aeca%20Anuario%20FC.pdf" target="_blank" rel="noopener">oficial</a></td><td>Prohibida por la Constitución. Porte civil con permiso.</td></tr>
+<tr><td>El Salvador</td><td>1,3 por 100.000 (2025, oficial) <a class="tag t-prensa" href="https://diario.elmundo.sv/nacionales/seguridad-oficializa-82-homicidios-durante-el-2025" target="_blank" rel="noopener">prensa</a></td><td>Régimen de excepción y encarcelamiento masivo, sin ejecuciones.</td></tr>
+<tr><td>Estados Unidos</td><td>4,1 por 100.000 (2025) <a class="tag t-oficial" href="https://www.fbi.gov/news/press-releases/fbi-releases-2025-reported-crimes-in-the-nation-statistics" target="_blank" rel="noopener">oficial</a></td><td>Ejecuciones en 11 estados en 2025. Porte según cada estado.</td></tr>
+<tr><td>Canadá</td><td>1,91 por 100.000 (2024) <a class="tag t-oficial" href="https://www150.statcan.gc.ca/n1/daily-quotidien/251202/dq251202a-eng.htm" target="_blank" rel="noopener">oficial</a></td><td>Abolicionista. Porte de armas cortas solo con autorización excepcional.</td></tr>
+<tr><td>Noruega</td><td>19 víctimas (2025) <a class="tag t-oficial" href="https://www.politiet.no/om-politiet/tall-og-fakta/drapsoversikt" target="_blank" rel="noopener">oficial</a></td><td>Abolicionista.</td></tr>
+<tr><td>Singapur</td><td>0,07 por 100.000 (2023) <a class="tag t-terceros" href="https://data.worldbank.org/indicator/VC.IHR.PSRC.P5?locations=SG&most_recent_value_desc=false" target="_blank" rel="noopener">internacional</a></td><td>Ejecutó a 17 personas en 2025 <a class="tag t-terceros" href="https://www.amnesty.org/en/latest/news/2026/05/death-penalty-in-2025-facts-and-figures/" target="_blank" rel="noopener">terceros</a>. Armas con licencia.</td></tr>
+</tbody></table></div>
+<div class="obras" style="margin-top:1.2rem">
+<div class="obra"><h3>El Salvador: la caída</h3><div class="m">1.147 → 82</div><p>Homicidios oficiales de 2021 a 2025. La baja empezó antes del régimen de excepción (marzo de 2022) y siguió con él. Un conteo de El Mundo dio 67 para 2025.</p><div class="acc"><a class="tag t-prensa" href="https://diario.elmundo.sv/nacionales/seguridad-oficializa-82-homicidios-durante-el-2025" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>El Salvador: el costo</h3><div class="m">+91.500</div><p>Detenciones desde 2022 según información oficial, y al menos 500 muertes bajo custodia según organizaciones sociales (CIDH, abril de 2026).</p><div class="acc"><a class="tag t-terceros" href="https://www.oas.org/es/cidh/jsForm/?File=%2Fes%2Fcidh%2Fprensa%2Fcomunicados%2F2026%2F066.asp" target="_blank" rel="noopener">internacional</a></div></div>
+</div><p class="nota">{{OBJ}}</p></section>
+
+<section id="ley"><div class="num">07</div><h2>Qué dice la ley</h2>
+<div class="obras">
+<div class="obra"><h3>Pena de muerte</h3><div class="m">Prohibida</div><p>Artículo 26 de la Constitución; la Convención Americana impide restablecerla. National Academies no pudo determinar su efecto sobre los homicidios.</p><div class="acc"><a class="tag t-oficial" href="https://www.impo.com.uy/bases/constitucion/1967-1967/26" target="_blank" rel="noopener">oficial</a> <a class="tag t-terceros" href="https://www.nationalacademies.org/publications/13363" target="_blank" rel="noopener">internacional</a></div></div>
+<div class="obra"><h3>Armas</h3><div class="m">68 %</div><p>De los homicidios de 2025 involucró armas de fuego. Tenencia con título habilitante y porte con permiso (Decreto 263/026).</p><div class="acc"><a class="tag t-terceros" href="https://www.undp.org/sites/g/files/zskgke326/files/2026-10/undp-uy-acceso-uso-armas-uruguay-2026.pdf" target="_blank" rel="noopener">internacional</a></div></div>
+<div class="obra"><h3>Trabajo en la cárcel</h3><div class="m">Obligatorio</div><p>Para condenados y voluntario para procesados (art. 41). Prohíbe el trabajo forzado y prevé remuneración y ahorro.</p><div class="acc"><a class="tag t-oficial" href="https://www.impo.com.uy/bases/decretos-ley/14470-1975" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Aislamiento</h3><div class="m">15 días</div><p>Las Reglas Mandela prohíben el aislamiento de más de 15 días seguidos con 22 horas sin contacto. La Constitución prohíbe usar la cárcel para mortificar.</p><div class="acc"><a class="tag t-oficial" href="https://www.impo.com.uy/bases/constitucion/1967-1967/26" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Intervenir sin consentimiento</h3><div class="m">3 leyes</div><p>Traslado de personas en calle con médico (Ley 18.787), internación por riesgo inminente (Ley 19.529, art. 30) y un piloto de Justicia Terapéutica para 40 imputados (Ley 20.519).</p><div class="acc"><a class="tag t-oficial" href="https://www.impo.com.uy/bases/leyes/18787-2011" target="_blank" rel="noopener">oficial</a> <a class="tag t-oficial" href="https://www.impo.com.uy/bases/leyes/19529-2017/30" target="_blank" rel="noopener">oficial</a> <a class="tag t-oficial" href="https://www.impo.com.uy/bases/leyes/20519-2026" target="_blank" rel="noopener">oficial</a></div></div>
+</div><p class="nota">{{OBJ}}</p></section>
+
+<section id="medir"><div class="num">08</div><h2>Qué habría que publicar para medir</h2>
+<p class="lead">El Plan Nacional de Seguridad Pública 2025-2035 da el marco <a class="tag t-oficial" href="https://www.gub.uy/plan-nacional-de-seguridad-publica/documentos/plan-nacional-de-seguridad-publica-2025-2035" target="_blank" rel="noopener">oficial</a>. Estos son los datos que faltan para saber si funciona.</p>
+<div class="tabla"><table><thead><tr><th>Área</th><th>Dato a publicar</th></tr></thead><tbody>
+<tr><td>Policía y Fiscalía</td><td>Homicidios y heridos por zona, cuántos se aclaran y cuántos terminan con condena a los 12 y 24 meses.</td></tr>
+<tr><td>Víctimas y juzgados</td><td>Tiempos de la denuncia a la formalización y de ahí a la sentencia; medidas de protección cumplidas.</td></tr>
+<tr><td>Cárceles</td><td>Ocupación, agresiones, cupos y listas de espera por unidad; cursos terminados, trabajo pago y reingreso a 1 y 3 años.</td></tr>
+<tr><td>Salud y vivienda</td><td>Personas con vivienda estable y días de consumo a 6 y 12 meses de tratamiento.</td></tr>
+<tr><td>Armas y barrios</td><td>Rastreo de armas incautadas; tiroteos y rapiñas en zonas con más patrullaje y en las vecinas.</td></tr>
+</tbody></table></div>
+<p class="nota">El patrullaje focalizado tiene respaldo en estudios internacionales <a class="tag t-terceros" href="https://www.campbellcollaboration.org/review/effects-of-hot-spots-policing-on-crime/" target="_blank" rel="noopener">internacional</a> y el PADO dio resultados en rapiñas en Uruguay <a class="tag t-terceros" href="https://publications.iadb.org/publications/spanish/document/%C2%BFC%C3%B3mo-evitar-el-delito-urbano-el-Programa-de-Alta-Dedicaci%C3%B3n-Operativa-en-la-nueva-Polic%C3%ADa-uruguaya.pdf" target="_blank" rel="noopener">internacional</a>. Subir penas sin mejorar la investigación tiene poco respaldo como disuasión. {{OBJ}}</p></section>
+
+<section id="nadie"><div class="alerta"><h2>Lo que hay que mirar</h2><ul>
+<li>Los homicidios volvieron a subir en 2026 y siguen por encima de hace diez años.</li>
+<li>Las cárceles están al 120 % y la mitad de quienes quieren estudiar o trabajar no consigue lugar. A 6 de cada 7 que trabajan no les pagan.</li>
+<li>Dos de cada tres vuelven a la cárcel en tres años. Sin datos recientes por programa, no se sabe qué baja ese número.</li></ul></div></section>
+
+<section id="pendiente"><div class="pend"><strong>Lo que todavía estamos buscando</strong><ul>
+{{PENDIENTES}}</ul></div></section>
+
+<section id="fuentes"><h2>De dónde sale cada número</h2>
+<p class="lead">Consultado el {{CONSULTADO}}. Los datos se pueden descargar en <a href="justicia_indicadores.csv">CSV de delitos</a>, <a href="justicia_carceles.csv">CSV de justicia y cárceles</a> y <a href="justicia_fuentes.csv">CSV de fuentes</a>. El borrador original y su verificación están en el repositorio del sitio.</p>
+<ul class="fuentes">{{FUENTES}}</ul></section>
+
+</main>
+<footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="./">Portada</a> · <a href="informe.html#metodo">Método y fuentes</a></div></footer>
+  <script>
+    "use strict";
+    document.getElementById("compartir").addEventListener("click", async () => {
+      const share = { title: document.title, text: "Homicidios +13,5 % en 2026, cárceles al 120 % y dos de cada tres presos vuelven a entrar. Los números de la justicia penal en Uruguay, con fuente.", url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(share); return; }
+        await navigator.clipboard.writeText(share.text + " " + share.url);
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = "Enlace copiado";
+        toast.setAttribute("role", "status");
+        document.body.append(toast);
+        setTimeout(() => toast.remove(), 2200);
+      } catch (error) { /* el usuario canceló */ }
+    });
+  </script>
+</body></html>

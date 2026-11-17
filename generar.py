@@ -226,6 +226,7 @@ BARRA_LINKS = (
 ESPECIALES = (
     ("movilidad.html", "Informe especial 1", "Auto eléctrico: ¿sí o no?", "#a78bfa"),
     ("transporte.html", "Informe especial 2", "La reforma del transporte", "#a3e635"),
+    ("justicia.html", "Informe especial 3", "Justicia penal y seguridad", "#60a5fa"),
 )
 ESPECIALES_CSS = """
     .vm-esp{flex:none}
@@ -897,6 +898,29 @@ def build_movilidad(public):
     write_csv(public, "movilidad_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+def build_justicia(public):
+    """Genera justicia.html (Informe especial 3) y sus CSV desde datos/justicia.json."""
+    from html import escape
+    data = load_data("justicia.json")
+    names = {"oficial": ("oficial", "oficial"), "prensa": ("prensa", "prensa"), "internacional": ("terceros", "internacional")}
+    tag = lambda t: f'<span class="tag t-{names[t][0]}">{names[t][1]}</span>'
+    values = {
+        "OBJ": '<a class="obj" href="informe.html?aporte=justicia-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "justicia.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en justicia.template.html.")
+    (public / "justicia.html").write_text(page, encoding="utf-8")
+    write_csv(public, "justicia_indicadores.csv", data["indicadores"])
+    write_csv(public, "justicia_carceles.csv", data["carceles"])
+    write_csv(public, "justicia_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -970,17 +994,18 @@ def main():
     build_ancap(public)
     build_transporte(public)
     build_movilidad(public)
+    build_justicia(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", *STATIC_PAGES))
+                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, el informe especial de movilidad eléctrica y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica y justicia y los CSV.")
 
 
 if __name__ == "__main__":
