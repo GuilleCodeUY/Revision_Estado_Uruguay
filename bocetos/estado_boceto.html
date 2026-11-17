@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es-UY"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boceto · Un Estado más chico y que funcione mejor · La verdad de la milanesa</title>
+<style>
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb;--hero:#0f2a24;--hero2:#17423a;--acc:#2dd4bf;--acc2:#0f766e;--amber:#ffb627;--green:#2e9e6a}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header.site{background:var(--hero);color:#fff;box-shadow:inset 0 -8px 0 var(--acc)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 3rem}
+    .kicker{display:inline-block;background:var(--acc);color:#111;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.2rem,7vw,4.4rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:56ch;color:#d7e3ee;margin:.9rem 0 1.2rem}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:#111}.btn.o{background:transparent;color:var(--acc)}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:2rem}
+    .golpe{background:var(--hero2);border-left:6px solid var(--acc);padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+    .golpe b{font-size:clamp(1.7rem,4vw,2.2rem);font-weight:900;line-height:1.05;letter-spacing:-.03em}
+    .golpe span{font-size:.92rem;color:#d7e3ee}
+    .golpe .acc{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.45rem}
+    .golpe .acc a{font-size:.72rem;font-weight:700;text-decoration:none;color:#cfe0ee;background:rgba(255,255,255,.08);padding:.2rem .45rem;border-radius:.25rem}
+    .golpe .acc a:hover{text-decoration:underline}
+    main{padding:2rem 0 3rem}main section{margin-bottom:3rem;scroll-margin-top:1rem}
+    h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}.lead{color:var(--muted);margin:0 0 1.2rem;max-width:72ch}
+    .num{color:var(--acc2);font-weight:900;font-size:.85rem;letter-spacing:.1em}
+    .tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.12rem .42rem;border-radius:.2rem;vertical-align:middle;text-decoration:none}
+    .t-oficial{background:#dff1e7;color:#1d6b46}.t-prensa{background:#e6eef7;color:#1e4b7a}.t-gremial{background:#fde6d4;color:#9a4300}.t-partido{background:#f6dede;color:#9b1c25}.t-pend{background:var(--yellow);color:#111}.t-terceros{background:#efe4f7;color:#5b2a86}.t-parte{background:#f6dede;color:#9b1c25}.t-propio{background:#fff1cf;color:#7a5200}
+    .chart{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1rem .5rem;overflow-x:auto}
+    .chart svg{display:block;min-width:620px;width:100%;height:auto}
+    .legend{display:flex;gap:1.2rem;font-size:.85rem;margin:.2rem 0 .8rem;flex-wrap:wrap}.legend i{display:inline-block;width:12px;height:12px;margin-right:.35rem;vertical-align:-1px}
+    .nota{font-size:.84rem;color:var(--muted);margin-top:.7rem;max-width:80ch}
+    .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+    .barras h3{font-size:1rem;margin:0 0 .6rem}
+    .fila{display:grid;grid-template-columns:150px 1fr 92px;align-items:center;gap:.5rem;font-size:.88rem;margin:.32rem 0}
+    .fila .b{height:18px;background:#c9d6e2;border-radius:2px}.fila.mvd .b{background:var(--acc2)}.fila.mvd{font-weight:800}
+    .fila .v{text-align:right;font-variant-numeric:tabular-nums}
+    .timeline{border-left:3px solid var(--hero);margin-left:.4rem;padding-left:1.2rem}
+    .hito{position:relative;margin:0 0 1.5rem}
+    .hito:before{content:"";position:absolute;left:-1.72rem;top:.35rem;width:13px;height:13px;border-radius:50%;background:var(--acc2);border:2px solid var(--paper)}
+    .hito .f{font-weight:800;color:var(--hero2)}.hito p{margin:.2rem 0 .35rem;max-width:75ch}
+    .obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .obra{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+    .obra h3{margin:0;font-size:1.05rem}.obra .m{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}.obra p{font-size:.9rem;margin:0}
+    .obra .acc{margin-top:auto;display:flex;gap:.35rem;flex-wrap:wrap;padding-top:.4rem}
+    .alerta{background:var(--hero);color:#fff;padding:1.6rem;border-left:8px solid var(--red);border-radius:.5rem}
+    .alerta h2{color:#fff}.alerta p,.alerta li{color:#d7e3ee;max-width:76ch}
+    .fuentes{columns:2 320px;padding-left:1.1rem}.fuentes li{font-size:.88rem;margin:.3rem 0;break-inside:avoid}
+    .pend{background:#fff;border-left:6px solid var(--yellow);padding:1rem 1.2rem;font-size:.92rem}.pend ul{margin:.4rem 0 0;padding-left:1.2rem}
+    a.obj{font-size:.72rem;font-weight:700;text-decoration:none;padding:.2rem .45rem;border-radius:.25rem;background:#fde6e7;color:#9b1c25}
+    .golpe a.obj{background:rgba(230,57,70,.25);color:#ffd9dc}
+    footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    @media(max-width:760px){.golpes{grid-template-columns:1fr}}
+      .golpe.big{border-left-color:var(--amber)}
+    .hero p.sub{color:#d3ece6}.golpe span{color:#d3ece6}
+    .litro{margin:1rem 0 1.8rem}.litro .tit{display:flex;justify-content:space-between;font-weight:800;margin-bottom:.35rem;font-size:1.05rem}
+    .pila{display:flex;height:56px;border:2px solid var(--hero);border-radius:.4rem;overflow:hidden}
+    .pila div{display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+    .ref{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.84rem;margin-top:.5rem}.ref i{display:inline-block;width:11px;height:11px;margin-right:.3rem;vertical-align:-1px;border-radius:2px}
+    .esc .usd{font-weight:800;color:var(--hero2)}.obra.hoy{border-top-color:var(--acc)}
+    .hito.menos:before{background:var(--green)}
+    .litro .real{font-size:.9rem;margin:.5rem 0 0}.fila.prom{font-style:italic;color:var(--muted)}.fila.prom .b{background:#e3dccb}
+  .bars{display:flex;flex-direction:column;gap:.55rem;background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem}
+.b{display:grid;grid-template-columns:7.5rem 1fr 6.5rem;align-items:center;gap:.6rem;font-size:.92rem}.bn{font-weight:700}.bt{background:#eee8d8;height:1.3rem;border-radius:.2rem;overflow:hidden}.bt i{display:block;height:100%}.bv{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}.bu{font-size:.78rem;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.cmp h3{font-size:1rem;margin:0 0 .5rem}
+.line{position:relative}.line .mark{position:absolute;top:0;bottom:0;border-left:3px dashed var(--red)}
+@media(max-width:600px){.golpes{grid-template-columns:1fr}.b{grid-template-columns:5.5rem 1fr 5.5rem;font-size:.85rem}}
+a.obj{white-space:nowrap}
+.boceto{background:var(--yellow);color:#111;text-align:center;font-weight:700;font-size:.85rem;padding:.45rem 1rem}
+.dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.lista{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1.2rem}.lista h3{margin:0 0 .4rem}.lista ul{margin:0;padding-left:1.1rem}.lista li{margin:.3rem 0;font-size:.93rem}
+.lista.si{border-color:var(--green)}.lista.no{border-color:var(--red)}
+.obra.entra{border-top-color:var(--green)}.obra.sale{border-top-color:var(--red)}.obra.vuelve{border-top-color:var(--acc)}
+.portada{background:#121212;padding:1.5rem;border-radius:.6rem}
+.caso{position:relative;border-radius:.6rem;padding:1.4rem;color:#fff;text-decoration:none;display:flex;flex-direction:column;gap:.55rem;min-height:15rem;box-shadow:inset 0 -7px 0 var(--acc);background:var(--hero);max-width:540px}
+.caso .top2{display:flex;justify-content:space-between;align-items:center}.caso .tema{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--acc)}
+.caso .estado{font-size:.72rem;font-weight:800;text-transform:uppercase;background:rgba(255,255,255,.14);padding:.2rem .5rem;border-radius:.2rem}
+.caso .n{font-size:3rem;font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--acc)}.caso h3{margin:auto 0 0;font-size:1.35rem}.caso p{margin:0;font-size:.92rem;opacity:.88}.caso .ir{font-weight:800;color:var(--acc)}
+</style>
+</head><body>
+<div class="boceto">BOCETO · Informe especial N.º 4 · todavía no publicado</div>
+<header class="site"><div class="wrap top"><a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a><nav aria-label="Secciones"><a href="#hoy">Lo que hay</a><a href="#plata">En qué se va</a><a href="#bajas">Los que se van</a><a href="#quitar">Lo que se puede quitar</a><a href="#tecnologia">Tecnología</a><a href="#invertir">Invertir</a><a href="#quedaria">Cómo quedaría</a><a href="#limites">Lo que no alcanza</a><a href="#fuentes">Fuentes</a></nav></div><div class="wrap hero">
+<span class="kicker">Informe especial 4 · Estado optimizado</span>
+<h1>Un Estado más chico y que funcione mejor</h1>
+<p class="sub">Cuánta gente trabaja en el Estado, en qué se va la plata y cuánto se podría ahorrar en cinco años usando tecnología y sin despedir a nadie. Y qué haría falta para que el Estado no viva solo de impuestos.</p>
+<div class="btns"><a class="btn y" href="#quedaria">Cómo quedaría</a><button class="btn o" type="button">Compartir</button></div>
+<div class="golpes">
+<div class="golpe"><b>91</b><span>vínculos laborales con el Estado cada 1.000 habitantes: 318.269 a fines de 2025, máximo histórico.</span><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/oficina-nacional-servicio-civil/comunicacion/publicaciones/vinculos-laborales-estado-altas-bajas-2025" target="_blank" rel="noopener">oficial</a> <a class="obj" href="#">⚑ Objetar</a></div></div>
+<div class="golpe"><b>85 %</b><span>de lo que entra al Presupuesto Nacional son impuestos. Lo que el Estado gana por su cuenta es el 7,8 %.</span><div class="acc"><a class="tag t-oficial" href="https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf#page=56" target="_blank" rel="noopener">oficial</a> <a class="obj" href="#">⚑ Objetar</a></div></div>
+<div class="golpe big"><b>13.700</b><span>personas dejan el Estado cada año por jubilación, renuncia o fallecimiento. Ahí está el margen para achicar sin despidos.</span><div class="acc"><a class="tag t-prensa" href="https://www.busqueda.com.uy/economia/hubo-586-destituciones-funcionarios-publicos-2025-se-incumplieron-leyes-cupos-ingreso-n5414887" target="_blank" rel="noopener">prensa</a> <a class="tag t-propio" href="#bajas">cálculo propio</a> <a class="obj" href="#">⚑ Objetar</a></div></div>
+</div></div></header>
+<main class="wrap">
+
+<section id="hoy"><div class="num">01</div><h2>Lo que hay hoy</h2>
+<p class="lead">Al 31 de diciembre de 2025 había 275.898 personas con 318.269 vínculos laborales con el Estado (una persona puede tener más de uno, como un docente en dos liceos). Son 79 personas o 91 vínculos cada 1.000 habitantes.</p>
+<div class="tabla"><table><thead><tr><th>Dónde trabajan</th><th class="n">Vínculos</th><th class="n">Parte</th><th class="n">Políticos y de confianza</th></tr></thead><tbody>
+<tr><td>Organismos del art. 220 (ANEP, ASSE, Udelar, INAU, Poder Judicial y otros)</td><td class="n">162.429</td><td class="n">51,0 %</td><td class="n">222</td></tr>
+<tr><td>Poder Ejecutivo (ministerios, incluidos Interior y Defensa)</td><td class="n">82.457</td><td class="n">25,9 %</td><td class="n">232</td></tr>
+<tr><td>Intendencias</td><td class="n">41.048</td><td class="n">12,9 %</td><td class="n">1.386</td></tr>
+<tr><td>Empresas públicas y bancos (art. 221)</td><td class="n">31.178</td><td class="n">9,8 %</td><td class="n">80</td></tr>
+<tr><td>Poder Legislativo</td><td class="n">1.157</td><td class="n">0,4 %</td><td class="n">147</td></tr>
+<tr><td><b>Total</b></td><td class="n"><b>318.269</b></td><td class="n"><b>100 %</b></td><td class="n"><b>2.067</b></td></tr>
+</tbody></table></div>
+<p class="nota">ONSC, Vínculos laborales con el Estado 2025, tabla 7 y cuadros 1 y 6 <a class="tag t-oficial" href="https://www.gub.uy/oficina-nacional-servicio-civil/sites/oficina-nacional-servicio-civil/files/documentos/publicaciones/Informe_Vinculos_2025.pdf" target="_blank" rel="noopener">oficial</a>. Población: INE, proyección a junio de 2025 (3.485.931). Los cinco organismos más grandes (ANEP, Interior, ASSE, Defensa y Udelar) suman 212.608 vínculos, dos de cada tres. <a class="obj" href="#">⚑ Objetar</a></p>
+<div class="cmp" style="margin-top:1.4rem"><div>
+<h3>Empleo público sobre el total de ocupados</h3>
+<div class="bars">
+<div class="b"><span class="bn">Noruega</span><span class="bt"><i style="width:100%;background:#9aa8a4"></i></span><span class="bv">30,1 %</span></div>
+<div class="b"><span class="bn">Prom. OCDE</span><span class="bt"><i style="width:61.1%;background:#9aa8a4"></i></span><span class="bv">18,4 %</span></div>
+<div class="b"><span class="bn"><b>Uruguay</b></span><span class="bt"><i style="width:52.2%;background:var(--acc2)"></i></span><span class="bv">15,7 %</span></div>
+<div class="b"><span class="bn">Costa Rica</span><span class="bt"><i style="width:40.9%;background:var(--hero)"></i></span><span class="bv">12,3 %</span></div>
+<div class="b"><span class="bn">Prom. región</span><span class="bt"><i style="width:38.5%;background:var(--hero)"></i></span><span class="bv">11,6 %</span></div>
+<div class="b"><span class="bn">Paraguay</span><span class="bt"><i style="width:34.9%;background:var(--hero)"></i></span><span class="bv">10,5 %</span></div>
+<div class="b"><span class="bn">Chile</span><span class="bt"><i style="width:30.9%;background:var(--hero)"></i></span><span class="bv">9,3 %</span></div>
+<div class="bu">América Latina: 2022. OCDE y Noruega: 2023. Las dos mediciones no son idénticas.</div></div>
+<p class="nota">OCDE, Government at a Glance América Latina 2024, figura 12.1 <a class="tag t-oficial" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/03/government-at-a-glance-latin-america-and-the-caribbean-2024_0d6281fd/4abdba16-en.pdf" target="_blank" rel="noopener">oficial</a> · Government at a Glance 2025 <a class="tag t-oficial" href="https://www.oecd.org/en/publications/government-at-a-glance-2025_0efd0bcd-en/full-report/employment-in-general-government_dafcfac5.html" target="_blank" rel="noopener">oficial</a> <a class="obj" href="#">⚑ Objetar</a></p>
+</div><div class="lista">
+<h3>Cómo leer la comparación</h3>
+<ul>
+<li>Uruguay tiene <b>más empleo público que la región</b> (15,7 % contra 11,6 %) y <b>menos que el promedio de la OCDE</b> (18,4 %).</li>
+<li>La diferencia depende de qué hace el Estado en cada país. En Uruguay la educación, la salud pública, la energía, el agua, los combustibles, los bancos y los teléfonos son en buena parte estatales.</li>
+<li>Para llegar a la proporción de la región, Uruguay tendría que tener unos <b>83.000 vínculos menos</b>. Para eso habría que dejar de dar servicios o pasarlos a privados, y esa es una decisión política que este informe no toma.</li>
+<li>Lo que sí se puede medir es si <b>cada servicio usa más gente de la que necesita</b> para lo que hace. A eso apunta lo que sigue.</li>
+</ul></div></div>
+</section>
+
+<section id="plata"><div class="num">02</div><h2>En qué se va la plata</h2>
+<p class="lead">El Presupuesto Nacional gastó $ 997.952 millones en 2025, unos $ 286.000 por habitante. Los sueldos son la parte más grande, pero no la única.</p>
+<div class="litro"><div class="tit"><span>Gasto del Presupuesto Nacional 2025</span><span>$ 997.952 M</span></div>
+<div class="pila"><div style="width:28.9%;background:var(--acc2)">Sueldos 28,9 %</div><div style="width:21.5%;background:#7c5cbf">Seguridad social 21,5 %</div><div style="width:9.5%;background:var(--red)">Intereses 9,5 %</div><div style="width:40.1%;background:#6b7a76">Resto 40,1 %</div></div>
+<div class="ref"><span><i style="background:var(--acc2)"></i>Sueldos, aportes y beneficios: $ 288.451 M</span><span><i style="background:#7c5cbf"></i>Transferencias a la seguridad social: $ 214.616 M</span><span><i style="background:var(--red)"></i>Intereses de la deuda: $ 94.598 M</span><span><i style="background:#6b7a76"></i>Compras, inversiones, transferencias a intendencias y otros: $ 400.286 M</span></div>
+<p class="real">Los intereses de la deuda costaron casi lo mismo que todo lo que ejecutó ANEP ($ 114.123 M). Bajar el déficit también achica esa cuenta.</p></div>
+<div class="litro"><div class="tit"><span>De dónde sale la plata del Presupuesto Nacional</span><span>$ 847.508 M</span></div>
+<div class="pila"><div style="width:85.3%;background:var(--hero)">Impuestos 85,3 %</div><div style="width:7.8%;background:var(--green)">Propios 7,8 %</div><div style="width:6.9%;background:#9aa8a4">Otros</div></div>
+<div class="ref"><span><i style="background:var(--hero)"></i>Impuestos: $ 723.043 M (IVA y similares, $ 345.411 M)</span><span><i style="background:var(--green)"></i>Ingresos no tributarios, como lo que giran las empresas públicas: $ 65.981 M</span><span><i style="background:#9aa8a4"></i>Tasas, transferencias y otros: $ 58.483 M</span></div></div>
+<p class="nota">CGN, Rendición de Cuentas 2025, Tomo I, cuadros 24 a 28 <a class="tag t-oficial" href="https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf" target="_blank" rel="noopener">oficial</a>. Gastó más de lo que entró: el resultado de Gobierno Central y BPS fue un déficit de $ 130.081 M, 3,7 % del PIB <a class="tag t-oficial" href="https://www.gub.uy/ministerio-economia-finanzas/datos-y-estadisticas/estadisticas/resultado-del-sector-publico-diciembre-2025" target="_blank" rel="noopener">oficial</a> <a class="obj" href="#">⚑ Objetar</a></p>
+</section>
+
+<section id="bajas"><div class="num">03</div><h2>Cada año se van 13.700 personas</h2>
+<p class="lead">En 2025 hubo 63.693 altas y 65.946 bajas. La mayoría de las bajas son contratos que terminan y se renuevan. Las que liberan un puesto de verdad son las jubilaciones, las renuncias y los fallecimientos.</p>
+<div class="obras">
+<div class="obra"><h3>Jubilaciones</h3><div class="m">≈ 6.600</div><p>Cerca del 10 % de las bajas.</p><div class="acc"><a class="tag t-prensa" href="https://www.busqueda.com.uy/economia/hubo-586-destituciones-funcionarios-publicos-2025-se-incumplieron-leyes-cupos-ingreso-n5414887" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>Renuncias</h3><div class="m">≈ 6.600</div><p>Otro 10 % de las bajas.</p><div class="acc"><a class="tag t-prensa" href="https://www.busqueda.com.uy/economia/hubo-586-destituciones-funcionarios-publicos-2025-se-incumplieron-leyes-cupos-ingreso-n5414887" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>Fallecimientos</h3><div class="m">523</div><p>Además hubo 586 destituciones y 84 ceses por límite de edad.</p><div class="acc"><a class="tag t-prensa" href="https://www.busqueda.com.uy/economia/hubo-586-destituciones-funcionarios-publicos-2025-se-incumplieron-leyes-cupos-ingreso-n5414887" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra hoy"><h3>Salida natural</h3><div class="m">4,3 % al año</div><p>Unas 13.700 bajas sobre 318.269 vínculos. Si no se reponen todas, el Estado se achica solo, sin despidos.</p><div class="acc"><a class="tag t-propio" href="#">cálculo propio</a></div></div>
+</div>
+<p class="nota">Los porcentajes de jubilaciones y renuncias son los que informó Búsqueda a partir del informe de ONSC; el número exacto está en el PDF de ONSC y se va a verificar antes de publicar. <a class="obj" href="#">⚑ Objetar</a></p>
+</section>
+
+<section id="quitar"><div class="num">04</div><h2>Lo que se puede quitar</h2>
+<p class="lead">La regla es reponer menos de lo que se va durante cinco años y cuidar la primera línea: maestros y profesores en el aula, médicos y enfermería, policías en la calle. Donde más se recorta es en apoyo y gestión, lo que la tecnología puede reemplazar.</p>
+<div class="tabla"><table><thead><tr><th>Grupo</th><th class="n">Vínculos hoy</th><th class="n">Moderado</th><th class="n">Intermedio</th><th class="n">Fuerte</th></tr></thead><tbody>
+<tr><td>Apoyo y gestión del Presupuesto Nacional<br><small>Administrativos, especializados, oficios, auxiliares y técnicos (escalafones B, C, D, E y F)</small></td><td class="n">53.461</td><td class="n">repone 1 de cada 2<br><b>−5.515</b></td><td class="n">repone 1 de cada 3<br><b>−7.249</b></td><td class="n">no repone<br><b>−10.566</b></td></tr>
+<tr><td>Primera línea y resto del Presupuesto Nacional<br><small>Docentes, profesionales, salud, policías, militares, judiciales</small></td><td class="n">192.582</td><td class="n">repone todas<br><b>0</b></td><td class="n">repone 9 de cada 10<br><b>−4.113</b></td><td class="n">repone 3 de cada 4<br><b>−10.150</b></td></tr>
+<tr><td>Empresas públicas e intendencias</td><td class="n">72.226</td><td class="n">repone 3 de cada 4<br><b>−3.807</b></td><td class="n">repone 1 de cada 2<br><b>−7.451</b></td><td class="n">repone 1 de cada 3<br><b>−9.794</b></td></tr>
+<tr><td><b>Vínculos menos en cinco años</b></td><td class="n"></td><td class="n"><b>−9.322</b></td><td class="n"><b>−18.813</b></td><td class="n"><b>−30.510</b></td></tr>
+<tr><td><b>Ahorro en sueldos del Presupuesto Nacional, por año, desde el quinto año</b></td><td class="n"></td><td class="n"><b>$ 6.466 M</b></td><td class="n"><b>$ 13.320 M</b></td><td class="n"><b>$ 24.287 M</b></td></tr>
+<tr><td>En % del PIB</td><td class="n"></td><td class="n">0,18 %</td><td class="n">0,38 %</td><td class="n">0,69 %</td></tr>
+</tbody></table></div>
+<p class="nota">Cálculo propio <a class="tag t-propio" href="#">cálculo propio</a>: salida natural de 4,3 % anual aplicada a cada grupo durante cinco años. El ahorro usa el costo promedio de un vínculo del Presupuesto Nacional ($ 1.172.361 al año con aportes, unos $ 97.700 por mes: $ 288.451 M entre 246.043 vínculos). En apoyo y gestión el sueldo promedio es probablemente menor, así que el ahorro real puede ser algo más bajo. El ahorro de empresas e intendencias queda en sus propias cuentas y no está sumado. <a class="obj" href="#">⚑ Objetar</a></p>
+<div class="obras" style="margin-top:1.2rem">
+<div class="obra sale"><h3>Cargos políticos y de confianza</h3><div class="m">2.067</div><p>Vínculos P y Q en todo el Estado; 1.386 están en intendencias. Falta saber cuánto cuestan con aportes y asesores. Se pueden achicar por ley o por decisión de cada gobierno.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/oficina-nacional-servicio-civil/comunicacion/publicaciones/vinculos-laborales-estado-altas-bajas-2025" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra sale"><h3>Compras: teléfono, luz, vigilancia y limpieza</h3><div class="m">$ 97 M</div><p>Ahorro anual del escenario intermedio en cuatro rubros ya revisados en el Informe 2025. Rango: $ 53 a $ 140 M. Revisar todas las compras con el mismo método da más.</p><div class="acc"><a class="tag t-propio" href="informe.html">Informe 2025</a></div></div>
+<div class="obra sale"><h3>Defensa</h3><div class="m">29.301</div><p>Vínculos del Ministerio de Defensa, 8,4 cada 1.000 habitantes, y $ 26.799 M en sueldos. Qué Fuerzas Armadas necesita el país es una discusión aparte; acá queda dentro de la primera línea.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/oficina-nacional-servicio-civil/comunicacion/publicaciones/vinculos-laborales-estado-altas-bajas-2025" target="_blank" rel="noopener">oficial</a></div></div>
+</div>
+</section>
+
+<section id="tecnologia"><div class="num">05</div><h2>La tecnología como herramienta</h2>
+<p class="lead">Achicar sin tecnología empeora el servicio: menos gente para el mismo trabajo. Con tecnología la gente que se jubila no hace falta reponerla, porque el trámite ya no la necesita.</p>
+<div class="obras">
+<div class="obra vuelve"><h3>Uruguay ya está bien ubicado</h3><div class="m">Puesto 25</div><p>De 193 países en el índice de gobierno digital de la ONU (2024), primero en América Latina. La base existe; lo que falta es que se note en la plantilla.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/uruguay-digital/politicas-y-gestion/lider-gobierno-digital" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra vuelve"><h3>BPS</h3><div class="m">50 → 15 min</div><p>Bajó el tiempo de atención para reconocer años trabajados y jubilarse. Con 4.106 trámites hasta febrero de 2026, son unas 2.395 horas de atención menos.</p><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/24099/aumenta-el-acceso-a-las-jubilaciones-y-se-acorta-el-tiempo-de-los-tramites-en-el-bps.html" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra vuelve"><h3>Estonia</h3><div class="m">≈ 2 % del PIB</div><p>Es lo que el gobierno estonio estima que ahorra por año con la firma digital y el intercambio de datos entre organismos (X-Road). Es una estimación del propio gobierno, no una auditoría independiente.</p><div class="acc"><a class="tag t-oficial" href="https://www.oecd.org/en/publications/digital-opportunities-for-better-agricultural-policies_571a0812-en/full-report/component-20.html" target="_blank" rel="noopener">OCDE</a> <a class="tag t-terceros" href="https://www.belfercenter.org/publication/connected-digital-society-paving-ways-country-scale-digital-interoperability-estonia" target="_blank" rel="noopener">Harvard Belfer</a></div></div>
+</div>
+<div class="dos" style="margin-top:1.2rem">
+<div class="lista si"><h3>Qué hace falta para que funcione</h3><ul>
+<li>Que un organismo no le pida al ciudadano un dato que ya tiene otro organismo.</li>
+<li>Compras, sueldos y expedientes en sistemas compartidos, no uno por organismo.</li>
+<li>Medir antes y después cada trámite: tiempo, costo y cuánta gente lo atiende.</li>
+<li>Una vacante que la tecnología cubre se cierra; no se reasigna a otra cosa sin justificar.</li>
+<li>Mantener una ventanilla con atención humana para quien no usa internet.</li></ul></div>
+<div class="lista no"><h3>Lo que puede salir mal</h3><ul>
+<li>Sistemas que se compran y no se usan, y el gasto en tecnología se suma a los sueldos en vez de reemplazarlos.</li>
+<li>Recortar en la primera línea porque es donde hay más gente.</li>
+<li>Pasar tareas a empresas tercerizadas que cuestan lo mismo o más.</li>
+<li>Ciberataques y caídas: más digital pide más seguridad informática.</li></ul></div>
+</div>
+</section>
+
+<section id="invertir"><div class="num">06</div><h2>Un Estado que invierte y no vive solo de impuestos</h2>
+<p class="lead">Hoy el Estado ya tiene ingresos propios: lo que giran las empresas públicas a Rentas Generales. Por ejemplo, UTE giró $ 6.207,6 millones en 2025. Pero ese dinero se gasta en el año; no queda ahorrado en ningún lado.</p>
+<div class="obras">
+<div class="obra"><h3>Noruega</h3><div class="m">27 %</div><p>Del presupuesto del gobierno central de 2026 se paga con el fondo soberano. La regla: gastar por año solo lo que el fondo rinde (alrededor de 3 %), nunca el capital.</p><div class="acc"><a class="tag t-oficial" href="https://www.regjeringen.no/en/documents/meld.-st.-7-2025-2026/id3155109/?ch=1" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Chile</h3><div class="m">US$ 10.313 M</div><p>Tenía al cierre de 2025 el Fondo de Reserva de Pensiones, armado con ahorro fiscal para pagar jubilaciones futuras.</p><div class="acc"><a class="tag t-oficial" href="https://www.dipres.gob.cl/598/articles-426503_doc_pdf.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra entra"><h3>Uruguay, con el escenario intermedio</h3><div class="m">≈ US$ 3.000 M</div><p>Si el ahorro en sueldos ($ 13.320 M por año, creciendo durante los primeros cinco años) se pusiera en un fondo al 3 % real, en diez años habría unos $ 119.000 M. Su rendimiento pagaría unos $ 3.600 M por año para siempre.</p><div class="acc"><a class="tag t-propio" href="#">cálculo propio</a></div></div>
+</div>
+<p class="nota">Cálculo propio: ahorro que crece en partes iguales hasta el año 5 y queda fijo; rendimiento real de 3 % anual; dólar a $ 40. Es un ejemplo para mostrar el orden de magnitud, no un plan de inversión. Con el déficit actual, la alternativa es usar el ahorro para pedir menos deuda: cada peso que no se pide prestado tampoco paga intereses. <a class="obj" href="#">⚑ Objetar</a></p>
+</section>
+
+<section id="quedaria"><div class="num">07</div><h2>Cómo quedaría en cinco años</h2>
+<p class="lead">Con la población de hoy y sin despidos. Los montos están en pesos de 2025.</p>
+<div class="tabla"><table><thead><tr><th></th><th class="n">Hoy (2025)</th><th class="n">Intermedio</th><th class="n">Fuerte</th></tr></thead><tbody>
+<tr><td>Vínculos con el Estado</td><td class="n">318.269</td><td class="n">299.456</td><td class="n">287.759</td></tr>
+<tr><td>Vínculos cada 1.000 habitantes</td><td class="n">91,3</td><td class="n">85,9</td><td class="n">82,5</td></tr>
+<tr><td>Sueldos del Presupuesto Nacional</td><td class="n">$ 288.451 M</td><td class="n">$ 275.131 M</td><td class="n">$ 264.165 M</td></tr>
+<tr><td>Sueldos en % del PIB</td><td class="n">8,2 %</td><td class="n">7,8 %</td><td class="n">7,5 %</td></tr>
+<tr><td>Déficit de Gobierno Central y BPS, solo por este cambio</td><td class="n">3,7 % del PIB</td><td class="n">3,3 %</td><td class="n">3,0 %</td></tr>
+<tr><td>Fondo de ahorro a diez años, si se guarda el ahorro</td><td class="n">—</td><td class="n">≈ US$ 3.000 M</td><td class="n">≈ US$ 5.400 M</td></tr>
+</tbody></table></div>
+<p class="nota">Cálculo propio <a class="tag t-propio" href="#">cálculo propio</a>. PIB 2025: $ 3.516.000 M según BCU <a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Economia-uruguaya-cerro-en-2025-con-crecimiento-por-debajo-de-lo-proyectado-uc956982" target="_blank" rel="noopener">prensa</a>. No incluye el costo de la tecnología ni el ahorro de empresas públicas e intendencias. <a class="obj" href="#">⚑ Objetar</a></p>
+</section>
+
+<section id="limites"><div class="alerta"><h2>Lo que no alcanza</h2>
+<p>Incluso el escenario fuerte ahorra 0,7 % del PIB, y el déficit es 3,7 %. Achicar personal solo no cierra las cuentas. Las otras dos cuentas grandes son:</p>
+<ul>
+<li><b>Seguridad social:</b> $ 214.616 M que el Presupuesto Nacional transfiere para jubilaciones y pensiones. Depende de la edad de retiro, de las cajas especiales (militar, policial, bancaria y otras) y de cuántos aportan.</li>
+<li><b>Intereses:</b> $ 94.598 M por año. Solo bajan si el Estado pide menos prestado durante varios años seguidos.</li>
+</ul>
+<p>Un Estado más chico ayuda, y con tecnología puede dar mejor servicio. Pero para dejar de "vivir de impuestos" hacen falta las tres cosas a la vez: menos gasto, cuentas en orden y ahorro que rinda.</p></div></section>
+
+<section id="medir"><div class="num">08</div><h2>Qué falta para afinar los números</h2>
+<div class="pend"><ul>
+<li>Bajas exactas por jubilación y renuncia en 2025 y por escalafón (ONSC, informe completo).</li>
+<li>Sueldo promedio de los escalafones de apoyo y gestión, para no usar el promedio general.</li>
+<li>Edad de los funcionarios: cuántos se jubilan en los próximos cinco años en cada organismo.</li>
+<li>Costo completo de los 2.067 cargos políticos y de confianza, con asesores y aportes.</li>
+<li>Cuánto gasta hoy el Estado en informática y cuánto costaría digitalizar los trámites de más volumen.</li>
+<li>Giros a Rentas Generales de todas las empresas públicas, no solo UTE.</li>
+</ul></div></section>
+
+<section id="fuentes"><h2>Fuentes</h2><ul class="fuentes">
+<li>ONSC · Vínculos laborales con el Estado, altas y bajas 2025 <a class="tag t-oficial" href="https://www.gub.uy/oficina-nacional-servicio-civil/comunicacion/publicaciones/vinculos-laborales-estado-altas-bajas-2025" target="_blank" rel="noopener">oficial</a></li>
+<li>Búsqueda · Altas, bajas y motivos de baja 2025 <a class="tag t-prensa" href="https://www.busqueda.com.uy/economia/hubo-586-destituciones-funcionarios-publicos-2025-se-incumplieron-leyes-cupos-ingreso-n5414887" target="_blank" rel="noopener">prensa</a></li>
+<li>CGN · Rendición de Cuentas 2025, Tomo I <a class="tag t-oficial" href="https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf" target="_blank" rel="noopener">oficial</a></li>
+<li>MEF · Resultado del sector público a diciembre de 2025 <a class="tag t-oficial" href="https://www.gub.uy/ministerio-economia-finanzas/datos-y-estadisticas/estadisticas/resultado-del-sector-publico-diciembre-2025" target="_blank" rel="noopener">oficial</a></li>
+<li>INE · Población proyectada 2025 <a class="tag t-oficial" href="https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/22-proyecciones-estimaciones" target="_blank" rel="noopener">oficial</a></li>
+<li>BCU vía Montevideo Portal · PIB 2025 <a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Economia-uruguaya-cerro-en-2025-con-crecimiento-por-debajo-de-lo-proyectado-uc956982" target="_blank" rel="noopener">prensa</a></li>
+<li>OCDE · Government at a Glance América Latina 2024 <a class="tag t-oficial" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/03/government-at-a-glance-latin-america-and-the-caribbean-2024_0d6281fd/4abdba16-en.pdf" target="_blank" rel="noopener">oficial</a></li>
+<li>OCDE · Government at a Glance 2025, empleo público <a class="tag t-oficial" href="https://www.oecd.org/en/publications/government-at-a-glance-2025_0efd0bcd-en/full-report/employment-in-general-government_dafcfac5.html" target="_blank" rel="noopener">oficial</a></li>
+<li>BPS · Tiempos de atención con el nuevo sistema <a class="tag t-oficial" href="https://www.bps.gub.uy/24099/aumenta-el-acceso-a-las-jubilaciones-y-se-acorta-el-tiempo-de-los-tramites-en-el-bps.html" target="_blank" rel="noopener">oficial</a></li>
+<li>AGESIC · Índice de gobierno digital de la ONU 2024 <a class="tag t-oficial" href="https://www.gub.uy/uruguay-digital/politicas-y-gestion/lider-gobierno-digital" target="_blank" rel="noopener">oficial</a></li>
+<li>OCDE · Estonia, X-Road y firma digital <a class="tag t-oficial" href="https://www.oecd.org/en/publications/digital-opportunities-for-better-agricultural-policies_571a0812-en/full-report/component-20.html" target="_blank" rel="noopener">oficial</a></li>
+<li>Gobierno de Noruega · Fondo de pensiones del gobierno 2026 <a class="tag t-oficial" href="https://www.regjeringen.no/en/documents/meld.-st.-7-2025-2026/id3155109/?ch=1" target="_blank" rel="noopener">oficial</a></li>
+<li>Dipres Chile · Fondo de Reserva de Pensiones <a class="tag t-oficial" href="https://www.dipres.gob.cl/598/articles-426503_doc_pdf.pdf" target="_blank" rel="noopener">oficial</a></li>
+<li>UTE · Giros a Rentas Generales (caso UTE de este sitio) <a class="tag t-propio" href="ute.html">sitio</a></li>
+</ul></section>
+</main>
+<footer><div class="wrap">Hecho por un ciudadano · contacto@verdadmilanesa.uy · Los números no tienen partido.</div></footer>
+</body></html>

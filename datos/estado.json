@@ -1,0 +1,234 @@
+{
+ "consultado": "2026-11-17",
+ "supuestos": {
+  "poblacion": 3485931,
+  "pib_2025_millones": 3516000,
+  "salida_natural_anual": 0.0425,
+  "salida_natural_vinculos": 13526,
+  "costo_vinculo_pn": 1172361,
+  "reasignacion": 0.25,
+  "rendimiento_fondo_real": 0.03,
+  "dolar": 40
+ },
+ "grupos": {
+  "apoyo": 53461,
+  "primera": 192582,
+  "emp": 72226
+ },
+ "escenarios": [
+  {
+   "escenario": "Moderado",
+   "anio": 2030,
+   "repone_apoyo": 0.5,
+   "repone_primera_linea": 1,
+   "repone_empresas_intendencias": 0.75,
+   "vacantes_pn_no_repuestas": 5444,
+   "reasignadas": 1361,
+   "menos_empresas_intendencias": 3756,
+   "vinculos_menos_neto": 7839,
+   "vinculos_quedan": 310430,
+   "vinculos_cada_mil": 89.1,
+   "ahorro_sueldos_pn_millones": 4787,
+   "otros_ahorros_millones": 750,
+   "costo_tecnologia_millones": 1000,
+   "ahorro_neto_millones": 4537,
+   "ahorro_neto_pct_pib": 0.13
+  },
+  {
+   "escenario": "Moderado",
+   "anio": 2035,
+   "repone_apoyo": 0.5,
+   "repone_primera_linea": 1,
+   "repone_empresas_intendencias": 0.75,
+   "vacantes_pn_no_repuestas": 10333,
+   "reasignadas": 2583,
+   "menos_empresas_intendencias": 7317,
+   "vinculos_menos_neto": 15067,
+   "vinculos_quedan": 303202,
+   "vinculos_cada_mil": 87.0,
+   "ahorro_sueldos_pn_millones": 9086,
+   "otros_ahorros_millones": 1500,
+   "costo_tecnologia_millones": 1000,
+   "ahorro_neto_millones": 9586,
+   "ahorro_neto_pct_pib": 0.27
+  },
+  {
+   "escenario": "Central",
+   "anio": 2030,
+   "repone_apoyo": 0.333,
+   "repone_primera_linea": 0.9,
+   "repone_empresas_intendencias": 0.5,
+   "vacantes_pn_no_repuestas": 11214,
+   "reasignadas": 2804,
+   "menos_empresas_intendencias": 7354,
+   "vinculos_menos_neto": 15764,
+   "vinculos_quedan": 302505,
+   "vinculos_cada_mil": 86.8,
+   "ahorro_sueldos_pn_millones": 9860,
+   "otros_ahorros_millones": 1500,
+   "costo_tecnologia_millones": 2500,
+   "ahorro_neto_millones": 8860,
+   "ahorro_neto_pct_pib": 0.25
+  },
+  {
+   "escenario": "Central",
+   "anio": 2035,
+   "repone_apoyo": 0.333,
+   "repone_primera_linea": 0.9,
+   "repone_empresas_intendencias": 0.5,
+   "vacantes_pn_no_repuestas": 21385,
+   "reasignadas": 5346,
+   "menos_empresas_intendencias": 13960,
+   "vinculos_menos_neto": 29999,
+   "vinculos_quedan": 288270,
+   "vinculos_cada_mil": 82.7,
+   "ahorro_sueldos_pn_millones": 18804,
+   "otros_ahorros_millones": 3000,
+   "costo_tecnologia_millones": 2500,
+   "ahorro_neto_millones": 19304,
+   "ahorro_neto_pct_pib": 0.55
+  },
+  {
+   "escenario": "Fuerte",
+   "anio": 2030,
+   "repone_apoyo": 0,
+   "repone_primera_linea": 0.75,
+   "repone_empresas_intendencias": 0.333,
+   "vacantes_pn_no_repuestas": 20450,
+   "reasignadas": 5112,
+   "menos_empresas_intendencias": 9668,
+   "vinculos_menos_neto": 25006,
+   "vinculos_quedan": 293263,
+   "vinculos_cada_mil": 84.1,
+   "ahorro_sueldos_pn_millones": 17982,
+   "otros_ahorros_millones": 2500,
+   "costo_tecnologia_millones": 4000,
+   "ahorro_neto_millones": 16482,
+   "ahorro_neto_pct_pib": 0.47
+  },
+  {
+   "escenario": "Fuerte",
+   "anio": 2035,
+   "repone_apoyo": 0,
+   "repone_primera_linea": 0.75,
+   "repone_empresas_intendencias": 0.333,
+   "vacantes_pn_no_repuestas": 38343,
+   "reasignadas": 9586,
+   "menos_empresas_intendencias": 18042,
+   "vinculos_menos_neto": 46799,
+   "vinculos_quedan": 271470,
+   "vinculos_cada_mil": 77.9,
+   "ahorro_sueldos_pn_millones": 33714,
+   "otros_ahorros_millones": 5000,
+   "costo_tecnologia_millones": 4000,
+   "ahorro_neto_millones": 34714,
+   "ahorro_neto_pct_pib": 0.99
+  }
+ ],
+ "fuentes": [
+  [
+   "ONSC · Vínculos laborales con el Estado, altas y bajas 2025",
+   "https://www.gub.uy/oficina-nacional-servicio-civil/comunicacion/publicaciones/vinculos-laborales-estado-altas-bajas-2025",
+   "oficial"
+  ],
+  [
+   "Búsqueda · Destituciones y cupos de ingreso 2025",
+   "https://www.gub.uy/oficina-nacional-servicio-civil/sites/oficina-nacional-servicio-civil/files/documentos/publicaciones/Informe_Vinculos_2025.pdf#page=67",
+   "oficial"
+  ],
+  [
+   "CGN · Rendición de Cuentas 2025, Tomo I",
+   "https://presupuestonacional.gub.uy/sites/default/files/2026-06/Tomo%20I%20%E2%80%93%20Res%C3%BAmenes.pdf",
+   "oficial"
+  ],
+  [
+   "MEF · Resultado del sector público, diciembre 2025",
+   "https://www.gub.uy/ministerio-economia-finanzas/datos-y-estadisticas/estadisticas/resultado-del-sector-publico-diciembre-2025",
+   "oficial"
+  ],
+  [
+   "MEF · Resultado del sector público, setiembre 2026",
+   "https://www.gub.uy/ministerio-economia-finanzas/datos-y-estadisticas/estadisticas/resultado-del-sector-publico-setiembre-2026",
+   "oficial"
+  ],
+  [
+   "INE · Población proyectada 2025",
+   "https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/22-proyecciones-estimaciones",
+   "oficial"
+  ],
+  [
+   "BCU vía Montevideo Portal · PIB 2025",
+   "https://www.montevideo.com.uy/Noticias/Economia-uruguaya-cerro-en-2025-con-crecimiento-por-debajo-de-lo-proyectado-uc956982",
+   "prensa"
+  ],
+  [
+   "OCDE · Government at a Glance América Latina 2024",
+   "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/03/government-at-a-glance-latin-america-and-the-caribbean-2024_0d6281fd/4abdba16-en.pdf",
+   "oficial"
+  ],
+  [
+   "OCDE · Government at a Glance 2025",
+   "https://www.oecd.org/en/publications/government-at-a-glance-2025_0efd0bcd-en/full-report/employment-in-general-government_dafcfac5.html",
+   "oficial"
+  ],
+  [
+   "BPS · Tiempos de atención",
+   "https://www.bps.gub.uy/24099/aumenta-el-acceso-a-las-jubilaciones-y-se-acorta-el-tiempo-de-los-tramites-en-el-bps.html",
+   "oficial"
+  ],
+  [
+   "AGESIC · Índice de gobierno digital de la ONU 2024",
+   "https://www.gub.uy/uruguay-digital/politicas-y-gestion/lider-gobierno-digital",
+   "oficial"
+  ],
+  [
+   "OCDE · Estonia, X-Road y firma digital",
+   "https://www.oecd.org/en/publications/digital-opportunities-for-better-agricultural-policies_571a0812-en/full-report/component-20.html",
+   "oficial"
+  ],
+  [
+   "Montevideo Portal · Resultado y giros de ANTEL 2025",
+   "https://www.montevideo.com.uy/Noticias/Antel-tuvo-ganancias-por-US-248-7-millones--cuanto-derivo-a-Rentas-Generales--uc957620",
+   "prensa"
+  ],
+  [
+   "El Observador · Pérdidas del pórtland",
+   "https://www.elobservador.com.uy/economia-y-empresas/tras-anos-perdidas-portland-oddone-espera-propuesta-definir-el-futuro-ese-negocio-ancap-n6003405/amp",
+   "prensa"
+  ],
+  [
+   "Gobierno de Noruega · Fondo de pensiones 2026",
+   "https://www.regjeringen.no/en/documents/meld.-st.-7-2025-2026/id3155109/?ch=1",
+   "oficial"
+  ],
+  [
+   "Dipres Chile · Fondo de Reserva de Pensiones",
+   "https://www.dipres.gob.cl/598/articles-426503_doc_pdf.pdf",
+   "oficial"
+  ],
+  [
+   "OCDE · Estadísticas tributarias, nota de Uruguay 2026",
+   "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/04/revenue-statistics-in-latin-america-and-the-caribbean-2026-country-notes_968b866c/uruguay_831129ff/e1438b88-en.pdf",
+   "oficial"
+  ],
+  [
+   "Casos UTE y ANCAP e Informe 2025 de este sitio",
+   "ute.html",
+   "propio"
+  ],
+  [
+   "Trabajos de Claude, ChatGPT y DeepSeek y su comparación (repositorio del sitio)",
+   "https://github.com/GuilleCodeUY/Revision_Estado_Uruguay/tree/main/investigacion_estado",
+   "propio"
+  ]
+ ],
+ "pendientes": [
+  "Bajas por jubilación y renuncia por escalafón y organismo, para afinar cada grupo.",
+  "Edad de los funcionarios: cuántos se jubilan en los próximos diez años en cada organismo.",
+  "Sueldo promedio de apoyo y gestión, para no usar el promedio general.",
+  "Costo completo de los 2.067 cargos políticos y de confianza, con asesores y aportes.",
+  "Inventario de inmuebles, vehículos, consultorías y contratos informáticos.",
+  "Gasto del Presupuesto Nacional por área y por tipo (funcionamiento, inversión), con fuente oficial verificada.",
+  "Resultado por negocio de cada empresa pública, incluidos pórtland y ALUR."
+ ]
+}

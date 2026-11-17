@@ -1,0 +1,7 @@
+﻿escenario;anio;repone_apoyo;repone_primera_linea;repone_empresas_intendencias;vacantes_pn_no_repuestas;reasignadas;menos_empresas_intendencias;vinculos_menos_neto;vinculos_quedan;vinculos_cada_mil;ahorro_sueldos_pn_millones;otros_ahorros_millones;costo_tecnologia_millones;ahorro_neto_millones;ahorro_neto_pct_pib
+Moderado;2030;0.5;1;0.75;5444;1361;3756;7839;310430;89.1;4787;750;1000;4537;0.13
+Moderado;2035;0.5;1;0.75;10333;2583;7317;15067;303202;87.0;9086;1500;1000;9586;0.27
+Central;2030;0.333;0.9;0.5;11214;2804;7354;15764;302505;86.8;9860;1500;2500;8860;0.25
+Central;2035;0.333;0.9;0.5;21385;5346;13960;29999;288270;82.7;18804;3000;2500;19304;0.55
+Fuerte;2030;0;0.75;0.333;20450;5112;9668;25006;293263;84.1;17982;2500;4000;16482;0.47
+Fuerte;2035;0;0.75;0.333;38343;9586;18042;46799;271470;77.9;33714;5000;4000;34714;0.99

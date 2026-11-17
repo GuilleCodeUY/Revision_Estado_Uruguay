@@ -14,6 +14,7 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 - `publico/movilidad.html` es el Informe especial 1, movilidad eléctrica: qué subsidia el Estado al auto eléctrico, qué le cobra al de nafta, cuánto recauda y deja de cobrar, el costo de uso, los gastos fijos y las emisiones. Se genera desde `datos/movilidad.json`.
 - `publico/transporte.html` es el Informe especial 2, la reforma del transporte metropolitano: qué se va a hacer (BRT eléctrico en 8 de Octubre y Av. Italia), cuánto cuesta frente a tranvía y metro, cuánta capacidad y energía requiere, el sistema actual, las otras propuestas y lo que se discute. Se genera desde `datos/transporte.json`. La investigación y su verificación están en `investigacion_transporte/`.
 - `publico/justicia.html` es el Informe especial 3, justicia penal y seguridad: delitos 2025-2026 (AECA), tiempos de Fiscalía, cárceles y censo penitenciario, reincidencia, drogas y calle, comparación internacional y lo que dice la ley. Se genera desde `datos/justicia.json`. El borrador original (ChatGPT) y su verificación están en `investigacion_justicia/`.
+- `publico/estado.html` es el Informe especial 4, "Un Estado que rinde": empleo público, gasto, salida natural de funcionarios, escenarios a 2035 sin despidos, tecnología, fondo de inversión e impuestos. Se genera desde `datos/estado.json` y `web/estado.template.html`. Se hizo cruzando los trabajos de Claude, ChatGPT y DeepSeek; los tres y la comparación están en `investigacion_estado/`.
 - `publico/informe.html` es el informe completo: Presupuesto Nacional, ingresos, empleo, Parlamento, Montevideo, Tribunal de Cuentas, escenarios de ahorro y aportes. Los importes de portada están redondeados a millones de pesos y los enlaces llevan a las cifras exactas.
 - `datos/correcciones.json` es el registro de objeciones que se muestra en la fe de erratas. Cada entrada lleva `fecha`, `dato`, `estado` (`recibida`, `en_revision`, `aceptada` o `rechazada`) y `resultado`.
 - `og.png` es la imagen que aparece al compartir el enlace. `robots.txt` y `sitemap.xml` sirven para que Google indexe el sitio.
@@ -54,6 +55,8 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 | `justicia_indicadores.csv` | Delitos de enero a setiembre 2025 y 2026 (AECA). |
 | `justicia_carceles.csv` | Datos de justicia, cárceles y reincidencia con su fuente. |
 | `justicia_fuentes.csv` | Las 68 fuentes del informe de justicia, con tipo (oficial, prensa, internacional). |
+| `estado_escenarios.csv` | Escenarios moderado, central y fuerte a 2030 y 2035: reglas de reposición, vínculos, ahorro bruto y neto. |
+| `estado_fuentes.csv` | Las fuentes del informe de Estado optimizado, con tipo. |
 | `pedidos_acceso_intendencias.csv` | Seguimiento de los 19 pedidos de acceso (Ley 18.381). |
 | `tribunal_muestra_2025.csv` | Cuatro expedientes con motivo, importe y estado documentado. |
 
