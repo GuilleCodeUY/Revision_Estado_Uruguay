@@ -216,12 +216,33 @@ BARRA_LINKS = (
     ("puerto.html", "puerto.html", "Puerto", "#ff7a1a"),
     ("ute.html", "ute.html", "UTE", "#5ce1e6"),
     ("ancap.html", "ancap.html", "ANCAP", "#ff4b2b"),
-    ("movilidad.html", "movilidad.html", "Especial · Eléctricos", "#a78bfa"),
-    ("transporte.html", "transporte.html", "Especial · Transporte", "#a3e635"),
+    ("especiales", None, "Especiales", None),
     ("informe.html", "informe.html", "Informe 2025", None),
     ("correcciones", "./#correcciones", "Correcciones", None),
     ("contacto", "mailto:contacto@verdadmilanesa.uy", "Contacto", None),
 )
+
+# Los informes especiales van en un desplegable para que la barra no se amontone.
+ESPECIALES = (
+    ("movilidad.html", "Informe especial 1", "Auto eléctrico: ¿sí o no?", "#a78bfa"),
+    ("transporte.html", "Informe especial 2", "La reforma del transporte", "#a3e635"),
+)
+ESPECIALES_CSS = """
+    .vm-esp{flex:none}
+    .vm-esp summary{list-style:none;cursor:pointer;color:#111;background:#fff;font-size:.86rem;font-weight:800;padding:.4rem .8rem;border-radius:999px;min-height:2.4rem;box-sizing:border-box;display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
+    .vm-esp summary::-webkit-details-marker{display:none}
+    .vm-esp[open] summary,.vm-esp summary[aria-current]{background:#ffd23f}
+    .vm-esp-panel{position:fixed;top:3.6rem;right:1rem;width:min(320px,calc(100vw - 2rem));background:#1b1b1b;border:1px solid #333;border-radius:.6rem;padding:.4rem;box-shadow:0 12px 30px rgba(0,0,0,.45);display:flex;flex-direction:column;gap:.3rem;z-index:60}
+    .vm-esp-panel a{display:block;color:#fff;text-decoration:none;padding:.55rem .75rem;border-radius:.45rem;border-left:5px solid var(--c);font-weight:800;font-size:.92rem;background:#242424}
+    .vm-esp-panel a:hover{background:#2e2e2e}.vm-menu .vm-esp-panel a[aria-current]{background:#2e2e2e;color:#fff}.vm-esp-panel small{display:block;color:var(--c);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+"""
+ESPECIALES_JS = ('<script>document.querySelectorAll(".vm-esp").forEach(function(d){'
+                 'function pos(){var p=d.querySelector(".vm-esp-panel"),h=d.closest(".vm-barra").getBoundingClientRect(),'
+                 's=d.querySelector("summary").getBoundingClientRect();p.style.top=(h.bottom+6)+"px";'
+                 'var w=p.offsetWidth,l=Math.min(Math.max(8,s.right-w),innerWidth-w-8);p.style.left=l+"px";p.style.right="auto";}'
+                 'd.addEventListener("toggle",function(){if(d.open)pos();});addEventListener("resize",function(){if(d.open)pos();});'
+                 'document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});'
+                 'document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false;});});</script>')
 
 
 def poner_barra(public, page):
@@ -229,6 +250,15 @@ def poner_barra(public, page):
     links = []
     for key, href, text, color in BARRA_LINKS:
         current = ' aria-current="page"' if key == page else ""
+        if key == "especiales":
+            marca = ' aria-current="page"'
+            dentro = marca if any(p == page for p, *_ in ESPECIALES) else ""
+            items = "".join(
+                f'<a href="{p}" style="--c:{c}"{marca if p == page else ""}><small>{n}</small>{t}</a>'
+                for p, n, t, c in ESPECIALES)
+            links.append(f'<details class="vm-esp"><summary{dentro}>{text} '
+                         f'<span aria-hidden="true">▾</span></summary><div class="vm-esp-panel">{items}</div></details>')
+            continue
         if color:
             r, g, b = (int(color[i:i + 2], 16) for i in (1, 3, 5))
             estilo = f' style="--c:{color};--cs:rgba({r},{g},{b},.16);--ch:rgba({r},{g},{b},.32)"'
@@ -238,14 +268,15 @@ def poner_barra(public, page):
     html = (f'<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a>'
             f'<nav class="vm-menu" aria-label="Casos">{"".join(links)}</nav></div></header>'
             '<script>(function(){var a=document.querySelector(".vm-menu [aria-current]");'
-            'if(a){var m=a.parentNode;m.scrollLeft=a.offsetLeft-(m.clientWidth-a.offsetWidth)/2;}})();</script>')
+            'if(a){var m=a.closest(".vm-menu");var t=a.closest(".vm-esp")||a;m.scrollLeft=t.offsetLeft-(m.clientWidth-t.offsetWidth)/2;}})();</script>'
+            + ESPECIALES_JS)
     path = public / page
     text = path.read_text(encoding="utf-8")
     if "vm-barra" in text:
         return
     if text.count("</style>") < 1 or text.count("<body>") != 1:
         raise ValueError(f"No se pudo agregar la barra a {page}.")
-    text = text.replace("</style>", BARRA_CSS + "  </style>", 1)
+    text = text.replace("</style>", BARRA_CSS + ESPECIALES_CSS + "  </style>", 1)
     if "<!-- BARRA -->" in text:
         text = text.replace("<!-- BARRA -->", html, 1)
     else:
