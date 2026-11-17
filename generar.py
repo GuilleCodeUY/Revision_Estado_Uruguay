@@ -29,7 +29,7 @@ def load_data(name):
 
 def write_csv(public, name, rows):
     with (public / name).open("w", encoding="utf-8-sig", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=tuple(rows[0]), delimiter=";")
+        writer = csv.DictWriter(file, fieldnames=tuple(rows[0]), delimiter=";", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
