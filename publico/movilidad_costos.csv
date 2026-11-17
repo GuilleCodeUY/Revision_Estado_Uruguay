@@ -1,0 +1,11 @@
+﻿concepto;unidad;nafta;electrico;fuente
+Energía 15.000 km · nafta (7 L/100 km a $ 90,45);uyu_por_año;94973;;cálculo propio
+Energía 15.000 km · eléctrico, todo en casa (tarifa triple horario);uyu_por_año;;5550;UTE + cálculo propio
+Energía 15.000 km · eléctrico, 80 % casa y 20 % red pública;uyu_por_año;;10290;cálculo propio
+Energía 15.000 km · eléctrico, todo en red pública;uyu_por_año;;29250;UTE + cálculo propio
+IMESI y CO2 pagados en la nafta, 15.000 km;uyu_por_año;39144;0;URSEA + cálculo propio
+Patente 2027 · auto de US$ 22.000 / eléctrico de US$ 23.500;usd_por_año;902;770;Congreso de Intendentes + cálculo propio
+Patente 2027 · eléctrico de US$ 18.000;usd_por_año;738;443;Congreso de Intendentes + cálculo propio
+Seguro todo riesgo 0 km, piso de referencia;uyu_por_año;36000;50000;corredores y comparadores, no cotización
+Seguro todo riesgo 0 km, techo de referencia;uyu_por_año;50000;90000;corredores y comparadores, no cotización
+CO2 por año, 15.000 km;kg_co2_por_año;2426;25;MIEM + cálculo propio

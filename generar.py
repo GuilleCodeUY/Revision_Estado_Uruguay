@@ -216,7 +216,8 @@ BARRA_LINKS = (
     ("puerto.html", "puerto.html", "Puerto", "#ff7a1a"),
     ("ute.html", "ute.html", "UTE", "#5ce1e6"),
     ("ancap.html", "ancap.html", "ANCAP", "#ff4b2b"),
-    ("transporte.html", "transporte.html", "Transporte", "#a3e635"),
+    ("movilidad.html", "movilidad.html", "Especial · Eléctricos", "#a78bfa"),
+    ("transporte.html", "transporte.html", "Especial · Transporte", "#a3e635"),
     ("informe.html", "informe.html", "Informe 2025", None),
     ("correcciones", "./#correcciones", "Correcciones", None),
     ("contacto", "mailto:contacto@verdadmilanesa.uy", "Contacto", None),
@@ -323,7 +324,7 @@ def build_portada(public, data):
         "ESTADO_PARLAMENTO": f"Esperando {waiting} pedidos" if waiting else "Publicado",
         "ERRATAS_N": "1 objeción" if n_fix == 1 else f"{n_fix} objeciones",
         "ERRATAS_TABLA": erratas,
-        "CASOS_N": "7",
+        "CASOS_N": "6",
         "PENDIENTES_N": str(pending),
         "ACTUALIZADO": datetime.date.today().strftime("%d/%m/%Y"),
     }
@@ -842,6 +843,29 @@ def build_transporte(public):
     write_csv(public, "transporte_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+def build_movilidad(public):
+    """Genera movilidad.html (Informe especial 1) y sus CSV desde datos/movilidad.json."""
+    from html import escape
+    data = load_data("movilidad.json")
+    names = {"oficial": "oficial", "prensa": "prensa", "gremial": "gremial", "terceros": "terceros", "propio": "cálculo propio"}
+    tag = lambda t: f'<span class="tag t-{t}">{names[t]}</span>'
+    values = {
+        "OBJ": '<a class="obj" href="informe.html?aporte=movilidad-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(u)}"{"" if u.endswith((".html",)) or "#" in u and not u.startswith("http") else " target=\"_blank\" rel=\"noopener\""}>{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "movilidad.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en movilidad.template.html.")
+    (public / "movilidad.html").write_text(page, encoding="utf-8")
+    write_csv(public, "movilidad_costos.csv", data["costos"])
+    write_csv(public, "movilidad_estado.csv", data["estado"])
+    write_csv(public, "movilidad_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -914,17 +938,18 @@ def main():
     build_ute(public)
     build_ancap(public)
     build_transporte(public)
+    build_movilidad(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", *STATIC_PAGES))
+                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", *STATIC_PAGES))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, el informe especial de movilidad eléctrica y los CSV.")
 
 
 if __name__ == "__main__":

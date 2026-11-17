@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es-UY"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boceto · Auto eléctrico: ¿sí o no? · La verdad de la milanesa</title>
+<style>
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb;--hero:#1a1033;--hero2:#2a1b4f;--acc:#a78bfa;--acc2:#6d28d9;--amber:#ffb627;--green:#2e9e6a}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header.site{background:var(--hero);color:#fff;box-shadow:inset 0 -8px 0 var(--acc)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 3rem}
+    .kicker{display:inline-block;background:var(--acc);color:#111;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.2rem,7vw,4.4rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:56ch;color:#d7e3ee;margin:.9rem 0 1.2rem}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:#111}.btn.o{background:transparent;color:var(--acc)}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:2rem}
+    .golpe{background:var(--hero2);border-left:6px solid var(--acc);padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+    .golpe b{font-size:clamp(1.7rem,4vw,2.2rem);font-weight:900;line-height:1.05;letter-spacing:-.03em}
+    .golpe span{font-size:.92rem;color:#d7e3ee}
+    .golpe .acc{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.45rem}
+    .golpe .acc a{font-size:.72rem;font-weight:700;text-decoration:none;color:#cfe0ee;background:rgba(255,255,255,.08);padding:.2rem .45rem;border-radius:.25rem}
+    .golpe .acc a:hover{text-decoration:underline}
+    main{padding:2rem 0 3rem}main section{margin-bottom:3rem;scroll-margin-top:1rem}
+    h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}.lead{color:var(--muted);margin:0 0 1.2rem;max-width:72ch}
+    .num{color:var(--acc2);font-weight:900;font-size:.85rem;letter-spacing:.1em}
+    .tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.12rem .42rem;border-radius:.2rem;vertical-align:middle;text-decoration:none}
+    .t-oficial{background:#dff1e7;color:#1d6b46}.t-prensa{background:#e6eef7;color:#1e4b7a}.t-gremial{background:#fde6d4;color:#9a4300}.t-partido{background:#f6dede;color:#9b1c25}.t-pend{background:var(--yellow);color:#111}.t-terceros{background:#efe4f7;color:#5b2a86}.t-parte{background:#f6dede;color:#9b1c25}.t-propio{background:#fff1cf;color:#7a5200}
+    .chart{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1rem .5rem;overflow-x:auto}
+    .chart svg{display:block;min-width:620px;width:100%;height:auto}
+    .legend{display:flex;gap:1.2rem;font-size:.85rem;margin:.2rem 0 .8rem;flex-wrap:wrap}.legend i{display:inline-block;width:12px;height:12px;margin-right:.35rem;vertical-align:-1px}
+    .nota{font-size:.84rem;color:var(--muted);margin-top:.7rem;max-width:80ch}
+    .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+    .barras h3{font-size:1rem;margin:0 0 .6rem}
+    .fila{display:grid;grid-template-columns:150px 1fr 92px;align-items:center;gap:.5rem;font-size:.88rem;margin:.32rem 0}
+    .fila .b{height:18px;background:#c9d6e2;border-radius:2px}.fila.mvd .b{background:var(--acc2)}.fila.mvd{font-weight:800}
+    .fila .v{text-align:right;font-variant-numeric:tabular-nums}
+    .timeline{border-left:3px solid var(--hero);margin-left:.4rem;padding-left:1.2rem}
+    .hito{position:relative;margin:0 0 1.5rem}
+    .hito:before{content:"";position:absolute;left:-1.72rem;top:.35rem;width:13px;height:13px;border-radius:50%;background:var(--acc2);border:2px solid var(--paper)}
+    .hito .f{font-weight:800;color:var(--hero2)}.hito p{margin:.2rem 0 .35rem;max-width:75ch}
+    .obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .obra{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+    .obra h3{margin:0;font-size:1.05rem}.obra .m{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}.obra p{font-size:.9rem;margin:0}
+    .obra .acc{margin-top:auto;display:flex;gap:.35rem;flex-wrap:wrap;padding-top:.4rem}
+    .alerta{background:var(--hero);color:#fff;padding:1.6rem;border-left:8px solid var(--red);border-radius:.5rem}
+    .alerta h2{color:#fff}.alerta p,.alerta li{color:#d7e3ee;max-width:76ch}
+    .fuentes{columns:2 320px;padding-left:1.1rem}.fuentes li{font-size:.88rem;margin:.3rem 0;break-inside:avoid}
+    .pend{background:#fff;border-left:6px solid var(--yellow);padding:1rem 1.2rem;font-size:.92rem}.pend ul{margin:.4rem 0 0;padding-left:1.2rem}
+    a.obj{font-size:.72rem;font-weight:700;text-decoration:none;padding:.2rem .45rem;border-radius:.25rem;background:#fde6e7;color:#9b1c25}
+    .golpe a.obj{background:rgba(230,57,70,.25);color:#ffd9dc}
+    footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    @media(max-width:760px){.golpes{grid-template-columns:1fr}}
+      .golpe.big{border-left-color:var(--amber)}
+    .hero p.sub{color:#ddd6f3}.golpe span{color:#ddd6f3}
+    .litro{margin:1rem 0 1.8rem}.litro .tit{display:flex;justify-content:space-between;font-weight:800;margin-bottom:.35rem;font-size:1.05rem}
+    .pila{display:flex;height:56px;border:2px solid var(--hero);border-radius:.4rem;overflow:hidden}
+    .pila div{display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+    .ref{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.84rem;margin-top:.5rem}.ref i{display:inline-block;width:11px;height:11px;margin-right:.3rem;vertical-align:-1px;border-radius:2px}
+    .esc .usd{font-weight:800;color:var(--hero2)}.obra.hoy{border-top-color:var(--acc)}
+    .hito.menos:before{background:var(--green)}
+    .litro .real{font-size:.9rem;margin:.5rem 0 0}.fila.prom{font-style:italic;color:var(--muted)}.fila.prom .b{background:#e3dccb}
+  .bars{display:flex;flex-direction:column;gap:.55rem;background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem}
+.b{display:grid;grid-template-columns:7.5rem 1fr 6.5rem;align-items:center;gap:.6rem;font-size:.92rem}.bn{font-weight:700}.bt{background:#eee8d8;height:1.3rem;border-radius:.2rem;overflow:hidden}.bt i{display:block;height:100%}.bv{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}.bu{font-size:.78rem;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.cmp h3{font-size:1rem;margin:0 0 .5rem}
+.line{position:relative}.line .mark{position:absolute;top:0;bottom:0;border-left:3px dashed var(--red)}
+@media(max-width:600px){.golpes{grid-template-columns:1fr}.b{grid-template-columns:5.5rem 1fr 5.5rem;font-size:.85rem}}
+a.obj{white-space:nowrap}
+.boceto{background:var(--yellow);color:#111;text-align:center;font-weight:700;font-size:.85rem;padding:.45rem 1rem}
+.dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.lista{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1.2rem}.lista h3{margin:0 0 .4rem}.lista ul{margin:0;padding-left:1.1rem}.lista li{margin:.3rem 0;font-size:.93rem}
+.lista.si{border-color:var(--green)}.lista.no{border-color:var(--red)}
+.obra.entra{border-top-color:var(--green)}.obra.sale{border-top-color:var(--red)}.obra.vuelve{border-top-color:var(--acc)}
+.portada{background:#121212;padding:1.5rem;border-radius:.6rem}
+.caso{position:relative;border-radius:.6rem;padding:1.4rem;color:#fff;text-decoration:none;display:flex;flex-direction:column;gap:.55rem;min-height:15rem;box-shadow:inset 0 -7px 0 var(--acc);background:var(--hero);max-width:540px}
+.caso .top2{display:flex;justify-content:space-between;align-items:center}.caso .tema{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--acc)}
+.caso .estado{font-size:.72rem;font-weight:800;text-transform:uppercase;background:rgba(255,255,255,.14);padding:.2rem .5rem;border-radius:.2rem}
+.caso .n{font-size:3rem;font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--acc)}.caso h3{margin:auto 0 0;font-size:1.35rem}.caso p{margin:0;font-size:.92rem;opacity:.88}.caso .ir{font-weight:800;color:var(--acc)}
+</style></head><body>
+<div class="boceto">BOCETO · Informe especial N.º 1 · todavía no publicado</div>
+<header class="site"><div class="wrap top"><a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a><nav aria-label="Secciones"><a href="#mercado">El mercado</a><a href="#beneficios">Lo que da el Estado</a><a href="#cobra">Lo que cobra</a><a href="#cuenta">La cuenta</a><a href="#uso">Cuánto cuesta</a><a href="#fijos">Gastos fijos</a><a href="#co2">Contaminación</a><a href="#balance">A favor y en contra</a><a href="#fuentes">Fuentes</a></nav></div><div class="wrap hero">
+<span class="kicker">Informe especial 1 · Movilidad eléctrica</span>
+<h1>Auto eléctrico: ¿sí o no?</h1>
+<p class="sub">Qué subsidia el Estado, qué le cobra al auto a nafta, cuánto recauda y cuánto deja de cobrar. Y cuánto le sale de verdad a un uruguayo moverse con cada uno.</p>
+<div class="btns"><a class="btn y" href="#uso">Cuánto cuesta moverse</a><button class="btn o" type="button">Compartir</button></div>
+<div class="golpes">
+<div class="golpe"><b>$ 37 vs $ 633</b><span>cuestan 100 km en un eléctrico cargado en casa de madrugada y en un auto a nafta.</span><div class="acc"><a class="tag t-oficial" href="https://www.montevideo.com.uy/Airbag/Como-cargar-autos-electricos-la-tarifa-recomendada-por-UTE-y-cuanto-puede-costar-uc977602" target="_blank" rel="noopener">oficial</a> <a class="tag t-propio" href="#supuestos" target="_blank" rel="noopener">cálculo propio</a> <a class="obj" href="#">⚑ Objetar</a></div></div>
+<div class="golpe"><b>US$ 143 M</b><span>de IMESI que el Estado no cobró en 2025 por los eléctricos. Con el impuesto nuevo recupera US$ 16 M por año.</span><div class="acc"><a class="tag t-gremial" href="https://www.elobservador.com.uy/c6043443" target="_blank" rel="noopener">gremial</a> <a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/vallcorba-aplicar-imesi-autos-electricos-el-66-los-vehiculos-no-van-tener-ninguna-afectacion-n6049301" target="_blank" rel="noopener">prensa</a> <a class="obj" href="#">⚑ Objetar</a></div></div>
+<div class="golpe"><b>$ 37,28</b><span>de cada litro de nafta son IMESI e impuesto al CO2. Un auto que hace 15.000 km paga unos US$ 970 por año solo en eso.</span><div class="acc"><a class="tag t-oficial" href="ancap.html">URSEA</a> <a class="tag t-propio" href="#supuestos" target="_blank" rel="noopener">cálculo propio</a> <a class="obj" href="#">⚑ Objetar</a></div></div>
+</div></div></header>
+<main class="wrap">
+
+<section id="mercado"><div class="num">01</div><h2>De rareza a uno de cada tres 0 km</h2>
+<p class="lead">Las ventas de eléctricos se multiplicaron, pero todavía son poco más del 2 % de los autos que circulan. Esa diferencia es el centro de la discusión.</p>
+<div class="bars"><div class="b"><span class="bn">2016</span><span class="bt"><i style="width:0.1%;background:var(--hero)"></i></span><span class="bv">10</span></div><div class="b"><span class="bn">2024</span><span class="bt"><i style="width:40.1%;background:var(--hero)"></i></span><span class="bv">5.922</span></div><div class="b"><span class="bn">2025</span><span class="bt"><i style="width:100%;background:var(--hero)"></i></span><span class="bv">14.753</span></div><div class="bu">Eléctricos vendidos por año. En 2025 fueron el 21 % de los 0 km; en los primeros cinco meses de 2026, el 35 %</div></div>
+<p class="nota">Autodata, vía El Observador <a class="tag t-prensa" href="https://www.elobservador.com.uy/economia-y-empresas/autos-electricos-una-rara-avis-hace-10-anos-que-se-asento-el-mercado-ventas-que-crecen-ano-ano-n6048856" target="_blank" rel="noopener">prensa</a>. Parque: SEG Ingeniería. ACAU proyecta ~80.000 autos 0 km en 2026, ~40 % eléctricos <a class="tag t-prensa" href="https://www.autoblog.com.uy/2026/10/el-mef-analiza-aplazar-el-imesi-los.html" target="_blank" rel="noopener">prensa</a> <a class="obj" href="#">⚑ Objetar</a></p></section>
+
+<section id="beneficios"><div class="num">02</div><h2>Lo que el Estado le da al eléctrico</h2>
+<p class="lead">Hasta fin de 2026 un eléctrico no paga IMESI ni arancel. Desde enero de 2027 empiezan a pagar los de más de US$ 19.000 de valor de importación.</p>
+<div class="tabla"><table><thead><tr><th>Beneficio</th><th>Eléctrico</th><th>Auto a nafta</th><th>Hasta cuándo</th></tr></thead><tbody>
+<tr><td>IMESI al comprar</td><td>0 %</td><td>23 % a 46 % según cilindrada</td><td>31/12/2026</td></tr>
+<tr><td>IMESI desde 2027</td><td>0 % hasta US$ 19.000 · 5 % hasta US$ 27.000 · 9 % más arriba</td><td>sin cambios</td><td>Decreto del 30/06/2026 <a class="tag t-prensa" href="https://www.autoblog.com.uy/2026/07/gobierno-aplicara-imesi-electricos-con.html" target="_blank" rel="noopener">prensa</a></td></tr>
+<tr><td>Arancel fuera del Mercosur (TGA)</td><td>0 %</td><td>23 %</td><td>vigente</td></tr>
+<tr><td>Patente 2027 (0 km)</td><td>3 % hasta US$ 19.000 · 4 % hasta US$ 25.000 · 5 % más arriba</td><td>5 % (sin aumento)</td><td>Intendentes, 15/11/2026 <a class="tag t-prensa" href="https://ladiaria.com.uy/politica/articulo/2026/11/intendentes-acordaron-las-patentes-para-2027-sin-ajustes-para-los-vehiculos-a-combustion-y-nuevas-franjas-para-los-electricos/" target="_blank" rel="noopener">prensa</a></td></tr>
+<tr><td>Seguro del BSE</td><td>15 % de descuento (las privadas no lo garantizan)</td><td>—</td><td>vigente <a class="tag t-oficial" href="https://www.gub.uy/ministerio-industria-energia-mineria/politicas-y-gestion/otros-beneficios-aplicables-ve" target="_blank" rel="noopener">oficial</a></td></tr>
+<tr><td>Carga pública de UTE</td><td>descuento de 30 % eliminado; la carga subió 56 %</td><td>—</td><td>desde 01/01/2026 <a class="tag t-prensa" href="https://www.elobservador.com.uy/hacia-el-fin-las-bonificaciones-ute-proyecta-nuevos-ajustes-el-precio-la-carga-vehiculos-electricos-n6045583" target="_blank" rel="noopener">prensa</a></td></tr>
+</tbody></table></div>
+<p class="nota">Impacto en el precio: unos US$ 1.600 más en promedio (Oddone); US$ 1.800 en la franja del 5 % y US$ 4.500 en la del 9 % (Tesla, BYD Seal, Han) <a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Imesi-en-los-autos-electricos-en-Uruguay-que-modelos-costaran-mas-y-a-partir-de-cuando-uc966898" target="_blank" rel="noopener">prensa</a>. En octubre el MEF analizaba postergar el cambio unos meses <a class="tag t-prensa" href="https://www.autoblog.com.uy/2026/10/el-mef-analiza-aplazar-el-imesi-los.html" target="_blank" rel="noopener">prensa</a> <a class="obj" href="#">⚑ Objetar</a></p></section>
+
+<section id="cobra"><div class="num">03</div><h2>Lo que le cobra al auto a nafta</h2>
+<p class="lead">Al comprarlo, IMESI por cilindrada, arancel si viene de fuera del Mercosur e IVA. Al usarlo, cada litro lleva IMESI e impuesto al CO2.</p>
+<div class="litro"><div class="tit"><span>Un litro de nafta Súper</span><span>$ 93,48 (referencia URSEA)</span></div><div class="pila"><div style="width:38.9%;background:#5a5a5a">Combustible</div><div style="width:2.8%;background:#8a8a8a"></div><div style="width:2.6%;background:#9bb06b"></div><div style="width:24.5%;background:#e63946">IMESI</div><div style="width:15.4%;background:#ff7a85">CO2</div><div style="width:1.3%;background:#ffb627"></div><div style="width:0.4%;background:#ffd23f"></div><div style="width:14.2%;background:#2a1b4f">Distribución</div></div>
+<div class="ref"><span><i style="background:#e63946"></i>IMESI $ 22,92</span><span><i style="background:#ff7a85"></i>CO2 $ 14,36</span><span><i style="background:#ffb627"></i>Supergás $ 1,20</span><span><i style="background:#5a5a5a"></i>Combustible $ 36,37</span><span><i style="background:#2a1b4f"></i>Distribución $ 13,24</span></div>
+<p class="real">En surtidor hoy: $ 90,45. Sin IMESI ni CO2 costaría unos $ 53, US$ 1,32 el litro. Es la nafta más cara de América Latina: US$ 2,21 contra US$ 1,34 de promedio regional <a class="tag t-prensa" href="https://www.ambito.com/uruguay/la-nafta-a-sigue-siendo-la-mas-cara-latinoamerica-pesar-la-ultima-decision-del-gobierno-n6307815" target="_blank" rel="noopener">prensa</a></p></div>
+<div class="tabla"><table><thead><tr><th>Auto de US$ 15.000 de valor de importación, fuera del Mercosur</th><th class="n">Nafta 1.5 L</th><th class="n">Eléctrico (2026)</th></tr></thead><tbody>
+<tr><td>Arancel 23 %</td><td class="n">US$ 3.450</td><td class="n">US$ 0</td></tr><tr><td>IMESI 28,75 %</td><td class="n">≈ US$ 5.300</td><td class="n">US$ 0</td></tr><tr><td>IVA 22 % sobre lo anterior</td><td class="n">≈ US$ 5.230</td><td class="n">US$ 3.300</td></tr>
+<tr><td><b>Impuestos al comprar</b></td><td class="n"><b>≈ US$ 13.980</b></td><td class="n"><b>≈ US$ 3.300</b></td></tr></tbody></table></div>
+<p class="nota">Ejemplo ilustrativo <a class="tag t-propio" href="#supuestos" target="_blank" rel="noopener">cálculo propio</a>: el IMESI real se calcula sobre un precio ficto de la DGI. Sirve para ver la escala, no el precio de un modelo. <a class="obj" href="#">⚑ Objetar</a></p></section>
+
+<section id="cuenta"><div class="num">04</div><h2>La cuenta del Estado</h2>
+<p class="lead">Cada eléctrico deja de pagar IMESI al comprarse y, si reemplaza a un auto a nafta, también los impuestos de la nafta que ya no se carga.</p>
+<div class="obras">
+<div class="obra entra"><h3>Entra: nafta y gasoil</h3><div class="m">US$ 842 M</div><p>IMESI a combustibles (US$ 528 M) más impuesto al CO2 (US$ 314 M) en 2025.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/direccion-general-impositiva/sites/direccion-general-impositiva/files/2026-01/Informe%20de%20recaudaci%C3%B3n%20de%20diciembre%202025%20.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra entra"><h3>Entra: compra de autos</h3><div class="m">US$ 170 M</div><p>IMESI cobrado a vehículos en 2025.</p><div class="acc"><a class="tag t-oficial" href="https://www.gub.uy/direccion-general-impositiva/sites/direccion-general-impositiva/files/2026-01/Informe%20de%20recaudaci%C3%B3n%20de%20diciembre%202025%20.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra sale"><h3>No entra: eléctricos</h3><div class="m">US$ 143 M</div><p>IMESI no cobrado en 2025. Es una estimación de Unvenu, la gremial de estaciones, que pierde ventas.</p><div class="acc"><a class="tag t-gremial" href="https://www.elobservador.com.uy/c6043443" target="_blank" rel="noopener">gremial</a></div></div>
+<div class="obra vuelve"><h3>Vuelve desde 2027</h3><div class="m">US$ 16 M</div><p>Por año, con el IMESI nuevo. Cerca del 11 % de lo que se dejó de cobrar.</p><div class="acc"><a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/vallcorba-aplicar-imesi-autos-electricos-el-66-los-vehiculos-no-van-tener-ninguna-afectacion-n6049301" target="_blank" rel="noopener">prensa</a></div></div>
+</div>
+<p class="nota">En enero de 2026 la venta de nafta bajó 4 % en el país y hasta 12 % en Carrasco y Punta Gorda (Unvenu) <a class="tag t-gremial" href="https://www.elobservador.com.uy/c6043443" target="_blank" rel="noopener">gremial</a>. Dólar a $ 41,09, el promedio de 2025. <a class="obj" href="#">⚑ Objetar</a></p></section>
+
+<section id="uso"><div class="num">05</div><h2>¿Cuánto cuesta moverse?</h2>
+<p class="lead">Energía para 15.000 km por año. Aun cargando siempre en la calle, el eléctrico sale cerca de 70 % menos que la nafta.</p>
+<div class="bars"><div class="b"><span class="bn">Nafta</span><span class="bt"><i style="width:100%;background:var(--red)"></i></span><span class="bv">$ 94.973</span></div><div class="b"><span class="bn">Eléctrico, red pública</span><span class="bt"><i style="width:30.8%;background:var(--hero)"></i></span><span class="bv">$ 29.250</span></div><div class="b"><span class="bn">80 % casa, 20 % calle</span><span class="bt"><i style="width:10.8%;background:var(--hero)"></i></span><span class="bv">$ 10.290</span></div><div class="b"><span class="bn">Eléctrico en casa</span><span class="bt"><i style="width:5.8%;background:var(--green)"></i></span><span class="bv">$ 5.550</span></div><div class="bu">Pesos por año. Nafta a $ 90,45 y 7 L/100 km; en casa, tarifa triple horario de madrugada ($ 2,443 el kWh)</div></div>
+<p class="nota">Red pública de UTE: $ 10,4 el kWh en carga lenta y $ 11,8 en rápida, más $ 54,8 o $ 132,9 por carga. Cargar en hora punta en casa cuesta $ 12,034 el kWh, cinco veces más que de madrugada <a class="tag t-oficial" href="https://www.montevideo.com.uy/Airbag/Como-cargar-autos-electricos-la-tarifa-recomendada-por-UTE-y-cuanto-puede-costar-uc977602" target="_blank" rel="noopener">oficial</a> <a class="tag t-propio" href="#supuestos" target="_blank" rel="noopener">cálculo propio</a> <a class="obj" href="#">⚑ Objetar</a></p></section>
+
+<section id="fijos"><div class="num">06</div><h2>Gastos fijos de un auto</h2>
+<p class="lead">Un auto a nafta de US$ 22.000 contra un eléctrico parecido de US$ 23.500 (en los SUV la diferencia no pasa de US$ 1.500). Primer año, 2027.</p>
+<div class="tabla"><table><thead><tr><th>Gasto por año</th><th class="n">Nafta</th><th class="n">Eléctrico</th><th>Nota</th></tr></thead><tbody>
+<tr><td>Patente</td><td class="n">US$ 902</td><td class="n">US$ 770</td><td>5 % y 4 % del valor sin IVA <a class="tag t-prensa" href="https://ladiaria.com.uy/politica/articulo/2026/11/intendentes-acordaron-las-patentes-para-2027-sin-ajustes-para-los-vehiculos-a-combustion-y-nuevas-franjas-para-los-electricos/" target="_blank" rel="noopener">prensa</a></td></tr>
+<tr><td>Patente, eléctrico de menos de US$ 19.000</td><td class="n">US$ 738</td><td class="n">US$ 443</td><td>la franja que mantiene el 3 %</td></tr>
+<tr><td>SOA (obligatorio)</td><td class="n">desde $ 3.500</td><td class="n">desde $ 3.500</td><td>solo daños a personas</td></tr>
+<tr><td>Seguro todo riesgo (0 km)</td><td class="n">desde $ 36.000 a 40.000</td><td class="n">$ 50.000 a 90.000</td><td>Depende mucho de la aseguradora y la zona: hay que cotizar. Nafta: los 0 km más baratos en Montevideo <a class="tag t-terceros" href="https://segurarse.com.uy/blog/seguro-de-auto/estos-son-los-cinco-0km-mas-baratos-de-uruguay/" target="_blank" rel="noopener">terceros</a>. Eléctrico: uno de US$ 28.000 <a class="tag t-terceros" href="https://autoencuotas.com/seguro-de-auto-electrico-en-uruguay-precios-coberturas-y-descuentos-2026/" target="_blank" rel="noopener">terceros</a>. El BSE descuenta 15 % a los eléctricos <a class="tag t-oficial" href="https://www.gub.uy/ministerio-industria-energia-mineria/politicas-y-gestion/otros-beneficios-aplicables-ve" target="_blank" rel="noopener">oficial</a></td></tr>
+<tr><td>Mantenimiento</td><td class="n">aceite, filtros, embrague</td><td class="n">hasta 70 % menos</td><td>menos piezas que se gastan</td></tr>
+<tr><td>Batería</td><td class="n">—</td><td class="n">cambio caro</td><td>fuera de garantía (MIEM)</td></tr>
+<tr><td>Cargador en casa</td><td class="n">—</td><td class="n">inversión inicial</td><td>UTE recomienda hasta 7,4 kW</td></tr>
+<tr><td>Peajes, estacionamiento, cubiertas</td><td class="n">igual</td><td class="n">igual</td><td>sin diferencias</td></tr>
+</tbody></table></div>
+<p class="nota">Los seguros son caros y varían mucho: los valores son de corredores y sitios de comparación, no cotizaciones. Afuera, reparar un eléctrico después de un choque sale 23 % más que uno a combustión <a class="tag t-prensa" href="https://www.theclinic.cl/2026/07/14/reparar-auto-electrico-cuesta-mas/amp/" target="_blank" rel="noopener">prensa</a>. SOA: referencia de mercado <a class="tag t-terceros" href="https://cuantomecuesta.com/uy/seguro-automotor/" target="_blank" rel="noopener">terceros</a> <a class="tag t-propio" href="#supuestos" target="_blank" rel="noopener">cálculo propio</a> <a class="obj" href="#">⚑ Objetar</a></p></section>
+
+<section id="co2"><div class="num">07</div><h2>¿Cuánto contamina?</h2>
+<p class="lead">Con una red eléctrica 98 % renovable, el eléctrico casi no emite al circular. No entra en la cuenta la fabricación de la batería.</p>
+<div class="bars"><div class="b"><span class="bn">Nafta</span><span class="bt"><i style="width:100%;background:var(--red)"></i></span><span class="bv">2,43 t</span></div><div class="b"><span class="bn">Eléctrico</span><span class="bt"><i style="width:1.0%;background:var(--green)"></i></span><span class="bv">0,025 t</span></div><div class="bu">Toneladas de CO2 por año para 15.000 km. Unos 162 g/km contra 1,7 g/km</div></div>
+<p class="nota">Factor de emisión de la red: 11,2 t de CO2 por GWh en 2025 <a class="tag t-oficial" href="https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/energia-limpia-pilar-para-desarrollo-sostenible-futuro-energetico-del-pais" target="_blank" rel="noopener">oficial</a>. Nafta: 2,31 kg de CO2 por litro <a class="tag t-propio" href="#supuestos" target="_blank" rel="noopener">cálculo propio</a> <a class="obj" href="#">⚑ Objetar</a></p></section>
+
+<section id="balance"><div class="num">08</div><h2>A favor y en contra</h2>
+<div class="dos"><div class="lista si"><h3>A favor</h3><ul><li>Energía entre 69 % y 94 % más barata que la nafta.</li><li>Dos de cada tres modelos siguen sin IMESI en 2027.</li><li>Patente más baja.</li><li>Menos mantenimiento.</li><li>Casi sin emisiones al circular.</li><li>Energía del país en lugar de petróleo importado.</li></ul></div>
+<div class="lista no"><h3>En contra</h3><ul><li>Desde 2027, IMESI de 5 % o 9 % y patente de 4 % o 5 % para los más caros.</li><li>La carga pública subió 56 % en 2026.</li><li>La red de carga se queda corta, sobre todo en el interior.</li><li>Sin lugar para cargar en casa se pierde gran parte del ahorro.</li><li>El seguro todo riesgo puede salir más caro: reparar un eléctrico cuesta más.</li><li>Batería cara y mercado de usados incipiente.</li><li>Las reglas cambian seguido.</li></ul></div></div></section>
+
+<section id="nadie"><div class="alerta"><h2>Lo que hay que mirar</h2><ul>
+<li>Tener un eléctrico no es caro por los impuestos. Lo caro en Uruguay es moverse a nafta.</li>
+<li>El Estado deja de cobrar mucho y recupera poco: US$ 16 M contra una renuncia estimada de US$ 143 M, más la nafta que ya no se vende.</li>
+<li>Los que pierden con 2027: quien compra eléctricos de gama media y alta, quien no puede cargar en casa y los híbridos enchufables (de 2 % a 11 % o más de IMESI).</li></ul></div></section>
+
+<section id="pendiente"><div class="pend"><strong>Lo que todavía estamos buscando</strong><ul>
+<li>Cifra oficial de la DGI del IMESI que no se cobró por los eléctricos (hoy solo hay la estimación de Unvenu).</li>
+<li>Si el MEF posterga el IMESI a los eléctricos previsto para enero de 2027.</li>
+<li>Tasas de IMESI por cilindrada confirmadas en el decreto vigente.</li><li>Cotizaciones reales de seguro todo riesgo para el mismo modelo en versión eléctrica y a nafta, en varias aseguradoras.</li>
+<li>Patente de los eléctricos usados empadronados desde 2026.</li></ul></div></section>
+
+<section id="fuentes"><h2>De dónde sale cada número</h2>
+<p class="lead" id="supuestos">Supuestos del cálculo propio: 15.000 km por año; nafta 7 L/100 km a $ 90,45; eléctrico 15 kWh/100 km; dólar a $ 41,09 (2025) y $ 40 (2026); nafta 2,31 kg de CO2 por litro. Se podrá descargar en CSV, igual que en los otros casos.</p>
+<ul class="fuentes"><li>DGI · Informe de recaudación, diciembre 2025 <a class="tag t-oficial" href="https://www.gub.uy/direccion-general-impositiva/sites/direccion-general-impositiva/files/2026-01/Informe%20de%20recaudaci%C3%B3n%20de%20diciembre%202025%20.pdf" target="_blank" rel="noopener">oficial</a></li><li>Decreto de IMESI a eléctricos, 30/06/2026 <a class="tag t-prensa" href="https://www.autoblog.com.uy/2026/07/gobierno-aplicara-imesi-electricos-con.html" target="_blank" rel="noopener">prensa</a></li><li>Vallcorba: el 66 % no se afecta, US$ 16 M <a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/vallcorba-aplicar-imesi-autos-electricos-el-66-los-vehiculos-no-van-tener-ninguna-afectacion-n6049301" target="_blank" rel="noopener">prensa</a></li><li>Unvenu: exoneraciones y caída de la nafta <a class="tag t-gremial" href="https://www.elobservador.com.uy/c6043443" target="_blank" rel="noopener">gremial</a></li><li>Patente 2027, Congreso de Intendentes <a class="tag t-prensa" href="https://ladiaria.com.uy/politica/articulo/2026/11/intendentes-acordaron-las-patentes-para-2027-sin-ajustes-para-los-vehiculos-a-combustion-y-nuevas-franjas-para-los-electricos/" target="_blank" rel="noopener">prensa</a></li><li>Patente 2026, Congreso de Intendentes <a class="tag t-oficial" href="https://www.gub.uy/congreso-intendentes/comunicacion/noticias/congreso-intendentes-aprueba-unanimidad-valor-patente-rodados-para-ano-2026" target="_blank" rel="noopener">oficial</a></li><li>UTE: costo de 100 km en casa y en la calle <a class="tag t-oficial" href="https://www.montevideo.com.uy/Airbag/Como-cargar-autos-electricos-la-tarifa-recomendada-por-UTE-y-cuanto-puede-costar-uc977602" target="_blank" rel="noopener">oficial</a></li><li>UTE: fin de las bonificaciones en la carga <a class="tag t-prensa" href="https://www.elobservador.com.uy/hacia-el-fin-las-bonificaciones-ute-proyecta-nuevos-ajustes-el-precio-la-carga-vehiculos-electricos-n6045583" target="_blank" rel="noopener">prensa</a></li><li>MIEM: otros beneficios para eléctricos <a class="tag t-oficial" href="https://www.gub.uy/ministerio-industria-energia-mineria/politicas-y-gestion/otros-beneficios-aplicables-ve" target="_blank" rel="noopener">oficial</a></li><li>MIEM: matriz eléctrica 2025 <a class="tag t-oficial" href="https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/energia-limpia-pilar-para-desarrollo-sostenible-futuro-energetico-del-pais" target="_blank" rel="noopener">oficial</a></li><li>Mercado de eléctricos 2016-2026 <a class="tag t-prensa" href="https://www.elobservador.com.uy/economia-y-empresas/autos-electricos-una-rara-avis-hace-10-anos-que-se-asento-el-mercado-ventas-que-crecen-ano-ano-n6048856" target="_blank" rel="noopener">prensa</a></li><li>Modelos que pagarán IMESI <a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Imesi-en-los-autos-electricos-en-Uruguay-que-modelos-costaran-mas-y-a-partir-de-cuando-uc966898" target="_blank" rel="noopener">prensa</a></li><li>Ranking del precio de la nafta <a class="tag t-prensa" href="https://www.ambito.com/uruguay/la-nafta-a-sigue-siendo-la-mas-cara-latinoamerica-pesar-la-ultima-decision-del-gobierno-n6307815" target="_blank" rel="noopener">prensa</a></li><li>Desglose del litro, caso ANCAP (URSEA) <a class="tag t-oficial" href="ancap.html">oficial</a></li></ul></section>
+
+<section><h2>Así se vería en la portada</h2><p class="lead">Una sección nueva, «Informes especiales», debajo de los siete casos, y un botón «Especiales» en la barra de arriba.</p>
+<div class="portada"><a class="caso" href="#"><div class="top2"><span class="tema">Informe especial 1 · 2026</span><span class="estado">Primera ronda</span></div><div class="n">$ 37 vs $ 633</div><div style="font-weight:700">cuestan 100 km en eléctrico y a nafta</div><h3>Auto eléctrico: ¿sí o no?</h3><p>Subsidios, impuestos, lo que recauda el Estado y los gastos fijos de un auto, con números crudos.</p><span class="ir">Ver el informe →</span></a></div></section>
+</main>
+<footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Hecho por un ciudadano · Boceto para revisión</div></footer>
+</body></html>

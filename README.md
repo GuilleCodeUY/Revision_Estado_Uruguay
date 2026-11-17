@@ -11,7 +11,8 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 - `publico/puerto.html` es el caso del puerto de Montevideo: serie de la ANP 2015-2025, concesiones, paros, comparación con seis puertos de la región y obras. Se genera desde `datos/puerto.json`. La investigación y su verificación están en `investigacion_puerto/`.
 - `publico/ute.html` es el caso de UTE: serie 2015-2025 de resultados, inversiones y pagos a Rentas Generales, el fondo de estabilización, la tarifa 2026 con facturas tipo, costos, pérdidas de energía, escenarios de cuánto podría costar y lo cuestionado (Gas Sayago, energía no usada). Se genera desde `datos/ute.json`. La investigación y su verificación están en `investigacion_ute/`.
 - `publico/ancap.html` es el caso de ANCAP: qué pagás en un litro de nafta y de gasoil (desglose de URSEA), cuánto saldría sin impuestos, la comparación con la región, el resultado de ANCAP 2012-2025, los impuestos que paga contra las ganancias que gira, el precio contra la paridad de importación y lo que pierde (pórtland, ALUR, parada de la refinería, desulfurizadora, Gas Sayago). Se genera desde `datos/ancap.json`. La investigación y su verificación están en `investigacion_ancap/`.
-- `publico/transporte.html` es el caso de la reforma del transporte metropolitano: qué se va a hacer (BRT eléctrico en 8 de Octubre y Av. Italia), cuánto cuesta frente a tranvía y metro, cuánta capacidad y energía requiere, el sistema actual, las otras propuestas y lo que se discute. Se genera desde `datos/transporte.json`. La investigación y su verificación están en `investigacion_transporte/`.
+- `publico/movilidad.html` es el Informe especial 1, movilidad eléctrica: qué subsidia el Estado al auto eléctrico, qué le cobra al de nafta, cuánto recauda y deja de cobrar, el costo de uso, los gastos fijos y las emisiones. Se genera desde `datos/movilidad.json`.
+- `publico/transporte.html` es el Informe especial 2, la reforma del transporte metropolitano: qué se va a hacer (BRT eléctrico en 8 de Octubre y Av. Italia), cuánto cuesta frente a tranvía y metro, cuánta capacidad y energía requiere, el sistema actual, las otras propuestas y lo que se discute. Se genera desde `datos/transporte.json`. La investigación y su verificación están en `investigacion_transporte/`.
 - `publico/informe.html` es el informe completo: Presupuesto Nacional, ingresos, empleo, Parlamento, Montevideo, Tribunal de Cuentas, escenarios de ahorro y aportes. Los importes de portada están redondeados a millones de pesos y los enlaces llevan a las cifras exactas.
 - `datos/correcciones.json` es el registro de objeciones que se muestra en la fe de erratas. Cada entrada lleva `fecha`, `dato`, `estado` (`recibida`, `en_revision`, `aceptada` o `rechazada`) y `resultado`.
 - `og.png` es la imagen que aparece al compartir el enlace. `robots.txt` y `sitemap.xml` sirven para que Google indexe el sitio.
@@ -46,6 +47,9 @@ Abrí `publico/index.html` en el navegador. Las páginas y sus filtros funcionan
 | `ancap_fuentes.csv` | Fuentes del caso ANCAP, con tipo (oficial, prensa, terceros, parte). |
 | `transporte_comparacion.csv` | CAPEX por km, capacidad, inversión, operación, costo a 30 años, energía y emisiones de BRT, tranvía y metro. |
 | `transporte_fuentes.csv` | Fuentes del caso transporte, con tipo (oficial, prensa, parte, cálculo propio). |
+| `movilidad_costos.csv` | Costo de energía, patente, seguro y CO2 por año, nafta contra eléctrico (fuente y cálculo propio). |
+| `movilidad_estado.csv` | Lo que el Estado recauda por combustibles y autos, lo que deja de cobrar por los eléctricos y lo que recupera desde 2027. |
+| `movilidad_fuentes.csv` | Fuentes del informe de movilidad eléctrica, con tipo (oficial, prensa, gremial, terceros, cálculo propio). |
 | `pedidos_acceso_intendencias.csv` | Seguimiento de los 19 pedidos de acceso (Ley 18.381). |
 | `tribunal_muestra_2025.csv` | Cuatro expedientes con motivo, importe y estado documentado. |
 

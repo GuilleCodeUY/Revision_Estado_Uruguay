@@ -1,0 +1,234 @@
+{
+ "consultado": "2026-11-17",
+ "pendientes": [
+  "Cifra oficial de la DGI del IMESI que no se cobró por los eléctricos (hoy solo hay la estimación de Unvenu).",
+  "Si el MEF posterga el IMESI a los eléctricos previsto para enero de 2027.",
+  "Tasas de IMESI por cilindrada confirmadas en el decreto vigente.",
+  "Cotizaciones reales de seguro todo riesgo para el mismo modelo en versión eléctrica y a nafta, en varias aseguradoras.",
+  "Patente de los eléctricos usados empadronados desde 2026."
+ ],
+ "costos": [
+  {
+   "concepto": "Energía 15.000 km · nafta (7 L/100 km a $ 90,45)",
+   "unidad": "uyu_por_año",
+   "nafta": 94973,
+   "electrico": null,
+   "fuente": "cálculo propio"
+  },
+  {
+   "concepto": "Energía 15.000 km · eléctrico, todo en casa (tarifa triple horario)",
+   "unidad": "uyu_por_año",
+   "nafta": null,
+   "electrico": 5550,
+   "fuente": "UTE + cálculo propio"
+  },
+  {
+   "concepto": "Energía 15.000 km · eléctrico, 80 % casa y 20 % red pública",
+   "unidad": "uyu_por_año",
+   "nafta": null,
+   "electrico": 10290,
+   "fuente": "cálculo propio"
+  },
+  {
+   "concepto": "Energía 15.000 km · eléctrico, todo en red pública",
+   "unidad": "uyu_por_año",
+   "nafta": null,
+   "electrico": 29250,
+   "fuente": "UTE + cálculo propio"
+  },
+  {
+   "concepto": "IMESI y CO2 pagados en la nafta, 15.000 km",
+   "unidad": "uyu_por_año",
+   "nafta": 39144,
+   "electrico": 0,
+   "fuente": "URSEA + cálculo propio"
+  },
+  {
+   "concepto": "Patente 2027 · auto de US$ 22.000 / eléctrico de US$ 23.500",
+   "unidad": "usd_por_año",
+   "nafta": 902,
+   "electrico": 770,
+   "fuente": "Congreso de Intendentes + cálculo propio"
+  },
+  {
+   "concepto": "Patente 2027 · eléctrico de US$ 18.000",
+   "unidad": "usd_por_año",
+   "nafta": 738,
+   "electrico": 443,
+   "fuente": "Congreso de Intendentes + cálculo propio"
+  },
+  {
+   "concepto": "Seguro todo riesgo 0 km, piso de referencia",
+   "unidad": "uyu_por_año",
+   "nafta": 36000,
+   "electrico": 50000,
+   "fuente": "corredores y comparadores, no cotización"
+  },
+  {
+   "concepto": "Seguro todo riesgo 0 km, techo de referencia",
+   "unidad": "uyu_por_año",
+   "nafta": 50000,
+   "electrico": 90000,
+   "fuente": "corredores y comparadores, no cotización"
+  },
+  {
+   "concepto": "CO2 por año, 15.000 km",
+   "unidad": "kg_co2_por_año",
+   "nafta": 2426,
+   "electrico": 25,
+   "fuente": "MIEM + cálculo propio"
+  }
+ ],
+ "estado": [
+  {
+   "concepto": "IMESI combustibles",
+   "millones_uyu": 21678,
+   "millones_usd": 528,
+   "periodo": "2025",
+   "fuente": "DGI",
+   "tipo": "oficial"
+  },
+  {
+   "concepto": "IMESI emisiones de CO2",
+   "millones_uyu": 12908,
+   "millones_usd": 314,
+   "periodo": "2025",
+   "fuente": "DGI",
+   "tipo": "oficial"
+  },
+  {
+   "concepto": "IMESI a la compra de vehículos",
+   "millones_uyu": 6965,
+   "millones_usd": 170,
+   "periodo": "2025",
+   "fuente": "DGI",
+   "tipo": "oficial"
+  },
+  {
+   "concepto": "IMESI no cobrado a eléctricos (estimación)",
+   "millones_uyu": null,
+   "millones_usd": 143,
+   "periodo": "2025",
+   "fuente": "Unvenu",
+   "tipo": "gremial"
+  },
+  {
+   "concepto": "Recaudación esperada del nuevo IMESI a eléctricos e híbridos",
+   "millones_uyu": null,
+   "millones_usd": 16,
+   "periodo": "por año desde 2027",
+   "fuente": "MEF",
+   "tipo": "prensa"
+  },
+  {
+   "concepto": "Gasto tributario total del país",
+   "millones_uyu": 241504,
+   "millones_usd": 5878,
+   "periodo": "2025",
+   "fuente": "DGI vía Búsqueda",
+   "tipo": "prensa"
+  }
+ ],
+ "fuentes": [
+  [
+   "DGI · Informe mensual de recaudación, diciembre 2025 (IMESI combustibles, CO2 y automotores)",
+   "https://www.gub.uy/direccion-general-impositiva/sites/direccion-general-impositiva/files/2026-01/Informe%20de%20recaudaci%C3%B3n%20de%20diciembre%202025%20.pdf",
+   "oficial"
+  ],
+  [
+   "Congreso de Intendentes · Patente de rodados 2026",
+   "https://www.gub.uy/congreso-intendentes/comunicacion/noticias/congreso-intendentes-aprueba-unanimidad-valor-patente-rodados-para-ano-2026",
+   "oficial"
+  ],
+  [
+   "MIEM · Otros beneficios para vehículos eléctricos (BSE, patente, UTE)",
+   "https://www.gub.uy/ministerio-industria-energia-mineria/politicas-y-gestion/otros-beneficios-aplicables-ve",
+   "oficial"
+  ],
+  [
+   "MIEM · Matriz eléctrica 2025 y factor de emisión",
+   "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/energia-limpia-pilar-para-desarrollo-sostenible-futuro-energetico-del-pais",
+   "oficial"
+  ],
+  [
+   "UTE vía Montevideo Portal · Costo de 100 km en casa y en la red pública",
+   "https://www.montevideo.com.uy/Airbag/Como-cargar-autos-electricos-la-tarifa-recomendada-por-UTE-y-cuanto-puede-costar-uc977602",
+   "oficial"
+  ],
+  [
+   "URSEA · Desglose del litro de nafta, referencia de noviembre (caso ANCAP)",
+   "ancap.html",
+   "oficial"
+  ],
+  [
+   "Autoblog · Decreto de IMESI a eléctricos e híbridos (30/06/2026)",
+   "https://www.autoblog.com.uy/2026/07/gobierno-aplicara-imesi-electricos-con.html",
+   "prensa"
+  ],
+  [
+   "El Observador · Vallcorba: el 66 % no se afecta, US$ 16 M de recaudación",
+   "https://www.elobservador.com.uy/nacional/vallcorba-aplicar-imesi-autos-electricos-el-66-los-vehiculos-no-van-tener-ninguna-afectacion-n6049301",
+   "prensa"
+  ],
+  [
+   "Montevideo Portal · Qué modelos pagarán IMESI y cuánto suben",
+   "https://www.montevideo.com.uy/Noticias/Imesi-en-los-autos-electricos-en-Uruguay-que-modelos-costaran-mas-y-a-partir-de-cuando-uc966898",
+   "prensa"
+  ],
+  [
+   "Autoblog · El MEF analiza postergar el IMESI a los eléctricos (05/10/2026)",
+   "https://www.autoblog.com.uy/2026/10/el-mef-analiza-aplazar-el-imesi-los.html",
+   "prensa"
+  ],
+  [
+   "La Diaria · Patente 2027: nuevas franjas para eléctricos (15/11/2026)",
+   "https://ladiaria.com.uy/politica/articulo/2026/11/intendentes-acordaron-las-patentes-para-2027-sin-ajustes-para-los-vehiculos-a-combustion-y-nuevas-franjas-para-los-electricos/",
+   "prensa"
+  ],
+  [
+   "El Observador · UTE elimina bonificaciones en la carga pública",
+   "https://www.elobservador.com.uy/hacia-el-fin-las-bonificaciones-ute-proyecta-nuevos-ajustes-el-precio-la-carga-vehiculos-electricos-n6045583",
+   "prensa"
+  ],
+  [
+   "El Observador · Ventas de eléctricos 2016-2026 (Autodata)",
+   "https://www.elobservador.com.uy/economia-y-empresas/autos-electricos-una-rara-avis-hace-10-anos-que-se-asento-el-mercado-ventas-que-crecen-ano-ano-n6048856",
+   "prensa"
+  ],
+  [
+   "Ámbito · Ranking del precio de la nafta (SEG Ingeniería / Global Petrol)",
+   "https://www.ambito.com/uruguay/la-nafta-a-sigue-siendo-la-mas-cara-latinoamerica-pesar-la-ultima-decision-del-gobierno-n6307815",
+   "prensa"
+  ],
+  [
+   "The Clinic · Reparar un eléctrico cuesta 23,2 % más (estudio de 2,7 millones de siniestros)",
+   "https://www.theclinic.cl/2026/07/14/reparar-auto-electrico-cuesta-mas/amp/",
+   "prensa"
+  ],
+  [
+   "El Observador · Unvenu: exoneraciones a eléctricos y caída de la venta de nafta",
+   "https://www.elobservador.com.uy/c6043443",
+   "gremial"
+  ],
+  [
+   "Segurarse · Seguro de los 0 km más baratos de Uruguay",
+   "https://segurarse.com.uy/blog/seguro-de-auto/estos-son-los-cinco-0km-mas-baratos-de-uruguay/",
+   "terceros"
+  ],
+  [
+   "Autoencuotas · Seguro de auto eléctrico en Uruguay 2026",
+   "https://autoencuotas.com/seguro-de-auto-electrico-en-uruguay-precios-coberturas-y-descuentos-2026/",
+   "terceros"
+  ],
+  [
+   "Cuantomecuesta · Tasas de IMESI por cilindrada y SOA (a confirmar con DGI)",
+   "https://cuantomecuesta.com/uy/seguro-automotor/",
+   "terceros"
+  ],
+  [
+   "Cálculo propio · 15.000 km por año, 7 L/100 km, 15 kWh/100 km, 2,31 kg de CO2 por litro",
+   "movilidad.html#supuestos",
+   "propio"
+  ]
+ ]
+}
