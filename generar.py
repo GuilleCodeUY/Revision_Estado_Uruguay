@@ -10,6 +10,11 @@ ROOT = Path(__file__).resolve().parent
 SITE = "https://verdadmilanesa.uy"
 STATIC_PAGES = ("solaria.html", "hif.html")
 COPY_FILES = ("404.html", "favicon.svg")
+
+
+def sin_html(url):
+    """Enlace interno a una página del sitio sin .html (Cloudflare Pages redirige /pagina.html a /pagina)."""
+    return re.sub(r"^(?:\./)?([a-z_]+)\.html(?=$|[#?])", r"/\1", url)
 CORRECTION_STATES = {"recibida", "en_revision", "aceptada", "rechazada"}
 FIELDS = (
     "id",
@@ -213,14 +218,14 @@ BARRA_CSS = """
     @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
 """
 BARRA_LINKS = (
-    ("informe.html#parlamento", "informe.html#parlamento", "Parlamento", "#ffd23f"),
-    ("intendencias.html", "intendencias.html", "Intendencias", "#3ddc97"),
-    ("solaria.html", "solaria.html", "Solaria", "#ff8fa0"),
-    ("puerto.html", "puerto.html", "Puerto", "#ff7a1a"),
-    ("ute.html", "ute.html", "UTE", "#5ce1e6"),
-    ("ancap.html", "ancap.html", "ANCAP", "#ff4b2b"),
+    ("informe.html#parlamento", "/informe#parlamento", "Parlamento", "#ffd23f"),
+    ("intendencias.html", "/intendencias", "Intendencias", "#3ddc97"),
+    ("solaria.html", "/solaria", "Solaria", "#ff8fa0"),
+    ("puerto.html", "/puerto", "Puerto", "#ff7a1a"),
+    ("ute.html", "/ute", "UTE", "#5ce1e6"),
+    ("ancap.html", "/ancap", "ANCAP", "#ff4b2b"),
     ("especiales", None, "Especiales", None),
-    ("informe.html", "informe.html", "Informe 2025", None),
+    ("informe.html", "/informe", "Informe 2025", None),
     ("correcciones", "./#correcciones", "Correcciones", None),
     ("contacto", "mailto:contacto@verdadmilanesa.uy", "Contacto", None),
 )
@@ -267,7 +272,7 @@ def poner_barra(public, page):
             marca = ' aria-current="page"'
             dentro = marca if any(p == page for p, *_ in ESPECIALES) else ""
             items = "".join(
-                f'<a href="{p}" style="--c:{c}"{marca if p == page else ""}><small>{n}</small>{t}</a>'
+                f'<a href="{sin_html(p)}" style="--c:{c}"{marca if p == page else ""}><small>{n}</small>{t}</a>'
                 for p, n, t, c in ESPECIALES)
             links.append(f'<details class="vm-esp"><summary{dentro}>{text} '
                          f'<span aria-hidden="true">▾</span></summary><div class="vm-esp-panel">{items}</div></details>')
@@ -325,7 +330,7 @@ def build_portada(public, data):
     projects = parliament["cohorte_cepp"]
     passes = parliament["pases_en_comision"]
     fuentes = data["fuentes"]
-    objection = "informe.html?aporte=parlamento-2025&amp;tipo=correccion#aportes"
+    objection = "/informe?aporte=parlamento-2025&amp;tipo=correccion#aportes"
     facts = [
         ("$ " + millions(per_seat) + " millones", False, "por banca, por año",
          f"Todo el gasto del Poder Legislativo dividido entre sus {parliament['bancas_total']} bancas "
@@ -433,8 +438,8 @@ def build_intendencias(public):
             f'<div class="mini"><div><b>$ {mill(d["gasto_ejecutado_2022_miles_uyu"])} M</b><span>gasto 2022</span></div>'
             f'<div><b>{pct(d["pct_remuneraciones"])} %</b><span>en sueldos</span></div>'
             f'<div><b>{pct(d["pct_ingreso_nacional"])} %</b><span>plata nacional</span></div></div>{transp_line}<ul>{items}</ul>'
-            f'<div class="acciones"><a class="obj" href="informe.html?aporte=intendencia-{sid}&amp;tipo=correccion#aportes">⚑ Objetar un dato</a>'
-            f'<a href="informe.html?aporte=intendencia-{sid}&amp;tipo=opinion#aportes">Aportar información</a></div></article>')
+            f'<div class="acciones"><a class="obj" href="/informe?aporte=intendencia-{sid}&amp;tipo=correccion#aportes">⚑ Objetar un dato</a>'
+            f'<a href="/informe?aporte=intendencia-{sid}&amp;tipo=opinion#aportes">Aportar información</a></div></article>')
     pedidos = data["pedidos_acceso"]
     # Transparencia: índice de la UAIP y denuncias resueltas contra cada intendencia.
     transp = data["transparencia"]
@@ -537,7 +542,7 @@ def build_puerto(public):
     def millones(v):
         return "—" if v is None else f"{v:,.0f}".replace(",", ".")
 
-    obj = '<a class="obj" href="informe.html?aporte=puerto-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
+    obj = '<a class="obj" href="/informe?aporte=puerto-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
     golpes = "".join(
         f'<div class="golpe"><b>{escape(g["valor"])}</b><span>{escape(g["texto"])}</span>'
         f'<div class="acc"><a href="{escape(g["url"])}" target="_blank" rel="noopener">{escape(g["fuente"])} · {g["tipo"]}</a>{obj}</div></div>'
@@ -640,7 +645,7 @@ def build_ute(public):
     def millones(v):
         return f"{v:,.0f}".replace(",", ".")
 
-    obj = '<a class="obj" href="informe.html?aporte=ute-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
+    obj = '<a class="obj" href="/informe?aporte=ute-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
     golpes = "".join(
         f'<div class="golpe"><b>{escape(g["valor"])}</b><span>{escape(g["texto"])}</span>'
         f'<div class="acc"><a href="{escape(g["url"])}" target="_blank" rel="noopener">{escape(g["fuente"])} · {g["tipo"]}</a>{obj}</div></div>'
@@ -759,7 +764,7 @@ def build_ancap(public):
     def entero(v):
         return f"{v:,.0f}".replace(",", ".")
 
-    obj = '<a class="obj" href="informe.html?aporte=ancap-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
+    obj = '<a class="obj" href="/informe?aporte=ancap-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>'
     golpes = "".join(
         f'<div class="golpe{" big" if g.get("destacado") else ""}"><b>{escape(g["valor"])}</b><span>{escape(g["texto"])}</span>'
         f'<div class="acc"><a href="{escape(g["url"])}" target="_blank" rel="noopener">{escape(g["fuente"])} · {g["tipo"]}</a>{obj}</div></div>'
@@ -872,7 +877,7 @@ def build_transporte(public):
     names = {"oficial": "oficial", "prensa": "prensa", "parte": "fuente de parte", "terceros": "terceros", "propio": "cálculo propio"}
     tag = lambda t: f'<span class="tag t-{t}">{names[t]}</span>'
     values = {
-        "OBJ": '<a class="obj" href="informe.html?aporte=transporte-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "OBJ": '<a class="obj" href="/informe?aporte=transporte-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
         "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
         "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
         "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
@@ -894,9 +899,9 @@ def build_movilidad(public):
     names = {"oficial": "oficial", "prensa": "prensa", "gremial": "gremial", "terceros": "terceros", "propio": "cálculo propio"}
     tag = lambda t: f'<span class="tag t-{t}">{names[t]}</span>'
     values = {
-        "OBJ": '<a class="obj" href="informe.html?aporte=movilidad-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "OBJ": '<a class="obj" href="/informe?aporte=movilidad-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
         "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
-        "FUENTES": "".join(f'<li><a href="{escape(u)}"{"" if u.endswith((".html",)) or "#" in u and not u.startswith("http") else " target=\"_blank\" rel=\"noopener\""}>{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(sin_html(u))}"{"" if u.endswith((".html",)) or "#" in u and not u.startswith("http") else " target=\"_blank\" rel=\"noopener\""}>{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
         "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
     }
     page = (ROOT / "web" / "movilidad.template.html").read_text(encoding="utf-8")
@@ -917,7 +922,7 @@ def build_justicia(public):
     names = {"oficial": ("oficial", "oficial"), "prensa": ("prensa", "prensa"), "internacional": ("terceros", "internacional")}
     tag = lambda t: f'<span class="tag t-{names[t][0]}">{names[t][1]}</span>'
     values = {
-        "OBJ": '<a class="obj" href="informe.html?aporte=justicia-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "OBJ": '<a class="obj" href="/informe?aporte=justicia-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
         "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
         "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
         "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
@@ -941,9 +946,9 @@ def build_estado(public):
     names = {"oficial": ("oficial", "oficial"), "prensa": ("prensa", "prensa"), "internacional": ("terceros", "internacional"), "propio": ("propio", "sitio")}
     tag = lambda t: f'<span class="tag t-{names[t][0]}">{names[t][1]}</span>'
     values = {
-        "OBJ": '<a class="obj" href="informe.html?aporte=estado-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "OBJ": '<a class="obj" href="/informe?aporte=estado-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
         "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
-        "FUENTES": "".join(f'<li><a href="{escape(u)}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(sin_html(u))}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
         "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
     }
     page = (ROOT / "web" / "estado.template.html").read_text(encoding="utf-8")
@@ -1015,10 +1020,10 @@ def poner_datos_estructurados(public, page, publicado, modificado):
         "headline": titulo,
         "description": meta(r'<meta name="description" content="([^"]*)"'),
         "image": meta(r'<meta property="og:image" content="([^"]*)"'),
-        "datePublished": publicado,
-        "dateModified": modificado,
+        "datePublished": f"{publicado}T00:00:00-03:00",
+        "dateModified": f"{modificado}T00:00:00-03:00",
         "inLanguage": "es-UY",
-        "mainEntityOfPage": f"{SITE}/{page}",
+        "mainEntityOfPage": f"{SITE}/{page.removesuffix('.html')}",
         "author": {"@type": "Organization", "name": "La verdad de la milanesa", "url": f"{SITE}/"},
         "publisher": {"@type": "Organization", "name": "La verdad de la milanesa", "url": f"{SITE}/",
                       "logo": {"@type": "ImageObject", "url": f"{SITE}/favicon.svg"}},
@@ -1116,7 +1121,7 @@ def main():
     for page, (publicado, modificado) in fechas.items():
         poner_datos_estructurados(public, page, publicado, modificado)
     portada = max(modificado for _, modificado in fechas.values())
-    urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{fechas[page][1] if page else portada}</lastmod></url>\n"
+    urls = "".join(f"  <url><loc>{SITE}/{page.removesuffix('.html')}</loc><lastmod>{fechas[page][1] if page else portada}</lastmod></url>\n"
                    for page in ("", *PAGINAS_SEO))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
