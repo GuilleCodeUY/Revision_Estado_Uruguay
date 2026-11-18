@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SITE = "https://verdadmilanesa.uy"
-STATIC_PAGES = ("solaria.html",)
+STATIC_PAGES = ("solaria.html", "hif.html")
 COPY_FILES = ("404.html", "favicon.svg")
 CORRECTION_STATES = {"recibida", "en_revision", "aceptada", "rechazada"}
 FIELDS = (
@@ -228,6 +228,7 @@ ESPECIALES = (
     ("transporte.html", "Informe especial 2", "La reforma del transporte", "#a3e635"),
     ("justicia.html", "Informe especial 3", "Justicia penal y seguridad", "#60a5fa"),
     ("estado.html", "Informe especial 4", "Un Estado que rinde", "#2dd4bf"),
+    ("hif.html", "Informe especial 5", "HIF: la luz a mitad de precio", "#f0abfc"),
 )
 ESPECIALES_CSS = """
     .vm-esp{flex:none}
@@ -952,6 +953,14 @@ def build_estado(public):
     write_csv(public, "estado_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+def build_hif():
+    """CSV del Informe especial 5 (HIF Global). La página es estática: web/hif.html."""
+    data = load_data("hif.json")
+    public = ROOT / "publico"
+    write_csv(public, "hif_sensibilidad.csv", data["sensibilidad"])
+    write_csv(public, "hif_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -1027,9 +1036,10 @@ def main():
     build_movilidad(public)
     build_justicia(public)
     build_estado(public)
+    build_hif()
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html", "hif.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
@@ -1037,7 +1047,7 @@ def main():
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica, justicia y Estado optimizado y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica, justicia, Estado optimizado y HIF y los CSV.")
 
 
 if __name__ == "__main__":

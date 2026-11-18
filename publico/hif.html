@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIF Global y UTE: la luz a mitad de precio · La verdad de la milanesa</title>
+  <meta name="description" content="El borrador con HIF fija la energía en US$ 45 el MWh. A Google y a Solaria UTE les cobra US$ 86. UTE y el MIEM calculan una pérdida de US$ 90 millones por año. Los números, con fuentes.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://verdadmilanesa.uy/hif.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="La verdad de la milanesa">
+  <meta property="og:title" content="HIF: la luz a US$ 45. Google paga US$ 86">
+  <meta property="og:description" content="UTE y el MIEM calculan una pérdida de US$ 90 millones por año y de al menos US$ 1.300 millones en el contrato. Qué se negocia, cuánto se pierde y qué tendría que tener el contrato.">
+  <meta property="og:url" content="https://verdadmilanesa.uy/hif.html">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#2a0f33">
+  <style>
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#e63946;--green:#2a6f4e;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb;
+      /* Color propio del caso: cada investigación tiene su paleta */
+      --hero:#2a0f33;--acc:#f0abfc;--acc-ink:#111;--alert:#e11d48;--shadow:#2a0f33}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header{background:var(--hero);color:#fff}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 2.6rem}
+    .kicker{display:inline-block;background:var(--alert);color:#fff;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2rem,6vw,4.1rem);line-height:.98;letter-spacing:-.05em;margin:.8rem 0 .4rem;font-weight:900;max-width:19ch}
+    .big{display:flex;align-items:baseline;gap:.2em .5em;flex-wrap:wrap;font-weight:900;letter-spacing:-.05em;line-height:.9}
+    .big b{font-size:clamp(4.2rem,15vw,9.5rem);color:var(--acc);font-variant-numeric:tabular-nums}
+    .big span{font-size:clamp(1.4rem,4vw,2.6rem);color:#fff}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:48ch;margin:.9rem 0 1.2rem;color:#ddd}
+    .hero p.sub strong{color:#fff}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:var(--acc-ink)}.btn.o{background:transparent;color:var(--acc)}
+    .lema{background:var(--acc);color:var(--acc-ink);font-weight:900;text-align:center;font-size:clamp(1.05rem,2.6vw,1.5rem);padding:.75rem 1rem;letter-spacing:-.02em;margin:0}
+    main{padding:2rem 0 3rem}main section{margin-bottom:3rem;scroll-margin-top:4rem}
+    h2{font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}
+    h3.sub{margin:1.6rem 0 .5rem;font-size:1.3rem;letter-spacing:-.02em}
+    .bajada{font-size:1.08rem;max-width:62ch;margin:0 0 1.2rem}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .golpe{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1.1rem;display:flex;flex-direction:column;gap:.4rem;box-shadow:5px 5px 0 var(--shadow)}
+    .golpe .n{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+    .golpe .n.r{color:var(--alert)}.golpe .t{font-weight:800;font-size:1.05rem;line-height:1.25}.golpe .c{font-size:.86rem;color:var(--muted);margin:0}
+    .tag{align-self:flex-start;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:.15rem .45rem;border-radius:.2rem;background:#f2eee2}
+    .tag.est{background:#e7eefb;color:#1d3557}.tag.of{background:#e3f2ee;color:#1f5a40}
+    .acciones{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto;padding-top:.5rem;border-top:1px dashed var(--line)}
+    .acciones a{font-size:.8rem;font-weight:700;text-decoration:none;padding:.35rem .55rem;border-radius:.3rem;background:#f2eee2}
+    .acciones a:hover{text-decoration:underline}.acciones a.obj{background:#fde6e7;color:#9b1c25}
+    .linea{list-style:none;padding:0;margin:0 0 1rem;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}
+    .linea li{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:.9rem .8rem .8rem}
+    .linea li.hecho{background:var(--hero);color:#fff}
+    .linea .f{display:block;font-weight:900;font-size:1.15rem;letter-spacing:-.02em}.linea p{margin:.25rem 0 0;font-size:.88rem}
+    .linea li.hecho .f{color:var(--acc)}.linea .est{display:inline-block;margin-top:.4rem;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;opacity:.75}
+    .quien{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .col{border-radius:.5rem;padding:1.1rem;color:#fff}.col h3{margin:0 0 .6rem;font-size:1.3rem;letter-spacing:-.02em}
+    .col.s{background:#1f5a40}.col.u{background:var(--hero)}
+    .col ul{margin:0;padding-left:1.1rem}.col li{margin:.35rem 0}.col li b{color:var(--acc)}.col.s li b{color:#b7f5d6}
+    .panel{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1.2rem}
+    .tabla{overflow:auto}
+    table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{text-align:left;padding:.55rem;border-bottom:1px solid var(--line);vertical-align:top}
+    th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+    td.num,th.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}td.num{font-weight:800}
+    tr.neg td.num.res{color:var(--alert)}tr.pos td.num.res{color:var(--green)}tr.eq{background:#fff4d1}tr.hl{background:#fbe7fd}
+    .aviso{background:#fff4d1;border-left:5px solid var(--alert);padding:.8rem 1rem;margin:0 0 1rem;border-radius:.3rem}
+    .barras{display:flex;flex-direction:column;gap:.55rem}
+    .barra{display:grid;grid-template-columns:12rem 1fr;gap:.8rem;align-items:center}
+    .barra .l{font-weight:700;font-size:.92rem;line-height:1.2}.barra .l small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+    .barra .b{position:relative;height:2.1rem;background:#f2eee2;border-radius:.3rem}
+    .barra .b i{position:absolute;inset:0 auto 0 0;border-radius:.3rem;background:var(--c,#999);display:flex;align-items:center;justify-content:flex-end;padding-right:.5rem;font-style:normal;font-weight:900;color:#fff;font-size:.95rem;white-space:nowrap}
+    .barra .b .costo{position:absolute;top:-.3rem;bottom:-.3rem;border-left:3px dashed var(--ink);z-index:0}.barra .b i{z-index:1}
+    .leyenda{font-size:.82rem;color:var(--muted);margin:.7rem 0 0}
+    .tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .cuenta{border:2px solid var(--ink);border-radius:.5rem;padding:1.1rem;background:#fff;display:flex;flex-direction:column;gap:.4rem}
+    .cuenta .n{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;letter-spacing:-.04em;line-height:1}
+    .cuenta h3{margin:0;font-size:1.1rem}.cuenta p{margin:0;font-size:.9rem}
+    .preguntas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;list-style:none;padding:0;margin:0}
+    .preguntas li{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.3rem}
+    .preguntas strong{font-size:1.02rem;line-height:1.3}.preguntas span{font-size:.86rem;color:var(--muted)}
+    .preguntas em{font-style:normal;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#1d3557}
+    .respuestas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .resp{border-radius:.5rem;padding:1.1rem;border:2px solid var(--ink)}.resp h3{margin:0 0 .3rem;font-size:1.15rem}.resp .v{font-size:1.6rem;font-weight:900;letter-spacing:-.03em;margin:0 0 .3rem}.resp p{margin:.3rem 0;font-size:.92rem}
+    .resp.x{background:#fde6e7}.resp.m{background:#fff4d1}.resp.p{background:#fbe7fd}
+    .exigir{list-style:none;padding:0;margin:1rem 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem 1rem;counter-reset:c}
+    .exigir li{padding-left:2.2rem;position:relative;counter-increment:c}.exigir li::before{content:counter(c,decimal-leading-zero);position:absolute;left:0;top:.05rem;font-weight:900;color:var(--alert)}
+    .conclusion{background:var(--hero);color:#fff;border-radius:.5rem;padding:1.4rem;font-size:1.12rem;margin-top:1.2rem}
+    .conclusion strong{color:var(--acc)}
+    .correcciones{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem}
+    .correcciones li{background:#fff;border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:.3rem;padding:.6rem .9rem;font-size:.92rem}
+    .correcciones b{display:block}
+    .fuentes{counter-reset:f;list-style:none;padding:0;margin:0}
+    .fuentes li{counter-increment:f;padding:.6rem 0 .6rem 2.4rem;border-bottom:1px solid var(--line);position:relative;font-size:.92rem}
+    .fuentes li::before{content:counter(f);position:absolute;left:0;top:.6rem;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:.8rem;display:grid;place-items:center}
+    .fuentes a{font-weight:700}.fuentes small{display:block;color:var(--muted)}
+    sup a{text-decoration:none;font-weight:800;color:#1d3557;font-size:.75em;padding:0 .1em}header sup a{color:var(--acc)}
+    .objetar{display:inline-block;margin-top:.8rem;font-size:.85rem;font-weight:700;text-decoration:none;padding:.4rem .7rem;border-radius:.3rem;background:#fde6e7;color:#9b1c25}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    footer{background:var(--hero);color:#bbb;font-size:.85rem;padding:1.2rem 0}footer a{color:#ddd}
+    @media(max-width:900px){.linea{grid-template-columns:1fr 1fr}}
+    @media(max-width:760px){.golpes,.tres,.respuestas,.quien,.preguntas,.exigir{grid-template-columns:1fr}.linea{grid-template-columns:1fr}table{font-size:.84rem}.barra{grid-template-columns:1fr;gap:.25rem}}
+  
+    .vm-barra{position:sticky;top:0;z-index:50;background:#121212;color:#fff;border-bottom:1px solid #2a2a2a;font-family:Inter,system-ui,sans-serif}
+    .vm-barra .vm-wrap{width:min(1240px,calc(100% - 2rem));margin:auto;display:flex;align-items:center;gap:1.2rem;min-height:3.5rem}
+    .vm-logo{font-weight:900;font-size:1.15rem;letter-spacing:-.03em;text-decoration:none;white-space:nowrap;color:#fff}.vm-logo span{color:#ffd23f}
+    .vm-menu{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}.vm-menu::-webkit-scrollbar{display:none}
+    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.86rem;font-weight:800;padding:.4rem .7rem;border-radius:999px;min-height:2.4rem;box-sizing:border-box;display:inline-flex;align-items:center;white-space:nowrap;border:2px solid var(--c);background:var(--cs)}
+    .vm-menu a:hover{background:var(--ch)}.vm-menu a[aria-current]{background:var(--c);color:#111}
+    .vm-menu a.vm-sec{border:0;background:none;color:#bbb;font-weight:700;font-size:.8rem;padding:.4rem .35rem}
+    .vm-menu a.vm-sec:hover{color:#fff;background:none}.vm-menu a.vm-sec[aria-current]{color:#fff;background:#2a2a2a;border-radius:.3rem}
+    .vm-menu{align-items:center;gap:.3rem;padding:.35rem 0}
+    html{scroll-padding-top:4rem}
+    header .top .logo,header .cabecera>a{display:none}header .top{justify-content:flex-start}
+    @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
+
+    .vm-esp{flex:none}
+    .vm-esp summary{list-style:none;cursor:pointer;color:#111;background:#fff;font-size:.86rem;font-weight:800;padding:.4rem .8rem;border-radius:999px;min-height:2.4rem;box-sizing:border-box;display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
+    .vm-esp summary::-webkit-details-marker{display:none}
+    .vm-esp[open] summary,.vm-esp summary[aria-current]{background:#ffd23f}
+    .vm-esp-panel{position:fixed;top:3.6rem;right:1rem;width:min(320px,calc(100vw - 2rem));background:#1b1b1b;border:1px solid #333;border-radius:.6rem;padding:.4rem;box-shadow:0 12px 30px rgba(0,0,0,.45);display:flex;flex-direction:column;gap:.3rem;z-index:60}
+    .vm-esp-panel a{display:block;color:#fff;text-decoration:none;padding:.55rem .75rem;border-radius:.45rem;border-left:5px solid var(--c);font-weight:800;font-size:.92rem;background:#242424}
+    .vm-esp-panel a:hover{background:#2e2e2e}.vm-menu .vm-esp-panel a[aria-current]{background:#2e2e2e;color:#fff}.vm-esp-panel small{display:block;color:var(--c);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+  </style>
+</head>
+<body>
+  <header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a><nav class="vm-menu" aria-label="Casos"><a href="informe.html#parlamento" style="--c:#ffd23f;--cs:rgba(255,210,63,.16);--ch:rgba(255,210,63,.32)">Parlamento</a><a href="intendencias.html" style="--c:#3ddc97;--cs:rgba(61,220,151,.16);--ch:rgba(61,220,151,.32)">Intendencias</a><a href="solaria.html" style="--c:#ff8fa0;--cs:rgba(255,143,160,.16);--ch:rgba(255,143,160,.32)">Solaria</a><a href="puerto.html" style="--c:#ff7a1a;--cs:rgba(255,122,26,.16);--ch:rgba(255,122,26,.32)">Puerto</a><a href="ute.html" style="--c:#5ce1e6;--cs:rgba(92,225,230,.16);--ch:rgba(92,225,230,.32)">UTE</a><a href="ancap.html" style="--c:#ff4b2b;--cs:rgba(255,75,43,.16);--ch:rgba(255,75,43,.32)">ANCAP</a><details class="vm-esp"><summary aria-current="page">Especiales <span aria-hidden="true">▾</span></summary><div class="vm-esp-panel"><a href="movilidad.html" style="--c:#a78bfa"><small>Informe especial 1</small>Auto eléctrico: ¿sí o no?</a><a href="transporte.html" style="--c:#a3e635"><small>Informe especial 2</small>La reforma del transporte</a><a href="justicia.html" style="--c:#60a5fa"><small>Informe especial 3</small>Justicia penal y seguridad</a><a href="estado.html" style="--c:#2dd4bf"><small>Informe especial 4</small>Un Estado que rinde</a><a href="hif.html" style="--c:#f0abfc" aria-current="page"><small>Informe especial 5</small>HIF: la luz a mitad de precio</a></div></details><a class="vm-sec" href="informe.html">Informe 2025</a><a class="vm-sec" href="./#correcciones">Correcciones</a><a class="vm-sec" href="mailto:contacto@verdadmilanesa.uy">Contacto</a></nav></div></header><script>(function(){var a=document.querySelector(".vm-menu [aria-current]");if(a){var m=a.closest(".vm-menu");var t=a.closest(".vm-esp")||a;m.scrollLeft=t.offsetLeft-(m.clientWidth-t.offsetWidth)/2;}})();</script><script>document.querySelectorAll(".vm-esp").forEach(function(d){function pos(){var p=d.querySelector(".vm-esp-panel"),h=d.closest(".vm-barra").getBoundingClientRect(),s=d.querySelector("summary").getBoundingClientRect();p.style.top=(h.bottom+6)+"px";var w=p.offsetWidth,l=Math.min(Math.max(8,s.right-w),innerWidth-w-8);p.style.left=l+"px";p.style.right="auto";}d.addEventListener("toggle",function(){if(d.open)pos();});addEventListener("resize",function(){if(d.open)pos();});document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false;});if(matchMedia("(hover:hover) and (pointer:fine)").matches){var t;d.addEventListener("mouseenter",function(){clearTimeout(t);d.open=true;});d.addEventListener("mouseleave",function(){clearTimeout(t);t=setTimeout(function(){d.open=false;},300);});d.querySelector("summary").addEventListener("click",function(e){if(e.detail>0){e.preventDefault();d.open=true;}});}});</script>
+  <header>
+    <div class="wrap top">
+      <a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a>
+      <nav aria-label="Secciones"><a href="#proyecto">El proyecto</a><a href="#precio">El precio</a><a href="#perdida">¿Cuánto se pierde?</a><a href="#sirve">¿Nos sirve?</a><a href="#veredicto">Veredicto</a><a href="#fuentes">Fuentes</a></nav>
+    </div>
+    <div class="wrap hero">
+      <span class="kicker">Informe especial 5 · HIF Global · UTE</span>
+      <h1>A HIF, UTE le vendería la energía a US$ 45 el MWh. A Google y a Solaria les cobra:</h1>
+      <div class="big"><b>US$ 86</b><span>casi el doble</span></div>
+      <p class="sub">Con ese precio, <strong>UTE y el MIEM calculan una pérdida de US$ 90 millones por año</strong> y de <strong>al menos US$ 1.300 millones</strong> en todo el contrato. Además, UTE tendría que poner más de US$ 450 millones antes de que HIF decida si invierte.<sup><a href="#f1">1</a></sup></p>
+      <div class="btns"><a class="btn y" href="#veredicto">¿Conviene? ↓</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
+    </div>
+  </header>
+  <p class="lema">Los números no tienen partido. La realidad es una sola.</p>
+  <main class="wrap">
+
+    <section aria-labelledby="golpe">
+      <h2 id="golpe">A golpe de vista</h2>
+      <p class="bajada">Seis datos para entender la negociación en un minuto. Cada uno con su fuente.</p>
+      <div class="golpes">
+        <article class="golpe"><span class="tag of">UTE y MIEM</span><div class="n r">US$ 90 M</div><div class="t">de pérdida por año para UTE, según UTE y el MIEM</div><p class="c">Con el precio del borrador (US$ 45 el MWh, peaje incluido). La pérdida mínima en todo el contrato, US$ 1.300 millones.</p><div class="acciones"><a href="#f1">Fuente: El Observador</a><a class="obj" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><div class="n">US$ 45 / 86</div><div class="t">el MWh para HIF y para Google</div><p class="c">HIF pide US$ 40. Google paga unos US$ 86 (arrancó en US$ 73,5 y se ajusta cada año). A Solaria se le cobraría algo similar.</p><div class="acciones"><a href="#f4">Fuente: El Observador</a><a class="obj" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><div class="n r">US$ 450 M</div><div class="t">pone UTE antes de que HIF decida</div><p class="c">Térmica, red para la planta y equipos de estabilización. El borrador le da a HIF hasta fines de 2028 para decidir, sin penalidad si se va.</p><div class="acciones"><a href="#f1">Fuente: El Observador</a><a class="obj" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><span class="tag est">Cuenta propia</span><div class="n">59 %</div><div class="t">de toda la energía que usa el país</div><p class="c">El proyecto completo consumiría 7.367 GWh por año. Uruguay usó 12.533 GWh en 2025. Solo el primer módulo, el que alimenta UTE, es el 19 %.</p><div class="acciones"><a href="#f3">Fuentes: EsIA y UTE en cifras</a><a class="obj" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><span class="tag est">Cuenta propia</span><div class="n">US$ 82</div><div class="t">el MWh: lo que le cuesta a UTE, deducido</div><p class="c">Si a US$ 45 se pierden US$ 90 M por año, el costo de UTE ronda los US$ 82. La eólica privada que compra UTE salió US$ 80 a 82 el MWh en los últimos meses.</p><div class="acciones"><a href="#f8">Fuente: Universidad Católica</a><a class="obj" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+        <article class="golpe"><div class="n">US$ 253 M</div><div class="t">de exportaciones por año con el primer módulo</div><p class="c">US$ 1.012 millones con los cuatro. Son ventas brutas: no es lo que le queda al país.</p><div class="acciones"><a href="#f2">Fuente: memorando ROU-HIF</a><a class="obj" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar este dato</a></div></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="proyecto">
+      <h2 id="proyecto">Qué es el proyecto</h2>
+      <p class="bajada">Una planta en Paysandú que produce hidrógeno con electricidad, lo junta con el CO2 de la planta de ALUR y fabrica combustibles sintéticos para exportar. Es la inversión privada más grande anunciada en el país.<sup><a href="#f2">2</a></sup></p>
+      <div class="panel tabla" tabindex="0" role="region" aria-label="Ficha del proyecto HIF">
+        <table>
+          <thead><tr><th scope="col">Dato</th><th scope="col">Valor</th><th scope="col">Fuente</th></tr></thead>
+          <tbody>
+            <tr><td>Empresa</td><td class="num" style="text-align:left">HIF Uruguay S.A. (HIF Global, de origen chileno)</td><td><a href="#f2">2</a></td></tr>
+            <tr><td>Inversión anunciada</td><td class="num" style="text-align:left">US$ 5.385 M: planta 2.881, parques solar y eólico 1.277, otras obras 1.226</td><td><a href="#f2">2</a></td></tr>
+            <tr><td>Módulos</td><td class="num" style="text-align:left">4, de 280 MW de electrólisis cada uno</td><td><a href="#f2">2</a></td></tr>
+            <tr><td>De dónde sale la energía</td><td class="num" style="text-align:left">Módulo 1: de la red de UTE. Módulos 2 a 4: parque solar de 1.162 MWp y eólico de 1.137 MW propios</td><td><a href="#f2">2</a></td></tr>
+            <tr><td>Producción</td><td class="num" style="text-align:left">880.000 toneladas por año de e-combustibles, en tren al puerto de Montevideo</td><td><a href="#f2">2</a></td></tr>
+            <tr><td>Empleo</td><td class="num" style="text-align:left">≈ 1.400 en la obra; 300 permanentes</td><td><a href="#f2">2</a></td></tr>
+            <tr><td>Exportaciones</td><td class="num" style="text-align:left">US$ 253 M por año (módulo 1); US$ 1.012 M (4 módulos)</td><td><a href="#f2">2</a></td></tr>
+            <tr><td>Energía que toma de UTE</td><td class="num" style="text-align:left">2.413 GWh por año (290 MW al 95 % del tiempo)</td><td><a href="#f3">3</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="sub">Cómo viene la negociación</h3>
+      <ol class="linea">
+        <li class="hecho"><span class="f">Jun 2023</span><p>ALUR elige a HIF para usar el CO2 de su planta de Paysandú.</p><span class="est">Hecho</span></li>
+        <li class="hecho"><span class="f">18/12/2025</span><p>Memorando con el Estado. Plazo original para la decisión de inversión: 30/12/2026.</p><span class="est">Hecho</span></li>
+        <li class="hecho"><span class="f">Nov 2026</span><p>Borrador nuevo a US$ 45. UTE y el MIEM lo llaman "totalmente desfavorable para el país".</p><span class="est">Hecho</span></li>
+        <li><span class="f">Fin de 2026</span><p>El gobierno quiere cerrar el acuerdo.</p><span class="est">Meta</span></li>
+        <li><span class="f">2028 → 2031</span><p>HIF decide hasta fines de 2028; la planta funcionaría a fines de 2031.</p><span class="est">Según el borrador</span></li>
+      </ol>
+      <p>El memorando de 2025 dejó para después el acuerdo económico con UTE, que debe cubrir energía, potencia, servicios de red y peaje, y que puede incluir "cánones por disponibilidad".<sup><a href="#f2">2</a></sup> Eso significa que el precio por MWh puede venir acompañado de otros pagos. Como el contrato no es público, <strong>la comparación de US$ 45 contra US$ 86 puede no mostrar toda la cuenta</strong>.</p>
+      <a class="objetar" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar un dato de esta sección</a>
+    </section>
+
+    <section aria-labelledby="precio">
+      <h2 id="precio">El precio: lo que piden, lo que se ofrece y lo que pagan otros</h2>
+      <p class="bajada">El precio de la energía es la discusión de fondo: según HIF, es cerca del 70 % del costo de producir el combustible.</p>
+      <div class="panel">
+        <div class="barras" role="img" aria-label="Precio del MWh: HIF pide 40, el borrador 45, la oferta de 2024 53, el costo promedio de UTE en febrero de 2026 60, Google y Solaria 86, la tarifa industrial 148. Costo estimado de UTE para HIF: 82.">
+          <div class="barra"><div class="l">HIF pide<small>desde 2023</small></div><div class="b"><i style="width:27%;--c:#9b1c25">US$ 40</i><span class="costo" style="left:55.6%"></span></div></div>
+          <div class="barra"><div class="l">Borrador actual<small>peaje incluido</small></div><div class="b"><i style="width:30.4%;--c:var(--alert)">US$ 45</i><span class="costo" style="left:55.6%"></span></div></div>
+          <div class="barra"><div class="l">Oferta de 2024<small>sin peaje</small></div><div class="b"><i style="width:35.8%;--c:#c2410c">US$ 53</i><span class="costo" style="left:55.6%"></span></div></div>
+          <div class="barra"><div class="l">Costo promedio de UTE<small>para abastecer la demanda, feb. 2026</small></div><div class="b"><i style="width:40.5%;--c:#6b7280">US$ 60</i><span class="costo" style="left:55.6%"></span></div></div>
+          <div class="barra"><div class="l">Google y Solaria<small>hoy</small></div><div class="b"><i style="width:58.1%;--c:var(--green)">US$ 86</i><span class="costo" style="left:55.6%"></span></div></div>
+          <div class="barra"><div class="l">Tarifa industrial de UTE<small>abril 2026</small></div><div class="b"><i style="width:100%;--c:#1d3557">US$ 148</i><span class="costo" style="left:55.6%"></span></div></div>
+        </div>
+        <p class="leyenda">Dólares por MWh. La línea punteada es el costo estimado de UTE para abastecer a HIF (US$ 82,3, cuenta propia: ver abajo). Fuentes: <a href="#f1">1</a>, <a href="#f10">10</a>, <a href="#f8">8</a>, <a href="#f4">4</a>, <a href="#f14">14</a>.</p>
+      </div>
+      <p>El precio fue bajando en los papeles: en 2024 se hablaba de US$ 53 sin peaje y el borrador de noviembre de 2026 fija US$ 45 con el peaje adentro. <strong>Para UTE, la última versión es peor que la anterior.</strong><sup><a href="#f1">1</a></sup> HIF compara con la región: según la empresa, Paraguay ofrece US$ 25, Chile US$ 32 y Brasil US$ 36.<sup><a href="#f11">11</a></sup> El secretario de Presidencia, Alejandro Sánchez, dijo que UTE no puede darle a HIF un precio mucho más bajo que a Google sin abrir la misma discusión con los demás clientes.<sup><a href="#f1">1</a></sup></p>
+      <div class="aviso"><strong>Por qué no se compara solo con la tarifa industrial:</strong> HIF consumiría las 24 horas, en alta tensión y en un volumen enorme; eso abarata el suministro. Pero también necesita respaldo cuando sus parques no generan, y eso lo encarece. Por eso la vara razonable es el costo de UTE y lo que pagan otros clientes grandes 24/7, como los centros de datos.</div>
+      <a class="objetar" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar un dato de esta sección</a>
+    </section>
+
+    <section aria-labelledby="perdida">
+      <h2 id="perdida">¿Cuánto se pierde? Tres formas de contar la misma brecha</h2>
+      <p class="bajada">"Pérdida" puede querer decir tres cosas distintas. Las tres miden el mismo MWh desde ángulos distintos: <strong>no se suman</strong>.</p>
+      <div class="tres">
+        <div class="cuenta"><span class="tag of">UTE y MIEM</span><h3>Lo que pierde UTE</h3><div class="n" style="color:var(--alert)">US$ 90 M por año</div><p>Lo que le cuesta abastecer a HIF menos lo que cobra. Mínimo US$ 1.300 M en el contrato. Es la posición de los dos organismos técnicos del Estado.<sup><a href="#f1">1</a></sup></p></div>
+        <div class="cuenta"><span class="tag est">Cuenta propia</span><h3>Lo que deja de ganar</h3><div class="n">US$ 99 M por año</div><p>2.413 GWh a US$ 86 valen US$ 207,6 M; a US$ 45, US$ 108,6 M. Es lo que UTE resigna si vende a HIF y no a un cliente que paga como Google.</p></div>
+        <div class="cuenta"><span class="tag">Sin cifra pública</span><h3>Lo que gana o pierde el país</h3><div class="n">¿ ?</div><p>Hay que restar inversión, empleo, impuestos y exportaciones que quedan en Uruguay. Ese número no lo publicó nadie.</p></div>
+      </div>
+      <h3 class="sub">De dónde sale el costo de US$ 82</h3>
+      <p>UTE y el MIEM no publicaron su costo. Se puede deducir: US$ 90 millones de pérdida sobre 2.413 GWh son US$ 37,3 por MWh. Sumados a los US$ 45 que cobraría, el costo implícito es de <strong>US$ 82,3 por MWh</strong>. Es una estimación, no un costo auditado. Coincide con lo que UTE paga por la energía eólica privada: US$ 80 por MWh en setiembre de 2025 y US$ 82 en enero de 2026, según la Universidad Católica.<sup><a href="#f9">9</a></sup><sup><a href="#f8">8</a></sup></p>
+      <p>Para dimensionar: US$ 90 millones son el <strong>26 % de lo que ganó UTE en 2025</strong> (unos US$ 341 millones) y cerca de la <strong>mitad de lo que le giró al Estado</strong> ese año ($ 7.208 millones, unos US$ 175 millones).<sup><a href="#f6">6</a></sup> Otras estimaciones públicas van en el mismo sentido: el exdirector nacional de Energía Ramón Méndez habló de cerca de US$ 1.000 millones en unos 20 años.<sup><a href="#f13">13</a></sup> Cambian los supuestos, no la conclusión: son cientos de millones de dólares, y la cifra de UTE es la más alta.</p>
+      <h3 class="sub">Qué pasa con cada precio</h3>
+      <div class="panel tabla" tabindex="0" role="region" aria-label="Resultado para UTE según el precio">
+        <table>
+          <thead><tr><th scope="col">Precio por MWh</th><th scope="col" class="num">Ingreso por año</th><th scope="col" class="num">Resultado por año</th><th scope="col" class="num">15 años</th><th scope="col" class="num">20 años</th></tr></thead>
+          <tbody>
+            <tr class="neg"><td>US$ 40 <small>(lo que pide HIF)</small></td><td class="num">US$ 96,5 M</td><td class="num res">−US$ 102,1 M</td><td class="num res">−US$ 1.531 M</td><td class="num res">−US$ 2.041 M</td></tr>
+            <tr class="neg hl"><td><b>US$ 45</b> <small>(borrador)</small></td><td class="num">US$ 108,6 M</td><td class="num res">−US$ 90,0 M</td><td class="num res">−US$ 1.350 M</td><td class="num res">−US$ 1.800 M</td></tr>
+            <tr class="neg"><td>US$ 53 <small>(oferta 2024)</small></td><td class="num">US$ 127,9 M</td><td class="num res">−US$ 70,7 M</td><td class="num res">−US$ 1.060 M</td><td class="num res">−US$ 1.414 M</td></tr>
+            <tr class="neg"><td>US$ 60</td><td class="num">US$ 144,8 M</td><td class="num res">−US$ 53,8 M</td><td class="num res">−US$ 807 M</td><td class="num res">−US$ 1.076 M</td></tr>
+            <tr class="neg"><td>US$ 70</td><td class="num">US$ 168,9 M</td><td class="num res">−US$ 29,7 M</td><td class="num res">−US$ 445 M</td><td class="num res">−US$ 593 M</td></tr>
+            <tr class="eq"><td><b>US$ 82,3</b> <small>(empate, estimado)</small></td><td class="num">US$ 198,6 M</td><td class="num res">US$ 0</td><td class="num res">US$ 0</td><td class="num res">US$ 0</td></tr>
+            <tr class="pos"><td>US$ 86 <small>(Google, Solaria)</small></td><td class="num">US$ 207,6 M</td><td class="num res">+US$ 8,9 M</td><td class="num res">+US$ 134 M</td><td class="num res">+US$ 179 M</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="leyenda">Cuenta propia: 2.413,38 GWh por año × (precio − US$ 82,3). Sin descuento ni impuestos, con precio y volumen constantes. El plazo del contrato no es público: 15 y 20 años son escenarios. Los US$ 1.300 M de UTE encajan con un contrato de unos 15 años. <a href="hif_sensibilidad.csv">Descargar la tabla (CSV)</a>.</p>
+      <h3 class="sub">El riesgo: la plata va antes que el cliente</h3>
+      <p>Según UTE y el MIEM, la empresa tendría que comprometer <strong>más de US$ 450 millones antes de la decisión final de HIF</strong>, en generación térmica, red para la planta y equipos de estabilización, y las partidas extra superarían los US$ 600 millones. El borrador no obliga a HIF a pagar un mínimo si consume menos o para, ni la penaliza si se retira antes de decidir. Además, mientras se reserva la red para HIF, otros proyectos de centros de datos o de hidrógeno no podrían instalarse antes de 2032.<sup><a href="#f1">1</a></sup> Como comparación, en el acuerdo con Solaria la salida anticipada se paga con uno a dos años de suministro.<sup><a href="#f4">4</a></sup></p>
+      <a class="objetar" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar un dato de esta sección</a>
+    </section>
+
+    <section aria-labelledby="sirve">
+      <h2 id="sirve">¿Nos sirve? Lo que el país recibe y lo que paga</h2>
+      <p class="bajada">La respuesta no sale solo del precio del MWh. Sale del balance completo, y la mitad de ese balance no es pública.</p>
+      <div class="quien">
+        <div class="col s"><h3>Lo que recibe el país</h3><ul>
+          <li>Inversión anunciada de <b>US$ 5.385 M</b>, cerca del 6 % del PIB de 2025 (cuenta propia con el PIB del BCU). Una parte se importa (electrolizadores, turbinas, equipos).</li>
+          <li><b>≈ 1.400</b> empleos en la obra (promedio, no simultáneos) y <b>300</b> permanentes.</li>
+          <li>Exportaciones de <b>US$ 253 M</b> a <b>US$ 1.012 M</b> por año. Son ventas brutas.</li>
+          <li>Parques solar y eólico privados por <b>US$ 1.277 M</b> que quedan en el sistema.</li>
+          <li>Un uso para el CO2 de la planta de ALUR, que hoy se emite.</li>
+        </ul></div>
+        <div class="col u"><h3>Lo que paga el país</h3><ul>
+          <li><b>US$ 90 M por año</b> de pérdida de UTE: mínimo US$ 1.300 M en el contrato. Se paga con la tarifa de todos o con menos plata de UTE para el Estado.</li>
+          <li><b>US$ 450 M</b> de obras de UTE antes de la decisión de HIF, a riesgo.</li>
+          <li>Beneficios fiscales pedidos en el memorando: Impuesto al Patrimonio exonerado por toda la vida útil, IRNR para contratistas y acreedores, gastos de I+D. <b>Sin monto publicado</b>.</li>
+          <li>Red y respaldo ocupados por un cliente que paga US$ 45 en lugar de uno que paga US$ 86.</li>
+        </ul></div>
+      </div>
+      <p style="margin-top:1rem"><strong>El escenario de decir que no.</strong> Si el proyecto se cae, Uruguay pierde la inversión, los empleos y las exportaciones. Para UTE, en cambio, no firmar a US$ 45 no es "perder US$ 108 millones de ingresos": es dejar de perder US$ 90 millones. Si esa capacidad se vendiera a centros de datos a US$ 86, pasaría a ganar algo. Eso último no está asegurado: el acuerdo con Solaria es un memorando y el contrato se firmaría en mayo de 2027.<sup><a href="#f5">5</a></sup></p>
+      <div class="aviso"><strong>Ojo con la comparación con los centros de datos:</strong> la cuenta de arriba supone que abastecerlos le cuesta a UTE lo mismo que abastecer a HIF (US$ 82,3). Probablemente sea menos, porque HIF necesita respaldo y red especiales. En ese caso, venderles a ellos dejaría más margen del que muestra la tabla.</div>
+      <a class="objetar" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar un dato de esta sección</a>
+    </section>
+
+    <section aria-labelledby="nosabemos">
+      <h2 id="nosabemos">Lo que no sabemos (y deberíamos saber)</h2>
+      <p class="bajada">Las respuestas que deciden si esto conviene no son públicas. Se pueden pedir por la Ley 18.381 de acceso a la información.</p>
+      <ul class="preguntas">
+        <li><em>UTE · MIEM</em><strong>¿Cuál es el costo de UTE para abastecer a HIF, auditado?</strong><span>Es el número que decide si hay subsidio y de cuánto.</span></li>
+        <li><em>Presidencia · UTE</em><strong>¿Qué dice el borrador completo y cuánto dura el contrato?</strong><span>15 o 20 años cambian la pérdida en US$ 450 millones.</span></li>
+        <li><em>UTE</em><strong>¿Hay cánones por disponibilidad además del precio por MWh?</strong><span>Si existen, la brecha real es menor que la que muestra el precio.</span></li>
+        <li><em>MEF · COMAP</em><strong>¿Cuánto valen los beneficios fiscales que pide HIF?</strong><span>Sin ese número, cualquier balance a favor del proyecto está inflado.</span></li>
+        <li><em>UTE</em><strong>¿Qué garantías da HIF por las obras que hace UTE antes?</strong><span>Hoy, según UTE y el MIEM, ninguna penalidad si se retira.</span></li>
+        <li><em>Presidencia</em><strong>¿Cuánto vale para Uruguay que HIF se instale?</strong><span>Contenido local, impuestos, valor agregado. Debería calcularse antes de firmar.</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="veredicto">
+      <h2 id="veredicto">Veredicto: las tres respuestas</h2>
+      <div class="respuestas">
+        <div class="resp x"><h3>¿Conviene?</h3><p class="v">No, a US$ 45.</p><p>Vende por debajo del costo estimado, traslada al menos US$ 1.300 M a los clientes de UTE y le pide a UTE que invierta antes de que el cliente se comprometa.</p></div>
+        <div class="resp m"><h3>¿Nos sirve?</h3><p class="v">Con condiciones.</p><p>Inversión, empleo, exportaciones y energía renovable nueva justifican discutir un apoyo público. No justifican cualquier apoyo ni un cheque en blanco.</p></div>
+        <div class="resp p"><h3>¿Cuánto se pierde?</h3><p class="v">US$ 90 M por año.</p><p>US$ 1.300 a 1.800 M en el contrato, según UTE y el plazo. Más hasta US$ 450 M de obras hundidas si el proyecto no se concreta.</p></div>
+      </div>
+      <h3 class="sub">Lo que el contrato tendría que tener</h3>
+      <ul class="exigir">
+        <li><strong>Precio de costo o subsidio a la vista.</strong> Un piso igual al costo auditado (US$ 80 a 86) o, si se decide subsidiar, que el subsidio salga del contrato eléctrico y vaya al Presupuesto con monto y plazo.</li>
+        <li><strong>Contrato separado por partes.</strong> Energía, potencia, peaje y servicios de red, cada uno con su precio. El "peaje incluido" esconde parte de la cuenta.</li>
+        <li><strong>Inversión después de la garantía.</strong> Que UTE no comprometa los US$ 450 M antes de que HIF firme una compra mínima obligatoria o dé garantías.</li>
+        <li><strong>Plazo corto y penalidad.</strong> Hasta 2028 sin penalidad es una opción gratis para HIF y un costo hundido para UTE.</li>
+        <li><strong>Costo auditado y publicado.</strong> Una auditoría independiente del costo de UTE antes de aprobar el precio.</li>
+        <li><strong>Reparto de la ganancia.</strong> Si el negocio rinde más de lo previsto, que el precio se revise o UTE cobre una parte.</li>
+        <li><strong>Beneficios fiscales con número.</strong> Calcular y publicar cuánto valen las exoneraciones y atarlas a contenido local, investigación y formación.</li>
+        <li><strong>La misma vara para todos.</strong> Comparar HIF, Google y Solaria por lo que le deja a UTE cada MWh, el empleo por dólar y las exportaciones por dólar de apoyo público.</li>
+        <li><strong>Costo-beneficio oficial antes de firmar.</strong> Con los supuestos abiertos para que cualquiera los revise.</li>
+        <li><strong>Contrato público después de la firma.</strong> La reserva tiene sentido mientras se negocia, no después.</li>
+      </ul>
+      <p class="conclusion">Si Uruguay quiere una industria de combustibles sintéticos, <strong>alguien tiene que pagar la diferencia</strong> entre el precio que el proyecto necesita y lo que cuesta la energía. A US$ 86 la paga HIF, y el proyecto puede no cerrar. A US$ 45 la pagamos todos en la factura de UTE, sin que figure en ningún presupuesto. <strong>La discusión honesta no es si hay subsidio, sino cuánto es, quién lo paga, qué se recibe a cambio y cómo se controla.</strong> El borrador actual no contesta ninguna de las cuatro.</p>
+      <a class="objetar" href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">⚑ Objetar este análisis</a>
+    </section>
+
+    <section aria-labelledby="como">
+      <h2 id="como">Cómo se hizo este informe</h2>
+      <p class="bajada">Partimos de un informe hecho con DeepSeek y lo verificamos fuente por fuente con Claude. Estas son las correcciones que le hicimos antes de publicarlo.</p>
+      <ul class="correcciones">
+        <li><b>Transferencias al Estado.</b> Decía que la pérdida anual equivale a "3,7 años de transferencias". Es al revés: US$ 90 M son cerca de la mitad de lo que UTE giró al Estado en 2025 (unos US$ 175 M).</li>
+        <li><b>Precio a grandes consumidores.</b> Decía "entre US$ 60 y US$ 90" y en otra tabla "US$ 135,5". Quitamos el rango sin fuente y usamos la tarifa industrial publicada: US$ 148 por MWh (abril 2026).</li>
+        <li><b>Costo de US$ 82,3.</b> Aparecía como dato. Es una estimación deducida de la pérdida que declaran UTE y el MIEM; ahora está marcada así.</li>
+        <li><b>Comparación con centros de datos.</b> Suponía el mismo costo para HIF y para un centro de datos. Agregamos la aclaración de que probablemente sea menor para el centro de datos.</li>
+        <li><b>Cifras sin fuente que pudiéramos abrir.</b> Los US$ 80 que denunciaba AUTE se reemplazaron por el precio de la eólica privada del monitor de la Universidad Católica. La demanda de 2025 pasó de 12.467 GWh a 12.533 GWh (UTE en cifras) y las ventas de UTE, a 10.527 GWh (estados financieros). La estimación de Ramón Méndez quedó verificada.</li>
+        <li><b>Producción.</b> Decía 876.000 t de e-metanol. El memorando dice 880.000 t de e-combustibles.</li>
+        <li><b>Planilla.</b> Mencionaba un Excel que no existía. La tabla de precios ahora se descarga en CSV.</li>
+      </ul>
+      <p class="leyenda">No pudimos abrir el Estudio de Impacto Ambiental (el sitio no permite la descarga automática). El volumen de 2.413 GWh sale de su tabla 5-57 según el informe original. Con 280 MW y 90 % del tiempo da 2.200 GWh y la pérdida queda en el mismo orden (unos US$ 82 M por año).</p>
+    </section>
+
+    <section aria-labelledby="fuentes">
+      <h2 id="fuentes">Fuentes</h2>
+      <p class="bajada">Consultadas al 18/11/2026. Algunas notas de El Observador tienen muro de pago y se leyeron en parte. Si tenés el borrador del memorando o un documento oficial, <a href="informe.html?aporte=hif-2026&amp;tipo=correccion#aportes">mandalo</a>. <a href="hif_fuentes.csv">Descargar la lista (CSV)</a>.</p>
+      <ol class="fuentes">
+        <li id="f1"><a href="https://www.elobservador.com.uy/nacional/totalmente-desfavorable-el-pais-y-perdida-minima-us-1300-millones-los-criticas-del-miem-y-ute-las-negociaciones-hif-n6063815" rel="noopener">El Observador · "Totalmente desfavorable para el país" y "pérdida mínima de US$ 1.300 millones"</a><small>Borrador a US$ 45 con peaje, oferta de 2024 a US$ 53, pérdida de US$ 90 M por año, US$ 450 M antes de la decisión, plazos, dichos de Alejandro Sánchez. 14/11/2026.</small></li>
+        <li id="f2"><a href="https://medios.presidencia.gub.uy/tav_portal/2025/noticias/AO_677/memorando_gobierno_hif.pdf" rel="noopener">Presidencia · Memorando de entendimiento ROU-HIF</a><small>Inversión y su desglose, módulos, empleo, producción, exportaciones, beneficios fiscales pedidos, cánones por disponibilidad, plazo original de decisión. 18/12/2025.</small></li>
+        <li id="f3"><a href="https://www.ambiente.gub.uy/oan/wp-content/uploads/2025/09/02-HIF-DP_Tomo-I_DP_Mar2026.pdf" rel="noopener">HIF Uruguay · Estudio de Impacto Ambiental, Tomo I</a><small>Tabla 5-57: 290 MW por módulo, 95 % del tiempo el módulo 1, 7.367 GWh por año el complejo. Marzo de 2026. Documento de la empresa; tomado del informe original.</small></li>
+        <li id="f4"><a href="https://www.elobservador.com.uy/nacional/megaproyecto-solaria-ute-requerira-presupuesto-adicional-us-120-millones-adelantar-inversiones-que-respalden-la-demanda-los-data-centers-n6061137" rel="noopener">El Observador · UTE requerirá US$ 120 millones por el proyecto de Solaria</a><small>Precio de Google de unos US$ 86 por MWh, Solaria "similar", penalidad de uno a dos años de suministro.</small></li>
+        <li id="f5"><a href="https://www.elobservador.com.uy/nacional/los-detalles-del-acuerdo-solaria-las-obras-las-que-se-compromete-ute-las-700-hectareas-parque-solar-y-la-referencia-del-precio-google-n6060623" rel="noopener">El Observador · Los detalles del acuerdo con Solaria</a><small>Precio original de Google US$ 73,5, hoy US$ 80 a 85; contrato definitivo en mayo de 2027.</small></li>
+        <li id="f6"><a href="https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf" rel="noopener">UTE · Estados financieros 2025 e informe de auditoría</a><small>Ganancia de $ 14.026 M (unos US$ 341 M), giro a Rentas Generales de $ 7.208 M, 10.527 GWh vendidos al mercado interno.</small></li>
+        <li id="f7"><a href="https://ute.com.uy/sites/default/files/generico/UTE%20en%20CIFRAS%202025.pdf" rel="noopener">UTE · UTE en cifras 2025</a><small>Energía generada e intercambiada para Uruguay en 2025: 12.533 GWh.</small></li>
+        <li id="f8"><a href="https://www.ucu.edu.uy/Institucionales/MONITOR-MENSUAL-DEL-SECTOR-ELECTRICO-uc1481/7584/Monitor-Febrero-2026.pdf" rel="noopener">Universidad Católica · Monitor del sector eléctrico, febrero 2026</a><small>Costo de abastecimiento unitario de US$ 60 por MWh; eólica a US$ 82 por MWh en enero.</small></li>
+        <li id="f9"><a href="https://www.ucu.edu.uy/Institucionales/MONITOR-MENSUAL-DEL-SECTOR-ELECTRICO-uc1481/7085/Monitor-Octubre-2025.pdf" rel="noopener">Universidad Católica · Monitor del sector eléctrico, octubre 2025</a><small>Eólica a US$ 80 por MWh en setiembre de 2025.</small></li>
+        <li id="f10"><a href="https://www.riotimesonline.com/uruguay-green-hydrogen-ute-price-gap-narrows-2026/" rel="noopener">The Rio Times · Uruguay Green Hydrogen Project Advances as UTE Price Gap Narrows</a><small>HIF pide US$ 40 por MWh desde 2023. 30/08/2026.</small></li>
+        <li id="f11"><a href="https://en.mercopress.com/2026/04/09/uruguay-considers-relocating-hif-global-s-green-hydrogen-megaplant-to-ease-tensions-with-argentina" rel="noopener">MercoPress · Uruguay considera reubicar la planta de HIF</a><small>Tarifas de Paraguay, Chile y Brasil citadas por HIF Uruguay. 09/04/2026.</small></li>
+        <li id="f12"><a href="https://prensamercosur.org/2026/08/26/uruguay-energia-renovable-de-sobra-pero-el-pais-enfrenta-el-desafio-de-hacerla-competitiva/" rel="noopener">Prensa Mercosur · Energía renovable de sobra, el desafío es hacerla competitiva</a><small>Precio base de US$ 45 con peaje, según El Observador. 26/08/2026.</small></li>
+        <li id="f13"><a href="https://iciforestal.uy/ici/informes-ici/hif-y-el-precio-de-la-energia-la-discusion-que-ramon-mendez-coloca-en-el-centro-del-proyecto" rel="noopener">ICI Forestal · HIF y el precio de la energía, la discusión que plantea Ramón Méndez</a><small>Estimación de cerca de US$ 1.000 M en unos 20 años; no es una cifra oficial. 17/09/2026.</small></li>
+        <li id="f14"><a href="https://www.prensa-latina.cu/2026/05/20/uruguay-redujo-tarifas-electricas-pero-siguen-altas/" rel="noopener">Prensa Latina · Uruguay redujo tarifas eléctricas, pero siguen altas</a><small>Tarifa industrial de US$ 148 por MWh en abril de 2026. 20/05/2026.</small></li>
+        <li id="f15"><a href="https://brecha.com.uy/la-infraestructura-de-la-promesa/" rel="noopener">Brecha · La infraestructura de la promesa</a><small>Los precios de Solaria no son públicos; la referencia es Google, entre US$ 80 y 85.</small></li>
+        <li id="f16"><a href="https://americaeconomia.com/en/node/287929" rel="noopener">América Economía · El centro de datos de Google en Uruguay</a><small>Consumo de 560.000 MWh por año: el módulo 1 de HIF consumiría unas cuatro veces más.</small></li>
+      </ol>
+    </section>
+  </main>
+  <footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="./">Portada</a> · <a href="informe.html#metodo">Método y fuentes</a></div></footer>
+  <script>
+    "use strict";
+    document.getElementById("compartir").addEventListener("click", async () => {
+      const share = { title: document.title, text: "HIF: UTE le vendería la energía a US$ 45 el MWh. A Google le cobra US$ 86. UTE y el MIEM calculan una pérdida de US$ 90 millones por año.", url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(share); return; }
+        await navigator.clipboard.writeText(share.text + " " + share.url);
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = "Enlace copiado";
+        toast.setAttribute("role", "status");
+        document.body.append(toast);
+        setTimeout(() => toast.remove(), 2200);
+      } catch (error) { /* el usuario canceló */ }
+    });
+  </script>
+</body>
+</html>

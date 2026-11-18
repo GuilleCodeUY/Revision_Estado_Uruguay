@@ -1,0 +1,33 @@
+{
+  "consultado": "2026-11-18",
+  "nota": "Informe especial 5 · HIF Global y el precio de la energía. Volumen: 2.413,38 GWh por año (módulo 1: 290 MW al 95 %, EsIA tabla 5-57). Costo estimado de UTE: US$ 82,3/MWh, deducido de la pérdida de US$ 90 M por año que declaran UTE y el MIEM a US$ 45. Sin descuento ni impuestos; precio y volumen constantes.",
+  "volumen_gwh": 2413.38,
+  "costo_estimado_usd_mwh": 82.3,
+  "sensibilidad": [
+    {"precio_usd_mwh": 40, "nota": "lo que pide HIF", "ingreso_anual_musd": 96.5, "resultado_anual_musd": -102.1, "acumulado_15_anios_musd": -1531, "acumulado_20_anios_musd": -2041},
+    {"precio_usd_mwh": 45, "nota": "borrador de memorando, peaje incluido", "ingreso_anual_musd": 108.6, "resultado_anual_musd": -90.0, "acumulado_15_anios_musd": -1350, "acumulado_20_anios_musd": -1800},
+    {"precio_usd_mwh": 53, "nota": "oferta de 2024, sin peaje", "ingreso_anual_musd": 127.9, "resultado_anual_musd": -70.7, "acumulado_15_anios_musd": -1060, "acumulado_20_anios_musd": -1414},
+    {"precio_usd_mwh": 60, "nota": "", "ingreso_anual_musd": 144.8, "resultado_anual_musd": -53.8, "acumulado_15_anios_musd": -807, "acumulado_20_anios_musd": -1076},
+    {"precio_usd_mwh": 70, "nota": "", "ingreso_anual_musd": 168.9, "resultado_anual_musd": -29.7, "acumulado_15_anios_musd": -445, "acumulado_20_anios_musd": -593},
+    {"precio_usd_mwh": 82.3, "nota": "punto de equilibrio estimado", "ingreso_anual_musd": 198.6, "resultado_anual_musd": 0.0, "acumulado_15_anios_musd": 0, "acumulado_20_anios_musd": 0},
+    {"precio_usd_mwh": 86, "nota": "lo que pagan Google y, en principio, Solaria", "ingreso_anual_musd": 207.6, "resultado_anual_musd": 8.9, "acumulado_15_anios_musd": 134, "acumulado_20_anios_musd": 179}
+  ],
+  "fuentes": [
+    ["El Observador · 'Totalmente desfavorable para el país' y 'pérdida mínima de US$ 1.300 millones' (14/11/2026)", "https://www.elobservador.com.uy/nacional/totalmente-desfavorable-el-pais-y-perdida-minima-us-1300-millones-los-criticas-del-miem-y-ute-las-negociaciones-hif-n6063815", "prensa"],
+    ["Presidencia · Memorando de entendimiento ROU-HIF (18/12/2025)", "https://medios.presidencia.gub.uy/tav_portal/2025/noticias/AO_677/memorando_gobierno_hif.pdf", "oficial"],
+    ["HIF Uruguay · Estudio de Impacto Ambiental, Tomo I, tabla 5-57 (marzo 2026)", "https://www.ambiente.gub.uy/oan/wp-content/uploads/2025/09/02-HIF-DP_Tomo-I_DP_Mar2026.pdf", "parte"],
+    ["El Observador · UTE requerirá US$ 120 millones por el proyecto de Solaria; Google paga unos US$ 86/MWh", "https://www.elobservador.com.uy/nacional/megaproyecto-solaria-ute-requerira-presupuesto-adicional-us-120-millones-adelantar-inversiones-que-respalden-la-demanda-los-data-centers-n6061137", "prensa"],
+    ["El Observador · Los detalles del acuerdo con Solaria y la referencia del precio de Google", "https://www.elobservador.com.uy/nacional/los-detalles-del-acuerdo-solaria-las-obras-las-que-se-compromete-ute-las-700-hectareas-parque-solar-y-la-referencia-del-precio-google-n6060623", "prensa"],
+    ["UTE · Estados financieros 2025 e informe de auditoría", "https://www.ute.com.uy/sites/default/files/docs/Informe%20de%20auditor%C3%ADa%202025%20-%20UTE_2.pdf", "oficial"],
+    ["UTE · UTE en cifras 2025", "https://ute.com.uy/sites/default/files/generico/UTE%20en%20CIFRAS%202025.pdf", "oficial"],
+    ["Universidad Católica · Monitor del sector eléctrico, febrero 2026", "https://www.ucu.edu.uy/Institucionales/MONITOR-MENSUAL-DEL-SECTOR-ELECTRICO-uc1481/7584/Monitor-Febrero-2026.pdf", "terceros"],
+    ["Universidad Católica · Monitor del sector eléctrico, octubre 2025", "https://www.ucu.edu.uy/Institucionales/MONITOR-MENSUAL-DEL-SECTOR-ELECTRICO-uc1481/7085/Monitor-Octubre-2025.pdf", "terceros"],
+    ["The Rio Times · HIF pide US$ 40/MWh desde 2023 (30/08/2026)", "https://www.riotimesonline.com/uruguay-green-hydrogen-ute-price-gap-narrows-2026/", "prensa"],
+    ["MercoPress · Tarifas de Paraguay, Chile y Brasil citadas por HIF (09/04/2026)", "https://en.mercopress.com/2026/04/09/uruguay-considers-relocating-hif-global-s-green-hydrogen-megaplant-to-ease-tensions-with-argentina", "prensa"],
+    ["Prensa Mercosur · El precio base de US$ 45 con peaje (26/08/2026)", "https://prensamercosur.org/2026/08/26/uruguay-energia-renovable-de-sobra-pero-el-pais-enfrenta-el-desafio-de-hacerla-competitiva/", "prensa"],
+    ["ICI Forestal · HIF y el precio de la energía: lo que plantea Ramón Méndez (17/09/2026)", "https://iciforestal.uy/ici/informes-ici/hif-y-el-precio-de-la-energia-la-discusion-que-ramon-mendez-coloca-en-el-centro-del-proyecto", "prensa"],
+    ["Prensa Latina · Tarifa industrial de UTE en abril de 2026 (20/05/2026)", "https://www.prensa-latina.cu/2026/05/20/uruguay-redujo-tarifas-electricas-pero-siguen-altas/", "prensa"],
+    ["Brecha · La infraestructura de la promesa (precio de Google, Solaria sin precio público)", "https://brecha.com.uy/la-infraestructura-de-la-promesa/", "prensa"],
+    ["América Economía · Consumo del centro de datos de Google: 560.000 MWh por año", "https://americaeconomia.com/en/node/287929", "prensa"]
+  ]
+}
