@@ -1,5 +1,8 @@
 import csv
+import html
 import json
+import re
+import subprocess
 from pathlib import Path
 
 
@@ -961,6 +964,73 @@ def build_hif():
     write_csv(public, "hif_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+# Para Google: de qué archivos sale cada página, para saber cuándo cambió.
+PAGINAS_SEO = {
+    "informe.html": ("web/index.template.html", "datos/2025.json"),
+    "intendencias.html": ("web/intendencias.template.html", "datos/intendencias_2022.json"),
+    "solaria.html": ("web/solaria.html",),
+    "puerto.html": ("web/puerto.template.html", "datos/puerto.json"),
+    "ute.html": ("web/ute.template.html", "datos/ute.json"),
+    "ancap.html": ("web/ancap.template.html", "datos/ancap.json"),
+    "movilidad.html": ("web/movilidad.template.html", "datos/movilidad.json"),
+    "transporte.html": ("web/transporte.template.html", "datos/transporte.json"),
+    "justicia.html": ("web/justicia.template.html", "datos/justicia.json"),
+    "estado.html": ("web/estado.template.html", "datos/estado.json"),
+    "hif.html": ("web/hif.html", "datos/hif.json"),
+}
+
+
+def fechas_git(archivos, defecto):
+    """Primera y última fecha de commit de los archivos (AAAA-MM-DD). Sin git, usa la fecha por defecto."""
+    primeras, ultimas = [], []
+    for archivo in archivos:
+        try:
+            log = subprocess.run(["git", "log", "--format=%cs", "--", archivo], cwd=ROOT,
+                                 capture_output=True, text=True, check=True).stdout.split()
+        except (OSError, subprocess.CalledProcessError):
+            log = []
+        if log:
+            ultimas.append(log[0])
+            primeras.append(log[-1])
+    return (min(primeras) if primeras else defecto), (max(ultimas) if ultimas else defecto)
+
+
+def poner_datos_estructurados(public, page, publicado, modificado):
+    """Agrega a la página los datos que Google usa para mostrarla como nota (schema.org Article)."""
+    path = public / page
+    text = path.read_text(encoding="utf-8")
+    if '"@type":"Article"' in text:
+        return
+
+    def meta(patron):
+        m = re.search(patron, text)
+        if not m:
+            raise ValueError(f"Falta un dato para Google en {page}: {patron}")
+        return html.unescape(m.group(1))
+
+    titulo = meta(r"<title>([^<]*)</title>").replace(" · La verdad de la milanesa", "")
+    datos = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": titulo,
+        "description": meta(r'<meta name="description" content="([^"]*)"'),
+        "image": meta(r'<meta property="og:image" content="([^"]*)"'),
+        "datePublished": publicado,
+        "dateModified": modificado,
+        "inLanguage": "es-UY",
+        "mainEntityOfPage": f"{SITE}/{page}",
+        "author": {"@type": "Organization", "name": "La verdad de la milanesa", "url": f"{SITE}/"},
+        "publisher": {"@type": "Organization", "name": "La verdad de la milanesa", "url": f"{SITE}/",
+                      "logo": {"@type": "ImageObject", "url": f"{SITE}/favicon.svg"}},
+    }
+    bloque = ('  <script type="application/ld+json">'
+              + json.dumps(datos, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+              + "</script>\n</head>")
+    if text.count("</head>") != 1:
+        raise ValueError(f"No se pudieron agregar los datos para Google a {page}.")
+    path.write_text(text.replace("</head>", bloque, 1), encoding="utf-8")
+
+
 def main():
     data = load_data("2025.json")
     validate(data)
@@ -1042,8 +1112,12 @@ def main():
     for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html", "hif.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
-    urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{data['consultado']}</lastmod></url>\n"
-                   for page in ("", "informe.html", "intendencias.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html", *STATIC_PAGES))
+    fechas = {page: fechas_git(fuentes, data["consultado"]) for page, fuentes in PAGINAS_SEO.items()}
+    for page, (publicado, modificado) in fechas.items():
+        poner_datos_estructurados(public, page, publicado, modificado)
+    portada = max(modificado for _, modificado in fechas.values())
+    urls = "".join(f"  <url><loc>{SITE}/{page}</loc><lastmod>{fechas[page][1] if page else portada}</lastmod></url>\n"
+                   for page in ("", *PAGINAS_SEO))
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
