@@ -1,0 +1,10 @@
+﻿concepto;cuenta;valor;origen
+Valor de aforo supuesto (auto 1.6 modelo 2021);supuesto, en línea con los avisos de un VW Gol 2021;US$ 12.800;cálculo propio
+Dólar de referencia SUCIVE 2026;promedio oct 2024 - set 2025;$ 41,826;oficial
+Aforo en pesos;12.800 × 41,826;$ 535.373;cálculo propio
+Alícuota de un auto usado a combustión;;4,5 %;oficial
+Patente anual sin descuento;535.373 × 0,045;$ 24.092;cálculo propio
+Cada una de las 6 cuotas;24.092 ÷ 6;$ 4.015;cálculo propio
+Pagando todo el año antes del 20 de enero (−20 %);24.092 × 0,80;$ 19.273;cálculo propio
+Pagando cada cuota en fecha (−10 %);24.092 × 0,90;$ 21.683;cálculo propio
+Si el aforo real va de US$ 11.500 a 13.500;aforo × 41,826 × 0,045;$ 21.645 a $ 25.409;cálculo propio

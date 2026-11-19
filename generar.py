@@ -237,6 +237,7 @@ ESPECIALES = (
     ("justicia.html", "Informe especial 3", "Justicia penal y seguridad", "#60a5fa"),
     ("estado.html", "Informe especial 4", "Un Estado que rinde", "#2dd4bf"),
     ("hif.html", "Informe especial 5", "HIF: la luz a mitad de precio", "#f0abfc"),
+    ("patente.html", "Informe especial 6", "La patente: ¿por qué no baja?", "#fdba74"),
 )
 ESPECIALES_CSS = """
     .vm-esp{flex:none}
@@ -969,6 +970,61 @@ def build_hif():
     write_csv(public, "hif_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
 
 
+def build_patente(public):
+    """Genera patente.html (Informe especial 6) y sus CSV desde datos/patente.json."""
+    from html import escape
+    data = load_data("patente.json")
+    names = {"oficial": ("oficial", "oficial"), "prensa": ("prensa", "prensa"), "terceros": ("terceros", "terceros"),
+             "internacional": ("terceros", "internacional"), "propio": ("propio", "sitio")}
+    tag = lambda t: f'<span class="tag t-{names[t][0]}">{names[t][1]}</span>'
+    origen = {"oficial": '<span class="tag t-oficial">oficial</span>', "cálculo propio": '<span class="tag t-propio">cálculo propio</span>'}
+
+    def pct(value, signo=True):
+        if value is None:
+            return "no publicado"
+        texto = es_num(abs(value), 2) + " %"
+        if not signo:
+            return texto
+        return ("+" if value > 0 else "−" if value < 0 else "") + texto
+
+    parametros = "".join(
+        f'<tr><td><b>{p["patente"]}</b></td>'
+        f'<td class="n">{"$ " + es_num(p["dolar_referencia"], 3) if p["dolar_referencia"] else "—"}</td>'
+        f'<td class="n">{pct(p["variacion_dolar_pct"]) if p["dolar_referencia"] else "—"}</td>'
+        f'<td class="n">{pct(p["variacion_tabla_usd_pct"]) if p["dolar_referencia"] else "—"}</td>'
+        f'<td class="n"><b>{"igual a 2026" if p["patente"] == 2027 else "≈ " + pct(p["variacion_patente_pct"]) if p["variacion_patente_pct"] is not None else "no publicado"}</b></td>'
+        f'<td class="n">{pct(p["ipc_pct"], False) if p["ipc_pct"] is not None else "—"}</td></tr>'
+        for p in data["parametros"])
+    ejemplo = "".join(
+        f'<tr{" class=\"total\"" if e["concepto"].startswith("Patente anual") else ""}><td>{escape(e["concepto"])}</td>'
+        f'<td>{escape(e["cuenta"])}</td><td class="n">{escape(e["valor"])}</td><td>{origen[e["origen"]]}</td></tr>'
+        for e in data["ejemplo"])
+    comparacion = "".join(
+        f'<tr{" class=\"total\"" if c["lugar"] == "Uruguay" else ""}><td>{escape(c["lugar"])}</td><td>{escape(c["impuesto"])}</td>'
+        f'<td>{escape(c["tasa"])}</td><td>{escape(c["base"])}</td>'
+        f'<td class="n">US$ {es_num(c["auto_usd_12800"], 0)}</td><td class="n">{es_num(c["pct_del_valor"])} %</td></tr>'
+        for c in data["comparacion"])
+    values = {
+        "OBJ": '<a class="obj" href="/informe?aporte=patente-2026&amp;tipo=correccion#aportes">⚑ Objetar</a>',
+        "PARAMETROS": parametros,
+        "EJEMPLO": ejemplo,
+        "COMPARACION": comparacion,
+        "PENDIENTES": "".join(f"<li>{escape(p)}</li>" for p in data["pendientes"]),
+        "FUENTES": "".join(f'<li><a href="{escape(sin_html(u))}" target="_blank" rel="noopener">{escape(n)}</a> {tag(t)}</li>' for n, u, t in data["fuentes"]),
+        "CONSULTADO": "/".join(reversed(data["consultado"].split("-"))),
+    }
+    page = (ROOT / "web" / "patente.template.html").read_text(encoding="utf-8")
+    for key, value in values.items():
+        page = page.replace("{{" + key + "}}", value)
+    if "{{" in page:
+        raise ValueError("Quedó un marcador sin completar en patente.template.html.")
+    (public / "patente.html").write_text(page, encoding="utf-8")
+    write_csv(public, "patente_parametros.csv", data["parametros"])
+    write_csv(public, "patente_calculos.csv", data["ejemplo"])
+    write_csv(public, "patente_comparacion.csv", data["comparacion"])
+    write_csv(public, "patente_fuentes.csv", [{"fuente": n, "url": u, "tipo": t} for n, u, t in data["fuentes"]])
+
+
 # Para Google: de qué archivos sale cada página, para saber cuándo cambió.
 PAGINAS_SEO = {
     "informe.html": ("web/index.template.html", "datos/2025.json"),
@@ -982,6 +1038,7 @@ PAGINAS_SEO = {
     "justicia.html": ("web/justicia.template.html", "datos/justicia.json"),
     "estado.html": ("web/estado.template.html", "datos/estado.json"),
     "hif.html": ("web/hif.html", "datos/hif.json"),
+    "patente.html": ("web/patente.template.html", "datos/patente.json"),
 }
 
 
@@ -1112,9 +1169,10 @@ def main():
     build_justicia(public)
     build_estado(public)
     build_hif()
+    build_patente(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html", "hif.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html", "hif.html", "patente.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     fechas = {page: fechas_git(fuentes, data["consultado"]) for page, fuentes in PAGINAS_SEO.items()}
@@ -1126,7 +1184,7 @@ def main():
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica, justicia, Estado optimizado y HIF y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica, justicia, Estado optimizado, HIF y patente de rodados y los CSV.")
 
 
 if __name__ == "__main__":

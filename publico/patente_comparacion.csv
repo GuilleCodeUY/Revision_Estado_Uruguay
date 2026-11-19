@@ -1,0 +1,5 @@
+﻿lugar;impuesto;tasa;base;auto_usd_12800;pct_del_valor
+Uruguay;Patente de rodados;4,5 % fijo (usados);Valor de mercado de la tabla Autodata, en dólares, pasado a pesos con el dólar promedio;576;4.5
+Brasil, São Paulo;IPVA;4 % fijo;Valor venal de una tabla oficial;512;4.0
+Chile;Permiso de circulación;1 % a 4,5 % por tramos;Tasación fiscal del SII;258;2.0
+Argentina, provincia de Buenos Aires;Impuesto automotor (ARBA);1 % a 4,5 % por tramos;95 % de la valuación fiscal de un usado;153;1.2

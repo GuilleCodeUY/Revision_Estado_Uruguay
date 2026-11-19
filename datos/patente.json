@@ -1,0 +1,66 @@
+{
+  "consultado": "2026-11-19",
+  "nota": "Informe especial 6 · Patente de rodados y SUCIVE. Borrador de DeepSeek (investigacion_patente/01_deepseek.md) verificado y corregido. Parámetros de cada año tomados de las notas del Congreso de Intendentes. 'Variación de la patente' = (1 + variación de la tabla en dólares) × (1 + variación del dólar de referencia) − 1, para un mismo auto promedio; es un cálculo propio.",
+  "parametros": [
+    {"patente": 2023, "dolar_referencia": 42.151, "periodo_dolar": "oct 2021 - set 2022", "variacion_dolar_pct": -2.48, "variacion_tabla_usd_pct": 1.8, "variacion_patente_pct": -0.7, "ipc_pct": 9.95, "fuente": "Congreso de Intendentes, nota patente 2023"},
+    {"patente": 2024, "dolar_referencia": 38.924, "periodo_dolar": "oct 2022 - set 2023", "variacion_dolar_pct": -7.66, "variacion_tabla_usd_pct": null, "variacion_patente_pct": null, "ipc_pct": 3.87, "fuente": "Congreso de Intendentes, nota patente 2024 (la variación de la tabla no se publicó)"},
+    {"patente": 2025, "dolar_referencia": 39.442, "periodo_dolar": "oct 2023 - set 2024", "variacion_dolar_pct": 1.33, "variacion_tabla_usd_pct": -2.0, "variacion_patente_pct": -0.7, "ipc_pct": null, "fuente": "SUCIVE, valores 2025 (reproducido por Sociedad Uruguaya)"},
+    {"patente": 2026, "dolar_referencia": 41.826, "periodo_dolar": "oct 2024 - set 2025", "variacion_dolar_pct": 6.04, "variacion_tabla_usd_pct": -5.0, "variacion_patente_pct": 0.7, "ipc_pct": 4.25, "fuente": "Congreso de Intendentes, nota patente 2026; caída de 5 %: César García (SUCIVE) en Montevideo Portal"},
+    {"patente": 2027, "dolar_referencia": null, "periodo_dolar": "", "variacion_dolar_pct": null, "variacion_tabla_usd_pct": null, "variacion_patente_pct": 0.0, "ipc_pct": null, "fuente": "Congreso de Intendentes, 15/11/2026: se mantiene el valor 2026 para los vehículos a combustión"}
+  ],
+  "ejemplo": [
+    {"concepto": "Valor de aforo supuesto (auto 1.6 modelo 2021)", "cuenta": "supuesto, en línea con los avisos de un VW Gol 2021", "valor": "US$ 12.800", "origen": "cálculo propio"},
+    {"concepto": "Dólar de referencia SUCIVE 2026", "cuenta": "promedio oct 2024 - set 2025", "valor": "$ 41,826", "origen": "oficial"},
+    {"concepto": "Aforo en pesos", "cuenta": "12.800 × 41,826", "valor": "$ 535.373", "origen": "cálculo propio"},
+    {"concepto": "Alícuota de un auto usado a combustión", "cuenta": "", "valor": "4,5 %", "origen": "oficial"},
+    {"concepto": "Patente anual sin descuento", "cuenta": "535.373 × 0,045", "valor": "$ 24.092", "origen": "cálculo propio"},
+    {"concepto": "Cada una de las 6 cuotas", "cuenta": "24.092 ÷ 6", "valor": "$ 4.015", "origen": "cálculo propio"},
+    {"concepto": "Pagando todo el año antes del 20 de enero (−20 %)", "cuenta": "24.092 × 0,80", "valor": "$ 19.273", "origen": "cálculo propio"},
+    {"concepto": "Pagando cada cuota en fecha (−10 %)", "cuenta": "24.092 × 0,90", "valor": "$ 21.683", "origen": "cálculo propio"},
+    {"concepto": "Si el aforo real va de US$ 11.500 a 13.500", "cuenta": "aforo × 41,826 × 0,045", "valor": "$ 21.645 a $ 25.409", "origen": "cálculo propio"}
+  ],
+  "comparacion": [
+    {"lugar": "Uruguay", "impuesto": "Patente de rodados", "tasa": "4,5 % fijo (usados)", "base": "Valor de mercado de la tabla Autodata, en dólares, pasado a pesos con el dólar promedio", "auto_usd_12800": 576, "pct_del_valor": 4.5},
+    {"lugar": "Brasil, São Paulo", "impuesto": "IPVA", "tasa": "4 % fijo", "base": "Valor venal de una tabla oficial", "auto_usd_12800": 512, "pct_del_valor": 4.0},
+    {"lugar": "Chile", "impuesto": "Permiso de circulación", "tasa": "1 % a 4,5 % por tramos", "base": "Tasación fiscal del SII", "auto_usd_12800": 258, "pct_del_valor": 2.0},
+    {"lugar": "Argentina, provincia de Buenos Aires", "impuesto": "Impuesto automotor (ARBA)", "tasa": "1 % a 4,5 % por tramos", "base": "95 % de la valuación fiscal de un usado", "auto_usd_12800": 153, "pct_del_valor": 1.2}
+  ],
+  "pendientes": [
+    "La recaudación por patente de 2024 ($ 28.367 millones) y la morosidad (17 %) salen de El País, que cita un estudio del SUCIVE. No pudimos abrir la nota ni el estudio. El SUCIVE habla de una morosidad histórica del 22 %.",
+    "Cuánto bajó en promedio la tabla de valores para la patente 2024: el Congreso de Intendentes no lo publicó.",
+    "La tabla completa de aforos por marca, modelo y año. Hoy solo se consulta de a un vehículo en el SUCIVE.",
+    "Recaudación por patente de cada departamento, año por año, y cuánto gasta cada intendencia en calles y caminería.",
+    "Contratos del SUCIVE con Autodata y con República AFISA (montos y forma de contratación).",
+    "El proyecto de ley sobre publicación de aforos presentado en marzo de 2026 (Carpeta 2052): el texto no se pudo abrir."
+  ],
+  "fuentes": [
+    ["Constitución, artículo 297 (impuestos departamentales)", "https://www.impo.com.uy/bases/constitucion/1967-1967/297", "oficial"],
+    ["Ley 18.860 (SUCIVE, Comisión de Aforos y Fondo de unificación)", "https://www.impo.com.uy/bases/leyes/18860-2011", "oficial"],
+    ["Congreso de Intendentes · Texto Ordenado del SUCIVE 2026", "https://www.gub.uy/congreso-intendentes/comunicacion/publicaciones/texto-ordenado-del-sucive-2026", "oficial"],
+    ["Congreso de Intendentes · Valor de la patente 2026 (14/11/2025)", "https://www.gub.uy/congreso-intendentes/comunicacion/noticias/congreso-intendentes-aprueba-unanimidad-valor-patente-rodados-para-ano-2026", "oficial"],
+    ["Congreso de Intendentes · Valor de la patente 2027 (15/11/2026)", "https://www.gub.uy/congreso-intendentes/comunicacion/noticias/congreso-intendentes-resolvio-valor-patente-rodados-2027", "oficial"],
+    ["Congreso de Intendentes · Valor de la patente 2024", "https://www.gub.uy/congreso-intendentes/comunicacion/noticias/intendentes-aprueban-valor-patente-para-ano-2024", "oficial"],
+    ["Congreso de Intendentes · Valor de la patente 2023", "https://www.gub.uy/congreso-intendentes/comunicacion/noticias/intendentes-aprueban-valor-patente-para-ano-2023", "oficial"],
+    ["SUCIVE · Estadísticas de pagos al 31/10/2026", "https://www.sucive.gub.uy/", "oficial"],
+    ["Intendencia de Maldonado · Patente 2027 (15/11/2026)", "https://maldonado.gub.uy/noticias/patente-2027-congreso-intendentes-resolvio-mantener-valor-vehiculos-combustion-fijo", "oficial"],
+    ["Intendencia de Montevideo · Patente de rodados (cuotas y vencimientos)", "https://www.montevideo.gub.uy/areas-tematicas/movilidad/patente-de-rodados", "oficial"],
+    ["Sociedad Uruguaya · Valores del SUCIVE para 2025 (dólar +1,33 %, tabla −2 %)", "https://www.sociedaduruguaya.org/2024/11/sucive-valores-de-patente-de-rodados-para-el-ano-2025.html", "terceros"],
+    ["Montevideo Portal · César García (SUCIVE): tabla −5 %, dólar +6 %, 56 % del parque pagado (22/1/2026)", "https://www.montevideo.com.uy/Noticias/Sucive-anuncio-recaudacion-record-por-patentes-y-respondio-cuestionamientos-de-Da-Silva-uc950607", "prensa"],
+    ["El Observador · Cómo se calcula la patente y el peso del dólar (23/1/2026)", "https://www.elobservador.com.uy/cafe-y-negocios/como-se-calcula-el-valor-la-patente-el-impacto-del-dolar-el-precio-este-ano-y-que-se-destina-su-recaudacion-n6032079", "prensa"],
+    ["El País · Morosidad del 17 % y recaudación 2024 (16/5/2025)", "https://www.elpais.com.uy/informacion/sociedad/intendentes-aprueban-regulacion-de-deudas-de-patentes-al-alcanzar-morosidad-de-17-en-vehiculos-antiguos-es-51", "prensa"],
+    ["CARE · Informe del fideicomiso Fondo Capital: SUCIVE de Montevideo 2024 en UI", "http://www.care.com.uy/uploads/documentos-asociados/2025_4_2_19_18_43Fondo%20capital%2004-25.pdf", "terceros"],
+    ["El Observador · La Intendencia de Montevideo cerró 2024 con déficit (4/7/2025)", "https://www.elobservador.com.uy/nacional/en-2024-la-intendencia-montevideo-tuvo-un-deficit-us-82-millones-y-tiene-un-acumulado-us-497-millones-n6007209", "prensa"],
+    ["Drivo · Precios del VW Gol usado por año (avisos al 7/11/2026)", "https://www.drivo.com.uy/blog/volkswagen-gol-usado-uruguay", "prensa"],
+    ["El Observador · Besozzi: 'los aforos están mal puestos' (10/4/2026)", "https://www.elobservador.com.uy/nacional/besozzi-cuestiono-que-valor-la-patente-suba-cuando-el-valor-del-vehiculo-va-depreciandose-los-aforos-estan-mal-puestos-n6040270", "prensa"],
+    ["El Observador · Enciso defendió los valores y advirtió por los recursos de las intendencias (16/11/2026)", "https://www.elobservador.com.uy/nacional/tenemos-que-leer-la-realidad-enciso-defendio-los-valores-las-patentes-y-advirtio-que-una-rebaja-afectaria-los-recursos-las-intendencias-n6064067", "prensa"],
+    ["El Observador · Andújar: 'Congelar no es bajar' (17/11/2026)", "https://www.elobservador.com.uy/nacional/congelar-no-es-bajar-es-subir-que-se-note-las-criticas-sebastian-andujar-los-intendentes-la-patente-rodados-2027-n6063997", "prensa"],
+    ["El Observador · La aplicación de Da Silva para calcular la patente (17/11/2026)", "https://www.elobservador.com.uy/nacional/la-rebelion-del-contribuyente-la-hacemos-todos-senador-da-silva-lanzo-una-aplicacion-calcular-cuanto-se-deberia-pagar-patente-2027-n6064118", "prensa"],
+    ["São Paulo · Lei 13.296/2008, art. 9 (IPVA 4 %)", "https://www.al.sp.gov.br/repositorio/legislacao/lei/2008/lei-13296-23.12.2008.html", "internacional"],
+    ["Chile · SII, escala del permiso de circulación", "https://www.sii.cl/preguntas_frecuentes/tasac_fiscal_vehiculos/001_170_5079.htm", "internacional"],
+    ["Chile · SII, UTM de enero de 2026 ($ 69.751)", "https://www.sii.cl/valores_y_fechas/utm/utm2026.htm", "internacional"],
+    ["Argentina · ARBA, cálculo del impuesto automotor 2026", "https://web.arba.gov.ar/preguntas-frecuentes/como-se-realiza-el-calculo-del-impuesto-automotor-en-cuantas-cuotas-se-divide", "internacional"],
+    ["Emol · El dólar en Chile cerca de $ 1.000 (13/11/2026)", "https://www.emol.com/noticias/Economia/2026/11/13/1216994/dolar-1000-pesos-hoy.html", "prensa"],
+    ["Cotización del dólar mayorista en Argentina ($ 1.543,50 el 13/11/2026)", "https://www.cotizacion-dolar.com.ar/dolar-mayorista.php", "prensa"],
+    ["Borrador de DeepSeek y su verificación (repositorio del sitio)", "https://github.com/GuilleCodeUY/Revision_Estado_Uruguay/tree/main/investigacion_patente", "propio"]
+  ]
+}
