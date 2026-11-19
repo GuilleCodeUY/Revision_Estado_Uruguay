@@ -53,6 +53,31 @@
     .c1{background:#1d3557;--acc:#ffd23f}.c2{background:#0c2d3f;--acc:#3ddc97}.c3{background:#4a1424;--acc:#ff8fa0}.c4{background:#0b2236;--acc:#ff7a1a}.c5{background:#231942;--acc:#5ce1e6}.c6{background:#0e2a2b;--acc:#ff4b2b}.c7{background:#14213d;--acc:#a3e635}.c8{background:#1a1033;--acc:#a78bfa}.c9{background:#0f1d33;--acc:#60a5fa}.c10{background:#0f2a24;--acc:#2dd4bf}.c11{background:#2a0f33;--acc:#f0abfc}.c12{background:#1f1a14;--acc:#fdba74}
     .casos>.caso:last-child:nth-child(odd){grid-column:1/-1}
 
+    /* Entradas directas desde la portada */
+    .entradas{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.3rem}
+    .entradas a{font-weight:900;text-decoration:none;padding:.7rem 1.1rem;border-radius:.35rem;min-height:2.75rem;display:inline-flex;align-items:center}
+    .ent-casos{background:var(--yellow);color:#111}.ent-esp{border:2px solid #fdba74;color:#fff}
+    .ent-casos:hover,.ent-esp:hover{text-decoration:underline}
+
+    /* Especiales: tema y título primero; uno destacado y el resto compacto */
+    .esp{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem}
+    .esp>.caso{grid-column:span 2}.esp>.caso:nth-last-child(-n+2):not(:nth-child(-n+4)){grid-column:span 3}
+    .esp .caso{min-height:0;gap:.45rem}
+    .esp .caso h3{margin:.15rem 0 0;font-size:1.2rem}
+    .esp .caso .n{font-size:clamp(1.9rem,3.4vw,2.4rem);margin-top:.3rem}
+    .esp .caso .que{font-size:.9rem}
+    .esp .num{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.65);white-space:nowrap}
+    .esp .pie{margin-top:auto;padding-top:.5rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+    .esp .fecha{font-size:.74rem;color:rgba(255,255,255,.65);white-space:nowrap}
+    .esp .chip{align-self:flex-start;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:rgba(255,255,255,.14);padding:.2rem .5rem;border-radius:.2rem}
+    .esp>.dest{grid-column:1/-1;display:grid;grid-template-columns:1.25fr 1fr;gap:.5rem 2.2rem;align-items:center;padding:1.8rem 1.8rem 1.7rem}
+    .esp .dest .izq,.esp .dest .der{display:flex;flex-direction:column;gap:.55rem}
+    .esp .dest h3{font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.05}
+    .esp .dest .n{font-size:clamp(2.6rem,6vw,4.2rem)}
+    .esp .dest p{font-size:1rem}
+    .esp .dest .marca{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:var(--acc);color:#111;padding:.2rem .5rem;border-radius:.2rem;align-self:flex-start}
+    @media(max-width:960px){.esp{grid-template-columns:repeat(2,minmax(0,1fr))}.esp>.caso,.esp>.caso:nth-last-child(-n+2):not(:nth-child(-n+4)){grid-column:auto}.esp>.caso:last-child:nth-child(even),.esp>.dest{grid-column:1/-1}}
+
     /* Datos destacados del caso Parlamento */
     .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
     .golpe{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1.1rem;display:flex;flex-direction:column;gap:.4rem;box-shadow:5px 5px 0 var(--ink)}
@@ -78,7 +103,9 @@
 
     @media(max-width:760px){
       .hero{padding:1.6rem 0 1.8rem}
-      .casos,.golpes,.criterios,footer .cols{grid-template-columns:1fr}
+      .casos,.esp,.golpes,.criterios,footer .cols{grid-template-columns:1fr}
+      .esp>.caso,.esp>.caso:last-child:nth-child(even){grid-column:auto}
+      .esp .dest{grid-template-columns:1fr;padding:1.4rem}
       .caso{min-height:0}
     }
   
@@ -95,7 +122,8 @@
     header .top .logo,header .cabecera>a{display:none}header .top{justify-content:flex-start}
     @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
 
-    .vm-esp{flex:none}
+    .vm-esp{flex:none;position:sticky;left:0;right:0;z-index:1;background:#121212;box-shadow:-10px 0 8px -2px #121212,10px 0 8px -2px #121212;border-radius:999px}
+    .vm-esp-panel a.vm-todos{border-left-color:#ffd23f;background:#2a2a2a}.vm-esp-panel a.vm-todos small{color:#ffd23f}
     .vm-esp summary{list-style:none;cursor:pointer;color:#111;background:#fff;font-size:.86rem;font-weight:800;padding:.4rem .8rem;border-radius:999px;min-height:2.4rem;box-sizing:border-box;display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
     .vm-esp summary::-webkit-details-marker{display:none}
     .vm-esp[open] summary,.vm-esp summary[aria-current]{background:#ffd23f}
@@ -105,12 +133,13 @@
   </style>
 </head>
 <body>
-<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a><nav class="vm-menu" aria-label="Casos"><a href="/informe#parlamento" style="--c:#ffd23f;--cs:rgba(255,210,63,.16);--ch:rgba(255,210,63,.32)">Parlamento</a><a href="/intendencias" style="--c:#3ddc97;--cs:rgba(61,220,151,.16);--ch:rgba(61,220,151,.32)">Intendencias</a><a href="/solaria" style="--c:#ff8fa0;--cs:rgba(255,143,160,.16);--ch:rgba(255,143,160,.32)">Solaria</a><a href="/puerto" style="--c:#ff7a1a;--cs:rgba(255,122,26,.16);--ch:rgba(255,122,26,.32)">Puerto</a><a href="/ute" style="--c:#5ce1e6;--cs:rgba(92,225,230,.16);--ch:rgba(92,225,230,.32)">UTE</a><a href="/ancap" style="--c:#ff4b2b;--cs:rgba(255,75,43,.16);--ch:rgba(255,75,43,.32)">ANCAP</a><details class="vm-esp"><summary>Especiales <span aria-hidden="true">▾</span></summary><div class="vm-esp-panel"><a href="/movilidad" style="--c:#a78bfa"><small>Informe especial 1</small>Auto eléctrico: ¿sí o no?</a><a href="/transporte" style="--c:#a3e635"><small>Informe especial 2</small>La reforma del transporte</a><a href="/justicia" style="--c:#60a5fa"><small>Informe especial 3</small>Justicia penal y seguridad</a><a href="/estado" style="--c:#2dd4bf"><small>Informe especial 4</small>Un Estado que rinde</a><a href="/hif" style="--c:#f0abfc"><small>Informe especial 5</small>HIF: la luz a mitad de precio</a><a href="/patente" style="--c:#fdba74"><small>Informe especial 6</small>La patente: ¿por qué no baja?</a></div></details><a class="vm-sec" href="/informe">Informe 2025</a><a class="vm-sec" href="./#correcciones">Correcciones</a><a class="vm-sec" href="mailto:contacto@verdadmilanesa.uy">Contacto</a></nav></div></header><script>(function(){var a=document.querySelector(".vm-menu [aria-current]");if(a){var m=a.closest(".vm-menu");var t=a.closest(".vm-esp")||a;m.scrollLeft=t.offsetLeft-(m.clientWidth-t.offsetWidth)/2;}})();</script><script>document.querySelectorAll(".vm-esp").forEach(function(d){function pos(){var p=d.querySelector(".vm-esp-panel"),h=d.closest(".vm-barra").getBoundingClientRect(),s=d.querySelector("summary").getBoundingClientRect();p.style.top=(h.bottom+6)+"px";var w=p.offsetWidth,l=Math.min(Math.max(8,s.right-w),innerWidth-w-8);p.style.left=l+"px";p.style.right="auto";}d.addEventListener("toggle",function(){if(d.open)pos();});addEventListener("resize",function(){if(d.open)pos();});document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false;});if(matchMedia("(hover:hover) and (pointer:fine)").matches){var t;d.addEventListener("mouseenter",function(){clearTimeout(t);d.open=true;});d.addEventListener("mouseleave",function(){clearTimeout(t);t=setTimeout(function(){d.open=false;},300);});d.querySelector("summary").addEventListener("click",function(e){if(e.detail>0){e.preventDefault();d.open=true;}});}});</script>
+<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a><nav class="vm-menu" aria-label="Casos"><a href="/informe#parlamento" style="--c:#ffd23f;--cs:rgba(255,210,63,.16);--ch:rgba(255,210,63,.32)">Parlamento</a><a href="/intendencias" style="--c:#3ddc97;--cs:rgba(61,220,151,.16);--ch:rgba(61,220,151,.32)">Intendencias</a><a href="/solaria" style="--c:#ff8fa0;--cs:rgba(255,143,160,.16);--ch:rgba(255,143,160,.32)">Solaria</a><a href="/puerto" style="--c:#ff7a1a;--cs:rgba(255,122,26,.16);--ch:rgba(255,122,26,.32)">Puerto</a><a href="/ute" style="--c:#5ce1e6;--cs:rgba(92,225,230,.16);--ch:rgba(92,225,230,.32)">UTE</a><a href="/ancap" style="--c:#ff4b2b;--cs:rgba(255,75,43,.16);--ch:rgba(255,75,43,.32)">ANCAP</a><details class="vm-esp"><summary>Especiales <span aria-hidden="true">▾</span></summary><div class="vm-esp-panel"><a class="vm-todos" href="/#especiales" style="--c:#fff"><small>Portada</small>Todos los especiales</a><a href="/movilidad" style="--c:#a78bfa"><small>Informe especial 1</small>Auto eléctrico: ¿sí o no?</a><a href="/transporte" style="--c:#a3e635"><small>Informe especial 2</small>La reforma del transporte</a><a href="/justicia" style="--c:#60a5fa"><small>Informe especial 3</small>Justicia penal y seguridad</a><a href="/estado" style="--c:#2dd4bf"><small>Informe especial 4</small>Un Estado que rinde</a><a href="/hif" style="--c:#f0abfc"><small>Informe especial 5</small>HIF: la luz a mitad de precio</a><a href="/patente" style="--c:#fdba74"><small>Informe especial 6</small>La patente: ¿por qué no baja?</a></div></details><a class="vm-sec" href="/informe">Informe 2025</a><a class="vm-sec" href="./#correcciones">Correcciones</a><a class="vm-sec" href="mailto:contacto@verdadmilanesa.uy">Contacto</a></nav></div></header><script>(function(){var a=document.querySelector(".vm-menu [aria-current]");if(a){var m=a.closest(".vm-menu");var t=a.closest(".vm-esp")||a;var r=m.getBoundingClientRect().left,p=t.previousElementSibling,x=(p?p.getBoundingClientRect().right+6:t.getBoundingClientRect().left)-r+m.scrollLeft;m.scrollLeft=x-(m.clientWidth-t.offsetWidth)/2;}})();</script><script>document.querySelectorAll(".vm-esp").forEach(function(d){function pos(){var p=d.querySelector(".vm-esp-panel"),h=d.closest(".vm-barra").getBoundingClientRect(),s=d.querySelector("summary").getBoundingClientRect();p.style.top=(h.bottom+6)+"px";var w=p.offsetWidth,l=Math.min(Math.max(8,s.right-w),innerWidth-w-8);p.style.left=l+"px";p.style.right="auto";}d.addEventListener("toggle",function(){if(d.open)pos();});addEventListener("resize",function(){if(d.open)pos();});document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false;});if(matchMedia("(hover:hover) and (pointer:fine)").matches){var t;d.addEventListener("mouseenter",function(){clearTimeout(t);d.open=true;});d.addEventListener("mouseleave",function(){clearTimeout(t);t=setTimeout(function(){d.open=false;},300);});d.querySelector("summary").addEventListener("click",function(e){if(e.detail>0){e.preventDefault();d.open=true;}});}});</script>
   <section class="hero">
     <div class="wrap">
       <h1>Lo que gasta el Estado.</h1>
-      <p>Seis casos y cinco informes especiales investigados con información pública. Cada número enlaza al documento del que sale, y cualquiera puede objetarlo.</p>
-      <div class="meta"><span><b>6</b> casos publicados</span><span><b>0</b> correcciones pendientes</span><span>Actualizado el <b>19/11/2026</b></span></div>
+      <p>Seis casos y seis informes especiales investigados con información pública. Cada número enlaza al documento del que sale, y cualquiera puede objetarlo.</p>
+      <div class="entradas"><a class="ent-casos" href="#casos">Ver los casos</a><a class="ent-esp" href="#especiales">Ver los especiales</a></div>
+      <div class="meta"><span><b>6</b> casos publicados</span><span><b>6</b> informes especiales</span><span><b>0</b> correcciones pendientes</span><span>Actualizado el <b>19/11/2026</b></span></div>
     </div>
   </section>
   <p class="lema">Los números no tienen partido. La realidad es una sola.</p>
@@ -173,57 +202,7 @@
     <section aria-labelledby="especiales">
       <h2 id="especiales">Informes especiales</h2>
       <p class="lead">Temas que cruzan varios organismos: lo que el Estado cobra, lo que deja de cobrar y lo que le cuesta a cada uno.</p>
-      <div class="casos">
-        <a class="caso c8" href="/movilidad">
-          <div class="top"><span class="tema">Informe especial 1 · 2026</span><span class="estado">Primera ronda</span></div>
-          <div class="n">$ 37 vs $ 633</div>
-          <div class="que">cuestan 100 km en eléctrico y a nafta</div>
-          <h3>Auto eléctrico: ¿sí o no?</h3>
-          <p>Subsidios, impuestos, lo que recauda el Estado y los gastos fijos de un auto, con números crudos.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-        <a class="caso c7" href="/transporte">
-          <div class="top"><span class="tema">Informe especial 2 · 2026</span><span class="estado">Segunda ronda</span></div>
-          <div class="n">US$ 575 M</div>
-          <div class="que">cuesta el BRT; el tranvía, US$ 1.544 M</div>
-          <h3>La reforma del transporte, en números</h3>
-          <p>BRT, tranvía o metro: cuánto cuesta cada uno, cuánto consume y qué dice la demanda real.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-
-        <a class="caso c9" href="/justicia">
-          <div class="top"><span class="tema">Informe especial 3 · 2026</span><span class="estado">Primera ronda</span></div>
-          <div class="n">+13,5 %</div>
-          <div class="que">homicidios en 2026, con las cárceles al 120 %</div>
-          <h3>Justicia penal y seguridad, en números</h3>
-          <p>Delitos, tiempos de la justicia, cárceles, reincidencia y comparación con otros países.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-        <a class="caso c10" href="/estado">
-          <div class="top"><span class="tema">Informe especial 4 · 2026</span><span class="estado">Primera ronda</span></div>
-          <div class="n">13.500</div>
-          <div class="que">personas se van del Estado cada año</div>
-          <h3>Un Estado que rinde</h3>
-          <p>Cómo podría quedar en 2035: menos administración, más tecnología, más inversión y sin despidos. Hecho con tres IA.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-        <a class="caso c11" href="/hif">
-          <div class="top"><span class="tema">Informe especial 5 · 2026</span><span class="estado">En negociación</span></div>
-          <div class="n">US$ 45 vs US$ 86</div>
-          <div class="que">el MWh para HIF y para Google</div>
-          <h3>HIF: la luz a mitad de precio</h3>
-          <p>UTE y el MIEM calculan una pérdida de US$ 90 millones por año. ¿Conviene, nos sirve y cuánto se pierde?</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-        <a class="caso c12" href="/patente">
-          <div class="top"><span class="tema">Informe especial 6 · 2026</span><span class="estado">Congelada para 2027</span></div>
-          <div class="n">−5 % y +6 %</div>
-          <div class="que">el valor del auto y el dólar en 2026</div>
-          <h3>La patente: ¿por qué no baja?</h3>
-          <p>Cómo se calcula, cuánto se recauda, en qué se usa y cómo se compara con Brasil, Chile y Argentina.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-      </div>
+      <div class="esp"><a class="caso dest c12" href="/patente"><div class="izq"><div class="top"><span class="tema">Impuestos</span><span class="num">Especial 6</span></div><span class="marca">Destacado</span><h3>La patente: ¿por qué no baja?</h3><p>Cómo se calcula, cuánto se recauda, en qué se usa y cómo se compara con Brasil, Chile y Argentina.</p><div class="pie"><span class="ir">Leer el informe →</span><span class="fecha">Actualizado el 19/11/2026</span></div></div><div class="der"><div class="n">−5 % y +6 %</div><div class="que">el valor del auto y el dólar en 2026</div><span class="chip">Congelada para 2027</span></div></a><a class="caso c8" href="/movilidad"><div class="top"><span class="tema">Autos y energía</span><span class="num">Especial 1</span></div><h3>Auto eléctrico: ¿sí o no?</h3><div class="n">$ 37 vs $ 633</div><div class="que">cuestan 100 km en eléctrico y a nafta</div><div class="pie"><span class="ir">Leer el informe →</span><span class="fecha">Actualizado el 18/11/2026</span></div></a><a class="caso c7" href="/transporte"><div class="top"><span class="tema">Transporte</span><span class="num">Especial 2</span></div><h3>La reforma del transporte, en números</h3><div class="n">575 vs 1.544</div><div class="que">millones de dólares: el BRT contra el tranvía</div><div class="pie"><span class="ir">Leer el informe →</span><span class="fecha">Actualizado el 18/11/2026</span></div></a><a class="caso c9" href="/justicia"><div class="top"><span class="tema">Justicia</span><span class="num">Especial 3</span></div><h3>Justicia penal y seguridad, en números</h3><div class="n">+13,5 %</div><div class="que">homicidios en 2026, con las cárceles al 120 %</div><div class="pie"><span class="ir">Leer el informe →</span><span class="fecha">Actualizado el 18/11/2026</span></div></a><a class="caso c10" href="/estado"><div class="top"><span class="tema">Gestión pública</span><span class="num">Especial 4</span></div><h3>Un Estado que rinde</h3><div class="n">13.500</div><div class="que">personas se van del Estado cada año</div><div class="pie"><span class="ir">Leer el informe →</span><span class="fecha">Actualizado el 18/11/2026</span></div></a><a class="caso c11" href="/hif"><div class="top"><span class="tema">Energía</span><span class="num">Especial 5</span></div><h3>HIF: la luz a mitad de precio</h3><div class="n">US$ 45 vs US$ 86</div><div class="que">el MWh para HIF y para Google</div><span class="chip">En negociación</span><div class="pie"><span class="ir">Leer el informe →</span><span class="fecha">Actualizado el 18/11/2026</span></div></a></div>
     </section>
 
     <section aria-labelledby="golpe">

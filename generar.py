@@ -239,8 +239,57 @@ ESPECIALES = (
     ("hif.html", "Informe especial 5", "HIF: la luz a mitad de precio", "#f0abfc"),
     ("patente.html", "Informe especial 6", "La patente: ¿por qué no baja?", "#fdba74"),
 )
+# Tarjetas de la portada: tema, título, dato y bajada. El estado solo va cuando suma contexto.
+ESPECIALES_PORTADA = {
+    "movilidad.html": ("c8", "Autos y energía", "$ 37 vs $ 633", "cuestan 100 km en eléctrico y a nafta",
+                       "Subsidios, impuestos, lo que recauda el Estado y los gastos fijos de un auto, con números crudos.", None),
+    "transporte.html": ("c7", "Transporte", "575 vs 1.544", "millones de dólares: el BRT contra el tranvía",
+                        "BRT, tranvía o metro: cuánto cuesta cada uno, cuánto consume y qué dice la demanda real.", None),
+    "justicia.html": ("c9", "Justicia", "+13,5 %", "homicidios en 2026, con las cárceles al 120 %",
+                      "Delitos, tiempos de la justicia, cárceles, reincidencia y comparación con otros países.", None),
+    "estado.html": ("c10", "Gestión pública", "13.500", "personas se van del Estado cada año",
+                    "Cómo podría quedar en 2035: menos administración, más tecnología, más inversión y sin despidos. Hecho con tres IA.", None),
+    "hif.html": ("c11", "Energía", "US$ 45 vs US$ 86", "el MWh para HIF y para Google",
+                 "UTE y el MIEM calculan una pérdida de US$ 90 millones por año. ¿Conviene, nos sirve y cuánto se pierde?", "En negociación"),
+    "patente.html": ("c12", "Impuestos", "−5 % y +6 %", "el valor del auto y el dólar en 2026",
+                     "Cómo se calcula, cuánto se recauda, en qué se usa y cómo se compara con Brasil, Chile y Argentina.", "Congelada para 2027"),
+}
+# El informe que va destacado arriba de la grilla de Especiales.
+ESPECIAL_DESTACADO = "patente.html"
+NUMEROS = {1: "Un", 2: "Dos", 3: "Tres", 4: "Cuatro", 5: "Cinco", 6: "Seis", 7: "Siete", 8: "Ocho",
+           9: "Nueve", 10: "Diez", 11: "Once", 12: "Doce"}
+
+
+def grilla_especiales():
+    """Arma la grilla de Especiales de la portada a partir de ESPECIALES y ESPECIALES_PORTADA."""
+    from html import escape
+    tarjetas = []
+    for pagina, numero, titulo_corto, _ in ESPECIALES:
+        clase, tema, n, que, bajada, estado = ESPECIALES_PORTADA[pagina]
+        titulo = {"transporte.html": "La reforma del transporte, en números",
+                  "justicia.html": "Justicia penal y seguridad, en números"}.get(pagina, titulo_corto)
+        _, modificado = fechas_git(PAGINAS_SEO.get(pagina, ()), None)
+        fecha = ("Actualizado el " + "/".join(reversed(modificado.split("-")))) if modificado else "Nuevo"
+        num = numero.replace("Informe especial ", "Especial ")
+        top = f'<div class="top"><span class="tema">{escape(tema)}</span><span class="num">{num}</span></div>'
+        pie = f'<div class="pie"><span class="ir">Leer el informe →</span><span class="fecha">{fecha}</span></div>'
+        chip = f'<span class="chip">{escape(estado)}</span>' if estado else ""
+        dato = f'<div class="n">{escape(n)}</div><div class="que">{escape(que)}</div>'
+        if pagina == ESPECIAL_DESTACADO:
+            tarjetas.insert(0,
+                f'<a class="caso dest {clase}" href="{sin_html(pagina)}"><div class="izq">{top}'
+                f'<span class="marca">Destacado</span><h3>{escape(titulo)}</h3><p>{escape(bajada)}</p>'
+                f'{pie}</div><div class="der">{dato}{chip}</div></a>')
+        else:
+            tarjetas.append(
+                f'<a class="caso {clase}" href="{sin_html(pagina)}">{top}<h3>{escape(titulo)}</h3>'
+                f'{dato}{chip}{pie}</a>')
+    return '<div class="esp">' + "".join(tarjetas) + "</div>"
+
+
 ESPECIALES_CSS = """
-    .vm-esp{flex:none}
+    .vm-esp{flex:none;position:sticky;left:0;right:0;z-index:1;background:#121212;box-shadow:-10px 0 8px -2px #121212,10px 0 8px -2px #121212;border-radius:999px}
+    .vm-esp-panel a.vm-todos{border-left-color:#ffd23f;background:#2a2a2a}.vm-esp-panel a.vm-todos small{color:#ffd23f}
     .vm-esp summary{list-style:none;cursor:pointer;color:#111;background:#fff;font-size:.86rem;font-weight:800;padding:.4rem .8rem;border-radius:999px;min-height:2.4rem;box-sizing:border-box;display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
     .vm-esp summary::-webkit-details-marker{display:none}
     .vm-esp[open] summary,.vm-esp summary[aria-current]{background:#ffd23f}
@@ -275,6 +324,7 @@ def poner_barra(public, page):
             items = "".join(
                 f'<a href="{sin_html(p)}" style="--c:{c}"{marca if p == page else ""}><small>{n}</small>{t}</a>'
                 for p, n, t, c in ESPECIALES)
+            items = '<a class="vm-todos" href="/#especiales" style="--c:#fff"><small>Portada</small>Todos los especiales</a>' + items
             links.append(f'<details class="vm-esp"><summary{dentro}>{text} '
                          f'<span aria-hidden="true">▾</span></summary><div class="vm-esp-panel">{items}</div></details>')
             continue
@@ -287,7 +337,11 @@ def poner_barra(public, page):
     html = (f'<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a>'
             f'<nav class="vm-menu" aria-label="Casos">{"".join(links)}</nav></div></header>'
             '<script>(function(){var a=document.querySelector(".vm-menu [aria-current]");'
-            'if(a){var m=a.closest(".vm-menu");var t=a.closest(".vm-esp")||a;m.scrollLeft=t.offsetLeft-(m.clientWidth-t.offsetWidth)/2;}})();</script>'
+            'if(a){var m=a.closest(".vm-menu");var t=a.closest(".vm-esp")||a;'
+            # Especiales queda fijo (sticky), así que su posición natural se toma del elemento anterior.
+            'var r=m.getBoundingClientRect().left,p=t.previousElementSibling,'
+            'x=(p?p.getBoundingClientRect().right+6:t.getBoundingClientRect().left)-r+m.scrollLeft;'
+            'm.scrollLeft=x-(m.clientWidth-t.offsetWidth)/2;}})();</script>'
             + ESPECIALES_JS)
     path = public / page
     text = path.read_text(encoding="utf-8")
@@ -375,6 +429,10 @@ def build_portada(public, data):
         "ERRATAS_N": "1 objeción" if n_fix == 1 else f"{n_fix} objeciones",
         "ERRATAS_TABLA": erratas,
         "CASOS_N": "6",
+        "CASOS_PAL": NUMEROS[6],
+        "ESP_N": str(len(ESPECIALES)),
+        "ESP_PAL": NUMEROS[len(ESPECIALES)].lower(),
+        "ESPECIALES_GRID": grilla_especiales(),
         "PENDIENTES_N": str(pending),
         "ACTUALIZADO": datetime.date.today().strftime("%d/%m/%Y"),
     }

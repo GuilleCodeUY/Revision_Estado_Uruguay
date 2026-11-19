@@ -53,6 +53,31 @@
     .c1{background:#1d3557;--acc:#ffd23f}.c2{background:#0c2d3f;--acc:#3ddc97}.c3{background:#4a1424;--acc:#ff8fa0}.c4{background:#0b2236;--acc:#ff7a1a}.c5{background:#231942;--acc:#5ce1e6}.c6{background:#0e2a2b;--acc:#ff4b2b}.c7{background:#14213d;--acc:#a3e635}.c8{background:#1a1033;--acc:#a78bfa}.c9{background:#0f1d33;--acc:#60a5fa}.c10{background:#0f2a24;--acc:#2dd4bf}.c11{background:#2a0f33;--acc:#f0abfc}.c12{background:#1f1a14;--acc:#fdba74}
     .casos>.caso:last-child:nth-child(odd){grid-column:1/-1}
 
+    /* Entradas directas desde la portada */
+    .entradas{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.3rem}
+    .entradas a{font-weight:900;text-decoration:none;padding:.7rem 1.1rem;border-radius:.35rem;min-height:2.75rem;display:inline-flex;align-items:center}
+    .ent-casos{background:var(--yellow);color:#111}.ent-esp{border:2px solid #fdba74;color:#fff}
+    .ent-casos:hover,.ent-esp:hover{text-decoration:underline}
+
+    /* Especiales: tema y título primero; uno destacado y el resto compacto */
+    .esp{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem}
+    .esp>.caso{grid-column:span 2}.esp>.caso:nth-last-child(-n+2):not(:nth-child(-n+4)){grid-column:span 3}
+    .esp .caso{min-height:0;gap:.45rem}
+    .esp .caso h3{margin:.15rem 0 0;font-size:1.2rem}
+    .esp .caso .n{font-size:clamp(1.9rem,3.4vw,2.4rem);margin-top:.3rem}
+    .esp .caso .que{font-size:.9rem}
+    .esp .num{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.65);white-space:nowrap}
+    .esp .pie{margin-top:auto;padding-top:.5rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+    .esp .fecha{font-size:.74rem;color:rgba(255,255,255,.65);white-space:nowrap}
+    .esp .chip{align-self:flex-start;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:rgba(255,255,255,.14);padding:.2rem .5rem;border-radius:.2rem}
+    .esp>.dest{grid-column:1/-1;display:grid;grid-template-columns:1.25fr 1fr;gap:.5rem 2.2rem;align-items:center;padding:1.8rem 1.8rem 1.7rem}
+    .esp .dest .izq,.esp .dest .der{display:flex;flex-direction:column;gap:.55rem}
+    .esp .dest h3{font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.05}
+    .esp .dest .n{font-size:clamp(2.6rem,6vw,4.2rem)}
+    .esp .dest p{font-size:1rem}
+    .esp .dest .marca{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:var(--acc);color:#111;padding:.2rem .5rem;border-radius:.2rem;align-self:flex-start}
+    @media(max-width:960px){.esp{grid-template-columns:repeat(2,minmax(0,1fr))}.esp>.caso,.esp>.caso:nth-last-child(-n+2):not(:nth-child(-n+4)){grid-column:auto}.esp>.caso:last-child:nth-child(even),.esp>.dest{grid-column:1/-1}}
+
     /* Datos destacados del caso Parlamento */
     .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
     .golpe{background:#fff;border:2px solid var(--ink);border-radius:.5rem;padding:1.1rem;display:flex;flex-direction:column;gap:.4rem;box-shadow:5px 5px 0 var(--ink)}
@@ -78,7 +103,9 @@
 
     @media(max-width:760px){
       .hero{padding:1.6rem 0 1.8rem}
-      .casos,.golpes,.criterios,footer .cols{grid-template-columns:1fr}
+      .casos,.esp,.golpes,.criterios,footer .cols{grid-template-columns:1fr}
+      .esp>.caso,.esp>.caso:last-child:nth-child(even){grid-column:auto}
+      .esp .dest{grid-template-columns:1fr;padding:1.4rem}
       .caso{min-height:0}
     }
   </style>
@@ -88,8 +115,9 @@
   <section class="hero">
     <div class="wrap">
       <h1>Lo que gasta el Estado.</h1>
-      <p>Seis casos y cinco informes especiales investigados con información pública. Cada número enlaza al documento del que sale, y cualquiera puede objetarlo.</p>
-      <div class="meta"><span><b>{{CASOS_N}}</b> casos publicados</span><span><b>{{PENDIENTES_N}}</b> correcciones pendientes</span><span>Actualizado el <b>{{ACTUALIZADO}}</b></span></div>
+      <p>{{CASOS_PAL}} casos y {{ESP_PAL}} informes especiales investigados con información pública. Cada número enlaza al documento del que sale, y cualquiera puede objetarlo.</p>
+      <div class="entradas"><a class="ent-casos" href="#casos">Ver los casos</a><a class="ent-esp" href="#especiales">Ver los especiales</a></div>
+      <div class="meta"><span><b>{{CASOS_N}}</b> casos publicados</span><span><b>{{ESP_N}}</b> informes especiales</span><span><b>{{PENDIENTES_N}}</b> correcciones pendientes</span><span>Actualizado el <b>{{ACTUALIZADO}}</b></span></div>
     </div>
   </section>
   <p class="lema">Los números no tienen partido. La realidad es una sola.</p>
@@ -152,57 +180,7 @@
     <section aria-labelledby="especiales">
       <h2 id="especiales">Informes especiales</h2>
       <p class="lead">Temas que cruzan varios organismos: lo que el Estado cobra, lo que deja de cobrar y lo que le cuesta a cada uno.</p>
-      <div class="casos">
-        <a class="caso c8" href="/movilidad">
-          <div class="top"><span class="tema">Informe especial 1 · 2026</span><span class="estado">Primera ronda</span></div>
-          <div class="n">$ 37 vs $ 633</div>
-          <div class="que">cuestan 100 km en eléctrico y a nafta</div>
-          <h3>Auto eléctrico: ¿sí o no?</h3>
-          <p>Subsidios, impuestos, lo que recauda el Estado y los gastos fijos de un auto, con números crudos.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-        <a class="caso c7" href="/transporte">
-          <div class="top"><span class="tema">Informe especial 2 · 2026</span><span class="estado">Segunda ronda</span></div>
-          <div class="n">US$ 575 M</div>
-          <div class="que">cuesta el BRT; el tranvía, US$ 1.544 M</div>
-          <h3>La reforma del transporte, en números</h3>
-          <p>BRT, tranvía o metro: cuánto cuesta cada uno, cuánto consume y qué dice la demanda real.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-
-        <a class="caso c9" href="/justicia">
-          <div class="top"><span class="tema">Informe especial 3 · 2026</span><span class="estado">Primera ronda</span></div>
-          <div class="n">+13,5 %</div>
-          <div class="que">homicidios en 2026, con las cárceles al 120 %</div>
-          <h3>Justicia penal y seguridad, en números</h3>
-          <p>Delitos, tiempos de la justicia, cárceles, reincidencia y comparación con otros países.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-        <a class="caso c10" href="/estado">
-          <div class="top"><span class="tema">Informe especial 4 · 2026</span><span class="estado">Primera ronda</span></div>
-          <div class="n">13.500</div>
-          <div class="que">personas se van del Estado cada año</div>
-          <h3>Un Estado que rinde</h3>
-          <p>Cómo podría quedar en 2035: menos administración, más tecnología, más inversión y sin despidos. Hecho con tres IA.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-        <a class="caso c11" href="/hif">
-          <div class="top"><span class="tema">Informe especial 5 · 2026</span><span class="estado">En negociación</span></div>
-          <div class="n">US$ 45 vs US$ 86</div>
-          <div class="que">el MWh para HIF y para Google</div>
-          <h3>HIF: la luz a mitad de precio</h3>
-          <p>UTE y el MIEM calculan una pérdida de US$ 90 millones por año. ¿Conviene, nos sirve y cuánto se pierde?</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-        <a class="caso c12" href="/patente">
-          <div class="top"><span class="tema">Informe especial 6 · 2026</span><span class="estado">Congelada para 2027</span></div>
-          <div class="n">−5 % y +6 %</div>
-          <div class="que">el valor del auto y el dólar en 2026</div>
-          <h3>La patente: ¿por qué no baja?</h3>
-          <p>Cómo se calcula, cuánto se recauda, en qué se usa y cómo se compara con Brasil, Chile y Argentina.</p>
-          <span class="ir">Ver el informe →</span>
-        </a>
-      </div>
+      {{ESPECIALES_GRID}}
     </section>
 
     <section aria-labelledby="golpe">
