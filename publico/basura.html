@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La basura en Montevideo: quién es responsable y por qué no se arregla · La verdad de la milanesa</title>
+  <meta name="description" content="Informe especial: contenedores sin vaciar, ausentismo, multas que casi no existen, el 6 % de envases recuperados, quién es responsable por acción u omisión y qué hacen Canelones, Maldonado, Buenos Aires y Liubliana. Con fuente en cada número.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://verdadmilanesa.uy/basura">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="La verdad de la milanesa">
+  <meta property="og:title" content="La ciudad que no se limpia: la basura en Montevideo, en números">
+  <meta property="og:description" content="2.143 contenedores con más de cinco días sin vaciar. 648 multas en todo 2025. El 6 % de los envases recuperados. Quién es responsable y qué funciona en otros lados.">
+  <meta property="og:url" content="https://verdadmilanesa.uy/basura">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#1a1d0f">
+  <style>
+    :root{--ink:#111;--paper:#fbfcf4;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#dfe3c8;--hero:#1a1d0f;--hero2:#2b301a;--acc:#d4e157;--acc2:#5f6b0f;--green:#2e9e6a}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header.site{background:var(--hero);color:#fff;box-shadow:inset 0 -8px 0 var(--acc)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 3rem}
+    .kicker{display:inline-block;background:var(--acc);color:#111;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.1rem,5.2vw,4.2rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:60ch;color:#e6ead2;margin:.9rem 0 1.2rem}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:#111}.btn.o{background:transparent;color:var(--acc)}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:2rem}
+    .golpe{background:var(--hero2);border-left:6px solid var(--acc);padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+    .golpe b{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:900;line-height:1.05;letter-spacing:-.03em}
+    .golpe span{font-size:.92rem;color:#e6ead2}
+    .golpe .acc{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.45rem}
+    main{padding:2rem 0 3rem}main section{margin-bottom:3rem;scroll-margin-top:4rem}
+    h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}.lead{color:var(--muted);margin:0 0 1.2rem;max-width:72ch}
+    h3{margin:1.4rem 0 .5rem;font-size:1.15rem}
+    p{max-width:76ch}
+    .num{color:var(--acc2);font-weight:900;font-size:.85rem;letter-spacing:.1em}
+    .tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.12rem .42rem;border-radius:.2rem;vertical-align:middle;text-decoration:none}
+    .t-oficial{background:#dff1e7;color:#1d6b46}.t-prensa{background:#e6eef7;color:#1e4b7a}.t-terceros{background:#efe4f7;color:#5b2a86}.t-propio{background:#fff1cf;color:#7a5200}.t-parte{background:#fde6e7;color:#9b1c25}
+    .nota{font-size:.84rem;color:var(--muted);margin-top:.7rem;max-width:80ch}
+    .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    tr.total td{font-weight:800;background:#f6f9e4}
+    .obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+    .obra{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+    .obra h3{margin:0;font-size:1.05rem}.obra .m{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}.obra p{font-size:.9rem;margin:0}
+    .obra .acc{margin-top:auto;display:flex;gap:.35rem;flex-wrap:wrap;padding-top:.4rem}
+    .voces{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .voz{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.45rem}
+    .voz .quien{font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--acc2)}
+    .voz blockquote{margin:0;font-size:1.25rem;font-weight:900;letter-spacing:-.02em;line-height:1.15}
+    .voz p{margin:0;font-size:.92rem}.voz .acc{margin-top:auto;display:flex;gap:.35rem;flex-wrap:wrap}
+    .barras{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1.2rem}
+    .barra{display:grid;grid-template-columns:4rem 1fr 4.5rem;gap:.6rem;align-items:center;font-size:.9rem;margin:.32rem 0}
+    .barra .b{height:20px;border-radius:2px;background:#eef1dd}.barra .b i{display:block;height:100%;border-radius:2px;background:var(--hero)}
+    .barra.cero .b i{background:var(--red)}.barra.cero .v{color:var(--red)}
+    .barra .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:800}
+    .pasos{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:.8rem}
+    .pasos li{background:#fff;border:1px solid var(--line);border-left:6px solid var(--acc2);border-radius:.4rem;padding:.8rem 1rem .8rem 3.2rem;position:relative}
+    .pasos li:before{counter-increment:p;content:counter(p);position:absolute;left:.9rem;top:.75rem;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--hero);color:var(--acc);font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+    .pasos b{display:block}
+    .alerta{background:var(--hero);color:#fff;padding:1.6rem;border-left:8px solid var(--acc);border-radius:.5rem}
+    .alerta h2{color:#fff}.alerta p,.alerta li{color:#e6ead2;max-width:76ch}.alerta li{margin:.4rem 0}.alerta strong{color:var(--acc)}
+    .choque{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;background:#fff;border:2px dashed var(--red);border-radius:.5rem;padding:1rem 1.2rem;margin-top:1rem}
+    .choque .c{text-align:center}.choque .c b{display:block;font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:-.03em}.choque .c span{font-size:.86rem;color:var(--muted)}
+    .choque .vs{font-weight:900;color:var(--red);font-size:1.2rem}
+    .fuentes{columns:2 320px;padding-left:1.1rem}.fuentes li{font-size:.88rem;margin:.3rem 0;break-inside:avoid}
+    .pend{background:#fff;border-left:6px solid var(--yellow);padding:1rem 1.2rem;font-size:.92rem}.pend ul{margin:.4rem 0 0;padding-left:1.2rem}
+    a.obj{font-size:.72rem;font-weight:700;text-decoration:none;padding:.2rem .45rem;border-radius:.25rem;background:#fde6e7;color:#9b1c25;white-space:nowrap}
+    .golpe a.obj{background:rgba(230,57,70,.25);color:#ffd9dc}
+    .dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+    .lista{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1.2rem}.lista h3{margin:0 0 .4rem}.lista ul{margin:0;padding-left:1.1rem}.lista li{margin:.35rem 0;font-size:.93rem}
+    footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    @media(max-width:760px){.golpes{grid-template-columns:1fr}.choque{grid-template-columns:1fr}.barra{grid-template-columns:3.4rem 1fr 3.8rem}}
+  
+    .vm-barra{position:sticky;top:0;z-index:50;background:#121212;color:#fff;border-bottom:1px solid #2a2a2a;font-family:Inter,system-ui,sans-serif}
+    .vm-barra .vm-wrap{width:min(1240px,calc(100% - 2rem));margin:auto;display:flex;align-items:center;gap:1.2rem;min-height:3.5rem}
+    .vm-logo{font-weight:900;font-size:1.15rem;letter-spacing:-.03em;text-decoration:none;white-space:nowrap;color:#fff}.vm-logo span{color:#ffd23f}
+    .vm-menu{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}.vm-menu::-webkit-scrollbar{display:none}
+    .vm-menu a{flex:none;color:#fff;text-decoration:none;font-size:.86rem;font-weight:800;padding:.4rem .7rem;border-radius:999px;min-height:2.4rem;box-sizing:border-box;display:inline-flex;align-items:center;white-space:nowrap;border:2px solid var(--c);background:var(--cs)}
+    .vm-menu a:hover{background:var(--ch)}.vm-menu a[aria-current]{background:var(--c);color:#111}
+    .vm-menu a.vm-sec{border:0;background:none;color:#bbb;font-weight:700;font-size:.8rem;padding:.4rem .35rem}
+    .vm-menu a.vm-sec:hover{color:#fff;background:none}.vm-menu a.vm-sec[aria-current]{color:#fff;background:#2a2a2a;border-radius:.3rem}
+    .vm-menu{align-items:center;gap:.3rem;padding:.35rem 0}
+    html{scroll-padding-top:4rem}
+    header .top .logo,header .cabecera>a{display:none}header .top{justify-content:flex-start}
+    @media(max-width:760px){.vm-barra .vm-wrap{flex-wrap:wrap;gap:0;min-height:0;padding:.45rem 0 0}.vm-menu{margin:0 -1rem;padding:0 1rem .3rem;width:calc(100% + 2rem)}}
+
+    .vm-esp{flex:none;position:sticky;left:0;right:0;z-index:1;background:#121212;box-shadow:-10px 0 8px -2px #121212,10px 0 8px -2px #121212;border-radius:999px}
+    .vm-esp-panel a.vm-todos{border-left-color:#ffd23f;background:#2a2a2a}.vm-esp-panel a.vm-todos small{color:#ffd23f}
+    .vm-esp summary{list-style:none;cursor:pointer;color:#111;background:#fff;font-size:.86rem;font-weight:800;padding:.4rem .8rem;border-radius:999px;min-height:2.4rem;box-sizing:border-box;display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
+    .vm-esp summary::-webkit-details-marker{display:none}
+    .vm-esp[open] summary,.vm-esp summary[aria-current]{background:#ffd23f}
+    .vm-esp-panel{position:fixed;top:3.6rem;right:1rem;width:min(320px,calc(100vw - 2rem));background:#1b1b1b;border:1px solid #333;border-radius:.6rem;padding:.4rem;box-shadow:0 12px 30px rgba(0,0,0,.45);display:flex;flex-direction:column;gap:.3rem;z-index:60}
+    .vm-esp-panel a{display:block;color:#fff;text-decoration:none;padding:.55rem .75rem;border-radius:.45rem;border-left:5px solid var(--c);font-weight:800;font-size:.92rem;background:#242424}
+    .vm-esp-panel a:hover{background:#2e2e2e}.vm-menu .vm-esp-panel a[aria-current]{background:#2e2e2e;color:#fff}.vm-esp-panel small{display:block;color:var(--c);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"La basura en Montevideo: quién es responsable y por qué no se arregla","description":"Informe especial: contenedores sin vaciar, ausentismo, multas que casi no existen, el 6 % de envases recuperados, quién es responsable por acción u omisión y qué hacen Canelones, Maldonado, Buenos Aires y Liubliana. Con fuente en cada número.","image":"https://verdadmilanesa.uy/og.png","datePublished":"2026-11-20T00:00:00-03:00","dateModified":"2026-11-20T00:00:00-03:00","inLanguage":"es-UY","mainEntityOfPage":"https://verdadmilanesa.uy/basura","author":{"@type":"Organization","name":"La verdad de la milanesa","url":"https://verdadmilanesa.uy/"},"publisher":{"@type":"Organization","name":"La verdad de la milanesa","url":"https://verdadmilanesa.uy/","logo":{"@type":"ImageObject","url":"https://verdadmilanesa.uy/favicon.svg"}}}</script>
+</head>
+<body>
+<header class="vm-barra"><div class="vm-wrap"><a class="vm-logo" href="./">La verdad de la <span>milanesa</span></a><nav class="vm-menu" aria-label="Casos"><a href="/informe#parlamento" style="--c:#ffd23f;--cs:rgba(255,210,63,.16);--ch:rgba(255,210,63,.32)">Parlamento</a><a href="/intendencias" style="--c:#3ddc97;--cs:rgba(61,220,151,.16);--ch:rgba(61,220,151,.32)">Intendencias</a><a href="/solaria" style="--c:#ff8fa0;--cs:rgba(255,143,160,.16);--ch:rgba(255,143,160,.32)">Solaria</a><a href="/puerto" style="--c:#ff7a1a;--cs:rgba(255,122,26,.16);--ch:rgba(255,122,26,.32)">Puerto</a><a href="/ute" style="--c:#5ce1e6;--cs:rgba(92,225,230,.16);--ch:rgba(92,225,230,.32)">UTE</a><a href="/ancap" style="--c:#ff4b2b;--cs:rgba(255,75,43,.16);--ch:rgba(255,75,43,.32)">ANCAP</a><details class="vm-esp"><summary aria-current="page">Especiales <span aria-hidden="true">▾</span></summary><div class="vm-esp-panel"><a class="vm-todos" href="/#especiales" style="--c:#fff"><small>Portada</small>Todos los especiales</a><a href="/movilidad" style="--c:#a78bfa"><small>Informe especial 1</small>Auto eléctrico: ¿sí o no?</a><a href="/transporte" style="--c:#a3e635"><small>Informe especial 2</small>La reforma del transporte</a><a href="/justicia" style="--c:#60a5fa"><small>Informe especial 3</small>Justicia penal y seguridad</a><a href="/estado" style="--c:#2dd4bf"><small>Informe especial 4</small>Un Estado que rinde</a><a href="/hif" style="--c:#f0abfc"><small>Informe especial 5</small>HIF: la luz a mitad de precio</a><a href="/patente" style="--c:#fdba74"><small>Informe especial 6</small>La patente: ¿por qué no baja?</a><a href="/basura" style="--c:#d4e157" aria-current="page"><small>Informe especial 7</small>La ciudad que no se limpia</a></div></details><a class="vm-sec" href="/informe">Informe 2025</a><a class="vm-sec" href="./#correcciones">Correcciones</a><a class="vm-sec" href="mailto:contacto@verdadmilanesa.uy">Contacto</a></nav></div></header><script>(function(){var a=document.querySelector(".vm-menu [aria-current]");if(a){var m=a.closest(".vm-menu");var t=a.closest(".vm-esp")||a;var r=m.getBoundingClientRect().left,p=t.previousElementSibling,x=(p?p.getBoundingClientRect().right+6:t.getBoundingClientRect().left)-r+m.scrollLeft;m.scrollLeft=x-(m.clientWidth-t.offsetWidth)/2;}})();</script><script>document.querySelectorAll(".vm-esp").forEach(function(d){function pos(){var p=d.querySelector(".vm-esp-panel"),h=d.closest(".vm-barra").getBoundingClientRect(),s=d.querySelector("summary").getBoundingClientRect();p.style.top=(h.bottom+6)+"px";var w=p.offsetWidth,l=Math.min(Math.max(8,s.right-w),innerWidth-w-8);p.style.left=l+"px";p.style.right="auto";}d.addEventListener("toggle",function(){if(d.open)pos();});addEventListener("resize",function(){if(d.open)pos();});document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false;});if(matchMedia("(hover:hover) and (pointer:fine)").matches){var t;d.addEventListener("mouseenter",function(){clearTimeout(t);d.open=true;});d.addEventListener("mouseleave",function(){clearTimeout(t);t=setTimeout(function(){d.open=false;},300);});d.querySelector("summary").addEventListener("click",function(e){if(e.detail>0){e.preventDefault();d.open=true;}});}});</script>
+<header class="site"><div class="wrap top"><a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a><nav aria-label="Secciones"><a href="#noviembre">Noviembre</a><a href="#voces">Quién dice qué</a><a href="#causas">Por qué no se arregla</a><a href="#multas">Multas</a><a href="#responsables">Responsables</a><a href="#afuera">Otros lugares</a><a href="#soluciones">Soluciones</a><a href="#fuentes">Fuentes</a></nav></div><div class="wrap hero">
+<span class="kicker">Informe especial 7 · Basura</span>
+<h1>Montevideo, la ciudad que no se limpia</h1>
+<p class="sub">Contenedores llenos durante días, ausentismo, multas que casi no existen y un reciclaje que no despega. Quién es responsable por lo que hizo y por lo que no hizo, por qué empeora y qué funciona en otros lados.</p>
+<div class="btns"><a class="btn y" href="#responsables">¿Quién tiene la culpa?</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
+<div class="golpes">
+<div class="golpe"><b>2.143</b><span>contenedores llevaban más de cinco días sin vaciarse el 17 de noviembre de 2026: uno de cada cinco.</span><div class="acc"><a class="tag t-prensa" href="https://mediospublicos.uy/leonardo-herou-comparecera-ante-la-junta-departamental-por-la-situacion-de-la-recoleccion/" target="_blank" rel="noopener">registros IM</a> <a class="obj" href="/informe?aporte=basura&amp;tipo=correccion#aportes">⚑ Objetar</a></div></div>
+<div class="golpe"><b>0 multas</b><span>por tirar basura en todo 2021. En 2025 fueron 648 en toda la ciudad, con 450 basurales crónicos.</span><div class="acc"><a class="tag t-prensa" href="https://www.elpais.com.uy/informacion/politica/que-pasa-si-tiras-basura-donde-no-debes-las-multas-que-aplico-la-imm-los-ultimos-anos" target="_blank" rel="noopener">IM vía El País</a> <a class="obj" href="/informe?aporte=basura&amp;tipo=correccion#aportes">⚑ Objetar</a></div></div>
+<div class="golpe"><b>6 %</b><span>de los envases que se tiran se recuperan. El resto termina en Felipe Cardoso, que recibe unas 122.000 toneladas por mes.</span><div class="acc"><a class="tag t-oficial" href="https://montevideo.gub.uy/sites/default/files/Plan%20Departamental%20de%20Limpieza%20y%20Gestio%CC%81n%20de%20Residuos%281%29.pdf" target="_blank" rel="noopener">oficial</a> <a class="obj" href="/informe?aporte=basura&amp;tipo=correccion#aportes">⚑ Objetar</a></div></div>
+</div></div></header>
+<main class="wrap">
+
+<section id="noviembre"><div class="num">01</div><h2>Noviembre de 2026, en números</h2>
+<p class="lead">No es una anomalía: es el estado normal de un sistema que vive en emergencia permanente, con un presupuesto de limpieza de más de $ 4.300 millones por año.</p>
+<div class="tabla"><table><thead><tr><th>Dato</th><th class="n">Cifra</th><th>Fuente</th></tr></thead><tbody>
+<tr><td>Contenedores en la calle (17/11/2026)</td><td class="n">10.336</td><td>Registros de la IM <a class="tag t-prensa" href="https://mediospublicos.uy/leonardo-herou-comparecera-ante-la-junta-departamental-por-la-situacion-de-la-recoleccion/" target="_blank" rel="noopener">Medios Públicos</a></td></tr>
+<tr class="total"><td>Con más de 5 días sin vaciar</td><td class="n">2.143 (≈ 21 %)</td><td>Otro ≈ 10 % llevaba entre 4 y 5 días <a class="tag t-prensa" href="https://mediospublicos.uy/leonardo-herou-comparecera-ante-la-junta-departamental-por-la-situacion-de-la-recoleccion/" target="_blank" rel="noopener">Medios Públicos</a></td></tr>
+<tr><td>Previstos y vaciados ese día</td><td class="n">4.487 → 2.533</td><td>Cifras del senador Martín Lema; la IM no las desmintió <a class="tag t-parte" href="https://www.elobservador.com.uy/nacional/la-teja-casavalle-manga-y-punta-gorda-los-barrios-donde-no-se-recoge-basura-hace-una-semana-n6064355" target="_blank" rel="noopener">parte</a></td></tr>
+<tr><td>Días promedio sin vaciar</td><td class="n">3,58 (pico 4,08)</td><td>117 circuitos de unos 100 contenedores <a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/la-teja-casavalle-manga-y-punta-gorda-los-barrios-donde-no-se-recoge-basura-hace-una-semana-n6064355" target="_blank" rel="noopener">El Observador</a></td></tr>
+<tr><td>Presupuesto de la División Limpieza</td><td class="n">$ 4.346.763.692 / año</td><td>$ 21.709 millones en 2026-2030, ≈ US$ 560 millones <a class="tag t-prensa" href="https://www.elpais.com.uy/informacion/politica/para-mejorar-la-limpieza-imm-pedira-unos-us-60-millones-por-fuera-del-presupuesto-a-la-junta-departamental" target="_blank" rel="noopener">El País</a></td></tr>
+<tr><td>Préstamo extra para limpieza</td><td class="n">US$ 50 millones</td><td>La IM pidió 60; la Junta lo aprobó rebajado, con 21 votos <a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/prestamos-millonarios-montevideo-ediles-aprobaron-que-la-intendencia-se-endeude-plan-limpieza-y-saneamiento-n6046385" target="_blank" rel="noopener">El Observador</a></td></tr>
+<tr><td>Basurales endémicos</td><td class="n">100 → 210 → 450</td><td>2017, 2020 y 2025 <a class="tag t-prensa" href="https://www.elobservador.com.uy/nota/imm-registra-210-basurales-dispersos-en-el-departamento-202072974312" target="_blank" rel="noopener">El Observador</a> <a class="tag t-prensa" href="https://montevideoaldia.uy/2026/01/02/nuestro-barrio-limpio-se-retiraron-cerca-de-10-mil-toneladas-de-residuos-de-basurales-de-montevideo/" target="_blank" rel="noopener">Montevideo al Día</a></td></tr>
+<tr><td>Viviendas con contenedor propio</td><td class="n">≈ 50.000 de 500.000</td><td>La meta del nuevo sistema <a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/con-la-aprobacion-el-piso-pero-respaldo-los-vecinos-los-contenedores-intradomiciliarios-im-busca-acelerar-la-reforma-la-limpieza-n6050006" target="_blank" rel="noopener">El Observador</a></td></tr>
+<tr><td>Desaprobación de la limpieza</td><td class="n">72 % → 61 %</td><td>Abril-mayo y junio-julio de 2026, Equipos para la IM <a class="tag t-oficial" href="https://montevideo.gub.uy/sites/default/files/documentos/Informe%20Monitor%20Departamental%20IM%20abril%202026.pdf" target="_blank" rel="noopener">abril</a> <a class="tag t-oficial" href="https://montevideo.gub.uy/sites/default/files/documentos/Informe%20Monitor%20Departamental%20IM%20junio%202026-1.pdf" target="_blank" rel="noopener">junio</a></td></tr>
+</tbody></table></div>
+<p class="nota">El total de contenedores cambia según la fuente (10.279 en el conteo de Lema, 10.336 en los registros de la IM) porque se están retirando contenedores de la calle. <a class="obj" href="/informe?aporte=basura&amp;tipo=correccion#aportes">⚑ Objetar</a></p></section>
+
+<section id="voces"><div class="num">02</div><h2>Quién dice qué</h2>
+<p class="lead">La Intendencia culpa al ausentismo y a las horas extras. El sindicato dice que no hubo paros y que faltan camiones. La oposición quiere tercerizar.</p>
+<div class="voces">
+<div class="voz"><span class="quien">Intendencia · Leonardo Herou</span><blockquote>"No estamos privatizando nada"</blockquote><p>Lo dijo el 19/11 mientras anunciaba camiones, maquinaria y cuadrillas privadas "hasta pasadas las fiestas". Antes había dicho que algunos días el ausentismo superó el 40 %, que casi siempre pasa del 30 % y que, sin horas extras, "eso complica bastante".</p><div class="acc"><a class="tag t-prensa" href="https://www.subrayado.com.uy/imm-trabajara-apoyo-privados-despues-las-fiestas-normalizar-la-recoleccion-residuos-n1023914" target="_blank" rel="noopener">Subrayado</a> <a class="tag t-prensa" href="https://www.elpais.com.uy/informacion/politica/adeom-desmiente-a-bergara-dice-que-este-mes-solo-hizo-una-asamblea-que-afecto-el-vaciado-de-contenedores" target="_blank" rel="noopener">El País</a></div></div>
+<div class="voz"><span class="quien">Adeom · Julio Cameto</span><blockquote>"No hemos tenido paros"</blockquote><p>Dice que en noviembre solo una asamblea, el jueves 5, tocó a Contenedores. Admite un ausentismo "en el entorno del 30 %", pero dice que incluye licencias por trabajo insalubre, certificaciones y accidentes. No hacen horas extras en reclamo por los camiones: "si el servicio fuera eficiente, no habría necesidad".</p><div class="acc"><a class="tag t-prensa" href="https://www.elpais.com.uy/informacion/politica/adeom-desmiente-a-bergara-dice-que-este-mes-solo-hizo-una-asamblea-que-afecto-el-vaciado-de-contenedores" target="_blank" rel="noopener">El País</a></div></div>
+<div class="voz"><span class="quien">Oposición · Martín Lema</span><blockquote>Tercerizar y pagar por resultados</blockquote><p>Propone el "sistema de Maldonado o Rocha". El intendente Bergara ya había dicho en marzo que tercerizar la recolección "no es factible". En la sección 06 está lo que se encontró de esos dos modelos.</p><div class="acc"><a class="tag t-parte" href="https://www.radiomontecarlo.com.uy/2026/11/17/nacionales/martin-lema-propone-tercerizar-la-recoleccion-de-residuos-en-montevideo-y-pagar-al-privado-segun-los-resultados/" target="_blank" rel="noopener">Radio Montecarlo</a> <a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Definicion-en-reforma-de-transporte-y-tercerizacion-de-la-recoleccion-que-dijo-Bergara-uc956225" target="_blank" rel="noopener">Montevideo Portal</a></div></div>
+</div>
+<p class="nota"><b>Lo que nadie publicó:</b> cuánto de ese 30 % son faltas sin justificar y cuánto son licencias legales. Sin ese dato, las dos versiones no se pueden comprobar.</p></section>
+
+<section id="causas"><div class="num">03</div><h2>Por qué no se arregla: seis causas de fondo</h2>
+<p class="lead">No hay un culpable. Hay una cadena, y cada eslabón tiene su parte.</p>
+<div class="obras">
+<div class="obra"><h3>1. El modelo está agotado</h3><div class="m">8.000 → 11.000</div><p>Contenedores abiertos en la calle, de todos y de nadie: se hurgan, se queman, se desbordan. En los 2010 se agregaron contenedores sin agregar camiones al mismo ritmo. El contenedor por casa recién llega al 10 % de la meta.</p><div class="acc"><a class="tag t-prensa" href="https://www.elobservador.com.uy/nota/camiones-rotos-el-principal-problema-de-la-imm-para-recolectar-la-basura-2015112418350" target="_blank" rel="noopener">El Observador</a></div></div>
+<div class="obra"><h3>2. La basura se paga sin que se vea</h3><div class="m">Sin tasa propia</div><p>En Montevideo la recolección va dentro de la Tasa General, mezclada con otros servicios. Canelones tiene una tasa destinada a residuos. El vecino no sabe cuánto cuesta su basura y, para invertir en serio, se pide un préstamo.</p><div class="acc"><a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Orsi-decidio-topear-aumento-de-Tasa-de-Servicios-y-no-sera-mayor-a-4-000-por-ano-uc810423" target="_blank" rel="noopener">Canelones</a></div></div>
+<div class="obra"><h3>3. Personal y camiones</h3><div class="m">≈ 30 %</div><p>Ausentismo, por la razón que sea. En 2015 funcionaba el 60 % de la flota y en 2019 se rompían de 4 a 6 camiones por día. El cantón del Buceo, de donde salen, recién se traslada ahora (US$ 5 millones).</p><div class="acc"><a class="tag t-prensa" href="https://www.elobservador.com.uy/nota/dos-de-cada-diez-denuncias-que-recibe-la-imm-por-camiones-rotos-no-se-comprueban-201922118474" target="_blank" rel="noopener">El Observador</a> <a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/tras-anos-reclamos-vecinales-im-trasladara-el-canton-del-buceo-el-centro-donde-salen-todos-los-camiones-basura-la-ciudad-n6048436" target="_blank" rel="noopener">El Observador</a></div></div>
+<div class="obra"><h3>4. Casi no se multa</h3><div class="m">648 en 2025</div><p>Multas en todo el año, en una ciudad con 450 basurales. Por tirar basura domiciliaria en la vía pública hubo 8. Con los incendios de contenedores, menos del 1 % termina con procesados.</p><div class="acc"><a class="tag t-prensa" href="https://www.elpais.com.uy/informacion/politica/que-pasa-si-tiras-basura-donde-no-debes-las-multas-que-aplico-la-imm-los-ultimos-anos" target="_blank" rel="noopener">El País</a> <a class="tag t-prensa" href="https://www.elobservador.com.uy/nota/vigilando-la-basura-la-policia-estara-alerta-ante-el-incendio-de-contenedores-2017220500" target="_blank" rel="noopener">El Observador</a></div></div>
+<div class="obra"><h3>5. La pobreza en el contenedor</h3><div class="m">3.188 a 9.000+</div><p>Clasificadores en Montevideo: el último censo es de 2012 y su sindicato estima más de 9.000. El hurgado es supervivencia y, a la vez, deterioro. Las cuatro cooperativas de las plantas estuvieron cinco años sin convenio y lo firmaron en julio de 2025.</p><div class="acc"><a class="tag t-prensa" href="https://www.elobservador.com.uy/nota/vivir-de-lo-que-otros-tiran--2016416500" target="_blank" rel="noopener">El Observador</a> <a class="tag t-terceros" href="https://fcpu.coop.uy/noticias/nuevo-contrato-entre-las-cooperativas-de-clasificacion-y-la-intendencia-de-montevideo-un-paso-historico-hacia-una-ciudad-mas-sustentable/" target="_blank" rel="noopener">FCPU</a></div></div>
+<div class="obra"><h3>6. Planes que no duran (y los que no pagan)</h3><div class="m">2019</div><p>La IM licitó la entrada de privados y anuló la licitación para cerrar un conflicto con Adeom. Ese año intentó declarar la recolección servicio esencial y no lo logró. Las empresas de envases tienen obligación legal desde 2004 y la captación sigue en 6 %.</p><div class="acc"><a class="tag t-prensa" href="https://www.elobservador.com.uy/nota/adeom-levanto-conflicto-luego-de-que-imm-anulo-licitaciones-con-privados-20191010172844" target="_blank" rel="noopener">El Observador</a> <a class="tag t-prensa" href="https://www.elobservador.com.uy/nota/imm-procura-que-la-recoleccion-de-basura-sea-un-servicio-esencial-2019110182356" target="_blank" rel="noopener">El Observador</a></div></div>
+</div></section>
+
+<section id="multas"><div class="num">04</div><h2>Las multas: casi nadie paga por ensuciar</h2>
+<p class="lead">Multas aplicadas por Desarrollo Ambiental, según la respuesta de la IM a un pedido de acceso a la información de El País. La multa puede llegar a 350 UR, unos $ 680.000.</p>
+<div class="barras">
+<div class="barra"><span>2016</span><span class="b"><i style="width:20.2%"></i></span><span class="v">133</span></div>
+<div class="barra"><span>2017</span><span class="b"><i style="width:47.7%"></i></span><span class="v">315</span></div>
+<div class="barra"><span>2018</span><span class="b"><i style="width:74.2%"></i></span><span class="v">490</span></div>
+<div class="barra"><span>2019</span><span class="b"><i style="width:30.9%"></i></span><span class="v">204</span></div>
+<div class="barra cero"><span>2020</span><span class="b"><i style="width:1%"></i></span><span class="v">6</span></div>
+<div class="barra cero"><span>2021</span><span class="b"><i style="width:0%"></i></span><span class="v">0</span></div>
+<div class="barra cero"><span>2022</span><span class="b"><i style="width:1%"></i></span><span class="v">6</span></div>
+<div class="barra"><span>2023</span><span class="b"><i style="width:6.7%"></i></span><span class="v">44</span></div>
+<div class="barra"><span>2024</span><span class="b"><i style="width:100%"></i></span><span class="v">660</span></div>
+<div class="barra"><span>2025</span><span class="b"><i style="width:98.2%"></i></span><span class="v">648</span></div>
+<div class="barra"><span>2026*</span><span class="b"><i style="width:11.4%"></i></span><span class="v">75</span></div>
+</div>
+<p class="nota">* Hasta el 22 de junio de 2026, con otras 204 en proceso. La IM advierte que los datos de 2016-2023 no están completos. En 2025 las multas sumaron unos $ 16 millones: menos del 0,4 % de lo que se presupuesta por año para Limpieza <span class="tag t-propio">cálculo propio</span>. En la misma nota, Herou reconoce que el sistema de contenedores en la calle está "colapsado" <a class="tag t-prensa" href="https://www.elpais.com.uy/informacion/politica/que-pasa-si-tiras-basura-donde-no-debes-las-multas-que-aplico-la-imm-los-ultimos-anos" target="_blank" rel="noopener">El País</a> <a class="obj" href="/informe?aporte=basura&amp;tipo=correccion#aportes">⚑ Objetar</a></p></section>
+
+<section id="peor"><div class="num">05</div><h2>Por qué cada vez peor</h2>
+<ol class="pasos">
+<li><b>Más basura.</b> Felipe Cardoso recibe unas 122.000 toneladas por mes, un 20 % más que hace una década. En diciembre de 2023 se levantaron 60.000 t de los contenedores, contra 50.000 t un año antes. <a class="tag t-oficial" href="https://montevideo.gub.uy/sites/default/files/Plan%20Departamental%20de%20Limpieza%20y%20Gestio%CC%81n%20de%20Residuos%281%29.pdf" target="_blank" rel="noopener">oficial</a> <a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/La-cifra-que-dio-Cosse-para-graficar-el-crecimiento-de-la-basura-este-mes-en-Montevideo-uc875236" target="_blank" rel="noopener">prensa</a></li>
+<li><b>Contagio.</b> Un contenedor desbordado atrae más basura, hurgado y fuego, y se vuelve basural. <i>Nuestro Barrio Limpio</i> sacó unas 9.700 t de basurales en cinco meses de 2025: se limpia después lo que no se previene. <a class="tag t-prensa" href="https://montevideoaldia.uy/2026/01/02/nuestro-barrio-limpio-se-retiraron-cerca-de-10-mil-toneladas-de-residuos-de-basurales-de-montevideo/" target="_blank" rel="noopener">prensa</a></li>
+<li><b>Sin margen.</b> Un paro, un feriado o un camión roto generan un atraso que no se recupera. Navidad 2025, octubre 2025 y noviembre 2026 siguieron el mismo patrón.</li>
+<li><b>La transición.</b> Donde llegó el contenedor por casa (Carrasco, Malvín Norte, Cerro) se nota la mejora. En Pocitos, La Blanqueada o La Teja norte los contenedores seguían desbordados: el sistema viejo se desarma antes de que el nuevo llegue a todos. <a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/con-la-aprobacion-el-piso-pero-respaldo-los-vecinos-los-contenedores-intradomiciliarios-im-busca-acelerar-la-reforma-la-limpieza-n6050006" target="_blank" rel="noopener">prensa</a></li>
+<li><b>Círculo vicioso.</b> Conflicto → atraso → la oposición pide privatizar → el sindicato lo lee como amenaza → más conflicto.</li>
+</ol>
+<h3>Ni los números de la basura coinciden</h3>
+<div class="choque"><div class="c"><b>439.578 t</b><span>residuos recogidos en Montevideo en 2024 según el INE (en 2023 eran 595.075)</span></div><div class="vs">vs</div><div class="c"><b>1.162.769 t</b><span>lo que la IM dijo que recogió en 2024, un 12 % más que en 2023</span></div></div>
+<p class="nota">Nadie explicó oficialmente la diferencia. Puede que midan cosas distintas, pero ninguno de los dos lo aclara <a class="tag t-oficial" href="https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/13-medio-ambiente/131-residuos" target="_blank" rel="noopener">INE</a> <a class="tag t-oficial" href="https://montevideo.gub.uy/noticias/medio-ambiente-y-sostenibilidad/operativos-de-limpieza-en-diciembre-resultaron-exitosos" target="_blank" rel="noopener">IM</a> <a class="obj" href="/informe?aporte=basura&amp;tipo=correccion#aportes">⚑ Objetar</a></p>
+<p class="nota">Lo mismo pasa con los envases: el Plan Departamental habla de un 6 % de los envases generados y la IM anunció en agosto que la recuperación subió del 13 % al 18 % de los envases "vertidos". Son indicadores distintos, no una mejora del 6 % al 18 % <a class="tag t-oficial" href="https://www.montevideo.gub.uy/noticias/montevideo-recupera-un-386-mas-de-materiales-reciclables-en-un-ano" target="_blank" rel="noopener">oficial</a></p></section>
+
+<section id="responsables"><div class="num">06</div><h2>Responsables: por acción y por omisión</h2>
+<p class="lead">La responsabilidad es compartida, pero no pareja. La Intendencia opera el servicio, aunque no controla todas las variables.</p>
+<div class="tabla"><table><thead><tr><th>Actor</th><th>Por lo que hizo</th><th>Por lo que no hizo</th></tr></thead><tbody>
+<tr><td><b>Intendencia de Montevideo</b><br><small>Frente Amplio desde 1990</small></td><td>Sostuvo el contenedor en la calle; anuló la tercerización en 2019 para cerrar un conflicto; recortó horas extras sin reponer personal</td><td>Más de diez años para copiar a Canelones; flota sin renovación sostenida; casi no multa; cooperativas cinco años sin convenio; datos que no coinciden con el INE</td></tr>
+<tr><td><b>Adeom</b></td><td>No hace horas extras en plena crisis; paros en otros años (2016, 2019, 2025, febrero a mayo de 2026)</td><td>No transparenta cómo se compone el ausentismo; rechazó guardias mínimas automáticas en 2019</td></tr>
+<tr><td><b>Gobierno nacional</b><br><small>todos los partidos</small></td><td>—</td><td>Ley de envases de 2004 y de residuos de 2019 casi sin efecto durante años; el Plan Vale recién arranca</td></tr>
+<tr><td><b>Empresas de envases</b></td><td>Ponen más de 70.000 t de envases por año en el mercado</td><td>Captación del 6 %</td></tr>
+<tr><td><b>Junta y oposición</b></td><td>—</td><td>Mucha crítica y ningún acuerdo de largo plazo</td></tr>
+<tr><td><b>Vecinos y comercios</b></td><td>Bolsas fuera de hora y de lugar; voluminosos y escombros en la calle</td><td>Poca separación en casa</td></tr>
+</tbody></table></div>
+<p class="nota">Frente al "36 años de más de lo mismo" de la oposición y el "es cultural" del oficialismo, los números le dan parte de razón a cada uno. <a class="obj" href="/informe?aporte=basura&amp;tipo=correccion#aportes">⚑ Objetar</a></p></section>
+
+<section id="afuera"><div class="num">07</div><h2>Qué hacen en otros lados</h2>
+<div class="obras">
+<div class="obra"><h3>Canelones</h3><div class="m">+66 puntos</div><p>Mismo país, mismas leyes, mismo sindicato. Contenedor por casa desde 2013, en más de 120.000 familias, y tasa propia para residuos. La recolección es su servicio mejor evaluado. El director que lo impulsó hoy dirige la limpieza de Montevideo.</p><div class="acc"><a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Intendencia-de-Canelones-con-50-de-aprobacion-destacan-recoleccion-de-basura-y-alumbrado-uc950490" target="_blank" rel="noopener">Cifra</a> <a class="tag t-oficial" href="https://www.gub.uy/ministerio-ambiente/sites/ministerio-ambiente/files/2020-11/Anexo%205.%20Doc%20Marco%20Claves%20y%20respuestas_IDC_0.pdf" target="_blank" rel="noopener">oficial</a></div></div>
+<div class="obra"><h3>Maldonado</h3><div class="m">$ 65 M / mes</div><p>Recolección privada desde julio de 2024: Ecotecno puso US$ 30 millones en 6.000 contenedores y 50 vehículos, que la intendencia le paga en el servicio de los próximos 10 años, con cámaras y sensores que controlan cada vaciado. La intendencia informa 83,4 % de evaluación positiva de la recolección (encuesta Ágora, abril de 2025, otra metodología que la de Equipos).</p><div class="acc"><a class="tag t-oficial" href="https://www.maldonado.gub.uy/noticias/30-millones-dolares-invertidos-equipamiento-recoleccion-residuos-pone-maldonado-vanguardia" target="_blank" rel="noopener">IDM</a> <a class="tag t-oficial" href="https://www.maldonado.gub.uy/noticias/65-millones-pesos-mensuales-invierte-idm-recoleccion-disposicion-final-residuos-maldonado" target="_blank" rel="noopener">IDM</a> <a class="tag t-oficial" href="https://www.maldonado.gub.uy/noticias/limpieza-recoleccion-obras-cuidado-del-medio-ambiente-realojos-aprobacion-ciudadana-entre" target="_blank" rel="noopener">IDM</a></div></div>
+<div class="obra"><h3>Rocha</h3><div class="m">1.100 contenedores</div><p>Tercerización parcial: Teyma atiende la ciudad de Rocha y la costa de La Paloma a Cabo Polonio, con un canon de $ 6,87 millones por mes (2022). No hay encuesta de satisfacción posterior a la tercerización. <i>Dato del acta, pendiente de verificar por nosotros.</i></p><div class="acc"><a class="tag t-oficial" href="https://www.juntarocha.gub.uy/pdf/acta/25-30/033.pdf" target="_blank" rel="noopener">Junta de Rocha</a></div></div>
+<div class="obra"><h3>Buenos Aires</h3><div class="m">6 empresas</div><p>Recolección privada en seis zonas y una zona estatal de control. Igual hay quejas y sanciones por incumplimiento; prepara una licitación nueva para 2028. Su piloto de contenedores con tarjeta fracasó por vandalismo.</p><div class="acc"><a class="tag t-prensa" href="https://economiasustentable.com/noticias/caba-licita-la-recoleccion-de-basura-por-10-anos-y-permitira-competir-a-empresas-sancionadas/" target="_blank" rel="noopener">prensa</a></div></div>
+<div class="obra"><h3>Liubliana</h3><div class="m">≈ 60-70 %</div><p>Una empresa pública, separación en casa y una planta moderna. Pasó de enterrar todo a separar la mayor parte, con costos bajos para Europa. Lo público también puede funcionar.</p><div class="acc"><a class="tag t-terceros" href="https://zerowasteeurope.eu/library/the-story-of-ljubljana/" target="_blank" rel="noopener">Zero Waste Europe</a></div></div>
+</div>
+<p class="nota"><b>Ojo con el "pago por resultados":</b> en lo publicado de Maldonado y Rocha no se encontró una cláusula que ate el pago a indicadores. Hay supervisión, que no es lo mismo. Además, son departamentos mucho más chicos y sin la periferia de Montevideo. <b>La lección:</b> lo que define una ciudad limpia no es si el servicio es público o privado, sino sacar el contenedor colectivo de la calle, separar en casa, que pague el que fabrica el envase, multar de verdad y un servicio que no se corte.</p></section>
+
+<section id="haciendo"><div class="num">08</div><h2>Lo que se está haciendo (y por qué todavía no alcanza)</h2>
+<div class="dos">
+<div class="lista"><h3>En marcha</h3><ul>
+<li>Contenedor por casa: unas 50.000 viviendas; la compra grande (≈ 221.000) estaría lista entre fines de 2026 y principios de 2027.</li>
+<li>Préstamo de US$ 50 millones: ≈ 18 para limpieza, ≈ 20 para reciclaje, 9,8 para Felipe Cardoso, más el cantón y la fiscalización.</li>
+<li>Felipe Cardoso: un módulo nuevo de ≈ US$ 7,8 millones desde 2029, con capacidad hasta al menos 2055.</li>
+<li>Reciclaje: 621 t por mes a las plantas en julio de 2026 (+38,6 %) y convenio con las cooperativas.</li>
+<li>Plan Vale (nacional): fondos para 16.000 contenedores, 350 ecopuntos y dos camiones.</li>
+<li>Refuerzo privado temporal hasta después de las fiestas.</li></ul></div>
+<div class="lista"><h3>Por qué no alcanza</h3><ul>
+<li>El plan ataca la causa a la velocidad de una década; la ciudad necesita una solución el lunes.</li>
+<li>Con el 10 % de la meta, nueve de cada diez casas siguen con el sistema viejo.</li>
+<li>Sin multas reales ni ausentismo transparente, nada cambia la conducta.</li>
+<li>Sin una serie oficial única de toneladas, no se puede medir si mejora.</li></ul></div>
+</div>
+<p class="nota"><a class="tag t-prensa" href="https://www.montevideo.com.uy/Noticias/Saneamiento-limpieza-calles-y-veredas-el-detalle-de-los-proyectos-aprobados-de-la-IM-uc964416" target="_blank" rel="noopener">préstamo</a> <a class="tag t-prensa" href="https://www.elpais.com.uy/informacion/politica/la-basura-de-montevideo-seguira-yendo-a-felipe-cardoso-hasta-al-menos-2055-con-las-obras-que-preve-la-imm" target="_blank" rel="noopener">Felipe Cardoso</a> <a class="tag t-oficial" href="https://www.montevideo.gub.uy/noticias/montevideo-recupera-un-386-mas-de-materiales-reciclables-en-un-ano" target="_blank" rel="noopener">reciclaje</a> <a class="tag t-oficial" href="https://www.gub.uy/ministerio-ambiente/comunicacion/noticias/ministerio-ambiente-impulsa-acuerdo-para-fortalecer-recuperacion-envases" target="_blank" rel="noopener">Plan Vale</a></p></section>
+
+<section id="soluciones"><div class="num">09</div><h2>Soluciones: qué funciona y cuánto cuesta (políticamente)</h2>
+<div class="tabla"><table><thead><tr><th>Medida</th><th>Plazo</th><th>Riesgo político</th><th>Viabilidad</th></tr></thead><tbody>
+<tr><td>Acelerar el contenedor por casa (50.000 → 500.000)</td><td>3 a 5 años</td><td>Medio</td><td>Alta, ya está en marcha</td></tr>
+<tr><td>Publicar el ausentismo desglosado (licencias y faltas)</td><td>Inmediato</td><td>Medio</td><td>Alta</td></tr>
+<tr><td>Guardias mínimas obligatorias en la recolección</td><td>Inmediato</td><td>Alto</td><td>Media</td></tr>
+<tr><td>Refuerzo privado en los picos</td><td>Inmediato</td><td>Medio</td><td>Alta, ya se usa</td></tr>
+<tr><td>Tercerización parcial con pago atado a resultados reales y una zona pública de control</td><td>Corto</td><td>Muy alto</td><td>Media</td></tr>
+<tr><td>Multas reales con cámaras (de cientos a miles por año)</td><td>Corto</td><td>Bajo</td><td>Alta</td></tr>
+<tr><td>Que paguen los productores de envases</td><td>Mediano</td><td>Bajo</td><td>Media</td></tr>
+<tr><td>Tasa de residuos visible con tarifa social (como Canelones)</td><td>Mediano</td><td>Muy alto</td><td>Baja sin acuerdo</td></tr>
+<tr><td>Una sola serie oficial de toneladas (INE = IM)</td><td>Inmediato</td><td>Nulo</td><td>Alta</td></tr>
+<tr><td>Acuerdo entre partidos a 10 años</td><td>Inmediato</td><td>Bajo</td><td>Baja: no da votos</td></tr>
+</tbody></table></div>
+<p class="nota">Las medidas que más funcionan son las que más cuestan políticamente. Las baratas son las que menos cambian. No es un problema técnico: es de incentivos.</p></section>
+
+<section id="ver"><div class="alerta"><h2>¿Endémico y sin solución?</h2><ul>
+<li><strong>Endémico, sí. Sin solución, no.</strong> La solución se conoce y funciona a 20 km, en Canelones, y con otro modelo en Maldonado.</li>
+<li>Lo que faltó durante décadas: decisión sostenida, plata visible y destinada a esto, multas reales, datos que coincidan y un servicio que no se pueda cortar.</li>
+<li>Montevideo no está sucio porque nadie sepa qué hacer. Está sucio porque hacer lo necesario cuesta votos, plata y conflicto, y no hacerlo cuesta solo la ciudad.</li></ul></div></section>
+
+<section id="metodo"><div class="num">10</div><h2>Cómo se hizo</h2>
+<p class="lead">Tres IA trabajaron por separado: Claude investigó, DeepSeek escribió un borrador y ChatGPT buscó lo que faltaba. Claude cruzó los tres y verificó cada cifra contra la fuente original.</p>
+<div class="lista"><ul>
+<li>Corregido: DeepSeek presentó el 72 % y el 61 % como una mejora de abril a junio. En la misma encuesta eran dos preguntas distintas (limpieza y recolección). Quedó la serie del ítem limpieza.</li>
+<li>Corregido: "las cooperativas trabajan sin convenio". Firmaron uno nuevo en julio de 2025.</li>
+<li>Corregido: "16 camiones comprados en 2026". Son de 2023-2024.</li>
+<li>Corregido: los "US$ 60 millones" se aprobaron rebajados a US$ 50 millones.</li>
+<li>Sin usar: un 85 % de aprobación de los contenedores por casa, que no aparece en la fuente citada, y el "pago por resultados" de Maldonado y Rocha, que no está documentado.</li></ul></div></section>
+
+<section id="pendiente"><div class="pend"><strong>Lo que todavía estamos buscando</strong><ul>
+<li>El ausentismo desglosado: licencias, certificaciones y faltas sin justificar.</li>
+<li>El gasto ejecutado (no presupuestado) de la División Limpieza en 2025 y el costo actual por tonelada.</li>
+<li>Por qué el INE y la IM dan toneladas tan distintas para 2024.</li>
+<li>Los contratos de Maldonado y Rocha completos, para ver si el pago depende de resultados (el canon de Rocha sale del acta 33 de su Junta y falta verificarlo).</li>
+<li>Un censo actualizado de clasificadores en Montevideo.</li></ul></div></section>
+
+<section id="fuentes"><h2>De dónde sale cada número</h2>
+<p class="lead">Consultado el 20/11/2026. Los borradores de DeepSeek y ChatGPT y su verificación están en el repositorio del sitio.</p>
+<ul class="fuentes">
+<li><a href="https://mediospublicos.uy/leonardo-herou-comparecera-ante-la-junta-departamental-por-la-situacion-de-la-recoleccion/" target="_blank" rel="noopener">Medios Públicos, 17/11/2026: contenedores sin vaciar (registros de la IM)</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nacional/la-teja-casavalle-manga-y-punta-gorda-los-barrios-donde-no-se-recoge-basura-hace-una-semana-n6064355" target="_blank" rel="noopener">El Observador, 18/11/2026: barrios, circuitos y ausentismo</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.subrayado.com.uy/imm-trabajara-apoyo-privados-despues-las-fiestas-normalizar-la-recoleccion-residuos-n1023914" target="_blank" rel="noopener">Subrayado, 19/11/2026: refuerzo privado</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elpais.com.uy/informacion/politica/adeom-desmiente-a-bergara-dice-que-este-mes-solo-hizo-una-asamblea-que-afecto-el-vaciado-de-contenedores" target="_blank" rel="noopener">El País, 20/11/2026: Adeom responde</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elpais.com.uy/informacion/politica/para-mejorar-la-limpieza-imm-pedira-unos-us-60-millones-por-fuera-del-presupuesto-a-la-junta-departamental" target="_blank" rel="noopener">El País, 10/02/2026: presupuesto de Limpieza 2026-2030</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elpais.com.uy/informacion/politica/que-pasa-si-tiras-basura-donde-no-debes-las-multas-que-aplico-la-imm-los-ultimos-anos" target="_blank" rel="noopener">El País, 06/09/2026: multas 2016-2026 (pedido de acceso)</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elpais.com.uy/informacion/politica/la-basura-de-montevideo-seguira-yendo-a-felipe-cardoso-hasta-al-menos-2055-con-las-obras-que-preve-la-imm" target="_blank" rel="noopener">El País, 08/08/2026: Felipe Cardoso hasta 2055</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://montevideo.gub.uy/sites/default/files/Plan%20Departamental%20de%20Limpieza%20y%20Gestio%CC%81n%20de%20Residuos%281%29.pdf" target="_blank" rel="noopener">IM: Plan Departamental de Limpieza y Gestión de Residuos 2026-2027</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.montevideo.gub.uy/noticias/montevideo-recupera-un-386-mas-de-materiales-reciclables-en-un-ano" target="_blank" rel="noopener">IM, 08/08/2026: recuperación de reciclables</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://montevideo.gub.uy/sites/default/files/documentos/Informe%20Monitor%20Departamental%20IM%20abril%202026.pdf" target="_blank" rel="noopener">Equipos para la IM: Monitor Departamental, abril 2026</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://montevideo.gub.uy/sites/default/files/documentos/Informe%20Monitor%20Departamental%20IM%20junio%202026-1.pdf" target="_blank" rel="noopener">Equipos para la IM: Monitor Departamental, junio 2026</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://montevideoaldia.uy/2026/01/02/nuestro-barrio-limpio-se-retiraron-cerca-de-10-mil-toneladas-de-residuos-de-basurales-de-montevideo/" target="_blank" rel="noopener">Montevideo al Día, 02/01/2026: 450 basurales</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nota/imm-registra-210-basurales-dispersos-en-el-departamento-202072974312" target="_blank" rel="noopener">El Observador, 2020: 210 basurales</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nacional/con-la-aprobacion-el-piso-pero-respaldo-los-vecinos-los-contenedores-intradomiciliarios-im-busca-acelerar-la-reforma-la-limpieza-n6050006" target="_blank" rel="noopener">El Observador, 08/07/2026: contenedores por casa</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nacional/prestamos-millonarios-montevideo-ediles-aprobaron-que-la-intendencia-se-endeude-plan-limpieza-y-saneamiento-n6046385" target="_blank" rel="noopener">El Observador, 04/06/2026: préstamos aprobados</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.montevideo.com.uy/Noticias/Saneamiento-limpieza-calles-y-veredas-el-detalle-de-los-proyectos-aprobados-de-la-IM-uc964416" target="_blank" rel="noopener">Montevideo Portal, 06/06/2026: destino del préstamo</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.radiomontecarlo.com.uy/2026/11/17/nacionales/martin-lema-propone-tercerizar-la-recoleccion-de-residuos-en-montevideo-y-pagar-al-privado-segun-los-resultados/" target="_blank" rel="noopener">Radio Montecarlo, 17/11/2026: propuesta de Lema</a> <span class="tag t-parte">parte</span></li>
+<li><a href="https://www.montevideo.com.uy/Noticias/Definicion-en-reforma-de-transporte-y-tercerizacion-de-la-recoleccion-que-dijo-Bergara-uc956225" target="_blank" rel="noopener">Montevideo Portal, 17/03/2026: Bergara sobre tercerizar</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://fcpu.coop.uy/noticias/nuevo-contrato-entre-las-cooperativas-de-clasificacion-y-la-intendencia-de-montevideo-un-paso-historico-hacia-una-ciudad-mas-sustentable/" target="_blank" rel="noopener">FCPU, 23/07/2025: convenio con las cooperativas</a> <span class="tag t-terceros">terceros</span></li>
+<li><a href="https://www.elobservador.com.uy/nota/adeom-levanto-conflicto-luego-de-que-imm-anulo-licitaciones-con-privados-20191010172844" target="_blank" rel="noopener">El Observador, 2019: se anula la licitación con privados</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nota/imm-procura-que-la-recoleccion-de-basura-sea-un-servicio-esencial-2019110182356" target="_blank" rel="noopener">El Observador, 2019: intento de esencialidad</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nota/camiones-rotos-el-principal-problema-de-la-imm-para-recolectar-la-basura-2015112418350" target="_blank" rel="noopener">El Observador, 2015: camiones rotos</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nota/dos-de-cada-diez-denuncias-que-recibe-la-imm-por-camiones-rotos-no-se-comprueban-201922118474" target="_blank" rel="noopener">El Observador, 2019: roturas diarias</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nota/vigilando-la-basura-la-policia-estara-alerta-ante-el-incendio-de-contenedores-2017220500" target="_blank" rel="noopener">El Observador, 2017: incendios de contenedores</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nota/vivir-de-lo-que-otros-tiran--2016416500" target="_blank" rel="noopener">El Observador, 2016: clasificadores</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nacional/tras-anos-reclamos-vecinales-im-trasladara-el-canton-del-buceo-el-centro-donde-salen-todos-los-camiones-basura-la-ciudad-n6048436" target="_blank" rel="noopener">El Observador, 24/06/2026: traslado del cantón del Buceo</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.montevideo.com.uy/Noticias/La-cifra-que-dio-Cosse-para-graficar-el-crecimiento-de-la-basura-este-mes-en-Montevideo-uc875236" target="_blank" rel="noopener">Montevideo Portal, 28/12/2023: toneladas de diciembre</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.gub.uy/instituto-nacional-estadistica/comunicacion/publicaciones/anuario-estadistico-nacional-2025-vol-102/13-medio-ambiente/131-residuos" target="_blank" rel="noopener">INE: Anuario Estadístico 2025, residuos</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://montevideo.gub.uy/noticias/medio-ambiente-y-sostenibilidad/operativos-de-limpieza-en-diciembre-resultaron-exitosos" target="_blank" rel="noopener">IM, 02/01/2025: balance de recolección 2024</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.gub.uy/ministerio-ambiente/comunicacion/noticias/ministerio-ambiente-impulsa-acuerdo-para-fortalecer-recuperacion-envases" target="_blank" rel="noopener">Ministerio de Ambiente: Plan Vale en Montevideo</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.montevideo.com.uy/Noticias/Orsi-decidio-topear-aumento-de-Tasa-de-Servicios-y-no-sera-mayor-a-4-000-por-ano-uc810423" target="_blank" rel="noopener">Montevideo Portal, 2022: tasa de residuos de Canelones</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.montevideo.com.uy/Noticias/Intendencia-de-Canelones-con-50-de-aprobacion-destacan-recoleccion-de-basura-y-alumbrado-uc950490" target="_blank" rel="noopener">Montevideo Portal: encuesta Cifra en Canelones</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.gub.uy/ministerio-ambiente/sites/ministerio-ambiente/files/2020-11/Anexo%205.%20Doc%20Marco%20Claves%20y%20respuestas_IDC_0.pdf" target="_blank" rel="noopener">Ministerio de Ambiente: el sistema de Canelones</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.maldonado.gub.uy/noticias/30-millones-dolares-invertidos-equipamiento-recoleccion-residuos-pone-maldonado-vanguardia" target="_blank" rel="noopener">Intendencia de Maldonado, 2024: contrato y flota</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.maldonado.gub.uy/noticias/65-millones-pesos-mensuales-invierte-idm-recoleccion-disposicion-final-residuos-maldonado" target="_blank" rel="noopener">Intendencia de Maldonado, 2026: costo mensual</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.maldonado.gub.uy/noticias/limpieza-recoleccion-obras-cuidado-del-medio-ambiente-realojos-aprobacion-ciudadana-entre" target="_blank" rel="noopener">Intendencia de Maldonado, 2025: encuesta de satisfacción</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.juntarocha.gub.uy/pdf/acta/25-30/033.pdf" target="_blank" rel="noopener">Junta Departamental de Rocha: acta 33 (contrato de recolección)</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://economiasustentable.com/noticias/caba-licita-la-recoleccion-de-basura-por-10-anos-y-permitira-competir-a-empresas-sancionadas/" target="_blank" rel="noopener">Economía Sustentable: recolección en Buenos Aires</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://zerowasteeurope.eu/library/the-story-of-ljubljana/" target="_blank" rel="noopener">Zero Waste Europe: el caso Liubliana</a> <span class="tag t-terceros">terceros</span></li>
+</ul></section>
+
+</main>
+<footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="./">Portada</a> · <a href="/informe#metodo">Método y fuentes</a></div></footer>
+  <script>
+    "use strict";
+    document.getElementById("compartir").addEventListener("click", async () => {
+      const share = { title: document.title, text: "2.143 contenedores con más de cinco días sin vaciar. 648 multas en todo 2025. El 6 % de los envases recuperados. La basura en Montevideo, con fuente en cada número.", url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(share); return; }
+        await navigator.clipboard.writeText(share.text + " " + share.url);
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = "Enlace copiado";
+        toast.setAttribute("role", "status");
+        document.body.append(toast);
+        setTimeout(() => toast.remove(), 2200);
+      } catch (error) { /* el usuario canceló */ }
+    });
+  </script>
+</body></html>
