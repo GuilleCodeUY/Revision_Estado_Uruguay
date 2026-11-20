@@ -16,23 +16,27 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#010c44">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"La verdad de la milanesa","alternateName":["Verdad Milanesa","verdadmilanesa.uy"],"url":"https://verdadmilanesa.uy/","inLanguage":"es-UY","description":"Análisis independiente del gasto del Estado uruguayo con información pública. Cada dato con su fuente."}</script>
   <style>
-    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#c1121f;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb}
+    :root{--ink:#111;--paper:#fffdf6;--yellow:#ffd23f;--red:#c1121f;--dark:#121212;--muted:#5a5a5a;--line:#e3dccb;--navy:#010c44;--crema:#f8ecd2;--celeste:#4fb4f5}
     *{box-sizing:border-box}html{scroll-padding-top:4rem}
     body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
     a{color:inherit}:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
     .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
 
-    .hero{background:var(--dark);color:#fff;padding:2.6rem 0 2.8rem}
-    .hero h1{font-size:clamp(2.3rem,6.5vw,4.6rem);line-height:.95;letter-spacing:-.05em;margin:0 0 .9rem;font-weight:900;max-width:15ch}
+    .hero{background:var(--navy);color:var(--crema);padding:2.6rem 0 2.8rem}
+    .hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:1rem 2rem;align-items:center}
+    .hero .wrap>*:not(.logo){grid-column:1}
+    .hero .logo{display:block;grid-column:2;grid-row:1/span 4;width:100%;max-width:420px;justify-self:center}.hero .logo img{display:block;width:100%;height:auto}
+    main h2{color:var(--navy)}
+    .hero h1{margin:0 0 .9rem;color:var(--crema);font-size:clamp(3.4rem,9vw,6.6rem)!important;line-height:.9!important;max-width:none}
     .hero h1 em{font-style:normal;color:var(--yellow)}
-    .hero p{font-size:clamp(1.05rem,2.2vw,1.3rem);color:#ddd;max-width:46ch;margin:0}
-    .meta{display:flex;gap:.5rem 1.2rem;flex-wrap:wrap;margin-top:1.3rem;font-size:.88rem;color:#bbb}
-    .meta b{color:#fff}
-    .lema{background:var(--yellow);color:#111;font-weight:900;text-align:center;font-size:clamp(1.05rem,2.6vw,1.45rem);padding:.75rem 1rem;letter-spacing:-.02em;margin:0}
+    .hero p{font-size:clamp(1.05rem,2.2vw,1.3rem);color:#c9d3ea;max-width:46ch;margin:0}
+    .meta{display:flex;gap:.5rem 1.2rem;flex-wrap:wrap;margin-top:1.3rem;font-size:.88rem;color:#9fb0d8}
+    .meta b{color:var(--crema)}
+    .lema{background:var(--celeste);color:var(--navy);font-family:"Bebas Neue",Inter,sans-serif;font-weight:400;text-align:center;font-size:clamp(1.5rem,3.4vw,2.2rem);padding:.55rem 1rem;letter-spacing:.03em;margin:0}
 
     main{padding:2.4rem 0 3rem}main section{margin-bottom:3rem}
     h2{font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:-.04em;margin:0 0 1rem;font-weight:900}
@@ -56,7 +60,7 @@
     /* Entradas directas desde la portada */
     .entradas{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.3rem}
     .entradas a{font-weight:900;text-decoration:none;padding:.7rem 1.1rem;border-radius:.35rem;min-height:2.75rem;display:inline-flex;align-items:center}
-    .ent-casos{background:var(--yellow);color:#111}.ent-esp{border:2px solid #fdba74;color:#fff}
+    .ent-casos{background:var(--celeste);color:var(--navy)}.ent-esp{border:2px solid var(--crema);color:var(--crema)}
     .ent-casos:hover,.ent-esp:hover{text-decoration:underline}
 
     /* Especiales: tema y título primero; uno destacado y el resto compacto */
@@ -101,7 +105,7 @@
     footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem}
     footer h4{color:#fff;margin:0 0 .4rem;font-size:.95rem}footer a{color:#ddd}footer p{margin:0 0 .3rem}
 
-    @media(max-width:760px){
+    @media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero .logo{grid-column:1;grid-row:auto;max-width:200px;justify-self:start}
       .hero{padding:1.6rem 0 1.8rem}
       .casos,.esp,.golpes,.criterios,footer .cols{grid-template-columns:1fr}
       .esp>.caso,.esp>.caso:last-child:nth-child(even){grid-column:auto}
@@ -114,6 +118,7 @@
 <!-- BARRA -->
   <section class="hero">
     <div class="wrap">
+      <picture class="logo"><source srcset="/logo-milanesa.webp" type="image/webp"><img src="/logo-milanesa.png" width="830" height="645" alt="El Palacio Legislativo sobre una milanesa, bajo una lupa"></picture>
       <h1>Lo que gasta el Estado.</h1>
       <p>{{CASOS_PAL}} casos y {{ESP_PAL}} informes especiales investigados con información pública. Cada número enlaza al documento del que sale, y cualquiera puede objetarlo.</p>
       <div class="entradas"><a class="ent-casos" href="#casos">Ver los casos</a><a class="ent-esp" href="#especiales">Ver los especiales</a></div>

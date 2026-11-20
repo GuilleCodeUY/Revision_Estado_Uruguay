@@ -107,6 +107,8 @@
     footer{background:var(--hero);color:#bbb;font-size:.85rem;padding:1.2rem 0}footer a{color:#ddd}
     @media(max-width:900px){.linea{grid-template-columns:1fr 1fr}}
     @media(max-width:760px){.golpes,.tres,.respuestas,.quien,.preguntas,.exigir{grid-template-columns:1fr}.linea{grid-template-columns:1fr}table{font-size:.84rem}.barra{grid-template-columns:1fr;gap:.25rem}}
+      /* Título largo: más chico que el de las otras páginas con la tipografía del canal */
+    body .hero h1{font-size:clamp(2.4rem,5vw,3.9rem)!important;max-width:26ch}
   </style>
 </head>
 <body>
