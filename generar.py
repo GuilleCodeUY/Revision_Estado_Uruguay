@@ -254,13 +254,13 @@ ESPECIALES_PORTADA = {
     "justicia.html": ("c9", "Justicia", "+13,5 %", "homicidios en 2026, con las cárceles al 120 %",
                       "Delitos, tiempos de la justicia, cárceles, reincidencia y comparación con otros países.", None),
     "estado.html": ("c10", "Gestión pública", "13.500", "personas se van del Estado cada año",
-                    "Cómo podría quedar en 2035: menos administración, más tecnología, más inversión y sin despidos. Hecho con tres IA.", None),
+                    "Cómo podría quedar en 2035: menos administración, más tecnología, más inversión y sin despidos.", None),
     "hif.html": ("c11", "Energía", "US$ 45 vs US$ 86", "el MWh para HIF y para Google",
                  "UTE y el MIEM calculan una pérdida de US$ 90 millones por año. ¿Conviene, nos sirve y cuánto se pierde?", "En negociación"),
     "patente.html": ("c12", "Impuestos", "−5 % y +6 %", "el valor del auto y el dólar en 2026",
                      "Cómo se calcula, cuánto se recauda, en qué se usa y cómo se compara con Brasil, Chile y Argentina.", "Congelada para 2027"),
     "basura.html": ("c13", "Basura", "2.143", "contenedores con más de 5 días sin vaciar",
-                    "Quién es responsable por acción u omisión, por qué empeora, las multas que casi no existen y qué funciona en Canelones, Maldonado y afuera. Hecho con tres IA.", "Noviembre 2026"),
+                    "Quién es responsable por acción u omisión, por qué empeora, las multas que casi no existen y qué funciona en Canelones, Maldonado y afuera.", "Noviembre 2026"),
 }
 # El informe que va destacado arriba de la grilla de Especiales.
 ESPECIAL_DESTACADO = "basura.html"
