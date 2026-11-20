@@ -61,7 +61,7 @@
 
     /* Especiales: tema y título primero; uno destacado y el resto compacto */
     .esp{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem}
-    .esp>.caso{grid-column:span 2}.esp>.caso:nth-last-child(-n+2):not(:nth-child(-n+4)){grid-column:span 3}
+    .esp>.caso{grid-column:span 2}/* La primera tarjeta es la destacada: las compactas van de a 3 por fila. Si en la última fila quedan 2, ocupan media fila cada una; si queda 1, la fila entera. */.esp>.caso:nth-child(3n+2):nth-last-child(2),.esp>.caso:nth-child(3n+3):last-child{grid-column:span 3}.esp>.caso:nth-child(3n+2):last-child{grid-column:1/-1}
     .esp .caso{min-height:0;gap:.45rem}
     .esp .caso h3{margin:.15rem 0 0;font-size:1.2rem}
     .esp .caso .n{font-size:clamp(1.9rem,3.4vw,2.4rem);margin-top:.3rem}
@@ -76,7 +76,7 @@
     .esp .dest .n{font-size:clamp(2.6rem,6vw,4.2rem)}
     .esp .dest p{font-size:1rem}
     .esp .dest .marca{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:var(--acc);color:#111;padding:.2rem .5rem;border-radius:.2rem;align-self:flex-start}
-    @media(max-width:960px){.esp{grid-template-columns:repeat(2,minmax(0,1fr))}.esp>.caso,.esp>.caso:nth-last-child(-n+2):not(:nth-child(-n+4)){grid-column:auto}.esp>.caso:last-child:nth-child(even),.esp>.dest{grid-column:1/-1}}
+    @media(max-width:960px){.esp{grid-template-columns:repeat(2,minmax(0,1fr))}.esp>.caso,.esp>.caso:nth-child(3n+2):nth-last-child(2),.esp>.caso:nth-child(3n+3):last-child,.esp>.caso:nth-child(3n+2):last-child{grid-column:auto}.esp>.caso:last-child:nth-child(even),.esp>.dest{grid-column:1/-1}}
 
     /* Datos destacados del caso Parlamento */
     .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
