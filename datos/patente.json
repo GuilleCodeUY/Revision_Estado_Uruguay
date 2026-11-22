@@ -1,5 +1,5 @@
 {
-  "consultado": "2026-11-19",
+  "consultado": "2026-11-22",
   "nota": "Informe especial 6 · Patente de rodados y SUCIVE. Borrador de DeepSeek (investigacion_patente/01_deepseek.md) verificado y corregido. Parámetros de cada año tomados de las notas del Congreso de Intendentes. 'Variación de la patente' = (1 + variación de la tabla en dólares) × (1 + variación del dólar de referencia) − 1, para un mismo auto promedio; es un cálculo propio.",
   "parametros": [
     {"patente": 2023, "dolar_referencia": 42.151, "periodo_dolar": "oct 2021 - set 2022", "variacion_dolar_pct": -2.48, "variacion_tabla_usd_pct": 1.8, "variacion_patente_pct": -0.7, "ipc_pct": 9.95, "fuente": "Congreso de Intendentes, nota patente 2023"},
@@ -30,7 +30,7 @@
     "Cuánto bajó en promedio la tabla de valores para la patente 2024: el Congreso de Intendentes no lo publicó.",
     "La tabla completa de aforos por marca, modelo y año. Hoy solo se consulta de a un vehículo en el SUCIVE.",
     "Recaudación por patente de cada departamento, año por año, y cuánto gasta cada intendencia en calles y caminería.",
-    "Contratos del SUCIVE con Autodata y con República AFISA (montos y forma de contratación).",
+    "Contratos del SUCIVE con Autodata y con República AFISA (montos y forma de contratación). Un diputado afirma que Autodata se contrató en 2012 sin licitación; sin el contrato no se puede verificar.",
     "El proyecto de ley sobre publicación de aforos presentado en marzo de 2026 (Carpeta 2052): el texto no se pudo abrir."
   ],
   "fuentes": [
@@ -60,6 +60,7 @@
     ["Chile · SII, UTM de enero de 2026 ($ 69.751)", "https://www.sii.cl/valores_y_fechas/utm/utm2026.htm", "internacional"],
     ["Argentina · ARBA, cálculo del impuesto automotor 2026", "https://web.arba.gov.ar/preguntas-frecuentes/como-se-realiza-el-calculo-del-impuesto-automotor-en-cuantas-cuotas-se-divide", "internacional"],
     ["Emol · El dólar en Chile cerca de $ 1.000 (13/11/2026)", "https://www.emol.com/noticias/Economia/2026/11/13/1216994/dolar-1000-pesos-hoy.html", "prensa"],
-    ["Cotización del dólar mayorista en Argentina ($ 1.543,50 el 13/11/2026)", "https://www.cotizacion-dolar.com.ar/dolar-mayorista.php", "prensa"]
+    ["Cotización del dólar mayorista en Argentina ($ 1.543,50 el 13/11/2026)", "https://www.cotizacion-dolar.com.ar/dolar-mayorista.php", "prensa"],
+    ["Diario La R · Carballo convoca al SUCIVE al Senado; Juan Martín Jorge sobre Autodata (22/11/2026)", "https://grupormultimedio.com/patentes-2027-el-congelamiento-que-los-intendentes-defienden-y-la-oposicion-llama-suba-encubierta-id211788/", "prensa"]
   ]
 }
