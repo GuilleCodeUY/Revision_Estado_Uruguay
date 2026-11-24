@@ -229,6 +229,7 @@ BARRA_LINKS = (
     ("puerto.html", "/puerto", "Puerto", "#ff7a1a"),
     ("ute.html", "/ute", "UTE", "#5ce1e6"),
     ("ancap.html", "/ancap", "ANCAP", "#ff4b2b"),
+    ("bps.html", "/bps", "BPS", "#f5b942"),
     ("especiales", None, "Especiales", None),
     ("informe.html", "/informe", "Informe 2025", None),
     ("correcciones", "./#correcciones", "Correcciones", None),
@@ -244,7 +245,6 @@ ESPECIALES = (
     ("hif.html", "Informe especial 5", "HIF: la luz a mitad de precio", "#f0abfc"),
     ("patente.html", "Informe especial 6", "La patente: ¿por qué no baja?", "#fdba74"),
     ("basura.html", "Informe especial 7", "La ciudad que no se limpia", "#d4e157"),
-    ("bps.html", "Informe especial 8", "El BPS bajo la lupa", "#f5b942"),
 )
 # Tarjetas de la portada: tema, título, dato y bajada. El estado solo va cuando suma contexto.
 ESPECIALES_PORTADA = {
@@ -262,11 +262,9 @@ ESPECIALES_PORTADA = {
                      "Cómo se calcula, cuánto se recauda, en qué se usa y cómo se compara con Brasil, Chile y Argentina.", "Congelada para 2027"),
     "basura.html": ("c13", "Basura", "2.143", "contenedores con más de 5 días sin vaciar",
                     "Quién es responsable por acción u omisión, por qué empeora, las multas que casi no existen y qué funciona en Canelones, Maldonado y afuera.", "Noviembre 2026"),
-    "bps.html": ("c14", "Seguridad social", "US$ 4.000 M", "por año de impuestos al BPS, además de los aportes",
-                 "Cuánto recauda, en qué gasta, por qué tiene déficit, cuánto cuesta la burocracia y qué observaron el auditor y el Tribunal de Cuentas.", "Datos 2025"),
 }
 # El informe que va destacado arriba de la grilla de Especiales.
-ESPECIAL_DESTACADO = "bps.html"
+ESPECIAL_DESTACADO = "basura.html"
 NUMEROS = {1: "Un", 2: "Dos", 3: "Tres", 4: "Cuatro", 5: "Cinco", 6: "Seis", 7: "Siete", 8: "Ocho",
            9: "Nueve", 10: "Diez", 11: "Once", 12: "Doce"}
 
@@ -439,8 +437,8 @@ def build_portada(public, data):
         "ESTADO_PARLAMENTO": f"Esperando {waiting} pedidos" if waiting else "Publicado",
         "ERRATAS_N": "1 objeción" if n_fix == 1 else f"{n_fix} objeciones",
         "ERRATAS_TABLA": erratas,
-        "CASOS_N": "6",
-        "CASOS_PAL": NUMEROS[6],
+        "CASOS_N": "7",
+        "CASOS_PAL": NUMEROS[7],
         "ESP_N": str(len(ESPECIALES)),
         "ESP_PAL": NUMEROS[len(ESPECIALES)].lower(),
         "ESPECIALES_GRID": grilla_especiales(),
@@ -1255,7 +1253,7 @@ def main():
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica, justicia, Estado optimizado, HIF, patente de rodados, basura en Montevideo y BPS, y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, el BPS, los informes especiales de movilidad eléctrica, justicia, Estado optimizado, HIF, patente de rodados y basura en Montevideo, y los CSV.")
 
 
 if __name__ == "__main__":

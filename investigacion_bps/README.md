@@ -1,4 +1,4 @@
-# Investigación: BPS (Informe especial 8)
+# Investigación: BPS (caso 7)
 
 Página publicada: `publico/bps.html` (fuente estática en `web/bps.html`). Boceto aprobado: `bocetos/bps_boceto.html`.
 
