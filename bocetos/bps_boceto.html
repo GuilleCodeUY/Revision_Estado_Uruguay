@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El BPS bajo la lupa: cuánto recauda, adónde va la plata y por qué hay déficit · La verdad de la milanesa</title>
+  <meta name="description" content="Informe especial: cuánto recauda el BPS, en qué gasta, por qué tiene déficit, cuánto cuesta la burocracia, qué observaron el auditor y el Tribunal de Cuentas y cómo funcionan los trámites. Con fuente en cada número.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://verdadmilanesa.uy/bps">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="La verdad de la milanesa">
+  <meta property="og:title" content="El BPS bajo la lupa: de dónde sale el déficit">
+  <meta property="og:description" content="US$ 4.000 millones al año de impuestos además de los aportes. El agujero está en las jubilaciones, no en la burocracia. Y 33 controles al subsidio por enfermedad en todo 2025.">
+  <meta property="og:url" content="https://verdadmilanesa.uy/bps">
+  <meta property="og:image" content="https://verdadmilanesa.uy/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f1f3a">
+  <style>
+    :root{--ink:#111;--paper:#f8f6ef;--yellow:#ffd23f;--red:#e63946;--dark:#121212;--muted:#5a5a5a;--line:#e2ddc9;--hero:#0f1f3a;--hero2:#1a3157;--acc:#f5b942;--acc2:#8a5a00;--green:#2e9e6a}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Inter,system-ui,sans-serif}
+    a{color:inherit}:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 2rem));margin:auto}
+    header.site{background:var(--hero);color:#fff;box-shadow:inset 0 -8px 0 var(--acc)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;gap:.6rem 1rem;flex-wrap:wrap}
+    .logo{font-weight:900;font-size:1.35rem;letter-spacing:-.03em;text-decoration:none;line-height:1.15}.logo span{color:var(--yellow)}
+    .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:0;opacity:.7}
+    .top nav{display:flex;gap:.2rem 1rem;font-size:.9rem;font-weight:600;flex-wrap:wrap}.top nav a{text-decoration:none;opacity:.85;min-height:2.2rem;display:inline-flex;align-items:center}
+    .top nav a:hover{opacity:1;text-decoration:underline}
+    .hero{padding:2.2rem 0 3rem}
+    .kicker{display:inline-block;background:var(--acc);color:#111;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:.2rem}
+    .hero h1{font-size:clamp(2.1rem,5.2vw,4.2rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 .6rem;font-weight:900;max-width:16ch}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:60ch;color:#dfe6f2;margin:.9rem 0 1.2rem}
+    .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.35rem;text-decoration:none;border:2px solid var(--acc);cursor:pointer;font:inherit;font-weight:800}
+    .btn.y{background:var(--acc);color:#111}.btn.o{background:transparent;color:var(--acc)}
+    .golpes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:2rem}
+    .golpe{background:var(--hero2);border-left:6px solid var(--acc);padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+    .golpe b{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:900;line-height:1.05;letter-spacing:-.03em}
+    .golpe span{font-size:.92rem;color:#dfe6f2}
+    .golpe .acc{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.45rem}
+    main{padding:2rem 0 3rem}main section{margin-bottom:3rem;scroll-margin-top:4rem}
+    h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.04em;margin:0 0 .4rem;font-weight:900}.lead{color:var(--muted);margin:0 0 1.2rem;max-width:72ch}
+    h3{margin:1.4rem 0 .5rem;font-size:1.15rem}
+    p{max-width:76ch}
+    .num{color:var(--acc2);font-weight:900;font-size:.85rem;letter-spacing:.1em}
+    .tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.12rem .42rem;border-radius:.2rem;vertical-align:middle;text-decoration:none}
+    .t-oficial{background:#dff1e7;color:#1d6b46}.t-prensa{background:#e6eef7;color:#1e4b7a}.t-terceros{background:#efe4f7;color:#5b2a86}.t-propio{background:#fff1cf;color:#7a5200}.t-parte{background:#fde6e7;color:#9b1c25}.t-auditoria{background:#ffe3c2;color:#8a3b00}
+    .nota{font-size:.84rem;color:var(--muted);margin-top:.7rem;max-width:80ch}
+    .tabla{overflow-x:auto;border:2px solid var(--hero);border-radius:.5rem}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.92rem}th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:var(--hero);color:#fff;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em}
+    td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    tr.total td{font-weight:800;background:#fbf3df}tr.rojo td{color:#9b1c25;font-weight:800}
+    .obras{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+    .obra{background:#fff;border:1px solid var(--line);border-top:6px solid var(--hero);border-radius:.5rem;padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+    .obra h3{margin:0;font-size:1.05rem}.obra .m{font-size:1.6rem;font-weight:900;letter-spacing:-.03em}.obra p{font-size:.9rem;margin:0}
+    .obra.mal{border-top-color:var(--red)}.obra.mal .m{color:var(--red)}
+    .obra .acc{margin-top:auto;display:flex;gap:.35rem;flex-wrap:wrap;padding-top:.4rem}
+    .barras{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1.2rem}
+    .barra{display:grid;grid-template-columns:13rem 1fr 4.8rem;gap:.6rem;align-items:center;font-size:.9rem;margin:.32rem 0}
+    .barra .b{height:20px;border-radius:2px;background:#eee8d6}.barra .b i{display:block;height:100%;border-radius:2px;background:var(--hero)}
+    .barra.dest .b i{background:var(--acc)}.barra.dest .v{color:var(--acc2)}
+    .barra .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:800}
+    .alerta{background:var(--hero);color:#fff;padding:1.6rem;border-left:8px solid var(--acc);border-radius:.5rem}
+    .alerta h2{color:#fff}.alerta p,.alerta li{color:#dfe6f2;max-width:76ch}.alerta li{margin:.4rem 0}.alerta strong{color:var(--acc)}
+    .choque{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;background:#fff;border:2px dashed var(--red);border-radius:.5rem;padding:1rem 1.2rem;margin-top:1rem}
+    .choque .c{text-align:center}.choque .c b{display:block;font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;letter-spacing:-.03em}.choque .c span{font-size:.86rem;color:var(--muted)}
+    .choque .vs{font-weight:900;color:var(--red);font-size:1.2rem}
+    .fuentes{columns:2 320px;padding-left:1.1rem}.fuentes li{font-size:.88rem;margin:.3rem 0;break-inside:avoid}
+    .pend{background:#fff;border-left:6px solid var(--yellow);padding:1rem 1.2rem;font-size:.92rem}.pend ul{margin:.4rem 0 0;padding-left:1.2rem}
+    a.obj{font-size:.72rem;font-weight:700;text-decoration:none;padding:.2rem .45rem;border-radius:.25rem;background:#fde6e7;color:#9b1c25;white-space:nowrap}
+    .golpe a.obj{background:rgba(230,57,70,.25);color:#ffd9dc}
+    .dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+    .lista{background:#fff;border:2px solid var(--hero);border-radius:.5rem;padding:1rem 1.2rem}.lista h3{margin:0 0 .4rem}.lista ul{margin:0;padding-left:1.1rem}.lista li{margin:.35rem 0;font-size:.93rem}
+    .lista.bien{border-color:var(--green)}.lista.bien h3{color:var(--green)}
+    footer{background:var(--dark);color:#bbb;padding:1.5rem 0;font-size:.85rem}
+    .toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#111;color:#fff;padding:.6rem 1rem;border-radius:.4rem;font-size:.9rem}
+    @media(max-width:760px){.golpes{grid-template-columns:1fr}.choque{grid-template-columns:1fr}.barra{grid-template-columns:1fr 4.4rem}.barra .b{grid-column:1/-1;grid-row:2}}
+  </style>
+</head>
+<body>
+<!-- BARRA -->
+<header class="site"><div class="wrap top"><a class="logo" href="./">La verdad de la <span>milanesa</span><small>verdadmilanesa.uy</small></a><nav aria-label="Secciones"><a href="#funciona">Cómo funciona</a><a href="#recauda">Cuánto recauda</a><a href="#gasta">En qué gasta</a><a href="#deficit">El déficit</a><a href="#burocracia">Burocracia</a><a href="#controles">Controles</a><a href="#tramites">Trámites</a><a href="#escenarios">Qué se puede hacer</a><a href="#fuentes">Fuentes</a></nav></div><div class="wrap hero">
+<span class="kicker">Informe especial 8 · Seguridad social</span>
+<h1>El BPS bajo la lupa</h1>
+<p class="sub">Cuánto recauda, adónde va la plata, por qué tiene déficit y cuánto cuesta mantenerlo. La respuesta incomoda a los dos lados: la culpa no es de "los funcionarios", pero tampoco está todo bajo control.</p>
+<div class="btns"><a class="btn y" href="#deficit">¿De dónde sale el déficit?</a><button class="btn o" id="compartir" type="button">Compartir</button></div>
+<div class="golpes">
+<div class="golpe"><b>US$ 4.000 M</b><span>por año ponen los contribuyentes con impuestos, además de los aportes. Son unos US$ 1.160 por habitante.</span><div class="acc"><a class="tag t-propio" href="#recauda">cálculo propio</a> <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></div></div>
+<div class="golpe"><b>1,56 %</b><span>del gasto del BPS es su funcionamiento (sueldos incluidos). Ni bajándolo a cero se tapa el déficit.</span><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">balance 2025</a> <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></div></div>
+<div class="golpe"><b>33 controles</b><span>tuvo en todo 2025 el subsidio por enfermedad, que cobran 52.765 personas por mes y cuesta $ 13.622 millones.</span><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/24276/memoria---ano-2025.html" target="_blank" rel="noopener">Memoria 2025</a> <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></div></div>
+</div></div></header>
+<main class="wrap">
+
+<section id="funciona"><div class="num">01</div><h2>Cómo funciona el BPS</h2>
+<p class="lead">Cobra aportes, paga jubilaciones, pensiones y subsidios, y además hace de "ventanilla" de plata ajena: FONASA, AFAP e IRPF. Desde 2023 la ley lo obliga a llevar la plata en fondos separados.</p>
+<div class="obras">
+<div class="obra mal"><h3>Fondo Previsional</h3><div class="m">−$ 15.360 M</div><p>Jubilaciones y pensiones contributivas. Es el único fondo propio que pierde plata, aun después de recibir $ 24.262 millones de IVA que sobraron de los otros.</p><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">balance 2025</a></div></div>
+<div class="obra"><h3>Mínimos, activos y otras prestaciones</h3><div class="m">$ 0</div><p>Jubilaciones mínimas, pensión a la vejez, desempleo, enfermedad, maternidad. Dan cero porque la ley les asigna el IVA primero, "en cascada".</p><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">balance 2025</a></div></div>
+<div class="obra mal"><h3>Fondo de Terceros</h3><div class="m">−$ 4.814 M</div><p>Lo que el BPS cobra y paga para otros organismos (MIDES, SNIS, AFAP). Los costos de hacerlo no se los devuelven.</p><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">balance 2025</a></div></div>
+<div class="obra"><h3>Artículo 67 de la Constitución</h3><div class="m">$ 19.395 M</div><p>Si la plata no alcanza, Rentas Generales tiene que poner la diferencia. Esa es la "asistencia financiera" de 2025: el 125,9 % más que en 2024 en términos reales.</p><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">balance 2025</a></div></div>
+</div>
+<p class="nota">En 2025 el BPS pagó en promedio 836.731 pasividades (503.554 jubilaciones, 225.186 pensiones de sobrevivencia, 68.197 por invalidez y 27.083 por vejez) y 467.722 asignaciones familiares. Aportaron 1.562.635 puestos de trabajo de promedio. <a class="tag t-oficial" href="https://www.bps.gub.uy/24276/memoria---ano-2025.html" target="_blank" rel="noopener">Memoria 2025</a></p></section>
+
+<section id="recauda"><div class="num">02</div><h2>Cuánto recauda</h2>
+<p class="lead">$ 678.078 millones sin contar la ayuda del Estado. Pero casi la mitad es plata de otros que solo pasa por el BPS.</p>
+<div class="tabla"><table><thead><tr><th>Fuente, 2025</th><th class="n">Millones de $</th><th class="n">vs 2024 (real)</th></tr></thead><tbody>
+<tr><td>Aportes previsionales (jubilatorios) de trabajadores y empresas</td><td class="n">208.234</td><td class="n">+1,23 %</td></tr>
+<tr><td>Impuestos afectados: IVA $ 98.746 M, IASS $ 16.739 M y otros</td><td class="n">127.753</td><td class="n">+0,12 %</td></tr>
+<tr><td>Complementos salariales (construcción y trabajo a domicilio)</td><td class="n">11.187</td><td class="n">+4,21 %</td></tr>
+<tr><td>Transferencias de Rentas Generales (pensiones graciables, reparatorias y otras)</td><td class="n">4.860</td><td class="n">+13,30 %</td></tr>
+<tr><td>Transferencias por prestaciones de terceros (MIDES y otros)</td><td class="n">13.700</td><td class="n">−5,08 %</td></tr>
+<tr><td>Ingresos no tributarios</td><td class="n">3.729</td><td class="n">−7,77 %</td></tr>
+<tr><td>Recursos de terceros que solo pasan (SNIS, AFAP, IRPF)</td><td class="n">308.614</td><td class="n">+3,20 %</td></tr>
+<tr class="total"><td>Total sin asistencia del Estado</td><td class="n">678.078</td><td class="n">+1,84 %</td></tr>
+<tr><td>Asistencia financiera (artículo 67)</td><td class="n">19.395</td><td class="n">+125,9 %</td></tr>
+</tbody></table></div>
+<p class="nota">Fuente: Balance de Ejecución Presupuestal 2025 del BPS <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">oficial</a>. El IVA quedó unos $ 3.000 millones por debajo de lo previsto (creció 1,5 % y se esperaba 4 %) y el IASS, 5 % por debajo. Por eso la asistencia superó en 32 % lo presupuestado. <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></p>
+<h3>Lo que paga el contribuyente además de sus aportes</h3>
+<div class="tabla"><table><thead><tr><th>Concepto, 2025</th><th class="n">Millones de $</th><th>Fuente</th></tr></thead><tbody>
+<tr><td>IVA afectado (7 puntos del IVA básico)</td><td class="n">98.746</td><td><a class="tag t-oficial" href="https://www.bps.gub.uy/24630/139-analisis-de-los-movimientos-financieros-del-banco-de-prevision-social-ano-2025-actualizacion.html" target="_blank" rel="noopener">BPS, Comentario 139</a></td></tr>
+<tr><td>IASS (impuesto a las jubilaciones más altas)</td><td class="n">16.739</td><td><a class="tag t-oficial" href="https://www.bps.gub.uy/24630/139-analisis-de-los-movimientos-financieros-del-banco-de-prevision-social-ano-2025-actualizacion.html" target="_blank" rel="noopener">BPS, Comentario 139</a></td></tr>
+<tr><td>Contribución de Rentas Generales (ex COFIS)</td><td class="n">12.232</td><td><a class="tag t-oficial" href="https://www.bps.gub.uy/24630/139-analisis-de-los-movimientos-financieros-del-banco-de-prevision-social-ano-2025-actualizacion.html" target="_blank" rel="noopener">BPS, Comentario 139</a></td></tr>
+<tr><td>Compensaciones de la Ley 20.130 (exoneraciones y aporte rural)</td><td class="n">17.250</td><td><a class="tag t-oficial" href="https://www.bps.gub.uy/24630/139-analisis-de-los-movimientos-financieros-del-banco-de-prevision-social-ano-2025-actualizacion.html" target="_blank" rel="noopener">BPS, Comentario 139</a></td></tr>
+<tr><td>Asistencia financiera (artículo 67)</td><td class="n">19.395</td><td><a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">balance 2025</a></td></tr>
+<tr class="total"><td>Total ≈ US$ 4.000 millones ≈ US$ 1.160 por habitante</td><td class="n">≈ 164.385</td><td><span class="tag t-propio">cálculo propio</span></td></tr>
+</tbody></table></div>
+<p class="nota">Tipo de cambio promedio de 2025: $ 41,08 por dólar. Por ley, el IVA afectado es un recurso "propio" del BPS, así que el organismo no lo cuenta como déficit. Igual lo paga cada consumidor en cada compra. <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></p></section>
+
+<section id="gasta"><div class="num">03</div><h2>En qué se gasta</h2>
+<p class="lead">$ 696.311 millones en 2025. Casi la mitad es plata de terceros que solo pasa. Lo que crece rápido no es la burocracia: son los subsidios.</p>
+<div class="barras" role="img" aria-label="Distribución del gasto del BPS en 2025">
+<div class="barra"><span>Transferencias a terceros (SNIS, AFAP, IRPF)</span><div class="b"><i style="width:100%"></i></div><span class="v">44,4 %</span></div>
+<div class="barra"><span>Jubilaciones y pensiones</span><div class="b"><i style="width:98.9%"></i></div><span class="v">43,9 %</span></div>
+<div class="barra"><span>Subsidios a activos</span><div class="b"><i style="width:16.9%"></i></div><span class="v">7,5 %</span></div>
+<div class="barra"><span>Prestaciones por cuenta de terceros</span><div class="b"><i style="width:5.2%"></i></div><span class="v">2,3 %</span></div>
+<div class="barra dest"><span>Funcionamiento (sueldos incluidos)</span><div class="b"><i style="width:3.5%"></i></div><span class="v">1,56 %</span></div>
+<div class="barra"><span>Salud, sociales e inversiones</span><div class="b"><i style="width:0.9%"></i></div><span class="v">0,4 %</span></div>
+</div>
+<p class="nota">Fuente: Balance de Ejecución Presupuestal 2025 <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">oficial</a>. Hay otras dos mediciones oficiales: $ 662.295 millones con criterio de caja y US$ 16.112 millones en dólares constantes. No hay que mezclarlas.</p>
+<h3>Lo que más creció en 2025</h3>
+<div class="tabla"><table><thead><tr><th>Prestación</th><th class="n">Millones de $</th><th class="n">vs 2024 (real)</th><th>Por qué</th></tr></thead><tbody>
+<tr><td>Subsidio por enfermedad</td><td class="n">13.622</td><td class="n">+12,44 %</td><td>Los beneficiarios subieron 3,9 % (de 50.802 a 52.765 por mes) y el monto promedio, 7,9 %.</td></tr>
+<tr><td>Ayudas extraordinarias (discapacidad)</td><td class="n">4.112</td><td class="n">+16,31 %</td><td>42.984 beneficiarios por mes a través de institutos (eran 37.591).</td></tr>
+<tr><td>Subsidio transitorio por incapacidad parcial</td><td class="n">—</td><td class="n">+11,84 %</td><td>Los beneficiarios subieron 18,2 %: de 2.773 a 3.278.</td></tr>
+<tr><td>Asignaciones familiares (Ley 15.084)</td><td class="n">—</td><td class="n">+43,12 %</td><td>La Ley 20.365 de 2024 extendió el beneficio al embarazo y a los partos múltiples.</td></tr>
+<tr><td>Jubilaciones y pensiones</td><td class="n">305.441</td><td class="n">+1,78 %</td><td>6.723 jubilaciones más que en 2024, en parte por destrabar trámites atrasados.</td></tr>
+</tbody></table></div>
+<p class="nota">Fuente: Balance de Ejecución Presupuestal 2025 <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">oficial</a> y comunicado del BPS <a class="tag t-oficial" href="https://www.bps.gub.uy/24099/aumenta-el-acceso-a-las-jubilaciones-y-se-acorta-el-tiempo-de-los-tramites-en-el-bps.html" target="_blank" rel="noopener">jubilaciones</a>. <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></p></section>
+
+<section id="deficit"><div class="num">04</div><h2>El déficit: de dónde sale</h2>
+<p class="lead">Antes de la ayuda del Estado faltaron $ 18.233 millones. Casi todo sale de las jubilaciones contributivas, no de la oficina.</p>
+<div class="tabla"><table><thead><tr><th>Fondo, 2025</th><th class="n">Recursos</th><th class="n">Gastos</th><th class="n">Saldo</th></tr></thead><tbody>
+<tr class="rojo"><td>Previsional (jubilaciones y pensiones contributivas)</td><td class="n">253.081</td><td class="n">268.441</td><td class="n">−15.360</td></tr>
+<tr><td>Niveles Mínimos, Activos y Otras Prestaciones</td><td class="n">91.050</td><td class="n">91.050</td><td class="n">0</td></tr>
+<tr class="rojo"><td>Terceros (lo que cobra y paga para otros organismos)</td><td class="n">322.102</td><td class="n">326.916</td><td class="n">−4.814</td></tr>
+<tr><td>Construcción, Trabajo a Domicilio y Garantía de Créditos Laborales</td><td class="n">11.845</td><td class="n">9.903</td><td class="n">+1.942</td></tr>
+<tr class="total"><td>Total antes de la asistencia</td><td class="n">678.078</td><td class="n">696.311</td><td class="n">−18.233</td></tr>
+<tr><td>Asistencia financiera (artículo 67)</td><td class="n">19.395</td><td class="n"></td><td class="n">+19.395</td></tr>
+<tr class="total"><td>Resultado presupuestal final</td><td class="n"></td><td class="n"></td><td class="n">+1.163</td></tr>
+</tbody></table></div>
+<p class="nota">Millones de pesos. Fuente: Balance de Ejecución Presupuestal 2025 <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">oficial</a>. Sin los $ 24.262 millones de IVA que sobraron de los otros fondos, el agujero previsional sería de unos $ 39.600 millones <span class="tag t-propio">cálculo propio</span>. <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></p>
+<div class="choque"><div class="c"><b>$ 10.872 M</b><span>costó todo el funcionamiento del BPS en 2025, sueldos incluidos</span></div><div class="vs">vs</div><div class="c"><b>$ 18.233 M</b><span>faltaron antes de la ayuda del Estado</span></div></div>
+<p class="nota">Aunque el BPS no tuviera ni un solo funcionario, igual habría déficit. <span class="tag t-propio">cálculo propio</span></p>
+<h3>Cinco números de "déficit" que no hay que mezclar</h3>
+<div class="tabla"><table><thead><tr><th>Medida</th><th class="n">2025</th><th>Qué mide</th></tr></thead><tbody>
+<tr><td>Faltante presupuestal antes de asistencia</td><td class="n">−$ 18.233 M</td><td>Lo ejecutado contra lo recaudado <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">balance</a></td></tr>
+<tr><td>Resultado operativo (criterio de caja)</td><td class="n">−$ 16.558 M</td><td>2,6 veces el de 2024 en términos reales <a class="tag t-oficial" href="https://www.bps.gub.uy/24630/139-analisis-de-los-movimientos-financieros-del-banco-de-prevision-social-ano-2025-actualizacion.html" target="_blank" rel="noopener">Comentario 139</a></td></tr>
+<tr><td>Resultado contable neto</td><td class="n">−$ 8.875 M</td><td>En 2024 fue +$ 1.891 M. La asistencia se registra como capital, no como ingreso <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24103/1/estados-financieros-2025.pdf" target="_blank" rel="noopener">estados financieros</a></td></tr>
+<tr><td>Déficit antes de toda ayuda del Estado</td><td class="n">US$ 724 M</td><td>El más alto de la década, según El Observador <a class="tag t-prensa" href="https://prensamercosur.org/2026/04/07/el-bps-tuvo-en-2025-su-peor-resultado-en-cinco-anos-pese-a-record-de-asistencia-estatal/" target="_blank" rel="noopener">prensa</a></td></tr>
+<tr><td>Déficit Gobierno Central + BPS</td><td class="n">3,7 % del PIB</td><td>Es de todo el Estado, no solo del BPS <a class="tag t-oficial" href="https://www.gub.uy/ministerio-economia-finanzas/datos-y-estadisticas/estadisticas/resultado-del-sector-publico-diciembre-2025" target="_blank" rel="noopener">MEF</a></td></tr>
+</tbody></table></div>
+<h3>Lo que no se arregla con gestión</h3>
+<div class="obras">
+<div class="obra"><h3>Cotizantes por jubilado</h3><div class="m">2,50</div><p>Puestos que aportan por cada jubilación equivalente. Eran 2,59 en 2015.</p><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/24300/relacion-activo-cotizante-%E2%80%93-pasivo-periodo-1995-%E2%80%93-2025-actualizacion.html" target="_blank" rel="noopener">BPS</a></div></div>
+<div class="obra"><h3>Aportes contra gastos</h3><div class="m">+2 % vs +4,2 %</div><p>Lo que creció la recaudación de aportes y lo que crecieron los gastos en 2025, en dólares constantes.</p><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/24493/137--analisis-comparativo-de-los-egresos-de-bps-periodo-2024_2025-actualizacion.html" target="_blank" rel="noopener">BPS</a></div></div>
+<div class="obra"><h3>Promesas ya asumidas</h3><div class="m">≈ US$ 257.000 M</div><p>Balance actuarial "de caja cerrada": lo que habría que pagar si no entrara nadie nuevo al sistema. No es una deuda a pagar mañana. Mide el tamaño del compromiso.</p><div class="acc"><a class="tag t-auditoria" href="https://www.bps.gub.uy/bps/file/24103/1/estados-financieros-2025.pdf" target="_blank" rel="noopener">nota 46</a></div></div>
+<div class="obra"><h3>Edad real de retiro</h3><div class="m">62,6 años</div><p>Promedio de la última década. La Ley 20.130 lleva la mínima a 65 para los nacidos desde 1977.</p><div class="acc"><a class="tag t-prensa" href="https://www.elobservador.com.uy/nacional/jubilacion-anticipada-las-restricciones-que-tendra-la-advertencia-la-oposicion-y-la-discusion-el-ajuste-del-suplemento-solidario-n6049592" target="_blank" rel="noopener">El Observador</a></div></div>
+</div></section>
+
+<section id="burocracia"><div class="num">05</div><h2>¿Cuánto cuesta la burocracia?</h2>
+<p class="lead">$ 10.872 millones en 2025: el 1,56 % del gasto. Y bajó 1,7 % en términos reales.</p>
+<div class="dos">
+<div class="tabla"><table><thead><tr><th>Personal</th><th class="n">dic-24</th><th class="n">dic-25</th></tr></thead><tbody>
+<tr><td>Presupuestados</td><td class="n">2.960</td><td class="n">2.931</td></tr>
+<tr><td>Contratados permanentes</td><td class="n">316</td><td class="n">252</td></tr>
+<tr><td>Becarios, pasantes y residentes</td><td class="n">217</td><td class="n">189</td></tr>
+<tr class="total"><td>Total</td><td class="n">3.493</td><td class="n">3.372 (−3,5 %)</td></tr>
+</tbody></table></div>
+<div class="tabla"><table><thead><tr><th>Funcionamiento 2025</th><th class="n">Millones de $</th></tr></thead><tbody>
+<tr><td>Sueldos, cargas y beneficios</td><td class="n">8.220</td></tr>
+<tr><td>Comisiones a bancos y redes de cobranza</td><td class="n">945</td></tr>
+<tr><td>Servicios profesionales contratados</td><td class="n">697</td></tr>
+<tr><td>Mantenimiento y limpieza</td><td class="n">205</td></tr>
+<tr><td>ANTEL, UTE, OSE</td><td class="n">158</td></tr>
+<tr><td>Otros (viáticos, Tribunal de Cuentas, consumo, etc.)</td><td class="n">647</td></tr>
+<tr class="total"><td>Total</td><td class="n">10.872</td></tr>
+</tbody></table></div>
+</div>
+<p class="nota">Fuente: Balance de Ejecución Presupuestal 2025 <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">oficial</a>. El costo promedio por persona da unos $ 2,4 millones por año (≈ US$ 4.950 por mes) con aguinaldo, cargas y beneficios: no es el sueldo que se cobra <span class="tag t-propio">cálculo propio</span>. La plantilla se achica: $ 386 millones de sueldos no se usaron porque se mantuvieron vacantes. <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></p>
+<div class="dos">
+<div class="lista"><h3>Gastos que llaman la atención</h3><ul>
+<li><b>$ 79,3 millones</b> (US$ 2 millones) por una sentencia de mala praxis de 2001, con juicio iniciado en 2017.</li>
+<li><b>$ 24,4 millones</b> de multa de la DGI por un incidente de 2023 que no se había pagado.</li>
+<li>El pago del horario nocturno subió <b>49 %</b> por una sentencia que obligó a pagar retroactivos desde 2018.</li>
+<li><b>$ 2.132 millones</b> puso Rentas Generales para cubrir lo que le cuesta al BPS cobrar para otros organismos, que no se lo devuelven.</li></ul></div>
+<div class="lista"><h3>Lo que advirtió el Tribunal de Cuentas</h3><ul>
+<li>La partida de alimentación (<b>$ 19.003 por mes</b> en enero de 2025, para quien trabaja 40 horas o más) es salario, no compensación: tiene que contar para los topes salariales y los impuestos.</li>
+<li>Los viáticos que no se rinden también son salario.</li>
+<li>Las horas extras tienen que respetar los topes de la OIT.</li></ul>
+<p class="nota"><a class="tag t-auditoria" href="https://www.bps.gub.uy/bps/file/23835/1/dictamen-tribunal-de-cuentas-presupuesto-2026.pdf" target="_blank" rel="noopener">dictamen 2026</a></p></div>
+</div></section>
+
+<section id="controles"><div class="num">06</div><h2>Controles: lo que está documentado</h2>
+<p class="lead">No hay pruebas de despilfarro generalizado. Sí hay fallas de control concretas, con documento.</p>
+<div class="obras">
+<div class="obra mal"><h3>Auditoría externa con salvedad</h3><div class="m">$ 3.756 M</div><p>Crowe firmó los estados financieros 2025 con salvedad: el BPS no tiene documentos que validen el costo de sus principales bienes ($ 1.740 M) e intangibles ($ 2.016 M).</p><div class="acc"><a class="tag t-auditoria" href="https://www.bps.gub.uy/bps/file/24103/1/estados-financieros-2025.pdf" target="_blank" rel="noopener">auditor externo</a></div></div>
+<div class="obra mal"><h3>Contrato informático observado</h3><div class="m">$ 611,9 M</div><p>El Tribunal de Cuentas observó en 2022 la licitación de la plataforma informática (hoy de ATOS) como insubsanable. En 2026 se amplió por cuatro años, se volvió a observar y el BPS la reiteró igual.</p><div class="acc"><a class="tag t-auditoria" href="https://www.bps.gub.uy/bps/file/24674/1/rd-33-14-2026---reiteracion-del-gasto-ampliacion-licitacion-publica-servicio-administracion-disciplinas-tecnologicas-plataforma-de-ti.pdf" target="_blank" rel="noopener">R.D. 33-14/2026</a></div></div>
+<div class="obra"><h3>Presupuesto 2026 observado</h3><div class="m">Levantado</div><p>El Tribunal lo observó en agosto de 2025 porque faltaba el informe obligatorio de cumplimiento de metas. El BPS lo mandó y en noviembre se levantó la observación.</p><div class="acc"><a class="tag t-auditoria" href="https://www.bps.gub.uy/bps/file/23835/1/dictamen-tribunal-de-cuentas-presupuesto-2026.pdf" target="_blank" rel="noopener">Res. 2118 y 2765/2025</a></div></div>
+<div class="obra mal"><h3>Pagos indebidos sin recuperar</h3><div class="m">$ 716 M</div><p>Prestaciones cobradas sin derecho que el BPS tiene para recuperar: el mismo saldo que en 2024. No hay dato público de cuánto se recupera.</p><div class="acc"><a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24103/1/estados-financieros-2025.pdf" target="_blank" rel="noopener">estados financieros</a></div></div>
+</div>
+<h3>Cuando se controla, aparece</h3>
+<div class="tabla"><table><thead><tr><th>Control en 2025</th><th class="n">Cantidad</th><th class="n">Irregulares</th></tr></thead><tbody>
+<tr><td>Inspecciones a empresas (aportes)</td><td class="n">6.142</td><td class="n">67,9 %</td></tr>
+<tr><td>Beneficiarios activos (subsidios)</td><td class="n">6.094</td><td class="n">19 %</td></tr>
+<tr><td>Pasividades</td><td class="n">825</td><td class="n">17 %</td></tr>
+<tr class="rojo"><td>Certificaciones médicas (subsidio por enfermedad)</td><td class="n">33</td><td class="n">12 de 33</td></tr>
+</tbody></table></div>
+<p class="nota">Fuente: Memoria 2025 del BPS <a class="tag t-oficial" href="https://www.bps.gub.uy/24276/memoria---ano-2025.html" target="_blank" rel="noopener">oficial</a>. <b>Por qué hay pocos controles:</b> en 2025 no se llamó a concurso de inspectores. Las compensaciones de inspectores se usaron 51,6 % por debajo de lo previsto, y a los 239 fiscalizadores previstos no se sumó ninguno <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">balance 2025</a>. En 2025 empezó a funcionar un modelo predictivo para detectar certificaciones sospechosas. <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></p></section>
+
+<section id="tramites"><div class="num">07</div><h2>Trámites: cuánto se esperaba y cuánto se espera</h2>
+<p class="lead">En mayo de 2025 había 58.103 expedientes pendientes y casi un tercio tenía más de un año. En febrero de 2026 quedaban 13.164, según el BPS.</p>
+<div class="barras" role="img" aria-label="Días promedio de demora por trámite en mayo de 2025">
+<div class="barra"><span>Reconocimiento de servicios</span><div class="b"><i style="width:100%"></i></div><span class="v">262 días</span></div>
+<div class="barra"><span>Jubilación por incapacidad</span><div class="b"><i style="width:96%"></i></div><span class="v">252 días</span></div>
+<div class="barra"><span>Jubilación sin cese</span><div class="b"><i style="width:85%"></i></div><span class="v">222 días</span></div>
+<div class="barra"><span>Pensión a la vejez</span><div class="b"><i style="width:80%"></i></div><span class="v">210 días</span></div>
+<div class="barra"><span>Jubilación común</span><div class="b"><i style="width:77%"></i></div><span class="v">201 días</span></div>
+<div class="barra"><span>Pensión por invalidez</span><div class="b"><i style="width:72%"></i></div><span class="v">189 días</span></div>
+<div class="barra dest"><span>Promedio general</span><div class="b"><i style="width:84%"></i></div><span class="v">219 días</span></div>
+</div>
+<p class="nota">Fuente: BPS, junio de 2025 <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/23112/1/bps---medidas-para-mejorar-la-gestion-y-reducir-expedientes-atrasados.pdf" target="_blank" rel="noopener">oficial</a>.</p>
+<div class="dos">
+<div class="lista bien"><h3>Lo que mejoró (según el BPS)</h3><ul>
+<li>El stock de expedientes bajó <b>77 %</b>: de 58.103 a 13.164.</li>
+<li>Jubilación en el momento: unas 290 por mes, el 17 % de las que se piden.</li>
+<li>La atención para jubilarse bajó de 50 a 15 minutos.</li>
+<li>Se eliminó el trámite de jubilación sin cese y se contrataron 12 médicos para las juntas.</li>
+<li>Los costos operativos controlables bajaron 2,36 % (la meta era 1 %).</li></ul>
+<p class="nota"><a class="tag t-oficial" href="https://www.bps.gub.uy/24099/aumenta-el-acceso-a-las-jubilaciones-y-se-acorta-el-tiempo-de-los-tramites-en-el-bps.html" target="_blank" rel="noopener">BPS</a> <a class="tag t-oficial" href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">compromisos de gestión</a></p></div>
+<div class="lista"><h3>Lo que no se sabe</h3><ul>
+<li>Cuánto cuesta resolver cada expediente.</li>
+<li>Cuántas veces se le pide a la gente información que el Estado ya tiene.</li>
+<li>Los tiempos los informa el propio BPS: no hay auditoría externa que los confirme.</li></ul></div>
+</div></section>
+
+<section id="estructura"><div class="num">08</div><h2>Lo que está en la ley, no en la oficina</h2>
+<p class="lead">Los problemas más caros se deciden en el Parlamento.</p>
+<div class="dos">
+<div class="lista"><h3>Plata que no entra</h3><ul>
+<li><b>US$ 274 millones por año</b> de aportes patronales exonerados. Más o menos la mitad son de mutualistas sin fines de lucro, un 30 % de la enseñanza privada y la cultura (por la Constitución) y un 5,5 % del transporte. Desde 2023 los paga Rentas Generales. <a class="tag t-oficial" href="https://www.bps.gub.uy/24494/137-exoneraciones-y-tasa-de-aporte-jubilatorio-promedio-periodo-2006_2025-actualizacion.html" target="_blank" rel="noopener">BPS</a></li>
+<li><b>22,8 %</b> de los trabajadores no aportan, y la cifra subió en 2025. <a class="tag t-prensa" href="https://www.ambito.com/uruguay/la-informalidad-laboral-volvio-crecer-2025-y-alcanzo-al-228-los-ocupados-n6289016" target="_blank" rel="noopener">INE vía Ámbito</a></li></ul></div>
+<div class="lista"><h3>Tareas que no son jubilaciones</h3><ul>
+<li>Ayudas extraordinarias, pensiones graciables y reparatorias, Operación Milagro, Plan Ibirapitá y viviendas para jubilados.</li>
+<li>El director por los empresarios propone pasarlas a los ministerios, para que cada uno las defienda en su presupuesto. <a class="tag t-prensa" href="https://www.elobservador.com.uy/economia-y-empresas/representacion-empresarial-impulsa-debate-funciones-y-gasto-del-bps-n6030350" target="_blank" rel="noopener">El Observador</a></li>
+<li>El PIT-CNT propone jubilarse a los 60, bajar las comisiones de las AFAP y un seguro de paro para zafrales. <a class="tag t-prensa" href="https://www.ambito.com/uruguay/los-ejes-del-pit-cnt-reformar-la-seguridad-social-seguro-paro-zafrales-y-jubilacion-los-60-anos-n6306564" target="_blank" rel="noopener">Ámbito</a></li>
+<li>El Poder Ejecutivo mandó al Parlamento un retiro anticipado a los 60 años con 30 de aportes. <a class="tag t-oficial" href="https://www.gub.uy/presidencia/comunicacion/noticias/consejo-ministros-causal-jubilacion-60-anos-proyecto" target="_blank" rel="noopener">Presidencia</a></li></ul></div>
+</div></section>
+
+<section id="escenarios"><div class="num">09</div><h2>Qué se puede hacer, con números reales</h2>
+<p class="lead">No inventamos porcentajes de ahorro. Cada fila sale de un dato oficial y dice qué la frena.</p>
+<div class="tabla"><table><thead><tr><th>Medida</th><th class="n">Cuánto mueve</th><th>Qué la frena</th></tr></thead><tbody>
+<tr><td>Revisar las exoneraciones que fija la ley (no las de la Constitución)</td><td class="n">hasta ≈ US$ 137 M/año</td><td>Necesita ley. Subiría el costo de las mutualistas.</td></tr>
+<tr><td>Que los organismos le paguen al BPS lo que le cuesta cobrar para ellos</td><td class="n">≈ $ 2.132 M/año</td><td>No es ahorro para el Estado: lo paga otro organismo. Sí deja los costos a la vista.</td></tr>
+<tr><td>Que el subsidio por enfermedad vuelva al gasto real de 2024</td><td class="n">≈ $ 1.500 M/año</td><td>Necesita controles e inspectores. Parte del aumento es real (subió el monto promedio).</td></tr>
+<tr><td>Recuperar los cobros indebidos pendientes</td><td class="n">hasta $ 716 M, una vez</td><td>No se sabe cuánto se puede recuperar.</td></tr>
+<tr><td>Cubrir las plazas de inspectores previstas</td><td class="n">sin estimar</td><td>Cuesta sueldos. Hoy, uno de cada cinco controles da irregular.</td></tr>
+<tr><td>Bajar el gasto de funcionamiento</td><td class="n">≈ $ 109 M por cada 1 %</td><td>Sin alargar los trámites.</td></tr>
+<tr><td>Renegociar las comisiones a bancos</td><td class="n">≈ $ 9,5 M por cada 1 %</td><td>Contratos con la red de cobranza.</td></tr>
+<tr><td>Pasar las tareas que no son jubilaciones a los ministerios</td><td class="n">US$ 0</td><td>Cambia quién paga, no cuánto. Ordena la cuenta.</td></tr>
+</tbody></table></div>
+<p class="nota">Todos los montos son cálculo propio con datos oficiales <span class="tag t-propio">cálculo propio</span>. Las medidas de gestión mueven decenas de millones de dólares. El faltante de las jubilaciones son cientos de millones por año, y los impuestos que ya van al BPS, miles. <a class="obj" href="/informe?aporte=bps&amp;tipo=correccion#aportes">⚑ Objetar</a></p></section>
+
+<section id="ver"><div class="alerta"><h2>La verdad de la milanesa</h2><ul>
+<li><strong>La culpa no es de "los funcionarios".</strong> Todo el funcionamiento cuesta el 1,56 % y viene bajando. Ni bajándolo a cero se tapa el déficit.</li>
+<li><strong>Tampoco está todo bajo control.</strong> Hay un auditor que no pudo validar los bienes, un contrato observado que se reiteró igual, $ 716 millones de pagos indebidos sin recuperar y 33 controles a un subsidio de $ 13.622 millones.</li>
+<li><strong>Lo grande es estructural.</strong> Cada vez hay menos aportantes por jubilado, la informalidad sube y hay exoneraciones. Eso se cambia con leyes, y a cualquier gobierno le cuesta votos tocarlo.</li></ul></div></section>
+
+<section id="metodo"><div class="num">10</div><h2>Cómo se hizo</h2>
+<p class="lead">Se hizo con investigación y ayuda de la tecnología. Las cifras salen de documentos oficiales del BPS, del Tribunal de Cuentas y del MEF. Donde hay dos formas de medir lo mismo, se dice cuál se usa.</p></section>
+
+<section id="pendiente"><div class="pend"><strong>Lo que todavía estamos buscando</strong><ul>
+<li>La asistencia financiera de 2022 y 2023, para completar la serie.</li>
+<li>Las planillas de sueldos y cargos gerenciales del BPS.</li>
+<li>Un estudio de evasión actualizado (el último del BPS es de 2018).</li>
+<li>Cuánto de los $ 716 millones de pagos indebidos se recupera cada año.</li>
+<li>El costo por expediente resuelto.</li></ul></div></section>
+
+<section id="fuentes"><h2>De dónde sale cada número</h2>
+<p class="lead">Consultado el 24/11/2026.</p>
+<ul class="fuentes">
+<li><a href="https://www.bps.gub.uy/bps/file/24105/1/balance-de-ejecucion-presupuestal-2025.pdf" target="_blank" rel="noopener">BPS: Balance de Ejecución Presupuestal 2025 (R.D. 9-6/2026)</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/bps/file/24103/1/estados-financieros-2025.pdf" target="_blank" rel="noopener">BPS: Estados Financieros 2025, con el informe de Crowe y la nota 46</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/bps/file/23835/1/dictamen-tribunal-de-cuentas-presupuesto-2026.pdf" target="_blank" rel="noopener">Tribunal de Cuentas: dictamen sobre el presupuesto 2026 (Res. 2118 y 2765/2025)</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/24276/memoria---ano-2025.html" target="_blank" rel="noopener">BPS: Memoria 2025</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/24630/139-analisis-de-los-movimientos-financieros-del-banco-de-prevision-social-ano-2025-actualizacion.html" target="_blank" rel="noopener">BPS: Comentario 139, movimientos financieros 2025</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/24493/137--analisis-comparativo-de-los-egresos-de-bps-periodo-2024_2025-actualizacion.html" target="_blank" rel="noopener">BPS: Comentario 137, egresos 2024-2025</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/24494/137-exoneraciones-y-tasa-de-aporte-jubilatorio-promedio-periodo-2006_2025-actualizacion.html" target="_blank" rel="noopener">BPS: Comentario 137, exoneraciones 2006-2025</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/24390/136-recaudacion-por-punto-de-aportes-jubilatorios-ano-2025-actualizacion.html" target="_blank" rel="noopener">BPS: Comentario 136, recaudación por punto 2025</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/24300/relacion-activo-cotizante-%E2%80%93-pasivo-periodo-1995-%E2%80%93-2025-actualizacion.html" target="_blank" rel="noopener">BPS: relación activo/pasivo 1995-2025</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/bps/file/23112/1/bps---medidas-para-mejorar-la-gestion-y-reducir-expedientes-atrasados.pdf" target="_blank" rel="noopener">BPS, junio de 2025: expedientes atrasados y tiempos de demora</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/24099/aumenta-el-acceso-a-las-jubilaciones-y-se-acorta-el-tiempo-de-los-tramites-en-el-bps.html" target="_blank" rel="noopener">BPS: balance de trámites y jubilaciones 2025</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/bps/file/24674/1/rd-33-14-2026---reiteracion-del-gasto-ampliacion-licitacion-publica-servicio-administracion-disciplinas-tecnologicas-plataforma-de-ti.pdf" target="_blank" rel="noopener">BPS: R.D. 33-14/2026, reiteración del contrato informático</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.bps.gub.uy/bps/file/24696/1/rd-34-3-2026---reiteracion-de-gasto-servicio-de-ortopedia-consultas-ambulatorias-e-intervenciones-quirurgicas--gerencia-de-salud.pdf" target="_blank" rel="noopener">BPS: R.D. 34-3/2026, reiteración del servicio de ortopedia</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.gub.uy/ministerio-economia-finanzas/datos-y-estadisticas/estadisticas/resultado-del-sector-publico-diciembre-2025" target="_blank" rel="noopener">MEF: resultado del sector público, diciembre de 2025</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://www.gub.uy/presidencia/comunicacion/noticias/consejo-ministros-causal-jubilacion-60-anos-proyecto" target="_blank" rel="noopener">Presidencia: proyecto de retiro anticipado a los 60</a> <span class="tag t-oficial">oficial</span></li>
+<li><a href="https://prensamercosur.org/2026/04/07/el-bps-tuvo-en-2025-su-peor-resultado-en-cinco-anos-pese-a-record-de-asistencia-estatal/" target="_blank" rel="noopener">Prensa Mercosur, 07/04/2026, con datos de El Observador: déficit antes de asistencia</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/economia-y-empresas/representacion-empresarial-impulsa-debate-funciones-y-gasto-del-bps-n6030350" target="_blank" rel="noopener">El Observador, 08/01/2026: propuesta del director por los empresarios</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nacional/jubilacion-anticipada-las-restricciones-que-tendra-la-advertencia-la-oposicion-y-la-discusion-el-ajuste-del-suplemento-solidario-n6049592" target="_blank" rel="noopener">El Observador, 06/07/2026: retiro anticipado y edad de retiro</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.elobservador.com.uy/nota/el-deficit-del-bps-bajo-8-y-se-ubico-en-us-562-millones-al-cierre-del-ano-pasado--20224518210" target="_blank" rel="noopener">El Observador, 06/04/2022: asistencia 2020 y 2021</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.ambito.com/uruguay/la-informalidad-laboral-volvio-crecer-2025-y-alcanzo-al-228-los-ocupados-n6289016" target="_blank" rel="noopener">Ámbito, 15/06/2026: informalidad 2025 (INE)</a> <span class="tag t-prensa">prensa</span></li>
+<li><a href="https://www.ambito.com/uruguay/los-ejes-del-pit-cnt-reformar-la-seguridad-social-seguro-paro-zafrales-y-jubilacion-los-60-anos-n6306564" target="_blank" rel="noopener">Ámbito, 03/08/2026: propuestas del PIT-CNT</a> <span class="tag t-prensa">prensa</span></li>
+</ul></section>
+
+</main>
+<footer><div class="wrap">La verdad de la milanesa · verdadmilanesa.uy · Análisis independiente con información pública · <a href="./">Portada</a> · <a href="/informe#metodo">Método y fuentes</a></div></footer>
+  <script>
+    "use strict";
+    document.getElementById("compartir").addEventListener("click", async () => {
+      const share = { title: document.title, text: "US$ 4.000 millones al año de impuestos además de los aportes. El agujero está en las jubilaciones, no en la burocracia. Y 33 controles al subsidio por enfermedad en todo 2025. El BPS, con fuente en cada número.", url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(share); return; }
+        await navigator.clipboard.writeText(share.text + " " + share.url);
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = "Enlace copiado";
+        toast.setAttribute("role", "status");
+        document.body.append(toast);
+        setTimeout(() => toast.remove(), 2200);
+      } catch (error) { /* el usuario canceló */ }
+    });
+  </script>
+</body>
+</html>

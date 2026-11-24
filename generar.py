@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SITE = "https://verdadmilanesa.uy"
-STATIC_PAGES = ("solaria.html", "hif.html", "basura.html")
+STATIC_PAGES = ("solaria.html", "hif.html", "basura.html", "bps.html")
 COPY_FILES = ("404.html", "favicon.svg")
 
 
@@ -244,6 +244,7 @@ ESPECIALES = (
     ("hif.html", "Informe especial 5", "HIF: la luz a mitad de precio", "#f0abfc"),
     ("patente.html", "Informe especial 6", "La patente: ¿por qué no baja?", "#fdba74"),
     ("basura.html", "Informe especial 7", "La ciudad que no se limpia", "#d4e157"),
+    ("bps.html", "Informe especial 8", "El BPS bajo la lupa", "#f5b942"),
 )
 # Tarjetas de la portada: tema, título, dato y bajada. El estado solo va cuando suma contexto.
 ESPECIALES_PORTADA = {
@@ -261,9 +262,11 @@ ESPECIALES_PORTADA = {
                      "Cómo se calcula, cuánto se recauda, en qué se usa y cómo se compara con Brasil, Chile y Argentina.", "Congelada para 2027"),
     "basura.html": ("c13", "Basura", "2.143", "contenedores con más de 5 días sin vaciar",
                     "Quién es responsable por acción u omisión, por qué empeora, las multas que casi no existen y qué funciona en Canelones, Maldonado y afuera.", "Noviembre 2026"),
+    "bps.html": ("c14", "Seguridad social", "US$ 4.000 M", "por año de impuestos al BPS, además de los aportes",
+                 "Cuánto recauda, en qué gasta, por qué tiene déficit, cuánto cuesta la burocracia y qué observaron el auditor y el Tribunal de Cuentas.", "Datos 2025"),
 }
 # El informe que va destacado arriba de la grilla de Especiales.
-ESPECIAL_DESTACADO = "basura.html"
+ESPECIAL_DESTACADO = "bps.html"
 NUMEROS = {1: "Un", 2: "Dos", 3: "Tres", 4: "Cuatro", 5: "Cinco", 6: "Seis", 7: "Siete", 8: "Ocho",
            9: "Nueve", 10: "Diez", 11: "Once", 12: "Doce"}
 
@@ -1106,6 +1109,7 @@ PAGINAS_SEO = {
     "hif.html": ("web/hif.html", "datos/hif.json"),
     "patente.html": ("web/patente.template.html", "datos/patente.json"),
     "basura.html": ("web/basura.html",),
+    "bps.html": ("web/bps.html",),
 }
 
 
@@ -1239,7 +1243,7 @@ def main():
     build_patente(public)
     for name in COPY_FILES:
         (public / name).write_text((ROOT / "web" / name).read_text(encoding="utf-8"), encoding="utf-8")
-    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html", "hif.html", "patente.html", "basura.html"):
+    for page in ("index.html", "informe.html", "intendencias.html", "solaria.html", "puerto.html", "ute.html", "ancap.html", "transporte.html", "movilidad.html", "justicia.html", "estado.html", "hif.html", "patente.html", "basura.html", "bps.html"):
         poner_barra(public, page)
     (public / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     fechas = {page: fechas_git(fuentes, data["consultado"]) for page, fuentes in PAGINAS_SEO.items()}
@@ -1251,7 +1255,7 @@ def main():
     (public / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         f"{urls}</urlset>\n", encoding="utf-8")
-    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica, justicia, Estado optimizado, HIF, patente de rodados y basura en Montevideo, y los CSV.")
+    print("Validados 33 incisos y rubros, 84 organismos y 270 unidades. Generados la portada, el informe, las 19 intendencias, el puerto, UTE, ANCAP, el transporte, los informes especiales de movilidad eléctrica, justicia, Estado optimizado, HIF, patente de rodados, basura en Montevideo y BPS, y los CSV.")
 
 
 if __name__ == "__main__":
